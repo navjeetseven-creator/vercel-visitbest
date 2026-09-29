@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">VisitBest editorial illustration</title>
+  <desc id="desc">Abstract navy, cream and orange editorial illustration used for refreshed VisitBest guides.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#182c4a"/><stop offset="1" stop-color="#355f83"/>
+    </linearGradient>
+    <linearGradient id="warm" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f28e58"/><stop offset="1" stop-color="#c95832"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#071528" flood-opacity=".32"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1330" cy="90" r="230" fill="#f8f0e6" opacity=".12"/>
+  <circle cx="155" cy="785" r="310" fill="#f28e58" opacity=".12"/>
+  <path d="M0 640C240 530 390 720 650 605s430-170 950 40v255H0Z" fill="#f8f0e6" opacity=".08"/>
+  <g filter="url(#shadow)" transform="translate(230 125) rotate(-5 570 325)">
+    <rect width="1120" height="650" rx="28" fill="#faf6f0"/>
+    <rect x="58" y="58" width="1004" height="18" rx="9" fill="#d6dde7"/>
+    <rect x="58" y="112" width="510" height="34" rx="17" fill="#182c4a"/>
+    <rect x="58" y="174" width="740" height="15" rx="7" fill="#b6c2d1"/>
+    <rect x="58" y="204" width="610" height="15" rx="7" fill="#b6c2d1"/>
+    <rect x="58" y="270" width="430" height="235" rx="18" fill="url(#warm)"/>
+    <path d="M98 440c80-100 115-116 182-43 54 59 115 64 199-36v144H98Z" fill="#f8f0e6" opacity=".7"/>
+    <circle cx="215" cy="357" r="44" fill="#f8f0e6" opacity=".78"/>
+    <rect x="548" y="270" width="410" height="23" rx="11" fill="#182c4a"/>
+    <rect x="548" y="318" width="450" height="13" rx="6" fill="#b6c2d1"/>
+    <rect x="548" y="348" width="370" height="13" rx="6" fill="#b6c2d1"/>
+    <rect x="548" y="400" width="260" height="42" rx="21" fill="#182c4a"/>
+    <rect x="58" y="556" width="1004" height="12" rx="6" fill="#d6dde7"/>
+  </g>
+  <text x="90" y="120" fill="#f8f0e6" opacity=".75" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="6">VISITBEST EDITORIAL</text>
+</svg>

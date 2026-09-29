@@ -1,0 +1,15 @@
+{
+  "name": "visitbest-vercel",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static, SEO-friendly VisitBest migration for Vercel.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate.mjs",
+    "dev": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
