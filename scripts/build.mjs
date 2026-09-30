@@ -672,7 +672,7 @@ const xml = [...canonicalRoutes].sort().map((route) => {
   return `<url><loc>${escapeHtml(new URL(route, origin).href)}</loc><lastmod>${lastmod.slice(0, 10)}</lastmod></url>`;
 }).join("");
 await fs.writeFile(path.join(distDir, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${xml}</urlset>\n`);
-await fs.writeFile(path.join(distDir, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
+await fs.writeFile(path.join(distDir, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\nSitemap: ${origin}/sitemap-bigg-boss-20-new.xml\n`);
 await fs.writeFile(path.join(distDir, "ads.txt"), `google.com, pub-6008816938247526, DIRECT, f08c47fec0942fa0\n`);
 await fs.writeFile(path.join(distDir, "404.html"), renderPage({ title: "Page not found · VisitBest", description: "The VisitBest page could not be found.", canonical: "/404.html", body: `<div class="container"><section class="section"><p class="eyebrow">404</p><h1>That page moved</h1><p>Try search or browse the directory to find a current VisitBest guide.</p><div class="button-row"><a class="button button-primary" href="/">Go home</a><a class="button button-quiet" href="/search/">Search guides</a></div></section></div>` }));
 

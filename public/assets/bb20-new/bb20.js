@@ -1,0 +1,51 @@
+/* Navigation and ad initialization for the additional editorial pages. */
+(() => {
+  const menu = document.querySelector('.menu');
+  const nav = document.querySelector('.nav');
+  if (menu && nav) menu.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    menu.setAttribute('aria-expanded', String(open));
+  });
+  const preview = new URLSearchParams(location.search).get('ads-preview') === '1';
+  const isProduction = location.hostname === 'visitbest.in' || location.hostname === 'www.visitbest.in';
+  if (preview && !isProduction) {
+    document.documentElement.classList.add('ads-preview');
+    document.querySelectorAll('.ad-surface').forEach(el => { el.textContent = 'Reserved ad position — preview only'; });
+    return;
+  }
+  const cfg = window.VB_BB20_ADS;
+  if (!isProduction || !cfg || !cfg.enabled) return;
+  // Preserve a site-provided loader when one already exists.
+  if (!document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) {
+    const script = document.createElement('script');
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + encodeURIComponent(cfg.publisher);
+    document.head.append(script);
+  }
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      const surface = entry.target;
+      observer.unobserve(surface);
+      const slot = String(cfg.slots[surface.dataset.placement] || '');
+      if (!/^\d+$/.test(slot)) continue;
+      const ins = document.createElement('ins');
+      ins.className = 'adsbygoogle';
+      ins.style.display = 'block';
+      ins.dataset.adClient = cfg.publisher;
+      ins.dataset.adSlot = slot;
+      ins.dataset.adFormat = 'auto';
+      ins.dataset.fullWidthResponsive = 'true';
+      surface.append(ins);
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  }, {rootMargin: '100px 0px'});
+  document.querySelectorAll('.ad-surface').forEach(surface => {
+    const kind = surface.dataset.placement;
+    const slot = String(cfg.slots[kind] || '');
+    if (!/^\d+$/.test(slot)) return;
+    if (kind === 'desktop_sidebar' && !window.matchMedia('(min-width:1001px)').matches) return;
+    observer.observe(surface);
+  });
+})();

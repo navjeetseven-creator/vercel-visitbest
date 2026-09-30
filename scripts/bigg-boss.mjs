@@ -638,13 +638,16 @@ export function biggBossSchema(item, isContestantsPage = false, isRulesPage = fa
 function renderPollPills(currentSlug) {
   const links = [
     ["bigg-boss-20-voting", "🔥 Grand Voting Poll (Qazi #1)"],
+    ["bigg-boss-20-guide", "📖 Season Guide"],
+    ["bigg-boss-20-web-stories", "📱 Web Stories"],
+    ["bigg-boss-20-where-to-watch", "📺 Where to Watch"],
     ["bigg-boss-20-winner-prediction", "🏆 Winner Trophy (Qazi #1)"],
     ["bigg-boss-20-best-contestant", "⭐ Best Player (Scout #1)"],
     ["bigg-boss-20-joker-of-the-house", "🤡 Joker of House (Aman #1)"],
     ["bigg-boss-20-who-is-boss", "👑 Real Boss (Mary Kom #1)"],
     ["bigg-boss-20-entertainer", "🎭 Entertainer Clash"],
     ["bigg-boss-20-contestants", "👥 16 Contestants Wiki"],
-    ["bigg-boss-20-voting-rules", "📋 JioCinema & Missed Call Guide"],
+    ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
   return `<nav class="bb-pill-nav" aria-label="Bigg Boss 20 Poll Navigation">
     <span class="bb-nav-label">EXPLORE POLLS:</span>
