@@ -358,7 +358,9 @@ function relatedEntries(currentSlug, categoryName = "") {
 function renderHeader(currentPath = "") {
   const links = [
     ["/", "Home"],
-    ["/bigg-boss-20-voting/", "Bigg Boss 20"],
+    ["/bigg-boss-20-guide/", "Bigg Boss 20"],
+    ["/bigg-boss-20-voting/", "BB20 Voting"],
+    ["/bigg-boss-20-web-stories/", "Web Stories"],
     ["/category/technology/", "Technology"],
     ["/category/entertainment/", "Entertainment"],
     ["/business/", "All Businesses"],
@@ -366,7 +368,7 @@ function renderHeader(currentPath = "") {
     ["/contact-us/", "Contact Us"],
   ];
   return `<a class="skip-link" href="#content">Skip to content</a>
-  <header class="site-header"><div class="header-inner">
+  <header class="site-header"><div class="header-inner container">
     <a class="brand" href="/"><strong>Visit-Best</strong><span>Explore best in India</span></a>
     <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">Menu</button>
     <nav class="primary-nav" id="primary-nav" data-primary-nav aria-label="Primary navigation">${links.map(([href, label]) => `<a href="${href}"${routePath(currentPath) === href ? ' aria-current="page"' : ""}>${label}</a>`).join("")}</nav>
@@ -375,13 +377,47 @@ function renderHeader(currentPath = "") {
 }
 
 function renderFooter() {
-  const footerCategories = ["Actress", "Brands", "Business", "Corporates", "Entertainment", "Technology", "Travel", "Lifestyle"];
   return `<footer class="site-footer"><div class="container footer-grid">
-    <div><h2>Visit-Best</h2><p>Clear, practical guides on brands, products, companies, culture, and everyday decisions across India and beyond.</p></div>
-    <div><h2>Categories</h2><ul class="footer-links">${footerCategories.slice(0, 4).map((name) => `<li><a href="/category/${slugify(name)}/">${name}</a></li>`).join("")}</ul></div>
-    <div><h2>Explore</h2><ul class="footer-links">${footerCategories.slice(4).map((name) => `<li><a href="/category/${slugify(name)}/">${name}</a></li>`).join("")}<li><a href="/business/">Business directory</a></li></ul></div>
-    <div><h2>Contact</h2><p><a href="mailto:visitbest10@gmail.com">visitbest10@gmail.com</a></p><p><a href="/about/">About VisitBest</a><br><a href="/contact-us/">Contact the editorial team</a><br><a href="/privacy-policy/">Privacy policy</a></p></div>
-  </div><div class="container footer-bottom"><span>© 2026 Visit-Best. All rights reserved.</span><span>Independent editorial guides. Verify time-sensitive details before acting.</span></div></footer><button class="back-top" type="button" data-back-top aria-label="Back to top">↑</button>`;
+    <div>
+      <h2>Visit-Best</h2>
+      <p>Clear, practical guides on brands, products, companies, entertainment, culture, and everyday decisions across India and beyond.</p>
+      <p style="margin-top:.85rem;font-size:.84rem;"><a href="/about/">About VisitBest</a> · <a href="/contact-us/">Contact Us</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+    </div>
+    <div>
+      <h2>Bigg Boss 20</h2>
+      <ul class="footer-links">
+        <li><a href="/bigg-boss-20-guide/">Season 20 Guide</a></li>
+        <li><a href="/bigg-boss-20-voting/">Live Fan Polls &amp; Voting</a></li>
+        <li><a href="/bigg-boss-20-contestants/">Contestants Directory</a></li>
+        <li><a href="/bigg-boss-20-web-stories/">Visual Web Stories</a></li>
+        <li><a href="/bigg-boss-20-where-to-watch/">Where to Watch</a></li>
+        <li><a href="/bigg-boss-20-episode-guide/">Episode Guide</a></li>
+        <li><a href="/bigg-boss-20-nominations-explained/">Nominations Explained</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Categories</h2>
+      <ul class="footer-links">
+        <li><a href="/category/technology/">Technology</a></li>
+        <li><a href="/category/entertainment/">Entertainment</a></li>
+        <li><a href="/category/brands/">Brands</a></li>
+        <li><a href="/category/business/">Business</a></li>
+        <li><a href="/category/actress/">Celebrity &amp; Cinema</a></li>
+        <li><a href="/category/corporates/">Corporates</a></li>
+        <li><a href="/category/travel/">Travel &amp; Lifestyle</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Explore &amp; Contact</h2>
+      <ul class="footer-links">
+        <li><a href="/business/">Business Directory (700+)</a></li>
+        <li><a href="/cgpa-to-percentage-calculator/">CGPA to % Calculator</a></li>
+        <li><a href="/search/">Search All Guides</a></li>
+        <li><a href="/assets/bb20-new/image-credits.html">Image Credits</a></li>
+        <li><a href="mailto:visitbest10@gmail.com">visitbest10@gmail.com</a></li>
+      </ul>
+    </div>
+  </div><div class="container footer-bottom"><span>© 2026 Visit-Best. All rights reserved.</span><span>Independent editorial guides &amp; fan opinions. Not affiliated with Bigg Boss broadcasters or voting platforms.</span></div></footer><button class="back-top" type="button" data-back-top aria-label="Back to top">↑</button>`;
 }
 
 function renderPage({ title, description, canonical = "/", body, currentPath = "", schema = null }) {
@@ -493,7 +529,7 @@ function renderHome() {
     const count = posts.filter((item) => taxonomyLabel(item).includes(name)).length + legacyPages.filter((item) => item.category === name).length;
     return `<a class="category-card" href="/category/${slugify(name)}/"><strong>${escapeHtml(name)}</strong><span>${count} guide${count === 1 ? "" : "s"}</span></a>`;
   }).join("");
-  const body = `<div class="container"><section class="hero"><p class="eyebrow">Explore best in India</p><h1>Trusted guides on brands, products &amp; more</h1><p>Expert-curated listicles to help you discover the best watches, appliances, companies, culture, and more across India.</p><div class="button-row"><a class="button button-primary" href="#vb-latest-posts">Browse latest guides</a><a class="button button-quiet" href="#vb-category-browse">View categories</a></div><div class="pill-row"><a class="pill" style="background:#ff3344;color:#fff;border-color:#ff3344;" href="/bigg-boss-20-voting/">🔥 Bigg Boss 20 Live Poll</a><a class="pill" href="/bigg-boss-20-contestants/">👥 BB20 Contestants</a>${categoryNames.slice(0, 6).map((name) => `<a class="pill" href="/category/${slugify(name)}/">${escapeHtml(name)}</a>`).join("")}</div></section><section class="section" id="vb-latest-posts"><div class="section-heading"><div><p class="eyebrow">Fresh content</p><h2>Latest posts</h2><p>Recently published guides and listicles from VisitBest.</p></div><a class="section-link" href="/search/">View all posts</a></div><div class="card-grid">${latest.map(renderCard).join("")}</div></section><section class="section" id="vb-restored-posts"><div class="section-heading"><div><p class="eyebrow">Restored from your traffic report</p><h2>More guides worth keeping</h2><p>Older and previously unlinked routes are live again, refreshed for clarity and easier comparison.</p></div><a class="section-link" href="/category/brands/">Browse guides</a></div><div class="card-grid">${restored.map(renderCard).join("")}</div></section><section class="section" id="vb-category-browse"><div class="section-heading"><div><p class="eyebrow">Discover</p><h2>Browse by category</h2><p>Jump into the topics that matter most to you.</p></div></div><div class="category-grid">${categoryCards}</div></section><section class="section directory-strip"><div class="directory-panel"><h3>Find a company by category or city</h3><p>Browse the VisitBest business directory with 700+ public profiles across pharmaceutical, construction, technology, and other sectors.</p><a class="button button-quiet" href="/business/">Open the directory</a></div><div class="directory-panel" style="background: var(--cream); color: var(--ink);"><h3 style="color:var(--ink);">Need a fast answer?</h3><p style="color:var(--muted);">Use site search to move from a broad topic to a focused guide.</p><a class="button button-primary" href="/search/">Search guides</a></div></section><section class="section newsletter"><div><p class="eyebrow">Newsletter</p><h2>Get the best guides in your inbox</h2><p>A weekly roundup of India's best brands, products, companies, and practical ideas.</p></div><form><input type="email" placeholder="Enter your email" aria-label="Email address" disabled><button class="button button-primary" type="button" disabled>Coming soon</button></form></section></div>`;
+  const body = `<div class="container"><section class="hero"><p class="eyebrow">Explore best in India</p><h1>Trusted guides on brands, products &amp; more</h1><p>Expert-curated listicles to help you discover the best watches, appliances, companies, culture, and more across India.</p><div class="button-row"><a class="button button-primary" href="#vb-latest-posts">Browse latest guides</a><a class="button button-quiet" href="#vb-category-browse">View categories</a></div><div class="pill-row"><a class="pill" style="background:#ff3344;color:#fff;border-color:#ff3344;" href="/bigg-boss-20-voting/">🔥 Bigg Boss 20 Live Poll</a><a class="pill" href="/bigg-boss-20-guide/">📖 Season Guide</a><a class="pill" href="/bigg-boss-20-contestants/">👥 BB20 Contestants</a><a class="pill" href="/bigg-boss-20-web-stories/">📱 Web Stories</a>${categoryNames.slice(0, 6).map((name) => `<a class="pill" href="/category/${slugify(name)}/">${escapeHtml(name)}</a>`).join("")}</div></section><section class="section" id="vb-latest-posts"><div class="section-heading"><div><p class="eyebrow">Fresh content</p><h2>Latest posts</h2><p>Recently published guides and listicles from VisitBest.</p></div><a class="section-link" href="/search/">View all posts</a></div><div class="card-grid">${latest.map(renderCard).join("")}</div></section><section class="section" id="vb-restored-posts"><div class="section-heading"><div><p class="eyebrow">Restored from your traffic report</p><h2>More guides worth keeping</h2><p>Older and previously unlinked routes are live again, refreshed for clarity and easier comparison.</p></div><a class="section-link" href="/category/brands/">Browse guides</a></div><div class="card-grid">${restored.map(renderCard).join("")}</div></section><section class="section" id="vb-category-browse"><div class="section-heading"><div><p class="eyebrow">Discover</p><h2>Browse by category</h2><p>Jump into the topics that matter most to you.</p></div></div><div class="category-grid">${categoryCards}</div></section><section class="section directory-strip"><div class="directory-panel"><h3>Find a company by category or city</h3><p>Browse the VisitBest business directory with 700+ public profiles across pharmaceutical, construction, technology, and other sectors.</p><a class="button button-quiet" href="/business/">Open the directory</a></div><div class="directory-panel" style="background: var(--cream); color: var(--ink);"><h3 style="color:var(--ink);">Need a fast answer?</h3><p style="color:var(--muted);">Use site search to move from a broad topic to a focused guide.</p><a class="button button-primary" href="/search/">Search guides</a></div></section><section class="section newsletter"><div><p class="eyebrow">Newsletter</p><h2>Get the best guides in your inbox</h2><p>A weekly roundup of India's best brands, products, companies, and practical ideas.</p></div><form><input type="email" placeholder="Enter your email" aria-label="Email address" disabled><button class="button button-primary" type="button" disabled>Coming soon</button></form></section></div>`;
   return renderPage({ title: "Visit-Best - Explore Best In India", description: "Trusted guides on brands, products, companies, culture, and more across India.", canonical: "/", currentPath: "/", body, schema: { "@context": "https://schema.org", "@type": "WebSite", name: "Visit-Best", url: `${origin}/`, potentialAction: { "@type": "SearchAction", target: `${origin}/search/?q={search_term_string}`, "query-input": "required name=search_term_string" } } });
 }
 

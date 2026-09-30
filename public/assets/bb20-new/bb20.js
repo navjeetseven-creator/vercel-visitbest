@@ -1,11 +1,23 @@
 /* Navigation and ad initialization for the additional editorial pages. */
 (() => {
-  const menu = document.querySelector('.menu');
-  const nav = document.querySelector('.nav');
+  const menu = document.querySelector('.menu, .menu-toggle, [data-menu-toggle]');
+  const nav = document.querySelector('.nav, .primary-nav, [data-primary-nav]');
   if (menu && nav) menu.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
+    const open = nav.classList.toggle('is-open');
+    nav.classList.toggle('open', open);
+    document.body.classList.toggle('nav-open', open);
     menu.setAttribute('aria-expanded', String(open));
   });
+
+  const backTop = document.querySelector('[data-back-top]');
+  if (backTop) {
+    window.addEventListener('scroll', () => {
+      backTop.classList.toggle('is-visible', window.scrollY > 450);
+    }, { passive: true });
+    backTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
   const preview = new URLSearchParams(location.search).get('ads-preview') === '1';
   const isProduction = location.hostname === 'visitbest.in' || location.hostname === 'www.visitbest.in';
   if (preview && !isProduction) {
