@@ -40,23 +40,22 @@
       if (!entry.isIntersecting) continue;
       const surface = entry.target;
       observer.unobserve(surface);
-      const slot = String(cfg.slots[surface.dataset.placement] || '');
-      if (!/^\d+$/.test(slot)) continue;
+      const slot = String(cfg.slots?.[surface.dataset.placement] || '');
       const ins = document.createElement('ins');
       ins.className = 'adsbygoogle';
       ins.style.display = 'block';
-      ins.dataset.adClient = cfg.publisher;
-      ins.dataset.adSlot = slot;
+      ins.dataset.adClient = cfg.publisher || 'ca-pub-6008816938247526';
+      if (/^\d+$/.test(slot)) {
+        ins.dataset.adSlot = slot;
+      }
       ins.dataset.adFormat = 'auto';
       ins.dataset.fullWidthResponsive = 'true';
-      surface.append(ins);
+      surface.replaceChildren(ins);
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     }
-  }, {rootMargin: '100px 0px'});
+  }, {rootMargin: '120px 0px'});
   document.querySelectorAll('.ad-surface').forEach(surface => {
     const kind = surface.dataset.placement;
-    const slot = String(cfg.slots[kind] || '');
-    if (!/^\d+$/.test(slot)) return;
     if (kind === 'desktop_sidebar' && !window.matchMedia('(min-width:1001px)').matches) return;
     observer.observe(surface);
   });

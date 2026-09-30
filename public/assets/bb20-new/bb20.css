@@ -54,3 +54,8 @@
   .footer-grid { grid-template-columns: 1fr; gap: 1.8rem; }
   .footer-bottom { flex-direction: column; gap: .6rem; }
 }
+
+/* Ensure ad zones display reliably with clean margins */
+.ad-zone, .has-ad-intro .ad-intro, .has-ad-middle .ad-middle, .has-ad-sidebar .ad-sidebar { display: block !important; margin: 2rem 0; min-height: 100px; text-align: center; border: 1px solid var(--line); border-radius: 12px; background: #fafafa; padding: 12px; clear: both; }
+.ad-zone .ad-label { font-size: 10px; letter-spacing: 1px; color: #8c9ba5; text-transform: uppercase; margin: 0 0 8px; }
+

@@ -997,12 +997,25 @@ function renderFaqSection(poll) {
   </section>`;
 }
 
+// High-Impression Responsive AdSense Unit for Bigg Boss Pages
+export function renderAdSenseUnit(position = "mid", label = "Advertisement") {
+  return `<div class="bb-ad-wrapper bb-ad-${position}" style="margin:2rem auto;text-align:center;min-height:90px;max-width:970px;clear:both;padding:12px;background:#fbfbfa;border:1px solid #ebecee;border-radius:12px;">
+    <span style="display:block;font-size:10px;font-weight:700;letter-spacing:1.2px;color:#8c9ba5;text-transform:uppercase;margin-bottom:8px;">${label}</span>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6008816938247526"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>`;
+}
+
 // Main Poll Page Renderer
 export function renderBiggBossPollPage(poll) {
   return `
   <div class="container bb-page">
     <div class="bb-breadcrumbs">
-      <a href="/">Home</a> / <a href="/bigg-boss-20-voting/">Bigg Boss 20</a> / <span>${poll.h1}</span>
+      <a href="/">Home</a> / <a href="/bigg-boss-20-guide/">Bigg Boss 20</a> / <span>${poll.h1}</span>
     </div>
 
     ${renderPollPills(poll.slug)}
@@ -1019,17 +1032,25 @@ export function renderBiggBossPollPage(poll) {
 
     ${poll.slug === "bigg-boss-20-voting" ? renderNominationCallout() : ""}
 
+    ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
+
     ${renderDuelLinks(poll.slug)}
 
     ${renderPollCards(poll)}
+
+    ${renderAdSenseUnit("after-voting", "Advertisement")}
 
     ${poll.slug === "bigg-boss-20-voting" ? renderNominatedStrip(poll.slug) : ""}
 
     ${renderLeaderboard(poll)}
 
+    ${renderAdSenseUnit("after-leaderboard", "Advertisement")}
+
     ${renderJioCinemaGuide()}
 
     ${poll.slug !== "bigg-boss-20-voting" ? renderMissedCallTable() : ""}
+
+    ${renderAdSenseUnit("bottom", "Advertisement")}
 
     ${renderFaqSection(poll)}
   </div>
@@ -1051,6 +1072,8 @@ export function renderBiggBossContestantsPage() {
       <h1 class="bb-hero-title">Bigg Boss 20 Contestants List with Photos, Age, Bio & Missed Call Numbers</h1>
       <p class="bb-hero-lead">Complete directory of all 16 confirmed housemates entering the Bigg Boss Season 20 house. Explore verified biographies, hometowns, occupations, playing styles, and direct voting numbers.</p>
     </header>
+
+    ${renderAdSenseUnit("contestants-top", "Advertisement")}
 
     <div class="bb-contestants-wiki-grid">
       ${contestants
@@ -1087,8 +1110,10 @@ export function renderBiggBossContestantsPage() {
         .join("")}
     </div>
 
+    ${renderAdSenseUnit("contestants-mid", "Advertisement")}
     ${renderJioCinemaGuide()}
     ${renderMissedCallTable()}
+    ${renderAdSenseUnit("contestants-bottom", "Advertisement")}
   </div>
   `;
 }
@@ -1098,7 +1123,7 @@ export function renderBiggBossRulesPage() {
   return `
   <div class="container bb-page">
     <div class="bb-breadcrumbs">
-      <a href="/">Home</a> / <a href="/bigg-boss-20-voting/">Bigg Boss 20</a> / <span>Voting Rules & Timings</span>
+      <a href="/">Home</a> / <a href="/bigg-boss-20-guide/">Bigg Boss 20</a> / <span>Voting Rules & Timings</span>
     </div>
 
     ${renderPollPills("bigg-boss-20-voting-rules")}
@@ -1108,6 +1133,8 @@ export function renderBiggBossRulesPage() {
       <h1 class="bb-hero-title">Bigg Boss 20 Voting Rules, Timings & Missed Call Numbers (Official Guide)</h1>
       <p class="bb-hero-lead">Everything you need to know about the official Bigg Boss Season 20 voting schedule, JioCinema app policies, toll-free missed call mechanics, and weekend elimination criteria.</p>
     </header>
+
+    ${renderAdSenseUnit("rules-top", "Advertisement")}
 
     <div class="bb-rules-content">
       <section class="bb-rule-card">

@@ -364,8 +364,6 @@ function renderHeader(currentPath = "") {
     ["/category/technology/", "Technology"],
     ["/category/entertainment/", "Entertainment"],
     ["/business/", "All Businesses"],
-    ["/about/", "About"],
-    ["/contact-us/", "Contact Us"],
   ];
   return `<a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header"><div class="header-inner container">
@@ -456,6 +454,18 @@ function renderArticleSchema({ title, description, canonical, datePublished, dat
   return { "@context": "https://schema.org", "@type": "Article", headline: title, description: truncate(description), datePublished: datePublished || buildDate, dateModified: dateModified || buildDate, author: { "@type": "Organization", name: "VisitBest Editorial Team", url: `${origin}/about/` }, publisher: { "@type": "Organization", name: "VisitBest" }, mainEntityOfPage: { "@type": "WebPage", "@id": new URL(routePath(canonical), origin).href }, ...(image ? { image: [new URL(image.src, origin).href] } : {}) };
 }
 
+function renderAdBanner(slot = "in_content") {
+  return `<div class="ad-placement ad-${slot}" style="margin:2rem auto;text-align:center;min-height:90px;clear:both;">
+    <span class="ad-label" style="display:block;font-size:10px;letter-spacing:1px;color:#8c9ba5;text-transform:uppercase;margin-bottom:6px;">Advertisement</span>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6008816938247526"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>`;
+}
+
 function renderArticle({ slug, title, summary, html, datePublished, dateModified, category, image, canonical = urlFor(slug), type = "article" }) {
   const prepared = addHeadingIds(html);
   const description = truncate(summary || prepared.html);
@@ -465,7 +475,7 @@ function renderArticle({ slug, title, summary, html, datePublished, dateModified
   const meta = `<div class="article-meta"><span>${categoryHref ? `<a class="pill" href="${categoryHref}">${escapeHtml(category)}</a>` : ""}</span><span>Updated <strong>${escapeHtml(humanDate(dateModified || datePublished || buildDate))}</strong></span><span><strong>${readingTime(prepared.html)} min read</strong></span></div>`;
   const figure = image ? `<figure class="article-figure"><img src="${image.src}" alt="${escapeHtml(image.alt || titleText)}" loading="eager" decoding="async"><figcaption>${image.credit ? `${escapeHtml(image.credit)}${image.sourcePage ? ` · <a href="${image.sourcePage}" rel="nofollow noopener" target="_blank">Image source</a>` : ""}` : "Image used inside the guide."}</figcaption></figure>` : "";
   const related = renderRelated(relatedEntries(slug, category));
-  const body = `${breadcrumbs([{ href: categoryHref, label: category || "Guide" }, { label: titleText }])}<div class="article-layout"><article class="article-card"><p class="eyebrow">VisitBest guide</p><h1 class="article-title">${escapeHtml(titleText)}</h1><p class="article-dek">${escapeHtml(description)}</p>${meta}${figure}<div class="prose">${prepared.html}</div>${renderAuthor()}${related}</article>${renderToc(prepared.headings)}</div>`;
+  const body = `${breadcrumbs([{ href: categoryHref, label: category || "Guide" }, { label: titleText }])}<div class="article-layout"><article class="article-card"><p class="eyebrow">VisitBest guide</p><h1 class="article-title">${escapeHtml(titleText)}</h1><p class="article-dek">${escapeHtml(description)}</p>${meta}${figure}${renderAdBanner("intro")}<div class="prose">${prepared.html}</div>${renderAdBanner("outro")}${renderAuthor()}${related}</article>${renderToc(prepared.headings)}</div>`;
   return renderPage({ title: titleText, description, canonical, currentPath: canonical, body, schema: articleSchema });
 }
 
