@@ -253,6 +253,7 @@ function localizeHtml(value = "") {
     .replace(/<iframe[\s\S]*?<\/iframe>/gi, "")
     .replace(/<form[\s\S]*?<\/form>/gi, "")
     .replace(/<!--([\s\S]*?)-->/g, "")
+    .replace(/<figure class="wp-block-embed[^"]*">\s*<div class="wp-block-embed__wrapper">\s*<\/div>\s*<\/figure>/gi, "")
     .replace(/\[link\s+removed\]/gi, "the organisation's public channels")
     .replace(/\bInida\b/gi, "India");
 
