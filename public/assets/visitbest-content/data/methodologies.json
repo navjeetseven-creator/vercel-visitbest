@@ -1,0 +1,107 @@
+{
+  "universities-world": {
+    "source": "CWTS Leiden Ranking Open Edition 2025",
+    "selection": "All sciences; world; 2020–2023; fractional counting; core publications only; minimum P=1000; descending P(top 10%).",
+    "limitations": "One research-volume measure. No teaching, fees, employment or overall university rank.",
+    "checked_at": "2026-10-01",
+    "eligible_population": 1736
+  },
+  "universities-europe": {
+    "source": "CWTS Leiden Ranking Open Edition 2025",
+    "selection": "All sciences; Europe; 2020–2023; fractional counting; core publications only; minimum P=1000; descending P(top 10%).",
+    "limitations": "One research-volume measure. No teaching, fees, employment or overall university rank.",
+    "checked_at": "2026-10-01",
+    "eligible_population": 530
+  },
+  "grammar-schools-uk": {
+    "source": "https://get-information-schools.service.gov.uk/Downloads",
+    "selection": "Open, state-funded, Secondary, Selective; round-robin by local authority; alphabetical within each authority.",
+    "limitations": "England only. Numbers are not performance ranks.",
+    "checked_at": "2026-10-01",
+    "eligible_population": 163
+  },
+  "high-schools-england": {
+    "source": "https://get-information-schools.service.gov.uk/Downloads",
+    "selection": "Open, state-funded, Secondary, Non-selective; round-robin across English regions; alphabetical within each region.",
+    "limitations": "England only; no result ranking.",
+    "checked_at": "2026-10-01",
+    "eligible_population": 2538
+  },
+  "finance-schools-us": {
+    "source": "NCES IPEDS 2024 HD and C2024_A",
+    "selection": "CIP 52.0801 Finance, General; award level 5 bachelor; first major; active institution; positive completions; descending CTOTALT.",
+    "limitations": "Completion volume, not quality or employment. Broader business, accounting, economics and graduate-only programmes are excluded.",
+    "checked_at": "2026-10-01",
+    "eligible_population": 664
+  },
+  "high-schools-usa": {
+    "source": "https://nces.ed.gov/ccd/Data/zip/ccd_sch_029_2324_w_1a_073124.zip",
+    "selection": "2023–24 CCD version 1a; open/new/added/changed regular High schools offering grades 9 and 12; two per state via geographic round-robin.",
+    "limitations": "50 states only. Historical directory edition. No performance ranking.",
+    "checked_at": "2026-10-01",
+    "eligible_population": 17739
+  },
+  "private-schools-canada": {
+    "source": "CAIS directory and Ontario private-school contact list",
+    "selection": "All 97 Canadian CAIS records, then 3 non-duplicate Ontario records selected by location/alphabetical round-robin.",
+    "limitations": "Not all schools are secondary. Membership and government listing are not quality endorsement; verify diploma-credit authority.",
+    "checked_at": "2026-10-01",
+    "eligible_population": 1293
+  },
+  "high-schools-canada": {
+    "source": "CAIS directory and Ontario public-school contact list",
+    "selection": "60 Canadian CAIS records with secondary grades and 40 Ontario public secondary records; geographic round-robin.",
+    "limitations": "Public-school coverage is Ontario only. Provincial qualifications differ; no performance rank.",
+    "checked_at": "2026-10-01",
+    "eligible_population": 1422
+  },
+  "schools-australia": {
+    "source": "NSW Department of Education; Victoria school locations 2025; Queensland NSSAB register",
+    "selection": "34 NSW government secondary/central schools + 33 Victorian open secondary/combined + 33 Queensland open non-state host-centre secondary schools; geographic round-robin.",
+    "limitations": "Three states only. Sector coverage differs. No NAPLAN, ATAR or ICSEA ranking.",
+    "checked_at": "2026-10-01",
+    "eligible_population": 1399
+  },
+  "private-schools-world": {
+    "source": "GIAS England, CAIS Canada and Victoria school locations",
+    "selection": "35 English independent schools ages extending into secondary + 35 Canadian CAIS schools + 30 Victorian non-government secondary/combined schools.",
+    "limitations": "Three-country sample only. Different directory definitions; no global quality rank.",
+    "checked_at": "2026-10-01",
+    "eligible_population": null
+  },
+  "boarding-schools-world": {
+    "source": "TABS public school directory and GIAS England",
+    "selection": "35 English independent boarding records + all non-US TABS records not duplicating the English selection + US records to reach 100; geographic sampling.",
+    "limitations": "Coverage concentrated in England and USA. Directory status does not independently verify residential safety.",
+    "checked_at": "2026-10-01",
+    "eligible_population": null
+  },
+  "international-schools-world": {
+    "source": "https://www.cambridgeinternational.org/why-choose-us/find-a-cambridge-school/",
+    "selection": "Country searches; names contain International and School; listed school website; geographic round-robin. Countries: Brazil, China, France, Germany, Indonesia, Japan, Kenya, Malaysia, Mexico, Singapore, South Africa, Switzerland, Thailand, UAE, UK",
+    "limitations": "Cambridge subset and name filter only; excludes many international schools. Does not establish IB authorization, ownership, eligibility or boarding.",
+    "checked_at": "2026-10-01",
+    "eligible_population": 521
+  },
+  "international-schools-asia": {
+    "source": "https://www.cambridgeinternational.org/why-choose-us/find-a-cambridge-school/",
+    "selection": "Country searches; names contain International and School; listed school website; geographic round-robin. Countries: China, Indonesia, Japan, Malaysia, Singapore, Thailand, UAE",
+    "limitations": "Cambridge subset and name filter only; excludes many international schools. Does not establish IB authorization, ownership, eligibility or boarding.",
+    "checked_at": "2026-10-01",
+    "eligible_population": 428
+  },
+  "schools-india": {
+    "source": "https://saras.cbse.gov.in/SARAS/AffiliatedList/ListOfSchdirReport",
+    "selection": "10 state/UT queries; Senior Secondary Level; published website; 10 records per area through geographic round-robin.",
+    "limitations": "CBSE only; 10 areas; no national board-wide performance ranking. Recheck affiliation and subjects for the intended intake.",
+    "checked_at": "2026-10-01",
+    "eligible_population": 10571
+  },
+  "medical-colleges-india": {
+    "source": "NIRF 2025 Medical ranking and participant list",
+    "selection": "All 50 official ranked institutions, in published rank order; then 50 non-duplicate participants geographically sampled.",
+    "limitations": "Rows 51–100 are unranked participants, not invented ranks. Not a list of 100 verified MBBS providers; verify course and year with the competent regulator.",
+    "checked_at": "2026-10-01",
+    "eligible_population": 223
+  }
+}

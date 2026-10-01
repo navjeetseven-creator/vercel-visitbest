@@ -31,7 +31,7 @@ function fileForReference(reference, currentRoute = "/") {
   if (!raw.startsWith("/")) {
     resolved = new URL(raw, `https://visitbest.in${currentRoute}`).pathname;
   }
-  if (/\.(?:css|js|json|xml|txt|svg|png|jpe?g|gif|webp|avif|ico|woff2?)$/i.test(resolved)) return path.join(dist, resolved.replace(/^\//, ""));
+  if (/\.(?:css|js|json|xml|txt|svg|png|jpe?g|gif|webp|avif|ico|woff2?|html|csv)$/i.test(resolved)) return path.join(dist, resolved.replace(/^\//, ""));
   return path.join(dist, resolved.replace(/^\/+|\/+$/g, ""), "index.html");
 }
 

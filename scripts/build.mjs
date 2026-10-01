@@ -115,7 +115,7 @@ function jsonLd(value) {
   return JSON.stringify(value).replaceAll("<", "\\u003c");
 }
 
-const [posts, pages, business, media, categories, tags, businessCategories, businessLocations, legacyPages, assetQueue, editorialImages] = await Promise.all([
+const [posts, pages, business, media, categories, tags, businessCategories, businessLocations, legacyPages, assetQueue, editorialImages, contentPackManifest] = await Promise.all([
   readJson("content/source/posts.json", []),
   readJson("content/source/pages.json", []),
   readJson("content/source/business.json", []),
@@ -127,6 +127,7 @@ const [posts, pages, business, media, categories, tags, businessCategories, busi
   readJson("content/legacy-pages.json", []),
   readJson("content/source/asset-queue.json", []),
   readJson("content/editorial-images.json", []),
+  readJson("content/content-pack-manifest.json", { pages: [] }),
 ]);
 
 const mediaById = new Map(media.map((item) => [String(item.id), item]));
@@ -177,6 +178,9 @@ for (const item of calculatorPages) addRoute(urlFor(item.slug), { title: item.ti
 for (const item of bbPolls) addRoute(urlFor(item.slug), { title: item.title, type: "poll" });
 addRoute(urlFor("bigg-boss-20-contestants"), { title: "Bigg Boss 20 Contestants List with Photos, Age, Bio & Missed Call Numbers", type: "page" });
 addRoute(urlFor("bigg-boss-20-voting-rules"), { title: "Bigg Boss 20 Voting Rules, Timings & Missed Call Numbers", type: "page" });
+for (const p of contentPackManifest.pages || []) {
+  addRoute(p.path, { title: p.title, type: p.kind, dateModified: "2026-10-01" });
+}
 
 for (let page = 1; page <= 72; page += 1) addRoute(page === 1 ? "/business/" : `/business/page/${page}/`, { title: `Business directory page ${page}`, type: "archive" });
 for (const item of categories) {
@@ -361,6 +365,7 @@ function renderHeader(currentPath = "") {
     ["/bigg-boss-20-guide/", "Bigg Boss 20"],
     ["/bigg-boss-20-voting/", "BB20 Voting"],
     ["/bigg-boss-20-web-stories/", "Web Stories"],
+    ["/education/", "Education"],
     ["/category/technology/", "Technology"],
     ["/category/entertainment/", "Entertainment"],
     ["/business/", "All Businesses"],
@@ -408,8 +413,12 @@ function renderFooter() {
     <div>
       <h2>Explore &amp; Contact</h2>
       <ul class="footer-links">
+        <li><a href="/education/">Education Guides Hub</a></li>
+        <li><a href="/education/schools/">Top Schools Worldwide</a></li>
+        <li><a href="/education/universities/">Top Universities</a></li>
+        <li><a href="/education/medical-colleges/">Medical Colleges (NIRF)</a></li>
         <li><a href="/business/">Business Directory (700+)</a></li>
-        <li><a href="/cgpa-to-percentage-calculator/">CGPA to % Calculator</a></li>
+        <li><a href="/wam-to-gpa-calculator/">WAM to GPA Calculator</a></li>
         <li><a href="/search/">Search All Guides</a></li>
         <li><a href="/assets/bb20-new/image-credits.html">Image Credits</a></li>
         <li><a href="mailto:visitbest10@gmail.com">visitbest10@gmail.com</a></li>
@@ -551,7 +560,7 @@ function renderSearch() {
 
 function renderRedirect(target, title = "VisitBest") {
   const targetPath = routePath(target);
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(title)} moved to its current VisitBest page."><meta http-equiv="refresh" content="0;url=${targetPath}"><link rel="canonical" href="${new URL(targetPath, origin).href}"><script>location.replace(${JSON.stringify(targetPath)});</script></head><body><p>This VisitBest address moved to <a href="${targetPath}">${escapeHtml(title)}</a>.</p></body></html>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(title)} moved to its current VisitBest page."><meta http-equiv="refresh" content="0;url=${targetPath}"><link rel="canonical" href="${new URL(targetPath, origin).href}"><script>location.replace(${JSON.stringify(targetPath)});</script></head><body><h1>${escapeHtml(title)}</h1><p>This VisitBest address moved to <a href="${targetPath}">${escapeHtml(title)}</a>.</p></body></html>`;
 }
 
 async function writeRoute(route, html) {
@@ -584,6 +593,7 @@ for (const page of pages) {
 }
 
 for (const entry of legacyPages) {
+  if (entry.slug === "construction-companies-in-chandigarh" || entry.slug === "construction-companies-in-hyderabad") continue;
   await writeRoute(urlFor(entry.slug), renderArticle({ slug: entry.slug, title: entry.title, summary: entry.summary, html: renderLegacyHtml(entry), datePublished: buildDate, dateModified: buildDate, category: entry.category === "Site" ? null : entry.category, image: editorialImage(entry.imageCluster), type: entry.type === "policy" ? "page" : "article" }));
 }
 
@@ -700,6 +710,7 @@ await writeRoute(urlFor("bigg-boss-20-voting-rules"), renderPage({
 
 await writeRoute("/search/", renderSearch());
 await writeRoute("/author/admin/", renderRedirect("/about/", "VisitBest Editorial Team"));
+await writeRoute("/cgpa-to-percentage-calculator/", renderRedirect("/wam-to-gpa-calculator/", "WAM to GPA Calculator"));
 
 const searchIndex = [
   ...posts.map((item) => ({ title: decodeEntities(item.title?.rendered), summary: truncate(item.excerpt?.rendered || item.content?.rendered), href: urlFor(item.slug), category: taxonomyLabel(item)[0] || "Guide" })),
@@ -709,6 +720,12 @@ const searchIndex = [
   ...bbPolls.map((item) => ({ title: item.h1, summary: item.metaDesc, href: urlFor(item.slug), category: "Bigg Boss 20" })),
   { title: "Bigg Boss 20 Contestants List with Photos & Bio", summary: "Complete list of all 16 Bigg Boss Season 20 contestants with photos and missed call numbers.", href: urlFor("bigg-boss-20-contestants"), category: "Bigg Boss 20" },
   { title: "Bigg Boss 20 Voting Rules & Timings", summary: "Official guide on how to vote for Bigg Boss 20 on JioCinema and missed call numbers.", href: urlFor("bigg-boss-20-voting-rules"), category: "Bigg Boss 20" },
+  ...(contentPackManifest.pages || []).map((p) => ({
+    title: p.title,
+    summary: p.kind === "article" ? `${p.title} research guide and dataset.` : `${p.title} directory hub.`,
+    href: p.path,
+    category: p.path.startsWith("/construction-companies") ? "Construction" : "Education",
+  })),
 ];
 await fs.writeFile(path.join(distDir, "search-index.json"), `${JSON.stringify(searchIndex)}\n`);
 
