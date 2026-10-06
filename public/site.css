@@ -42,11 +42,14 @@ button, .button { cursor: pointer; }
 .header-search { display: flex; align-items: center; gap: .4rem; margin-left: auto; flex-shrink: 0; }
 .header-search input { width: 145px; border: 1px solid var(--line); background: #fff; border-radius: 9px; padding: .52rem .7rem; color: var(--ink); outline: none; font-size: .84rem; transition: border-color .2s ease, box-shadow .2s ease; }
 .header-search input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(199,96,39,.12); }
-.button { display: inline-flex; align-items: center; justify-content: center; gap: .45rem; border: 1px solid transparent; border-radius: 9px; padding: .55rem .9rem; font-weight: 800; font-size: .85rem; transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease; cursor: pointer; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: .45rem; border: 1px solid transparent; border-radius: 9px; padding: .65rem 1.15rem; font-weight: 800; font-size: .88rem; transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease; cursor: pointer; text-decoration: none !important; }
 .button:hover { transform: translateY(-2px); box-shadow: 0 9px 20px rgba(36,51,79,.14); }
-.button-primary { background: var(--accent); color: #fff; }
-.button-primary:hover { background: var(--accent-dark); color: #fff; }
-.button-quiet { background: #fff; color: var(--ink); border-color: var(--line); }
+.button-primary { background: #c76027 !important; color: #ffffff !important; border-color: #b0501d !important; text-shadow: 0 1px 2px rgba(0,0,0,.2); }
+.button-primary:hover { background: #9d4319 !important; color: #ffffff !important; }
+.button-quiet { background: #ffffff !important; color: #17253e !important; border-color: #c4c9d1 !important; }
+.button-quiet:hover { background: #fdf5ef !important; color: #9d4319 !important; border-color: #c76027 !important; }
+.prose .button-primary { color: #ffffff !important; text-decoration: none !important; }
+.prose .button-quiet { color: #17253e !important; text-decoration: none !important; }
 .menu-toggle { display: none; margin-left: auto; border: 1px solid var(--line); border-radius: 9px; background: #fff; color: var(--ink); padding: .5rem .7rem; font-weight: 700; cursor: pointer; }
 
 .container { width: min(var(--max), calc(100% - 2rem)); margin: 0 auto; }

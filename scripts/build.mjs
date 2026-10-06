@@ -179,6 +179,9 @@ for (const item of bbPolls) addRoute(urlFor(item.slug), { title: item.title, typ
 addRoute(urlFor("bigg-boss-20-contestants"), { title: "Bigg Boss 20 Contestants List with Photos, Age, Bio & Missed Call Numbers", type: "page" });
 addRoute(urlFor("bigg-boss-20-voting-rules"), { title: "Bigg Boss 20 Voting Rules, Timings & Missed Call Numbers", type: "page" });
 addRoute(urlFor("hottest-chinese-actors"), { title: "Hottest Chinese Actors in 2026: Top 25 Most Attractive & Popular C-Drama Stars", type: "article", dateModified: "2026-10-06" });
+addRoute(urlFor("lizards-species"), { title: "Lizard Species: Complete Guide to Types, Names, Pictures, Habitats & Identification", type: "article", dateModified: "2026-10-06" });
+addRoute(urlFor("most-beautiful-bollywood-actresses"), { title: "Most Beautiful Bollywood Actresses: Top 30 Indian Stars Ranked", type: "article", dateModified: "2026-10-06" });
+addRoute(urlFor("best-cricket-bat-in-india"), { title: "Best Cricket Bat in India: Top Picks for Every Budget & Player in 2026", type: "article", dateModified: "2026-10-06" });
 for (const p of contentPackManifest.pages || []) {
   addRoute(p.path, { title: p.title, type: p.kind, dateModified: "2026-10-01" });
 }
@@ -595,7 +598,14 @@ for (const page of pages) {
 }
 
 for (const entry of legacyPages) {
-  if (entry.slug === "construction-companies-in-chandigarh" || entry.slug === "construction-companies-in-hyderabad" || entry.slug === "hottest-chinese-actors") continue;
+  if (
+    entry.slug === "construction-companies-in-chandigarh" ||
+    entry.slug === "construction-companies-in-hyderabad" ||
+    entry.slug === "hottest-chinese-actors" ||
+    entry.slug === "lizards-species" ||
+    entry.slug === "most-beautiful-bollywood-actresses" ||
+    entry.slug === "best-cricket-bat-in-india"
+  ) continue;
   await writeRoute(urlFor(entry.slug), renderArticle({ slug: entry.slug, title: entry.title, summary: entry.summary, html: renderLegacyHtml(entry), datePublished: buildDate, dateModified: buildDate, category: entry.category === "Site" ? null : entry.category, image: editorialImage(entry.imageCluster), type: entry.type === "policy" ? "page" : "article" }));
 }
 
