@@ -182,6 +182,8 @@ addRoute(urlFor("hottest-chinese-actors"), { title: "Hottest Chinese Actors in 2
 addRoute(urlFor("lizards-species"), { title: "Lizard Species: Complete Guide to Types, Names, Pictures, Habitats & Identification", type: "article", dateModified: "2026-10-06" });
 addRoute(urlFor("most-beautiful-bollywood-actresses"), { title: "Most Beautiful Bollywood Actresses: Top 30 Indian Stars Ranked", type: "article", dateModified: "2026-10-06" });
 addRoute(urlFor("best-cricket-bat-in-india"), { title: "Best Cricket Bat in India: Top Picks for Every Budget & Player in 2026", type: "article", dateModified: "2026-10-06" });
+addRoute(urlFor("best-sites-to-watch-anime"), { title: "Best Sites to Watch Anime in India 2026: Free & Legal Anime Sites", type: "article", dateModified: "2026-10-06" });
+addRoute(urlFor("beautiful-young-hollywood-actresses"), { title: "30 Most Beautiful Young Hollywood Actresses in 2026: Rising Stars Ranked", type: "article", dateModified: "2026-10-06" });
 for (const p of contentPackManifest.pages || []) {
   addRoute(p.path, { title: p.title, type: p.kind, dateModified: "2026-10-01" });
 }
@@ -604,7 +606,9 @@ for (const entry of legacyPages) {
     entry.slug === "hottest-chinese-actors" ||
     entry.slug === "lizards-species" ||
     entry.slug === "most-beautiful-bollywood-actresses" ||
-    entry.slug === "best-cricket-bat-in-india"
+    entry.slug === "best-cricket-bat-in-india" ||
+    entry.slug === "best-sites-to-watch-anime" ||
+    entry.slug === "beautiful-young-hollywood-actresses"
   ) continue;
   await writeRoute(urlFor(entry.slug), renderArticle({ slug: entry.slug, title: entry.title, summary: entry.summary, html: renderLegacyHtml(entry), datePublished: buildDate, dateModified: buildDate, category: entry.category === "Site" ? null : entry.category, image: editorialImage(entry.imageCluster), type: entry.type === "policy" ? "page" : "article" }));
 }

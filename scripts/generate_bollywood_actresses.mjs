@@ -304,7 +304,7 @@ const schema = {
         "@type": "WebPage",
         "@id": "https://visitbest.in/most-beautiful-bollywood-actresses/"
       },
-      "image": ["https://visitbest.in/assets/editorial/editorial-fallback.svg"],
+      "image": ["https://visitbest.in/assets/most-beautiful-bollywood-actresses/hero.jpg"],
       "datePublished": "2026-09-09",
       "dateModified": "2026-10-06",
       "description": "Discover the most beautiful Bollywood actresses in 2026, ranked for beauty, style, screen presence and popularity, with biographies, movies, awards and facts."
@@ -353,8 +353,8 @@ const fullHtml = `<!doctype html>
   <meta property="og:description" content="Discover the most beautiful Bollywood actresses in 2026, ranked for beauty, style, screen presence and popularity, with biographies, movies, awards and facts.">
   <meta property="og:url" content="https://visitbest.in/most-beautiful-bollywood-actresses/">
   <meta name="twitter:card" content="summary">
-  <meta property="og:image" content="https://visitbest.in/assets/editorial/editorial-fallback.svg">
-  <meta name="twitter:image" content="https://visitbest.in/assets/editorial/editorial-fallback.svg">
+  <meta property="og:image" content="https://visitbest.in/assets/most-beautiful-bollywood-actresses/hero.jpg">
+  <meta name="twitter:image" content="https://visitbest.in/assets/most-beautiful-bollywood-actresses/hero.jpg">
   <link rel="stylesheet" href="/site.css">
   <script type="application/ld+json">${JSON.stringify(schema)}</script>
 </head>
@@ -380,7 +380,7 @@ const fullHtml = `<!doctype html>
           <span><strong>15 min read</strong></span>
         </div>
         <figure class="article-figure">
-          <img src="/assets/editorial/editorial-fallback.svg" alt="Illustration representing Indian cinema and Bollywood beauty" loading="eager" decoding="async">
+          <img src="/assets/most-beautiful-bollywood-actresses/hero.jpg" alt="Illustration representing Indian cinema and Bollywood beauty" loading="eager" decoding="async">
           <figcaption>VisitBest editorial illustration • Bollywood &amp; Indian Cinema Spotlight</figcaption>
         </figure>
 
@@ -441,7 +441,7 @@ const fullHtml = `<!doctype html>
             </article>
             <article class="card">
               <a href="/best-hindi-comedy-movies/">
-                <div class="card-media"><img src="/assets/editorial/editorial-fallback.svg" alt="Hindi comedy movies" loading="lazy" decoding="async"></div>
+                <div class="card-media"><img src="/assets/most-beautiful-bollywood-actresses/hero.jpg" alt="Hindi comedy movies" loading="lazy" decoding="async"></div>
                 <div class="card-body">
                   <div class="card-meta"><span class="tag">Entertainment</span><span>9 September 2026</span></div>
                   <h3>Best Hindi Comedy Movies: Classics &amp; Modern Favourites</h3>

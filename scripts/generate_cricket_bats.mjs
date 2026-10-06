@@ -180,11 +180,11 @@ const fullHtml = `<!doctype html>
   <meta property="og:title" content="Best Cricket Bat in India: Top Picks for Every Budget &amp; Player in 2026">
   <meta property="og:description" content="Explore India's best cricket bats tested for balance, power, and durability. Detailed analysis of SG, SS, MRF, GM, and Kashmir willow options for all levels.">
   <meta property="og:url" content="https://visitbest.in/best-cricket-bat-in-india/">
-  <meta property="og:image" content="https://visitbest.in/assets/mirror/fa49fb4e7374-fitness.png">
+  <meta property="og:image" content="https://visitbest.in/assets/best-cricket-bat-in-india/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Best Cricket Bat in India: Top Picks for Every Budget &amp; Player in 2026">
   <meta name="twitter:description" content="Explore India's best cricket bats tested for balance, power, and durability. Detailed analysis of SG, SS, MRF, GM, and Kashmir willow options for all levels.">
-  <meta name="twitter:image" content="https://visitbest.in/assets/mirror/fa49fb4e7374-fitness.png">
+  <meta name="twitter:image" content="https://visitbest.in/assets/best-cricket-bat-in-india/hero.jpg">
   <link rel="stylesheet" href="/site.css">
   <script type="application/ld+json">
   {
@@ -256,7 +256,7 @@ const fullHtml = `<!doctype html>
           </div>
 
           <figure class="article-figure">
-            <img src="/assets/mirror/fa49fb4e7374-fitness.png" alt="Best Cricket Bats in India Comparison Guide 2026" style="width:100%;height:auto;max-height:460px;object-fit:cover;border-radius:12px;">
+            <img src="/assets/best-cricket-bat-in-india/hero.jpg" alt="Best Cricket Bats in India Comparison Guide 2026" style="width:100%;height:auto;max-height:460px;object-fit:cover;border-radius:12px;">
             <figcaption>From Meerut's legendary handcrafted clefts to precision CNC profiles: picking the right cricket bat for Indian pitches.</figcaption>
           </figure>
 
