@@ -178,6 +178,7 @@ for (const item of calculatorPages) addRoute(urlFor(item.slug), { title: item.ti
 for (const item of bbPolls) addRoute(urlFor(item.slug), { title: item.title, type: "poll" });
 addRoute(urlFor("bigg-boss-20-contestants"), { title: "Bigg Boss 20 Contestants List with Photos, Age, Bio & Missed Call Numbers", type: "page" });
 addRoute(urlFor("bigg-boss-20-voting-rules"), { title: "Bigg Boss 20 Voting Rules, Timings & Missed Call Numbers", type: "page" });
+addRoute(urlFor("hottest-chinese-actors"), { title: "Hottest Chinese Actors in 2026: Top 25 Most Attractive & Popular C-Drama Stars", type: "article", dateModified: "2026-10-06" });
 for (const p of contentPackManifest.pages || []) {
   addRoute(p.path, { title: p.title, type: p.kind, dateModified: "2026-10-01" });
 }
@@ -594,7 +595,7 @@ for (const page of pages) {
 }
 
 for (const entry of legacyPages) {
-  if (entry.slug === "construction-companies-in-chandigarh" || entry.slug === "construction-companies-in-hyderabad") continue;
+  if (entry.slug === "construction-companies-in-chandigarh" || entry.slug === "construction-companies-in-hyderabad" || entry.slug === "hottest-chinese-actors") continue;
   await writeRoute(urlFor(entry.slug), renderArticle({ slug: entry.slug, title: entry.title, summary: entry.summary, html: renderLegacyHtml(entry), datePublished: buildDate, dateModified: buildDate, category: entry.category === "Site" ? null : entry.category, image: editorialImage(entry.imageCluster), type: entry.type === "policy" ? "page" : "article" }));
 }
 
@@ -715,7 +716,8 @@ await writeRoute("/cgpa-to-percentage-calculator/", renderRedirect("/wam-to-gpa-
 
 const searchIndex = [
   ...posts.map((item) => ({ title: decodeEntities(item.title?.rendered), summary: truncate(item.excerpt?.rendered || item.content?.rendered), href: urlFor(item.slug), category: taxonomyLabel(item)[0] || "Guide" })),
-  ...legacyPages.map((item) => ({ title: item.title, summary: item.summary, href: urlFor(item.slug), category: item.category })),
+  ...legacyPages.filter((item) => item.slug !== "hottest-chinese-actors").map((item) => ({ title: item.title, summary: item.summary, href: urlFor(item.slug), category: item.category })),
+  { title: "Hottest Chinese Actors in 2026: Top 25 Most Attractive & Popular C-Drama Stars", summary: "Discover the hottest Chinese actors of 2026, ranked by popularity, charisma, style, screen presence and fan appeal. Complete profiles for 25 stars.", href: urlFor("hottest-chinese-actors"), category: "Entertainment" },
   ...business.map((item) => ({ title: decodeEntities(item.title?.rendered), summary: truncate(item.excerpt?.rendered || item.content?.rendered), href: urlFor(item.slug, "/business"), category: taxonomyLabel(item, "business_category")[0] || "Business" })),
   ...calculatorPages.map((item) => ({ title: item.title, summary: item.meta, href: urlFor(item.slug), category: "Calculator" })),
   ...bbPolls.map((item) => ({ title: item.h1, summary: item.metaDesc, href: urlFor(item.slug), category: "Bigg Boss 20" })),
