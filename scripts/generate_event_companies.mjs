@@ -69,7 +69,7 @@ const companies = [
     phone: "+91 22 2490 2070",
     email: "info@seventyemg.com",
     address: "Famous Cine Labs, 20 Dr E Moses Road, Mahalakshmi, Mumbai 400011",
-    website: "https://seventyemg.com",
+    website: "https://www.seventyemg.com",
     verificationStatus: "Verified Official Website & Active Operations",
     bestFor: "Automotive experiential launches, major outdoor lifestyle festivals, and bespoke luxury brand productions",
     bio: "Headed by Thanush Joseph and Martin da Costa, 70 EMG is internationally recognized for its peerless design aesthetics and technical production. Creators of India Bike Week—Asia's largest motorcycle festival—70 EMG has designed multi-city experiential showcases for premier luxury brands including Cartier, Christian Dior, Rolls-Royce, and BMW.",
@@ -237,7 +237,7 @@ const companies = [
     phone: "+91 11 4172 9000",
     email: "info@vibgyornet.com",
     address: "C-14, DDA Sheds, Okhla Industrial Area Phase-1, New Delhi 110020",
-    website: "https://www.vibgyornet.com",
+    website: "https://www.vibgyor.in",
     verificationStatus: "Verified Official Website & Active Industry Standing",
     bestFor: "Simultaneous pan-India brand activations, retail roadshows, and consumer product sampling campaigns",
     bio: "Over two decades, Vibgyor Brand Experiences has executed over 10,000 activations across 300+ Indian cities and towns. Renowned for their operational discipline and technological integration (RFID, AR/VR booths), Vibgyor is a trusted partner for FMCG, telecom, and consumer tech brands needing nationwide reach.",
@@ -315,9 +315,9 @@ const companies = [
     bio: "Operating across Delhi NCR for two decades, Showmakerz Event Management focuses on corporate celebrations, rewards & recognition galas, and festive employee gatherings. With an in-house inventory of sound, trussing, LED walls, and set design elements, Showmakerz offers cost-effective, dependable corporate event delivery.",
     strengths: "Competitive pricing; extensive in-house production gear reducing third-party rental costs; dependable Delhi NCR vendor relationships.",
     considerations: "Primarily regional execution footprint centered around North India.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/showmakerz-lead.webp",
-    leadVisualAlt: "Corporate conference stage production by Showmakerz",
-    caption: "Official Portfolio Photograph: Corporate annual award stage setup and technical AV production by Showmakerz",
+    leadVisual: "/assets/event-management-companies-in-india/companies/showmakerz-portfolio.jpg",
+    leadVisualAlt: "Showmakerz Event Management live corporate gala, Ultratech stage and 50th celebration showcase",
+    caption: "Official Portfolio Showcase: Live corporate annual conferences, brand reveals (UltraTech, BT Insignia), and anniversary celebrations by Showmakerz",
     secondaryPhoto: "/assets/event-management-companies-in-india/companies/showmakerz-dossier.png"
   },
   {
@@ -418,26 +418,26 @@ const companies = [
   },
   {
     rank: 18,
-    name: "Shadows Entertainment",
-    slug: "shadows",
-    hq: "Jaipur, Rajasthan",
-    branchCities: "Udaipur, Jodhpur, Delhi NCR",
-    established: "2006",
-    category: "Royal Heritage Weddings & Rajasthan Cultural Events",
-    keyServices: "Heritage Fort Weddings, Rajasthani Folk Entertainment Curation, Thematic Mandaps, Royal Processions (Baraat)",
-    pricing: "Custom Quote by Destination & Venue",
-    phone: "+91 98290 55561",
-    email: "info@shadows.co.in",
-    address: "C-Scheme, Jaipur 302001, Rajasthan",
-    website: "https://www.shadows.co.in",
-    verificationStatus: "Verified Official Website & Rajasthan Operations",
-    bestFor: "Heritage fort and palace weddings across Jaipur, Jodhpur, and Samode; authentic cultural artist management",
-    bio: "Based in Jaipur, Shadows Entertainment is an expert in Royal Rajasthan destination weddings and traditional event productions. Handling everything from heritage fort illuminations to authentic folk troupe curations, Shadows brings Rajasthan's regal grandeur to life for domestic and international couples.",
-    strengths: "Unrivaled local relationships with Rajasthan heritage venue properties and local artisan decorators.",
-    considerations: "Primarily regional destination specialist in North & West India.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/shadows-dossier.png",
-    leadVisualAlt: "Shadows Entertainment verified heritage royal wedding and Rajasthan cultural dossier",
-    caption: "Official Verified Dossier: Shadows Entertainment (Jaipur Heritage Fort Weddings & Royal Folk Curation)",
+    name: "The Wedding Design Company (WDC)",
+    slug: "wdc",
+    hq: "New Delhi, Delhi NCR",
+    branchCities: "Pan-India, Europe, Middle East",
+    established: "1989",
+    category: "Bespoke Royal Weddings & Luxury Experiences",
+    keyServices: "High-Profile Destination Weddings, Heritage Palaces, Experiential Hospitality, Architectural Set Design",
+    pricing: "Custom Luxury Retainer & Management Fee",
+    phone: "+91 11 4165 9900",
+    email: "info@wdcindia.com",
+    address: "B-27, Nizamuddin West, New Delhi 110013",
+    website: "https://www.wdcindia.com",
+    verificationStatus: "Verified Official Website & Operating Corporate Entity",
+    bestFor: "Iconic high-net-worth destination weddings, bespoke palace transformations, and royal celebrations",
+    bio: "Founded by industry luminary Vandana Mohan in 1989 (initially Backstage Productions), The Wedding Design Company (WDC) is internationally acclaimed for pioneering couture event design and ultra-luxury wedding production in India and overseas. Renowned for curating DeepVeer's (Ranveer Singh & Deepika Padukone) iconic Lake Como wedding, WDC translates grand architectural concepts into breathtaking realities across European villas and Indian royal heritage palaces.",
+    strengths: "Peerless couture aesthetics; 35-year institutional reputation in ultra-luxury design; world-class European and palace logistics.",
+    considerations: "Exclusively caters to luxury and high-net-worth destination celebrations with strict bespoke project limits.",
+    leadVisual: "/assets/event-management-companies-in-india/companies/wdc-dossier.png",
+    leadVisualAlt: "The Wedding Design Company verified luxury wedding and royal palace dossier",
+    caption: "Official Verified Dossier: The Wedding Design Company (Founded by Vandana Mohan • Lake Como & Royal Heritage Celebrations)",
     secondaryPhoto: null
   },
   {
@@ -749,7 +749,7 @@ const fullHtml = `<!doctype html>
             <div style="display:flex;flex-direction:column;gap:1.25rem;">
               <div style="display:flex;align-items:flex-start;gap:1rem;">
                 <span style="background:#0f172a;color:#fff;font-weight:800;font-size:0.85rem;padding:4px 10px;border-radius:6px;white-space:nowrap;">1980s: The Pioneers</span>
-                <p style="margin:0;font-size:0.9rem;color:#333;"><strong>Percept Limited (1984)</strong> and <strong>Wizcraft International (1989)</strong> establish organized entertainment management, concert logistics, and national brand activations in India.</p>
+                <p style="margin:0;font-size:0.9rem;color:#333;"><strong>Percept Limited (1984)</strong>, <strong>Wizcraft International (1989)</strong>, and <strong>The Wedding Design Company (1989)</strong> establish organized entertainment management, concert logistics, and couture wedding production in India.</p>
               </div>
               <div style="display:flex;align-items:flex-start;gap:1rem;">
                 <span style="background:#c76027;color:#fff;font-weight:800;font-size:0.85rem;padding:4px 10px;border-radius:6px;white-space:nowrap;">1990s: Scale &amp; MICE</span>
@@ -757,7 +757,7 @@ const fullHtml = `<!doctype html>
               </div>
               <div style="display:flex;align-items:flex-start;gap:1rem;">
                 <span style="background:#0d9488;color:#fff;font-weight:800;font-size:0.85rem;padding:4px 10px;border-radius:6px;white-space:nowrap;">2000s: Specialized Verticals</span>
-                <p style="margin:0;font-size:0.9rem;color:#333;"><strong>70 EMG (2000)</strong>, <strong>ICE India (2001)</strong>, <strong>Vibgyor (2002)</strong>, <strong>Platinum World (2002)</strong>, <strong>Showmakerz (2005)</strong>, <strong>Pegasus (2005)</strong>, <strong>Shadows (2006)</strong>, <strong>Craftworld (2008)</strong>, and <strong>Marry Me (2009)</strong> pioneer niche specializations in medical congresses, retail activations, and heritage weddings.</p>
+                <p style="margin:0;font-size:0.9rem;color:#333;"><strong>70 EMG (2000)</strong>, <strong>ICE India (2001)</strong>, <strong>Vibgyor (2002)</strong>, <strong>Platinum World (2002)</strong>, <strong>Showmakerz (2005)</strong>, <strong>Pegasus (2005)</strong>, <strong>Craftworld (2008)</strong>, and <strong>Marry Me (2009)</strong> pioneer niche specializations in medical congresses, retail activations, and coastal destination celebrations.</p>
               </div>
               <div style="display:flex;align-items:flex-start;gap:1rem;">
                 <span style="background:#ea580c;color:#fff;font-weight:800;font-size:0.85rem;padding:4px 10px;border-radius:6px;white-space:nowrap;">2010s–Present: Boutique Tech &amp; Luxury</span>
@@ -881,7 +881,7 @@ const fullHtml = `<!doctype html>
 
           <figure style="margin:1.5rem 0;">
             <img src="/assets/event-management-companies-in-india/visuals/geographic-coverage.png" alt="Pan-India Geographic Distribution of Top 20 Event Management Hubs" width="900" height="600" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:10px;border:1px solid #e2ddd3;box-shadow:0 4px 12px rgba(0,0,0,0.05);display:block;">
-            <figcaption style="font-size:0.85rem;color:#666;margin-top:6px;text-align:center;">Figure 5: Geographic Distribution Map — Audited headquarters and primary operational hubs: Mumbai (9), Delhi NCR (5), Rajasthan (2), Bengaluru (1), Ahmedabad (1).</figcaption>
+            <figcaption style="font-size:0.85rem;color:#666;margin-top:6px;text-align:center;">Figure 5: Geographic Distribution Map — Audited headquarters and primary operational hubs: Mumbai (9), Delhi NCR (6), Rajasthan (1), Bengaluru (1), Ahmedabad (1).</figcaption>
           </figure>
 
           <ul style="line-height:1.8;padding-left:1.25rem;">

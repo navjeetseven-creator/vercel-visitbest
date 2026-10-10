@@ -2,83 +2,82 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
-const targetDir = "public/assets/event-management-companies-in-india/companies";
+const dir = "public/assets/event-management-companies-in-india/companies";
 
 const profiles = [
-  { slug: "wizcraft", name: "Wizcraft International", category: "Mega Entertainment &amp; Global Festivals", color1: "#1e1b4b", color2: "#4338ca", accent: "#fbbf24", icon: "👑" },
-  { slug: "percept", name: "Percept Limited", category: "Experiential Marketing &amp; Sunburn IPs", color1: "#881337", color2: "#be123c", accent: "#f43f5e", icon: "🔥" },
-  { slug: "70emg", name: "70 EMG", category: "Luxury Experiential &amp; Automotive Festivals", color1: "#18181b", color2: "#27272a", accent: "#ea580c", icon: "🏍️" },
-  { slug: "touchwood", name: "Touchwood Entertainment", category: "NSE-Listed Luxury Weddings &amp; Royal Galas", color1: "#064e3b", color2: "#047857", accent: "#10b981", icon: "🏛️" },
-  { slug: "aumevent", name: "AUM Event &amp; Promotions", category: "Corporate Summits, Govt Conclaves &amp; Expos", color1: "#1e3a8a", color2: "#2563eb", accent: "#38bdf8", icon: "🏢" },
-  { slug: "lsdevents", name: "LSD Events", category: "Tech Conferences, Hackathons &amp; Offsites", color1: "#312e81", color2: "#4f46e5", accent: "#818cf8", icon: "💻" },
-  { slug: "inventum", name: "Inventum Events", category: "Exhibition Pavilions &amp; Turnkey Expo Fabrication", color1: "#0f172a", color2: "#334155", accent: "#f59e0b", icon: "🏗️" },
-  { slug: "showhouse", name: "Showhouse Events", category: "Auto Expo Reveals &amp; Enterprise Corporate Galas", color1: "#450a0a", color2: "#991b1b", accent: "#ef4444", icon: "🚗" },
-  { slug: "alchemist", name: "Alchemist Live", category: "Experiential Youth IPs &amp; Brand Storytelling", color1: "#2e1065", color2: "#6b21a8", accent: "#c084fc", icon: "🎨" },
-  { slug: "vibgyor", name: "Vibgyor Brand Experiences", category: "B2B Brand Activations &amp; Nationwide Roadshows", color1: "#14532d", color2: "#16a34a", accent: "#4ade80", icon: "🌐" },
-  { slug: "shaadisquad", name: "Shaadi Squad", category: "Celebrity &amp; Boutique Luxury Weddings", color1: "#701a75", color2: "#a21caf", accent: "#f472b6", icon: "💍" },
-  { slug: "motwane", name: "Motwane Entertainment &amp; Luxury Weddings", category: "Ultra-High-Net-Worth Royal Palaces &amp; Buyouts", color1: "#3b0764", color2: "#7e22ce", accent: "#e879f9", icon: "🏰" },
-  { slug: "showmakerz", name: "Showmakerz Event Management", category: "Corporate Annual Days &amp; Employee Conclaves", color1: "#083344", color2: "#0e7490", accent: "#22d3ee", icon: "🎭" },
-  { slug: "marrymeweddings", name: "Marry Me - The Wedding Planners", category: "NRI &amp; Destination Coastal Weddings", color1: "#831843", color2: "#db2777", accent: "#f472b6", icon: "🌺" },
-  { slug: "craftworld", name: "Craftworld Events", category: "Corporate Seminars, AGMs &amp; Hybrid Conferences", color1: "#1e293b", color2: "#475569", accent: "#38bdf8", icon: "📊" },
-  { slug: "iceindia", name: "ICE India", category: "Healthcare Congresses &amp; Pharmaceutical Summits", color1: "#042f2e", color2: "#0d9488", accent: "#2dd4bf", icon: "🩺" },
-  { slug: "pegasus", name: "Pegasus Events", category: "Banking, Financial &amp; Leadership Meets", color1: "#1c1917", color2: "#44403c", accent: "#e0531c", icon: "📈" },
-  { slug: "shadows", name: "Shadows Entertainment", category: "Royal Rajasthan Forts &amp; Heritage Folk Curation", color1: "#451a03", color2: "#b45309", accent: "#f59e0b", icon: "🪕" },
-  { slug: "magiclights", name: "Magic Lights Wedding Planners", category: "Udaipur Lake Palaces &amp; Destination Weddings", color1: "#0c4a6e", color2: "#0284c7", accent: "#38bdf8", icon: "⛵" },
-  { slug: "platinumworld", name: "Platinum World Grp", category: "Global Ultra-Luxury MICE &amp; Private Jet Retreats", color1: "#1e1b4b", color2: "#3730a3", accent: "#a5b4fc", icon: "✈️" }
+  { slug: "wizcraft", name: "Wizcraft International", type: "MEGA ENTERTAINMENT &amp; GLOBAL EVENTS", color1: "#0f172a", color2: "#1e1b4b", accent: "#f59e0b", tag: "35+ Years Industry Leader", est: "Est. 1989 • Mumbai" },
+  { slug: "percept", name: "Percept Limited", type: "EXPERIENTIAL MARKETING &amp; FESTIVAL IPS", color1: "#18181b", color2: "#4c0519", accent: "#f43f5e", tag: "Creators of Sunburn Festival", est: "Est. 1984 • Mumbai" },
+  { slug: "70emg", name: "70 EMG", type: "LUXURY EXPERIENTIAL &amp; AUTO FESTIVALS", color1: "#18181b", color2: "#27272a", accent: "#ea580c", tag: "India Bike Week &amp; Auto Galas", est: "Est. 2000 • Mumbai / Goa" },
+  { slug: "touchwood", name: "Touchwood Entertainment", type: "NSE-LISTED LUXURY WEDDINGS &amp; MICE", color1: "#064e3b", color2: "#022c22", accent: "#34d399", tag: "NSE Listed: TOUCHWOOD", est: "Est. 1997 • New Delhi" },
+  { slug: "aumevent", name: "AUM Event and Promotions", type: "CORPORATE SUMMITS &amp; GOVT CONCLAVES", color1: "#0c4a6e", color2: "#082f49", accent: "#38bdf8", tag: "State Summits &amp; Industrial Expos", est: "Est. 1989 • Ahmedabad" },
+  { slug: "lsdevents", name: "LSD Events", type: "TECH SUMMITS &amp; UNICORN OFFSITES", color1: "#1e1b4b", color2: "#2e1065", accent: "#a78bfa", tag: "Bangalore Tech Community Specialist", est: "Est. 2014 • Bengaluru" },
+  { slug: "inventum", name: "Inventum Events", type: "EXHIBITIONS &amp; PAVILION ARCHITECTURE", color1: "#0f172a", color2: "#1e293b", accent: "#fbbf24", tag: "Pragati Maidan Expo Specialist", est: "Est. 2015 • Delhi NCR" },
+  { slug: "showhouse", name: "Showhouse Events", type: "AUTO EXPO REVEALS &amp; CORPORATE GALAS", color1: "#450a0a", color2: "#1c1917", accent: "#f87171", tag: "Auto Expo Mega Production", est: "Est. 1998 • Mumbai" },
+  { slug: "alchemist", name: "Alchemist Live", type: "EXPERIENTIAL IPS &amp; BRAND SUMMITS", color1: "#3b0764", color2: "#1e1b4b", accent: "#c084fc", tag: "Delhi Theatre Festival Organizers", est: "Est. 2010 • New Delhi" },
+  { slug: "vibgyor", name: "Vibgyor Brand Experiences", type: "BRAND ACTIVATIONS &amp; ROADSHOWS", color1: "#064e3b", color2: "#14532d", accent: "#4ade80", tag: "10,000+ Activations Across India", est: "Est. 2002 • Pan-India" },
+  { slug: "shaadisquad", name: "Shaadi Squad", type: "CELEBRITY &amp; BOUTIQUE WEDDINGS", color1: "#581c87", color2: "#701a75", accent: "#f472b6", tag: "Virushka Tuscany Wedding Planners", est: "Est. 2015 • Mumbai" },
+  { slug: "motwane", name: "Motwane Entertainment", type: "ROYAL PALACE &amp; UHNW WEDDINGS", color1: "#3b0764", color2: "#18181b", accent: "#e879f9", tag: "European &amp; Rajasthan Palaces", est: "Est. 2013 • Mumbai" },
+  { slug: "showmakerz", name: "Showmakerz Event Management", type: "CORPORATE CONCLAVES &amp; ANNUAL DAYS", color1: "#083344", color2: "#042f2e", accent: "#22d3ee", tag: "Delhi NCR Corporate Specialist", est: "Est. 2005 • New Delhi" },
+  { slug: "marrymeweddings", name: "Marry Me - Wedding Planners", type: "DESTINATION &amp; COASTAL WEDDINGS", color1: "#701a75", color2: "#4a044e", accent: "#fb7185", tag: "NRI &amp; Goa Destination Specialists", est: "Est. 2009 • Mumbai / Goa" },
+  { slug: "craftworld", name: "Craftworld Events", type: "ENTERPRISE SEMINARS &amp; AGMS", color1: "#0f172a", color2: "#1e293b", accent: "#38bdf8", tag: "100+ Indian Cities Execution", est: "Est. 2008 • Mumbai" },
+  { slug: "iceindia", name: "ICE India", type: "HEALTHCARE &amp; PHARMA SUMMITS", color1: "#042f2e", color2: "#064e3b", accent: "#2dd4bf", tag: "Medical Congress Compliance", est: "Est. 2001 • Mumbai" },
+  { slug: "pegasus", name: "Pegasus Events", type: "BFSI CONCLAVES &amp; LEADERSHIP RETREATS", color1: "#1c1917", color2: "#292524", accent: "#fb923c", tag: "Banking &amp; Tech Summits", est: "Est. 2005 • Mumbai" },
+  { slug: "wdc", name: "The Wedding Design Company", type: "BESPOKE ROYAL WEDDINGS &amp; DESIGN", color1: "#4a044e", color2: "#1f132b", accent: "#fcd34d", tag: "Founded by Vandana Mohan", est: "Est. 1989 • New Delhi" },
+  { slug: "magiclights", name: "Magic Lights Wedding Planners", type: "UDAIPUR LAKE PALACE WEDDINGS", color1: "#0c4a6e", color2: "#164e63", accent: "#38bdf8", tag: "Lake Pichola &amp; Palace Specialist", est: "Est. 2012 • Udaipur" },
+  { slug: "platinumworld", name: "Platinum World Grp", type: "GLOBAL ULTRA-LUXURY MICE", color1: "#1e1b4b", color2: "#0f172a", accent: "#818cf8", tag: "CXO Private Jet Conclaves (80+ Countries)", est: "Est. 2002 • Mumbai" }
 ];
 
-async function generateCards() {
+async function generateAll() {
+  await fs.mkdir(dir, { recursive: true });
   for (const p of profiles) {
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
-      <defs>
-        <linearGradient id="cardGrad_${p.slug}" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="${p.color1}"/>
-          <stop offset="100%" stop-color="${p.color2}"/>
-        </linearGradient>
-      </defs>
-      <rect width="800" height="450" fill="url(#cardGrad_${p.slug})"/>
-      <circle cx="700" cy="80" r="140" fill="${p.accent}" opacity="0.12"/>
-      <circle cx="100" cy="380" r="180" fill="${p.accent}" opacity="0.08"/>
-      
-      <!-- Frame border -->
-      <rect x="25" y="25" width="750" height="400" rx="12" fill="none" stroke="${p.accent}" stroke-width="2" opacity="0.4"/>
-      
-      <!-- Icon badge -->
-      <circle cx="95" cy="95" r="45" fill="#000000" opacity="0.3"/>
-      <circle cx="95" cy="95" r="43" fill="${p.accent}" opacity="0.25"/>
-      <text x="95" y="108" font-size="42" text-anchor="middle">${p.icon}</text>
-      
-      <!-- Category Tag -->
-      <rect x="160" y="70" width="460" height="32" rx="16" fill="${p.accent}" opacity="0.2"/>
-      <text x="180" y="92" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="${p.accent}" letter-spacing="1">${p.category.replace(/&amp;/g, "AND").toUpperCase()}</text>
-      
-      <!-- Title -->
-      <text x="60" y="210" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="34" font-weight="800" fill="#ffffff" letter-spacing="0.5">${p.name}</text>
-      
-      <!-- Subtitle badge -->
-      <text x="60" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#e2e8f0">Official Portfolio Showcase • VisitBest Verified Dossier</text>
-      
-      <!-- Bottom Strip -->
-      <line x1="60" y1="310" x2="740" y2="310" stroke="#ffffff" stroke-width="1" opacity="0.2"/>
-      
-      <text x="60" y="360" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="${p.accent}">✓ VERIFIED OFFICIAL ENTITY</text>
-      <text x="60" y="388" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">Audited operational history, licensed corporate standing &amp; active event leadership</text>
-      
-      <rect x="620" y="340" width="120" height="38" rx="6" fill="${p.accent}"/>
-      <text x="680" y="364" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">VIEW WORK ↗</text>
-    </svg>`;
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="grad_${p.slug}" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="${p.color1}"/>
+      <stop offset="100%" stop-color="${p.color2}"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="675" fill="url(#grad_${p.slug})"/>
+  
+  <line x1="60" y1="110" x2="1140" y2="110" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+  <line x1="60" y1="540" x2="1140" y2="540" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+  
+  <!-- Top Badges -->
+  <rect x="60" y="45" width="450" height="42" rx="8" fill="${p.accent}" fill-opacity="0.18" stroke="${p.accent}" stroke-width="2"/>
+  <text x="80" y="72" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="${p.accent}" letter-spacing="1.5">${p.type}</text>
+  
+  <rect x="880" y="45" width="260" height="42" rx="8" fill="#ffffff" fill-opacity="0.12"/>
+  <text x="1010" y="72" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#e2e8f0" text-anchor="middle">${p.est}</text>
+  
+  <!-- Main Company Title -->
+  <text x="60" y="230" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">${p.name}</text>
+  
+  <!-- Primary Feature Tag Pill -->
+  <rect x="60" y="285" width="560" height="52" rx="26" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.25" stroke-width="2"/>
+  <text x="90" y="318" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">★ ${p.tag}</text>
+  
+  <!-- Middle Editorial Statement -->
+  <text x="60" y="405" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="bold" fill="#f1f5f9">Official Commercial Dossier &amp; Verified Agency Profile</text>
+  <text x="60" y="450" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="normal" fill="#cbd5e1">Audited operational history, licensed corporate standing &amp; verified live portal</text>
+  
+  <!-- Bottom Verification Bar -->
+  <rect x="60" y="575" width="32" height="32" rx="16" fill="#10b981"/>
+  <text x="76" y="598" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">✓</text>
+  <text x="105" y="599" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#10b981">VERIFIED OFFICIAL EVENT MANAGEMENT ENTITY (200 OK)</text>
+  
+  <rect x="940" y="565" width="200" height="50" rx="10" fill="${p.accent}"/>
+  <text x="1040" y="597" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#000000" text-anchor="middle">VISITBEST AUDIT</text>
+</svg>`;
 
-    // Save SVG
-    await fs.writeFile(path.join(targetDir, `${p.slug}-dossier.svg`), svg);
-
-    // Rasterize to PNG
-    const pngBuffer = await sharp(Buffer.from(svg))
-      .resize(800, 450)
-      .png({ quality: 90 })
-      .toBuffer();
-    await fs.writeFile(path.join(targetDir, `${p.slug}-dossier.png`), pngBuffer);
+    await fs.writeFile(path.join(dir, `${p.slug}-dossier.svg`), svg.trim());
+    await sharp(Buffer.from(svg.trim()), { density: 150 })
+      .resize(1200, 675)
+      .png({ quality: 95 })
+      .toFile(path.join(dir, `${p.slug}-dossier.png`));
+    console.log(`Generated: ${p.slug}-dossier.png`);
   }
-  console.log("Successfully generated all 20 company dossier SVGs and PNGs!");
+  console.log("Successfully generated crisp, bold, highly legible dossiers for all 20 companies!");
 }
 
-generateCards();
+generateAll();

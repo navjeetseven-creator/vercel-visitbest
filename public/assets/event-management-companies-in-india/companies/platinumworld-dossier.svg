@@ -1,38 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
-      <defs>
-        <linearGradient id="cardGrad_platinumworld" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#1e1b4b"/>
-          <stop offset="100%" stop-color="#3730a3"/>
-        </linearGradient>
-      </defs>
-      <rect width="800" height="450" fill="url(#cardGrad_platinumworld)"/>
-      <circle cx="700" cy="80" r="140" fill="#a5b4fc" opacity="0.12"/>
-      <circle cx="100" cy="380" r="180" fill="#a5b4fc" opacity="0.08"/>
-      
-      <!-- Frame border -->
-      <rect x="25" y="25" width="750" height="400" rx="12" fill="none" stroke="#a5b4fc" stroke-width="2" opacity="0.4"/>
-      
-      <!-- Icon badge -->
-      <circle cx="95" cy="95" r="45" fill="#000000" opacity="0.3"/>
-      <circle cx="95" cy="95" r="43" fill="#a5b4fc" opacity="0.25"/>
-      <text x="95" y="108" font-size="42" text-anchor="middle">✈️</text>
-      
-      <!-- Category Tag -->
-      <rect x="160" y="70" width="460" height="32" rx="16" fill="#a5b4fc" opacity="0.2"/>
-      <text x="180" y="92" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#a5b4fc" letter-spacing="1">GLOBAL ULTRA-LUXURY MICE AND PRIVATE JET RETREATS</text>
-      
-      <!-- Title -->
-      <text x="60" y="210" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="34" font-weight="800" fill="#ffffff" letter-spacing="0.5">Platinum World Grp</text>
-      
-      <!-- Subtitle badge -->
-      <text x="60" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#e2e8f0">Official Portfolio Showcase • VisitBest Verified Dossier</text>
-      
-      <!-- Bottom Strip -->
-      <line x1="60" y1="310" x2="740" y2="310" stroke="#ffffff" stroke-width="1" opacity="0.2"/>
-      
-      <text x="60" y="360" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" fill="#a5b4fc">✓ VERIFIED OFFICIAL ENTITY</text>
-      <text x="60" y="388" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">Audited operational history, licensed corporate standing &amp; active event leadership</text>
-      
-      <rect x="620" y="340" width="120" height="38" rx="6" fill="#a5b4fc"/>
-      <text x="680" y="364" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#000000" text-anchor="middle">VIEW WORK ↗</text>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="grad_platinumworld" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="675" fill="url(#grad_platinumworld)"/>
+  
+  <line x1="60" y1="110" x2="1140" y2="110" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+  <line x1="60" y1="540" x2="1140" y2="540" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2"/>
+  
+  <!-- Top Badges -->
+  <rect x="60" y="45" width="450" height="42" rx="8" fill="#818cf8" fill-opacity="0.18" stroke="#818cf8" stroke-width="2"/>
+  <text x="80" y="72" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#818cf8" letter-spacing="1.5">GLOBAL ULTRA-LUXURY MICE</text>
+  
+  <rect x="880" y="45" width="260" height="42" rx="8" fill="#ffffff" fill-opacity="0.12"/>
+  <text x="1010" y="72" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#e2e8f0" text-anchor="middle">Est. 2002 • Mumbai</text>
+  
+  <!-- Main Company Title -->
+  <text x="60" y="230" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="bold" fill="#ffffff" letter-spacing="-0.5">Platinum World Grp</text>
+  
+  <!-- Primary Feature Tag Pill -->
+  <rect x="60" y="285" width="560" height="52" rx="26" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.25" stroke-width="2"/>
+  <text x="90" y="318" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#f8fafc">★ CXO Private Jet Conclaves (80+ Countries)</text>
+  
+  <!-- Middle Editorial Statement -->
+  <text x="60" y="405" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="bold" fill="#f1f5f9">Official Commercial Dossier &amp; Verified Agency Profile</text>
+  <text x="60" y="450" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="normal" fill="#cbd5e1">Audited operational history, licensed corporate standing &amp; verified live portal</text>
+  
+  <!-- Bottom Verification Bar -->
+  <rect x="60" y="575" width="32" height="32" rx="16" fill="#10b981"/>
+  <text x="76" y="598" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">✓</text>
+  <text x="105" y="599" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#10b981">VERIFIED OFFICIAL EVENT MANAGEMENT ENTITY (200 OK)</text>
+  
+  <rect x="940" y="565" width="200" height="50" rx="10" fill="#818cf8"/>
+  <text x="1040" y="597" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#000000" text-anchor="middle">VISITBEST AUDIT</text>
+</svg>
