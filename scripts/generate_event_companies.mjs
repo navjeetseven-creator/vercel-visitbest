@@ -710,7 +710,7 @@ const fullHtml = `<!doctype html>
           </div>
 
           <figure style="margin:1.5rem 0;">
-            <img src="/assets/event-management-companies-in-india/visuals/event-types-comparison.png" alt="The 4 Core Event Sectors in India: Corporate MICE, Luxury Weddings, Expos and Entertainment" width="1000" height="500" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:10px;border:1px solid #e2ddd3;box-shadow:0 4px 12px rgba(0,0,0,0.05);display:block;">
+            <img src="/assets/event-management-companies-in-india/visuals/event-types-comparison.png" alt="The 4 Core Event Sectors in India: Corporate MICE, Luxury Weddings, Expos and Entertainment" width="1600" height="900" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:10px;border:1px solid #e2ddd3;box-shadow:0 4px 12px rgba(0,0,0,0.05);display:block;">
             <figcaption style="font-size:0.85rem;color:#666;margin-top:6px;text-align:center;">Figure 2: The 4 Core Event Sectors in India — Operational scope, technical staging, and leading agency specializations across commercial verticals.</figcaption>
           </figure>
 
