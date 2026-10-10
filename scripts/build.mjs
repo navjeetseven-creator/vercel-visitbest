@@ -184,6 +184,7 @@ addRoute(urlFor("most-beautiful-bollywood-actresses"), { title: "Most Beautiful 
 addRoute(urlFor("best-cricket-bat-in-india"), { title: "Best Cricket Bat in India: Top Picks for Every Budget & Player in 2026", type: "article", dateModified: "2026-10-06" });
 addRoute(urlFor("best-sites-to-watch-anime"), { title: "Best Sites to Watch Anime in India 2026: Free & Legal Anime Sites", type: "article", dateModified: "2026-10-06" });
 addRoute(urlFor("beautiful-young-hollywood-actresses"), { title: "30 Most Beautiful Young Hollywood Actresses in 2026: Rising Stars Ranked", type: "article", dateModified: "2026-10-06" });
+addRoute(urlFor("event-management-companies-in-india"), { title: "Top 20 Event Management Companies in India (2026): Verified Directory", type: "article", dateModified: "2026-10-10" });
 for (const p of contentPackManifest.pages || []) {
   addRoute(p.path, { title: p.title, type: p.kind, dateModified: "2026-10-01" });
 }
