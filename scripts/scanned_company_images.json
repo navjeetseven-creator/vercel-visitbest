@@ -1,0 +1,233 @@
+[
+  {
+    "slug": "wizcraft",
+    "url": "https://www.wizcraftworld.com",
+    "status": 200,
+    "imagesFound": 2,
+    "sampleImages": [
+      "https://www.wizcraftworld.com/images/about/about.png",
+      "https://www.wizcraftworld.com/images/homepage/videobg2.jpg"
+    ]
+  },
+  {
+    "slug": "percept",
+    "url": "https://perceptindia.in",
+    "status": 200,
+    "imagesFound": 66,
+    "sampleImages": [
+      "https://perceptindia.in/images/instagram.jpg",
+      "https://perceptindia.in/images/tumblr.jpg",
+      "https://perceptindia.in/images/g.jpg",
+      "https://perceptindia.in/images/rss.jpg",
+      "https://perceptindia.in/images/linkedin.jpg"
+    ]
+  },
+  {
+    "slug": "70emg",
+    "url": "https://seventyemg.com",
+    "status": 200,
+    "imagesFound": 42,
+    "sampleImages": [
+      "https://www.seventyemg.com/images/nav_search.png",
+      "https://seventyemg.com/images/dropdown-arrow.png",
+      "https://seventyemg.com/images/dropdown-arrow.png",
+      "https://www.seventyemg.com/images/log1.png",
+      "https://seventyemg.com/images/log2.png"
+    ]
+  },
+  {
+    "slug": "touchwood",
+    "url": "https://touchwood.in",
+    "status": 200,
+    "imagesFound": 66,
+    "sampleImages": [
+      "https://touchwood.in/wp-content/plugins/revslider/sr6/assets/assets/dummy.png",
+      "https://touchwood.in/wp-content/plugins/revslider/sr6/assets/assets/dummy.png",
+      "https://touchwood.in/wp-content/uploads/2021/06/vijay-arora.jpg",
+      "https://touchwood.in/wp-content/uploads/2021/06/vijay-arora.jpg",
+      "https://touchwood.in/wp-content/uploads/2021/06/staff-12-1.jpg"
+    ]
+  },
+  {
+    "slug": "aumevent",
+    "url": "https://aumevent.com",
+    "status": 200,
+    "imagesFound": 79,
+    "sampleImages": [
+      "https://cdn.aumevent.com/static/hero/cnbc-event.webp",
+      "https://cdn.aumevent.com/media/G.D.Pharmaceuticals.webp",
+      "https://cdn.aumevent.com/media/Epson.webp",
+      "https://cdn.aumevent.com/media/foodlink.webp",
+      "https://cdn.aumevent.com/media/Gillette.webp"
+    ]
+  },
+  {
+    "slug": "lsdevents",
+    "url": "https://lsdevents.in",
+    "status": 200,
+    "imagesFound": 56,
+    "sampleImages": [
+      "https://lsdevents.in/images/sos/home-imgs/team-building.webp",
+      "https://lsdevents.in/images/sos/home-imgs/artist-booking.webp",
+      "https://lsdevents.in/images/sos/home-imgs/rewards-and-recognition.webp",
+      "https://lsdevents.in/images/sos/home-imgs/incentive-trip-1.webp",
+      "https://lsdevents.in/images/sos/home-imgs/team-building.webp"
+    ]
+  },
+  {
+    "slug": "inventum",
+    "url": "https://inventumevents.com",
+    "status": 200,
+    "imagesFound": 35,
+    "sampleImages": [
+      "https://www.inventumevents.com/wp-content/uploads/2018/03/Asset-1-1.png",
+      "https://www.inventumevents.com/wp-content/uploads/2018/04/01.jpg",
+      "https://www.inventumevents.com/wp-content/uploads/2018/04/02.jpg",
+      "https://www.inventumevents.com/wp-content/uploads/2023/12/slide-3-1.jpg",
+      "https://www.inventumevents.com/wp-content/uploads/2018/04/04.jpg"
+    ]
+  },
+  {
+    "slug": "showhouse",
+    "url": "https://showhouseevents.com",
+    "status": 200,
+    "imagesFound": 0,
+    "sampleImages": []
+  },
+  {
+    "slug": "alchemist",
+    "url": "https://www.alchemist.co.in",
+    "status": 200,
+    "imagesFound": 0,
+    "sampleImages": []
+  },
+  {
+    "slug": "vibgyor",
+    "url": "https://www.vibgyornet.com",
+    "status": 200,
+    "imagesFound": 26,
+    "sampleImages": [
+      "https://vibgyornet.com/wp-content/uploads/slider/cache/6ff01fa249a1c84c57347e4fb2feb187/connection-optical-fiber-cable-technology-ezgif-scaled.webp",
+      "https://vibgyornet.com/wp-content/uploads/slider/cache/4a4249bbc036137b5c9d1cc05e50d123/Banner-2-ezgif.webp",
+      "https://vibgyornet.com/wp-content/uploads/2024/06/RM-ezgif.webp",
+      "https://vibgyornet.com/wp-content/uploads/2024/06/MicrosoftTeams-image1-ezgif-292x300.webp",
+      "https://vibgyornet.com/wp-content/uploads/2024/06/Frame12-ezgif-300x275.webp"
+    ]
+  },
+  {
+    "slug": "shaadisquad",
+    "url": "https://shaadisquad.com",
+    "status": 200,
+    "imagesFound": 5,
+    "sampleImages": [
+      "https://shaadisquad.com/wp-content/uploads/2024/02/1.jpeg",
+      "https://shaadisquad.com/wp-content/uploads/2024/03/2.jpg",
+      "https://shaadisquad.com/wp-content/uploads/2024/05/4.jpg",
+      "https://shaadisquad.com/wp-content/uploads/2024/05/3-1.jpg",
+      "https://shaadisquad.com/wp-content/uploads/2024/05/HannaSaif-Wedding16-2.jpg"
+    ]
+  },
+  {
+    "slug": "motwane",
+    "url": "https://www.motwane.co",
+    "status": 200,
+    "imagesFound": 1,
+    "sampleImages": [
+      "https://img1.wsimg.com/isteam/ip/114514c9-9474-4747-814f-582832a7a69c/Untitled-1%20%5BRecovered%5D-01-05aca16.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25"
+    ]
+  },
+  {
+    "slug": "showmakerz",
+    "url": "https://www.showmakerz.com",
+    "status": 200,
+    "imagesFound": 15,
+    "sampleImages": [
+      "https://www.showmakerz.com/images/event-management-company.webp",
+      "https://www.showmakerz.com/images/event-planners-in-Delhi-Gurgaon-Noida.webp",
+      "https://www.showmakerz.com/images/event-management-companies-Delhi_gurgaon-NCR.webp",
+      "https://www.showmakerz.com/images/event-company-showreel.webp",
+      "https://www.showmakerz.com/images/event-management-companies-Delhi-NCR.webp"
+    ]
+  },
+  {
+    "slug": "marrymeweddings",
+    "url": "https://www.marrymeweddings.in",
+    "status": 200,
+    "imagesFound": 45,
+    "sampleImages": [
+      "https://www.marrymeweddings.in/images/social-facebook.png",
+      "https://www.marrymeweddings.in/images/social-twitter.png",
+      "https://www.marrymeweddings.in/images/social-pinterest.png",
+      "https://www.marrymeweddings.in/images/social-instagram.png",
+      "https://www.marrymeweddings.in/images/social-rss.png"
+    ]
+  },
+  {
+    "slug": "craftworld",
+    "url": "https://www.craftworldevents.com",
+    "status": 200,
+    "imagesFound": 59,
+    "sampleImages": [
+      "https://craftworldevents.com/wp-content/uploads/alpha_placeholders/100x109.jpg",
+      "https://craftworldevents.com/wp-content/uploads/2022/10/ABFL-event-client.jpg",
+      "https://craftworldevents.com/wp-content/uploads/2022/10/BISLERI-event-client.jpg",
+      "https://craftworldevents.com/wp-content/uploads/2022/10/FULLERTON-exhibition-client.jpg",
+      "https://craftworldevents.com/wp-content/uploads/2022/10/HP_CORP-event-client.jpg"
+    ]
+  },
+  {
+    "slug": "iceindia",
+    "url": "https://www.iceindia.in",
+    "status": 200,
+    "imagesFound": 1,
+    "sampleImages": [
+      "https://www.iceindia.in/under_const.jpg"
+    ]
+  },
+  {
+    "slug": "pegasus",
+    "url": "https://www.pegasusindia.com",
+    "status": 200,
+    "imagesFound": 10,
+    "sampleImages": [
+      "https://static.hugedomains.com/images/hdv3-img/favorite-header.png",
+      "https://static.hugedomains.com/images/hdv3-img/cart.png",
+      "https://static.hugedomains.com/images/hdv3-img/30daysmallico.png",
+      "https://static.hugedomains.com/images/hdv3-img/roket-side-ico.png",
+      "https://static.hugedomains.com/images/hdv3-img/safesmallico.png"
+    ]
+  },
+  {
+    "slug": "shadows",
+    "url": "https://www.shadows.co.in",
+    "status": 200,
+    "imagesFound": 0,
+    "sampleImages": []
+  },
+  {
+    "slug": "magiclights",
+    "url": "https://www.magiclights.net",
+    "status": 200,
+    "imagesFound": 32,
+    "sampleImages": [
+      "https://static.wixstatic.com/media/98479b_b97614f9d6174eca93a4f912e2c1acb2~mv2.png/v1/fill/w_162,h_60,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/98479b_b97614f9d6174eca93a4f912e2c1acb2~mv2.png",
+      "https://static.wixstatic.com/media/b5010f_04ea20d7bbff45389c2f943c4308999d~mv2.jpeg/v1/fill/w_149,h_96,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/b5010f_04ea20d7bbff45389c2f943c4308999d~mv2.jpeg",
+      "https://static.wixstatic.com/media/b5010f_59a223932f3442d0b3e1551d893c9936~mv2.jpg/v1/fill/w_317,h_422,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/magic-lights.jpg",
+      "https://static.wixstatic.com/media/b5010f_b5db6f84fb2946959e57248548b28bc0~mv2.jpg/v1/fill/w_60,h_40,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/b5010f_b5db6f84fb2946959e57248548b28bc0~mv2.jpg",
+      "https://static.wixstatic.com/media/b5010f_428b435843534a00b9d76c9382e06f80~mv2.jpg/v1/fill/w_60,h_79,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/b5010f_428b435843534a00b9d76c9382e06f80~mv2.jpg"
+    ]
+  },
+  {
+    "slug": "platinumworld",
+    "url": "https://www.platinumworld.net",
+    "status": 200,
+    "imagesFound": 21,
+    "sampleImages": [
+      "https://static.wixstatic.com/media/435e91_9b2834cbfdc64b76b294e04822735521~mv2.png/v1/fill/w_96,h_64,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/435e91_9b2834cbfdc64b76b294e04822735521~mv2.png",
+      "https://static.wixstatic.com/media/59d058_4a9405d50185425fba32ca1a56cebb1c~mv2.png/v1/fill/w_74,h_33,al_c,q_85,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/59d058_4a9405d50185425fba32ca1a56cebb1c~mv2.png",
+      "https://static.wixstatic.com/media/435e91_ac16d31e9b0044acbbe1c8cf18f588af~mv2.jpg/v1/fill/w_267,h_178,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Picture2.jpg",
+      "https://static.wixstatic.com/media/435e91_d38f9c7da94f4016b6e026c4bbe96f8f~mv2.jpeg/v1/fill/w_267,h_179,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/WhatsApp%20Image%202026-01-17%20at%2013_03_58.jpeg",
+      "https://static.wixstatic.com/media/435e91_212f278d97a04d0784fefa4d5cd9c0ed~mv2.jpg/v1/fill/w_267,h_179,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Picture1.jpg"
+    ]
+  }
+]

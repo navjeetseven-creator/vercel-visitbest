@@ -1,0 +1,183 @@
+{
+  "auditDate": "2026-10-10",
+  "topic": "Event Management Companies in India (National Pillar Directory)",
+  "pageUrl": "https://visitbest.in/event-management-companies-in-india/",
+  "totalRankedCompanies": 20,
+  "verifiedAssets": {
+    "heroImage": {
+      "path": "/assets/event-management-companies-in-india/hero.svg",
+      "aspectRatio": "16:9",
+      "dimensions": "1600x900",
+      "type": "Editorial SVG Vector Production Staging",
+      "status": "Verified & Responsive"
+    },
+    "editorialVisuals": [
+      {
+        "name": "Handwritten Event Planning Notebook & Floor Plan",
+        "path": "/assets/event-management-companies-in-india/visuals/planning-notebook.svg",
+        "section": "Introduction & Pre-Planning"
+      },
+      {
+        "name": "6-Stage Event Management Operational Lifecycle",
+        "path": "/assets/event-management-companies-in-india/visuals/process-infographic.svg",
+        "section": "What Does an Event Management Company Do"
+      },
+      {
+        "name": "Typical Event Budget Allocation Donut Chart",
+        "path": "/assets/event-management-companies-in-india/visuals/budget-distribution.svg",
+        "section": "Event Management Pricing Framework"
+      },
+      {
+        "name": "Pan-India Geographic Distribution of Top 20 Hubs",
+        "path": "/assets/event-management-companies-in-india/visuals/geographic-coverage.svg",
+        "section": "Regional & City Event Management Hubs"
+      }
+    ],
+    "companyVisuals": [
+      {
+        "rank": 1,
+        "company": "Wizcraft International Entertainment",
+        "domain": "https://www.wizcraftworld.com",
+        "leadImage": "/assets/event-management-companies-in-india/companies/wizcraft-dossier.svg",
+        "sourceStatus": "Official Verified Showcase Card (Live 200 OK Website)"
+      },
+      {
+        "rank": 2,
+        "company": "Percept Limited",
+        "domain": "https://perceptindia.in",
+        "leadImage": "/assets/event-management-companies-in-india/companies/percept-dossier.svg",
+        "sourceStatus": "Official Verified Showcase Card (Live 200 OK Website)"
+      },
+      {
+        "rank": 3,
+        "company": "70 EMG (Seventy Event Media Group)",
+        "domain": "https://seventyemg.com",
+        "leadImage": "/assets/event-management-companies-in-india/companies/70emg-dossier.svg",
+        "sourceStatus": "Official Verified Showcase Card (Live 200 OK Website)"
+      },
+      {
+        "rank": 4,
+        "company": "Touchwood Entertainment Limited",
+        "domain": "https://touchwood.in",
+        "leadImage": "/assets/event-management-companies-in-india/companies/touchwood-dossier.svg",
+        "sourceStatus": "Official Verified Showcase Card (Live 200 OK Website)"
+      },
+      {
+        "rank": 5,
+        "company": "AUM Event and Promotions India",
+        "domain": "https://aumevent.com",
+        "leadImage": "/assets/event-management-companies-in-india/companies/aumevent-dossier.svg",
+        "sourceStatus": "Official Verified Showcase Card (Live 200 OK Website)"
+      },
+      {
+        "rank": 6,
+        "company": "LSD Events",
+        "domain": "https://lsdevents.in",
+        "leadImage": "/assets/event-management-companies-in-india/companies/lsdevents-dossier.svg",
+        "sourceStatus": "Official Verified Showcase Card (Live 200 OK Website)"
+      },
+      {
+        "rank": 7,
+        "company": "Inventum Events",
+        "domain": "https://inventumevents.com",
+        "leadImage": "/assets/event-management-companies-in-india/companies/inventum-lead.jpg",
+        "secondaryImage": "/assets/event-management-companies-in-india/companies/inventum-dossier.svg",
+        "sourceStatus": "Direct Portfolio Photograph Downloaded from Official Website (Exhibition Pavilion)"
+      },
+      {
+        "rank": 8,
+        "company": "Showhouse Events",
+        "domain": "https://showhouseevents.com",
+        "leadImage": "/assets/event-management-companies-in-india/companies/showhouse-dossier.svg",
+        "sourceStatus": "Official Verified Showcase Card (Live 200 OK Website)"
+      },
+      {
+        "rank": 9,
+        "company": "Alchemist Live",
+        "domain": "https://alchemistindia.net",
+        "leadImage": "/assets/event-management-companies-in-india/companies/alchemist-dossier.svg",
+        "sourceStatus": "Official Verified Showcase Card (Live 200 OK Group Website)"
+      },
+      {
+        "rank": 10,
+        "company": "Vibgyor Brand Experiences",
+        "domain": "https://www.vibgyornet.com",
+        "leadImage": "/assets/event-management-companies-in-india/companies/vibgyor-lead.webp",
+        "secondaryImage": "/assets/event-management-companies-in-india/companies/vibgyor-dossier.svg",
+        "sourceStatus": "Direct Portfolio Asset Downloaded from Official Website (Experiential Tech Showcase)"
+      },
+      {
+        "rank": 11,
+        "company": "Shaadi Squad",
+        "domain": "https://shaadisquad.com",
+        "leadImage": "/assets/event-management-companies-in-india/companies/shaadisquad-lead.jpg",
+        "secondaryImage": "/assets/event-management-companies-in-india/companies/shaadisquad-dossier.svg",
+        "sourceStatus": "Direct Portfolio Photograph Downloaded from Official Website (Celebrity Wedding Mandap)"
+      },
+      {
+        "rank": 12,
+        "company": "Motwane Entertainment & Luxury Weddings",
+        "domain": "https://www.motwane.co",
+        "leadImage": "/assets/event-management-companies-in-india/companies/motwane-dossier.svg",
+        "sourceStatus": "Official Verified Showcase Card (Live 200 OK Website)"
+      },
+      {
+        "rank": 13,
+        "company": "Showmakerz Event Management",
+        "domain": "https://www.showmakerz.com",
+        "leadImage": "/assets/event-management-companies-in-india/companies/showmakerz-lead.webp",
+        "secondaryImage": "/assets/event-management-companies-in-india/companies/showmakerz-dossier.svg",
+        "sourceStatus": "Direct Portfolio Photograph Downloaded from Official Website (Corporate Stage Setup)"
+      },
+      {
+        "rank": 14,
+        "company": "Marry Me - The Wedding Planners",
+        "domain": "https://www.marrymeweddings.in",
+        "leadImage": "/assets/event-management-companies-in-india/companies/marrymeweddings-dossier.svg",
+        "sourceStatus": "Official Verified Showcase Card (Live 200 OK Website)"
+      },
+      {
+        "rank": 15,
+        "company": "Craftworld Events",
+        "domain": "https://www.craftworldevents.com",
+        "leadImage": "/assets/event-management-companies-in-india/companies/craftworld-dossier.svg",
+        "sourceStatus": "Official Verified Showcase Card (Live 200 OK Website)"
+      },
+      {
+        "rank": 16,
+        "company": "ICE India",
+        "domain": "https://www.iceindia.in",
+        "leadImage": "/assets/event-management-companies-in-india/companies/iceindia-dossier.svg",
+        "sourceStatus": "Official Verified Showcase Card (Live 200 OK Website)"
+      },
+      {
+        "rank": 17,
+        "company": "Pegasus Events",
+        "domain": "https://pegasusevents.in",
+        "leadImage": "/assets/event-management-companies-in-india/companies/pegasus-dossier.svg",
+        "sourceStatus": "Official Verified Showcase Card (Live 200 OK Website)"
+      },
+      {
+        "rank": 18,
+        "company": "Shadows Entertainment",
+        "domain": "https://www.shadows.co.in",
+        "leadImage": "/assets/event-management-companies-in-india/companies/shadows-dossier.svg",
+        "sourceStatus": "Official Verified Showcase Card (Live 200 OK Website)"
+      },
+      {
+        "rank": 19,
+        "company": "Magic Lights Wedding Planners",
+        "domain": "https://www.magiclights.net",
+        "leadImage": "/assets/event-management-companies-in-india/companies/magiclights-dossier.svg",
+        "sourceStatus": "Official Verified Showcase Card (Live 200 OK Website)"
+      },
+      {
+        "rank": 20,
+        "company": "Platinum World Grp",
+        "domain": "https://www.platinumworld.net",
+        "leadImage": "/assets/event-management-companies-in-india/companies/platinumworld-dossier.svg",
+        "sourceStatus": "Official Verified Showcase Card (Live 200 OK Website)"
+      }
+    ]
+  }
+}

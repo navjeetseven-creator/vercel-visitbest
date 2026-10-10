@@ -1,0 +1,105 @@
+import fs from "node:fs/promises";
+import path from "node:path";
+
+const targetDir = "public/assets/event-management-companies-in-india/visuals";
+
+const eventTypesSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="100%" height="100%">
+  <rect width="1000" height="500" fill="#fdfbf7" rx="12" stroke="#e2ddd3" stroke-width="2"/>
+  <text x="500" y="45" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">THE 4 CORE EVENT SECTORS IN INDIA</text>
+  <text x="500" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Operational Requirements, Technical Scope &amp; Target Audiences Across Industry Verticals</text>
+  
+  <g transform="translate(40, 100)">
+    <!-- 1. Corporate & MICE -->
+    <g transform="translate(0, 0)">
+      <rect width="210" height="350" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+      <rect width="210" height="70" rx="10" fill="#1e293b"/>
+      <rect y="55" width="210" height="15" fill="#1e293b"/>
+      <text x="105" y="42" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">🏢 CORPORATE &amp; MICE</text>
+      <g transform="translate(15, 90)">
+        <text x="0" y="15" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0f172a">Primary Formats:</text>
+        <text x="0" y="35" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Annual General Meetings (AGM)</text>
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Leadership Summits &amp; Offsites</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Dealer Meets &amp; Product Reveals</text>
+        
+        <text x="0" y=\"115\" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0f172a">Technical Staging:</text>
+        <text x="0" y="135" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Seamless LED curved backdrops</text>
+        <text x="0" y="155" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Hybrid multi-cam live webcast</text>
+        <text x="0" y="175" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Teleprompter &amp; digital consoles</text>
+        
+        <text x="0" y="215" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#c76027">Top Agency Picks:</text>
+        <text x="0" y="235" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0f172a">Wizcraft, LSD, Showhouse</text>
+      </g>
+    </g>
+
+    <!-- 2. Luxury & Destination Weddings -->
+    <g transform="translate(235, 0)">
+      <rect width="210" height="350" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+      <rect width="210" height="70" rx="10" fill="#c76027"/>
+      <rect y="55" width="210" height="15" fill="#c76027"/>
+      <text x="105" y="42" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">💍 LUXURY WEDDINGS</text>
+      <g transform="translate(15, 90)">
+        <text x="0" y="15" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0f172a">Primary Formats:</text>
+        <text x="0" y="35" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Multi-day Destination Palaces</text>
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Royal Sangeet &amp; Thematic Baraat</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Heritage Fort Receptions</text>
+        
+        <text x="0" y="115" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0f172a">Hospitality Focus:</text>
+        <text x="0" y="135" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Airport concierge &amp; luxury fleets</text>
+        <text x="0" y="155" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Bespoke floral mandap design</text>
+        <text x="0" y="175" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Strict NDA &amp; privacy controls</text>
+        
+        <text x="0" y="215" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#c76027">Top Agency Picks:</text>
+        <text x="0" y="235" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0f172a">Shaadi Squad, Motwane, Touchwood</text>
+      </g>
+    </g>
+
+    <!-- 3. Exhibitions & Trade Pavilions -->
+    <g transform="translate(470, 0)">
+      <rect width="210" height="350" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+      <rect width="210" height="70" rx="10" fill="#0d9488"/>
+      <rect y="55" width="210" height="15" fill="#0d9488"/>
+      <text x="105" y="42" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">🏗️ EXPOS &amp; PAVILIONS</text>
+      <g transform="translate(15, 90)">
+        <text x="0" y="15" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0f172a">Primary Formats:</text>
+        <text x="0" y="35" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• International Trade Fair Stands</text>
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Country &amp; State Expo Pavilions</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Industrial Machinery Booths</text>
+        
+        <text x="0" y="115" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0f172a">Fabrication Focus:</text>
+        <text x="0" y="135" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Precision timber/metal joinery</text>
+        <text x="0" y="155" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Mezzanine floors &amp; meeting pods</text>
+        <text x="0" y="175" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• 48-hour venue handover build</text>
+        
+        <text x="0" y="215" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#c76027">Top Agency Picks:</text>
+        <text x="0" y="235" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0f172a">Inventum, AUM Event, Vibgyor</text>
+      </g>
+    </g>
+
+    <!-- 4. Entertainment & Festivals -->
+    <g transform="translate(705, 0)">
+      <rect width="210" height="350" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+      <rect width="210" height="70" rx="10" fill="#e11d48"/>
+      <rect y="55" width="210" height="15" fill="#e11d48"/>
+      <text x="105" y="42" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">🎪 ENTERTAINMENT &amp; IPS</text>
+      <g transform="translate(15, 90)">
+        <text x="0" y="15" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0f172a">Primary Formats:</text>
+        <text x="0" y="35" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Stadium Arena Live Concerts</text>
+        <text x="0" y="55" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Music Festivals (e.g., Sunburn)</text>
+        <text x="0" y="75" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Automotive Rallies (e.g., IBW)</text>
+        
+        <text x="0" y="115" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0f172a">Scale &amp; Security:</text>
+        <text x="0" y="135" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• 20,000+ attendee crowd flow</text>
+        <text x="0" y="155" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Line array acoustic engineering</text>
+        <text x="0" y="175" font-family="system-ui, sans-serif" font-size="11" fill="#475569">• Multi-tier licensing &amp; safety</text>
+        
+        <text x="0" y="215" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#c76027">Top Agency Picks:</text>
+        <text x="0" y="235" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0f172a">Percept, 70 EMG, Alchemist Live</text>
+      </g>
+    </g>
+  </g>
+  
+  <text x="500" y="480" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">VISITBEST INDUSTRY SECTOR ANALYSIS • UPDATED 2026 COMMERCIAL BENCHMARKS</text>
+</svg>`;
+
+await fs.writeFile(path.join(targetDir, "event-types-comparison.svg"), eventTypesSvg);
+console.log("event-types-comparison.svg generated successfully!");

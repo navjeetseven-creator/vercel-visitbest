@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="100%" height="100%">
+  <rect width="900" height="500" fill="#ffffff" rx="12" stroke="#e2ddd3" stroke-width="2"/>
+  
+  <text x="450" y="45" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a" text-anchor="middle">TYPICAL EVENT BUDGET ALLOCATION IN INDIA</text>
+  <text x="450" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#64748b" text-anchor="middle">Standard Cost Distribution for High-Scale Corporate Conventions &amp; Turnkey Weddings</text>
+  
+  <!-- Donut Chart slices (Visual representation via grouped segmented paths) -->
+  <g transform="translate(260, 260)">
+    <!-- 35% Production, Staging & AV -->
+    <circle cx="0" cy="0" r="140" fill="none" stroke="#c76027" stroke-width="65" stroke-dasharray="307 880" stroke-dashoffset="0"/>
+    <!-- 25% Venue & Catering -->
+    <circle cx="0" cy="0" r="140" fill="none" stroke="#0f172a" stroke-width="65" stroke-dasharray="220 880" stroke-dashoffset="-307"/>
+    <!-- 15% Décor & Florals -->
+    <circle cx="0" cy="0" r="140" fill="none" stroke="#0d9488" stroke-width="65" stroke-dasharray="132 880" stroke-dashoffset="-527"/>
+    <!-- 12% Artist, Celebrities & Entertainment -->
+    <circle cx="0" cy="0" r="140" fill="none" stroke="#eab308" stroke-width="65" stroke-dasharray="105 880" stroke-dashoffset="-659"/>
+    <!-- 8% Management Fee -->
+    <circle cx="0" cy="0" r="140" fill="none" stroke="#6366f1" stroke-width="65" stroke-dasharray="70 880" stroke-dashoffset="-764"/>
+    <!-- 5% Contingency & Permits -->
+    <circle cx="0" cy="0" r="140" fill="none" stroke="#94a3b8" stroke-width="65" stroke-dasharray="46 880" stroke-dashoffset="-834"/>
+    
+    <text x="0" y="-8" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#0f172a" text-anchor="middle">100%</text>
+    <text x="0" y="20" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#64748b" text-anchor="middle">TOTAL BUDGET</text>
+  </g>
+  
+  <!-- Legend Table -->
+  <g transform="translate(540, 120)">
+    <rect x="0" y="0" width="28" height="28" rx="6" fill="#c76027"/>
+    <text x="40" y="16" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Production, Staging &amp; AV (35%)</text>
+    <text x="40" y="32" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Trussing, LED walls, line array, consoles, generators</text>
+    
+    <rect x="0" y="55" width="28" height="28" rx="6" fill="#0f172a"/>
+    <text x="40" y="71" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Venue Rental &amp; Hospitality (25%)</text>
+    <text x="40" y="87" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Convention hall, hotel banquets, catering minimums</text>
+    
+    <rect x="0" y="110" width="28" height="28" rx="6" fill="#0d9488"/>
+    <text x="40" y="126" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Thematic Décor &amp; Fabrication (15%)</text>
+    <text x="40" y="142" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Floral styling, experiential booths, custom props</text>
+    
+    <rect x="0" y="165" width="28" height="28" rx="6" fill="#eab308"/>
+    <text x="40" y="181" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Artistes &amp; Entertainment (12%)</text>
+    <text x="40" y="197" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Celebrity anchors, bands, international acts, riders</text>
+    
+    <rect x="0" y="220" width="28" height="28" rx="6" fill="#6366f1"/>
+    <text x="40" y="236" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Agency Management Fee (8%)</text>
+    <text x="40" y="252" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">Turnkey coordination, staffing, project director</text>
+    
+    <rect x="0" y="275" width="28" height="28" rx="6" fill="#94a3b8"/>
+    <text x="40" y="291" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Permits, Insurance &amp; Buffer (5%)</text>
+    <text x="40" y="307" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">PPL/IPRS licenses, public liability, force majeure</text>
+  </g>
+  
+  <text x="450" y="475" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">SOURCE: VISITBEST COMMERCIAL EVENT RESEARCH • ESTIMATES VARY BASED ON SCALE &amp; CITY SPECIFICATIONS</text>
+</svg>
