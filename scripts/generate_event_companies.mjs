@@ -27,7 +27,7 @@ const companies = [
     bio: "Co-founded by Andre Timmins, Sabbas Joseph, and Viraf Sarkari in 1989, Wizcraft International is widely regarded as the pioneer of India's organized event management industry. Best known globally for creating and executing the International Indian Film Academy (IIFA) Awards across 16 countries, Wizcraft has orchestrated historic milestones including the 2010 Commonwealth Games opening and closing ceremonies, Michael Jackson's India concert, and major multinational corporate conventions.",
     strengths: "Unrivaled international production capabilities; 35+ years of institutional experience; direct access to global entertainment and celebrity talent.",
     considerations: "Engineered primarily for large-scale, high-budget corporate and public spectacles rather than intimate private gatherings.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/wizcraft-dossier.svg",
+    leadVisual: "/assets/event-management-companies-in-india/companies/wizcraft-dossier.png",
     leadVisualAlt: "Wizcraft International verified corporate profile dossier and entertainment portfolio showcase",
     caption: "Official Verified Dossier: Wizcraft International Entertainment (IIFA Awards & Global Event Staging)",
     secondaryPhoto: null
@@ -51,7 +51,7 @@ const companies = [
     bio: "Founded by Harindra Singh in 1984, Percept Limited is a pioneer in entertainment, media, and communications. Percept created Sunburn, one of the world's top electronic music dance festivals, and has managed premier sports marketing initiatives including the Cricket World Cup campaigns, corporate sports leagues, and experiential launches for global brands.",
     strengths: "Pioneering expertise in building self-sustaining entertainment intellectual properties (IPs); extensive multi-city infrastructure.",
     considerations: "Focus is heavily tilted toward large-scale youth, music, and corporate experiential marketing.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/percept-dossier.svg",
+    leadVisual: "/assets/event-management-companies-in-india/companies/percept-dossier.png",
     leadVisualAlt: "Percept Limited verified corporate portfolio showcase and festival production dossier",
     caption: "Official Verified Dossier: Percept Limited (Creators of Sunburn Festival & Experiential Marketing IPs)",
     secondaryPhoto: null
@@ -75,7 +75,7 @@ const companies = [
     bio: "Headed by Thanush Joseph and Martin da Costa, 70 EMG is internationally recognized for its peerless design aesthetics and technical production. Creators of India Bike Week—Asia's largest motorcycle festival—70 EMG has designed multi-city experiential showcases for premier luxury brands including Cartier, Christian Dior, Rolls-Royce, and BMW.",
     strengths: "Breathtaking scenic design and architectural staging; proven mastery over massive outdoor and automotive logistics.",
     considerations: "Exclusively focuses on luxury and premium-tier brand experiences with corresponding budget thresholds.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/70emg-dossier.svg",
+    leadVisual: "/assets/event-management-companies-in-india/companies/70emg-dossier.png",
     leadVisualAlt: "70 EMG verified portfolio showcase and luxury experiential design dossier",
     caption: "Official Verified Dossier: 70 EMG (India Bike Week & Premier Automotive Experiential Staging)",
     secondaryPhoto: null
@@ -99,7 +99,7 @@ const companies = [
     bio: "Founded by Manjit Singh and Vijay Arora in 1997, Touchwood Entertainment made history as one of the first event management companies in India to be publicly listed on the National Stock Exchange (NSE). Specializing in royal palace weddings across Rajasthan and international destinations (Turkey, UAE, Thailand), Touchwood provides end-to-end event infrastructure, hospitality management, and technical production.",
     strengths: "Publicly listed governance and corporate financial transparency; unmatched destination wedding vendor network across Rajasthan and overseas.",
     considerations: "Primarily celebrated for luxury and destination events; high advance booking lead times required for peak auspicious wedding dates.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/touchwood-dossier.svg",
+    leadVisual: "/assets/event-management-companies-in-india/companies/touchwood-dossier.png",
     leadVisualAlt: "Touchwood Entertainment verified corporate dossier and NSE-listed wedding showcase",
     caption: "Official Verified Dossier: Touchwood Entertainment Limited (NSE: TOUCHWOOD • Luxury Destination Weddings)",
     secondaryPhoto: null
@@ -123,7 +123,7 @@ const companies = [
     bio: "Operating continuously since 1989, AUM Event and Promotions India is one of Western India's most established event agencies. Having delivered hundreds of corporate conventions, product reveals, and government summits, AUM integrates stage engineering, digital sound/light setups, and protocol-driven guest management.",
     strengths: "Deep operational foothold in Gujarat, Maharashtra, and North India; 35-year track record in corporate and institutional conferences.",
     considerations: "Understated consumer marketing; heavily driven by corporate B2B and institutional client relationships.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/aumevent-dossier.svg",
+    leadVisual: "/assets/event-management-companies-in-india/companies/aumevent-dossier.png",
     leadVisualAlt: "AUM Event and Promotions verified corporate dossier and summit showcase",
     caption: "Official Verified Dossier: AUM Event and Promotions (35-Year Western India Corporate Production Leader)",
     secondaryPhoto: null
@@ -147,7 +147,7 @@ const companies = [
     bio: "Headquartered in India's Silicon Valley, LSD Events has carved out an enviable reputation as the go-to event agency for India's technology ecosystem and multinational corporate offices. Specializing in highly engaging, out-of-the-box corporate retreats, leadership summits, and dynamic annual day celebrations, LSD manages all logistical details from travel and stay to entertainment.",
     strengths: "Youthful, modern creative design tailored for tech companies; deep expertise in immersive team-building and hybrid AV production.",
     considerations: "Primarily corporate and MICE focused; limited consumer wedding services.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/lsdevents-dossier.svg",
+    leadVisual: "/assets/event-management-companies-in-india/companies/lsdevents-dossier.png",
     leadVisualAlt: "LSD Events verified tech conference and corporate offsite portfolio dossier",
     caption: "Official Verified Dossier: LSD Events (Bengaluru Tech Summits, Unicorn Offsites & Corporate MICE)",
     secondaryPhoto: null
@@ -174,7 +174,7 @@ const companies = [
     leadVisual: "/assets/event-management-companies-in-india/companies/inventum-lead.jpg",
     leadVisualAlt: "Turnkey exhibition stand fabrication and pavilion design by Inventum Events",
     caption: "Official Portfolio Photograph: Turnkey exhibition stall architecture and pavilion fabrication by Inventum Events",
-    secondaryPhoto: "/assets/event-management-companies-in-india/companies/inventum-dossier.svg"
+    secondaryPhoto: "/assets/event-management-companies-in-india/companies/inventum-dossier.png"
   },
   {
     rank: 8,
@@ -195,7 +195,7 @@ const companies = [
     bio: "With over 25 years of event management excellence, Showhouse Events has produced some of corporate India's most memorable product launches and industrial galas. Famous for executing massive automotive reveals at the India Auto Expo and managing multinational brand showcases, Showhouse combines technical engineering with theatrical flair.",
     strengths: "Elite stagecraft and mechanical reveal engineering; nationwide corporate delivery network.",
     considerations: "Optimized for large enterprise corporate accounts.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/showhouse-dossier.svg",
+    leadVisual: "/assets/event-management-companies-in-india/companies/showhouse-dossier.png",
     leadVisualAlt: "Showhouse Events verified corporate gala and automotive reveal dossier",
     caption: "Official Verified Dossier: Showhouse Events (Auto Expo Reveals & Grand Theatrical Corporate Staging)",
     secondaryPhoto: null
@@ -219,7 +219,7 @@ const companies = [
     bio: "Alchemist Live operates as the experiential and events arm of the Alchemist Group (Alchemist Marketing & Talent Solutions). Bridging the gap between creative advertising agencies and on-ground production houses, Alchemist Live develops bespoke brand festivals, technology launch pads, and high-energy music and theatre properties including the renowned Delhi Theatre Festival.",
     strengths: "Exceptional conceptual and storytelling foundation; seamlessly connects digital social marketing with on-ground experiences.",
     considerations: "Focuses on strategic marketing and corporate activations rather than private social ceremonies.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/alchemist-dossier.svg",
+    leadVisual: "/assets/event-management-companies-in-india/companies/alchemist-dossier.png",
     leadVisualAlt: "Alchemist Live verified experiential IP and brand storytelling dossier",
     caption: "Official Verified Dossier: Alchemist Live (Experiential IPs, Delhi Theatre Festival & Brand Summits)",
     secondaryPhoto: null
@@ -246,7 +246,7 @@ const companies = [
     leadVisual: "/assets/event-management-companies-in-india/companies/vibgyor-lead.webp",
     leadVisualAlt: "Experiential tech showcase and brand installation by Vibgyor Brand Experiences",
     caption: "Official Portfolio Asset: Interactive experiential tech booth and consumer brand installation by Vibgyor Brand Experiences",
-    secondaryPhoto: "/assets/event-management-companies-in-india/companies/vibgyor-dossier.svg"
+    secondaryPhoto: "/assets/event-management-companies-in-india/companies/vibgyor-dossier.png"
   },
   {
     rank: 11,
@@ -270,7 +270,7 @@ const companies = [
     leadVisual: "/assets/event-management-companies-in-india/companies/shaadisquad-lead.jpg",
     leadVisualAlt: "Bespoke celebrity wedding mandap design by Shaadi Squad",
     caption: "Official Portfolio Photograph: Luxury floral mandap and bespoke destination wedding styling by Shaadi Squad",
-    secondaryPhoto: "/assets/event-management-companies-in-india/companies/shaadisquad-dossier.svg"
+    secondaryPhoto: "/assets/event-management-companies-in-india/companies/shaadisquad-dossier.png"
   },
   {
     rank: 12,
@@ -291,7 +291,7 @@ const companies = [
     bio: "Founded by Aditya Motwane, MEW is the benchmark for ultra-luxury bespoke celebrations in the subcontinent. Having orchestrated weddings in historic European castles, Lake Como villas, and Royal Palaces in Udaipur and Jodhpur, Motwane Entertainment manages private aircraft charters, Michelin-starred culinary teams, and Grammy-winning international entertainers.",
     strengths: "Unrivaled pedigree in high-society global celebrations; white-glove concierge and private aviation logistics.",
     considerations: "Caters strictly to the ultra-high-net-worth (UHNW) tier.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/motwane-dossier.svg",
+    leadVisual: "/assets/event-management-companies-in-india/companies/motwane-dossier.png",
     leadVisualAlt: "Motwane Entertainment verified ultra-luxury royal destination wedding dossier",
     caption: "Official Verified Dossier: Motwane Entertainment & Luxury Weddings (UHNW European Palaces & Royal Rajasthan)",
     secondaryPhoto: null
@@ -318,7 +318,7 @@ const companies = [
     leadVisual: "/assets/event-management-companies-in-india/companies/showmakerz-lead.webp",
     leadVisualAlt: "Corporate conference stage production by Showmakerz",
     caption: "Official Portfolio Photograph: Corporate annual award stage setup and technical AV production by Showmakerz",
-    secondaryPhoto: "/assets/event-management-companies-in-india/companies/showmakerz-dossier.svg"
+    secondaryPhoto: "/assets/event-management-companies-in-india/companies/showmakerz-dossier.png"
   },
   {
     rank: 14,
@@ -339,7 +339,7 @@ const companies = [
     bio: "Founded by Candice Pereira and Jarret D'Abreo in 2009, Marry Me is a premier wedding planning and styling consultancy based in Mumbai. Known for their warm, personalized approach and deep understanding of overseas cross-cultural expectations, Marry Me specializes in destination weddings across Goa, Rajasthan, and Southeast Asia.",
     strengths: "High attention to personal styling details; seamless coordination for NRI families navigating Indian vendor logistics.",
     considerations: "Boutique scale; limited corporate event coverage.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/marrymeweddings-dossier.svg",
+    leadVisual: "/assets/event-management-companies-in-india/companies/marrymeweddings-dossier.png",
     leadVisualAlt: "Marry Me The Wedding Planners verified NRI destination wedding portfolio dossier",
     caption: "Official Verified Dossier: Marry Me - The Wedding Planners (Bespoke NRI & Goa Coastal Celebrations)",
     secondaryPhoto: null
@@ -363,7 +363,7 @@ const companies = [
     bio: "Craftworld Events is a full-service event management and experiential marketing company based in Mumbai. With an operational reach extending across 100+ cities in India, Craftworld manages technical audio-visual setups, brand launches, and employee engagement programs for corporate clients in BFSI, IT, and pharmaceutical sectors.",
     strengths: "Dependable pan-India execution footprint; well-rounded capabilities covering both conferences and stall fabrication.",
     considerations: "Heavily corporate focused; minimal focus on high-touch private weddings.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/craftworld-dossier.svg",
+    leadVisual: "/assets/event-management-companies-in-india/companies/craftworld-dossier.png",
     leadVisualAlt: "Craftworld Events verified corporate conference and AGM production dossier",
     caption: "Official Verified Dossier: Craftworld Events (Pan-India Corporate Seminars, AGMs & Brand Activations)",
     secondaryPhoto: null
@@ -387,7 +387,7 @@ const companies = [
     bio: "ICE India is a market leader in pharmaceutical and healthcare event management. Navigating stringent industry compliance regulations and international medical association standards, ICE India handles large-scale medical conventions, international speaker management, and multi-hall scientific workshops.",
     strengths: "Comprehensive understanding of pharmaceutical compliance, CME credits, and scientific conference logistics.",
     considerations: "Specialized strictly in B2B corporate, medical, and industrial congresses.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/iceindia-dossier.svg",
+    leadVisual: "/assets/event-management-companies-in-india/companies/iceindia-dossier.png",
     leadVisualAlt: "ICE India verified healthcare and pharmaceutical conference production dossier",
     caption: "Official Verified Dossier: ICE India (Healthcare Congresses, Medical Association Summits & MICE)",
     secondaryPhoto: null
@@ -411,7 +411,7 @@ const companies = [
     bio: "Founded in 2005, Pegasus Events focuses squarely on the enterprise and corporate sector. Handling prestigious financial summits, technology roundtables, and leadership retreats across five-star properties in India and the UAE, Pegasus delivers crisp execution without unnecessary agency markups.",
     strengths: "Tight financial reporting, clear vendor pricing, and dependable corporate protocol management.",
     considerations: "Focuses strictly on the B2B corporate segment.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/pegasus-dossier.svg",
+    leadVisual: "/assets/event-management-companies-in-india/companies/pegasus-dossier.png",
     leadVisualAlt: "Pegasus Events verified enterprise conference and corporate conclave dossier",
     caption: "Official Verified Dossier: Pegasus Events (Enterprise BFSI Conclaves, Leadership Summits & Offsites)",
     secondaryPhoto: null
@@ -435,7 +435,7 @@ const companies = [
     bio: "Based in Jaipur, Shadows Entertainment is an expert in Royal Rajasthan destination weddings and traditional event productions. Handling everything from heritage fort illuminations to authentic folk troupe curations, Shadows brings Rajasthan's regal grandeur to life for domestic and international couples.",
     strengths: "Unrivaled local relationships with Rajasthan heritage venue properties and local artisan decorators.",
     considerations: "Primarily regional destination specialist in North & West India.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/shadows-dossier.svg",
+    leadVisual: "/assets/event-management-companies-in-india/companies/shadows-dossier.png",
     leadVisualAlt: "Shadows Entertainment verified heritage royal wedding and Rajasthan cultural dossier",
     caption: "Official Verified Dossier: Shadows Entertainment (Jaipur Heritage Fort Weddings & Royal Folk Curation)",
     secondaryPhoto: null
@@ -459,7 +459,7 @@ const companies = [
     bio: "Magic Lights is Udaipur's premier destination wedding planning agency. Specializing in intimate and grand celebrations across the City of Lakes, Magic Lights manages heritage clearances, boat transfers across Lake Pichola, royal baraat arrangements, and bespoke Rajasthani hospitality.",
     strengths: "Hyper-local operational mastery over Udaipur's iconic island and palace venues.",
     considerations: "Specialized exclusively in destination weddings across Rajasthan and Goa.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/magiclights-dossier.svg",
+    leadVisual: "/assets/event-management-companies-in-india/companies/magiclights-dossier.png",
     leadVisualAlt: "Magic Lights Wedding Planners verified Udaipur Lake Palace destination wedding dossier",
     caption: "Official Verified Dossier: Magic Lights Wedding Planners (Udaipur Lake Palace & Island Destination Celebrations)",
     secondaryPhoto: null
@@ -483,7 +483,7 @@ const companies = [
     bio: "Founded in 2002, Platinum World Group is an international experiential and MICE powerhouse. Having managed projects in over 80 countries, Platinum World curates once-in-a-lifetime journeys, private island buyouts, and Fortune 500 corporate conventions.",
     strengths: "World-class international destination network and accredited luxury travel relationships.",
     considerations: "Focus is primarily international MICE and ultra-luxury outbound gatherings.",
-    leadVisual: "/assets/event-management-companies-in-india/companies/platinumworld-dossier.svg",
+    leadVisual: "/assets/event-management-companies-in-india/companies/platinumworld-dossier.png",
     leadVisualAlt: "Platinum World Grp verified global ultra-luxury MICE and private jet retreat dossier",
     caption: "Official Verified Dossier: Platinum World Grp (Ultra-Luxury Worldwide MICE & High-Stakes CXO Retreats)",
     secondaryPhoto: null
@@ -538,11 +538,11 @@ const fullHtml = `<!doctype html>
   <meta property="og:title" content="Top 20 Event Management Companies in India (2026): Verified Directory">
   <meta property="og:description" content="Definitive national directory of India's top event planners, corporate conference organizers, and luxury wedding agencies. Compare verified contacts and services.">
   <meta property="og:url" content="https://visitbest.in/event-management-companies-in-india/">
-  <meta property="og:image" content="https://visitbest.in/assets/event-management-companies-in-india/hero.svg">
+  <meta property="og:image" content="https://visitbest.in/assets/event-management-companies-in-india/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Top 20 Event Management Companies in India (2026)">
   <meta name="twitter:description" content="Compare the top 20 event management companies in India by verified services, establishment, pricing transparency, and official websites.">
-  <meta name="twitter:image" content="https://visitbest.in/assets/event-management-companies-in-india/hero.svg">
+  <meta name="twitter:image" content="https://visitbest.in/assets/event-management-companies-in-india/hero.jpg">
   <link rel="stylesheet" href="/site.css">
   <script type="application/ld+json">
   {
@@ -601,7 +601,7 @@ const fullHtml = `<!doctype html>
         </div>
 
         <figure class="article-figure" style="margin:1.5rem 0;">
-          <img src="/assets/event-management-companies-in-india/hero.svg" alt="Professional corporate event production at a convention venue in India" width="1600" height="900" fetchpriority="high" style="width:100%;height:auto;max-height:480px;object-fit:cover;border-radius:12px;display:block;">
+          <img src="/assets/event-management-companies-in-india/hero.jpg" alt="Professional corporate event production at a convention venue in India" width="1600" height="900" fetchpriority="high" style="width:100%;height:auto;max-height:480px;object-fit:cover;border-radius:12px;display:block;">
           <figcaption style="font-size:0.85rem;color:#666;margin-top:6px;">National Directory: Leading Indian event production, corporate MICE, and luxury wedding agencies (Audited October 2026).</figcaption>
         </figure>
 
@@ -634,7 +634,7 @@ const fullHtml = `<!doctype html>
           <p>Organizing an event of consequence requires surgical logistical planning before a single truss is erected or a deposit is wired. Below is an editorial schematic detailing the physical desk, floor plan, and statutory permit checklist required by professional Indian event directors:</p>
 
           <figure style="margin:1.5rem 0;">
-            <img src="/assets/event-management-companies-in-india/visuals/planning-notebook.svg" alt="Handwritten Event Planning Notebook and Convention Hall Floor Plan Blueprint" width="1000" height="650" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:10px;border:1px solid #e2ddd3;box-shadow:0 4px 12px rgba(0,0,0,0.05);display:block;">
+            <img src="/assets/event-management-companies-in-india/visuals/planning-notebook.jpg" alt="Handwritten Event Planning Notebook and Convention Hall Floor Plan Blueprint" width="1000" height="650" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:10px;border:1px solid #e2ddd3;box-shadow:0 4px 12px rgba(0,0,0,0.05);display:block;">
             <figcaption style="font-size:0.85rem;color:#666;margin-top:6px;text-align:center;">Figure 1: The Event Planner's Desk — Production blueprint, GrandMA3 lighting notes, stage zoning, and statutory police/IPRS NOC permit clearance.</figcaption>
           </figure>
 
@@ -730,7 +730,7 @@ const fullHtml = `<!doctype html>
           </div>
 
           <figure style="margin:1.5rem 0;">
-            <img src="/assets/event-management-companies-in-india/visuals/event-types-comparison.svg" alt="The 4 Core Event Sectors in India: Corporate MICE, Luxury Weddings, Expos and Entertainment" width="1000" height="500" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:10px;border:1px solid #e2ddd3;box-shadow:0 4px 12px rgba(0,0,0,0.05);display:block;">
+            <img src="/assets/event-management-companies-in-india/visuals/event-types-comparison.png" alt="The 4 Core Event Sectors in India: Corporate MICE, Luxury Weddings, Expos and Entertainment" width="1000" height="500" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:10px;border:1px solid #e2ddd3;box-shadow:0 4px 12px rgba(0,0,0,0.05);display:block;">
             <figcaption style="font-size:0.85rem;color:#666;margin-top:6px;text-align:center;">Figure 2: The 4 Core Event Sectors in India — Operational scope, technical staging, and leading agency specializations across commercial verticals.</figcaption>
           </figure>
 
@@ -738,7 +738,7 @@ const fullHtml = `<!doctype html>
           <p>Professional event management in India operates along an established 6-stage operational lifecycle—from the preliminary strategic brief to the post-event financial audit and teardown:</p>
 
           <figure style="margin:1.5rem 0;">
-            <img src="/assets/event-management-companies-in-india/visuals/process-infographic.svg" alt="6-Stage Event Management Operational Lifecycle from Brief to Post-Event Analytics" width="1200" height="400" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:10px;border:1px solid #e2ddd3;box-shadow:0 4px 12px rgba(0,0,0,0.05);display:block;">
+            <img src="/assets/event-management-companies-in-india/visuals/process-infographic.png" alt="6-Stage Event Management Operational Lifecycle from Brief to Post-Event Analytics" width="1200" height="400" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:10px;border:1px solid #e2ddd3;box-shadow:0 4px 12px rgba(0,0,0,0.05);display:block;">
             <figcaption style="font-size:0.85rem;color:#666;margin-top:6px;text-align:center;">Figure 3: 6-Stage Event Management Workflow — Comprehensive operational roadmap governing vendor SLAs, live run-of-show cues, and compliance audits.</figcaption>
           </figure>
 
@@ -861,7 +861,7 @@ const fullHtml = `<!doctype html>
           </div>
 
           <figure style="margin:1.5rem 0;">
-            <img src="/assets/event-management-companies-in-india/visuals/budget-distribution.svg" alt="Typical Event Budget Allocation Donut Chart in India" width="900" height="500" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:10px;border:1px solid #e2ddd3;box-shadow:0 4px 12px rgba(0,0,0,0.05);display:block;">
+            <img src="/assets/event-management-companies-in-india/visuals/budget-distribution.png" alt="Typical Event Budget Allocation Donut Chart in India" width="900" height="500" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:10px;border:1px solid #e2ddd3;box-shadow:0 4px 12px rgba(0,0,0,0.05);display:block;">
             <figcaption style="font-size:0.85rem;color:#666;margin-top:6px;text-align:center;">Figure 4: Typical Event Budget Allocation — 35% Production/Staging/AV, 25% Venue/Hospitality, 15% Décor, 12% Artists, 8% Management Fee, 5% Buffer/Permits.</figcaption>
           </figure>
 
@@ -880,7 +880,7 @@ const fullHtml = `<!doctype html>
           <p>Explore dedicated regional event directories across India's premier metropolitan markets:</p>
 
           <figure style="margin:1.5rem 0;">
-            <img src="/assets/event-management-companies-in-india/visuals/geographic-coverage.svg" alt="Pan-India Geographic Distribution of Top 20 Event Management Hubs" width="900" height="600" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:10px;border:1px solid #e2ddd3;box-shadow:0 4px 12px rgba(0,0,0,0.05);display:block;">
+            <img src="/assets/event-management-companies-in-india/visuals/geographic-coverage.png" alt="Pan-India Geographic Distribution of Top 20 Event Management Hubs" width="900" height="600" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:10px;border:1px solid #e2ddd3;box-shadow:0 4px 12px rgba(0,0,0,0.05);display:block;">
             <figcaption style="font-size:0.85rem;color:#666;margin-top:6px;text-align:center;">Figure 5: Geographic Distribution Map — Audited headquarters and primary operational hubs: Mumbai (9), Delhi NCR (5), Rajasthan (2), Bengaluru (1), Ahmedabad (1).</figcaption>
           </figure>
 
