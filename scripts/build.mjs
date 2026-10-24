@@ -142,7 +142,8 @@ const [posts, pages, business, media, categories, tags, businessCategories, busi
 
 const mediaById = new Map(media.map((item) => [String(item.id), item]));
 const assetByUrl = new Map(assetQueue.map((item) => [item.url, item.local]));
-const editorialByCluster = new Map((editorialImages || []).map((item) => [item.cluster, item]));
+const editorialByCluster = new Map((editorialImages || []).filter((item) => !item.slug).map((item) => [item.cluster, item]));
+const editorialBySlug = new Map((editorialImages || []).filter((item) => item.slug).map((item) => [item.slug, item]));
 // The original WordPress uploads are mirrored locally. A small number of the
 // CSV-only routes did not have a source image, so they use a self-contained
 // editorial illustration instead of a hot-linked third-party asset.
@@ -339,7 +340,17 @@ function itemImage(item) {
   return null;
 }
 
-function editorialImage(cluster) {
+function editorialImage(cluster, slug = null) {
+  if (slug && editorialBySlug.has(slug)) {
+    const pageImage = editorialBySlug.get(slug);
+    return {
+      src: pageImage.local,
+      alt: pageImage.alt || "VisitBest guide cover",
+      credit: pageImage.credit || null,
+      sourcePage: pageImage.sourcePage || null,
+      license: pageImage.license || null,
+    };
+  }
   const image = editorialByCluster.get(cluster);
   if (!image) return null;
   const src = editorialLocalOverrides.get(cluster) || editorialFallback;
@@ -371,7 +382,7 @@ function relatedEntries(currentSlug, categoryName = "") {
     .map((item) => ({ slug: item.slug, title: decodeEntities(item.title?.rendered), summary: truncate(item.excerpt?.rendered || item.content?.rendered), date: item.date, href: urlFor(item.slug), image: itemImage(item), category: taxonomyLabel(item)[0] || "Guide" }));
   const legacy = legacyPages
     .filter((item) => item.slug !== currentSlug)
-    .map((item) => ({ slug: item.slug, title: item.title, summary: item.summary, date: buildDate, href: urlFor(item.slug), image: editorialImage(item.imageCluster), category: item.category }));
+    .map((item) => ({ slug: item.slug, title: item.title, summary: item.summary, date: buildDate, href: urlFor(item.slug), image: editorialImage(item.imageCluster, item.slug), category: item.category }));
   return [...live, ...legacy]
     .sort((a, b) => (a.category === categoryName ? -1 : 0) - (b.category === categoryName ? -1 : 0))
     .slice(0, 3);
@@ -445,12 +456,15 @@ function renderFooter() {
   </div><div class="container footer-bottom"><span>© 2026 Visit-Best. All rights reserved.</span><span>Independent editorial guides &amp; fan opinions. Not affiliated with Bigg Boss broadcasters or voting platforms.</span></div></footer><button class="back-top" type="button" data-back-top aria-label="Back to top">↑</button>`;
 }
 
-function renderPage({ title, description, canonical = "/", body, currentPath = "", schema = null }) {
+function renderPage({ title, description, canonical = "/", body, currentPath = "", schema = null, image = null }) {
   const canonicalUrl = new URL(routePath(canonical), origin).href;
   const schemaTag = schema ? `<script type="application/ld+json">${jsonLd(schema)}</script>` : "";
+  const pageImageSrc = image ? (typeof image === "string" ? image : image.src) : null;
+  const pageImageAlt = image && typeof image === "object" && image.alt ? image.alt : title;
+  const ogImageTags = pageImageSrc ? `<meta property="og:image" content="${new URL(pageImageSrc, origin).href}"><meta property="og:image:alt" content="${escapeHtml(pageImageAlt)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${new URL(pageImageSrc, origin).href}">` : `<meta name="twitter:card" content="summary">`;
   const googleTag = `<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-SZXR1R5PP7"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-SZXR1R5PP7');</script>`;
   const adsenseTag = `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6008816938247526" crossorigin="anonymous"></script>`;
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">${googleTag}${adsenseTag}<title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(truncate(description, 160))}"><link rel="canonical" href="${canonicalUrl}"><meta name="robots" content="index,follow"><meta property="og:type" content="website"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(truncate(description, 160))}"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/site.css">${schemaTag}</head><body>${renderHeader(currentPath)}<main id="content">${body}</main>${renderFooter()}<script src="/site.js" defer></script></body></html>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">${googleTag}${adsenseTag}<title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(truncate(description, 160))}"><link rel="canonical" href="${canonicalUrl}"><meta name="robots" content="index,follow"><meta property="og:type" content="website"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(truncate(description, 160))}">${ogImageTags}<link rel="stylesheet" href="/site.css">${schemaTag}</head><body>${renderHeader(currentPath)}<main id="content">${body}</main>${renderFooter()}<script src="/site.js" defer></script></body></html>`;
 }
 
 function breadcrumbs(items) {
@@ -508,7 +522,7 @@ function renderArticle({ slug, title, summary, html, datePublished, dateModified
   const figure = image ? `<figure class="article-figure"><img src="${image.src}" alt="${escapeHtml(image.alt || titleText)}" loading="eager" decoding="async"><figcaption>${image.credit ? `${escapeHtml(image.credit)}${image.sourcePage ? ` · <a href="${image.sourcePage}" rel="nofollow noopener" target="_blank">Image source</a>` : ""}` : "Image used inside the guide."}</figcaption></figure>` : "";
   const related = renderRelated(relatedEntries(slug, category));
   const body = `${breadcrumbs([{ href: categoryHref, label: category || "Guide" }, { label: titleText }])}<div class="article-layout"><article class="article-card"><p class="eyebrow">VisitBest guide</p><h1 class="article-title">${escapeHtml(titleText)}</h1><p class="article-dek">${escapeHtml(description)}</p>${meta}${renderMobileToc(prepared.headings)}${figure}${renderAdBanner("intro")}<div class="prose">${prepared.html}</div>${renderAdBanner("outro")}${renderAuthor()}${related}</article>${renderToc(prepared.headings)}</div>`;
-  return renderPage({ title: titleText, description, canonical, currentPath: canonical, body, schema: articleSchema });
+  return renderPage({ title: titleText, description, canonical, currentPath: canonical, body, schema: articleSchema, image });
 }
 
 function renderLegacyHtml(entry) {
@@ -536,7 +550,7 @@ function archiveCardFromPost(item) {
 }
 
 function archiveCardFromLegacy(item) {
-  return { href: urlFor(item.slug), title: item.title, summary: item.summary, date: buildDate, image: editorialImage(item.imageCluster), category: item.category };
+  return { href: urlFor(item.slug), title: item.title, summary: item.summary, date: buildDate, image: editorialImage(item.imageCluster, item.slug), category: item.category };
 }
 
 function renderArchive({ title, description, cards, currentPath, page = 1, totalPages = 1, basePath = "" }) {
@@ -616,10 +630,10 @@ for (const item of posts) {
 for (const page of pages) {
   const generated = fallbackForPage(page);
   if (generated) {
-    await writeRoute(urlFor(page.slug), renderArticle({ slug: generated.slug, title: generated.title, summary: generated.summary, html: renderLegacyHtml(generated), datePublished: page.date, dateModified: buildDate, category: generated.category, image: editorialImage(generated.imageCluster), type: "article" }));
+    await writeRoute(urlFor(page.slug), renderArticle({ slug: generated.slug, title: generated.title, summary: generated.summary, html: renderLegacyHtml(generated), datePublished: page.date, dateModified: buildDate, category: generated.category, image: editorialImage(generated.imageCluster, generated.slug), type: "article" }));
   } else {
     const title = decodeEntities(page.title?.rendered);
-    await writeRoute(urlFor(page.slug), renderArticle({ slug: page.slug, title, summary: page.excerpt?.rendered || page.content?.rendered, html: localizeHtml(page.content?.rendered || `<p>${escapeHtml(title)}</p>`), datePublished: page.date, dateModified: page.modified, category: null, type: "page" }));
+    await writeRoute(urlFor(page.slug), renderArticle({ slug: page.slug, title, summary: page.excerpt?.rendered || page.content?.rendered, html: localizeHtml(page.content?.rendered || `<p>${escapeHtml(title)}</p>`), datePublished: page.date, dateModified: page.modified, category: null, type: "page", image: page.featured_media ? itemImage(page) : null }));
   }
 }
 
@@ -634,7 +648,7 @@ for (const entry of legacyPages) {
     entry.slug === "best-sites-to-watch-anime" ||
     entry.slug === "beautiful-young-hollywood-actresses"
   ) continue;
-  await writeRoute(urlFor(entry.slug), renderArticle({ slug: entry.slug, title: entry.title, summary: entry.summary, html: renderLegacyHtml(entry), datePublished: buildDate, dateModified: buildDate, category: entry.category === "Site" ? null : entry.category, image: editorialImage(entry.imageCluster), type: entry.type === "policy" ? "page" : "article" }));
+  await writeRoute(urlFor(entry.slug), renderArticle({ slug: entry.slug, title: entry.title, summary: entry.summary, html: renderLegacyHtml(entry), datePublished: buildDate, dateModified: buildDate, category: entry.category === "Site" ? null : entry.category, image: editorialImage(entry.imageCluster, entry.slug), type: entry.type === "policy" ? "page" : "article" }));
 }
 
 for (const item of business) await writeRoute(urlFor(item.slug, "/business"), renderBusinessDetail(item));
@@ -724,6 +738,7 @@ for (const poll of bbPolls) {
     currentPath: urlFor(poll.slug),
     body,
     schema: biggBossSchema(poll),
+    image: poll.image || null,
   });
   await writeRoute(urlFor(poll.slug), html);
 }
@@ -736,6 +751,7 @@ await writeRoute(urlFor("bigg-boss-20-contestants"), renderPage({
   currentPath: urlFor("bigg-boss-20-contestants"),
   body: bbContestantsBody,
   schema: biggBossSchema(null, true, false),
+  image: "/assets/bb20-new/covers/bigg-boss-20-contestants.jpg",
 }));
 
 const bbRulesBody = `${renderBiggBossRulesPage()}<style>${bbCss}</style><script>${bbClient}</script>`;
@@ -746,6 +762,7 @@ await writeRoute(urlFor("bigg-boss-20-voting-rules"), renderPage({
   currentPath: urlFor("bigg-boss-20-voting-rules"),
   body: bbRulesBody,
   schema: biggBossSchema(null, false, true),
+  image: "/assets/bb20-new/covers/bigg-boss-20-voting-rules.jpg",
 }));
 
 await writeRoute("/search/", renderSearch());

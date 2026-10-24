@@ -165,11 +165,11 @@ const fullHtml = `<!doctype html>
   <meta property="og:title" content="Best Sites to Watch Anime in India 2026: Free &amp; Legal Anime Sites">
   <meta property="og:description" content="Authoritative Indian guide to legal anime streaming: Crunchyroll, Netflix, Muse Asia, Ani-One, SonyLIV, Hindi dubs, simulcasts, and pricing.">
   <meta property="og:url" content="https://visitbest.in/best-sites-to-watch-anime/">
-  <meta property="og:image" content="https://visitbest.in/assets/editorial/editorial-fallback.svg">
+  <meta property="og:image" content="https://visitbest.in/assets/best-sites-to-watch-anime/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Best Sites to Watch Anime in India 2026: Free &amp; Legal Anime Sites">
   <meta name="twitter:description" content="Authoritative Indian guide to legal anime streaming: Crunchyroll, Netflix, Muse Asia, Ani-One, SonyLIV, Hindi dubs, simulcasts, and pricing.">
-  <meta name="twitter:image" content="https://visitbest.in/assets/editorial/editorial-fallback.svg">
+  <meta name="twitter:image" content="https://visitbest.in/assets/best-sites-to-watch-anime/hero.jpg">
   <link rel="stylesheet" href="/site.css">
   <script type="application/ld+json">
   {
@@ -228,7 +228,7 @@ const fullHtml = `<!doctype html>
         </div>
 
         <figure class="article-figure">
-          <img src="/assets/editorial/editorial-fallback.svg" alt="Best Sites to Watch Anime in India 2026" style="width:100%;height:auto;max-height:460px;object-fit:cover;border-radius:12px;">
+          <img src="/assets/best-sites-to-watch-anime/hero.jpg" alt="Best Sites to Watch Anime in India 2026" style="width:100%;height:auto;max-height:460px;object-fit:cover;border-radius:12px;">
           <figcaption>Legal, high-definition anime streaming platforms serving Indian viewers in 2026.</figcaption>
         </figure>
 

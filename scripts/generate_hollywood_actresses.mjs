@@ -391,11 +391,11 @@ const fullHtml = `<!doctype html>
   <meta property="og:title" content="30 Most Beautiful Young Hollywood Actresses in 2026: Rising Stars Ranked">
   <meta property="og:description" content="Definitive ranking of Hollywood's most talented, stylish, and charismatic young actresses under 30 in 2026.">
   <meta property="og:url" content="https://visitbest.in/beautiful-young-hollywood-actresses/">
-  <meta property="og:image" content="https://visitbest.in/assets/editorial/editorial-fallback.svg">
+  <meta property="og:image" content="https://visitbest.in/assets/beautiful-young-hollywood-actresses/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="30 Most Beautiful Young Hollywood Actresses in 2026: Rising Stars Ranked">
   <meta name="twitter:description" content="Definitive ranking of Hollywood's most talented, stylish, and charismatic young actresses under 30 in 2026.">
-  <meta name="twitter:image" content="https://visitbest.in/assets/editorial/editorial-fallback.svg">
+  <meta name="twitter:image" content="https://visitbest.in/assets/beautiful-young-hollywood-actresses/hero.jpg">
   <link rel="stylesheet" href="/site.css">
   <script type="application/ld+json">
   {
@@ -454,7 +454,7 @@ const fullHtml = `<!doctype html>
         </div>
 
         <figure class="article-figure">
-          <img src="/assets/editorial/editorial-fallback.svg" alt="Beautiful Young Hollywood Actresses 2026" style="width:100%;height:auto;max-height:460px;object-fit:cover;border-radius:12px;">
+          <img src="/assets/beautiful-young-hollywood-actresses/hero.jpg" alt="Beautiful Young Hollywood Actresses 2026" style="width:100%;height:auto;max-height:460px;object-fit:cover;border-radius:12px;">
           <figcaption>A new era of cinema: the rising young actresses commanding global screens in 2026.</figcaption>
         </figure>
 
