@@ -1623,7 +1623,7 @@ const schema = {
         "@type": "WebPage",
         "@id": "https://visitbest.in/hottest-chinese-actors/"
       },
-      "image": ["https://visitbest.in/assets/editorial/editorial-fallback.svg"],
+      "image": ["https://visitbest.in/assets/hottest-chinese-actors/hero.jpg"],
       "datePublished": "2026-09-09",
       "dateModified": "2026-10-06",
       "description": "Discover the hottest Chinese actors of 2026, ranked by popularity, charisma, style, screen presence and fan appeal. See their best C-dramas, careers and more."
@@ -1672,8 +1672,8 @@ const fullHtml = `<!doctype html>
   <meta property="og:description" content="Discover the hottest Chinese actors of 2026, ranked by popularity, charisma, style, screen presence and fan appeal. See their best C-dramas, careers and more.">
   <meta property="og:url" content="https://visitbest.in/hottest-chinese-actors/">
   <meta name="twitter:card" content="summary">
-  <meta property="og:image" content="https://visitbest.in/assets/editorial/editorial-fallback.svg">
-  <meta name="twitter:image" content="https://visitbest.in/assets/editorial/editorial-fallback.svg">
+  <meta property="og:image" content="https://visitbest.in/assets/hottest-chinese-actors/hero.jpg">
+  <meta name="twitter:image" content="https://visitbest.in/assets/hottest-chinese-actors/hero.jpg">
   <link rel="stylesheet" href="/site.css">
   <script type="application/ld+json">${JSON.stringify(schema)}</script>
 </head>
@@ -1699,8 +1699,8 @@ const fullHtml = `<!doctype html>
           <span><strong>18 min read</strong></span>
         </div>
         <figure class="article-figure">
-          <img src="/assets/editorial/editorial-fallback.svg" alt="Illustration representing cinema and television entertainment" loading="eager" decoding="async">
-          <figcaption>VisitBest editorial illustration • Chinese Drama &amp; Television Spotlight</figcaption>
+          <img src="/assets/hottest-chinese-actors/hero.jpg" alt="Hottest Chinese Actors 2026 — Zhang Linghe, Xiao Zhan, Wang Yibo and Yang Yang" loading="eager" decoding="async">
+          <figcaption>VisitBest cover: the top-ranked Chinese actors of 2026</figcaption>
         </figure>
 
         <div class="ad-placement ad-intro" style="margin:2rem auto;text-align:center;min-height:90px;clear:both;">
@@ -1750,7 +1750,7 @@ const fullHtml = `<!doctype html>
             </article>
             <article class="card">
               <a href="/best-sites-to-watch-anime/">
-                <div class="card-media"><img src="/assets/editorial/editorial-fallback.svg" alt="Anime streaming guide" loading="lazy" decoding="async"></div>
+                <div class="card-media"><img src="/assets/editorial/zoetrope.jpg" alt="Anime streaming guide" loading="lazy" decoding="async"></div>
                 <div class="card-body">
                   <div class="card-meta"><span class="tag">Entertainment</span><span>9 September 2026</span></div>
                   <h3>Best Legal Sites to Watch Anime in India</h3>
@@ -1760,7 +1760,7 @@ const fullHtml = `<!doctype html>
             </article>
             <article class="card">
               <a href="/best-hindi-comedy-movies/">
-                <div class="card-media"><img src="/assets/editorial/editorial-fallback.svg" alt="Hindi comedy movies" loading="lazy" decoding="async"></div>
+                <div class="card-media"><img src="/assets/editorial/cinema-projector.jpg" alt="Hindi comedy movies" loading="lazy" decoding="async"></div>
                 <div class="card-body">
                   <div class="card-meta"><span class="tag">Entertainment</span><span>9 September 2026</span></div>
                   <h3>Best Hindi Comedy Movies: Classics, Satires and Modern Favourites</h3>
