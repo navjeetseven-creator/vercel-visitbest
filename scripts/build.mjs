@@ -30,6 +30,16 @@ async function readJson(file, fallback = null) {
 
 function decodeEntities(value = "") {
   return String(value)
+    // Decode numeric character references (decimal &#038; and hex &#x26;)
+    // before the named entities, so WordPress-exported text renders the
+    // intended character instead of the literal reference. Invalid code
+    // points (zero, surrogates, beyond U+10FFFF) become U+FFFD, matching
+    // browser behaviour.
+    .replace(/&#(\d+);|&#[xX]([0-9a-fA-F]+);/g, (match, decimal, hex) => {
+      const codePoint = decimal ? Number.parseInt(decimal, 10) : Number.parseInt(hex, 16);
+      if (!codePoint || codePoint > 0x10FFFF || (codePoint >= 0xD800 && codePoint <= 0xDFFF)) return "�";
+      return String.fromCodePoint(codePoint);
+    })
     .replace(/&nbsp;/gi, " ")
     .replace(/&amp;/gi, "&")
     .replace(/&quot;/gi, '"')
@@ -452,6 +462,11 @@ function renderToc(headings) {
   return `<aside class="toc-card"><h2>In this guide</h2><nav aria-label="Table of contents">${headings.map((heading) => `<a href="#${heading.id}" data-level="${heading.level}">${escapeHtml(heading.text)}</a>`).join("")}</nav></aside>`;
 }
 
+function renderMobileToc(headings) {
+  if (!headings.length) return "";
+  return `<details class="toc-mobile"><summary>In this guide</summary><nav aria-label="Table of contents">${headings.map((heading) => `<a href="#${heading.id}" data-level="${heading.level}">${escapeHtml(heading.text)}</a>`).join("")}</nav></details>`;
+}
+
 function renderAuthor() {
   return `<div class="author-box"><div class="author-mark" aria-hidden="true">VB</div><div><strong>VisitBest Editorial Team</strong><p>We research public sources, compare practical options, and edit guides for clarity. We update time-sensitive details when reliable information changes and flag claims that need verification.</p></div></div>`;
 }
@@ -492,7 +507,7 @@ function renderArticle({ slug, title, summary, html, datePublished, dateModified
   const meta = `<div class="article-meta"><span>${categoryHref ? `<a class="pill" href="${categoryHref}">${escapeHtml(category)}</a>` : ""}</span><span>Updated <strong>${escapeHtml(humanDate(dateModified || datePublished || buildDate))}</strong></span><span><strong>${readingTime(prepared.html)} min read</strong></span></div>`;
   const figure = image ? `<figure class="article-figure"><img src="${image.src}" alt="${escapeHtml(image.alt || titleText)}" loading="eager" decoding="async"><figcaption>${image.credit ? `${escapeHtml(image.credit)}${image.sourcePage ? ` · <a href="${image.sourcePage}" rel="nofollow noopener" target="_blank">Image source</a>` : ""}` : "Image used inside the guide."}</figcaption></figure>` : "";
   const related = renderRelated(relatedEntries(slug, category));
-  const body = `${breadcrumbs([{ href: categoryHref, label: category || "Guide" }, { label: titleText }])}<div class="article-layout"><article class="article-card"><p class="eyebrow">VisitBest guide</p><h1 class="article-title">${escapeHtml(titleText)}</h1><p class="article-dek">${escapeHtml(description)}</p>${meta}${figure}${renderAdBanner("intro")}<div class="prose">${prepared.html}</div>${renderAdBanner("outro")}${renderAuthor()}${related}</article>${renderToc(prepared.headings)}</div>`;
+  const body = `${breadcrumbs([{ href: categoryHref, label: category || "Guide" }, { label: titleText }])}<div class="article-layout"><article class="article-card"><p class="eyebrow">VisitBest guide</p><h1 class="article-title">${escapeHtml(titleText)}</h1><p class="article-dek">${escapeHtml(description)}</p>${meta}${renderMobileToc(prepared.headings)}${figure}${renderAdBanner("intro")}<div class="prose">${prepared.html}</div>${renderAdBanner("outro")}${renderAuthor()}${related}</article>${renderToc(prepared.headings)}</div>`;
   return renderPage({ title: titleText, description, canonical, currentPath: canonical, body, schema: articleSchema });
 }
 
@@ -544,7 +559,7 @@ function renderBusinessDetail(item) {
   const prepared = addHeadingIds(localizeHtml(item.content?.rendered || `<p>${escapeHtml(truncate(item.excerpt?.rendered || "Business directory profile.", 800))}</p>`));
   const title = decodeEntities(item.title?.rendered);
   const description = truncate(item.excerpt?.rendered || item.content?.rendered, 156);
-  const body = `${breadcrumbs([{ href: "/business/", label: "Business directory" }, { label: title }])}<div class="article-layout"><article class="article-card"><p class="eyebrow">Business directory profile</p><h1 class="article-title">${escapeHtml(title)}</h1><p class="article-dek">${escapeHtml(description)}</p><div class="article-meta"><span>${categoryTermsForItem.map((term) => `<a class="pill" href="/business-category/${term.slug}/">${escapeHtml(term.name)}</a>`).join(" ")}</span><span>${locationTermsForItem.map((term) => `<a href="/business-location/${term.slug}/">${escapeHtml(term.name)}</a>`).join(", ")}</span><span>Updated <strong>${escapeHtml(humanDate(item.modified || item.date))}</strong></span></div><div class="prose">${prepared.html}</div><div class="source-note">Directory information is compiled from public sources and should be verified with the organisation before a commercial decision.</div>${renderAuthor()}${renderRelated(relatedEntries("", categoriesForItem[0] || ""))}</article>${renderToc(prepared.headings)}</div>`;
+  const body = `${breadcrumbs([{ href: "/business/", label: "Business directory" }, { label: title }])}<div class="article-layout"><article class="article-card"><p class="eyebrow">Business directory profile</p><h1 class="article-title">${escapeHtml(title)}</h1><p class="article-dek">${escapeHtml(description)}</p><div class="article-meta"><span>${categoryTermsForItem.map((term) => `<a class="pill" href="/business-category/${term.slug}/">${escapeHtml(term.name)}</a>`).join(" ")}</span><span>${locationTermsForItem.map((term) => `<a href="/business-location/${term.slug}/">${escapeHtml(term.name)}</a>`).join(", ")}</span><span>Updated <strong>${escapeHtml(humanDate(item.modified || item.date))}</strong></span></div>${renderMobileToc(prepared.headings)}<div class="prose">${prepared.html}</div><div class="source-note">Directory information is compiled from public sources and should be verified with the organisation before a commercial decision.</div>${renderAuthor()}${renderRelated(relatedEntries("", categoriesForItem[0] || ""))}</article>${renderToc(prepared.headings)}</div>`;
   return renderPage({ title, description, canonical: urlFor(item.slug, "/business"), currentPath: urlFor(item.slug, "/business"), body, schema: { "@context": "https://schema.org", "@type": "ProfilePage", name: title, description, url: new URL(urlFor(item.slug, "/business"), origin).href } });
 }
 

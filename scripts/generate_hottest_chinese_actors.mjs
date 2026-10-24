@@ -1599,6 +1599,15 @@ const tocHtml = `
 </aside>
 `;
 
+const mobileTocHtml = `
+<details class="toc-mobile">
+  <summary>In this guide</summary>
+  <nav aria-label="Table of contents">
+    ${headings.map(h => `<a href="#${h.id}">${h.text}</a>`).join("")}
+  </nav>
+</details>
+`;
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -1698,6 +1707,7 @@ const fullHtml = `<!doctype html>
           <span>Updated <strong>6 October 2026</strong></span>
           <span><strong>18 min read</strong></span>
         </div>
+        ${mobileTocHtml}
         <figure class="article-figure">
           <img src="/assets/hottest-chinese-actors/hero.jpg" alt="Hottest Chinese Actors 2026 — Zhang Linghe, Xiao Zhan, Wang Yibo and Yang Yang" loading="eager" decoding="async">
           <figcaption>VisitBest cover: the top-ranked Chinese actors of 2026</figcaption>

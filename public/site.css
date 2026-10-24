@@ -238,3 +238,34 @@ h1, h2, h3, h4 { color: var(--ink); font-family: Georgia, "Times New Roman", ser
   .archive-toolbar form { width: 100%; }
   .archive-toolbar input { flex: 1; }
 }
+
+/* === Mobile fixes: wide tables, top contents menu, full-width header search, ad clearance === */
+/* The collapsible contents menu is mobile-only; the sidebar card serves larger screens. */
+.toc-mobile { display: none; }
+/* Long unbreakable strings (e.g. full map URLs) inside table cells or links must never
+   force the page wider than the viewport; wide tables scroll inside .table-scroll. */
+.prose td, .prose th, .comparison-table td, .comparison-table th { overflow-wrap: anywhere; }
+.prose a { overflow-wrap: anywhere; }
+.table-scroll { -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+
+@media (max-width: 768px) {
+  /* Header: keep the hamburger dropdown from the 980px rules, give the toggle a
+     hamburger glyph, and bring the search back as a full-width row under the brand
+     (the 980px rules hide it entirely). */
+  .header-inner { flex-wrap: wrap; padding-block: .55rem; row-gap: .55rem; }
+  .menu-toggle::before { content: "☰"; margin-right: .45rem; font-size: 1.05rem; line-height: 1; }
+  .header-search { display: flex; order: 3; flex: 1 1 100%; margin-left: 0; }
+  .header-search input { flex: 1; width: auto; min-width: 0; }
+  /* Contents: hide the sidebar card; show the collapsible menu at the top of the article. */
+  .toc-card { display: none; }
+  .toc-mobile { display: block; margin: 1.1rem 0 1.25rem; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+  .toc-mobile summary { cursor: pointer; padding: .8rem 1rem; color: var(--accent); font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+  .toc-mobile nav { padding: 0 .55rem .65rem; }
+  .toc-mobile a { display: block; padding: .55rem .45rem; border-top: 1px solid #f0f1f3; color: var(--muted); font-size: .92rem; line-height: 1.35; }
+  .toc-mobile a[data-level="3"] { padding-left: 1.35rem; font-size: .88rem; }
+  /* AdSense Auto Ads can inject a sticky bottom (anchor) ad that is outside template
+     control; leave scroll clearance so it cannot cover the footer, and lift the
+     back-to-top button above where the anchor ad sits. */
+  body { padding-bottom: 60px; }
+  .back-top { bottom: 4.9rem; }
+}

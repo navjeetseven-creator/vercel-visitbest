@@ -32,6 +32,13 @@
     });
   });
 
+  document.querySelectorAll('.toc-mobile a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      const box = link.closest('details.toc-mobile');
+      if (box) box.removeAttribute('open');
+    });
+  });
+
   const filter = document.querySelector('[data-directory-filter]');
   if (filter) {
     const cards = Array.from(document.querySelectorAll('[data-directory-card]'));
