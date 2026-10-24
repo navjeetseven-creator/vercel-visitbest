@@ -323,6 +323,15 @@ const tocHtml = `
 </aside>
 `;
 
+const mobileTocHtml = `
+<details class="toc-mobile">
+  <summary>In this guide</summary>
+  <nav aria-label="Table of contents">
+    ${headings.map(h => `<a href="#${h.id}">${h.text}</a>`).join("")}
+  </nav>
+</details>
+`;
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -422,6 +431,7 @@ const fullHtml = `<!doctype html>
           <span>Updated <strong>6 October 2026</strong></span>
           <span><strong>15 min read</strong></span>
         </div>
+        ${mobileTocHtml}
         <figure class="article-figure">
           <img src="/assets/most-beautiful-bollywood-actresses/hero.jpg" alt="Illustration representing Indian cinema and Bollywood beauty" loading="eager" decoding="async">
           <figcaption>VisitBest editorial illustration • Bollywood &amp; Indian Cinema Spotlight</figcaption>
