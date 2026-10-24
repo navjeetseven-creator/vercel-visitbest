@@ -295,6 +295,7 @@ export const contestantById = new Map(contestants.map((c) => [c.id, c]));
 export const polls = [
   {
     slug: "bigg-boss-20-voting",
+    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
     title: "Bigg Boss 20 Voting – Week 7 Open Poll & Audience Sentiment - VisitBest",
     h1: "Bigg Boss 20 Voting – Week 7 Open Poll",
     lead: "VisitBest Open Poll for Week 7: Qazi Touqeer leads the audience sentiment standings, followed closely by ScoutOP, Gullu and Yung DSA. Seven contestants are nominated this week — Gullu, Mary Kom, Aamrapali Dubey, Arishfa Khan, Love Gill, Uditi Singh and wild card Manish Goel. Mahhi Vij is captain. This open poll does not decide evictions.",
@@ -322,6 +323,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-winner-prediction",
+    image: "/assets/bb20-new/covers/bigg-boss-20-winner-prediction.jpg",
     title: "Who Will Win Bigg Boss 20? Winner Prediction Poll & Finale Odds — Open Poll",
     h1: "Who Will Win Bigg Boss 20? Finale Winner Prediction (Open Poll)",
     lead: "The race to the Season 20 Trophy is heating up! Qazi Touqeer leads the grand winner predictions with overwhelming musical fanbase support, closely chased by esports icon Scout and comedy sensation Gullu. Who will lift the trophy?",
@@ -351,6 +353,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-best-contestant",
+    image: "/assets/bb20-new/covers/bigg-boss-20-best-contestant.jpg",
     title: "Best Contestant of Bigg Boss 20 Poll – Strategic Mastermind & Top Player — Open Poll",
     h1: "Who is the Best Contestant of Bigg Boss 20? (Open Poll)",
     lead: "Which contestant is playing the smartest, most entertaining, and fearless game in Bigg Boss Season 20? Gaming maestro Tanmay 'Scout' Singh dominates the Best Contestant poll with 38.5% of total votes.",
@@ -380,6 +383,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-joker-of-the-house",
+    image: "/assets/bb20-new/covers/bigg-boss-20-joker-of-the-house.jpg",
     title: "Who is the Joker of Bigg Boss 20? Most Fake & Over-Dramatic Contestant Poll — Open Poll",
     h1: "Who is the Joker of Bigg Boss 20? (Most Dramatic / Fake) (Open Poll)",
     lead: "Bigg Boss is never complete without loud theatrics, cringe fights, and over-the-top acting. Who is acting as the true Joker of the house? Aman Gandhi tops the negative hype poll with 42.1% votes!",
@@ -409,6 +413,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-who-is-boss",
+    image: "/assets/bb20-new/covers/bigg-boss-20-who-is-boss.jpg",
     title: "Who is the Real Boss of Bigg Boss 20? Dominant Leader & Authority Poll — Open Poll",
     h1: "Who is the Real Boss of the Bigg Boss 20 House? (Open Poll)",
     lead: "Who controls the house dynamics, commands total respect, and dictates the kitchen and task schedules? Olympic legend MC Mary Kom is leading the Real Boss poll with 36.4% vote share!",
@@ -438,6 +443,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-entertainer",
+    image: "/assets/bb20-new/covers/bigg-boss-20-entertainer.jpg",
     title: "Biggest Entertainer of Bigg Boss 20 Poll – 24/7 Comedy & Viral Moments — Open Poll",
     h1: "Who is the Biggest Entertainer of Bigg Boss 20? (Open Poll)",
     lead: "Who delivers pure entertainment, memorable punchlines, hilarious comedy, and viral social media reels? Gullu and Qazi Touqeer are locked in a historic tie for Bigg Boss 20 Entertainer #1!",
@@ -468,6 +474,7 @@ export const polls = [
   // Head to Head Duels
   {
     slug: "bigg-boss-20-gullu-vs-qazi",
+    image: "/assets/bb20-new/covers/bigg-boss-20-gullu-vs-qazi.jpg",
     title: "Gullu vs Qazi Touqeer: Bigg Boss 20 Mega Rivalry Poll – Who Deserves More Votes? — Open Poll",
     h1: "Gullu vs Qazi Touqeer: The Ultimate Mega Duel (Open Poll)",
     lead: "The biggest rivalry of Bigg Boss Season 20! Digital sensation Gullu battles singing legend Qazi Touqeer in a direct head-to-head vote. Who will come out on top?",
@@ -483,6 +490,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-scout-vs-gullu",
+    image: "/assets/bb20-new/covers/bigg-boss-20-scout-vs-gullu.jpg",
     title: "Scout vs Gullu: Gaming Fandom vs Comedy Army – Bigg Boss 20 Fan Clash — Open Poll",
     h1: "Scout vs Gullu: Gaming Titans vs Comedy Fandom (Open Poll)",
     lead: "Two colossal youth fanbases collide! Tanmay 'Scout' Singh takes on Gullu in an electrifying popularity showdown. Which fandom has the real voting firepower?",
@@ -498,6 +506,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-qazi-vs-scout",
+    image: "/assets/bb20-new/covers/bigg-boss-20-qazi-vs-scout.jpg",
     title: "Qazi Touqeer vs Scout: Who Deserves the Bigg Boss 20 Finale Spot? — Open Poll",
     h1: "Qazi Touqeer vs Scout: The Finale Clash (Open Poll)",
     lead: "Kashmiri singing sensation Qazi Touqeer faces off against esports champion Scout for the #1 finalist spot in Bigg Boss 20. Who will punch their ticket to the finale?",
@@ -513,6 +522,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-gullu-vs-yung",
+    image: "/assets/bb20-new/covers/bigg-boss-20-gullu-vs-yung.jpg",
     title: "Gullu vs Yung DSA: Street Comedy vs Gully Rap – Bigg Boss 20 Faceoff — Open Poll",
     h1: "Gullu vs Yung DSA: Comedy vs Gully Rap (Open Poll)",
     lead: "Street comedy meets hard-hitting underground hip-hop! Who rules the youth vibe inside the Bigg Boss 20 house? Gullu vs Yung DSA live audience vote.",
@@ -528,6 +538,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-mary-kom-vs-gullu",
+    image: "/assets/bb20-new/covers/bigg-boss-20-mary-kom-vs-gullu.jpg",
     title: "Mary Kom vs Gullu: Champion Dignity vs Comedy Chaos – Bigg Boss 20 Poll — Open Poll",
     h1: "Mary Kom vs Gullu: Powerhouse vs Entertainer (Open Poll)",
     lead: "Disciplined Olympic champion MC Mary Kom squares off against unfiltered comedy machine Gullu. Do you value quiet strength and dignity, or relentless laughter?",
@@ -543,6 +554,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-kanika-vs-mahhi",
+    image: "/assets/bb20-new/covers/bigg-boss-20-kanika-vs-mahhi.jpg",
     title: "Kanika Mann vs Mahhi Vij: TV Queens Faceoff – Bigg Boss 20 Popularity Battle — Open Poll",
     h1: "Kanika Mann vs Mahhi Vij: Battle of Television Queens (Open Poll)",
     lead: "Two of Indian television's biggest sweethearts and fiercest reality stars clash in this direct poll. Who will win the hearts of daily soap viewers and fans?",
@@ -591,6 +603,7 @@ export function biggBossSchema(item, isContestantsPage = false, isRulesPage = fa
           name: "Bigg Boss 20 Voting Rules & Timings — VisitBest Guide (Official Voting via JioCinema / JioHotstar)",
           description: "VisitBest guide explaining how official Bigg Boss 20 voting works via JioCinema / JioHotstar as announced on air, plus the VisitBest Open Poll disclaimer. VisitBest does not publish missed-call voting numbers.",
           url: `${baseUri}/bigg-boss-20-voting-rules/`,
+          image: `${baseUri}/assets/bb20-new/covers/bigg-boss-20-voting-rules.jpg`,
         },
         {
           "@type": "FAQPage",
@@ -632,6 +645,7 @@ export function biggBossSchema(item, isContestantsPage = false, isRulesPage = fa
       name: "Bigg Boss 20 Contestants List with Photos, Age, Bio & Journey (Updated Week 7)",
       description: "Complete directory of all 18 Bigg Boss Season 20 housemates (16 originals plus 2 wild cards) with photos where available, corrected bios, occupations and Week 7 status. Includes the VisitBest Open Poll disclaimer.",
       url: `${baseUri}/bigg-boss-20-contestants/`,
+      image: `${baseUri}/assets/bb20-new/covers/bigg-boss-20-contestants.jpg`,
       mainEntity: {
         "@type": "ItemList",
         itemListElement: contestants.map((c, idx) => ({
@@ -657,6 +671,7 @@ export function biggBossSchema(item, isContestantsPage = false, isRulesPage = fa
         operatingSystem: "All",
         url: `${baseUri}/${item.slug}/`,
         description: item.lead,
+        ...(item.image ? { image: `${baseUri}${item.image}` } : {}),
       },
       {
         "@type": "FAQPage",
@@ -693,6 +708,9 @@ export function biggBossSchema(item, isContestantsPage = false, isRulesPage = fa
 
 
 // Shared Open Poll disclaimer — required on every poll / contestants / rules page
+export const bbCoverFigure = (src, alt) =>
+  src ? `<figure class="bb-cover" style="margin:1.25rem 0 0;"><img src="${src}" alt="${alt}" loading="eager" decoding="async" style="width:100%;height:auto;display:block;border-radius:12px;"></figure>` : "";
+
 export const OPEN_POLL_DISCLAIMER = "Open Poll — for audience sentiment only. This poll is run by VisitBest for entertainment and discussion. It is NOT official Bigg Boss voting, it does not decide nominations or evictions, and its results are not official vote counts. Official voting, where opened by the show, is only through the official platform — JioCinema / JioHotstar — as announced on Colors TV / JioHotstar during the episode. Please do not treat VisitBest poll percentages as official results.";
 
 function renderOpenPollDisclaimer() {
@@ -1061,6 +1079,8 @@ export function renderBiggBossPollPage(poll) {
       </div>
     </header>
 
+    ${bbCoverFigure(poll.image, poll.h1)}
+
     ${renderOpenPollDisclaimer()}
 
     ${poll.slug === "bigg-boss-20-voting" ? renderNominationCallout() : ""}
@@ -1117,6 +1137,8 @@ export function renderBiggBossContestantsPage() {
       <h1 class="bb-hero-title">Bigg Boss 20 Contestants List with Photos, Age, Bio & Journey So Far</h1>
       <p class="bb-hero-lead">Complete, updated directory of every Bigg Boss Season 20 housemate — all 16 originals plus wild cards Manish Goel and Nakul Dhull — with corrected ages where they can be verified, what each housemate was known for before the show, how their journey has actually gone up to 24 October 2026, and whether they are still in the house. Where a date of birth could not be reliably verified, we say so rather than guessing.</p>
     </header>
+
+    ${bbCoverFigure("/assets/bb20-new/covers/bigg-boss-20-contestants.jpg", "Bigg Boss 20 contestants cover")}
 
     <section class="bb-status-summary">
       <h2>At a glance — who is still in?</h2>
@@ -1188,6 +1210,8 @@ export function renderBiggBossRulesPage() {
       <h1 class="bb-hero-title">Bigg Boss 20 Voting Rules & Timings — How Official Voting Works</h1>
       <p class="bb-hero-lead">A VisitBest explainer: how official Bigg Boss Season 20 voting works, and how it differs from the VisitBest Open Poll. VisitBest does not publish missed-call voting numbers — previously listed unverified numbers have been removed.</p>
     </header>
+
+    ${bbCoverFigure("/assets/bb20-new/covers/bigg-boss-20-voting-rules.jpg", "Bigg Boss 20 voting rules and timings cover")}
 
     ${renderOpenPollDisclaimer()}
 
