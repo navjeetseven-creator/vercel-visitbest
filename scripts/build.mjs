@@ -726,7 +726,7 @@ await writeRoute(urlFor("bigg-boss-20-contestants"), renderPage({
 const bbRulesBody = `${renderBiggBossRulesPage()}<style>${bbCss}</style><script>${bbClient}</script>`;
 await writeRoute(urlFor("bigg-boss-20-voting-rules"), renderPage({
   title: "Bigg Boss 20 Voting Rules & Timings — How Official Voting Works - VisitBest",
-  description: "How official Bigg Boss 20 voting works on JioCinema / JioHotstar — voting rules, timings and the elimination schedule. VisitBest polls are unofficial fan polls.",
+  description: "How official Bigg Boss 20 voting works on JioCinema / JioHotstar — voting rules, timings and the elimination schedule. VisitBest polls are open fan polls.",
   canonical: urlFor("bigg-boss-20-voting-rules"),
   currentPath: urlFor("bigg-boss-20-voting-rules"),
   body: bbRulesBody,
