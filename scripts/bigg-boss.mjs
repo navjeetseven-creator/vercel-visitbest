@@ -1,7 +1,7 @@
-// Bigg Boss 20 Contestants & Unofficial Open Poll Engine for VisitBest
-// Client-side Unofficial Open Poll, contestant images, an explainer on how
+// Bigg Boss 20 Contestants & Open Poll Engine for VisitBest
+// Client-side Open Poll, contestant images, an explainer on how
 // official voting works (only via JioCinema / JioHotstar, as announced on air),
-// danger zone tracking, and FAQs. VisitBest polls are unofficial audience
+// danger zone tracking, and FAQs. VisitBest polls are open audience
 // sentiment only and do not decide nominations or evictions.
 
 export const contestants = [
@@ -295,10 +295,10 @@ export const contestantById = new Map(contestants.map((c) => [c.id, c]));
 export const polls = [
   {
     slug: "bigg-boss-20-voting",
-    title: "Bigg Boss 20 Voting – Week 7 Unofficial Open Poll & Audience Sentiment - VisitBest",
-    h1: "Bigg Boss 20 Voting – Week 7 Unofficial Open Poll",
-    lead: "VisitBest Unofficial Open Poll for Week 7: Qazi Touqeer leads the audience sentiment standings, followed closely by ScoutOP, Gullu and Yung DSA. Seven contestants are nominated this week — Gullu, Mary Kom, Aamrapali Dubey, Arishfa Khan, Love Gill, Uditi Singh and wild card Manish Goel. Mahhi Vij is captain. This poll is unofficial and does not decide evictions.",
-    heroBadge: "🔴 LIVE AUDIENCE POLL · WEEK 4 · UNOFFICIAL OPEN POLL",
+    title: "Bigg Boss 20 Voting – Week 7 Open Poll & Audience Sentiment - VisitBest",
+    h1: "Bigg Boss 20 Voting – Week 7 Open Poll",
+    lead: "VisitBest Open Poll for Week 7: Qazi Touqeer leads the audience sentiment standings, followed closely by ScoutOP, Gullu and Yung DSA. Seven contestants are nominated this week — Gullu, Mary Kom, Aamrapali Dubey, Arishfa Khan, Love Gill, Uditi Singh and wild card Manish Goel. Mahhi Vij is captain. This open poll does not decide evictions.",
+    heroBadge: "🔴 LIVE AUDIENCE POLL · WEEK 4 · OPEN POLL",
     leaderNote: "🔥 CURRENT TREND: Qazi Touqeer (1,38,500) holds a narrow lead over ScoutOP (1,32,200), Gullu (1,26,800), and Yung DSA (1,20,900) in our fan sentiment tracker.",
     pollType: "all",
     voteDistribution: {
@@ -318,15 +318,15 @@ export const polls = [
       "uditi-singh": 11200,
     },
     dangerIds: ["mary-kom", "uditi-singh", "love-gill"],
-    metaDesc: "Bigg Boss 20 Week 7 Unofficial Open Poll: Qazi Touqeer leads VisitBest audience sentiment followed by ScoutOP, Gullu and Yung DSA. Check the 7 nominated contestants and the current captain. Unofficial only — official voting is only via JioCinema / JioHotstar as announced on air.",
+    metaDesc: "Bigg Boss 20 Week 7 Open Poll: Qazi Touqeer leads VisitBest audience sentiment followed by ScoutOP, Gullu and Yung DSA. Check the 7 nominated contestants and the current captain. Open Poll only — official voting is only via JioCinema / JioHotstar as announced on air.",
   },
   {
     slug: "bigg-boss-20-winner-prediction",
-    title: "Who Will Win Bigg Boss 20? Winner Prediction Poll & Finale Odds — Unofficial Open Poll",
-    h1: "Who Will Win Bigg Boss 20? Finale Winner Prediction (Unofficial Open Poll)",
+    title: "Who Will Win Bigg Boss 20? Winner Prediction Poll & Finale Odds — Open Poll",
+    h1: "Who Will Win Bigg Boss 20? Finale Winner Prediction (Open Poll)",
     lead: "The race to the Season 20 Trophy is heating up! Qazi Touqeer leads the grand winner predictions with overwhelming musical fanbase support, closely chased by esports icon Scout and comedy sensation Gullu. Who will lift the trophy?",
-    heroBadge: "🏆 GRAND FINALE TROPHY POLL · UNOFFICIAL OPEN POLL",
-    leaderNote: "👑 WINNER PREDICTION LEADER: Qazi Touqeer holds #1 with 384,100 votes! Scout and Gullu are locked in a thriller for the runner-up position. [VisitBest Unofficial Open Poll votes — not official votes.]",
+    heroBadge: "🏆 GRAND FINALE TROPHY POLL · OPEN POLL",
+    leaderNote: "👑 WINNER PREDICTION LEADER: Qazi Touqeer holds #1 with 384,100 votes! Scout and Gullu are locked in a thriller for the runner-up position. [VisitBest Open Poll votes — not official votes.]",
     pollType: "winner",
     voteDistribution: {
       "qazi-touqeer": 384100,
@@ -347,15 +347,15 @@ export const polls = [
       "uditi-singh": 3200,
     },
     dangerIds: ["aman-gandhi", "rohed-khan", "uditi-singh"],
-    metaDesc: "Unofficial Open Poll: Bigg Boss 20 Winner Prediction Poll: Qazi Touqeer leading the trophy race! Vote for your predicted Bigg Boss Season 20 winner between Scout, Gullu & Mary Kom.",
+    metaDesc: "Open Poll: Bigg Boss 20 Winner Prediction Poll: Qazi Touqeer leading the trophy race! Vote for your predicted Bigg Boss Season 20 winner between Scout, Gullu & Mary Kom.",
   },
   {
     slug: "bigg-boss-20-best-contestant",
-    title: "Best Contestant of Bigg Boss 20 Poll – Strategic Mastermind & Top Player — Unofficial Open Poll",
-    h1: "Who is the Best Contestant of Bigg Boss 20? (Unofficial Open Poll)",
+    title: "Best Contestant of Bigg Boss 20 Poll – Strategic Mastermind & Top Player — Open Poll",
+    h1: "Who is the Best Contestant of Bigg Boss 20? (Open Poll)",
     lead: "Which contestant is playing the smartest, most entertaining, and fearless game in Bigg Boss Season 20? Gaming maestro Tanmay 'Scout' Singh dominates the Best Contestant poll with 38.5% of total votes.",
-    heroBadge: "⭐ MVP & BEST PLAYER POLL · UNOFFICIAL OPEN POLL",
-    leaderNote: "🎯 MVP LEADER: Scout (Tanmay Singh) reigns supreme with 452,000 votes for his sharp tactical tasks and fearless captaincy! [VisitBest Unofficial Open Poll votes — not official votes.]",
+    heroBadge: "⭐ MVP & BEST PLAYER POLL · OPEN POLL",
+    leaderNote: "🎯 MVP LEADER: Scout (Tanmay Singh) reigns supreme with 452,000 votes for his sharp tactical tasks and fearless captaincy! [VisitBest Open Poll votes — not official votes.]",
     pollType: "best",
     voteDistribution: {
       scout: 452000,
@@ -376,15 +376,15 @@ export const polls = [
       "uditi-singh": 3100,
     },
     dangerIds: ["uditi-singh", "aman-gandhi", "rohed-khan"],
-    metaDesc: "Unofficial Open Poll: Vote for the Best Contestant of Bigg Boss 20! Scout leads the all-round player ranking with 452,000+ votes, ahead of Gullu, Mary Kom, and Qazi Touqeer.",
+    metaDesc: "Open Poll: Vote for the Best Contestant of Bigg Boss 20! Scout leads the all-round player ranking with 452,000+ votes, ahead of Gullu, Mary Kom, and Qazi Touqeer.",
   },
   {
     slug: "bigg-boss-20-joker-of-the-house",
-    title: "Who is the Joker of Bigg Boss 20? Most Fake & Over-Dramatic Contestant Poll — Unofficial Open Poll",
-    h1: "Who is the Joker of Bigg Boss 20? (Most Dramatic / Fake) (Unofficial Open Poll)",
+    title: "Who is the Joker of Bigg Boss 20? Most Fake & Over-Dramatic Contestant Poll — Open Poll",
+    h1: "Who is the Joker of Bigg Boss 20? (Most Dramatic / Fake) (Open Poll)",
     lead: "Bigg Boss is never complete without loud theatrics, cringe fights, and over-the-top acting. Who is acting as the true Joker of the house? Aman Gandhi tops the negative hype poll with 42.1% votes!",
-    heroBadge: "🤡 SPICY UNFILTERED PUBLIC POLL · UNOFFICIAL OPEN POLL",
-    leaderNote: "🎭 JOKER OF THE HOUSE: Aman Gandhi leads this spicy audience sentiment poll with 310,500 votes! Rohed Khan follows in 2nd place. [VisitBest Unofficial Open Poll votes — not official votes.]",
+    heroBadge: "🤡 SPICY UNFILTERED PUBLIC POLL · OPEN POLL",
+    leaderNote: "🎭 JOKER OF THE HOUSE: Aman Gandhi leads this spicy audience sentiment poll with 310,500 votes! Rohed Khan follows in 2nd place. [VisitBest Open Poll votes — not official votes.]",
     pollType: "joker",
     voteDistribution: {
       "aman-gandhi": 310500,
@@ -405,15 +405,15 @@ export const polls = [
       "mary-kom": 950,
     },
     dangerIds: ["aman-gandhi", "rohed-khan", "love-gill"],
-    metaDesc: "Unofficial Open Poll: Who is the biggest Joker or most fake contestant in Bigg Boss 20? Aman Gandhi is leading with 42% votes. Cast your unfiltered vote in this trending poll!",
+    metaDesc: "Open Poll: Who is the biggest Joker or most fake contestant in Bigg Boss 20? Aman Gandhi is leading with 42% votes. Cast your unfiltered vote in this trending poll!",
   },
   {
     slug: "bigg-boss-20-who-is-boss",
-    title: "Who is the Real Boss of Bigg Boss 20? Dominant Leader & Authority Poll — Unofficial Open Poll",
-    h1: "Who is the Real Boss of the Bigg Boss 20 House? (Unofficial Open Poll)",
+    title: "Who is the Real Boss of Bigg Boss 20? Dominant Leader & Authority Poll — Open Poll",
+    h1: "Who is the Real Boss of the Bigg Boss 20 House? (Open Poll)",
     lead: "Who controls the house dynamics, commands total respect, and dictates the kitchen and task schedules? Olympic legend MC Mary Kom is leading the Real Boss poll with 36.4% vote share!",
-    heroBadge: "👑 ALPHA LEADER POLL · UNOFFICIAL OPEN POLL",
-    leaderNote: "🥊 REAL BOSS: MC Mary Kom leads with 395,200 votes! Housemates listen when she speaks. Scout and Gullu follow behind. [VisitBest Unofficial Open Poll votes — not official votes.]",
+    heroBadge: "👑 ALPHA LEADER POLL · OPEN POLL",
+    leaderNote: "🥊 REAL BOSS: MC Mary Kom leads with 395,200 votes! Housemates listen when she speaks. Scout and Gullu follow behind. [VisitBest Open Poll votes — not official votes.]",
     pollType: "boss",
     voteDistribution: {
       "mary-kom": 395200,
@@ -434,15 +434,15 @@ export const polls = [
       "uditi-singh": 2200,
     },
     dangerIds: ["uditi-singh", "aman-gandhi", "love-gill"],
-    metaDesc: "Unofficial Open Poll: Who is the Real Boss of Bigg Boss Season 20? MC Mary Kom leads with 395,000+ votes! Scout and Gullu battle for dominance. Cast your vote now!",
+    metaDesc: "Open Poll: Who is the Real Boss of Bigg Boss Season 20? MC Mary Kom leads with 395,000+ votes! Scout and Gullu battle for dominance. Cast your vote now!",
   },
   {
     slug: "bigg-boss-20-entertainer",
-    title: "Biggest Entertainer of Bigg Boss 20 Poll – 24/7 Comedy & Viral Moments — Unofficial Open Poll",
-    h1: "Who is the Biggest Entertainer of Bigg Boss 20? (Unofficial Open Poll)",
+    title: "Biggest Entertainer of Bigg Boss 20 Poll – 24/7 Comedy & Viral Moments — Open Poll",
+    h1: "Who is the Biggest Entertainer of Bigg Boss 20? (Open Poll)",
     lead: "Who delivers pure entertainment, memorable punchlines, hilarious comedy, and viral social media reels? Gullu and Qazi Touqeer are locked in a historic tie for Bigg Boss 20 Entertainer #1!",
-    heroBadge: "🎭 24/7 ENTERTAINMENT POLL · UNOFFICIAL OPEN POLL",
-    leaderNote: "⚡ DEAD HEAT: Gullu (368,000 votes) and Qazi Touqeer (362,300 votes) are separated by less than 1%! Yung DSA is climbing fast. [VisitBest Unofficial Open Poll votes — not official votes.]",
+    heroBadge: "🎭 24/7 ENTERTAINMENT POLL · OPEN POLL",
+    leaderNote: "⚡ DEAD HEAT: Gullu (368,000 votes) and Qazi Touqeer (362,300 votes) are separated by less than 1%! Yung DSA is climbing fast. [VisitBest Open Poll votes — not official votes.]",
     pollType: "entertainer",
     voteDistribution: {
       gullu: 368000,
@@ -463,98 +463,98 @@ export const polls = [
       "uditi-singh": 4100,
     },
     dangerIds: ["uditi-singh", "rohed-khan", "love-gill"],
-    metaDesc: "Unofficial Open Poll: Vote for the Biggest Entertainer of Bigg Boss 20! Gullu and Qazi Touqeer are tied at 32% votes each with non-stop comedy and high-energy music.",
+    metaDesc: "Open Poll: Vote for the Biggest Entertainer of Bigg Boss 20! Gullu and Qazi Touqeer are tied at 32% votes each with non-stop comedy and high-energy music.",
   },
   // Head to Head Duels
   {
     slug: "bigg-boss-20-gullu-vs-qazi",
-    title: "Gullu vs Qazi Touqeer: Bigg Boss 20 Mega Rivalry Poll – Who Deserves More Votes? — Unofficial Open Poll",
-    h1: "Gullu vs Qazi Touqeer: The Ultimate Mega Duel (Unofficial Open Poll)",
+    title: "Gullu vs Qazi Touqeer: Bigg Boss 20 Mega Rivalry Poll – Who Deserves More Votes? — Open Poll",
+    h1: "Gullu vs Qazi Touqeer: The Ultimate Mega Duel (Open Poll)",
     lead: "The biggest rivalry of Bigg Boss Season 20! Digital sensation Gullu battles singing legend Qazi Touqeer in a direct head-to-head vote. Who will come out on top?",
-    heroBadge: "⚔️ MEGA DUEL #1 · UNOFFICIAL OPEN POLL",
-    leaderNote: "🔥 Gullu is leading with 54.2% against Qazi Touqeer's 45.8% across 680,000+ total faceoff votes! [VisitBest Unofficial Open Poll votes — not official votes.]",
+    heroBadge: "⚔️ MEGA DUEL #1 · OPEN POLL",
+    leaderNote: "🔥 Gullu is leading with 54.2% against Qazi Touqeer's 45.8% across 680,000+ total faceoff votes! [VisitBest Open Poll votes — not official votes.]",
     pollType: "duel",
     duelIds: ["gullu", "qazi-touqeer"],
     voteDistribution: {
       gullu: 372100,
       "qazi-touqeer": 314500,
     },
-    metaDesc: "Unofficial Open Poll: Gullu vs Qazi Touqeer Unofficial Open Poll in Bigg Boss 20: Gullu leads with 54% votes! Cast your head-to-head vote and support your champion now.",
+    metaDesc: "Open Poll: Gullu vs Qazi Touqeer Open Poll in Bigg Boss 20: Gullu leads with 54% votes! Cast your head-to-head vote and support your champion now.",
   },
   {
     slug: "bigg-boss-20-scout-vs-gullu",
-    title: "Scout vs Gullu: Gaming Fandom vs Comedy Army – Bigg Boss 20 Fan Clash — Unofficial Open Poll",
-    h1: "Scout vs Gullu: Gaming Titans vs Comedy Fandom (Unofficial Open Poll)",
+    title: "Scout vs Gullu: Gaming Fandom vs Comedy Army – Bigg Boss 20 Fan Clash — Open Poll",
+    h1: "Scout vs Gullu: Gaming Titans vs Comedy Fandom (Open Poll)",
     lead: "Two colossal youth fanbases collide! Tanmay 'Scout' Singh takes on Gullu in an electrifying popularity showdown. Which fandom has the real voting firepower?",
-    heroBadge: "⚔️ MEGA DUEL #2 · UNOFFICIAL OPEN POLL",
-    leaderNote: "🎮 Scout is leading by a razor-thin margin: 51.8% vs Gullu's 48.2% with over 720,000 votes cast! [VisitBest Unofficial Open Poll votes — not official votes.]",
+    heroBadge: "⚔️ MEGA DUEL #2 · OPEN POLL",
+    leaderNote: "🎮 Scout is leading by a razor-thin margin: 51.8% vs Gullu's 48.2% with over 720,000 votes cast! [VisitBest Open Poll votes — not official votes.]",
     pollType: "duel",
     duelIds: ["scout", "gullu"],
     voteDistribution: {
       scout: 376400,
       gullu: 350200,
     },
-    metaDesc: "Unofficial Open Poll: Scout vs Gullu Unofficial Open Poll: Esports powerhouse Scout battles comedy sensation Gullu in Bigg Boss 20. Vote now in this record-breaking head-to-head poll!",
+    metaDesc: "Open Poll: Scout vs Gullu Open Poll: Esports powerhouse Scout battles comedy sensation Gullu in Bigg Boss 20. Vote now in this record-breaking head-to-head poll!",
   },
   {
     slug: "bigg-boss-20-qazi-vs-scout",
-    title: "Qazi Touqeer vs Scout: Who Deserves the Bigg Boss 20 Finale Spot? — Unofficial Open Poll",
-    h1: "Qazi Touqeer vs Scout: The Finale Clash (Unofficial Open Poll)",
+    title: "Qazi Touqeer vs Scout: Who Deserves the Bigg Boss 20 Finale Spot? — Open Poll",
+    h1: "Qazi Touqeer vs Scout: The Finale Clash (Open Poll)",
     lead: "Kashmiri singing sensation Qazi Touqeer faces off against esports champion Scout for the #1 finalist spot in Bigg Boss 20. Who will punch their ticket to the finale?",
-    heroBadge: "⚔️ MEGA DUEL #3 · UNOFFICIAL OPEN POLL",
-    leaderNote: "🎙️ Qazi Touqeer leads with 51.1% against Scout's 48.9%! Every single vote matters in this clash. [VisitBest Unofficial Open Poll votes — not official votes.]",
+    heroBadge: "⚔️ MEGA DUEL #3 · OPEN POLL",
+    leaderNote: "🎙️ Qazi Touqeer leads with 51.1% against Scout's 48.9%! Every single vote matters in this clash. [VisitBest Open Poll votes — not official votes.]",
     pollType: "duel",
     duelIds: ["qazi-touqeer", "scout"],
     voteDistribution: {
       "qazi-touqeer": 348900,
       scout: 334100,
     },
-    metaDesc: "Unofficial Open Poll: Qazi Touqeer vs Scout: Who deserves the Bigg Boss 20 Finale trophy? Cast your vote in this epic clash between music and gaming fandoms.",
+    metaDesc: "Open Poll: Qazi Touqeer vs Scout: Who deserves the Bigg Boss 20 Finale trophy? Cast your vote in this epic clash between music and gaming fandoms.",
   },
   {
     slug: "bigg-boss-20-gullu-vs-yung",
-    title: "Gullu vs Yung DSA: Street Comedy vs Gully Rap – Bigg Boss 20 Faceoff — Unofficial Open Poll",
-    h1: "Gullu vs Yung DSA: Comedy vs Gully Rap (Unofficial Open Poll)",
+    title: "Gullu vs Yung DSA: Street Comedy vs Gully Rap – Bigg Boss 20 Faceoff — Open Poll",
+    h1: "Gullu vs Yung DSA: Comedy vs Gully Rap (Open Poll)",
     lead: "Street comedy meets hard-hitting underground hip-hop! Who rules the youth vibe inside the Bigg Boss 20 house? Gullu vs Yung DSA live audience vote.",
-    heroBadge: "⚔️ MEGA DUEL #4 · UNOFFICIAL OPEN POLL",
-    leaderNote: "🎤 Gullu leads with 61.4% vote share, but Yung DSA's hip-hop fanbase is closing the gap with rapid surge! [VisitBest Unofficial Open Poll votes — not official votes.]",
+    heroBadge: "⚔️ MEGA DUEL #4 · OPEN POLL",
+    leaderNote: "🎤 Gullu leads with 61.4% vote share, but Yung DSA's hip-hop fanbase is closing the gap with rapid surge! [VisitBest Open Poll votes — not official votes.]",
     pollType: "duel",
     duelIds: ["gullu", "yung-dsa"],
     voteDistribution: {
       gullu: 284000,
       "yung-dsa": 178900,
     },
-    metaDesc: "Unofficial Open Poll: Gullu vs Yung DSA Unofficial Open Poll: Comedy king Gullu faces underground rapper Yung DSA in Bigg Boss 20. Vote now to back your favorite vibe!",
+    metaDesc: "Open Poll: Gullu vs Yung DSA Open Poll: Comedy king Gullu faces underground rapper Yung DSA in Bigg Boss 20. Vote now to back your favorite vibe!",
   },
   {
     slug: "bigg-boss-20-mary-kom-vs-gullu",
-    title: "Mary Kom vs Gullu: Champion Dignity vs Comedy Chaos – Bigg Boss 20 Poll — Unofficial Open Poll",
-    h1: "Mary Kom vs Gullu: Powerhouse vs Entertainer (Unofficial Open Poll)",
+    title: "Mary Kom vs Gullu: Champion Dignity vs Comedy Chaos – Bigg Boss 20 Poll — Open Poll",
+    h1: "Mary Kom vs Gullu: Powerhouse vs Entertainer (Open Poll)",
     lead: "Disciplined Olympic champion MC Mary Kom squares off against unfiltered comedy machine Gullu. Do you value quiet strength and dignity, or relentless laughter?",
-    heroBadge: "⚔️ MEGA DUEL #5 · UNOFFICIAL OPEN POLL",
-    leaderNote: "🥊 Mary Kom edges ahead with 52.8% of the public vote thanks to massive family and national sports fan support! [VisitBest Unofficial Open Poll votes — not official votes.]",
+    heroBadge: "⚔️ MEGA DUEL #5 · OPEN POLL",
+    leaderNote: "🥊 Mary Kom edges ahead with 52.8% of the public vote thanks to massive family and national sports fan support! [VisitBest Open Poll votes — not official votes.]",
     pollType: "duel",
     duelIds: ["mary-kom", "gullu"],
     voteDistribution: {
       "mary-kom": 312000,
       gullu: 279100,
     },
-    metaDesc: "Unofficial Open Poll: Mary Kom vs Gullu Bigg Boss 20 Poll: Olympic champion takes on entertainer Gullu. Vote for your favorite style in this unique clash!",
+    metaDesc: "Open Poll: Mary Kom vs Gullu Bigg Boss 20 Poll: Olympic champion takes on entertainer Gullu. Vote for your favorite style in this unique clash!",
   },
   {
     slug: "bigg-boss-20-kanika-vs-mahhi",
-    title: "Kanika Mann vs Mahhi Vij: TV Queens Faceoff – Bigg Boss 20 Popularity Battle — Unofficial Open Poll",
-    h1: "Kanika Mann vs Mahhi Vij: Battle of Television Queens (Unofficial Open Poll)",
+    title: "Kanika Mann vs Mahhi Vij: TV Queens Faceoff – Bigg Boss 20 Popularity Battle — Open Poll",
+    h1: "Kanika Mann vs Mahhi Vij: Battle of Television Queens (Open Poll)",
     lead: "Two of Indian television's biggest sweethearts and fiercest reality stars clash in this direct poll. Who will win the hearts of daily soap viewers and fans?",
-    heroBadge: "⚔️ MEGA DUEL #6 · UNOFFICIAL OPEN POLL",
-    leaderNote: "📺 Kanika Mann leads with 54.6% against Mahhi Vij's 45.4% across 420,000+ votes! [VisitBest Unofficial Open Poll votes — not official votes.]",
+    heroBadge: "⚔️ MEGA DUEL #6 · OPEN POLL",
+    leaderNote: "📺 Kanika Mann leads with 54.6% against Mahhi Vij's 45.4% across 420,000+ votes! [VisitBest Open Poll votes — not official votes.]",
     pollType: "duel",
     duelIds: ["kanika-mann", "mahhi-vij"],
     voteDistribution: {
       "kanika-mann": 234100,
       "mahhi-vij": 194800,
     },
-    metaDesc: "Unofficial Open Poll: Kanika Mann vs Mahhi Vij: Vote in the ultimate Bigg Boss 20 TV Queens clash! Kanika leads with 54% votes. Check live trends and cast your vote.",
+    metaDesc: "Open Poll: Kanika Mann vs Mahhi Vij: Vote in the ultimate Bigg Boss 20 TV Queens clash! Kanika leads with 54% votes. Check live trends and cast your vote.",
   },
 ];
 
@@ -588,8 +588,8 @@ export function biggBossSchema(item, isContestantsPage = false, isRulesPage = fa
       "@graph": [
         {
           "@type": "WebPage",
-          name: "Bigg Boss 20 Voting Rules & Timings — Unofficial Guide (Official Voting via JioCinema / JioHotstar)",
-          description: "Unofficial VisitBest guide explaining how official Bigg Boss 20 voting works via JioCinema / JioHotstar as announced on air, plus the VisitBest Unofficial Open Poll disclaimer. VisitBest does not publish missed-call voting numbers.",
+          name: "Bigg Boss 20 Voting Rules & Timings — VisitBest Guide (Official Voting via JioCinema / JioHotstar)",
+          description: "VisitBest guide explaining how official Bigg Boss 20 voting works via JioCinema / JioHotstar as announced on air, plus the VisitBest Open Poll disclaimer. VisitBest does not publish missed-call voting numbers.",
           url: `${baseUri}/bigg-boss-20-voting-rules/`,
         },
         {
@@ -630,7 +630,7 @@ export function biggBossSchema(item, isContestantsPage = false, isRulesPage = fa
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       name: "Bigg Boss 20 Contestants List with Photos, Age, Bio & Journey (Updated Week 7)",
-      description: "Complete directory of all 18 Bigg Boss Season 20 housemates (16 originals plus 2 wild cards) with photos where available, corrected bios, occupations and Week 7 status. Includes the VisitBest Unofficial Open Poll disclaimer.",
+      description: "Complete directory of all 18 Bigg Boss Season 20 housemates (16 originals plus 2 wild cards) with photos where available, corrected bios, occupations and Week 7 status. Includes the VisitBest Open Poll disclaimer.",
       url: `${baseUri}/bigg-boss-20-contestants/`,
       mainEntity: {
         "@type": "ItemList",
@@ -671,10 +671,10 @@ export function biggBossSchema(item, isContestantsPage = false, isRulesPage = fa
           },
           {
             "@type": "Question",
-            name: "How frequently is the VisitBest Unofficial Open Poll updated?",
+            name: "How frequently is the VisitBest Open Poll updated?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "The VisitBest Unofficial Open Poll is updated as readers cast opinion votes on this site. It is unofficial audience sentiment only, is not official Bigg Boss voting, and does not decide nominations or evictions. Official voting is only via JioCinema / JioHotstar, as announced on air.",
+              text: "The VisitBest Open Poll is updated as readers cast opinion votes on this site. It is open audience sentiment only, is not official Bigg Boss voting, and does not decide nominations or evictions. Official voting is only via JioCinema / JioHotstar, as announced on air.",
             },
           },
           {
@@ -682,7 +682,7 @@ export function biggBossSchema(item, isContestantsPage = false, isRulesPage = fa
             name: "Is this poll free to vote?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Yes — the VisitBest Unofficial Open Poll is free. It registers your choice in our unofficial audience sentiment poll only; it is not an official Bigg Boss vote.",
+              text: "Yes — the VisitBest Open Poll is free. It registers your choice in our open audience sentiment poll only; it is not an official Bigg Boss vote.",
             },
           },
         ],
@@ -692,13 +692,13 @@ export function biggBossSchema(item, isContestantsPage = false, isRulesPage = fa
 }
 
 
-// Shared Unofficial Open Poll disclaimer — required on every poll / contestants / rules page
-export const UNOFFICIAL_POLL_DISCLAIMER = "Unofficial Open Poll — for audience sentiment only. This poll is run by VisitBest for entertainment and discussion. It is NOT official Bigg Boss voting, it does not decide nominations or evictions, and its results are not official vote counts. Official voting, where opened by the show, is only through the official platform — JioCinema / JioHotstar — as announced on Colors TV / JioHotstar during the episode. Please do not treat VisitBest poll percentages as official results.";
+// Shared Open Poll disclaimer — required on every poll / contestants / rules page
+export const OPEN_POLL_DISCLAIMER = "Open Poll — for audience sentiment only. This poll is run by VisitBest for entertainment and discussion. It is NOT official Bigg Boss voting, it does not decide nominations or evictions, and its results are not official vote counts. Official voting, where opened by the show, is only through the official platform — JioCinema / JioHotstar — as announced on Colors TV / JioHotstar during the episode. Please do not treat VisitBest poll percentages as official results.";
 
-function renderUnofficialPollDisclaimer() {
-  return `<section class="bb-unofficial-disclaimer" role="note" aria-label="Unofficial Open Poll disclaimer">
-    <h2>Unofficial Open Poll</h2>
-    <p><strong>Unofficial Open Poll — for audience sentiment only.</strong> This poll is run by VisitBest for entertainment and discussion. It is NOT official Bigg Boss voting, it does not decide nominations or evictions, and its results are not official vote counts. <strong>Official voting, where opened by the show, is only through the official platform — JioCinema / JioHotstar — as announced on Colors TV / JioHotstar during the episode.</strong> Please do not treat VisitBest poll percentages as official results.</p>
+function renderOpenPollDisclaimer() {
+  return `<section class="bb-open-disclaimer" role="note" aria-label="Open Poll disclaimer">
+    <h2>Open Poll</h2>
+    <p><strong>Open Poll — for audience sentiment only.</strong> This poll is run by VisitBest for entertainment and discussion. It is NOT official Bigg Boss voting, it does not decide nominations or evictions, and its results are not official vote counts. <strong>Official voting, where opened by the show, is only through the official platform — JioCinema / JioHotstar — as announced on Colors TV / JioHotstar during the episode.</strong> Please do not treat VisitBest poll percentages as official results.</p>
   </section>`;
 }
 
@@ -759,7 +759,7 @@ function renderNominatedStrip(currentSlug) {
   return `<section class="bb-nominated-strip">
     <div class="bb-strip-header">
       <div class="bb-strip-badge"><span class="pulse-dot"></span> NOMINATED THIS WEEK FOR EVICTION</div>
-      <p class="bb-strip-sub">These are the Week 7 nominated housemates. Support them in the VisitBest Unofficial Open Poll below — it is unofficial audience sentiment only and does not decide evictions. Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
+      <p class="bb-strip-sub">These are the Week 7 nominated housemates. Support them in the VisitBest Open Poll below — it is open audience sentiment only and does not decide evictions. Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
     </div>
     <div class="bb-nominated-grid">
       ${nominatedList
@@ -789,7 +789,7 @@ function renderNominationCallout() {
   return `<div class="bb-nom-status-callout">
     <div class="bb-nom-callout-header">
       <span class="pulse-dot-red"></span>
-      <h2>🔴 Bigg Boss 20 Week 7 Nominations — Unofficial Open Poll</h2>
+      <h2>🔴 Bigg Boss 20 Week 7 Nominations — Open Poll</h2>
     </div>
     <p class="bb-nom-list-text">
       <strong>7 contestants are nominated this week:</strong><br>
@@ -799,7 +799,7 @@ function renderNominationCallout() {
       <span class="bb-safe-indicator">🟢 <strong>Captain This Week:</strong> Mahhi Vij (chosen by Qazi Touqeer, who won the 23 October captaincy task round; Scout was the previous captain)</span>
       <span class="bb-evicted-indicator">❌ <strong>Evicted:</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4), Aman Gandhi (Week 6) · <strong>Removed:</strong> Nakul Dhull (wild card, Week 6)</span>
     </div>
-    <p class="bb-nom-list-text"><strong>Unofficial Open Poll — for audience sentiment only.</strong> Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
+    <p class="bb-nom-list-text"><strong>Open Poll — for audience sentiment only.</strong> Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
   </div>`;
 }
 
@@ -810,7 +810,7 @@ function renderPollCards(poll) {
 
   return `<div class="bb-poll-container" data-poll-slug="${poll.slug}">
     <div class="bb-poll-meta-bar">
-      <div class="bb-status-pill"><span class="pulse-dot"></span> UNOFFICIAL OPEN POLL — AUDIENCE SENTIMENT ONLY</div>
+      <div class="bb-status-pill"><span class="pulse-dot"></span> OPEN POLL — AUDIENCE SENTIMENT ONLY</div>
       <div class="bb-timer-box">
         <span>POLL CLOSES IN:</span>
         <strong id="bb-countdown">Calculating...</strong>
@@ -836,7 +836,7 @@ function renderPollCards(poll) {
                 <div class="bb-progress-bar" id="bar-${poll.slug}-${c.id}" style="width: ${c.pct}%;"></div>
               </div>
               <div class="bb-vote-count-row">
-                <span class="bb-vote-num" id="votes-${poll.slug}-${c.id}">${c.votes.toLocaleString("en-IN")}</span> Unofficial Open Poll votes
+                <span class="bb-vote-num" id="votes-${poll.slug}-${c.id}">${c.votes.toLocaleString("en-IN")}</span> Open Poll votes
               </div>
               <button class="bb-vote-btn" data-vote-btn="${c.id}" data-poll-slug="${poll.slug}">
                 <span class="btn-icon">👍</span> VOTE FOR ${c.alias.toUpperCase()}
@@ -867,7 +867,7 @@ function renderPollCards(poll) {
                 <div class="bb-progress-bar" id="bar-${poll.slug}-${c.id}" style="width: ${c.pct}%;"></div>
               </div>
               <div class="bb-card-numbers">
-                <span class="bb-votes-display"><strong id="votes-${poll.slug}-${c.id}">${c.votes.toLocaleString("en-IN")}</strong> Unofficial Open Poll votes</span>
+                <span class="bb-votes-display"><strong id="votes-${poll.slug}-${c.id}">${c.votes.toLocaleString("en-IN")}</strong> Open Poll votes</span>
                 <span class="bb-trend-tag">${c.trend}</span>
               </div>
               <button class="bb-vote-btn" data-vote-btn="${c.id}" data-poll-slug="${poll.slug}">
@@ -892,10 +892,10 @@ function renderLeaderboard(poll) {
     <div class="bb-section-head">
       <div>
         <p class="eyebrow">Audience Sentiment Standings</p>
-        <h2>Unofficial Open Poll – Audience Sentiment Standings</h2>
-        <p>Ranking of housemates by votes cast in the VisitBest Unofficial Open Poll on this page. Figures are VisitBest Unofficial Open Poll votes only — they are not official Bigg Boss votes and do not decide evictions.</p>
+        <h2>Open Poll – Audience Sentiment Standings</h2>
+        <p>Ranking of housemates by votes cast in the VisitBest Open Poll on this page. Figures are VisitBest Open Poll votes only — they are not official Bigg Boss votes and do not decide evictions.</p>
         <div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
-          ℹ️ <strong>Unofficial Open Poll — for audience sentiment only.</strong> This leaderboard represents unofficial audience sentiment tracked on VisitBest. It does not decide nominations or evictions. Official Bigg Boss 20 voting, where opened by the show, is only via JioCinema / JioHotstar, as announced on air.
+          ℹ️ <strong>Open Poll — for audience sentiment only.</strong> This leaderboard represents open audience sentiment tracked on VisitBest. It does not decide nominations or evictions. Official Bigg Boss 20 voting, where opened by the show, is only via JioCinema / JioHotstar, as announced on air.
         </div>
       </div>
     </div>
@@ -907,7 +907,7 @@ function renderLeaderboard(poll) {
             <th>Rank</th>
             <th>Contestant</th>
             <th>Profession</th>
-            <th>Unofficial Open Poll Votes</th>
+            <th>Open Poll Votes</th>
             <th>Vote Share</th>
             <th>Status / Danger Level</th>
             <th>Direct Action</th>
@@ -983,7 +983,7 @@ function renderJioCinemaGuide() {
   </section>`;
 }
 
-// (Removed in Phase 1: the unverified missed-call numbers table was deleted — see renderUnofficialPollDisclaimer.)
+// (Removed in Phase 1: the unverified missed-call numbers table was deleted — see renderOpenPollDisclaimer.)
 
 // Render Bigg Boss FAQ Section
 function renderFaqSection(poll) {
@@ -995,15 +995,15 @@ function renderFaqSection(poll) {
 
     <div class="bb-faq-grid">
       <details class="bb-faq-item" open>
-        <summary>Who is currently leading the VisitBest Unofficial Open Poll today?</summary>
+        <summary>Who is currently leading the VisitBest Open Poll today?</summary>
         <div class="bb-faq-body">
-          <p>${poll.leaderNote} This is Unofficial Open Poll audience sentiment only — it is not official voting and does not decide evictions.</p>
+          <p>${poll.leaderNote} This is Open Poll audience sentiment only — it is not official voting and does not decide evictions.</p>
         </div>
       </details>
       <details class="bb-faq-item">
         <summary>How does official Bigg Boss 20 voting work, and how is it different from the VisitBest poll?</summary>
         <div class="bb-faq-body">
-          <p>Official voting, where opened by the show, is only through the official platform — JioCinema / JioHotstar — as announced on Colors TV / JioHotstar during the episode, under the rules and limits shown there. The VisitBest Unofficial Open Poll is separate: it is an opinion poll for audience sentiment only, it is not official voting, and it does not decide nominations or evictions.</p>
+          <p>Official voting, where opened by the show, is only through the official platform — JioCinema / JioHotstar — as announced on Colors TV / JioHotstar during the episode, under the rules and limits shown there. The VisitBest Open Poll is separate: it is an opinion poll for audience sentiment only, it is not official voting, and it does not decide nominations or evictions.</p>
         </div>
       </details>
       <details class="bb-faq-item">
@@ -1015,13 +1015,13 @@ function renderFaqSection(poll) {
       <details class="bb-faq-item">
         <summary>Does VisitBest publish missed-call voting numbers for Bigg Boss 20?</summary>
         <div class="bb-faq-body">
-          <p>No. VisitBest previously listed unverified missed-call numbers on this site; they have been removed because no reliable official source for them could be verified. Do not rely on missed-call numbers published by unofficial sites. Official voting, where opened by the show, is only via JioCinema / JioHotstar, as announced on air.</p>
+          <p>No. VisitBest previously listed unverified missed-call numbers on this site; they have been removed because no reliable official source for them could be verified. Do not rely on missed-call numbers published by unverified sites. Official voting, where opened by the show, is only via JioCinema / JioHotstar, as announced on air.</p>
         </div>
       </details>
       <details class="bb-faq-item">
         <summary>How is the weekly eviction decided in Bigg Boss Season 20?</summary>
         <div class="bb-faq-body">
-          <p>Evictions are decided by the show through its official voting process, as announced on Colors TV / JioHotstar. The VisitBest Unofficial Open Poll plays no part in deciding who is eliminated.</p>
+          <p>Evictions are decided by the show through its official voting process, as announced on Colors TV / JioHotstar. The VisitBest Open Poll plays no part in deciding who is eliminated.</p>
         </div>
       </details>
     </div>
@@ -1061,7 +1061,7 @@ export function renderBiggBossPollPage(poll) {
       </div>
     </header>
 
-    ${renderUnofficialPollDisclaimer()}
+    ${renderOpenPollDisclaimer()}
 
     ${poll.slug === "bigg-boss-20-voting" ? renderNominationCallout() : ""}
 
@@ -1081,7 +1081,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderJioCinemaGuide()}
 
-    ${renderUnofficialPollDisclaimer()}
+    ${renderOpenPollDisclaimer()}
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
@@ -1129,7 +1129,7 @@ export function renderBiggBossContestantsPage() {
       </ul>
     </section>
 
-    ${renderUnofficialPollDisclaimer()}
+    ${renderOpenPollDisclaimer()}
 
     ${renderAdSenseUnit("contestants-top", "Advertisement")}
 
@@ -1156,7 +1156,7 @@ export function renderBiggBossContestantsPage() {
               <strong>Key Highlight:</strong> ${c.highlight}
             </div>
             <div class="bb-wiki-footer">
-              ${c.evicted || c.removed ? `<span class="bb-wiki-status-note">${c.trend}</span>` : `<a href="/bigg-boss-20-voting/" class="bb-wiki-vote-btn">Vote in Unofficial Open Poll</a>`}
+              ${c.evicted || c.removed ? `<span class="bb-wiki-status-note">${c.trend}</span>` : `<a href="/bigg-boss-20-voting/" class="bb-wiki-vote-btn">Vote in Open Poll</a>`}
             </div>
           </div>
         </article>
@@ -1167,7 +1167,7 @@ export function renderBiggBossContestantsPage() {
 
     ${renderAdSenseUnit("contestants-mid", "Advertisement")}
     ${renderJioCinemaGuide()}
-    ${renderUnofficialPollDisclaimer()}
+    ${renderOpenPollDisclaimer()}
     ${renderAdSenseUnit("contestants-bottom", "Advertisement")}
   </div>
   `;
@@ -1184,12 +1184,12 @@ export function renderBiggBossRulesPage() {
     ${renderPollPills("bigg-boss-20-voting-rules")}
 
     <header class="bb-hero-section">
-      <div class="bb-hero-badge">📋 UNOFFICIAL GUIDE · OFFICIAL VOTING ONLY VIA JIOCINEMA / JIOHOTSTAR</div>
+      <div class="bb-hero-badge">📋 VISITBEST GUIDE · OFFICIAL VOTING ONLY VIA JIOCINEMA / JIOHOTSTAR</div>
       <h1 class="bb-hero-title">Bigg Boss 20 Voting Rules & Timings — How Official Voting Works</h1>
-      <p class="bb-hero-lead">An unofficial VisitBest explainer: how official Bigg Boss Season 20 voting works, and how it differs from the VisitBest Unofficial Open Poll. VisitBest does not publish missed-call voting numbers — previously listed unverified numbers have been removed.</p>
+      <p class="bb-hero-lead">A VisitBest explainer: how official Bigg Boss Season 20 voting works, and how it differs from the VisitBest Open Poll. VisitBest does not publish missed-call voting numbers — previously listed unverified numbers have been removed.</p>
     </header>
 
-    ${renderUnofficialPollDisclaimer()}
+    ${renderOpenPollDisclaimer()}
 
     ${renderAdSenseUnit("rules-top", "Advertisement")}
 
@@ -1209,13 +1209,13 @@ export function renderBiggBossRulesPage() {
       </section>
 
       <section class="bb-rule-card">
-        <h2>3. Public Sentiment & the VisitBest Unofficial Open Poll</h2>
-        <p><strong>Unofficial Open Poll — for audience sentiment only.</strong> VisitBest runs a non-binding audience sentiment poll for entertainment and discussion. It is NOT official Bigg Boss voting, it does not decide nominations or evictions, and its results are not official vote counts. To officially support a housemate, always vote via JioCinema / JioHotstar as announced on air.</p>
+        <h2>3. Public Sentiment & the VisitBest Open Poll</h2>
+        <p><strong>Open Poll — for audience sentiment only.</strong> VisitBest runs a non-binding audience sentiment poll for entertainment and discussion. It is NOT official Bigg Boss voting, it does not decide nominations or evictions, and its results are not official vote counts. To officially support a housemate, always vote via JioCinema / JioHotstar as announced on air.</p>
       </section>
     </div>
 
     ${renderJioCinemaGuide()}
-    ${renderUnofficialPollDisclaimer()}
+    ${renderOpenPollDisclaimer()}
   </div>
   `;
 }
@@ -1224,9 +1224,9 @@ export function renderBiggBossRulesPage() {
 export const css = `
 /* Bigg Boss 20 High-Hype Styling */
 
-.bb-unofficial-disclaimer { background:#fff8e6; border:1px solid #ffd591; border-left:5px solid #d48806; border-radius:12px; padding:1rem 1.25rem; margin:1.5rem 0; color:#613400; }
-.bb-unofficial-disclaimer h2 { margin:0 0 .5rem; font-size:1.05rem; color:#873800; }
-.bb-unofficial-disclaimer p { margin:0; font-size:.92rem; line-height:1.55; }
+.bb-open-disclaimer { background:#fff8e6; border:1px solid #ffd591; border-left:5px solid #d48806; border-radius:12px; padding:1rem 1.25rem; margin:1.5rem 0; color:#613400; }
+.bb-open-disclaimer h2 { margin:0 0 .5rem; font-size:1.05rem; color:#873800; }
+.bb-open-disclaimer p { margin:0; font-size:.92rem; line-height:1.55; }
 .bb-status-summary { background:#fff; border:1px solid #e6e8eb; border-radius:12px; padding:1.25rem 1.5rem; margin:1.5rem 0; }
 .bb-status-summary h2 { margin-top:0; font-size:1.15rem; }
 .bb-status-summary li { margin-bottom:.45rem; line-height:1.55; }
@@ -2321,7 +2321,7 @@ export const clientScript = `
     var prevVote = localStorage.getItem(storageKey);
 
     if (prevVote === contestantId) {
-      showToast('You already voted for this contestant in this Unofficial Open Poll!');
+      showToast('You already voted for this contestant in this Open Poll!');
       return;
     }
 
@@ -2351,7 +2351,7 @@ export const clientScript = `
 
     // Mark buttons
     markVotedButtons(pollSlug, contestantId);
-    showToast('Unofficial Open Poll vote registered for ' + contestantId.replace(/-/g, ' ').toUpperCase() + '! This is audience sentiment only and does not decide evictions.');
+    showToast('Open Poll vote registered for ' + contestantId.replace(/-/g, ' ').toUpperCase() + '! This is audience sentiment only and does not decide evictions.');
   }
 
   function markVotedButtons(pollSlug, contestantId) {
