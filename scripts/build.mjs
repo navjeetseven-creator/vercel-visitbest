@@ -176,8 +176,8 @@ for (const item of businessCategories) addRoute(urlFor(item.slug, "/business-cat
 for (const item of businessLocations) addRoute(urlFor(item.slug, "/business-location"), { title: item.name, type: "archive" });
 for (const item of calculatorPages) addRoute(urlFor(item.slug), { title: item.title, type: "calculator" });
 for (const item of bbPolls) addRoute(urlFor(item.slug), { title: item.title, type: "poll" });
-addRoute(urlFor("bigg-boss-20-contestants"), { title: "Bigg Boss 20 Contestants List with Photos, Age, Bio & Missed Call Numbers", type: "page" });
-addRoute(urlFor("bigg-boss-20-voting-rules"), { title: "Bigg Boss 20 Voting Rules, Timings & Missed Call Numbers", type: "page" });
+addRoute(urlFor("bigg-boss-20-contestants"), { title: "Bigg Boss 20 Contestants List with Photos, Age, Bio & Journey So Far", type: "page" });
+addRoute(urlFor("bigg-boss-20-voting-rules"), { title: "Bigg Boss 20 Voting Rules & Timings — How Official Voting Works", type: "page" });
 addRoute(urlFor("hottest-chinese-actors"), { title: "Hottest Chinese Actors in 2026: Top 25 Most Attractive & Popular C-Drama Stars", type: "article", dateModified: "2026-10-06" });
 addRoute(urlFor("lizards-species"), { title: "Lizard Species: Complete Guide to Types, Names, Pictures, Habitats & Identification", type: "article", dateModified: "2026-10-06" });
 addRoute(urlFor("most-beautiful-bollywood-actresses"), { title: "Most Beautiful Bollywood Actresses: Top 30 Indian Stars Ranked", type: "article", dateModified: "2026-10-06" });
@@ -715,8 +715,8 @@ for (const poll of bbPolls) {
 
 const bbContestantsBody = `${renderBiggBossContestantsPage()}<style>${bbCss}</style><script>${bbClient}</script>`;
 await writeRoute(urlFor("bigg-boss-20-contestants"), renderPage({
-  title: "Bigg Boss 20 Contestants List with Photos, Age, Bio & Missed Call Numbers - VisitBest",
-  description: "Complete list of all 16 Bigg Boss Season 20 contestants with verified photos, age, hometown, occupation, social background, and toll-free voting numbers.",
+  title: "Bigg Boss 20 Contestants List with Photos, Age, Bio & Journey So Far - VisitBest",
+  description: "Complete list of all 18 Bigg Boss Season 20 contestants with photos, age, hometown, occupation, bios and their journey so far.",
   canonical: urlFor("bigg-boss-20-contestants"),
   currentPath: urlFor("bigg-boss-20-contestants"),
   body: bbContestantsBody,
@@ -725,8 +725,8 @@ await writeRoute(urlFor("bigg-boss-20-contestants"), renderPage({
 
 const bbRulesBody = `${renderBiggBossRulesPage()}<style>${bbCss}</style><script>${bbClient}</script>`;
 await writeRoute(urlFor("bigg-boss-20-voting-rules"), renderPage({
-  title: "Bigg Boss 20 Voting Rules, Timings & Missed Call Numbers (Official Guide) - VisitBest",
-  description: "Official guide on how to vote for Bigg Boss 20 on JioCinema, missed call voting numbers list, elimination schedule, and rules.",
+  title: "Bigg Boss 20 Voting Rules & Timings — How Official Voting Works - VisitBest",
+  description: "How official Bigg Boss 20 voting works on JioCinema / JioHotstar — voting rules, timings and the elimination schedule. VisitBest polls are unofficial fan polls.",
   canonical: urlFor("bigg-boss-20-voting-rules"),
   currentPath: urlFor("bigg-boss-20-voting-rules"),
   body: bbRulesBody,
@@ -745,8 +745,8 @@ const searchIndex = [
   ...business.map((item) => ({ title: decodeEntities(item.title?.rendered), summary: truncate(item.excerpt?.rendered || item.content?.rendered), href: urlFor(item.slug, "/business"), category: taxonomyLabel(item, "business_category")[0] || "Business" })),
   ...calculatorPages.map((item) => ({ title: item.title, summary: item.meta, href: urlFor(item.slug), category: "Calculator" })),
   ...bbPolls.map((item) => ({ title: item.h1, summary: item.metaDesc, href: urlFor(item.slug), category: "Bigg Boss 20" })),
-  { title: "Bigg Boss 20 Contestants List with Photos & Bio", summary: "Complete list of all 16 Bigg Boss Season 20 contestants with photos and missed call numbers.", href: urlFor("bigg-boss-20-contestants"), category: "Bigg Boss 20" },
-  { title: "Bigg Boss 20 Voting Rules & Timings", summary: "Official guide on how to vote for Bigg Boss 20 on JioCinema and missed call numbers.", href: urlFor("bigg-boss-20-voting-rules"), category: "Bigg Boss 20" },
+  { title: "Bigg Boss 20 Contestants List with Photos & Bio", summary: "Complete list of all 18 Bigg Boss Season 20 contestants with photos, bios and journey so far.", href: urlFor("bigg-boss-20-contestants"), category: "Bigg Boss 20" },
+  { title: "Bigg Boss 20 Voting Rules & Timings", summary: "How official Bigg Boss 20 voting works on JioCinema / JioHotstar — rules and timings.", href: urlFor("bigg-boss-20-voting-rules"), category: "Bigg Boss 20" },
   ...(contentPackManifest.pages || []).map((p) => ({
     title: p.title,
     summary: p.kind === "article" ? `${p.title} research guide and dataset.` : `${p.title} directory hub.`,
