@@ -15,7 +15,7 @@ const actresses = [
   { rank: 5, name: "Priyanka Chopra Jonas", dob: "July 18, 1982", birthplace: "Jamshedpur, Jharkhand, India", debut: "The Hero: Love Story of a Spy (2003)", bestMovie: "Barfi! (2012)", style: "Fierce Global Power Glamour", iconicRole: "Jhilmil in Barfi!, Meghna Mathur in Fashion, Kashibai in Bajirao Mastani", appeal: "Commanding charisma, full expressive features, versatile vocal timbre, and boundary-pushing red carpet daring.", global: "Miss World 2000, National Film Award winner, global icon headline series Citadel, Bulgari ambassador." },
   { rank: 6, name: "Kiara Advani", dob: "July 31, 1991", birthplace: "Mumbai, Maharashtra, India", debut: "Fugly (2014) / M.S. Dhoni (2016)", bestMovie: "Shershaah (2021)", style: "Radiant Grace & Contemporary Femininity", iconicRole: "Dimple Cheema in Shershaah, Preeti in Kabir Singh, Katha in Satyaprem Ki Katha", appeal: "Sweet natural warmth, luminous smile, poised bridal and festive elegance that makes her India's beloved screen romantic lead.", global: "Represented India at the Red Sea International Film Festival's Women in Cinema gala." },
   { rank: 7, name: "Shraddha Kapoor", dob: "March 3, 1987", birthplace: "Mumbai, Maharashtra, India", debut: "Teen Patti (2010) / Aashiqui 2 (2013)", bestMovie: "Aashiqui 2 (2013)", style: "Girl-Next-Door Radiance & Effortless Charm", iconicRole: "Arohi in Aashiqui 2, Stree in Stree & Stree 2", appeal: "Soulful hazel eyes, authentic approachable warmth, melodic singing talent, and record-breaking box-office pull.", global: "One of the most-followed Indian celebrities on Instagram with over 94 million followers." },
-  { rank: 8, name: "Kriti Sanon", dob: "July 26, 1990", birthplace: "New Delhi, India", debut: "Heropanti (2014)", bestMovie: "Mimi (2021)", style: "Statuesque Runway Poise & Sartorial Edge", iconicRole: "Mimi in Mimi, Bitti in Bareilly Ki Barfi, Sifra in Teri Baaton Mein", appeal: "Tall model proportions (178 cm), razor-sharp bone structure, high-fashion experimental courage, and National Award-winning craft.", global: "National Film Award for Best Actress; founder of luxury skincare brand Hyphen." },
+  { rank: 8, name: "Kriti Sanon", dob: "July 27, 1990", birthplace: "New Delhi, India", debut: "Heropanti (2014)", bestMovie: "Mimi (2021)", style: "Statuesque Runway Poise & Sartorial Edge", iconicRole: "Mimi in Mimi, Bitti in Bareilly Ki Barfi, Sifra in Teri Baaton Mein", appeal: "Tall model proportions (178 cm), razor-sharp bone structure, high-fashion experimental courage, and National Award-winning craft.", global: "National Film Award for Best Actress; founder of luxury skincare brand Hyphen." },
   { rank: 9, name: "Disha Patani", dob: "June 13, 1992", birthplace: "Bareilly, Uttar Pradesh, India", debut: "M.S. Dhoni: The Untold Story (2016)", bestMovie: "Malang (2020)", style: "Athletic Siren & Fitness Icon", iconicRole: "Priyanka in M.S. Dhoni, Sara in Malang, Roxie in Kalki 2898 AD", appeal: "Flawless athletic fitness, martial arts flexibility, youthful glow, and sultry modern swimwear and streetwear aesthetics.", global: "National ambassador for Calvin Klein, major social media youth phenomenon." },
   { rank: 10, name: "Triptii Dimri", dob: "February 23, 1994", birthplace: "Rudraprayag, Uttarakhand, India", debut: "Poster Boys (2017) / Laila Majnu (2018)", bestMovie: "Bulbbul (2020) / Qala (2022)", style: "Ethereal Mystique & Smoldering Screen Gravity", iconicRole: "Bulbbul in Bulbbul, Qala Manjushree in Qala, Zoya in Animal", appeal: "Haunting soulful eyes, classic vintage Indian beauty, profound dramatic subtlety, and undeniable modern screen magnetism.", global: "Forbes Asia 30 Under 30 honoree; India's fastest-rising box-office phenomenon." },
   { rank: 11, name: "Kareena Kapoor Khan", dob: "September 21, 1980", birthplace: "Mumbai, Maharashtra, India", debut: "Refugee (2000)", bestMovie: "Jab We Met (2007)", style: "Royal Pout & Unapologetic Star Power", iconicRole: "Geet in Jab We Met, Poo in Kabhi Khushi Kabhie Gham, Mahi in Heroine", appeal: "Iconic bone structure, incandescent natural skin, sharp comic timing, and two decades of setting fashion trends.", global: "UNICEF National Ambassador, iconic Bollywood royalty." },
@@ -39,6 +39,10 @@ const actresses = [
   { rank: 29, name: "Yami Gautam", dob: "November 28, 1988", birthplace: "Bilaspur, Himachal Pradesh, India", debut: "Vicky Donor (2012)", bestMovie: "A Thursday (2022) / Article 370 (2024)", style: "Pristine Pahadi Glow & Steely Sophistication", iconicRole: "Ashima in Vicky Donor, Naina in A Thursday, Zooni in Article 370", appeal: "Crystal-clear radiant skin, striking light brown eyes, and commanding dramatic intensity in high-stakes thrillers.", global: "Leading force in commercially lucrative, content-driven modern Hindi cinema." },
   { rank: 30, name: "Rani Mukerji", dob: "March 21, 1978", birthplace: "Mumbai, Maharashtra, India", debut: "Raja Ki Aayegi Baraat (1996)", bestMovie: "Black (2005) / Hum Tum", style: "Husky-Voiced Bengal Empress & Traditional Sabyasachi Grace", iconicRole: "Michelle in Black, Rhea in Hum Tum, Shivani Shivaji Roy in Mardaani", appeal: "Captivating hazel-green eyes, iconic husky voice, emotional mastery, and breathtaking traditional saree styling.", global: "Multiple Filmfare Best Actress record holder and Indian cinema cultural ambassador." }
 ];
+
+function actressSlug(name) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
 
 function buildContent() {
   const sections = [];
@@ -126,6 +130,11 @@ function buildContent() {
         <span class="pill" style="background:var(--cream); color:var(--accent-dark); font-weight:800; border-color:var(--accent);">${a.style.split(" & ")[0]}</span>
       </div>
     </div>
+
+    <figure class="profile-figure" style="margin:0 0 1.2rem;">
+      <img src="/assets/most-beautiful-bollywood-actresses/${actressSlug(a.name)}.webp" alt="Original editorial illustration of ${a.name} by VisitBest" loading="lazy" style="width:100%; max-width:400px; height:auto; border-radius:12px; display:block;">
+      <figcaption style="font-size:0.82rem; color:var(--muted); margin-top:0.4rem;">Original editorial illustration by VisitBest — not a photograph.</figcaption>
+    </figure>
 
     <h4>Quick Facts &amp; Career Highlights</h4>
     <div class="table-scroll">
