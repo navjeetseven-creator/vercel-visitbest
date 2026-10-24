@@ -26,7 +26,7 @@ const actors = [
     scoreBuzz: 99,
     scoreCostume: 98,
     scoreModern: 95,
-    scoreOverall: 97.2,
+    scoreOverall: 97.8,
     breakthrough: "Love Between Fairy and Devil (2022) as Chang Heng",
     signatureRoles: ["Story of Kunning Palace (Xie Wei)", "Pursuit of Jade (Lu Jiang)", "Love's Rebellion (Ji Yang)", "My Journey to You (Gong Ziyu)", "Maiden Holmes (Pei Zhao)"],
     screenAppeal: "Towering stature, sculptured classical facial features, and intense gaze that effortlessly balances gentle scholarly refinement with volcanic emotional volatility.",
@@ -53,7 +53,7 @@ const actors = [
     chinese: "肖战",
     pinyin: "Xiāo Zhàn",
     dob: "October 5, 1991",
-    age: 34,
+    age: 35,
     birthplace: "Chongqing, China",
     height: "183 cm (6 ft 0 in)",
     bloodType: "B",
@@ -65,7 +65,7 @@ const actors = [
     scoreBuzz: 98,
     scoreCostume: 99,
     scoreModern: 94,
-    scoreOverall: 97.8,
+    scoreOverall: 97.6,
     breakthrough: "The Untamed (2019) as Wei Wuxian",
     signatureRoles: ["The Untamed (Wei Wuxian)", "The Longest Promise (Shi Ying)", "The Youth Memories (Xiao Chunsheng)", "Sunshine by My Side (Sheng Yang)", "Joy of Life (Yan Bingyun)"],
     screenAppeal: "Luminous, expressive eyes capable of conveying immense sorrow, incandescent warmth, and moral resilience; unparalleled silhouette in flowing hanfu robes.",
@@ -92,7 +92,7 @@ const actors = [
     chinese: "王一博",
     pinyin: "Wáng Yībó",
     dob: "August 5, 1997",
-    age: 28,
+    age: 29,
     birthplace: "Luoyang, Henan, China",
     height: "180 cm (5 ft 11 in)",
     bloodType: "AB",
@@ -131,7 +131,7 @@ const actors = [
     chinese: "杨洋",
     pinyin: "Yáng Yáng",
     dob: "September 9, 1991",
-    age: 34,
+    age: 35,
     birthplace: "Shanghai, China",
     height: "180 cm (5 ft 11 in)",
     bloodType: "AB",
@@ -143,7 +143,7 @@ const actors = [
     scoreBuzz: 94,
     scoreCostume: 97,
     scoreModern: 98,
-    scoreOverall: 96.8,
+    scoreOverall: 97.2,
     breakthrough: "The Dream of Red Mansions (2010) / Love O2O (2016)",
     signatureRoles: ["Love O2O (Xiao Nai)", "You Are My Glory (Yu Tu)", "Who Rules the World (Feng Lanxi)", "The King's Avatar (Ye Xiu)", "Fireworks of My Heart (Song Yan)"],
     screenAppeal: "Revered across Asia as the golden standard of male facial symmetry and immaculate posture, born of rigorous classical military ballet training.",
@@ -182,7 +182,7 @@ const actors = [
     scoreBuzz: 99,
     scoreCostume: 98,
     scoreModern: 96,
-    scoreOverall: 97.6,
+    scoreOverall: 96.8,
     breakthrough: "Meteor Garden (2018) / Love Between Fairy and Devil (2022)",
     signatureRoles: ["Love Between Fairy and Devil (Dongfang Qingcang)", "Meteor Garden (Daoming Si)", "Only for Love (Shi Yan)", "Unchained Love (Xiao Duo)", "Guardians of the Dafeng (Xu Qi'an)"],
     screenAppeal: "High-contrast, piercing facial geometry, haughty smirk, aristocratic arrogance that melts into fierce devotion, commanding presence on screen.",
@@ -209,7 +209,7 @@ const actors = [
     chinese: "成毅",
     pinyin: "Chéng Yì",
     dob: "May 17, 1990",
-    age: 35,
+    age: 36,
     birthplace: "Huaihua, Hunan, China",
     height: "181 cm (5 ft 11 in)",
     bloodType: "AB",
@@ -221,7 +221,7 @@ const actors = [
     scoreBuzz: 94,
     scoreCostume: 99,
     scoreModern: 90,
-    scoreOverall: 95.0,
+    scoreOverall: 96.2,
     breakthrough: "Love and Redemption (2020) as Yu Sifeng",
     signatureRoles: ["Love and Redemption (Yu Sifeng)", "Mysterious Lotus Casebook (Li Xiangyi / Li Lianhua)", "Immortal Samsara (Ying Yuan)", "Draw the Line (Zhou Yi)", "Noble Aspirations (Lin Jingyu)"],
     screenAppeal: "Unrivaled ability to convey agonizing emotional pain and physical vulnerability; master-class martial arts swordwork in traditional flowing silk.",
@@ -248,7 +248,7 @@ const actors = [
     chinese: "罗云熙",
     pinyin: "Luó Yúnxī",
     dob: "July 28, 1988",
-    age: 37,
+    age: 38,
     birthplace: "Chengdu, Sichuan, China",
     height: "177 cm (5 ft 10 in)",
     bloodType: "A",
@@ -260,7 +260,7 @@ const actors = [
     scoreBuzz: 93,
     scoreCostume: 99,
     scoreModern: 91,
-    scoreOverall: 95.6,
+    scoreOverall: 95.8,
     breakthrough: "Ashes of Love (2018) as Runyu",
     signatureRoles: ["Till the End of the Moon (Tantai Jin)", "Ashes of Love (Runyu)", "Love Is Sweet (Yuan Shuai)", "Follow Your Heart (Jiang Xinbai)", "Broker (Zhou Xiaoshan)"],
     screenAppeal: "Otherworldly classical beauty, sharp aristocratic bone structure, ethereal lightness in flight wirework thanks to 11 years of professional ballet mastery.",
@@ -299,7 +299,7 @@ const actors = [
     scoreBuzz: 95,
     scoreCostume: 97,
     scoreModern: 94,
-    scoreOverall: 95.2,
+    scoreOverall: 95.6,
     breakthrough: "Story of Yanxi Palace (2018) as Fucha Fuheng",
     signatureRoles: ["Story of Yanxi Palace (Fuheng)", "Arsenal Military Academy (Gu Yanzhen)", "The Legends (Li Chenlan)", "Falling Into Your Smile (Lu Sicheng)", "Best Choice Ever (Yao Zhiming)"],
     screenAppeal: "Playful boyish grin, chiseled jawline, puppy-dog expressive eyes that transform into smoldering intensity; effortless charisma in both Qing dynasty braids and military uniforms.",
@@ -338,7 +338,7 @@ const actors = [
     scoreBuzz: 92,
     scoreCostume: 96,
     scoreModern: 95,
-    scoreOverall: 94.8,
+    scoreOverall: 95.2,
     breakthrough: "Word of Honor (2021) as Wen Kexing",
     signatureRoles: ["Word of Honor (Wen Kexing)", "Begin Again (Ling Rui)", "The Legend of Anle (Han Ye)", "Fox Spirit Matchmaker: Red-Moon Pact (Dongfang Yuechu)", "Rising With the Wind (Xu Si)"],
     screenAppeal: "Striking height, expressive fan-fluttering elegance, broad shoulders, and an intoxicating transition between mischievous playfulness and chilling menace.",
@@ -377,7 +377,7 @@ const actors = [
     scoreBuzz: 95,
     scoreCostume: 98,
     scoreModern: 95,
-    scoreOverall: 96.2,
+    scoreOverall: 95.0,
     breakthrough: "Nirvana in Fire (2015) / Love Like the Galaxy (2022)",
     signatureRoles: ["Love Like the Galaxy (Ling Buyi)", "The Long Ballad (Ashile Sun)", "Nothing But Thirty / Amidst a Snowstorm of Love (Lin Yiyang)", "Nirvana in Fire (Fei Liu)", "Cross Fire (Lu Xiaobei)"],
     screenAppeal: "Athletic masculinity, intense brooding warrior demeanor, natural charismatic authority, and effortless transition from child prodigy to smoldering adult leading man.",
@@ -416,7 +416,7 @@ const actors = [
     scoreBuzz: 91,
     scoreCostume: 96,
     scoreModern: 94,
-    scoreOverall: 94.8,
+    scoreOverall: 95.0,
     breakthrough: "Goodbye My Princess (2019) as Gu Xiaowu / Li Chengyin",
     signatureRoles: ["Goodbye My Princess (Li Chengyin)", "My Boss (Qian Heng)", "The Starry Love (Shaodian Youqin)", "Our Interpreter (Xiao Yicheng)", "Fall in Love (Tan Xuanlin)"],
     screenAppeal: "Master of morally complex, antiheroic characters; commanding resonant baritone voice, piercing stare, and explosive dramatic intensity.",
@@ -455,7 +455,7 @@ const actors = [
     scoreBuzz: 92,
     scoreCostume: 98,
     scoreModern: 91,
-    scoreOverall: 94.2,
+    scoreOverall: 94.8,
     breakthrough: "The Age of Awakening (2021) / Lost You Forever (2023)",
     signatureRoles: ["Lost You Forever (Cang Xuan)", "The Age of Awakening (Chen Yannian)", "The Bond (Qiao Erqiang)", "Are You the One (Cui Xingzhou)", "The Rise of Ning (Luo Shenyuan)"],
     screenAppeal: "Righteous, dignified classical countenance; deep emotional resonance that conveys suppressed imperial ambition and heartbreaking internal sacrifices.",
@@ -493,7 +493,7 @@ const actors = [
     scoreBuzz: 94,
     scoreCostume: 91,
     scoreModern: 98,
-    scoreOverall: 94.2,
+    scoreOverall: 94.8,
     breakthrough: "Our Secret (2021) / Hidden Love (2023) as Duan Jiaxu",
     signatureRoles: ["Hidden Love (Duan Jiaxu)", "Our Secret (Zhou Siyue)", "Handsome Siblings (Xiao Yu'er)", "The Princess and the Werewolf (Kui Mulang)", "White Olive Tree (Li Zan)"],
     screenAppeal: "Irresistible warm smile, tender protective gaze, natural romantic boy-next-door charisma that makes viewers swoon in youth and contemporary romances.",
@@ -532,7 +532,7 @@ const actors = [
     scoreBuzz: 96,
     scoreCostume: 97,
     scoreModern: 91,
-    scoreOverall: 95.0,
+    scoreOverall: 94.6,
     breakthrough: "Story of Kunning Palace (2023) / The Double (2024) as Duke Su",
     signatureRoles: ["The Double (Duke Su / Xiao Heng)", "Story of Kunning Palace (Zhang Zhe)", "One and Only (Liu Zixing)", "Scent of Time (Zhong Xiwu)", "First Love (Lu Feibai)"],
     screenAppeal: "Astonishing dramatic maturity and presence far beyond his biological age; deep resonant voice, smoldering fan-favorite gaze, commanding nobility in historical attire.",
@@ -608,7 +608,7 @@ const actors = [
     scoreBuzz: 95,
     scoreCostume: 98,
     scoreModern: 93,
-    scoreOverall: 95.8,
+    scoreOverall: 94.2,
     breakthrough: "Under the Skin (2022) / Lost You Forever (2023) as Xiang Liu",
     signatureRoles: ["Lost You Forever (Xiang Liu / Fangfeng Bei)", "Under the Skin (Shen Yi)", "Love Me, Love My Voice (Mo Qingcheng)", "The Advisors Alliance (Sima Zhao)", "Filter (Tang Qi)"],
     screenAppeal: "Lethal micro-expression mastery, devastatingly sensual white-haired nine-headed demon portrayal, magnetic vocal timbre that elevates every line delivery.",
@@ -647,7 +647,7 @@ const actors = [
     scoreBuzz: 92,
     scoreCostume: 88,
     scoreModern: 99,
-    scoreOverall: 94.0,
+    scoreOverall: 94.2,
     breakthrough: "Go Go Squid! (2019) as Gun God / Han Shangyan",
     signatureRoles: ["Go Go Squid! (Han Shangyan)", "Meet Yourself (Xie Zhiyao)", "Tientsin Mystic (Guo Deyou)", "Will Love in Spring (Chen Maidong)", "Sword Dynasty (Ding Ning)"],
     screenAppeal: "Rugged masculinity, confident maturity, relaxed conversational naturalism, and a deeply comforting romantic dependability on screen.",
@@ -686,7 +686,7 @@ const actors = [
     scoreBuzz: 93,
     scoreCostume: 93,
     scoreModern: 98,
-    scoreOverall: 94.6,
+    scoreOverall: 94.2,
     breakthrough: "The Fleet of Time (2014) / Reset (2022) as Xiao Heyun",
     signatureRoles: ["Reset (Xiao Heyun)", "Destined (Gu Jiusi)", "New Life Begins (Yin Zheng)", "You Are My Hero (Xing Kelei)", "Ordinary Glory (Sun Yiting)"],
     screenAppeal: "Fair complexion with a signature tear mole, cerebral sharpness, brilliant comedic self-awareness, and astonishing athletic muscularity hidden under sleek tailoring.",
@@ -725,7 +725,7 @@ const actors = [
     scoreBuzz: 91,
     scoreCostume: 90,
     scoreModern: 97,
-    scoreOverall: 93.4,
+    scoreOverall: 94.0,
     breakthrough: "Find Yourself (2020) / Go Ahead (2020) as Ling Xiao",
     signatureRoles: ["Go Ahead (Ling Xiao)", "Find Yourself (Yuan Song)", "Untouchable Lovers (Rong Zhi)", "A League of Nobleman (Zhang Ping)", "Bionic (Cheng Nuo)"],
     screenAppeal: "Literally looks like he walked out of a high-fashion Japanese or Chinese comic book: profound jawline, thick brows, soulful gaze, and high-fashion runway proportions.",
@@ -764,7 +764,7 @@ const actors = [
     scoreBuzz: 92,
     scoreCostume: 88,
     scoreModern: 98,
-    scoreOverall: 92.8,
+    scoreOverall: 93.8,
     breakthrough: "Put Your Head on My Shoulder (2019) as Gu Weiyi",
     signatureRoles: ["Put Your Head on My Shoulder (Gu Weiyi)", "Love Scenery (Lu Jing)", "Derailment (Qi Lian)", "Angels Fall Sometimes (Lin Tuo)", "Everyone Loves Me (Gu Xun)"],
     screenAppeal: "Endless model legs, gentle aristocratic campus demeanor, warm smile, and an effortless, comforting presence in contemporary sweet romances.",
@@ -803,7 +803,7 @@ const actors = [
     scoreBuzz: 92,
     scoreCostume: 98,
     scoreModern: 90,
-    scoreOverall: 94.2,
+    scoreOverall: 93.6,
     breakthrough: "Love and Redemption (2020) / In Blossom (2024) as Pan Yue",
     signatureRoles: ["In Blossom (Pan Yue)", "The Blood of Youth (Wuxin)", "Love and Redemption (Hao Chen)", "Love at Night (Mo Lingze)", "Destined (Luo Zishang)"],
     screenAppeal: "Peerless sculpted noble face, arched eyebrows, aristocratic majesty, and a rare ability to portray majestic deities and tragic, morally grey antagonists.",
@@ -842,7 +842,7 @@ const actors = [
     scoreBuzz: 93,
     scoreCostume: 95,
     scoreModern: 93,
-    scoreOverall: 93.8,
+    scoreOverall: 93.4,
     breakthrough: "The Romance of Tiger and Rose (2020) as Han Shuo",
     signatureRoles: ["The Romance of Tiger and Rose (Han Shuo)", "Love You Seven Times (Chu Kong)", "Moonlight (Zhou Chuan)", "Melody of Golden Age (Shen Du)", "The Legend of White Cat (Li Bing)"],
     screenAppeal: "Emotionally electric gaze, superb comedic timing, expressive physical acting, and total devotion in romantic yearning.",
@@ -881,7 +881,7 @@ const actors = [
     scoreBuzz: 88,
     scoreCostume: 90,
     scoreModern: 98,
-    scoreOverall: 93.6,
+    scoreOverall: 93.4,
     breakthrough: "Monster Hunt (2015) / Us and Them (2018)",
     signatureRoles: ["Us and Them (Jianqing)", "Monster Hunt (Tianyin)", "A League of Nobleman (Lan Jue)", "Road Home (Lu Chen)", "The Love of Hypnosis (Ye Shen)"],
     screenAppeal: "Chic Parisian fashion sensibility, melancholic world-weariness, sophisticated architectural aesthetic, subtle cinematic naturalism.",
@@ -959,7 +959,7 @@ const actors = [
     scoreBuzz: 91,
     scoreCostume: 91,
     scoreModern: 96,
-    scoreOverall: 93.4,
+    scoreOverall: 92.8,
     breakthrough: "Ever Night (2018) / Lighter & Princess (2022) as Li Xun",
     signatureRoles: ["Lighter & Princess (Li Xun)", "Ever Night (Ning Que)", "Legend of Awakening (Lu Ping)", "My People, My Country (Haizha)", "Eat Run and Date"],
     screenAppeal: "Tall runway presence, rebellious blonde or black hairstyle swagger, aristocratic lineage, fierce romantic gaze that blends aloof genius with intense protective warmth.",
@@ -985,6 +985,43 @@ const actors = [
 function actorSlug(name) {
   return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
+
+function actorBaseName(name) {
+  return name.split(" (")[0];
+}
+
+function actorImageSlug(name) {
+  return actorSlug(actorBaseName(name));
+}
+
+// Photo credit source for each actor's real photograph (sources logged 24 Oct 2026)
+const photoSources = {
+  "Zhang Linghe": "MyDramaList",
+  "Xiao Zhan": "MyDramaList",
+  "Wang Yibo": "MyDramaList",
+  "Yang Yang": "Profascinated",
+  "Dylan Wang": "MyDramaList",
+  "Cheng Yi": "TMDB",
+  "Luo Yunxi": "MyDramaList",
+  "Xu Kai": "DailySia",
+  "Gong Jun": "TMDB",
+  "Wu Lei (Leo Wu)": "MyDramaList",
+  "Chen Xingxu": "MyDramaList",
+  "Zhang Wanyi": "TMDB",
+  "Chen Zheyuan": "TMDB",
+  "Wang Xingyue": "TMDB",
+  "Hou Minghao (Neo Hou)": "TMDB",
+  "Tan Jianci (JC-T)": "TMDB",
+  "Li Xian": "TMDB",
+  "Bai Jingting": "TMDB",
+  "Song Weilong": "TMDB",
+  "Lin Yi": "MyDramaList",
+  "Liu Xueyi": "TMDB",
+  "Ding Yuxi (Ryan Ding)": "MUBI",
+  "Jing Boran": "MyDramaList",
+  "Wang Anyu": "KapanLagi",
+  "Chen Feiyu (Arthur Chen)": "IMDb"
+};
 
 // Generate the 50 structured content sections
 function generateAllSections() {
@@ -1135,6 +1172,11 @@ function generateAllSections() {
     </div>
   </div>
 
+  <figure class="profile-photo" style="margin:0 0 1.4rem;">
+    <img src="/assets/hottest-chinese-actors/${actorImageSlug(a.name)}.webp" alt="${a.name}" loading="lazy" decoding="async" style="width:100%; max-width:400px; border-radius:12px; display:block;">
+    <figcaption style="font-size:0.82rem; color:var(--muted); margin-top:0.45rem;">Photo: ${a.name} &middot; Source: ${photoSources[a.name]}</figcaption>
+  </figure>
+
   <h3>1. Quick Facts &amp; Vital Statistics</h3>
   <div class="table-scroll">
     <table class="comparison-table" style="font-size:0.88rem;">
@@ -1255,17 +1297,17 @@ function generateAllSections() {
         </tr>
         <tr>
           <td><strong>Ages 25–29 (Late-90s)</strong></td>
-          <td>Zhang Linghe (28), Wang Yibo (28), Dylan Wang (27), Wu Lei (26), Chen Zheyuan (29), Hou Minghao (28), Song Weilong (27), Lin Yi (27), Wang Anyu (28)</td>
+          <td>Zhang Linghe (28), Wang Yibo (29), Dylan Wang (27), Wu Lei (26), Chen Zheyuan (29), Hou Minghao (28), Song Weilong (27), Lin Yi (27), Wang Anyu (28)</td>
           <td>The golden engine of current C-drama streaming; dominating social media and international licensing.</td>
         </tr>
         <tr>
           <td><strong>Ages 30–35 (Early-90s)</strong></td>
-          <td>Xiao Zhan (34), Yang Yang (34), Cheng Yi (35), Xu Kai (31), Gong Jun (33), Chen Xingxu (30), Zhang Wanyi (31), Tan Jianci (35), Li Xian (34), Bai Jingting (32), Ding Yuxi (30)</td>
+          <td>Xiao Zhan (35), Yang Yang (35), Xu Kai (31), Gong Jun (33), Chen Xingxu (30), Zhang Wanyi (31), Tan Jianci (35), Li Xian (34), Bai Jingting (32), Ding Yuxi (30)</td>
           <td>Peak artistic versatility; blending mature acting credentials with unrivaled commercial superstar power.</td>
         </tr>
         <tr>
           <td><strong>Ages 35+ (Established Veterans)</strong></td>
-          <td>Luo Yunxi (37), Jing Boran (36), Liu Xueyi (35)</td>
+          <td>Luo Yunxi (38), Cheng Yi (36), Jing Boran (36), Liu Xueyi (35)</td>
           <td>Seasoned craft masters who command critical respect, luxury houses, and auteur cinematic roles.</td>
         </tr>
       </tbody>
