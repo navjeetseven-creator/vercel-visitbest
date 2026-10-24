@@ -572,7 +572,7 @@ function renderHome() {
     image: { src: "/assets/event-management-companies-in-india/hero.jpg", alt: "Top 20 Event Management Companies in India" },
     category: "Business"
   };
-  const latest = [eventArticleCard, ...posts.slice(0, 5).map(archiveCardFromPost)];
+  const latest = [eventArticleCard, ...[...posts].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 5).map(archiveCardFromPost)];
   const restored = legacyPages.filter((item) => !["tools", "privacy-policy"].includes(item.slug)).slice(0, 6).map(archiveCardFromLegacy);
   const categoryNames = [...new Set([...categories.map((item) => item.name), ...legacyPages.map((item) => item.category)])].filter((name) => name && name !== "Site").slice(0, 10);
   const categoryCards = categoryNames.map((name) => {
