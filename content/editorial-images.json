@@ -619,5 +619,53 @@
     "sourcePage": "https://www.pexels.com/photo/7222091/",
     "license": "Pexels License",
     "credit": "Photo: Pavel Danilyuk, Rishabh Tatiraju · Pexels / Wikimedia Commons"
+  },
+  {
+    "cluster": "cinema",
+    "slug": "hottest-chinese-actors",
+    "source": "VisitBest",
+    "alt": "Hottest Chinese Actors — VisitBest cover",
+    "local": "/assets/hottest-chinese-actors/hero.jpg",
+    "license": "VisitBest editorial cover",
+    "credit": "VisitBest cover — compiled from real photographs"
+  },
+  {
+    "cluster": "cinema",
+    "slug": "most-beautiful-bollywood-actresses",
+    "source": "VisitBest",
+    "alt": "Most Beautiful Bollywood Actresses — VisitBest cover",
+    "local": "/assets/most-beautiful-bollywood-actresses/hero.jpg",
+    "license": "VisitBest editorial cover",
+    "credit": "VisitBest cover — compiled from real photographs"
+  },
+  {
+    "cluster": "sports-gear",
+    "slug": "best-cricket-bat-in-india",
+    "source": "Wikimedia Commons",
+    "alt": "Best Cricket Bats in India — VisitBest cover",
+    "local": "/assets/best-cricket-bat-in-india/hero.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:GandM_Flare_DXM_bat-Purist_156g_ball.jpg",
+    "license": "CC BY 2.5",
+    "credit": "Photo: Marie-Lan Nguyen · Wikimedia Commons"
+  },
+  {
+    "cluster": "streaming",
+    "slug": "best-sites-to-watch-anime",
+    "source": "Wikimedia Commons",
+    "alt": "Best Sites to Watch Anime — VisitBest cover",
+    "local": "/assets/best-sites-to-watch-anime/hero.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Universal_Cosplay_Convention_2016.jpg",
+    "license": "CC BY-SA 4.0",
+    "credit": "Photo: Chongkian · Wikimedia Commons"
+  },
+  {
+    "cluster": "cinema",
+    "slug": "beautiful-young-hollywood-actresses",
+    "source": "Wikimedia Commons",
+    "alt": "Beautiful Young Hollywood Actresses — VisitBest cover",
+    "local": "/assets/beautiful-young-hollywood-actresses/hero.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AJenna_Ortega-63792_%28cropped%29.jpg",
+    "license": "CC BY-SA 4.0 / CC BY-SA 3.0",
+    "credit": "Photos: Harald Krichel, Elena Ternovaja, Toglenn, Laviru Koruwakankanamge · Wikimedia Commons"
   }
 ]
