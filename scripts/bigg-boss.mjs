@@ -59,12 +59,14 @@ export const contestants = [
     "age": 43,
     "city": "Kangathei, Manipur",
     "image": "/assets/bb20/mary-kom.webp",
-    "nominated": true,
-    "status": "reported-evicted",
+    "nominated": false,
+    "evicted": true,
+    "evictedWeek": 7,
+    "status": "evicted",
     "bio": "Mangte Chungneijang Mary Kom (born 1 March 1983, Kangathei, Manipur) is, by achievement, the most decorated person ever to enter a Bigg Boss house: the only woman to win six World Boxing Championship titles, an Olympic bronze medallist (London 2012), Asian Games and Commonwealth Games gold medallist, and Padma Vibhushan awardee. Her Bigg Boss stint was about presence more than gameplay, and she commanded respect whenever she spoke.",
-    "longBio": "Born to Mangte Tonpa Kom and Mangte Akham Kom, Mary Kom took up boxing after being inspired by Dingko Singh's 1998 Asian Games gold and initially hid it from her father. Her stint also brought controversy, including backlash over a remark about fellow Indian sportswomen, after which her team apologised and said her words were misunderstood. She was nominated in Week 7 alongside Arishfa Khan, Uditi Singh, Manish Goel, Aamrapali Dubey, Love Gill and Gullu. On 24 October, ABP Live reported that she had been eliminated after reportedly receiving the fewest votes, with her exit expected to feature in an upcoming Weekend Ka Vaar episode. That elimination is REPORTED only — official on-air confirmation from the makers is awaited, so she is listed here as 'Reported evicted', not as a confirmed eviction.",
-    "trend": "Reported evicted · Week 7 (awaiting on-air confirmation)",
-    "highlight": "Six-time world champion and Olympic medallist — reported evicted in Week 7; do not treat as confirmed until it airs."
+    "longBio": "Born to Mangte Tonpa Kom and Mangte Akham Kom, Mary Kom took up boxing after being inspired by Dingko Singh's 1998 Asian Games gold and initially hid it from her father. Her stint also brought controversy, including backlash over a remark about fellow Indian sportswomen, after which her team apologised and said her words were misunderstood. She was nominated in Week 7 alongside Arishfa Khan, Uditi Singh, Manish Goel, Aamrapali Dubey, Love Gill and Gullu. On 24 October, ABP Live reported that she had been eliminated after reportedly receiving the fewest votes, with her exit expected to feature in an upcoming Weekend Ka Vaar episode. That elimination is now CONFIRMED: guest host Rohit Shetty announced it on Saturday's Weekend Ka Vaar (24 October), after Mary Kom lost both her lifelines, with housemates singing 'You Are A Champion' as she left (Republic World, 25 October; Times of India, 24 October).",
+    "trend": "Evicted · Week 7",
+    "highlight": "Six-time world champion and Olympic medallist — evicted in Week 7, confirmed on air by guest host Rohit Shetty on 24 October."
   },
   {
     "id": "yung-dsa",
@@ -107,7 +109,7 @@ export const contestants = [
     "nominated": true,
     "status": "in-house",
     "bio": "Aamrapali Dubey is one of Bhojpuri cinema's biggest leading actresses. She made her Bhojpuri film debut in 2014 opposite Dinesh Lal Yadav 'Nirahua' in Nirahua Hindustani, after earlier television work, and built a career of blockbuster Bhojpuri hits and devotional releases that makes her a household name across Uttar Pradesh, Bihar and Jharkhand — and gives her the season's most loyal regional audience.",
-    "longBio": "That regional audience is Aamrapali's Bigg Boss superpower: few housemates can match the loyalty of the Bhojpuri belt when she is nominated — and she is nominated in Week 7, on the same list from which Mary Kom was reported evicted. Inside the house her journey has been less about engineered controversy and more about presence in daily life and group equations, including light-hearted kitchen-duty moments in the 23 October episode while the captaincy battle raged around her. Her birthday is 11 January; the birth year (1987) comes from secondary profiles rather than a primary source, so her age is shown with that caution.",
+    "longBio": "That regional audience is Aamrapali's Bigg Boss superpower: few housemates can match the loyalty of the Bhojpuri belt when she is nominated — and she is nominated in Week 7, on the same list from which Mary Kom was evicted (confirmed on air 24 October). Inside the house her journey has been less about engineered controversy and more about presence in daily life and group equations, including light-hearted kitchen-duty moments in the 23 October episode while the captaincy battle raged around her. Her birthday is 11 January; the birth year (1987) comes from secondary profiles rather than a primary source, so her age is shown with that caution.",
     "trend": "In house · Nominated Week 7",
     "highlight": "Bhojpuri superstar with the season's most loyal regional vote bank — on the Week 7 nomination list."
   },
@@ -266,7 +268,7 @@ export const contestants = [
     "nominated": true,
     "status": "in-house",
     "bio": "Manish Goel (born 27 August 1975, New Delhi) was not on this page at all until this update, despite entering as the season's first official wild card during Weekend Ka Vaar in Week 5. With a television career starting in the late 1990s — Kahaani Ghar Ghar Kii, Kasautii Zindagii Kay, Bhabhi, Ghar Ek Mandir and, most recently, Anupamaa as Raghav — he has worked in television longer than some housemates have been alive, and at 51 is the house's oldest housemate.",
-    "longBio": "Manish arrived under a playful cover story, telling housemates he was there to promote a project, before Salman Khan revealed the 'project' was Bigg Boss itself. He is married to actress Poonam Narula (married 2002); they have two children, Aryaveer and Maliha, were runners-up on Nach Baliye 1 together, and he won Welcome – Baazi Mehmaan Nawazi Ki in 2013. In the house, the veteran has had to build bonds from zero against groups formed over five weeks, and he is nominated in Week 7. No /assets/bb20/ portrait exists for Manish yet, so his card deliberately shows a placeholder instead of another housemate's image.",
+    "longBio": "Manish arrived under a playful cover story, telling housemates he was there to promote a project, before Salman Khan revealed the 'project' was Bigg Boss itself. He is married to actress Poonam Narula (married 2002); they have two children, Aryaveer and Maliha, were runners-up on Nach Baliye 1 together, and he won Welcome – Baazi Mehmaan Nawazi Ki in 2013. In the house, the veteran has had to build bonds from zero against groups formed over five weeks, and he is nominated in Week 7. In the 24 October Weekend Ka Vaar, the Times of India reported that Manish lost a lifeline in the same twist that ended Mary Kom's journey, so he survives with less room for error. No /assets/bb20/ portrait exists for Manish yet, so his card deliberately shows a placeholder instead of another housemate's image.",
     "trend": "In house · Wild card (Week 5) · Nominated Week 7",
     "highlight": "The season's first wild card and its oldest housemate at 51 — a three-decade TV career entering a house already five weeks formed."
   },
@@ -811,11 +813,11 @@ function renderNominationCallout() {
     </div>
     <p class="bb-nom-list-text">
       <strong>7 contestants are nominated this week:</strong><br>
-      <span class="bb-nom-names">Gullu (Kushal Tanwar) • Mary Kom (reported evicted — awaiting on-air confirmation) • Aamrapali Dubey • Arishfa Khan • Love Gill • Uditi Singh • Manish Goel (wild card)</span>
+      <span class="bb-nom-names">Gullu (Kushal Tanwar) • Mary Kom (evicted — confirmed on air 24 October) • Aamrapali Dubey • Arishfa Khan • Love Gill • Uditi Singh • Manish Goel (wild card)</span>
     </p>
     <div class="bb-nom-safe-bar">
       <span class="bb-safe-indicator">🟢 <strong>Captain This Week:</strong> Mahhi Vij (chosen by Qazi Touqeer, who won the 23 October captaincy task round; Scout was the previous captain)</span>
-      <span class="bb-evicted-indicator">❌ <strong>Evicted:</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4), Aman Gandhi (Week 6) · <strong>Removed:</strong> Nakul Dhull (wild card, Week 6)</span>
+      <span class="bb-evicted-indicator">❌ <strong>Evicted:</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4), Aman Gandhi (Week 6), Mary Kom (Week 7) · <strong>Removed:</strong> Nakul Dhull (wild card, Week 6)</span>
     </div>
     <p class="bb-nom-list-text"><strong>Open Poll — for audience sentiment only.</strong> Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
   </div>`;
@@ -1143,9 +1145,8 @@ export function renderBiggBossContestantsPage() {
     <section class="bb-status-summary">
       <h2>At a glance — who is still in?</h2>
       <ul>
-        <li><strong>Still in the house (at 24 Oct, before the Weekend Ka Vaar eviction airs):</strong> Gullu (Kushal Tanwar), Qazi Touqeer, Tanmay 'Scout' Singh, Yung DSA, Kanika Mann, Aamrapali Dubey, Aasif Khan, Mahhi Vij (current captain), Arishfa Khan, Love Gill, Uditi Singh, Manish Goel (wild card)</li>
-        <li><strong>Reported evicted — Week 7, awaiting on-air confirmation:</strong> MC Mary Kom (reported by ABP Live on 24 October; official confirmation from the makers is awaited — not presented here as confirmed)</li>
-        <li><strong>Evicted:</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4, mid-week), Aman Gandhi (Week 6)</li>
+        <li><strong>Still in the house (at 25 Oct, after the Weekend Ka Vaar eviction aired):</strong> Gullu (Kushal Tanwar), Qazi Touqeer, Tanmay 'Scout' Singh, Yung DSA, Kanika Mann, Aamrapali Dubey, Aasif Khan, Mahhi Vij (current captain), Arishfa Khan, Love Gill, Uditi Singh, Manish Goel (wild card)</li>
+        <li><strong>Evicted:</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4, mid-week), Aman Gandhi (Week 6), MC Mary Kom (Week 7, confirmed on air 24 October)</li>
         <li><strong>Removed by Bigg Boss:</strong> Nakul Dhull (wild card, Week 6, after a reported physical altercation with Gullu)</li>
         <li><strong>Captain:</strong> Mahhi Vij, from 23 October — Qazi Touqeer won the captaincy task round and chose her. Scout was the previous captain.</li>
       </ul>
