@@ -269,3 +269,13 @@ h1, h2, h3, h4 { color: var(--ink); font-family: Georgia, "Times New Roman", ser
   body { padding-bottom: 60px; }
   .back-top { bottom: 4.9rem; }
 }
+
+/* === Legacy brand details: per-brand blocks with product image and buy button === */
+.affiliate-disclosure { font-size: .88rem; color: var(--muted); margin: 0 0 1.1rem; }
+.brand-block { margin: 0 0 1.8rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+.brand-block:first-of-type { border-top: 0; padding-top: .4rem; }
+.brand-block figure { margin: 0 0 1rem; }
+.brand-block img { max-width: 420px; width: 100%; height: auto; border-radius: 12px; }
+.brand-model { font-size: .92rem; color: var(--muted); }
+.buy-button { display: inline-block; background: #24334f; color: #fff; padding: .62rem 1.15rem; border-radius: 10px; font-weight: 700; text-decoration: none; }
+.buy-button:hover { color: #fff; background: var(--ink-strong); }
