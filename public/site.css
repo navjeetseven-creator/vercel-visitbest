@@ -279,3 +279,131 @@ h1, h2, h3, h4 { color: var(--ink); font-family: Georgia, "Times New Roman", ser
 .brand-model { font-size: .92rem; color: var(--muted); }
 .buy-button { display: inline-block; background: #24334f; color: #fff; padding: .62rem 1.15rem; border-radius: 10px; font-weight: 700; text-decoration: none; }
 .buy-button:hover { color: #fff; background: var(--ink-strong); }
+
+/* ============================================================
+   vb-* product-guide design system (added 26 Oct 2026)
+   Styles for the component classes used by the product-guide
+   pages in content/source/pages.json (best-bldc-ceiling-fans-india,
+   best-ro-under-15000, best-nutribullet-blenders-in-india,
+   best-3-burner-gas-stove-in-india, best-cold-press-juicer-in-india)
+   and by posts using vb-meta / vb-article-logo / vb-affiliate-disclosure.
+   Append-only: no existing rule above this section is changed.
+   ============================================================ */
+
+/* --- Amazon buy button -------------------------------------- */
+.vb-btn-amazon { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; background: #ff9900; color: #17253e; font-weight: 800; font-size: .95rem; line-height: 1.25; padding: .72rem 1.35rem; border: 1px solid #e88b00; border-radius: 10px; text-decoration: none !important; box-shadow: 0 2px 8px rgba(232, 139, 0, .25); transition: background .18s ease, transform .18s ease, box-shadow .18s ease; }
+.vb-btn-amazon:hover { background: #e88b00; color: #17253e; transform: translateY(-1px); box-shadow: 0 5px 14px rgba(232, 139, 0, .32); }
+.vb-btn-amazon__default { display: inline; }
+.vb-btn-amazon__hover { display: none; }
+.vb-btn-amazon:hover .vb-btn-amazon__default, .vb-btn-amazon:focus-visible .vb-btn-amazon__default { display: none; }
+.vb-btn-amazon:hover .vb-btn-amazon__hover, .vb-btn-amazon:focus-visible .vb-btn-amazon__hover { display: inline; }
+.vb-btn-amazon--block { display: flex; width: 100%; }
+
+/* --- Section furniture -------------------------------------- */
+.vb-section-intro { color: var(--muted); font-size: 1.02rem; margin: 0 0 1.1rem; }
+.vb-cro-kicker { display: block; color: var(--accent); text-transform: uppercase; letter-spacing: .13em; font-weight: 800; font-size: .74rem; margin: 0 0 .6rem; }
+.vb-meta-line { font-size: .92rem; color: var(--muted); line-height: 1.55; margin: .35rem 0 .8rem; }
+.vb-meta-line s { color: var(--muted); }
+.vb-meta { font-size: .9rem; color: var(--muted); margin: .35rem 0 .8rem; }
+.vb-market-note { font-size: .85rem; color: var(--muted); line-height: 1.5; margin: .5rem 0 0; }
+
+/* --- Disclosures -------------------------------------------- */
+.vb-affiliate-disclosure, .vb-policy-disclosure { background: #f4f6f8; border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 10px; padding: .85rem 1.1rem; font-size: .88rem; line-height: 1.5; color: #475569; margin: 0 0 1.5rem; }
+.vb-landing-footer-policy { font-size: .88rem; color: var(--muted); line-height: 1.55; text-align: center; }
+
+/* --- Post company logos ------------------------------------- */
+.prose figure.vb-article-logo { display: inline-block; background: transparent; padding: 0; margin: 0 0 .75rem; text-align: left; vertical-align: middle; }
+.prose figure.vb-article-logo img { max-height: 48px; width: auto; max-width: 100%; height: auto; margin: 0; }
+
+/* --- Price system ------------------------------------------- */
+.vb-price-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: .45rem .8rem; margin: .8rem 0; }
+.vb-price-was { color: var(--muted); text-decoration: line-through; font-size: .98rem; }
+.vb-price-now { color: var(--ink-strong); font-weight: 800; font-size: 1.6rem; line-height: 1.1; }
+.vb-save-badge { background: #e6f4ea; color: #0f5132; font-size: .78rem; font-weight: 700; padding: .28rem .65rem; border-radius: 999px; white-space: nowrap; }
+.vb-deal-pill { display: inline-block; background: #0f5132; color: #fff; font-size: .75rem; font-weight: 800; letter-spacing: .02em; padding: .32rem .7rem; border-radius: 999px; }
+
+/* --- Urgency line ------------------------------------------- */
+.vb-urgency { display: flex; align-items: center; gap: .55rem; font-size: .9rem; line-height: 1.45; margin: .4rem 0 .2rem; }
+.vb-urgency-dot { display: inline-block; flex: none; width: 9px; height: 9px; border-radius: 50%; background: #0f5132; }
+
+/* --- Hero pick (editor's #1) -------------------------------- */
+.vb-hero-pick { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 1.6rem; align-items: start; background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem; margin: 0 0 2rem; box-shadow: var(--shadow); }
+.vb-hero-pick__media { position: relative; background: #f4f6f8; border-radius: 12px; padding: 1.1rem; text-align: center; }
+.vb-hero-pick__media .vb-deal-pill { position: absolute; top: .8rem; left: .8rem; z-index: 1; }
+.vb-hero-pick__media img { width: auto; max-width: 100%; height: auto; max-height: 340px; margin: 0 auto; display: block; }
+.vb-hero-pick__copy { min-width: 0; }
+.vb-hero-pick__title { margin: .1rem 0 .5rem; font-size: clamp(1.45rem, 2.6vw, 1.9rem); }
+.vb-hero-pick__bestfor { color: var(--muted); font-size: 1rem; margin: 0 0 .4rem; }
+.vb-hero-pick > .vb-market-snap, .vb-hero-pick > .vb-trust-row { grid-column: 1 / -1; }
+.vb-hero-cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin: 1rem 0 .4rem; }
+
+/* --- Score meter (fill width is set inline in the HTML) ----- */
+.vb-score-meter { max-width: 340px; margin-top: 1rem; }
+.vb-score-meter__row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: .4rem; }
+.vb-score-meter__label { font-size: .85rem; font-weight: 600; color: var(--muted); }
+.vb-score-meter__value { font-size: 1.05rem; font-weight: 800; color: var(--ink-strong); }
+.vb-score-meter__value span { font-size: .8em; font-weight: 600; color: var(--muted); }
+.vb-score-meter__track { height: 8px; background: #eceff3; border-radius: 999px; overflow: hidden; }
+.vb-score-meter__fill { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
+
+/* --- Market snapshot strip ---------------------------------- */
+.vb-market-snap { display: flex; flex-wrap: wrap; gap: .9rem 2.2rem; align-items: start; background: #f4f6f8; border-radius: 12px; padding: 1rem 1.2rem; margin-top: 1.2rem; }
+.vb-market-stat { display: flex; flex-direction: column; gap: .15rem; min-width: 0; }
+.vb-market-label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .11em; color: var(--muted); }
+.vb-market-value { font-size: 1.15rem; font-weight: 800; color: var(--ink-strong); line-height: 1.2; }
+.vb-market-stars { color: var(--accent); margin-right: .2rem; }
+.vb-market-snap .vb-market-note { flex-basis: 100%; margin: 0; }
+
+/* --- Trust chips -------------------------------------------- */
+.vb-trust-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+.vb-trust-chip { display: inline-block; border: 1px solid var(--line); background: var(--white); color: var(--ink); font-size: .82rem; font-weight: 600; padding: .32rem .72rem; border-radius: 999px; }
+
+/* --- Top picks grid ----------------------------------------- */
+.vb-top-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; list-style: none; padding: 0; margin: 1.25rem 0 2rem; }
+.vb-top-card { display: flex; flex-direction: column; gap: .8rem; background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 1.15rem; margin: 0; }
+.vb-top-card--lead { border-color: var(--accent); background: var(--cream); box-shadow: var(--shadow); }
+.vb-top-card__topline { display: flex; align-items: center; gap: .6rem; }
+.vb-top-card__rank { font-weight: 800; font-size: 1.05rem; color: var(--ink-strong); }
+.vb-top-card__badge { background: var(--accent-soft); color: var(--accent-dark); font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; padding: .28rem .62rem; border-radius: 999px; }
+.vb-top-card__badge--muted { background: #eef1f4; color: var(--muted); }
+.vb-top-card__score { margin-left: auto; font-weight: 700; color: var(--muted); font-size: .92rem; white-space: nowrap; }
+.vb-top-card__media { display: flex; align-items: center; justify-content: center; background: #f4f6f8; border-radius: 12px; padding: .95rem; }
+.vb-top-card__media img { width: auto; max-width: 100%; height: auto; max-height: 170px; margin: 0 auto; display: block; }
+.vb-top-card__title { margin: 0 0 .35rem; font-size: 1.12rem; line-height: 1.3; }
+.vb-top-card__title a { color: inherit; }
+.vb-top-card__bestfor { color: var(--muted); font-size: .9rem; margin: 0; }
+.vb-top-card__price { font-size: 1.25rem; font-weight: 800; color: var(--ink-strong); margin: .35rem 0 0; }
+.vb-top-card__price s { font-size: .95rem; font-weight: 500; color: var(--muted); margin-right: .55rem; }
+.vb-top-card__actions { margin-top: auto; display: flex; flex-direction: column; gap: .55rem; }
+.vb-top-card__link { display: block; text-align: center; font-weight: 700; font-size: .92rem; color: var(--accent-dark); padding: .4rem .5rem; text-decoration: underline; text-underline-offset: 3px; }
+
+/* --- Product cards ------------------------------------------ */
+.vb-product-card { background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 1.3rem; margin: 0 0 1.6rem; }
+.vb-product-card__hero { display: flex; gap: 1.3rem; align-items: flex-start; }
+.vb-product-card__img { flex: none; background: #f4f6f8; border-radius: 12px; padding: .85rem; text-align: center; }
+.vb-product-card__img img { width: auto; max-width: 100%; height: auto; max-height: 200px; margin: 0 auto; display: block; }
+.vb-product-card__hero > div:last-child { min-width: 0; flex: 1; }
+
+/* --- Comparison table wrapper ------------------------------- */
+.vb-comp-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--line); border-radius: 12px; margin: 1.25rem 0 1.75rem; }
+.vb-comp-wrap table { width: 100%; min-width: 640px; margin: 0; }
+
+/* --- Responsive --------------------------------------------- */
+@media (max-width: 980px) {
+  .vb-hero-pick { grid-template-columns: 1fr; }
+  .vb-hero-pick__media { max-width: 430px; }
+}
+@media (max-width: 768px) {
+  .vb-top-grid { grid-template-columns: 1fr; }
+  .vb-product-card__hero { flex-direction: column; }
+  .vb-product-card__img { align-self: flex-start; }
+  .vb-hero-pick { padding: 1.15rem; }
+  .vb-market-snap { gap: .8rem 1.4rem; }
+  .vb-score-meter { max-width: none; }
+}
+@media (max-width: 480px) {
+  .vb-price-now { font-size: 1.35rem; }
+  .vb-btn-amazon { padding: .68rem 1.1rem; font-size: .92rem; }
+  .vb-top-card, .vb-product-card { padding: 1rem; }
+  .vb-market-value { font-size: 1.05rem; }
+}
