@@ -17,9 +17,9 @@ export const contestants = [
     "captain": false,
     "status": "in-house",
     "bio": "Kushal Tanwar, known as Gullu or Gullu Boxer, is a reality-show winner — MTV Roadies XX: Double Cross (2025), Splitsvilla and Maa Hai Naa — and a hotel-management graduate from IHMCT Pune who worked in hospitality and event management before television. In the house he mixes entertainment and physical tasks, with an early captaincy stint that has long since ended.",
-    "longBio": "Gullu came in as one of reality television's form players, with back-to-back reality wins giving him a ready fanbase. His long friendship with Roadies gang leader Elvish Yadav, the Bigg Boss OTT 2 winner, has been a talking point in the house, and Elvish publicly backed him after his clash with wild card Nakul Dhull — the altercation after which Nakul was removed in Week 6. Nominated again in Week 7, Gullu's survival depends on whether his reality-show fanbase converts into Bigg Boss support. Note: his exact date of birth is not reliably verified; secondary profiles give a birth year of 1999, so his age is shown as approximate.",
-    "trend": "In house · Nominated Week 7",
-    "highlight": "Roadies XX winner at the centre of the Nakul Dhull removal — now fighting a Week 7 nomination."
+    "longBio": "Gullu came in as one of reality television's form players, with back-to-back reality wins giving him a ready fanbase. His long friendship with Roadies gang leader Elvish Yadav, the Bigg Boss OTT 2 winner, has been a talking point in the house, and Elvish publicly backed him after his clash with wild card Nakul Dhull — the altercation after which Nakul was removed in Week 6. Nominated again in Week 8, Gullu's survival depends on whether his reality-show fanbase converts into Bigg Boss support. Note: his exact date of birth is not reliably verified; secondary profiles give a birth year of 1999, so his age is shown as approximate.",
+    "trend": "In house · Nominated Week 8",
+    "highlight": "Roadies XX winner at the centre of the Nakul Dhull removal — now fighting a Week 8 nomination."
   },
   {
     "id": "qazi-touqeer",
@@ -44,12 +44,12 @@ export const contestants = [
     "age": 30,
     "city": "Mumbai, Maharashtra",
     "image": "/assets/bb20/scout.webp",
-    "nominated": false,
+    "nominated": true,
     "status": "in-house",
     "bio": "Tanmay Singh (born 30 July 1996), universally known as Scout or ScoutOP, is one of the pioneers of Indian esports — a former professional BGMI/PUBG Mobile player turned one of the country's biggest gaming creators. In the house he has played tactically and spoken bluntly, captained the house in Week 7, and clashed repeatedly with Qazi Touqeer, including in the 23 October captaincy task.",
-    "longBio": "Scout's personal life has become the season's biggest outside-the-house storyline. He has said in the house that he has been in a relationship for around five years with gaming creator Kaashvi Hiranandani, known as KaashPlays (born 28 April 1997, Mumbai, age 29 — a streamer who moved from a finance career into gaming and was named Female Streamer of the Year at the Indian Gaming Awards 2022). Scout has discussed a difficult past relationship and spoken of marriage plans, saying Kaashvi wants to be financially independent first. That is now colliding with his on-screen bond with Love Gill, which both describe as a brother-sister bond but which guest host Rohit Shetty questioned in Weekend Ka Vaar promos, and with Kaashvi's reported Weekend Ka Vaar appearance, in which she is reported to tell him she is finding it difficult to defend him.",
-    "trend": "In house · Captain in Week 7, succeeded by Mahhi Vij",
-    "highlight": "Week 7 captain whose game, his bond with Love Gill, and his relationship with girlfriend Kaashvi (KaashPlays) all collide on Weekend Ka Vaar."
+    "longBio": "Scout's personal life has become the season's biggest outside-the-house storyline. He has said in the house that he has been in a relationship for around five years with gaming creator Kaashvi Hiranandani, known as KaashPlays (born 28 April 1997, Mumbai, age 29 — a streamer who moved from a finance career into gaming and was named Female Streamer of the Year at the Indian Gaming Awards 2022). Scout has discussed a difficult past relationship and spoken of marriage plans, saying Kaashvi wants to be financially independent first. That is now colliding with his on-screen bond with Love Gill, which both describe as a brother-sister bond but which guest host Rohit Shetty questioned in Weekend Ka Vaar promos, and with Kaashvi's 25 October Weekend Ka Vaar appearance, in which she told him to 'cut Love out', said she felt disgusted, and alleged Love had trapped him (Times Now; Times of India, 25 October).",
+    "trend": "In house · Captain in Week 7, succeeded by Mahhi Vij · Nominated Week 8",
+    "highlight": "Week 7 captain whose game, his bond with Love Gill, and his relationship with girlfriend Kaashvi (KaashPlays) all collide on Weekend Ka Vaar — now nominated in Week 8."
   },
   {
     "id": "mary-kom",
@@ -91,12 +91,12 @@ export const contestants = [
     "age": 33,
     "city": "Panipat, Haryana",
     "image": "/assets/bb20/kanika-mann.webp",
-    "nominated": false,
+    "nominated": true,
     "status": "in-house",
     "bio": "Kanika Mann (born 7 October 1993, Panipat) holds a Master of Laws (LL.M.) from Panjab University and is best known as Guddan in Guddan Tumse Na Ho Payega, after Badho Bahu, Punjabi films including Rocky Mental and Daana Paani, the web series Roohaniyat, and a finalist run on Khatron Ke Khiladi 12. She was this season's first confirmed contestant and its first housemate through the door on premiere night, 6 September.",
-    "longBio": "Kanika's route into acting was not straightforward: her father initially opposed acting and wanted her to pursue law — she completed the law degree, then acting won, and he later helped her with her first audition. On entering, she received a 'Puppet Master' power to influence later entrants. Inside the house she has been competitive and emotionally direct, was praised by Salman Khan in Week 5 Weekend Ka Vaar coverage, took a life from Rohed Khan in the Week 2 sequence that preceded his eviction, and featured in Episode 47's key Scout conversation — teasing him about not knowing his girlfriend's birthday, a clip that fed the wider Kaashvi story.",
-    "trend": "In house",
-    "highlight": "The season's first entrant — a law graduate turned TV star, still in the house in Week 7."
+    "longBio": "Kanika's route into acting was not straightforward: her father initially opposed acting and wanted her to pursue law — she completed the law degree, then acting won, and he later helped her with her first audition. On entering, she received a 'Puppet Master' power to influence later entrants. Inside the house she has been competitive and emotionally direct, was praised by Salman Khan in Week 5 Weekend Ka Vaar coverage, took a life from Rohed Khan in the Week 2 sequence that preceded his eviction, and featured in Episode 47's key Scout conversation — teasing him about not knowing his girlfriend's birthday, a clip that fed the wider Kaashvi story. She is nominated in Week 8, in the six-name list from the 25 October nomination task (Business Upturn; IndiaForums).",
+    "trend": "In house · Nominated Week 8",
+    "highlight": "The season's first entrant — a law graduate turned TV star, nominated in Week 8."
   },
   {
     "id": "amrapali-dubey",
@@ -109,9 +109,9 @@ export const contestants = [
     "nominated": true,
     "status": "in-house",
     "bio": "Aamrapali Dubey is one of Bhojpuri cinema's biggest leading actresses. She made her Bhojpuri film debut in 2014 opposite Dinesh Lal Yadav 'Nirahua' in Nirahua Hindustani, after earlier television work, and built a career of blockbuster Bhojpuri hits and devotional releases that makes her a household name across Uttar Pradesh, Bihar and Jharkhand — and gives her the season's most loyal regional audience.",
-    "longBio": "That regional audience is Aamrapali's Bigg Boss superpower: few housemates can match the loyalty of the Bhojpuri belt when she is nominated — and she is nominated in Week 7, on the same list from which Mary Kom was evicted (confirmed on air 24 October). Inside the house her journey has been less about engineered controversy and more about presence in daily life and group equations, including light-hearted kitchen-duty moments in the 23 October episode while the captaincy battle raged around her. Her birthday is 11 January; the birth year (1987) comes from secondary profiles rather than a primary source, so her age is shown with that caution.",
-    "trend": "In house · Nominated Week 7",
-    "highlight": "Bhojpuri superstar with the season's most loyal regional vote bank — on the Week 7 nomination list."
+    "longBio": "That regional audience is Aamrapali's Bigg Boss superpower: few housemates can match the loyalty of the Bhojpuri belt when she is nominated — and she is nominated again in Week 8, after surviving the Week 7 list from which Mary Kom was evicted (confirmed on air 24 October). Inside the house her journey has been less about engineered controversy and more about presence in daily life and group equations, including light-hearted kitchen-duty moments in the 23 October episode while the captaincy battle raged around her. Her birthday is 11 January; the birth year (1987) comes from secondary profiles rather than a primary source, so her age is shown with that caution.",
+    "trend": "In house · Nominated Week 8",
+    "highlight": "Bhojpuri superstar with the season's most loyal regional vote bank — on the Week 8 nomination list."
   },
   {
     "id": "aasif-khan",
@@ -121,11 +121,11 @@ export const contestants = [
     "age": 35,
     "city": "Nimbahera, Rajasthan",
     "image": "/assets/bb20/aasif-khan.webp",
-    "nominated": false,
+    "nominated": true,
     "status": "in-house",
     "bio": "Aasif Khan (born 13 March 1991, Nimbahera) is one of India's most respected OTT supporting actors — Ganesh in Panchayat, Babar in Mirzapur and Anas in Jamtara — after five years of theatre in Jaipur and work as a casting associate. In Bigg Boss he has played a calm, observant game, became captain in Week 5, and is praised for mature, neutral reads of house disputes.",
     "longBio": "Aasif is the son of the late Ayyub Khan and Firdous Khan, and married Zeba on 10 December 2024 in Mumbai. He won the first round of the Episode 47 captaincy-contenders task, knocking Qazi and Gullu out of that race. October also brought a serious personal story into the open: reporting on 23 October, attributed to his wife Zeba, said Aasif had previously suffered a major heart attack, which he had earlier described publicly as acid reflux. A remark by Qazi in a house argument was taken by Aasif as a reference to that history; Qazi apologised and clarified it was not directed at him. That health detail is reported here only as attributed reporting.",
-    "trend": "In house · Captain in Week 5",
+    "trend": "In house · Captain in Week 5 · Nominated Week 8",
     "highlight": "Panchayat's Ganesh and a Week 5 captain — the house's calm strategist."
   },
   {
@@ -148,16 +148,16 @@ export const contestants = [
     "id": "arishfa-khan",
     "name": "Arishfa Khan",
     "alias": "Arishfa",
-    "role": "Digital Influencer & Former Child Star",
+    "role": "Actress & Influencer",
     "age": 23,
-    "city": "Shahjahanpur, Uttar Pradesh",
+    "city": "Shahjahanpur / Mumbai",
     "image": "/assets/bb20/arishfa-khan.webp",
-    "nominated": true,
+    "nominated": false,
     "status": "in-house",
     "bio": "Arishfa Khan (born 3 April 2003, Shahjahanpur) debuted as a child artist in Chhal – Sheh Aur Maat in 2012 and became known as young Gunjan in Ek Veer Ki Ardaas… Veera, with credits including Jeannie Aur Juju, Uttaran and Papa By Chance. She rebuilt her career as a TikTok-era star on Instagram and YouTube, and at 23 is the season's youngest contestant — with more than 29 million Instagram followers, its biggest digital following.",
-    "longBio": "Arishfa reportedly became interested in acting while accompanying her mother, who worked as a stunt performer, to shoots. In the house she has fought against being dismissed as 'bacchi' (a child) — a running tension for the youngest housemate. She is nominated in Week 7, was at the centre of a captaincy-task flashpoint in Episode 47 reporting, and her closeness with Qazi and Uditi Singh is the trigger Mahhi cited in the Episode 47 confrontation that cracked the Mahhi–Qazi friendship.",
-    "trend": "In house · Nominated Week 7 · Youngest housemate",
-    "highlight": "Youngest housemate with the house's biggest social following (29M+) — nominated in Week 7 and central to the Qazi–Mahhi split."
+    "longBio": "Arishfa reportedly became interested in acting while accompanying her mother, who worked as a stunt performer, to shoots. In the house she has fought against being dismissed as 'bacchi' (a child) — a running tension for the youngest housemate. She was nominated in Week 7, was at the centre of a captaincy-task flashpoint in Episode 47 reporting, and her closeness with Qazi and Uditi Singh is the trigger Mahhi cited in the Episode 47 confrontation that cracked the Mahhi–Qazi friendship.",
+    "trend": "In house · Youngest housemate",
+    "highlight": "Youngest housemate with the house's biggest social following (29M+) — nominated in Week 7 and central to the Qazi–Mahhi split; safe in Week 8."
   },
   {
     "id": "aman-gandhi",
@@ -220,10 +220,10 @@ export const contestants = [
     "image": "/assets/bb20/love-gill.webp",
     "nominated": true,
     "status": "in-house",
-    "bio": "Love Gill is a popular face from Punjabi music videos and Punjabi screen work who entered this season through the Fans Ka Faisla route — arriving with a public mandate rather than only a casting decision. Love is nominated in Week 7, in the same weekend that guest host Rohit Shetty is reported to question the on-screen bond with Scout, which both Love and Scout consistently describe as a brother-sister bond.",
+    "bio": "Love Gill is a popular face from Punjabi music videos and Punjabi screen work who entered this season through the Fans Ka Faisla route — arriving with a public mandate rather than only a casting decision. Love is nominated in Week 8, after the Weekend Ka Vaar weekend in which guest host Rohit Shetty questioned the on-screen bond with Scout — which both Love and Scout consistently describe as a brother-sister bond — and Kaashvi told Scout to cut Love out.",
     "longBio": "In the Weekend Ka Vaar promo reported on 24 October, Rohit Shetty is reported to tell Love Gill and Scout that physical closeness including massages is 'looking absolutely wrong' from outside. Earlier house coverage also had the makers warning the pair, and Scout reflecting that being in a committed relationship makes house attachments harder. How Love answers on Weekend Ka Vaar — and whether the Fans Ka Faisla audience still backs Love — may decide both survival this week and the wider Kaashvi storyline. Love Gill's exact age and date of birth are not reliably verified, so no precise age is published here.",
-    "trend": "In house · Nominated Week 7",
-    "highlight": "The Fans Ka Faisla entrant facing reported Weekend Ka Vaar questions about Scout — while nominated for eviction."
+    "trend": "In house · Nominated Week 8",
+    "highlight": "The Fans Ka Faisla entrant facing Weekend Ka Vaar questions about Scout — nominated again in Week 8."
   },
   {
     "id": "rhiti-tiwari",
@@ -250,26 +250,26 @@ export const contestants = [
     "age": null,
     "city": "Jaipur / Mumbai",
     "image": "/assets/bb20/uditi-singh.webp",
-    "nominated": true,
+    "nominated": false,
     "status": "in-house",
-    "bio": "Uditi Singh is an actress and model with a fashion and pageant background, and the season's repeat danger-zone survivor. She received the fewest votes in Week 1 but, with no eviction that week, lost a life instead of leaving; she was in the Week 6 bottom three that sent Aman Gandhi home, was put straight into nominations by captain Scout, and is nominated again in Week 7 — still in the house.",
+    "bio": "Uditi Singh is an actress and model with a fashion and pageant background, and the season's repeat danger-zone survivor. She received the fewest votes in Week 1 but, with no eviction that week, lost a life instead of leaving; she was in the Week 6 bottom three that sent Aman Gandhi home, was put straight into nominations by captain Scout, and was nominated in Week 7 — still in the house, safe in Week 8.",
     "longBio": "Uditi has played much of the season inside a friendship group with Arishfa Khan and, until his eviction, Aman Gandhi, and her closeness with Arishfa and with Qazi is the specific trigger Mahhi cited in the Episode 47 friendship crack with Qazi. She also won a round of the Episode 47 captaincy-contenders task, removing Yung and Scout from that race. Her exact age and date of birth are not reliably verified, so no precise age is published here.",
-    "trend": "In house · Nominated Week 7",
-    "highlight": "The season's repeat danger-zone survivor — fewest votes in Week 1, bottom three in Week 6, nominated again in Week 7, still in."
+    "trend": "In house · Repeat danger-zone survivor",
+    "highlight": "The season's repeat danger-zone survivor — fewest votes in Week 1, bottom three in Week 6, nominated again in Week 7, still in; safe in Week 8."
   },
   {
     "id": "manish-goel",
     "name": "Manish Goel",
     "alias": "Manish",
     "role": "Television Actor",
-    "age": 51,
-    "city": "New Delhi",
+    "age": 50,
+    "city": "Mumbai, Maharashtra",
     "image": "/assets/bb20/manish-goel.webp",
-    "nominated": true,
+    "nominated": false,
     "status": "in-house",
     "bio": "Manish Goel (born 27 August 1975, New Delhi) was not on this page at all until this update, despite entering as the season's first official wild card during Weekend Ka Vaar in Week 5. With a television career starting in the late 1990s — Kahaani Ghar Ghar Kii, Kasautii Zindagii Kay, Bhabhi, Ghar Ek Mandir and, most recently, Anupamaa as Raghav — he has worked in television longer than some housemates have been alive, and at 51 is the house's oldest housemate.",
-    "longBio": "Manish arrived under a playful cover story, telling housemates he was there to promote a project, before Salman Khan revealed the 'project' was Bigg Boss itself. He is married to actress Poonam Narula (married 2002); they have two children, Aryaveer and Maliha, were runners-up on Nach Baliye 1 together, and he won Welcome – Baazi Mehmaan Nawazi Ki in 2013. In the house, the veteran has had to build bonds from zero against groups formed over five weeks, and he is nominated in Week 7. In the 24 October Weekend Ka Vaar, the Times of India reported that Manish lost a lifeline in the same twist that ended Mary Kom's journey, so he survives with less room for error. No /assets/bb20/ portrait exists for Manish yet, so his card deliberately shows a placeholder instead of another housemate's image.",
-    "trend": "In house · Wild card (Week 5) · Nominated Week 7",
+    "longBio": "Manish arrived under a playful cover story, telling housemates he was there to promote a project, before Salman Khan revealed the 'project' was Bigg Boss itself. He is married to actress Poonam Narula (married 2002); they have two children, Aryaveer and Maliha, were runners-up on Nach Baliye 1 together, and he won Welcome – Baazi Mehmaan Nawazi Ki in 2013. In the house, the veteran has had to build bonds from zero against groups formed over five weeks, and he was nominated in Week 7. In the 24 October Weekend Ka Vaar, the Times of India reported that Manish lost a lifeline in the same twist that ended Mary Kom's journey, so he survives with less room for error. No /assets/bb20/ portrait exists for Manish yet, so his card deliberately shows a placeholder instead of another housemate's image.",
+    "trend": "In house · Wild card (Week 5)",
     "highlight": "The season's first wild card and its oldest housemate at 51 — a three-decade TV career entering a house already five weeks formed."
   },
   {
@@ -644,8 +644,8 @@ export function biggBossSchema(item, isContestantsPage = false, isRulesPage = fa
     return {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: "Bigg Boss 20 Contestants List with Photos, Age, Bio & Journey (Updated Week 7)",
-      description: "Complete directory of all 18 Bigg Boss Season 20 housemates (16 originals plus 2 wild cards) with photos where available, corrected bios, occupations and Week 7 status. Includes the VisitBest Open Poll disclaimer.",
+      name: "Bigg Boss 20 Contestants List with Photos, Age, Bio & Journey (Updated Week 8)",
+      description: "Complete directory of all 18 Bigg Boss Season 20 housemates (16 originals plus 2 wild cards) with photos where available, corrected bios, occupations and Week 8 status. Includes the VisitBest Open Poll disclaimer.",
       url: `${baseUri}/bigg-boss-20-contestants/`,
       image: `${baseUri}/assets/bb20-new/covers/bigg-boss-20-contestants.jpg`,
       mainEntity: {
@@ -779,7 +779,7 @@ function renderNominatedStrip(currentSlug) {
   return `<section class="bb-nominated-strip">
     <div class="bb-strip-header">
       <div class="bb-strip-badge"><span class="pulse-dot"></span> NOMINATED THIS WEEK FOR EVICTION</div>
-      <p class="bb-strip-sub">These are the Week 7 nominated housemates. Support them in the VisitBest Open Poll below — it is open audience sentiment only and does not decide evictions. Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
+      <p class="bb-strip-sub">These are the Week 8 nominated housemates. Support them in the VisitBest Open Poll below — it is open audience sentiment only and does not decide evictions. Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
     </div>
     <div class="bb-nominated-grid">
       ${nominatedList
@@ -809,11 +809,11 @@ function renderNominationCallout() {
   return `<div class="bb-nom-status-callout">
     <div class="bb-nom-callout-header">
       <span class="pulse-dot-red"></span>
-      <h2>🔴 Bigg Boss 20 Week 7 Nominations — Open Poll</h2>
+      <h2>🔴 Bigg Boss 20 Week 8 Nominations — Open Poll</h2>
     </div>
     <p class="bb-nom-list-text">
-      <strong>7 contestants are nominated this week:</strong><br>
-      <span class="bb-nom-names">Gullu (Kushal Tanwar) • Mary Kom (evicted — confirmed on air 24 October) • Aamrapali Dubey • Arishfa Khan • Love Gill • Uditi Singh • Manish Goel (wild card)</span>
+      <strong>6 contestants are nominated this week:</strong><br>
+      <span class="bb-nom-names">Gullu (Kushal Tanwar) • Aamrapali Dubey • Kanika Mann • ScoutOP • Aasif Khan • Love Gill</span>
     </p>
     <div class="bb-nom-safe-bar">
       <span class="bb-safe-indicator">🟢 <strong>Captain This Week:</strong> Mahhi Vij (chosen by Qazi Touqeer, who won the 23 October captaincy task round; Scout was the previous captain)</span>
@@ -1137,7 +1137,7 @@ export function renderBiggBossContestantsPage() {
     <header class="bb-hero-section">
       <div class="bb-hero-badge">👥 FULL ROSTER · 18 HOUSEMATES (16 ORIGINALS + 2 WILD CARDS) · UPDATED WEEK 7</div>
       <h1 class="bb-hero-title">Bigg Boss 20 Contestants List with Photos, Age, Bio & Journey So Far</h1>
-      <p class="bb-hero-lead">Complete, updated directory of every Bigg Boss Season 20 housemate — all 16 originals plus wild cards Manish Goel and Nakul Dhull — with corrected ages where they can be verified, what each housemate was known for before the show, how their journey has actually gone up to 24 October 2026, and whether they are still in the house. Where a date of birth could not be reliably verified, we say so rather than guessing.</p>
+      <p class="bb-hero-lead">Complete, updated directory of every Bigg Boss Season 20 housemate — all 16 originals plus wild cards Manish Goel and Nakul Dhull — with corrected ages where they can be verified, what each housemate was known for before the show, how their journey has actually gone up to 26 October 2026, and whether they are still in the house. Where a date of birth could not be reliably verified, we say so rather than guessing.</p>
     </header>
 
     ${bbCoverFigure("/assets/bb20-new/covers/bigg-boss-20-contestants.jpg", "Bigg Boss 20 contestants cover")}
@@ -1145,9 +1145,10 @@ export function renderBiggBossContestantsPage() {
     <section class="bb-status-summary">
       <h2>At a glance — who is still in?</h2>
       <ul>
-        <li><strong>Still in the house (at 25 Oct, after the Weekend Ka Vaar eviction aired):</strong> Gullu (Kushal Tanwar), Qazi Touqeer, Tanmay 'Scout' Singh, Yung DSA, Kanika Mann, Aamrapali Dubey, Aasif Khan, Mahhi Vij (current captain), Arishfa Khan, Love Gill, Uditi Singh, Manish Goel (wild card)</li>
+        <li><strong>Still in the house (at 26 Oct, after the Week 8 nominations):</strong> Gullu (Kushal Tanwar), Qazi Touqeer, Tanmay 'Scout' Singh, Yung DSA, Kanika Mann, Aamrapali Dubey, Aasif Khan, Mahhi Vij (current captain), Arishfa Khan, Love Gill, Uditi Singh, Manish Goel (wild card)</li>
         <li><strong>Evicted:</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4, mid-week), Aman Gandhi (Week 6), MC Mary Kom (Week 7, confirmed on air 24 October)</li>
         <li><strong>Removed by Bigg Boss:</strong> Nakul Dhull (wild card, Week 6, after a reported physical altercation with Gullu)</li>
+        <li><strong>Nominated — Week 8:</strong> Gullu (Kushal Tanwar), Kanika Mann, Tanmay 'Scout' Singh, Aasif Khan, Love Gill, Aamrapali Dubey</li>
         <li><strong>Captain:</strong> Mahhi Vij, from 23 October — Qazi Touqeer won the captaincy task round and chose her. Scout was the previous captain.</li>
       </ul>
     </section>
