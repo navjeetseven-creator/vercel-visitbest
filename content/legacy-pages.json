@@ -464,6 +464,57 @@
       ["Vedaka", "Online value packs", "Seller, packaging, and return policy"],
       ["Local specialist roaster", "Potentially fresher small batches", "Food licence, hygiene, roast date, and storage"]
     ],
+    "details": [
+      {
+        "name": "Nutraj",
+        "description": "Nutraj, from VKC Nuts, is a widely sold Indian dry-fruit brand known for a broad range covering cashews, almonds, raisins and mixed packs in multiple sizes. Its cashew line includes plain whole kaju in pouches such as 250g, larger 400g, 800g and 1kg packs, W320 whole cashews, and Snackrite roasted and salted W-320 cashews in smaller snack packs. Nutraj suits households that want one familiar brand for daily snacking, cooking, festive use and gifting, with pack sizes to match trial, family and bulk buying.",
+        "modelTitle": "Nutraj Cashews 250g Pouch | Kaju | Dry Fruits and Nuts | Grocery Items",
+        "image": "https://m.media-amazon.com/images/I/41GUOtBSnqL.jpg",
+        "imageAlt": "Nutraj Cashews 250g Pouch | Kaju | Dry Fruits and Nuts | Grocery Items — Nutraj cashews",
+        "linkUrl": "https://www.amazon.in/dp/B06ZYRLHXW?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Happilo",
+        "description": "Happilo, based in Bengaluru, is a popular Indian snack brand built around dry fruits, nuts and ready-to-eat healthy snacks. Its cashew range covers plain natural whole cashews in packs including 200g and larger value packs, king-size whole cashews, and flavoured snack formats such as premium roasted and salted cashews in 200g. Happilo suits snack-first buyers who want plain cashews for everyday eating and roasted, salted cashews for sharing, office desks and travel, all in pouches sold widely online and in modern grocery stores.",
+        "modelTitle": "Happilo Premium Roasted and Salted Cashews /Kaju 200g | Flavourful & Crunchy Snack Handpicked | Salted & Slow Roasted Cashews Rich in Protein | Magnesium | Phosphorus",
+        "image": "https://m.media-amazon.com/images/I/41tXUrNxehL.jpg",
+        "imageAlt": "Happilo Premium Roasted and Salted Cashews /Kaju 200g | Flavourful & Crunchy Snack Handpicked | Salted & Slow Roasted Cashews Rich in Protein | Magnesium | Phosphorus — Happilo cashews",
+        "linkUrl": "https://www.amazon.in/dp/B01LX75MZS?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Farmley",
+        "description": "Farmley is an Indian dry-fruit and healthy-snacking brand known for sourcing from farmers and packing cashews, almonds, raisins, trail mixes and flavoured snacks under its own label. Its cashew range includes whole raw kaju in 250g and 500g value packs, premium cashews in 1kg packs, and roasted and flavoured cashews such as black pepper in 200g packs. Farmley suits buyers who like farm-sourcing claims, plain cashews for cooking and snacking, and mixed dry-fruit and snack formats for everyday family use.",
+        "modelTitle": "Farmley Whole Cashews 250 gram, Value Pack | Premium Kaju Dry Fruits, Whole Crunchy Cashews | Rich in Protein, & Nutritious | Gluten Free & Plant based Protein (Pack of 1)",
+        "image": "https://m.media-amazon.com/images/I/41CMYdhRZzL.jpg",
+        "imageAlt": "Farmley Whole Cashews 250 gram, Value Pack | Premium Kaju Dry Fruits, Whole Crunchy Cashews | Rich in Protein, & Nutritious | Gluten Free & Plant based Protein (Pack of 1) — Farmley cashews",
+        "linkUrl": "https://www.amazon.in/dp/B08CN8T6TQ?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Tata Sampann",
+        "description": "Tata Sampann is Tata Consumer Products' mainstream grocery brand, sold across supermarkets, local stores and online grocery platforms in India. Its cashew range includes 100% pure premium whole cashews in 200g, 500g and 1kg pouches, and Classic salted and roasted cashews in 190g for ready snacking. Tata Sampann suits shoppers who prefer a familiar Tata label, consistent packaged quality and easy availability alongside dals, spices and other staples, whether buying a small snack pack or a larger whole-cashew pouch for home cooking.",
+        "modelTitle": "Tata Sampann Classic Salted & Roasted Cashews/Kaju, Flavourful & Crunchy Snack Handpicked, Salted & Slow Roasted Cashews Rich in Protein, Magnesium, and Phosphorus, No Artificial Colours, Preservatives & Flavours, 190g",
+        "image": "https://m.media-amazon.com/images/I/71t9TayvB8L._SL1500_.jpg",
+        "imageAlt": "Tata Sampann Classic Salted & Roasted Cashews/Kaju, Flavourful & Crunchy Snack Handpicked, Salted & Slow Roasted Cashews Rich in Protein, Magnesium, and Phosphorus, No Artificial Colours, Preservatives & Flavours, 190g — Tata Sampann cashews",
+        "linkUrl": "https://www.amazon.in/dp/B0CJ33LWSY?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Vedaka",
+        "description": "Vedaka is Amazon's own grocery label in India, positioned as a value range for everyday staples, dry fruits and snacks sold mainly through Amazon.in. Its cashew range includes whole cashews, broken cashews for cooking, and roasted and salted cashews in 200g with Grade W320 stated in the listing title. Vedaka suits online shoppers who want a simple value pack for snacking, gravies and desserts, and who already order groceries in larger Amazon baskets or in dry-fruit combo packs with almonds and raisins.",
+        "modelTitle": "Amazon Brand - Vedaka Roasted & Salted Cashews | 200 g | Grade W320 Kaju Nuts | Gluten-Free & Plant Based Protein | Healthy Snack",
+        "image": "https://m.media-amazon.com/images/I/417325-v1aL.jpg",
+        "imageAlt": "Amazon Brand - Vedaka Roasted & Salted Cashews | 200 g | Grade W320 Kaju Nuts | Gluten-Free & Plant Based Protein | Healthy Snack — Vedaka cashews",
+        "linkUrl": "https://www.amazon.in/dp/B07GR346FP?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Local specialist roaster",
+        "description": "A local specialist roaster is not a single brand but a neighbourhood dry-fruit shop or small roaster that sells cashews in smaller, potentially fresher batches, sometimes roasted to order. Buyers may find plain whole cashews, roasted and salted options and loose quantities weighed in store, with a chance to see, smell and taste before buying. Check the FSSAI or food licence displayed, general hygiene, the roast or packing date, and how cashews are stored — sealed, dry and away from heat — before choosing this route."
+      }
+    ],
     "criteria": ["Recent pack or roast date", "Sealed moisture/oxygen barrier", "Clear ingredients and allergen label", "Comparable price per 100 g"]
   },
   {
@@ -774,6 +825,60 @@
       ["Integrated pulp container", "Smaller footprint", "Cleaning access"],
       ["External pulp container", "Longer continuous batches", "Counter space and splash control"]
     ],
+    "details": [
+      {
+        "name": "Wide-chute centrifugal",
+        "description": "A wide-chute centrifugal juicer has an extra-large feeding tube, so whole or halved apples, pears, carrots and beetroot go in without careful pre-cutting. That makes it the fastest style for everyday prep: produce is grated against a spinning mesh basket, juice flies out and pulp collects separately. Look for a stable, locking lid, a pusher that fits the tube closely, and a sieve that rinses clean easily. It suits busy households juicing firm produce most days, where saving chopping time matters more than squeezing into a small cupboard.",
+        "modelTitle": "Philips Viva Collection Centrifugal Juicer HR1863/20 | 800W Power | Whole Fruit & Vegetable Juicer with XL Feeding Tube | Up to 2L Juice in One Go | QuickClean Technology | (Black/Silver)",
+        "image": "https://m.media-amazon.com/images/I/31tL+ld0QTL.jpg",
+        "imageAlt": "Philips Viva Collection Centrifugal Juicer HR1863/20 | 800W Power | Whole Fruit & Vegetable Juicer with XL Feeding Tube | Up to 2L Juice in One Go | QuickClean Technology | (Black/Silver) — Wide-chute centrifugal juicer",
+        "linkUrl": "https://www.amazon.in/dp/B083SRRZ5R?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Compact centrifugal",
+        "description": "A compact centrifugal juicer keeps the same fast spinning-basket design in a smaller body with a shorter footprint, lower capacity and fewer parts to wash and store. Output per session is modest, so it is made for one or two glasses at a time rather than family batches. Look for a footprint that fits under your wall cupboards, integrated cord storage and parts that stack neatly. It suits small kitchens, hostels, couples and occasional juicers who want fresh juice without giving up permanent counter space.",
+        "modelTitle": "Inalsa Electric for Fruits and Vegetables Centrifugal Juicer 500Watt|Juicer Mesh with SS Sieve|Overload Protector for Motor Safety|2 Year Warranty, Made In India,White /Grey (Frutilick CF)",
+        "image": "https://m.media-amazon.com/images/I/41U-uDIxRvL.jpg",
+        "imageAlt": "Inalsa Electric for Fruits and Vegetables Centrifugal Juicer 500Watt|Juicer Mesh with SS Sieve|Overload Protector for Motor Safety|2 Year Warranty, Made In India,White /Grey (Frutilick CF) — Compact centrifugal juicer",
+        "linkUrl": "https://www.amazon.in/dp/B09ZKQB4CG?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "High-power model",
+        "description": "A high-power centrifugal juicer pairs the spinning mesh basket with a stronger motor built to push through dense, firm produce (carrots, beetroot, pineapple cores and ginger) without slowing or stalling. The extra power keeps batches moving when you juice daily or for several people, and better models add overload protection and continuous-running design. Look for a robust motor rating, metal-reinforced drive parts and clear duty guidance. It suits frequent juicers, large families and juice-for-the-week households who process hard vegetables regularly and need speed with staying power.",
+        "modelTitle": "INALSA Stainless Steel Electric Juicer Machine 900 Watt Juicer with 3 Inch Big Mouth|Cold Extraction System|304SS Juicer Mesh|Extra Large Feeding Tube|Anti Drip Nozzle|1L Pulp Collector (Duronic 900)",
+        "image": "https://m.media-amazon.com/images/I/41Yj7t2AYfL.jpg",
+        "imageAlt": "INALSA Stainless Steel Electric Juicer Machine 900 Watt Juicer with 3 Inch Big Mouth|Cold Extraction System|304SS Juicer Mesh|Extra Large Feeding Tube|Anti Drip Nozzle|1L Pulp Collector (Duronic 900) — High-power model juicer",
+        "linkUrl": "https://www.amazon.in/dp/B0BYDBSXN4?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Variable-speed model",
+        "description": "A variable-speed centrifugal juicer offers two or more speed settings, usually a lower speed for soft fruit such as oranges, melon and strawberries and a higher speed for hard produce such as carrots, apples and beetroot. Using the right speed improves yield and reduces froth and clogging when a session mixes soft and firm ingredients. Look for a simple dial or switch, a pulse option if offered, and guidance printed near the controls. It suits households that juice varied recipes and want one machine to handle everything.",
+        "modelTitle": "amazon basics 450 W CENTRIFUGAL JUICER WITH PUSHER | REMOVABLE PULP CONTAINER | SS MESH FILTER & 3 SPEED SETTINGS I FOR JUICING FRUITS | VEGITABLES & MORE | ISI-MARKED | BLACK 450 Watts",
+        "image": "https://m.media-amazon.com/images/I/31DxwakfbBL.jpg",
+        "imageAlt": "amazon basics 450 W CENTRIFUGAL JUICER WITH PUSHER | REMOVABLE PULP CONTAINER | SS MESH FILTER & 3 SPEED SETTINGS I FOR JUICING FRUITS | VEGITABLES & MORE | ISI-MARKED | BLACK 450 Watts — Variable-speed model juicer",
+        "linkUrl": "https://www.amazon.in/dp/B0CB3T45Q6?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Integrated pulp container",
+        "description": "In an integrated-pulp-container centrifugal juicer, pulp is collected inside the machine itself, in a built-in container under or around the sieve, so the whole unit is one self-contained footprint with nothing standing beside it. That keeps counters tidy and storage simple, but the container fills faster, so longer sessions mean stopping to empty it. Look for a see-through container so you can judge fill level, smooth rounded walls that rinse clean, and easy one-piece emptying. It suits smaller kitchens and tidy-counter households juicing moderate amounts at a time.",
+        "modelTitle": "PHILIPS Viva Collection Hr1832 /00 Juicer, 1.5-Litre, Ink Black, 400 Watts, Pack of 1",
+        "image": "https://m.media-amazon.com/images/I/41qs-k62fqL.jpg",
+        "imageAlt": "PHILIPS Viva Collection Hr1832 /00 Juicer, 1.5-Litre, Ink Black, 400 Watts, Pack of 1 — Integrated pulp container juicer",
+        "linkUrl": "https://www.amazon.in/dp/B071YZBS81?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "External pulp container",
+        "description": "With an external-pulp-container centrifugal juicer, pulp is ejected out of the juicing chamber into a separate, detachable container that sits beside or behind the main unit. Because pulp storage is not limited by the body, you can juice longer, continuous batches before emptying, and the container lifts away for quick disposal and washing. Look for a generous container size, a secure fit that seals against splashes, and a shape that rinses easily. It suits families, batch juicers and anyone making several glasses back to back.",
+        "modelTitle": "Inalsa Maxim Centrifugal Juicer-500 Watt with 60mm Wide Mouth & 2 Speed & Pulse Fuction |Stainless Steel Mesh |Includes Juicer Jar (400ml) and Detachable Pulp Collector, (Silver /Black)",
+        "image": "https://m.media-amazon.com/images/I/41AZct4N8ZL.jpg",
+        "imageAlt": "Inalsa Maxim Centrifugal Juicer-500 Watt with 60mm Wide Mouth & 2 Speed & Pulse Fuction |Stainless Steel Mesh |Includes Juicer Jar (400ml) and Detachable Pulp Collector, (Silver /Black) — External pulp container juicer"
+      }
+    ],
     "criteria": ["Typical produce", "Cleaning time", "Safety interlock", "Replacement filter, blade, and service availability"]
   },
   {
@@ -810,6 +915,60 @@
       ["Casio basic models on sale", "Reliable digital/analogue basics", "Authenticity and realistic budget"],
       ["Titan value lines on sale", "Classic styles with service access", "Whether the deal genuinely fits the cap"]
     ],
+    "details": [
+      {
+        "name": "Sonata",
+        "description": "Sonata is Titan Company's value watch brand and one of the most widely bought watch labels in India. Its range is built around dependable quartz movements in both analogue and digital formats, spanning clean formal dials for office wear, everyday casual designs, leather and metal strap options, and multi-function styles. At this budget, Sonata is the default pick for buyers who want a recognised brand name, straightforward styling and easy availability, whether it is a first watch, a daily-wear beater or a simple gift.",
+        "modelTitle": "Sonata Poze Quartz Analog Black Dial Leather Strap Watch for Men-SP70039KL01W",
+        "image": "https://m.media-amazon.com/images/I/412skEtMngL.jpg",
+        "imageAlt": "Sonata Poze Quartz Analog Black Dial Leather Strap Watch for Men-SP70039KL01W — Sonata watch",
+        "linkUrl": "https://www.amazon.in/dp/B0CXDQ4BWP?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Maxima",
+        "description": "Maxima is an Indian watch brand positioned squarely at the value end of the market, known for analogue and digital watches that cover everyday basics without stretching the wallet. The line-up includes simple dress-style dials, sporty digital models, day-and-date designs and water-resistant everyday pieces sold widely through local watch shops and online stores across India. Maxima suits students, first-time buyers and anyone who wants a functional, no-fuss watch for daily use, school, work or travel, backed by a familiar homegrown name rather than an unbranded import.",
+        "modelTitle": "Maxima Analog Black Dial Men's Watch - 39070PPGW",
+        "image": "https://m.media-amazon.com/images/I/41eLVfGevhL.jpg",
+        "imageAlt": "Maxima Analog Black Dial Men's Watch - 39070PPGW — Maxima watch",
+        "linkUrl": "https://www.amazon.in/dp/B06XSK1WY8?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Fastrack on sale",
+        "description": "Fastrack is Titan Company's youth-focused watch brand, built around bold, casual styling aimed at students and young professionals. Its affordable lines lean on oversized dials, bright colours, textured straps and themed collections such as Tees, alongside basic analogue and digital models for everyday wear. Fastrack watches in this segment often sit above the budget line at full price and drop into it during Amazon sale events, making them a popular pick for buyers who want a recognised fashion label, playful designs and dependable quartz basics at a sale price.",
+        "modelTitle": "Fastrack Analog Unisex-Adult Watch",
+        "image": "https://m.media-amazon.com/images/I/41zoLGSlMOL.jpg",
+        "imageAlt": "Fastrack Analog Unisex-Adult Watch — Fastrack on sale watch",
+        "linkUrl": "https://www.amazon.in/dp/B099WRMT6H?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Timex on sale",
+        "description": "Timex is one of the world's oldest watch names and a long-standing presence in India, known for simple, legible analogue watches that prioritise function over flash. Its entry lines, including the Classics range, offer clean round dials, leather and fabric straps and straightforward quartz movements aimed at everyday wear. These models usually sit just above this page's budget and reach it during Amazon sale periods, so Timex suits patient buyers who want an understated, dependable daily watch from an established maker and are happy to wait for a discount.",
+        "modelTitle": "TIMEX Men Leather Analog Black Dial Watch-Tw00Zr264E, Band Color-Brown",
+        "image": "https://m.media-amazon.com/images/I/71uYLvTxsQL._SL1500_.jpg",
+        "imageAlt": "TIMEX Men Leather Analog Black Dial Watch-Tw00Zr264E, Band Color-Brown — Timex on sale watch",
+        "linkUrl": "https://shop.timexindia.com/",
+        "linkLabel": "Visit official site"
+      },
+      {
+        "name": "Casio basic models on sale",
+        "description": "Casio's basic range is the benchmark for affordable, hard-wearing watches in India, led by simple digital models in the Youth and Vintage families and plain analogue staples. These watches are known for lightweight resin cases, clear displays, everyday functions such as alarms and stopwatches, and batteries that run for years. The entry models frequently dip into this budget during Amazon sales, and they suit students, commuters and rough daily use - anyone who wants a set-and-forget watch from a maker famous for reliability at the lowest end of the market.",
+        "modelTitle": "Casio Youth Series Digital Black Dial Unisex Watch - F-91W-1Q(D002)",
+        "image": "https://m.media-amazon.com/images/I/51oNy5CTCOL._SL1100_.jpg",
+        "imageAlt": "Casio Youth Series Digital Black Dial Unisex Watch - F-91W-1Q(D002) — Casio basic models on sale watch",
+        "linkUrl": "https://www.amazon.in/dp/B00HFPIIOI?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Titan value lines on sale",
+        "description": "Titan is India's best-known watch company, and its value lines carry the brand's classic design language - clean dials, slim cases and leather or metal straps - into more accessible collections such as Karishma. Buyers get the backing of Titan's large retail and service network across India, which makes battery changes and repairs straightforward almost anywhere. In practice, however, genuine Titan models rarely fall to this page's budget even in sales, so this section is best treated as a stretch option for buyers who can raise their budget slightly.",
+        "modelTitle": "Titan Karishma Analog Watch - 1638SL02 (representative value-line model)",
+        "linkUrl": "https://www.titan.co.in/",
+        "linkLabel": "Visit official site"
+      }
+    ],
     "criteria": ["Readable dial", "Comfortable case and strap", "Clear water-resistance rating", "Genuine product and warranty"]
   },
   {
@@ -827,6 +986,62 @@
       ["Pexpo", "Steel and vacuum-insulated options", "Model-specific steel grade and warranty"],
       ["Signoraware", "Home, school, and travel formats", "Leakproof design and allowed beverage temperature"],
       ["Boldfit", "Fitness-oriented bottles and larger sizes", "Carry weight and lid complexity"]
+    ],
+    "details": [
+      {
+        "name": "Milton",
+        "description": "Milton, from Hamilton Housewares, is one of India's most familiar drinkware names, found in homes across the country for decades. Its bottle range is especially wide: Thermosteel double-wall vacuum-insulated flasks that keep drinks hot or cold through the day, single-wall stainless steel bottles for the fridge and everyday use, sports sippers and smaller school sizes. Milton suits families, office-goers and travellers who want a dependable steel bottle in almost any capacity and colour, backed by a large retail network.",
+        "modelTitle": "Milton Prudent 350 Thermosteel Bottle, 360 ml Water Bottle, 24 Hours Hot and Cold, Double Wall Vacuum Insulated, Water Bottles, Tea Flask /Coffee Flask for Sports, Travel, Red",
+        "image": "https://m.media-amazon.com/images/I/21f-cOAIvVL.jpg",
+        "imageAlt": "Milton Prudent 350 Thermosteel Bottle, 360 ml Water Bottle, 24 Hours Hot and Cold, Double Wall Vacuum Insulated, Water Bottles, Tea Flask /Coffee Flask for Sports, Travel, Red — Milton bottle",
+        "linkUrl": "https://www.amazon.in/dp/B0F1T97J26?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Cello",
+        "description": "Cello is a household name in India, known for plasticware, storage and drinkware sold in almost every town. Its steel bottle range covers both daily and insulated needs: single-wall H2O bottles in single pieces and multi-packs for home and fridge use, Puro Steel-X bottles with inner steel, and Duro double-wall vacuum-insulated flasks for hot and cold drinks. With sizes for children, students and adults, Cello suits families who want an affordable, easy-to-find steel bottle for school, office and everyday carry.",
+        "modelTitle": "CELLO Duro Kent Stainless Steel Hot and Cold Water Bottle 550 ml Dark Blue | ISI Certified Spillproof Leakproof Double Wall Vacuum Insulated Thermos Flask Water Bottle for School Kids, Office Travel",
+        "image": "https://m.media-amazon.com/images/I/31wcTZMboeL.jpg",
+        "imageAlt": "CELLO Duro Kent Stainless Steel Hot and Cold Water Bottle 550 ml Dark Blue | ISI Certified Spillproof Leakproof Double Wall Vacuum Insulated Thermos Flask Water Bottle for School Kids, Office Travel — Cello bottle",
+        "linkUrl": "https://www.amazon.in/dp/B0D948Y7NQ?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Borosil",
+        "description": "Borosil is best known in India for glassware, but its Hydra steel bottle range has become a regular sight in offices, schools and gyms. The line includes double-wall vacuum-insulated flasks such as the Hydra Bolt and Go Sports bottles for hot and cold drinks, alongside single-wall Grip n Sip and Laguna bottles for everyday water. Borosil suits office-goers, students and travellers who want a recognised Indian brand, clean office-friendly designs and a choice between insulated and lightweight single-wall formats.",
+        "modelTitle": "Borosil 1L Hydra Bolt Trans Red Stainless Steel Water Bottle | Double Wall Vacuum Insulated Flask | 24 Hours Hot and Cold | Bottle for Office, Gym, School",
+        "image": "https://m.media-amazon.com/images/I/31rZVrkqvRL.jpg",
+        "imageAlt": "Borosil 1L Hydra Bolt Trans Red Stainless Steel Water Bottle | Double Wall Vacuum Insulated Flask | 24 Hours Hot and Cold | Bottle for Office, Gym, School — Borosil bottle",
+        "linkUrl": "https://www.amazon.in/dp/B07DDCHX38?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Pexpo",
+        "description": "Pexpo, from Placero International, is an Indian steel-bottle specialist that sells a large catalogue of ISI-certified bottles online and in stores. The range runs from single-wall fridge bottles and straw-sipper designs such as Belly and Chico to vacuum-insulated hot-and-cold flasks such as the Echo and Fererro lines, in many colours and capacities. Pexpo suits buyers who want plenty of choice in size and finish, from a simple school or fridge bottle to a larger insulated flask for office, workouts and travel.",
+        "modelTitle": "Pexpo Echo Delux 1000 Hot & Cold ISI Certified Flask - 980ml | Stainless Steel Water Bottle-Orchid Purple | Thermoflask | Office Bottle | Workout | Travelling | Home",
+        "image": "https://m.media-amazon.com/images/I/31qTyf3DRtL.jpg",
+        "imageAlt": "Pexpo Echo Delux 1000 Hot & Cold ISI Certified Flask - 980ml | Stainless Steel Water Bottle-Orchid Purple | Thermoflask | Office Bottle | Workout | Travelling | Home — Pexpo bottle",
+        "linkUrl": "https://www.amazon.in/dp/B0F389ZBKV?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Signoraware",
+        "description": "Signoraware is an Indian houseware brand known for lunch boxes, containers and drinkware for everyday family use. Its steel bottle range includes the Aqualene vacuum-insulated cola-shaped bottles for hot and cold drinks, Charm insulated sippers for children, and Oxy single-wall fridge bottles for plain water at home. Formats are aimed at school bags, office desks and travel rather than sport. Signoraware suits parents and office-goers who already know the brand from its food-storage range and want simple, compact steel bottles.",
+        "modelTitle": "SignoraWare Aqualene Vaccum Stainless Steel ISI Certified Cola Bottle | Airtight & Leakproof | Hot & Cold for Hours | Compact Design | Durable Flask for Travel, Gym & Office Use ( 500ml | Steel )",
+        "image": "https://m.media-amazon.com/images/I/31HVPEzu-zL.jpg",
+        "imageAlt": "SignoraWare Aqualene Vaccum Stainless Steel ISI Certified Cola Bottle | Airtight & Leakproof | Hot & Cold for Hours | Compact Design | Durable Flask for Travel, Gym & Office Use ( 500ml | Steel ) — Signoraware bottle",
+        "linkUrl": "https://www.amazon.in/dp/B07FYP3WW2?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      },
+      {
+        "name": "Boldfit",
+        "description": "Boldfit is a Bengaluru-based fitness brand that grew online selling workout gear, supplements accessories and drinkware. Its bottle range is built around training and daily hydration: single-wall stainless steel bottles in 1 litre and larger sizes, steel sippers for the gym, and insulated tumblers with straws and handles for desks, cars and workouts. Boldfit suits gym-goers, students and young office users who prefer bigger capacities, sporty colours and a fitness-first brand over a traditional kitchenware name.",
+        "modelTitle": "Boldfit Water Bottles Stainless Steel Water Bottle 1 Litre Steel Water Bottles for School, Office, Home, Gym 1 Litre Water Bottle for Men Leakproof, Rust Free Steel Bottle -1000 ml Bottle Sky Blue",
+        "image": "https://m.media-amazon.com/images/I/41Hrtb6HZFL.jpg",
+        "imageAlt": "Boldfit Water Bottles Stainless Steel Water Bottle 1 Litre Steel Water Bottles for School, Office, Home, Gym 1 Litre Water Bottle for Men Leakproof, Rust Free Steel Bottle -1000 ml Bottle Sky Blue — Boldfit bottle",
+        "linkUrl": "https://www.amazon.in/dp/B0DX1HZ6VY?tag=visitbest-21",
+        "linkLabel": "Check price on Amazon"
+      }
     ],
     "criteria": ["Food-contact material disclosure", "Leak test and cap design", "Easy full cleaning", "Suitable temperature and pressure use"]
   },
