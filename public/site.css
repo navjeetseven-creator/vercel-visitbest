@@ -407,3 +407,46 @@ h1, h2, h3, h4 { color: var(--ink); font-family: Georgia, "Times New Roman", ser
   .vb-top-card, .vb-product-card { padding: 1rem; }
   .vb-market-value { font-size: 1.05rem; }
 }
+
+/* === Article tables: no mid-digit breaks, wide tables scroll instead of crushing === */
+/* Cell text wraps at word boundaries only: values like "1,325" or a rank like
+   "10" can no longer split mid-number (the mobile-fix rule further up set
+   overflow-wrap:anywhere, which allows a break at any character once a column
+   gets narrow). A single token wider than its cell still breaks as a last
+   resort via break-word. Covers all three table families in the content:
+   WP tables in .prose, legacy .comparison-table, and .table-wrap tables. */
+.prose td, .prose th,
+.comparison-table td, .comparison-table th,
+.table-scroll td, .table-scroll th,
+.table-wrap td, .table-wrap th { overflow-wrap: break-word; word-break: normal; }
+/* Links inside cells keep the anywhere behaviour: long unbreakable URLs
+   (e.g. Google Maps links) must still wrap rather than force the cell wide. */
+.prose td a, .prose th a,
+.comparison-table td a, .comparison-table th a,
+.table-scroll td a, .table-scroll th a,
+.table-wrap td a, .table-wrap th a { overflow-wrap: anywhere; }
+/* Wide tables get real room and scroll inside their wrapper instead of being
+   capped at the article column width and crushing 6-7 columns into it.
+   (Scoped to wrapped tables: the few unwrapped in-prose tables keep the old
+   580px floor from the .prose table rule, so nothing new can overflow.)
+   Tables narrower than this still fill the column via width:100%. */
+.table-scroll table, .comparison-table { min-width: 740px; }
+/* The .table-wrap family (17 directory-style pages) ships with no styles at
+   all; give its wrapper the same scroll behaviour and its cells the same
+   treatment as .comparison-table. */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table-wrap table { width: 100%; border-collapse: collapse; }
+.table-wrap th, .table-wrap td { text-align: left; vertical-align: top; padding: .65rem .6rem; border-bottom: 1px solid #e8eaed; }
+.table-wrap th { background: #f7f9fa; color: var(--ink); }
+/* Legacy comparison tables always have three short headers; keep each on one line. */
+.comparison-table th { white-space: nowrap; }
+/* Polish: one shared header tint, an emphasised header-row border,
+   zebra striping on body rows and a soft row tint on hover. */
+.prose th { background: #f7f9fa; }
+.prose table thead th, .comparison-table thead th, .table-wrap thead th { border-bottom: 2px solid #d9dee4; }
+.prose table tbody tr:nth-child(even) > td,
+.comparison-table tbody tr:nth-child(even) > td,
+.table-wrap table tbody tr:nth-child(even) > td { background: #fbfcfd; }
+.prose table tbody tr:hover > td,
+.comparison-table tbody tr:hover > td,
+.table-wrap table tbody tr:hover > td { background: #fdf6ec; }
