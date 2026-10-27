@@ -595,15 +595,148 @@ function businessCard(item) {
   return { href: urlFor(item.slug, "/business"), title: decodeEntities(item.title?.rendered), summary: truncate(item.excerpt?.rendered || item.content?.rendered, 160), date: item.date, image: itemImage(item), category: categoriesForItem[0] || locationsForItem[0] || "Business" };
 }
 
+const SENTENCE_ABBREVIATIONS = ["No.", "Nos.", "Ltd.", "Pvt.", "Dr.", "St.", "Co.", "Inc.", "Cantt.", "Dist.", "Bros.", "Opp.", "Sr.", "Nr.", "Bldg.", "Flr.", "e.g.", "i.e.", "U.S."];
+
+function maskSentencePunctuation(text) {
+  let masked = String(text || "")
+    .replace(/\b(?:[A-Z]\.){2,}/g, (match) => match.replaceAll(".", ""))
+    .replace(/(\d)\.(\d)/g, "$1$2")
+    .replace(/\b(Nos?|Opp)\./gi, (match) => match.replace(".", ""));
+  for (const abbr of SENTENCE_ABBREVIATIONS) masked = masked.replaceAll(abbr, abbr.replaceAll(".", ""));
+  return masked;
+}
+
+function splitSentences(text, keepMasked = false) {
+  return maskSentencePunctuation(text)
+    .split(/(?<=[.!?])\s+(?=[A-Z0-9“"'])/)
+    .map((part) => (keepMasked ? part : part.replaceAll("", ".")).trim())
+    .filter(Boolean);
+}
+
+// Extracts the structured facts a business profile already states in its
+// stored description, so the template can render them faithfully (facts
+// table, services list, FAQs) instead of leaving them buried in prose.
+// Every value traces to the stored content; missing fields stay null.
+function businessFacts(item) {
+  const text = stripHtml(item?.content?.rendered || "");
+  const grab = (pattern) => text.match(pattern)?.[1]?.trim().replace(/\s+/g, " ") || null;
+  const facts = { workstreams: [] };
+  facts.ownership = grab(/Ownership is described as ([^.]+)\./i);
+  const workforceSentence = splitSentences(text).find((sentence) => /workforce/i.test(sentence)) || "";
+  facts.workforce = workforceSentence.match(/in the ([0-9][0-9,]*\s*[–-]\s*[0-9][0-9,]*) range/i)?.[1]?.trim() || null;
+  facts.descriptor = grab(/descriptors emphasise ([^,]+),/i);
+  const workstreamText = grab(/typically covers[^.]*?for example ([^.]+)\./i);
+  facts.workstreams = workstreamText
+    ? workstreamText.split(/,\s*/).map((part) => part.replace(/^(?:or|and)\s+/i, "").trim()).filter(Boolean)
+    : [];
+  facts.jobs = grab(/Common job-profile fit signals for this listing: ([^.]+)\./i);
+  const stars = grab(/centres near ([0-9.]+) stars/i) || grab(/shows about ([0-9.]+) stars/i);
+  facts.rating = stars ? `About ${stars} stars (Google Maps visitor feedback)` : null;
+  facts.hub = grab(/(Operates in [^.]+hub[^.]*\.|Based in [A-Za-z][^,]*, a major centre[^.]*\.)/i);
+  facts.address = null;
+  const addressPatterns = [
+    /listed address is ([^.;]+)\./i,
+    /point to ([^.;]+?) as the working base/i,
+    /associated with premises at ([^.;]+)\./i,
+    /concrete operating address at:? ([^.;]+)\./i,
+  ];
+  addressSearch: for (const sentence of splitSentences(text, true)) {
+    for (const pattern of addressPatterns) {
+      const candidate = sentence.match(pattern)?.[1]?.replaceAll("", ".").trim().replace(/\s+/g, " ").replace(/^[,: ]+|[,: ]+$/g, "");
+      if (candidate && candidate.length >= 12 && candidate.length <= 220 && (candidate.includes(",") || candidate.length >= 25) && !/not have|missing|website|phone|email/i.test(candidate)) {
+        facts.address = candidate;
+        break addressSearch;
+      }
+    }
+  }
+  return facts;
+}
+
 function renderBusinessDetail(item) {
   const categoryTermsForItem = taxonomyTerms(item, "business_category");
   const locationTermsForItem = taxonomyTerms(item, "business_location");
   const categoriesForItem = categoryTermsForItem.map((term) => term.name);
   const locationsForItem = locationTermsForItem.map((term) => term.name);
-  const prepared = addHeadingIds(localizeHtml(item.content?.rendered || `<p>${escapeHtml(truncate(item.excerpt?.rendered || "Business directory profile.", 800))}</p>`));
   const title = decodeEntities(item.title?.rendered);
   const description = truncate(item.excerpt?.rendered || item.content?.rendered, 156);
-  const body = `${breadcrumbs([{ href: "/business/", label: "Business directory" }, { label: title }])}<div class="article-layout"><article class="article-card"><p class="eyebrow">Business directory profile</p><h1 class="article-title">${escapeHtml(title)}</h1><p class="article-dek">${escapeHtml(description)}</p><div class="article-meta"><span>${categoryTermsForItem.map((term) => `<a class="pill" href="/business-category/${term.slug}/">${escapeHtml(term.name)}</a>`).join(" ")}</span><span>${locationTermsForItem.map((term) => `<a href="/business-location/${term.slug}/">${escapeHtml(term.name)}</a>`).join(", ")}</span><span>Updated <strong>${escapeHtml(humanDate(item.modified || item.date))}</strong></span></div>${renderMobileToc(prepared.headings)}<div class="prose">${prepared.html}</div><div class="source-note">Directory information is compiled from public sources and should be verified with the organisation before a commercial decision.</div>${renderAuthor()}${renderRelated(relatedEntries("", categoriesForItem[0] || ""))}</article>${renderToc(prepared.headings)}</div>`;
+  const category = categoriesForItem[0] || "Business";
+  const categoryTerm = categoryTermsForItem[0] || null;
+  const city = locationsForItem[0] || "";
+  const cityTerm = locationTermsForItem[0] || null;
+  const stateTerm = cityTerm?.parent ? businessLocationById.get(String(cityTerm.parent)) : null;
+  const stateName = stateTerm && stateTerm.name !== city ? stateTerm.name : "";
+  const facts = businessFacts(item);
+
+  // Defensive cleanup of any residual stored-data artifact fragments.
+  const aboutHtml = localizeHtml(item.content?.rendered || `<p>${escapeHtml(truncate(item.excerpt?.rendered || "Business directory profile.", 800))}</p>`)
+    .replace(/, listed in (?:’|&#8217;|&rsquo;)s India pharma\./gi, ".")
+    .replace(/>([^<]*)</g, (match, segment) => `>${segment.replace(/\.\.(?!\.)/g, ".")}<`);
+
+  const sameCategory = business.filter((entry) => entry.slug !== item.slug && categoryTerm && (entry.business_category || []).includes(categoryTerm.id));
+  const sameCity = business.filter((entry) => entry.slug !== item.slug && cityTerm && (entry.business_location || []).includes(cityTerm.id));
+  const peersSameBoth = sameCategory.filter((entry) => cityTerm && (entry.business_location || []).includes(cityTerm.id));
+
+  const sections = [];
+  sections.push(`<h2>About ${escapeHtml(title)}</h2>${aboutHtml}`);
+
+  if (facts.descriptor || facts.workstreams.length) {
+    const lead = [`${escapeHtml(title)} is listed under ${escapeHtml(category)}${city ? ` in ${escapeHtml(city)}` : ""}.`];
+    if (facts.descriptor) lead.push(`Its published profile states a focus on ${escapeHtml(facts.descriptor)}.`);
+    if (facts.ownership) lead.push(`Ownership is described as ${escapeHtml(facts.ownership)}.`);
+    const bullets = facts.workstreams.length ? `<ul>${facts.workstreams.map((entry) => `<li>${escapeHtml(entry.charAt(0).toUpperCase() + entry.slice(1))}</li>`).join("")}</ul>` : "";
+    const jobs = facts.jobs ? `<p>Job profiles commonly associated with this listing include ${escapeHtml(facts.jobs)}.</p>` : "";
+    sections.push(`<h2>Services and focus</h2><p>${lead.join(" ")}</p>${bullets}${jobs}`);
+  }
+
+  const factRows = [
+    ["Business name", title],
+    ["Category", category],
+    ["Location", [city, stateName].filter(Boolean).join(", ")],
+    ["Listed address", facts.address],
+    ["Ownership", facts.ownership],
+    ["Workforce (public estimate)", facts.workforce ? `${facts.workforce} employees` : null],
+    ["Google Maps feedback", facts.rating],
+    ["Listed focus", facts.descriptor],
+  ].filter(([, value]) => value);
+  if (factRows.length) sections.push(`<h2>Key facts</h2><div class="table-scroll"><table class="comparison-table facts-table"><tbody>${factRows.map(([label, value]) => `<tr><th scope="row">${escapeHtml(label)}</th><td>${escapeHtml(value)}</td></tr>`).join("")}</tbody></table></div>`);
+
+  if (city && categoryTerm) {
+    const contextBits = [];
+    const inCategory = sameCategory.length + 1;
+    const inBoth = peersSameBoth.length + 1;
+    contextBits.push(`<p>VisitBest lists ${inCategory} ${escapeHtml(category)} profile${inCategory === 1 ? "" : "s"} in its business directory, including ${inBoth} in ${escapeHtml(city)}${stateName ? `, ${escapeHtml(stateName)}` : ""}. Across all categories, ${sameCity.length + 1} businesses are listed in ${escapeHtml(city)}.</p>`);
+    if (facts.hub) contextBits.push(`<p>${escapeHtml(facts.hub)}</p>`);
+    if (peersSameBoth.length) {
+      const peerLinks = peersSameBoth.slice(0, 4).map((entry) => `<a href="${urlFor(entry.slug, "/business")}">${escapeHtml(decodeEntities(entry.title?.rendered).replace(/\.+$/, ""))}</a>`);
+      contextBits.push(`<p>Other ${escapeHtml(category)} listed in ${escapeHtml(city)} include ${peerLinks.join(", ")}.</p>`);
+    }
+    sections.push(`<h2>${escapeHtml(category)} in ${escapeHtml(city)}</h2>${contextBits.join("")}`);
+  }
+
+  const faqs = [];
+  faqs.push([`Where is ${title} located?`, facts.address ? `Its listed address is ${facts.address}${facts.address.includes(city) || (stateName && facts.address.includes(stateName)) ? "" : `, ${city}${stateName ? `, ${stateName}` : ""}`}.` : `${title} is listed in ${city}${stateName ? `, ${stateName}` : ""}. Its public directory profile does not include a full street address.`]);
+  if (facts.descriptor || facts.workstreams.length) faqs.push([`What does ${title} do?`, `${title} is listed as ${category} in ${city}.${facts.descriptor ? ` Its published descriptors emphasise ${facts.descriptor}.` : ""}${facts.workstreams.length ? ` Its service profile typically covers ${facts.workstreams.slice(0, 4).join(", ")}.` : ""}`]);
+  if (facts.workforce) faqs.push([`How large is ${title}?`, `Public workforce listings estimate ${title}'s workforce in the ${facts.workforce} range.${facts.ownership ? ` Ownership is described as ${facts.ownership}.` : ""}`]);
+  faqs.push(["How can I verify this listing?", "Directory information is compiled from public sources. Verify the current address, services, and contact details with the organisation directly before a commercial decision."]);
+  sections.push(`<h2>Frequently asked questions</h2><div class="faq">${faqs.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><p>${escapeHtml(answer)}</p></details>`).join("")}</div>`);
+
+  const prepared = addHeadingIds(sections.join(""));
+
+  const relatedBusinesses = [...peersSameBoth, ...sameCategory.filter((entry) => !peersSameBoth.includes(entry)), ...sameCity.filter((entry) => !sameCategory.includes(entry))].slice(0, 6);
+  const related = relatedBusinesses.length
+    ? `<section class="related"><h2>Related businesses</h2><div class="card-grid">${relatedBusinesses.map((entry) => renderCard(businessCard(entry))).join("")}</div></section>`
+    : renderRelated(relatedEntries("", categoriesForItem[0] || ""));
+
+  const sidebarRows = [
+    ["Category", category],
+    ["Location", [city, stateName].filter(Boolean).join(", ")],
+    ["Ownership", facts.ownership],
+    ["Workforce", facts.workforce ? `${facts.workforce} employees (public estimate)` : null],
+    ["Maps feedback", facts.rating],
+  ].filter(([, value]) => value);
+  const sidebar = `<aside class="toc-card business-facts"><h2>Key facts</h2><dl class="fact-list">${sidebarRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join("")}</dl><h2>On this page</h2><nav aria-label="Table of contents">${prepared.headings.map((heading) => `<a href="#${heading.id}" data-level="${heading.level}">${escapeHtml(heading.text)}</a>`).join("")}</nav></aside>`;
+
+  const body = `${breadcrumbs([{ href: "/business/", label: "Business directory" }, { label: title }])}<div class="article-layout"><article class="article-card"><p class="eyebrow">Business directory profile</p><h1 class="article-title">${escapeHtml(title)}</h1><p class="article-dek">${escapeHtml(description)}</p><div class="article-meta"><span>${categoryTermsForItem.map((term) => `<a class="pill" href="/business-category/${term.slug}/">${escapeHtml(term.name)}</a>`).join(" ")}</span><span>${locationTermsForItem.map((term) => `<a href="/business-location/${term.slug}/">${escapeHtml(term.name)}</a>`).join(", ")}</span><span>Updated <strong>${escapeHtml(humanDate(item.modified || item.date))}</strong></span></div>${renderMobileToc(prepared.headings)}<div class="prose">${prepared.html}</div><div class="source-note">Directory information is compiled from public sources and should be verified with the organisation before a commercial decision.</div>${renderAuthor()}${related}</article>${sidebar}</div>`;
   return renderPage({ title, description, canonical: urlFor(item.slug, "/business"), currentPath: urlFor(item.slug, "/business"), body, schema: { "@context": "https://schema.org", "@type": "ProfilePage", name: title, description, url: new URL(urlFor(item.slug, "/business"), origin).href } });
 }
 
