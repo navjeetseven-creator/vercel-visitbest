@@ -549,6 +549,9 @@ const fullHtml = `<!doctype html>
     "mainEntityOfPage": "https://visitbest.in/event-management-companies-in-india/"
   }
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6008816938247526" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZXR1R5PP7"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-SZXR1R5PP7');</script>
 </head>
 <body>
   <header class="site-header"><div class="header-inner container">
