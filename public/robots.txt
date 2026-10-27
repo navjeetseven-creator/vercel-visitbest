@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 Sitemap: https://visitbest.in/sitemap.xml
 Sitemap: https://visitbest.in/sitemap-bigg-boss-20-new.xml
+Sitemap: https://visitbest.in/sitemap-news.xml
