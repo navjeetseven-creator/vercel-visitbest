@@ -157,6 +157,11 @@ h1, h2, h3, h4 { color: var(--ink); font-family: Georgia, "Times New Roman", ser
 .toc-card a[data-level="3"] { padding-left: 1.2rem; font-size: .78rem; }
 .toc-card a:hover, .toc-card a.is-active { color: var(--accent-dark); background: var(--cream); border-left-color: var(--accent); transform: translateX(2px); }
 .toc-empty { color: var(--muted); font-size: .83rem; margin: 0; }
+.business-facts .fact-list { margin: 0 0 1.15rem; display: grid; gap: .55rem; }
+.business-facts .fact-list div { display: grid; gap: .08rem; }
+.business-facts .fact-list dt { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.business-facts .fact-list dd { margin: 0; font-size: .92rem; color: var(--ink); }
+.facts-table th { text-align: left; width: 34%; }
 .author-box { display: grid; grid-template-columns: auto minmax(0,1fr); gap: .85rem; align-items: start; border-top: 1px solid var(--line); margin-top: 2.5rem; padding-top: 1.35rem; }
 .author-mark { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent-dark); font-weight: 900; }
 .author-box strong { color: var(--ink); }
