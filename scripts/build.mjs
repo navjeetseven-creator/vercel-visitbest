@@ -952,13 +952,93 @@ const searchIndex = [
 ];
 await fs.writeFile(path.join(distDir, "search-index.json"), `${JSON.stringify(searchIndex)}\n`);
 
+// ==== BEGIN fast-indexing patch: Google News sitemap (build-time) ====
+// buildNewsSitemap() writes dist/sitemap-news.xml at build time: every post
+// (content/source/posts.json) and every web story (public/web-stories/*/index.html)
+// published within 48 hours of the build, in Google News sitemap format.
+// Date sources: posts -> posts.json `date` (site-local IST, +05:30 pinned in code);
+// stories -> each story file's JSON-LD `datePublished` (fallback: <lastmod> in
+// public/sitemap-bigg-boss-20-new.xml). Titles: post title / <amp-story> title attr.
+async function buildNewsSitemap() {
+  const NEWS_WINDOW_MS = 48 * 60 * 60 * 1000; // Google News sitemaps: last 2 days only
+  const now = Date.now();
+  const cutoff = now - NEWS_WINDOW_MS;
+  const entries = [];
+  const toMs = (value) => {
+    if (!value) return NaN;
+    const s = String(value).trim();
+    // posts.json dates are site-local (IST) without an offset; pin them to
+    // +05:30 so the 48-hour window is identical on any build machine.
+    const iso = /([+-]\d{2}:?\d{2}|Z)$/.test(s) ? s : `${s}+05:30`;
+    return Date.parse(iso);
+  };
+  const toIso = (value) => {
+    const s = String(value).trim();
+    return /([+-]\d{2}:?\d{2}|Z)$/.test(s) ? s : `${s}+05:30`;
+  };
+  // --- Articles: content/source/posts.json (already loaded as `posts`) ---
+  for (const item of posts) {
+    if (item.status && item.status !== "publish") continue;
+    const ms = toMs(item.date);
+    if (!Number.isFinite(ms) || ms < cutoff || ms > now + 5 * 60 * 1000) continue;
+    entries.push({
+      loc: new URL(urlFor(item.slug), origin).href,
+      date: toIso(item.date),
+      ms,
+      title: decodeEntities(item.title?.rendered || item.slug),
+    });
+  }
+  // --- Web Stories: public/web-stories/<slug>/index.html ---
+  // Per-story date source: the story file's own JSON-LD `datePublished`
+  // (fallback: the story's <lastmod> in public/sitemap-bigg-boss-20-new.xml).
+  // Title source: the <amp-story> `title` attribute (fallback: JSON-LD headline).
+  const lastmodBySlug = new Map();
+  try {
+    const bbSitemap = await fs.readFile(path.join(publicDir, "sitemap-bigg-boss-20-new.xml"), "utf8");
+    for (const m of bbSitemap.matchAll(/<loc>https:\/\/visitbest\.in\/web-stories\/([^/<]+)\/<\/loc><lastmod>([^<]+)<\/lastmod>/g)) {
+      lastmodBySlug.set(m[1], m[2]);
+    }
+  } catch { /* sitemap is only a fallback; ignore if unreadable */ }
+  let storyDirs = [];
+  try {
+    storyDirs = (await fs.readdir(path.join(publicDir, "web-stories"), { withFileTypes: true }))
+      .filter((d) => d.isDirectory())
+      .map((d) => d.name);
+  } catch { /* no stories directory: news sitemap will hold posts only */ }
+  for (const slug of storyDirs) {
+    let html = "";
+    try {
+      html = await fs.readFile(path.join(publicDir, "web-stories", slug, "index.html"), "utf8");
+    } catch { continue; }
+    const dp = html.match(/"datePublished"\s*:\s*"([^"]+)"/);
+    const rawDate = dp ? dp[1] : (lastmodBySlug.has(slug) ? `${lastmodBySlug.get(slug)}T00:00:00` : null);
+    if (!rawDate) continue;
+    const ms = toMs(rawDate);
+    if (!Number.isFinite(ms) || ms < cutoff || ms > now + 5 * 60 * 1000) continue;
+    const storyTag = html.match(/<amp-story\b[^>]*>/s);
+    const titleAttr = storyTag ? storyTag[0].match(/\btitle="([^"]+)"/) : null;
+    const headline = html.match(/"headline"\s*:\s*"([^"]+)"/);
+    const title = decodeEntities(titleAttr ? titleAttr[1] : (headline ? headline[1] : slug));
+    entries.push({ loc: `${origin}/web-stories/${slug}/`, date: toIso(rawDate), ms, title });
+  }
+  entries.sort((a, b) => b.ms - a.ms);
+  const body = entries.slice(0, 1000).map((e) =>
+    `<url><loc>${escapeHtml(e.loc)}</loc><news:news><news:publication><news:name>VisitBest</news:name><news:language>en</news:language></news:publication><news:publication_date>${escapeHtml(e.date)}</news:publication_date><news:title>${escapeHtml(e.title)}</news:title></news:news></url>`
+  ).join("\n");
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${body}\n</urlset>\n`;
+  await fs.writeFile(path.join(distDir, "sitemap-news.xml"), xml);
+}
+await buildNewsSitemap();
+// ==== END fast-indexing patch: Google News sitemap ====
+
 const xml = [...canonicalRoutes].sort().map((route) => {
   const meta = routeMeta.get(route);
   const lastmod = meta?.dateModified || buildDate;
   return `<url><loc>${escapeHtml(new URL(route, origin).href)}</loc><lastmod>${lastmod.slice(0, 10)}</lastmod></url>`;
 }).join("");
 await fs.writeFile(path.join(distDir, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${xml}</urlset>\n`);
-await fs.writeFile(path.join(distDir, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\nSitemap: ${origin}/sitemap-bigg-boss-20-new.xml\n`);
+// (fast-indexing patch: sitemap-news.xml added to the generated robots.txt)
+await fs.writeFile(path.join(distDir, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\nSitemap: ${origin}/sitemap-bigg-boss-20-new.xml\nSitemap: ${origin}/sitemap-news.xml\n`);
 await fs.writeFile(path.join(distDir, "ads.txt"), `google.com, pub-6008816938247526, DIRECT, f08c47fec0942fa0\n`);
 await fs.writeFile(path.join(distDir, "404.html"), renderPage({ title: "Page not found · VisitBest", description: "The VisitBest page could not be found.", canonical: "/404.html", body: `<div class="container"><section class="section"><p class="eyebrow">404</p><h1>That page moved</h1><p>Try search or browse the directory to find a current VisitBest guide.</p><div class="button-row"><a class="button button-primary" href="/">Go home</a><a class="button button-quiet" href="/search/">Search guides</a></div></section></div>` }));
 
