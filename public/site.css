@@ -450,3 +450,11 @@ h1, h2, h3, h4 { color: var(--ink); font-family: Georgia, "Times New Roman", ser
 .prose table tbody tr:hover > td,
 .comparison-table tbody tr:hover > td,
 .table-wrap table tbody tr:hover > td { background: #fdf6ec; }
+/* Breadcrumb polish (added 27 Oct 2026): very long page-title crumbs truncate
+   gracefully with an ellipsis instead of wrapping awkwardly.
+   Selector check: on every standard-format page the breadcrumb's last child is
+   a plain <span> holding the page title (verified across the built site:
+   <span class="sep">/</span><span>Title</span></nav>), so span:last-child is the
+   title crumb. Existing .breadcrumbs rules in site.css (display/flex, link and
+   .sep colours only) do not conflict — there is no other truncation rule. */
+.breadcrumbs span:last-child{max-width:52ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
