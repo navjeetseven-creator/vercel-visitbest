@@ -1238,6 +1238,32 @@ export function renderBiggBossRulesPage() {
         <h2>3. Public Sentiment & the VisitBest Open Poll</h2>
         <p><strong>Open Poll — for audience sentiment only.</strong> VisitBest runs a non-binding audience sentiment poll for entertainment and discussion. It is NOT official Bigg Boss voting, it does not decide nominations or evictions, and its results are not official vote counts. To officially support a housemate, always vote via JioCinema / JioHotstar as announced on air.</p>
       </section>
+
+      <section class="bb-rule-card">
+        <h2>4. This Season's Twist: Lives and Lifelines</h2>
+        <p>Season 20 is a lives-based format, and that changes what a vote can and cannot do. As this site's season record shows, housemates hold lives (also called lifelines) that can be lost in two different ways: inside the house, in tasks and sequences — Kanika Mann took a life from Rohed Khan in the 2X Room sequence, and Isha Rikhi and Rhiti Tiwari each lost a life in the Week 3 ration-ranking task — and after the public vote, as happened to Rohed Khan and Isha Rikhi, who each lost their last life that way. A housemate who runs out of lives can leave without the public vote being the only cause, so no single week's voting tells the whole story of an exit.</p>
+      </section>
+
+      <section class="bb-rule-card">
+        <h2>5. How Housemates Have Actually Left This Season</h2>
+        <p>The season record on this site shows three different exit routes, and only one of them is a straightforward public-vote eviction:</p>
+        <ul>
+          <li><strong>Evicted on public votes:</strong> Aman Gandhi (Week 6) — named in the bottom three alongside Uditi Singh and Mary Kom and evicted on public votes, announced on 18 October. A week earlier he had reportedly received the fewest votes, but with no eviction that week he lost a lifeline instead.</li>
+          <li><strong>Format exits after losing their last life:</strong> Rhiti Tiwari left mid-week in Week 4 after the captaincy contenders took her last life — an exit with no Weekend Ka Vaar farewell. Mary Kom's Week 7 elimination, announced by guest host Rohit Shetty on Weekend Ka Vaar, also followed her losing both her lifelines, alongside reports that she had received the fewest votes.</li>
+          <li><strong>Removed, not evicted:</strong> wild card Nakul Dhull was asked to leave in Week 6 after a physical altercation with Gullu, for breaking the house rules. No vote was involved, which is why this site lists him as "Removed", never "Evicted".</li>
+        </ul>
+        <p>At the Week 8 stage of the season, the housemates recorded as nominated on this site are Gullu, Kanika Mann, Scout, Aasif Khan, Love Gill and Aamrapali Dubey, with Mahhi Vij as captain. Nomination lists change every week — treat this as a dated snapshot, and check the contestants page for the current record.</p>
+      </section>
+
+      <section class="bb-rule-card">
+        <h2>6. Quick Questions</h2>
+        <h3>Why is my favourite not among the official voting options?</h3>
+        <p>Official voting options cover only the current round's nominees. A name missing from the official options and a name missing from the VisitBest Open Poll are two different things — the Open Poll list is VisitBest's own, and it never decides who is up for eviction.</p>
+        <h3>Can I vote outside the announced window?</h3>
+        <p>No. There is no official voting outside the windows the show announces on air and in the official app for that week, and VisitBest does not publish its own official voting schedule.</p>
+        <h3>Can I vote by missed call instead?</h3>
+        <p>No. VisitBest previously listed unverified missed-call numbers; they were removed because no reliable official source for them could be verified. Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
+      </section>
     </div>
 
     ${renderJioCinemaGuide()}
