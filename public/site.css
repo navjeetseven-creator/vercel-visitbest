@@ -463,3 +463,54 @@ h1, h2, h3, h4 { color: var(--ink); font-family: Georgia, "Times New Roman", ser
    title crumb. Existing .breadcrumbs rules in site.css (display/flex, link and
    .sep colours only) do not conflict — there is no other truncation rule. */
 .breadcrumbs span:last-child{max-width:52ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* =====================================================================
+   VisitBest branding header — dropdown navigation + logo (2026-10-28)
+   APPEND-ONLY block for public/site.css. Append at the very END of the
+   file so these rules win specificity ties against the existing header
+   rules. The same block can be appended to public/assets/bb20-new/
+   bb20.css for the Bigg Boss statics follow-on (it uses no CSS variable
+   that bb20.css lacks; the dropdown shadow is a literal value because
+   bb20.css defines no --shadow).
+   Markup contract (see header-static.html / renderHeader.new.mjs):
+     .primary-nav > ul.nav-list > li.nav-item(.has-sub) > a (+ ul.sub-menu)
+   ===================================================================== */
+
+/* Brand: image logo replaces the text wordmark; tagline span unchanged. */
+.brand-logo { width: 172px; height: 48px; display: block; }
+
+/* Top-level list (the old flat anchors become list items). Existing
+   `.primary-nav a` rules keep styling every link, parents and children. */
+.nav-list { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: .15rem; flex-wrap: wrap; }
+.nav-item { position: relative; }
+
+/* Caret drawn with borders — no icon font, no extra asset. */
+.caret { display: inline-block; margin-left: .35rem; width: 0; height: 0; border-left: 4.5px solid transparent; border-right: 4.5px solid transparent; border-top: 5.5px solid currentColor; vertical-align: middle; opacity: .65; }
+
+/* Dropdown panel: pure CSS. Hidden with opacity/visibility (never
+   display:none) so the pattern stays keyboard-safe: tabbing onto the
+   parent link triggers :focus-within, the panel opens, and the next
+   tabs move into the submenu links. */
+.sub-menu { list-style: none; margin: 0; padding: .45rem; position: absolute; top: calc(100% + 6px); left: 0; min-width: 232px; background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 18px 50px rgba(32, 45, 70, .12); opacity: 0; visibility: hidden; transform: translateY(4px); transition: opacity .15s ease, transform .15s ease, visibility .15s; z-index: 60; }
+.has-sub:hover .sub-menu,
+.has-sub:focus-within .sub-menu { opacity: 1; visibility: visible; transform: none; }
+.sub-menu li { margin: 0; }
+.sub-menu a { display: block; padding: .55rem .7rem; border-radius: 8px; white-space: nowrap; }
+
+.primary-nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@media (max-width: 1120px) {
+  .brand-logo { width: 150px; height: 42px; }
+  .sub-menu { min-width: 212px; }
+}
+
+/* Mobile / tablet: the existing <=980px rules turn .primary-nav into a
+   toggle panel (display:none until .is-open, via site.js). Inside that
+   panel the submenus are ALWAYS expanded and stacked, indented under
+   their parent — no hover is needed and there is no hover trap. The
+   parent link itself still navigates to the section hub. */
+@media (max-width: 980px) {
+  .nav-list { flex-direction: column; align-items: stretch; gap: .3rem; width: 100%; }
+  .sub-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: 0; border-radius: 0; background: transparent; min-width: 0; padding: 0 0 .25rem 1.1rem; }
+  .sub-menu a { padding: .5rem .7rem; }
+  .caret { display: none; }
+}

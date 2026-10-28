@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344 96" role="img" aria-label="VisitBest">
+  <rect width="96" height="96" rx="20" fill="#24334f"/>
+  <text x="48" y="59" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="43" font-weight="700" fill="#fff8f1">VB</text>
+  <rect x="17" y="66" width="62" height="5" rx="2.5" fill="#c76027"/>
+  <text x="110" y="61" font-family="Georgia, 'Times New Roman', serif" font-size="43" font-weight="700" letter-spacing="-0.5"><tspan fill="#24334f">Visit</tspan><tspan fill="#c76027">Best</tspan></text>
+</svg>

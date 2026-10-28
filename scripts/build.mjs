@@ -400,25 +400,39 @@ function relatedEntries(currentSlug, categoryName = "") {
 }
 
 function renderHeader(currentPath = "") {
+  const current = routePath(currentPath);
+  const item = (href, label) =>
+    `<li class="nav-item"><a href="${href}"${current === href ? ' aria-current="page"' : ""}>${label}</a></li>`;
+  const group = (href, label, children) =>
+    `<li class="nav-item has-sub"><a href="${href}"${current === href ? ' aria-current="page"' : ""} aria-haspopup="true">${label}<span class="caret" aria-hidden="true"></span></a><ul class="sub-menu">${children
+      .map(([childHref, childLabel]) => `<li><a href="${childHref}"${current === childHref ? ' aria-current="page"' : ""}>${childLabel}</a></li>`)
+      .join("")}</ul></li>`;
   const links = [
-    ["/", "Home"],
-    ["/bigg-boss-20-guide/", "Bigg Boss 20"],
-    ["/bigg-boss-20-voting/", "BB20 Voting"],
-    ["/bigg-boss-20-web-stories/", "Web Stories"],
-    ["/education/", "Education"],
-    ["/category/technology/", "Technology"],
-    ["/category/entertainment/", "Entertainment"],
-    ["/business/", "All Businesses"],
+    item("/", "Home"),
+    group("/bigg-boss-20-guide/", "Bigg Boss 20", [
+      ["/bigg-boss-20-guide/", "Guide"],
+      ["/bigg-boss-20-contestants/", "Contestants"],
+      ["/bigg-boss-20-voting/", "Voting — Open Poll"],
+      ["/bigg-boss-20-web-stories/", "Web Stories"],
+      ["/bigg-boss-20-where-to-watch/", "Where to Watch"],
+    ]),
+    group("/education/", "Education", [
+      ["/education/schools/", "Schools"],
+      ["/education/universities/", "Universities"],
+      ["/education/medical-colleges/", "Medical Colleges"],
+    ]),
+    item("/category/entertainment/", "Entertainment"),
+    item("/category/technology/", "Technology"),
+    item("/business/", "All Businesses"),
   ];
   return `<a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header"><div class="header-inner container">
-    <a class="brand" href="/"><strong>Visit-Best</strong><span>Explore best in India</span></a>
+    <a class="brand" href="/"><img class="brand-logo" src="/logo-horizontal.svg" alt="VisitBest" width="172" height="48"><span>Explore best in India</span></a>
     <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">Menu</button>
-    <nav class="primary-nav" id="primary-nav" data-primary-nav aria-label="Primary navigation">${links.map(([href, label]) => `<a href="${href}"${routePath(currentPath) === href ? ' aria-current="page"' : ""}>${label}</a>`).join("")}</nav>
+    <nav class="primary-nav" id="primary-nav" data-primary-nav aria-label="Primary navigation"><ul class="nav-list">${links.join("")}</ul></nav>
     <form class="header-search" action="/search/" method="get"><input name="q" type="search" placeholder="Search guides…" aria-label="Search guides"><button class="button button-primary" type="submit">Search</button></form>
   </div></header>`;
 }
-
 function renderFooter() {
   return `<footer class="site-footer"><div class="container footer-grid">
     <div>
