@@ -1,0 +1,1073 @@
+import fs from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { pages as calculatorPages, renderCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient } from "./calculators.mjs";
+import {
+  polls as bbPolls,
+  contestants as bbContestants,
+  renderBiggBossPollPage,
+  renderBiggBossContestantsPage,
+  renderBiggBossRulesPage,
+  biggBossSchema,
+  css as bbCss,
+  clientScript as bbClient,
+} from "./bigg-boss.mjs";
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const sourceDir = path.join(root, "content", "source");
+const publicDir = path.join(root, "public");
+const distDir = path.join(root, "dist");
+const origin = "https://visitbest.in";
+const buildDate = "2026-09-09";
+
+async function readJson(file, fallback = null) {
+  try {
+    return JSON.parse(await fs.readFile(path.join(root, file), "utf8"));
+  } catch {
+    return fallback;
+  }
+}
+
+function decodeEntities(value = "") {
+  return String(value)
+    // Decode numeric character references (decimal &#038; and hex &#x26;)
+    // before the named entities, so WordPress-exported text renders the
+    // intended character instead of the literal reference. Invalid code
+    // points (zero, surrogates, beyond U+10FFFF) become U+FFFD, matching
+    // browser behaviour.
+    .replace(/&#(\d+);|&#[xX]([0-9a-fA-F]+);/g, (match, decimal, hex) => {
+      const codePoint = decimal ? Number.parseInt(decimal, 10) : Number.parseInt(hex, 16);
+      if (!codePoint || codePoint > 0x10FFFF || (codePoint >= 0xD800 && codePoint <= 0xDFFF)) return "�";
+      return String.fromCodePoint(codePoint);
+    })
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#039;|&#39;/gi, "'")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    // Preserve the source wording while fixing the recurring typo found in
+    // the imported EPC image/title metadata.
+    .replace(/\bInida\b/gi, "India")
+    .replace(/\[link\s+removed\]/gi, "the organisation's public channels");
+}
+
+function escapeHtml(value = "") {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function stripHtml(value = "") {
+  return decodeEntities(String(value)
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " "))
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function truncate(value, length = 156) {
+  const text = stripHtml(value);
+  if (text.length <= length) return text;
+  const cut = text.slice(0, length);
+  // If the budget happens to end right at a sentence end, keep it as is.
+  if (/[.!?]["')\]]?$/.test(cut)) return cut.trim();
+  // Prefer a clean sentence ending when one falls in the back half of the
+  // budget, so descriptions do not stop mid-thought.
+  const sentenceEnd = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf("! "), cut.lastIndexOf("? "));
+  if (sentenceEnd >= Math.floor(length / 2)) return cut.slice(0, sentenceEnd + 1).trim();
+  // Otherwise cut at a word boundary, drop any dangling punctuation or
+  // conjunction fragments (e.g. a trailing "&"), and mark the cut.
+  const wordEnd = cut.lastIndexOf(" ");
+  const base = (wordEnd > 0 ? cut.slice(0, wordEnd) : cut).replace(/[\s,;:&\u2013\u2014-]+$/u, "");
+  return `${base}…`;
+}
+
+function slugify(value) {
+  return stripHtml(value)
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "section";
+}
+
+function labelFromSlug(value) {
+  return String(value || "")
+    .split("-")
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ") || "VisitBest";
+}
+
+function routePath(value) {
+  let text = String(value || "/").trim();
+  if (!text.startsWith("/")) text = `/${text}`;
+  text = text.split("?")[0].split("#")[0];
+  if (text !== "/") text = `/${text.replace(/^\/+|\/+$/g, "")}/`;
+  return text;
+}
+
+function urlFor(slug, prefix = "") {
+  return routePath(`${prefix}/${slug}`);
+}
+
+function humanDate(value) {
+  if (!value) return "Updated September 9, 2026";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "Updated September 9, 2026";
+  return new Intl.DateTimeFormat("en-IN", { day: "numeric", month: "long", year: "numeric" }).format(date);
+}
+
+function wordCount(value) {
+  const text = stripHtml(value);
+  return text ? text.split(/\s+/).length : 0;
+}
+
+function readingTime(value) {
+  return Math.max(1, Math.ceil(wordCount(value) / 220));
+}
+
+function jsonLd(value) {
+  return JSON.stringify(value).replaceAll("<", "\\u003c");
+}
+
+const [posts, pages, business, media, categories, tags, businessCategories, businessLocations, legacyPages, assetQueue, editorialImages, contentPackManifest] = await Promise.all([
+  readJson("content/source/posts.json", []),
+  readJson("content/source/pages.json", []),
+  readJson("content/source/business.json", []),
+  readJson("content/source/media.json", []),
+  readJson("content/source/categories.json", []),
+  readJson("content/source/tags.json", []),
+  readJson("content/source/business-categories.json", []),
+  readJson("content/source/business-locations.json", []),
+  readJson("content/legacy-pages.json", []),
+  readJson("content/source/asset-queue.json", []),
+  readJson("content/editorial-images.json", []),
+  readJson("content/content-pack-manifest.json", { pages: [] }),
+]);
+
+const mediaById = new Map(media.map((item) => [String(item.id), item]));
+const assetByUrl = new Map(assetQueue.map((item) => [item.url, item.local]));
+const editorialByCluster = new Map((editorialImages || []).filter((item) => !item.slug).map((item) => [item.cluster, item]));
+const editorialBySlug = new Map((editorialImages || []).filter((item) => item.slug).map((item) => [item.slug, item]));
+// The original WordPress uploads are mirrored locally. A small number of the
+// CSV-only routes did not have a source image, so they use a self-contained
+// editorial illustration instead of a hot-linked third-party asset.
+const editorialLocalOverrides = new Map([
+  ["beauty", "/assets/mirror/7cd90b0490f4-Best-Perfume-in-India.png"],
+  ["fitness", "/assets/mirror/fa49fb4e7374-fitness.png"],
+  ["watches", "/assets/mirror/d5c1ebc4707e-Best-Watch-Brands-in-India.jpg"],
+  ["construction", "/assets/mirror/4e7d0bd84079-Best-Construction-Companies-in-Gurgaon.jpg"],
+  ["business", "/assets/mirror/e3de23737a7e-Big-4-Companies-In-India.png"],
+  ["food", "/assets/mirror/4e7002bd7e09-Best-Coffee-Brands-in-India.png"],
+  ["astrology", "/assets/mirror/aae014840142-Best-Astrologer-In-Bangalore.png"],
+  ["spirits", "/assets/mirror/a234a49c5447-best-whiskey-brands-in-india.jpg"],
+]);
+const editorialFallback = "/assets/editorial/editorial-fallback.svg";
+const postBySlug = new Map(posts.map((item) => [item.slug, item]));
+const pageBySlug = new Map(pages.map((item) => [item.slug, item]));
+const businessBySlug = new Map(business.map((item) => [item.slug, item]));
+const legacyBySlug = new Map(legacyPages.map((item) => [item.slug, item]));
+const categoryById = new Map(categories.map((item) => [String(item.id), item]));
+const businessCategoryById = new Map(businessCategories.map((item) => [String(item.id), item]));
+const businessLocationById = new Map(businessLocations.map((item) => [String(item.id), item]));
+
+const routeSet = new Set(["/"]);
+const canonicalRoutes = new Set(["/"]);
+const routeMeta = new Map();
+
+function addRoute(route, meta = {}) {
+  const normalized = routePath(route);
+  routeSet.add(normalized);
+  if (!meta.alias) canonicalRoutes.add(normalized);
+  if (meta.title) routeMeta.set(normalized, meta);
+}
+
+for (const item of posts) addRoute(urlFor(item.slug), { title: decodeEntities(item.title?.rendered), type: "article" });
+for (const item of pages) addRoute(urlFor(item.slug), { title: decodeEntities(item.title?.rendered), type: "page" });
+for (const item of business) addRoute(urlFor(item.slug, "/business"), { title: decodeEntities(item.title?.rendered), type: "business" });
+for (const item of legacyPages) addRoute(urlFor(item.slug), { title: item.title, type: item.type === "policy" ? "page" : "article" });
+for (const item of categories) addRoute(urlFor(item.slug, "/category"), { title: item.name, type: "archive" });
+for (const item of tags) addRoute(urlFor(item.slug, "/tag"), { title: item.name, type: "archive" });
+for (const item of businessCategories) addRoute(urlFor(item.slug, "/business-category"), { title: item.name, type: "archive" });
+for (const item of businessLocations) addRoute(urlFor(item.slug, "/business-location"), { title: item.name, type: "archive" });
+for (const item of calculatorPages) addRoute(urlFor(item.slug), { title: item.title, type: "calculator" });
+for (const item of bbPolls) addRoute(urlFor(item.slug), { title: item.title, type: "poll" });
+addRoute(urlFor("bigg-boss-20-contestants"), { title: "Bigg Boss 20 Contestants List with Photos, Age, Bio & Journey So Far", type: "page" });
+addRoute(urlFor("bigg-boss-20-voting-rules"), { title: "Bigg Boss 20 Voting Rules & Timings — How Official Voting Works", type: "page" });
+addRoute(urlFor("hottest-chinese-actors"), { title: "Hottest Chinese Actors in 2026: Top 25 Most Attractive & Popular C-Drama Stars", type: "article", dateModified: "2026-10-06" });
+addRoute(urlFor("lizards-species"), { title: "Lizard Species: Complete Guide to Types, Names, Pictures, Habitats & Identification", type: "article", dateModified: "2026-10-06" });
+addRoute(urlFor("most-beautiful-bollywood-actresses"), { title: "Most Beautiful Bollywood Actresses: Top 30 Indian Stars Ranked", type: "article", dateModified: "2026-10-06" });
+addRoute(urlFor("best-cricket-bat-in-india"), { title: "Best Cricket Bat in India: Top Picks for Every Budget & Player in 2026", type: "article", dateModified: "2026-10-06" });
+addRoute(urlFor("best-sites-to-watch-anime"), { title: "Best Sites to Watch Anime in India 2026: Free & Legal Anime Sites", type: "article", dateModified: "2026-10-06" });
+addRoute(urlFor("beautiful-young-hollywood-actresses"), { title: "30 Most Beautiful Young Hollywood Actresses in 2026: Rising Stars Ranked", type: "article", dateModified: "2026-10-06" });
+addRoute(urlFor("event-management-companies-in-india"), { title: "Top 20 Event Management Companies in India (2026): Verified Directory", type: "article", dateModified: "2026-10-10" });
+for (const p of contentPackManifest.pages || []) {
+  addRoute(p.path, { title: p.title, type: p.kind, dateModified: "2026-10-01" });
+}
+
+for (let page = 1; page <= 72; page += 1) addRoute(page === 1 ? "/business/" : `/business/page/${page}/`, { title: `Business directory page ${page}`, type: "archive" });
+for (const item of categories) {
+  const matching = posts.filter((post) => post.categories?.includes(item.id)).length + legacyPages.filter((post) => post.category?.toLowerCase() === item.name.toLowerCase()).length;
+  const pagesNeeded = Math.max(1, Math.ceil(matching / 12));
+  for (let page = 2; page <= pagesNeeded; page += 1) addRoute(`/category/${item.slug}/page/${page}/`, { title: `${item.name} page ${page}`, type: "archive" });
+}
+
+const landingCsv = await fs.readFile(path.join(sourceDir, "landing-pages.csv"), "utf8").catch(() => "");
+for (const line of landingCsv.split(/\r?\n/).slice(10)) {
+  const first = line.split(",")[0]?.trim();
+  if (first?.startsWith("/")) addRoute(first, { alias: !canonicalRoutes.has(routePath(first)), type: "legacy-route" });
+}
+addRoute("/author/admin/", { alias: true, type: "legacy-route" });
+addRoute("/search/", { title: "Search VisitBest", type: "page" });
+
+const assetFileExists = new Map();
+async function hasAsset(local) {
+  if (!local) return false;
+  if (!assetFileExists.has(local)) {
+    assetFileExists.set(local, await fs.stat(path.join(publicDir, local.replace(/^\//, ""))).then(() => true).catch(() => false));
+  }
+  return assetFileExists.get(local);
+}
+
+function assetForUrl(value) {
+  if (!value) return null;
+  const archivedSource = decodeEntities(value).match(/https?:\/\/(?:www\.)?visitbest\.in\/wp-content\/uploads\/[^\s"'<>\)]+/i)?.[0];
+  if (archivedSource && archivedSource !== value) return assetForUrl(archivedSource);
+  let absolute;
+  try { absolute = new URL(decodeEntities(value), origin).href; } catch { return null; }
+  const normalizedAbsolute = absolute.replace("https://www.visitbest.in/", "https://visitbest.in/");
+  const exact = assetByUrl.get(absolute) || assetByUrl.get(normalizedAbsolute);
+  if (exact) return exact;
+  const noQuery = normalizedAbsolute.split("?")[0];
+  for (const [url, local] of assetByUrl) if (url.replace("https://www.visitbest.in/", "https://visitbest.in/").split("?")[0] === noQuery) return local;
+  return null;
+}
+
+function sameOriginPath(value) {
+  try {
+    const url = new URL(value, origin);
+    if (!["visitbest.in", "www.visitbest.in"].includes(url.hostname)) return null;
+    return `${routePath(url.pathname)}${url.search}${url.hash}`;
+  } catch { return null; }
+}
+
+function internalLink(value, label = "") {
+  const raw = decodeEntities(value || "").trim();
+  if (!raw || raw === "#") return null;
+  // WordPress occasionally preserved placeholder URLs such as
+  // `https://[link removed]`. Drop those anchors during migration so they
+  // cannot become broken links in the static export.
+  if (/^https?:\/\/\s*(?:\[[^\]]+\]|$)/i.test(raw) || /\[link\s+removed\]/i.test(raw) || /^https?:\/\/web\.archive\.org\//i.test(raw)) return null;
+  if (raw.startsWith("#")) return raw;
+  const pathValue = sameOriginPath(raw);
+  if (!pathValue) return raw;
+  const base = routePath(pathValue.split("?")[0].split("#")[0]);
+  if (base === "/wp-json/" || base.startsWith("/wp-admin/")) return "/search/";
+  if (routeSet.has(base)) return pathValue;
+  const cleanLabel = stripHtml(label);
+  const query = cleanLabel || base.split("/").filter(Boolean).join(" ");
+  return `/search/?q=${encodeURIComponent(query.slice(0, 80))}`;
+}
+
+function localizeHtml(value = "") {
+  let html = String(value)
+    .replace(/<script[\s\S]*?<\/script>/gi, "")
+    .replace(/<style[\s\S]*?<\/style>/gi, "")
+    .replace(/<iframe[\s\S]*?<\/iframe>/gi, "")
+    .replace(/<form[\s\S]*?<\/form>/gi, "")
+    .replace(/<!--([\s\S]*?)-->/g, "")
+    .replace(/<figure class="wp-block-embed[^"]*">\s*<div class="wp-block-embed__wrapper">\s*<\/div>\s*<\/figure>/gi, "")
+    .replace(/\[link\s+removed\]/gi, "the organisation's public channels")
+    .replace(/\bInida\b/gi, "India");
+
+  html = html.replace(/\s+(?:srcset|sizes|fetchpriority)=(['"])[\s\S]*?\1/gi, "");
+  html = html.replace(/\s+(?:data-src|data-lazy-src)=(['"])([^'"]+)\1/gi, " src=$1$2$1");
+  html = html.replace(/\b(src|href)=(['"])([^'"]*)\2/gi, (match, attribute, quote, value) => {
+    const local = attribute.toLowerCase() === "src" ? assetForUrl(value) : null;
+    if (local) return `src=${quote}${local}${quote}`;
+    if (attribute.toLowerCase() === "src") {
+      // Archived image URLs are not a reliable production dependency. The
+      // matching WordPress uploads are mirrored where available; otherwise
+      // use the local illustration so the page never shows a broken image.
+      if (/web\.archive\.org/i.test(value)) return `src=${quote}${editorialFallback}${quote}`;
+      return `src=${quote}${value}${quote}`;
+    }
+    const rewritten = internalLink(value);
+    return rewritten ? `href=${quote}${rewritten}${quote}` : match;
+  });
+  html = html.replace(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi, (match, attrs, body) => {
+    const hrefMatch = attrs.match(/href=(['"])([^'"]*)\1/i);
+    if (!hrefMatch) return body;
+    const rewritten = internalLink(hrefMatch[2], body);
+    if (!rewritten) return body;
+    let nextAttrs = attrs.replace(hrefMatch[0], `href=${hrefMatch[1]}${rewritten}${hrefMatch[1]}`);
+    if (/^https?:\/\//i.test(rewritten) && !/\brel=/i.test(nextAttrs)) nextAttrs += ' rel="nofollow noopener" target="_blank"';
+    return `<a${nextAttrs}>${body}</a>`;
+  });
+  html = html.replace(/<h1\b/gi, "<h2");
+  html = html.replace(/<\/h1>/gi, "</h2>");
+  html = html.replace(/<table\b[\s\S]*?<\/table>/gi, (table) => `<div class="table-scroll">${table}</div>`);
+  html = html.replace(/<img\b([^>]*)>/gi, (match, attrs) => {
+    let next = attrs;
+    if (!/\bloading=/i.test(next)) next += ' loading="lazy"';
+    if (!/\bdecoding=/i.test(next)) next += ' decoding="async"';
+    return `<img${next}>`;
+  });
+  return html.replace(/\s{2,}/g, " ").trim();
+}
+
+function addHeadingIds(html) {
+  const headings = [];
+  const used = new Set();
+  const output = html.replace(/<h([23])([^>]*)>([\s\S]*?)<\/h\1>/gi, (match, level, attrs, body) => {
+    const existing = attrs.match(/\bid=(['"])([^'"]+)\1/i)?.[2];
+    let id = existing || slugify(body);
+    let base = id;
+    let index = 2;
+    while (used.has(id)) id = `${base}-${index++}`;
+    used.add(id);
+    const nextAttrs = existing ? attrs : `${attrs} id="${id}"`;
+    headings.push({ id, level: Number(level), text: stripHtml(body) });
+    return `<h${level}${nextAttrs}>${body}</h${level}>`;
+  });
+  return { html: output, headings };
+}
+
+function itemImage(item) {
+  const featured = item?.featured_media ? mediaById.get(String(item.featured_media)) : null;
+  const candidates = [featured?.source_url];
+  const body = `${item?.content?.rendered || ""} ${item?.excerpt?.rendered || ""}`;
+  for (const match of body.matchAll(/(?:src|data-src)=["']([^"']+)["']/gi)) candidates.push(match[1]);
+  for (const candidate of candidates) {
+    const local = assetForUrl(candidate);
+    if (local) return { src: local, alt: decodeEntities(featured?.alt_text || stripHtml(item?.title?.rendered) || "VisitBest guide image") };
+  }
+  return null;
+}
+
+function editorialImage(cluster, slug = null) {
+  if (slug && editorialBySlug.has(slug)) {
+    const pageImage = editorialBySlug.get(slug);
+    return {
+      src: pageImage.local,
+      alt: pageImage.alt || "VisitBest guide cover",
+      credit: pageImage.credit || null,
+      sourcePage: pageImage.sourcePage || null,
+      license: pageImage.license || null,
+    };
+  }
+  const image = editorialByCluster.get(cluster);
+  if (!image) return null;
+  const src = editorialLocalOverrides.get(cluster) || editorialFallback;
+  const mirrored = src !== editorialFallback;
+  return {
+    src,
+    alt: image.alt || "VisitBest editorial image",
+    credit: mirrored ? "VisitBest media mirror" : "VisitBest editorial illustration",
+    sourcePage: mirrored ? null : null,
+    license: mirrored ? "Source image mirrored from the public WordPress export" : "Original SVG",
+  };
+}
+
+function taxonomyLabel(item, type = "category") {
+  const ids = type === "business_category" ? item?.business_category : type === "business_location" ? item?.business_location : item?.categories;
+  const map = type === "business_category" ? businessCategoryById : type === "business_location" ? businessLocationById : categoryById;
+  return (ids || []).map((id) => map.get(String(id))?.name).filter(Boolean);
+}
+
+function taxonomyTerms(item, type = "category") {
+  const ids = type === "business_category" ? item?.business_category : type === "business_location" ? item?.business_location : item?.categories;
+  const map = type === "business_category" ? businessCategoryById : type === "business_location" ? businessLocationById : categoryById;
+  return (ids || []).map((id) => map.get(String(id))).filter(Boolean);
+}
+
+function relatedEntries(currentSlug, categoryName = "") {
+  const live = posts
+    .filter((item) => item.slug !== currentSlug)
+    .map((item) => ({ slug: item.slug, title: decodeEntities(item.title?.rendered), summary: truncate(item.excerpt?.rendered || item.content?.rendered), date: item.date, href: urlFor(item.slug), image: itemImage(item), category: taxonomyLabel(item)[0] || "Guide" }));
+  const legacy = legacyPages
+    .filter((item) => item.slug !== currentSlug)
+    .map((item) => ({ slug: item.slug, title: item.title, summary: item.summary, date: buildDate, href: urlFor(item.slug), image: editorialImage(item.imageCluster, item.slug), category: item.category }));
+  return [...live, ...legacy]
+    .sort((a, b) => (a.category === categoryName ? -1 : 0) - (b.category === categoryName ? -1 : 0))
+    .slice(0, 3);
+}
+
+function renderHeader(currentPath = "") {
+  const current = routePath(currentPath);
+  const item = (href, label) =>
+    `<li class="nav-item"><a href="${href}"${current === href ? ' aria-current="page"' : ""}>${label}</a></li>`;
+  const group = (href, label, children) =>
+    `<li class="nav-item has-sub"><a href="${href}"${current === href ? ' aria-current="page"' : ""} aria-haspopup="true">${label}<span class="caret" aria-hidden="true"></span></a><ul class="sub-menu">${children
+      .map(([childHref, childLabel]) => `<li><a href="${childHref}"${current === childHref ? ' aria-current="page"' : ""}>${childLabel}</a></li>`)
+      .join("")}</ul></li>`;
+  const links = [
+    item("/", "Home"),
+    group("/bigg-boss-20-guide/", "Bigg Boss 20", [
+      ["/bigg-boss-20-guide/", "Guide"],
+      ["/bigg-boss-20-contestants/", "Contestants"],
+      ["/bigg-boss-20-voting/", "Voting — Open Poll"],
+      ["/bigg-boss-20-web-stories/", "Web Stories"],
+      ["/bigg-boss-20-where-to-watch/", "Where to Watch"],
+    ]),
+    group("/education/", "Education", [
+      ["/education/schools/", "Schools"],
+      ["/education/universities/", "Universities"],
+      ["/education/medical-colleges/", "Medical Colleges"],
+    ]),
+    item("/category/entertainment/", "Entertainment"),
+    item("/category/technology/", "Technology"),
+    item("/business/", "All Businesses"),
+  ];
+  return `<a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header"><div class="header-inner container">
+    <a class="brand" href="/"><img class="brand-logo" src="/logo-horizontal.svg" alt="VisitBest" width="172" height="48"><span>Explore best in India</span></a>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav class="primary-nav" id="primary-nav" data-primary-nav aria-label="Primary navigation"><ul class="nav-list">${links.join("")}</ul></nav>
+    <form class="header-search" action="/search/" method="get"><input name="q" type="search" placeholder="Search guides…" aria-label="Search guides"><button class="button button-primary" type="submit">Search</button></form>
+  </div></header>`;
+}
+function renderFooter() {
+  return `<footer class="site-footer"><div class="container footer-grid">
+    <div>
+      <h2>Visit-Best</h2>
+      <p>Clear, practical guides on brands, products, companies, entertainment, culture, and everyday decisions across India and beyond.</p>
+      <p style="margin-top:.85rem;font-size:.84rem;"><a href="/about/">About VisitBest</a> · <a href="/contact-us/">Contact Us</a> · <a href="/privacy-policy/">Privacy Policy</a></p>
+    </div>
+    <div>
+      <h2>Bigg Boss 20</h2>
+      <ul class="footer-links">
+        <li><a href="/bigg-boss-20-guide/">Season 20 Guide</a></li>
+        <li><a href="/bigg-boss-20-voting/">Live Fan Polls &amp; Voting</a></li>
+        <li><a href="/bigg-boss-20-contestants/">Contestants Directory</a></li>
+        <li><a href="/bigg-boss-20-web-stories/">Visual Web Stories</a></li>
+        <li><a href="/bigg-boss-20-where-to-watch/">Where to Watch</a></li>
+        <li><a href="/bigg-boss-20-episode-guide/">Episode Guide</a></li>
+        <li><a href="/bigg-boss-20-nominations-explained/">Nominations Explained</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Categories</h2>
+      <ul class="footer-links">
+        <li><a href="/category/technology/">Technology</a></li>
+        <li><a href="/category/entertainment/">Entertainment</a></li>
+        <li><a href="/category/brands/">Brands</a></li>
+        <li><a href="/category/business/">Business</a></li>
+        <li><a href="/category/actress/">Celebrity &amp; Cinema</a></li>
+        <li><a href="/category/corporates/">Corporates</a></li>
+        <li><a href="/category/travel/">Travel &amp; Lifestyle</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Explore &amp; Contact</h2>
+      <ul class="footer-links">
+        <li><a href="/education/">Education Guides Hub</a></li>
+        <li><a href="/education/schools/">Top Schools Worldwide</a></li>
+        <li><a href="/education/universities/">Top Universities</a></li>
+        <li><a href="/education/medical-colleges/">Medical Colleges (NIRF)</a></li>
+        <li><a href="/business/">Business Directory (700+)</a></li>
+        <li><a href="/wam-to-gpa-calculator/">WAM to GPA Calculator</a></li>
+        <li><a href="/search/">Search All Guides</a></li>
+        <li><a href="/assets/bb20-new/image-credits.html">Image Credits</a></li>
+        <li><a href="mailto:visitbest10@gmail.com">visitbest10@gmail.com</a></li>
+      </ul>
+    </div>
+  </div><div class="container footer-bottom"><span>© 2026 Visit-Best. All rights reserved.</span><span>Independent editorial guides &amp; fan opinions. Not affiliated with Bigg Boss broadcasters or voting platforms.</span></div></footer><button class="back-top" type="button" data-back-top aria-label="Back to top">↑</button>`;
+}
+
+function renderPage({ title, description, canonical = "/", body, currentPath = "", schema = null, image = null }) {
+  const canonicalUrl = new URL(routePath(canonical), origin).href;
+  const schemaTag = schema ? `<script type="application/ld+json">${jsonLd(schema)}</script>` : "";
+  const pageImageSrc = image ? (typeof image === "string" ? image : image.src) : null;
+  const pageImageAlt = image && typeof image === "object" && image.alt ? image.alt : title;
+  const ogImageTags = pageImageSrc ? `<meta property="og:image" content="${new URL(pageImageSrc, origin).href}"><meta property="og:image:alt" content="${escapeHtml(pageImageAlt)}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="${new URL(pageImageSrc, origin).href}">` : `<meta name="twitter:card" content="summary">`;
+  const googleTag = `<!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-SZXR1R5PP7"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-SZXR1R5PP7');</script>`;
+  const adsenseTag = `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6008816938247526" crossorigin="anonymous"></script>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">${googleTag}${adsenseTag}<title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(truncate(description, 160))}"><link rel="canonical" href="${canonicalUrl}"><meta name="robots" content="index,follow"><meta property="og:type" content="website"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(truncate(description, 160))}">${ogImageTags}<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#24334f"><link rel="stylesheet" href="/site.css">${schemaTag}</head><body>${renderHeader(currentPath)}<main id="content">${body}</main>${renderFooter()}<script src="/site.js" defer></script></body></html>`;
+}
+
+function breadcrumbs(items) {
+  return `<nav class="breadcrumbs" aria-label="Breadcrumbs"><a href="/">Home</a>${items.map((item) => `<span class="sep">/</span>${item.href ? `<a href="${item.href}">${escapeHtml(item.label)}</a>` : `<span>${escapeHtml(item.label)}</span>`}`).join("")}</nav>`;
+}
+
+function renderToc(headings) {
+  if (!headings.length) return `<aside class="toc-card"><h2>In this guide</h2><p class="toc-empty">Sections will appear here as this guide grows.</p></aside>`;
+  return `<aside class="toc-card"><h2>In this guide</h2><nav aria-label="Table of contents">${headings.map((heading) => `<a href="#${heading.id}" data-level="${heading.level}">${escapeHtml(heading.text)}</a>`).join("")}</nav></aside>`;
+}
+
+function renderMobileToc(headings) {
+  if (!headings.length) return "";
+  return `<details class="toc-mobile"><summary>In this guide</summary><nav aria-label="Table of contents">${headings.map((heading) => `<a href="#${heading.id}" data-level="${heading.level}">${escapeHtml(heading.text)}</a>`).join("")}</nav></details>`;
+}
+
+function renderAuthor() {
+  return `<div class="author-box"><div class="author-mark" aria-hidden="true">VB</div><div><strong>VisitBest Editorial Team</strong><p>We research public sources, compare practical options, and edit guides for clarity. We update time-sensitive details when reliable information changes and flag claims that need verification.</p></div></div>`;
+}
+
+function renderRelated(items) {
+  if (!items.length) return "";
+  return `<section class="related"><h2>Keep exploring</h2><div class="card-grid">${items.map((item) => renderCard(item)).join("")}</div></section>`;
+}
+
+function renderCard(item) {
+  const media = item.image ? `<div class="card-media"><img src="${item.image.src}" alt="${escapeHtml(item.image.alt || item.title)}" loading="lazy" decoding="async"></div>` : "";
+  const directory = item.isBusiness || String(item.href || "").startsWith("/business/");
+  return `<article class="card${directory ? " directory-card" : ""}"${directory ? " data-directory-card" : ""}><a href="${item.href}">${media}<div class="card-body"><div class="card-meta"><span class="tag">${escapeHtml(item.category || "Guide")}</span>${item.date ? `<span>${escapeHtml(humanDate(item.date))}</span>` : ""}</div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(truncate(item.summary || "Explore this VisitBest guide.", 150))}</p></div></a></article>`;
+}
+
+function renderArticleSchema({ title, description, canonical, datePublished, dateModified, image }) {
+  return { "@context": "https://schema.org", "@type": "Article", headline: title, description: truncate(description), datePublished: datePublished || buildDate, dateModified: dateModified || buildDate, author: { "@type": "Organization", name: "VisitBest Editorial Team", url: `${origin}/about/` }, publisher: { "@type": "Organization", name: "VisitBest" }, mainEntityOfPage: { "@type": "WebPage", "@id": new URL(routePath(canonical), origin).href }, ...(image ? { image: [new URL(image.src, origin).href] } : {}) };
+}
+
+function renderAdBanner(slot = "in_content") {
+  return `<div class="ad-placement ad-${slot}" style="margin:2rem auto;text-align:center;min-height:90px;clear:both;">
+    <span class="ad-label" style="display:block;font-size:10px;letter-spacing:1px;color:#8c9ba5;text-transform:uppercase;margin-bottom:6px;">Advertisement</span>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6008816938247526"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>`;
+}
+
+function renderArticle({ slug, title, summary, html, datePublished, dateModified, category, image, canonical = urlFor(slug), type = "article" }) {
+  const prepared = addHeadingIds(html);
+  const description = truncate(summary || prepared.html);
+  const titleText = decodeEntities(title);
+  const articleSchema = type === "page" ? { "@context": "https://schema.org", "@type": "WebPage", name: titleText, description, url: new URL(routePath(canonical), origin).href } : renderArticleSchema({ title: titleText, description, canonical, datePublished, dateModified, image });
+  const categoryHref = category ? `/category/${slugify(category)}/` : null;
+  const meta = `<div class="article-meta"><span>${categoryHref ? `<a class="pill" href="${categoryHref}">${escapeHtml(category)}</a>` : ""}</span><span>Updated <strong>${escapeHtml(humanDate(dateModified || datePublished || buildDate))}</strong></span><span><strong>${readingTime(prepared.html)} min read</strong></span></div>`;
+  const figure = image ? `<figure class="article-figure"><img src="${image.src}" alt="${escapeHtml(image.alt || titleText)}" loading="eager" decoding="async"><figcaption>${image.credit ? `${escapeHtml(image.credit)}${image.sourcePage ? ` · <a href="${image.sourcePage}" rel="nofollow noopener" target="_blank">Image source</a>` : ""}` : "Image used inside the guide."}</figcaption></figure>` : "";
+  const related = renderRelated(relatedEntries(slug, category));
+  const body = `${breadcrumbs([{ href: categoryHref, label: category || "Guide" }, { label: titleText }])}<div class="article-layout"><article class="article-card"><p class="eyebrow">VisitBest guide</p><h1 class="article-title">${escapeHtml(titleText)}</h1><p class="article-dek">${escapeHtml(description)}</p>${meta}${renderMobileToc(prepared.headings)}${figure}${renderAdBanner("intro")}<div class="prose">${prepared.html}</div>${renderAdBanner("outro")}${renderAuthor()}${related}</article>${renderToc(prepared.headings)}</div>`;
+  return renderPage({ title: titleText, description, canonical, currentPath: canonical, body, schema: articleSchema, image });
+}
+
+function renderLegacyHtml(entry) {
+  if (entry.type === "policy") {
+    return `<section class="content-section"><h2>What this static site collects</h2><p>VisitBest is delivered as a public static website. The site does not require an account and the browser-based search box searches a public index locally. If you email us, your email provider shares the message and address with VisitBest so we can reply.</p></section><section class="content-section"><h2>Hosting and security logs</h2><p>The hosting and delivery provider may process technical request data such as an IP address, device information, and request time to deliver pages, prevent abuse, and maintain security. Those records are governed by the provider's current terms.</p></section><section class="content-section"><h2>Cookies, analytics and advertising</h2><p>This migration package does not add a VisitBest account cookie or newsletter tracker. If analytics, advertising, embedded services, or a newsletter are added later, this policy and the relevant consent controls will be updated before launch.</p></section><section class="content-section"><h2>External links</h2><p>Articles link to selected third-party sources and services. Those websites have their own privacy policies and may set cookies or collect information when you visit them. Review their terms before submitting personal information.</p></section><section class="content-section"><h2>Your questions</h2><p>For privacy questions, corrections, or deletion requests relating to an email you sent us, contact <a href="mailto:visitbest10@gmail.com">visitbest10@gmail.com</a>. We will review reasonable requests under applicable law and may need to retain limited records for security or legal reasons.</p></section><section class="content-section"><h2>Policy updates</h2><p>This policy is effective September 9, 2026 and describes the static migration included in this package. We will publish a revised date and explanation when material data practices change.</p></section>`;
+  }
+  const isCreative = entry.type === "creative";
+  const firstColumn = isCreative ? "Original line" : entry.type === "people" ? "Name" : entry.type === "travel" ? "Place" : entry.type === "reference" ? "Topic" : "Option";
+  const secondColumn = isCreative ? "Meaning" : entry.type === "people" ? "Why it stands out" : entry.type === "travel" ? "Why go" : "Best for";
+  const thirdColumn = isCreative ? "Theme" : entry.type === "people" ? "Start with" : entry.type === "travel" ? "Planning note" : "What to verify";
+  const rows = (entry.items || []).map((item) => `<tr><td>${escapeHtml(item[0])}</td><td>${escapeHtml(item[1])}</td><td>${escapeHtml(item[2])}</td></tr>`).join("");
+  const criteria = (entry.criteria || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+  const references = entry.slug === "google-ranking-factors-2020" ? `<p class="source-note">Primary reference: <a href="https://developers.google.com/search/docs/appearance/ranking-systems-guide" rel="nofollow noopener" target="_blank">Google's guide to Search ranking systems</a>. Google says its systems use many signals rather than a fixed public scorecard.</p>` : entry.slug.includes("wall-putty") || entry.slug.includes("mixer") || entry.slug.includes("laptop") ? `<p class="source-note">For standards, safety, and energy claims, check the current manufacturer documentation and relevant Indian government guidance such as <a href="https://www.bis.gov.in/" rel="nofollow noopener" target="_blank">BIS</a> and <a href="https://beeindia.gov.in/" rel="nofollow noopener" target="_blank">Bureau of Energy Efficiency</a>.</p>` : "";
+  const faq = `<section class="content-section faq"><h2>Frequently asked questions</h2><details><summary>How should I use this guide?</summary><p>Use the shortlist to define what matters to you, then verify current price, availability, rules, credentials, or catalogue details at the source before you decide.</p></details><details><summary>Is this a fixed ranking?</summary><p>No. The refreshed page is an editorial starting point organised by fit and evidence. The right choice depends on your use case, location, budget, and timing.</p></details><details><summary>When will this page be updated?</summary><p>VisitBest reviews time-sensitive details when reliable public information changes. Send corrections or newer source links to <a href="mailto:visitbest10@gmail.com">visitbest10@gmail.com</a>.</p></details></section>`;
+  const safeDetailUrl = (value) => (typeof value === "string" && (value.startsWith("https://") || value.startsWith("/")) ? value : "");
+  const detailEntries = Array.isArray(entry.details) ? entry.details.filter((detail) => detail && typeof detail === "object") : [];
+  const detailBlocks = detailEntries.map((detail) => {
+    const image = safeDetailUrl(detail.image);
+    const linkUrl = safeDetailUrl(detail.linkUrl);
+    const rel = linkUrl.includes("amazon.in/dp/") ? "nofollow sponsored noopener" : "nofollow noopener";
+    return `<article class="brand-block"><h3>${escapeHtml(detail.name || "")}</h3>${image ? `<figure><img src="${escapeHtml(image)}" alt="${escapeHtml(detail.imageAlt || detail.name || "")}" loading="lazy"></figure>` : ""}<p>${escapeHtml(detail.description || "")}</p>${detail.modelTitle ? `<p class="brand-model">Featured model: ${escapeHtml(detail.modelTitle)}</p>` : ""}${linkUrl ? `<p><a class="buy-button" href="${escapeHtml(linkUrl)}" target="_blank" rel="${rel}">${escapeHtml(detail.linkLabel || "View details")}</a></p>` : ""}</article>`;
+  }).join("");
+  const hasAmazonDetail = detailEntries.some((detail) => typeof detail.linkUrl === "string" && detail.linkUrl.includes("amazon.in/dp/"));
+  const brandGuide = detailBlocks ? `${hasAmazonDetail ? `<p class="affiliate-disclosure">This post contains affiliate links. As an Amazon Associate, we earn from qualifying purchases. This does not affect our editorial independence.</p>` : ""}<section class="content-section brand-guide"><h2>The brands in detail</h2>${detailBlocks}</section>` : "";
+  return `<section class="content-section"><div class="takeaway"><h2>At a glance</h2><p>${escapeHtml(entry.editorial || entry.summary)}</p></div><ul>${(entry.items || []).slice(0, 4).map((item) => `<li><strong>${escapeHtml(item[0])}</strong> — ${escapeHtml(item[1])}</li>`).join("")}</ul></section>${renderAdBanner("intro")}<section class="content-section"><h2>Shortlist and comparison</h2><div class="table-scroll"><table class="comparison-table"><thead><tr><th>${firstColumn}</th><th>${secondColumn}</th><th>${thirdColumn}</th></tr></thead><tbody>${rows}</tbody></table></div></section>${brandGuide}<section class="content-section"><h2>How to choose</h2><p>Start with the real decision: who will use this, where, how often, and what would make the choice unsafe or disappointing? The following checks keep the shortlist practical.</p><ol>${criteria}</ol></section><section class="content-section"><h2>What to verify before you commit</h2><p>Confirm the current specification, price or availability, terms, and seller or provider identity. For companies and services, request a written scope, named contact, references, and cancellation or warranty terms. For products, compare the unit price, compatibility, return window, and genuine support.</p></section><section class="content-section"><h2>Editorial update</h2><p>${escapeHtml(entry.editorial || "This page was refreshed for the static VisitBest migration.")}</p></section>${references}${renderAdBanner("outro")}${faq}`;
+}
+
+function fallbackForPage(page) {
+  if (page.slug !== "earphones-under-2000") return null;
+  return { slug: page.slug, title: "Best Earphones Under ₹2,000: Sound, Fit and Battery Guide", category: "Technology", type: "product", imageCluster: "audio", summary: "Compare wired and true-wireless earphones under ₹2,000 by fit, codec support, microphones, battery, comfort, and warranty.", editorial: "Prices and stock change frequently. Choose by fit and use case first, then verify current codec, battery, water-resistance, and service details.", items: [["Wired in-ear monitors", "Consistent sound and no charging case", "Device compatibility and cable durability"], ["Entry-level TWS earbuds", "Convenience for calls and commuting", "Battery, microphone quality, and return policy"], ["Neckband earphones", "Longer battery and lower loss risk", "Comfort and replacement battery support"], ["Workout earbuds", "Secure fit and sweat resistance", "Exact IP rating and cleaning"], ["Call-first earbuds", "Microphone processing and stable connection", "Test voice quality in real environments"], ["Balanced everyday pair", "Music, podcasts, and travel", "Tuning, comfort, and genuine warranty"]], criteria: ["Secure comfortable fit", "Clear microphone for your use", "Battery and charging-case support", "Authentic seller and warranty"], details: [{"name": "Wired in-ear monitors", "description": "Wired in-ear monitors are earphones that sit inside the ear canal and connect by cable, with no battery, Bluetooth radio or charging case to manage. Because the signal travels over wire, sound stays consistent and latency-free for music, video and gaming. They suit listeners who value stable sound over convenience and anyone using a phone, laptop or player with a headphone jack or USB-C dongle. Look for a secure in-ear fit with several tip sizes, a detachable or reinforced cable for durability, and check connector compatibility before buying.", "modelTitle": "KZ EDC PRO IEM Wired Earphone, HiFi Dynamic Driver (DD) IEM, High-Functioning Silver-Plated OFC Cable, 0.75mm Detachable Cable, 3.5mm Plug for Audiophiles & Musicians. (Black)", "image": "https://m.media-amazon.com/images/I/41DQ-FavK6L.jpg", "imageAlt": "KZ EDC PRO IEM Wired Earphone, HiFi Dynamic Driver (DD) IEM, High-Functioning Silver-Plated OFC Cable, 0.75mm Detachable Cable, 3.5mm Plug for Audiophiles & Musicians. (Black) — Wired in-ear monitors earphones", "linkUrl": "https://www.amazon.in/dp/B0DHSFHZZ1?tag=visitbest-21", "linkLabel": "Check price on Amazon"}, {"name": "Entry-level TWS earbuds", "description": "Entry-level true wireless earbuds are separate left and right buds that pair over Bluetooth and recharge in a small pocket case, with no cable between them. They suit commuters, students and casual listeners who want convenience for music, videos and everyday calls without managing wires. Look for total battery life including the case, a comfortable tip fit that stays put while walking, clear microphone performance for calls, simple touch controls, and fast or USB-C charging. Also check the return policy and warranty, because fit and call quality vary widely between models.", "modelTitle": "Boat Airdopes 141 Gen 2, 4 Mics ENx Tech, 48 Hrs Playback, Free Music Streaming, Fast Charge, Low Latency, IPX4, v5.4 Bluetooth Earbuds, TWS Ear Buds Wireless Earphones with mic (Grey)", "image": "https://m.media-amazon.com/images/I/31HM2REQEnL.jpg", "imageAlt": "Boat Airdopes 141 Gen 2, 4 Mics ENx Tech, 48 Hrs Playback, Free Music Streaming, Fast Charge, Low Latency, IPX4, v5.4 Bluetooth Earbuds, TWS Ear Buds Wireless Earphones with mic (Grey) — Entry-level TWS earbuds earphones", "linkUrl": "https://www.amazon.in/dp/B0F8BVH36Y?tag=visitbest-21", "linkLabel": "Check price on Amazon"}, {"name": "Neckband earphones", "description": "Neckband earphones join the two buds with a flexible band that rests around the neck, connected by short wires. The band carries a larger battery than tiny earbuds can, so playback usually lasts much longer, and the buds can hang safely when not in use, reducing the risk of losing one. They suit travellers, office workers and callers who wear earphones all day. Look for a light, comfortable band that does not dig in, magnetic buds that pause or power down together, reliable battery support, and clear controls for calls and volume.", "modelTitle": "Oneplus Bullets Z2 Bluetooth Wireless in Ear Earphones with Mic, Bombastic Bass - 12.4 mm Drivers, 10 Mins Charge - 20 Hrs Music, 30 Hrs Battery Life, IP55 Dust and Water Resistant (Magico Black)", "image": "https://m.media-amazon.com/images/I/51UhwaQXCpL._SL1500_.jpg", "imageAlt": "Oneplus Bullets Z2 Bluetooth Wireless in Ear Earphones with Mic, Bombastic Bass - 12.4 mm Drivers, 10 Mins Charge - 20 Hrs Music, 30 Hrs Battery Life, IP55 Dust and Water Resistant (Magico Black) — Neckband earphones earphones", "linkUrl": "https://www.amazon.in/dp/B09TVVGXWS?tag=visitbest-21", "linkLabel": "Check price on Amazon"}, {"name": "Workout earbuds", "description": "Workout earbuds are built to stay in place and survive sweat during running, gym training and outdoor exercise. A secure fit matters most: shaped housings, fins or hooks and the right tip size stop buds working loose when you move. Always check the exact IP rating in the listing, because that number, not marketing words, tells you how much sweat and splash protection you actually get. Look for easy cleaning, controls that work with sweaty hands, and a case you can wipe down. Dry or wipe buds as the maker advises after sessions.", "modelTitle": "boAt Airdopes 141 Elite ANC, ANC(~35dB), 4Mics ENx Tech, 42H Battery, Fast Charge,Stream Ad Free Music via App Support, IPX5, Bluetooth Earbuds, TWS Ear Buds Wireless Earphones with mic (Green)", "image": "https://m.media-amazon.com/images/I/412SB4Ud69L.jpg", "imageAlt": "boAt Airdopes 141 Elite ANC, ANC(~35dB), 4Mics ENx Tech, 42H Battery, Fast Charge,Stream Ad Free Music via App Support, IPX5, Bluetooth Earbuds, TWS Ear Buds Wireless Earphones with mic (Green) — Workout earbuds earphones", "linkUrl": "https://www.amazon.in/dp/B0F5BGTXGG?tag=visitbest-21", "linkLabel": "Check price on Amazon"}, {"name": "Call-first earbuds", "description": "Call-first earbuds are designed around the microphone rather than music alone. Multi-microphone arrays and environmental noise cancellation processing try to isolate your voice from traffic, wind and crowd noise, so the other person hears speech instead of surroundings. They suit professionals, drivers and anyone who takes frequent calls outdoors or in busy homes. Look for a stable Bluetooth connection that does not drop mid-call, microphones working on both buds, and clear voice pickup in demos or reviews. Test voice quality on your own phone, network and usual calling places after buying.", "modelTitle": "Noise Buds VS106 Truly Wireless in-Ear Earbuds with 50H Playtime, Quad Mic with ENC, Instacharge(10 min=200 min),Ultra-Low Latency(up to 40ms), 10mm Driver, and BT v5.3 (Sky Blue)", "image": "https://m.media-amazon.com/images/I/31JcVCVZ-lL.jpg", "imageAlt": "Noise Buds VS106 Truly Wireless in-Ear Earbuds with 50H Playtime, Quad Mic with ENC, Instacharge(10 min=200 min),Ultra-Low Latency(up to 40ms), 10mm Driver, and BT v5.3 (Sky Blue) — Call-first earbuds earphones", "linkUrl": "https://www.amazon.in/dp/B0C4142ZZR?tag=visitbest-21", "linkLabel": "Check price on Amazon"}, {"name": "Balanced everyday pair", "description": "A balanced everyday pair aims for even, natural tuning rather than exaggerated bass or sharp treble, so music, podcasts and videos all sound clear without fatigue. It suits listeners who use one pair for everything: commuting, work, travel and calls at home. Look for tuning you can adjust with EQ presets or an app, comfortable tips for long wear, dependable battery and case charging, and a genuine brand warranty with accessible service support in India. Check that replacement tips and support are available, because a balanced pair is usually kept for years.", "modelTitle": "OnePlus Nord Buds 2r True Wireless in Ear Earbuds with Mic, 12.4mm Drivers, Playback:Upto 38hr case,4-Mic Design, IP55 Rating [ Misty Grey ]", "image": "https://m.media-amazon.com/images/I/51oMWaW7tKL._SL1500_.jpg", "imageAlt": "OnePlus Nord Buds 2r True Wireless in Ear Earbuds with Mic, 12.4mm Drivers, Playback:Upto 38hr case,4-Mic Design, IP55 Rating [ Misty Grey ] — Balanced everyday pair earphones", "linkUrl": "https://www.amazon.in/dp/B0C8J7W6PL?tag=visitbest-21", "linkLabel": "Check price on Amazon"}] };
+}
+
+function archiveCardFromPost(item) {
+  return { href: urlFor(item.slug), title: decodeEntities(item.title?.rendered), summary: truncate(item.excerpt?.rendered || item.content?.rendered), date: item.date, image: itemImage(item), category: taxonomyLabel(item)[0] || "Guide" };
+}
+
+function archiveCardFromLegacy(item) {
+  return { href: urlFor(item.slug), title: item.title, summary: item.summary, date: buildDate, image: editorialImage(item.imageCluster, item.slug), category: item.category };
+}
+
+function renderArchive({ title, description, cards, currentPath, page = 1, totalPages = 1, basePath = "" }) {
+  const pageHref = (number) => number === 1 ? routePath(basePath) : routePath(`${basePath}/page/${number}`);
+  const windowNumbers = [...new Set([1, totalPages, ...Array.from({ length: 9 }, (_, i) => page - 4 + i)].filter((n) => n >= 1 && n <= totalPages))].sort((a, b) => a - b);
+  const windowLinks = windowNumbers.map((number, index) => {
+    const gap = index > 0 && number - windowNumbers[index - 1] > 1 ? `<span class="gap" aria-hidden="true">…</span>` : "";
+    const link = number === page ? `<span class="current" aria-current="page">${number}</span>` : `<a href="${pageHref(number)}">${number}</a>`;
+    return gap + link;
+  }).join("");
+  const prevLink = page > 1 ? `<a href="${pageHref(page - 1)}" rel="prev">← Prev</a>` : "";
+  const nextLink = page < totalPages ? `<a href="${pageHref(page + 1)}" rel="next">Next →</a>` : "";
+  const pagination = totalPages > 1 ? `<nav class="pagination" aria-label="Archive pages">${prevLink}${windowLinks}${nextLink}</nav>` : "";
+  const body = `<div class="container">${breadcrumbs([{ label: title }])}<section class="page-intro"><p class="eyebrow">VisitBest archive</p><h1>${escapeHtml(title)}</h1><p>${escapeHtml(description)}</p></section><section class="section"><div class="archive-toolbar"><span>${cards.length} guide${cards.length === 1 ? "" : "s"} on this page</span>${currentPath === "/business/" || currentPath.startsWith("/business/page/") ? `<form><input data-directory-filter type="search" placeholder="Filter this page" aria-label="Filter this page"><span data-directory-count>${cards.length} shown</span></form>` : ""}</div><div class="card-grid">${cards.length ? cards.map((card) => renderCard({ ...card, ...(currentPath.startsWith("/business") ? { href: card.href, category: card.category || "Business" } : {}) })).join("") : `<div class="takeaway"><h2>No guides here yet</h2><p>Browse the latest guides or use site search to find a related topic.</p><a class="button button-primary" href="/search/">Search VisitBest</a></div>`}</div>${pagination}</section></div>`;
+  return renderPage({ title, description, canonical: currentPath, currentPath, body, schema: { "@context": "https://schema.org", "@type": "CollectionPage", name: title, description, url: new URL(routePath(currentPath), origin).href } });
+}
+
+function businessCard(item) {
+  const categoriesForItem = taxonomyLabel(item, "business_category");
+  const locationsForItem = taxonomyLabel(item, "business_location");
+  return { href: urlFor(item.slug, "/business"), title: decodeEntities(item.title?.rendered), summary: truncate(item.excerpt?.rendered || item.content?.rendered, 160), date: item.date, image: itemImage(item), category: categoriesForItem[0] || locationsForItem[0] || "Business" };
+}
+
+const SENTENCE_ABBREVIATIONS = ["No.", "Nos.", "Ltd.", "Pvt.", "Dr.", "St.", "Co.", "Inc.", "Cantt.", "Dist.", "Bros.", "Opp.", "Sr.", "Nr.", "Bldg.", "Flr.", "e.g.", "i.e.", "U.S."];
+
+function maskSentencePunctuation(text) {
+  let masked = String(text || "")
+    .replace(/\b(?:[A-Z]\.){2,}/g, (match) => match.replaceAll(".", ""))
+    .replace(/(\d)\.(\d)/g, "$1$2")
+    .replace(/\b(Nos?|Opp)\./gi, (match) => match.replace(".", ""));
+  for (const abbr of SENTENCE_ABBREVIATIONS) masked = masked.replaceAll(abbr, abbr.replaceAll(".", ""));
+  return masked;
+}
+
+function splitSentences(text, keepMasked = false) {
+  return maskSentencePunctuation(text)
+    .split(/(?<=[.!?])\s+(?=[A-Z0-9“"'])/)
+    .map((part) => (keepMasked ? part : part.replaceAll("", ".")).trim())
+    .filter(Boolean);
+}
+
+// Extracts the structured facts a business profile already states in its
+// stored description, so the template can render them faithfully (facts
+// table, services list, FAQs) instead of leaving them buried in prose.
+// Every value traces to the stored content; missing fields stay null.
+function businessFacts(item) {
+  const text = stripHtml(item?.content?.rendered || "");
+  const grab = (pattern) => text.match(pattern)?.[1]?.trim().replace(/\s+/g, " ") || null;
+  const facts = { workstreams: [] };
+  facts.ownership = grab(/Ownership is described as ([^.]+)\./i);
+  const workforceSentence = splitSentences(text).find((sentence) => /workforce/i.test(sentence)) || "";
+  facts.workforce = workforceSentence.match(/in the ([0-9][0-9,]*\s*[–-]\s*[0-9][0-9,]*) range/i)?.[1]?.trim() || null;
+  facts.descriptor = grab(/descriptors emphasise ([^,]+),/i);
+  const workstreamText = grab(/typically covers[^.]*?for example ([^.]+)\./i);
+  facts.workstreams = workstreamText
+    ? workstreamText.split(/,\s*/).map((part) => part.replace(/^(?:or|and)\s+/i, "").trim()).filter(Boolean)
+    : [];
+  facts.jobs = grab(/Common job-profile fit signals for this listing: ([^.]+)\./i);
+  const stars = grab(/centres near ([0-9.]+) stars/i) || grab(/shows about ([0-9.]+) stars/i);
+  facts.rating = stars ? `About ${stars} stars (Google Maps visitor feedback)` : null;
+  facts.hub = grab(/(Operates in [^.]+hub[^.]*\.|Based in [A-Za-z][^,]*, a major centre[^.]*\.)/i);
+  facts.address = null;
+  const addressPatterns = [
+    /listed address is ([^.;]+)\./i,
+    /point to ([^.;]+?) as the working base/i,
+    /associated with premises at ([^.;]+)\./i,
+    /concrete operating address at:? ([^.;]+)\./i,
+  ];
+  addressSearch: for (const sentence of splitSentences(text, true)) {
+    for (const pattern of addressPatterns) {
+      const candidate = sentence.match(pattern)?.[1]?.replaceAll("", ".").trim().replace(/\s+/g, " ").replace(/^[,: ]+|[,: ]+$/g, "");
+      if (candidate && candidate.length >= 12 && candidate.length <= 220 && (candidate.includes(",") || candidate.length >= 25) && !/not have|missing|website|phone|email/i.test(candidate)) {
+        facts.address = candidate;
+        break addressSearch;
+      }
+    }
+  }
+  return facts;
+}
+
+function renderBusinessDetail(item) {
+  const categoryTermsForItem = taxonomyTerms(item, "business_category");
+  const locationTermsForItem = taxonomyTerms(item, "business_location");
+  const categoriesForItem = categoryTermsForItem.map((term) => term.name);
+  const locationsForItem = locationTermsForItem.map((term) => term.name);
+  const title = decodeEntities(item.title?.rendered);
+  const description = truncate(item.excerpt?.rendered || item.content?.rendered, 156);
+  const category = categoriesForItem[0] || "Business";
+  const categoryTerm = categoryTermsForItem[0] || null;
+  const city = locationsForItem[0] || "";
+  const cityTerm = locationTermsForItem[0] || null;
+  const stateTerm = cityTerm?.parent ? businessLocationById.get(String(cityTerm.parent)) : null;
+  const stateName = stateTerm && stateTerm.name !== city ? stateTerm.name : "";
+  const facts = businessFacts(item);
+
+  // Defensive cleanup of any residual stored-data artifact fragments.
+  const aboutHtml = localizeHtml(item.content?.rendered || `<p>${escapeHtml(truncate(item.excerpt?.rendered || "Business directory profile.", 800))}</p>`)
+    .replace(/, listed in (?:’|&#8217;|&rsquo;)s India pharma\./gi, ".")
+    .replace(/>([^<]*)</g, (match, segment) => `>${segment.replace(/\.\.(?!\.)/g, ".")}<`);
+
+  const sameCategory = business.filter((entry) => entry.slug !== item.slug && categoryTerm && (entry.business_category || []).includes(categoryTerm.id));
+  const sameCity = business.filter((entry) => entry.slug !== item.slug && cityTerm && (entry.business_location || []).includes(cityTerm.id));
+  const peersSameBoth = sameCategory.filter((entry) => cityTerm && (entry.business_location || []).includes(cityTerm.id));
+
+  const sections = [];
+  sections.push(`<h2>About ${escapeHtml(title)}</h2>${aboutHtml}`);
+  sections.push(renderAdBanner("intro"));
+
+  if (facts.descriptor || facts.workstreams.length) {
+    const lead = [`${escapeHtml(title)} is listed under ${escapeHtml(category)}${city ? ` in ${escapeHtml(city)}` : ""}.`];
+    if (facts.descriptor) lead.push(`Its published profile states a focus on ${escapeHtml(facts.descriptor)}.`);
+    if (facts.ownership) lead.push(`Ownership is described as ${escapeHtml(facts.ownership)}.`);
+    const bullets = facts.workstreams.length ? `<ul>${facts.workstreams.map((entry) => `<li>${escapeHtml(entry.charAt(0).toUpperCase() + entry.slice(1))}</li>`).join("")}</ul>` : "";
+    const jobs = facts.jobs ? `<p>Job profiles commonly associated with this listing include ${escapeHtml(facts.jobs)}.</p>` : "";
+    sections.push(`<h2>Services and focus</h2><p>${lead.join(" ")}</p>${bullets}${jobs}`);
+  }
+
+  const factRows = [
+    ["Business name", title],
+    ["Category", category],
+    ["Location", [city, stateName].filter(Boolean).join(", ")],
+    ["Listed address", facts.address],
+    ["Ownership", facts.ownership],
+    ["Workforce (public estimate)", facts.workforce ? `${facts.workforce} employees` : null],
+    ["Google Maps feedback", facts.rating],
+    ["Listed focus", facts.descriptor],
+  ].filter(([, value]) => value);
+  if (factRows.length) sections.push(`<h2>Key facts</h2><div class="table-scroll"><table class="comparison-table facts-table"><tbody>${factRows.map(([label, value]) => `<tr><th scope="row">${escapeHtml(label)}</th><td>${escapeHtml(value)}</td></tr>`).join("")}</tbody></table></div>`);
+
+  if (city && categoryTerm) {
+    const contextBits = [];
+    const inCategory = sameCategory.length + 1;
+    const inBoth = peersSameBoth.length + 1;
+    contextBits.push(`<p>VisitBest lists ${inCategory} ${escapeHtml(category)} profile${inCategory === 1 ? "" : "s"} in its business directory, including ${inBoth} in ${escapeHtml(city)}${stateName ? `, ${escapeHtml(stateName)}` : ""}. Across all categories, ${sameCity.length + 1} businesses are listed in ${escapeHtml(city)}.</p>`);
+    if (facts.hub) contextBits.push(`<p>${escapeHtml(facts.hub)}</p>`);
+    if (peersSameBoth.length) {
+      const peerLinks = peersSameBoth.slice(0, 4).map((entry) => `<a href="${urlFor(entry.slug, "/business")}">${escapeHtml(decodeEntities(entry.title?.rendered).replace(/\.+$/, ""))}</a>`);
+      contextBits.push(`<p>Other ${escapeHtml(category)} listed in ${escapeHtml(city)} include ${peerLinks.join(", ")}.</p>`);
+    }
+    sections.push(`<h2>${escapeHtml(category)} in ${escapeHtml(city)}</h2>${contextBits.join("")}`);
+  }
+
+  const faqs = [];
+  faqs.push([`Where is ${title} located?`, facts.address ? `Its listed address is ${facts.address}${facts.address.includes(city) || (stateName && facts.address.includes(stateName)) ? "" : `, ${city}${stateName ? `, ${stateName}` : ""}`}.` : `${title} is listed in ${city}${stateName ? `, ${stateName}` : ""}. Its public directory profile does not include a full street address.`]);
+  if (facts.descriptor || facts.workstreams.length) faqs.push([`What does ${title} do?`, `${title} is listed as ${category} in ${city}.${facts.descriptor ? ` Its published descriptors emphasise ${facts.descriptor}.` : ""}${facts.workstreams.length ? ` Its service profile typically covers ${facts.workstreams.slice(0, 4).join(", ")}.` : ""}`]);
+  if (facts.workforce) faqs.push([`How large is ${title}?`, `Public workforce listings estimate ${title}'s workforce in the ${facts.workforce} range.${facts.ownership ? ` Ownership is described as ${facts.ownership}.` : ""}`]);
+  faqs.push(["How can I verify this listing?", "Directory information is compiled from public sources. Verify the current address, services, and contact details with the organisation directly before a commercial decision."]);
+  sections.push(`<h2>Frequently asked questions</h2><div class="faq">${faqs.map(([question, answer]) => `<details><summary>${escapeHtml(question)}</summary><p>${escapeHtml(answer)}</p></details>`).join("")}</div>`);
+
+  const prepared = addHeadingIds(sections.join(""));
+
+  const relatedBusinesses = [...peersSameBoth, ...sameCategory.filter((entry) => !peersSameBoth.includes(entry)), ...sameCity.filter((entry) => !sameCategory.includes(entry))].slice(0, 6);
+  const related = relatedBusinesses.length
+    ? `<section class="related"><h2>Related businesses</h2><div class="card-grid">${relatedBusinesses.map((entry) => renderCard(businessCard(entry))).join("")}</div></section>`
+    : renderRelated(relatedEntries("", categoriesForItem[0] || ""));
+
+  const sidebarRows = [
+    ["Category", category],
+    ["Location", [city, stateName].filter(Boolean).join(", ")],
+    ["Ownership", facts.ownership],
+    ["Workforce", facts.workforce ? `${facts.workforce} employees (public estimate)` : null],
+    ["Maps feedback", facts.rating],
+  ].filter(([, value]) => value);
+  const sidebar = `<aside class="toc-card business-facts"><h2>Key facts</h2><dl class="fact-list">${sidebarRows.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`).join("")}</dl><h2>On this page</h2><nav aria-label="Table of contents">${prepared.headings.map((heading) => `<a href="#${heading.id}" data-level="${heading.level}">${escapeHtml(heading.text)}</a>`).join("")}</nav></aside>`;
+
+  const body = `${breadcrumbs([{ href: "/business/", label: "Business directory" }, { label: title }])}<div class="article-layout"><article class="article-card"><p class="eyebrow">Business directory profile</p><h1 class="article-title">${escapeHtml(title)}</h1><p class="article-dek">${escapeHtml(description)}</p><div class="article-meta"><span>${categoryTermsForItem.map((term) => `<a class="pill" href="/business-category/${term.slug}/">${escapeHtml(term.name)}</a>`).join(" ")}</span><span>${locationTermsForItem.map((term) => `<a href="/business-location/${term.slug}/">${escapeHtml(term.name)}</a>`).join(", ")}</span><span>Updated <strong>${escapeHtml(humanDate(item.modified || item.date))}</strong></span></div>${renderMobileToc(prepared.headings)}<div class="prose">${prepared.html}</div><div class="source-note">Directory information is compiled from public sources and should be verified with the organisation before a commercial decision.</div>${renderAuthor()}${renderAdBanner("outro")}${related}</article>${sidebar}</div>`;
+  return renderPage({ title, description, canonical: urlFor(item.slug, "/business"), currentPath: urlFor(item.slug, "/business"), body, schema: { "@context": "https://schema.org", "@type": "ProfilePage", name: title, description, url: new URL(urlFor(item.slug, "/business"), origin).href } });
+}
+
+function renderHome() {
+  const eventArticleCard = {
+    href: "/event-management-companies-in-india/",
+    title: "Top 20 Event Management Companies in India (2026): Verified Directory",
+    summary: "Compare the top 20 event management companies in India by verified services, establishment, pricing transparency, and official websites.",
+    date: "2026-10-10",
+    image: { src: "/assets/event-management-companies-in-india/hero.jpg", alt: "Top 20 Event Management Companies in India" },
+    category: "Business"
+  };
+  const latest = [eventArticleCard, ...[...posts].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 5).map(archiveCardFromPost)];
+  const restored = legacyPages.filter((item) => !["tools", "privacy-policy"].includes(item.slug)).slice(0, 6).map(archiveCardFromLegacy);
+  const categoryNames = [...new Set([...categories.map((item) => item.name), ...legacyPages.map((item) => item.category)])].filter((name) => name && name !== "Site").slice(0, 10);
+  const categoryCards = categoryNames.map((name) => {
+    const count = posts.filter((item) => taxonomyLabel(item).includes(name)).length + legacyPages.filter((item) => item.category === name).length;
+    return `<a class="category-card" href="/category/${slugify(name)}/"><strong>${escapeHtml(name)}</strong><span>${count} guide${count === 1 ? "" : "s"}</span></a>`;
+  }).join("");
+  const body = `<div class="container"><section class="hero"><p class="eyebrow">Explore best in India</p><h1>Trusted guides on brands, products &amp; more</h1><p>Expert-curated listicles to help you discover the best watches, appliances, companies, culture, and more across India.</p><div class="button-row"><a class="button button-primary" href="#vb-latest-posts">Browse latest guides</a><a class="button button-quiet" href="#vb-category-browse">View categories</a></div><div class="pill-row"><a class="pill" style="background:#0d47a1;color:#fff;border-color:#0d47a1;" href="/event-management-companies-in-india/">🎪 Event Companies Directory</a><a class="pill" style="background:#ff3344;color:#fff;border-color:#ff3344;" href="/bigg-boss-20-voting/">🔥 Bigg Boss 20 Live Poll</a><a class="pill" href="/bigg-boss-20-guide/">📖 Season Guide</a><a class="pill" href="/bigg-boss-20-contestants/">👥 BB20 Contestants</a><a class="pill" href="/bigg-boss-20-web-stories/">📱 Web Stories</a>${categoryNames.slice(0, 5).map((name) => `<a class="pill" href="/category/${slugify(name)}/">${escapeHtml(name)}</a>`).join("")}</div></section><section class="section" id="vb-latest-posts"><div class="section-heading"><div><p class="eyebrow">Fresh content</p><h2>Latest posts</h2><p>Recently published guides and listicles from VisitBest.</p></div><a class="section-link" href="/search/">View all posts</a></div><div class="card-grid">${latest.map(renderCard).join("")}</div></section><section class="section" id="vb-restored-posts"><div class="section-heading"><div><p class="eyebrow">Restored from your traffic report</p><h2>More guides worth keeping</h2><p>Older and previously unlinked routes are live again, refreshed for clarity and easier comparison.</p></div><a class="section-link" href="/category/brands/">Browse guides</a></div><div class="card-grid">${restored.map(renderCard).join("")}</div></section><section class="section" id="vb-category-browse"><div class="section-heading"><div><p class="eyebrow">Discover</p><h2>Browse by category</h2><p>Jump into the topics that matter most to you.</p></div></div><div class="category-grid">${categoryCards}</div></section><section class="section directory-strip"><div class="directory-panel"><h3>Find a company by category or city</h3><p>Browse the VisitBest business directory with 700+ public profiles across pharmaceutical, construction, technology, and other sectors.</p><a class="button button-quiet" href="/business/">Open the directory</a></div><div class="directory-panel" style="background: var(--cream); color: var(--ink);"><h3 style="color:var(--ink);">Need a fast answer?</h3><p style="color:var(--muted);">Use site search to move from a broad topic to a focused guide.</p><a class="button button-primary" href="/search/">Search guides</a></div></section></div>`;
+  return renderPage({ title: "Visit-Best - Explore Best In India", description: "Trusted guides on brands, products, companies, culture, and more across India.", canonical: "/", currentPath: "/", body, schema: { "@context": "https://schema.org", "@type": "WebSite", name: "Visit-Best", url: `${origin}/`, potentialAction: { "@type": "SearchAction", target: `${origin}/search/?q={search_term_string}`, "query-input": "required name=search_term_string" } } });
+}
+
+function renderSearch() {
+  const searchIndex = [...posts.map((item) => ({ title: decodeEntities(item.title?.rendered), summary: truncate(item.excerpt?.rendered || item.content?.rendered), href: urlFor(item.slug), category: taxonomyLabel(item)[0] || "Guide" })), ...legacyPages.map((item) => ({ title: item.title, summary: item.summary, href: urlFor(item.slug), category: item.category })), ...business.map((item) => ({ title: decodeEntities(item.title?.rendered), summary: truncate(item.excerpt?.rendered || item.content?.rendered), href: urlFor(item.slug, "/business"), category: taxonomyLabel(item, "business_category")[0] || "Business" }))];
+  const body = `<div class="container search-page">${breadcrumbs([{ label: "Search" }])}<section class="page-intro"><p class="eyebrow">Find a guide</p><h1>Search VisitBest</h1><p>Search articles, restored guides, and business-directory profiles.</p></section><section class="section"><form class="search-form" id="search-form"><input id="search-query" name="q" type="search" placeholder="Try watches, pharma companies, chocolate…" aria-label="Search VisitBest"><button class="button button-primary" type="submit">Search</button></form><p class="search-result-count" id="search-count"></p><div class="search-results" id="search-results"></div></section></div><script>window.__VISITBEST_SEARCH__=${jsonLd(searchIndex)};</script>`;
+  return renderPage({ title: "Search VisitBest Guides", description: "Search VisitBest articles and business-directory profiles.", canonical: "/search/", currentPath: "/search/", body });
+}
+
+function renderRedirect(target, title = "VisitBest") {
+  const targetPath = routePath(target);
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(title)} moved to its current VisitBest page."><meta http-equiv="refresh" content="0;url=${targetPath}"><link rel="canonical" href="${new URL(targetPath, origin).href}"><script>location.replace(${JSON.stringify(targetPath)});</script></head><body><h1>${escapeHtml(title)}</h1><p>This VisitBest address moved to <a href="${targetPath}">${escapeHtml(title)}</a>.</p></body></html>`;
+}
+
+async function writeRoute(route, html) {
+  const normalized = routePath(route);
+  const target = normalized === "/" ? path.join(distDir, "index.html") : path.join(distDir, normalized.replace(/^\//, ""), "index.html");
+  await fs.mkdir(path.dirname(target), { recursive: true });
+  await fs.writeFile(target, html);
+}
+
+await fs.rm(distDir, { recursive: true, force: true });
+await fs.mkdir(distDir, { recursive: true });
+await fs.cp(publicDir, distDir, { recursive: true });
+
+await writeRoute("/", renderHome());
+
+for (const item of posts) {
+  const title = decodeEntities(item.title?.rendered);
+  const category = taxonomyLabel(item)[0] || "Guide";
+  await writeRoute(urlFor(item.slug), renderArticle({ slug: item.slug, title, summary: item.excerpt?.rendered || item.content?.rendered, html: localizeHtml(item.content?.rendered || ""), datePublished: item.date, dateModified: item.modified, category, image: itemImage(item) }));
+}
+
+for (const page of pages) {
+  const generated = fallbackForPage(page);
+  if (generated) {
+    await writeRoute(urlFor(page.slug), renderArticle({ slug: generated.slug, title: generated.title, summary: generated.summary, html: renderLegacyHtml(generated), datePublished: page.date, dateModified: buildDate, category: generated.category, image: editorialImage(generated.imageCluster, generated.slug), type: "article" }));
+  } else {
+    const title = decodeEntities(page.title?.rendered);
+    await writeRoute(urlFor(page.slug), renderArticle({ slug: page.slug, title, summary: page.excerpt?.rendered || page.content?.rendered, html: localizeHtml(page.content?.rendered || `<p>${escapeHtml(title)}</p>`), datePublished: page.date, dateModified: page.modified, category: null, type: "page", image: page.featured_media ? itemImage(page) : null }));
+  }
+}
+
+for (const entry of legacyPages) {
+  if (
+    entry.slug === "construction-companies-in-chandigarh" ||
+    entry.slug === "construction-companies-in-hyderabad" ||
+    entry.slug === "hottest-chinese-actors" ||
+    entry.slug === "lizards-species" ||
+    entry.slug === "most-beautiful-bollywood-actresses" ||
+    entry.slug === "best-cricket-bat-in-india" ||
+    entry.slug === "best-sites-to-watch-anime" ||
+    entry.slug === "beautiful-young-hollywood-actresses"
+  ) continue;
+  await writeRoute(urlFor(entry.slug), renderArticle({ slug: entry.slug, title: entry.title, summary: entry.summary, html: renderLegacyHtml(entry), datePublished: buildDate, dateModified: buildDate, category: entry.category === "Site" ? null : entry.category, image: editorialImage(entry.imageCluster, entry.slug), type: entry.type === "policy" ? "page" : "article" }));
+}
+
+for (const item of business) await writeRoute(urlFor(item.slug, "/business"), renderBusinessDetail(item));
+
+const postCards = posts.map(archiveCardFromPost);
+const legacyCards = legacyPages.filter((item) => !["privacy-policy", "tools"].includes(item.slug)).map(archiveCardFromLegacy);
+for (const category of categories) {
+  const cards = [...postCards.filter((card) => card.category === category.name), ...legacyCards.filter((card) => card.category === category.name)];
+  const totalPages = Math.max(1, Math.ceil(cards.length / 12));
+  for (let page = 1; page <= totalPages; page += 1) {
+    const current = page === 1 ? `/category/${category.slug}/` : `/category/${category.slug}/page/${page}/`;
+    await writeRoute(current, renderArchive({ title: category.name, description: `VisitBest ${category.name.toLowerCase()} guides, comparisons, and explainers.`, cards: cards.slice((page - 1) * 12, page * 12), currentPath: current, page, totalPages, basePath: `/category/${category.slug}` }));
+  }
+}
+
+const allLegacyCategoryNames = [...new Set(legacyCards.map((card) => card.category))].filter((name) => name && !categories.some((category) => category.name.toLowerCase() === name.toLowerCase()));
+for (const name of allLegacyCategoryNames) {
+  const cards = legacyCards.filter((card) => card.category === name);
+  const current = `/category/${slugify(name)}/`;
+  addRoute(current, { title: name, type: "archive" });
+  await writeRoute(current, renderArchive({ title: name, description: `VisitBest ${name.toLowerCase()} guides and explainers.`, cards, currentPath: current, basePath: current }));
+}
+
+for (const tag of tags) {
+  const cards = postCards.filter((card) => posts.find((item) => urlFor(item.slug) === card.href && item.tags?.includes(tag.id)));
+  const current = `/tag/${tag.slug}/`;
+  await writeRoute(current, renderArchive({ title: tag.name, description: `VisitBest guides tagged ${tag.name}.`, cards, currentPath: current, basePath: current }));
+}
+
+for (const term of businessCategories) {
+  const cards = business.filter((item) => item.business_category?.includes(term.id)).map(businessCard);
+  const current = `/business-category/${term.slug}/`;
+  await writeRoute(current, renderArchive({ title: term.name, description: `Browse VisitBest business-directory profiles in ${term.name.toLowerCase()}.`, cards, currentPath: current, basePath: current }));
+}
+for (const term of businessLocations) {
+  const cards = business.filter((item) => item.business_location?.includes(term.id)).map(businessCard);
+  const current = `/business-location/${term.slug}/`;
+  await writeRoute(current, renderArchive({ title: term.name, description: `Browse VisitBest business-directory profiles in ${term.name}.`, cards, currentPath: current, basePath: current }));
+}
+
+// The supplied traffic export contains several historical taxonomy URLs that
+// are no longer present in the current WordPress taxonomy response. Keep those
+// addresses live as useful empty archives instead of allowing them to 404.
+const trafficTaxonomyRoutes = [...new Set(landingCsv.split(/\r?\n/).slice(10).map((line) => line.split(",")[0]?.trim()).filter(Boolean).map(routePath))];
+const taxonomyKinds = [
+  { prefix: "/tag/", known: new Set(tags.map((term) => term.slug)), title: (slug) => `Tag: ${labelFromSlug(slug)}`, description: (slug) => `VisitBest guides tagged ${labelFromSlug(slug)}.` },
+  { prefix: "/business-category/", known: new Set(businessCategories.map((term) => term.slug)), title: (slug) => labelFromSlug(slug), description: (slug) => `Browse VisitBest business-directory profiles in ${labelFromSlug(slug).toLowerCase()}.` },
+  { prefix: "/business-location/", known: new Set(businessLocations.map((term) => term.slug)), title: (slug) => labelFromSlug(slug), description: (slug) => `Browse VisitBest business-directory profiles in ${labelFromSlug(slug)}.` },
+];
+for (const kind of taxonomyKinds) {
+  for (const current of trafficTaxonomyRoutes.filter((route) => route.startsWith(kind.prefix) && route.split("/").filter(Boolean).length === 2)) {
+    const slug = current.split("/").filter(Boolean).at(-1);
+    if (kind.known.has(slug)) continue;
+    const title = kind.title(slug);
+    addRoute(current, { title, type: "archive" });
+    await writeRoute(current, renderArchive({ title, description: kind.description(slug), cards: [], currentPath: current, basePath: current }));
+  }
+}
+
+for (let page = 1; page <= 72; page += 1) {
+  const current = page === 1 ? "/business/" : `/business/page/${page}/`;
+  const cards = business.slice((page - 1) * 10, page * 10).map(businessCard);
+  await writeRoute(current, renderArchive({ title: page === 1 ? "Business Directory" : `Business Directory · Page ${page}`, description: "Explore public business profiles by category and city, with practical verification notes before you contact a company.", cards, currentPath: current, page, totalPages: 72, basePath: "/business" }));
+}
+
+for (let i = 0; i < calculatorPages.length; i++) {
+  const item = calculatorPages[i];
+  const other = calculatorPages[1 - i];
+  const body = renderCalculatorBody(item, other, calculatorCss, calculatorClient.toString());
+  const html = renderPage({
+    title: `${item.title} - VisitBest`,
+    description: item.meta,
+    canonical: urlFor(item.slug),
+    currentPath: urlFor(item.slug),
+    body,
+    schema: calculatorSchema(item),
+  });
+  await writeRoute(urlFor(item.slug), html);
+}
+
+for (const poll of bbPolls) {
+  const body = `${renderBiggBossPollPage(poll)}<style>${bbCss}</style><script>${bbClient}</script>`;
+  const html = renderPage({
+    title: `${poll.title} - VisitBest`,
+    description: poll.metaDesc,
+    canonical: urlFor(poll.slug),
+    currentPath: urlFor(poll.slug),
+    body,
+    schema: biggBossSchema(poll),
+    image: poll.image || null,
+  });
+  await writeRoute(urlFor(poll.slug), html);
+}
+
+const bbContestantsBody = `${renderBiggBossContestantsPage()}<style>${bbCss}</style><script>${bbClient}</script>`;
+await writeRoute(urlFor("bigg-boss-20-contestants"), renderPage({
+  title: "Bigg Boss 20 Contestants List with Photos, Age, Bio & Journey So Far - VisitBest",
+  description: "Complete list of all 18 Bigg Boss Season 20 contestants with photos, age, hometown, occupation, bios and their journey so far.",
+  canonical: urlFor("bigg-boss-20-contestants"),
+  currentPath: urlFor("bigg-boss-20-contestants"),
+  body: bbContestantsBody,
+  schema: biggBossSchema(null, true, false),
+  image: "/assets/bb20-new/covers/bigg-boss-20-contestants.jpg",
+}));
+
+const bbRulesBody = `${renderBiggBossRulesPage()}<style>${bbCss}</style><script>${bbClient}</script>`;
+await writeRoute(urlFor("bigg-boss-20-voting-rules"), renderPage({
+  title: "Bigg Boss 20 Voting Rules & Timings — How Official Voting Works - VisitBest",
+  description: "How official Bigg Boss 20 voting works on JioCinema / JioHotstar — voting rules, timings and the elimination schedule. VisitBest polls are open fan polls.",
+  canonical: urlFor("bigg-boss-20-voting-rules"),
+  currentPath: urlFor("bigg-boss-20-voting-rules"),
+  body: bbRulesBody,
+  schema: biggBossSchema(null, false, true),
+  image: "/assets/bb20-new/covers/bigg-boss-20-voting-rules.jpg",
+}));
+
+await writeRoute("/search/", renderSearch());
+await writeRoute("/author/admin/", renderRedirect("/about/", "VisitBest Editorial Team"));
+await writeRoute("/cgpa-to-percentage-calculator/", renderRedirect("/wam-to-gpa-calculator/", "WAM to GPA Calculator"));
+
+const searchIndex = [
+  ...posts.map((item) => ({ title: decodeEntities(item.title?.rendered), summary: truncate(item.excerpt?.rendered || item.content?.rendered), href: urlFor(item.slug), category: taxonomyLabel(item)[0] || "Guide" })),
+  { title: "Top 20 Event Management Companies in India (2026): Verified Directory", summary: "Compare the top 20 event management companies in India by verified services, establishment, pricing transparency, and official websites.", href: urlFor("event-management-companies-in-india"), category: "Business" },
+  ...legacyPages.filter((item) => item.slug !== "hottest-chinese-actors").map((item) => ({ title: item.title, summary: item.summary, href: urlFor(item.slug), category: item.category })),
+  { title: "Hottest Chinese Actors in 2026: Top 25 Most Attractive & Popular C-Drama Stars", summary: "Discover the hottest Chinese actors of 2026, ranked by popularity, charisma, style, screen presence and fan appeal. Complete profiles for 25 stars.", href: urlFor("hottest-chinese-actors"), category: "Entertainment" },
+  ...business.map((item) => ({ title: decodeEntities(item.title?.rendered), summary: truncate(item.excerpt?.rendered || item.content?.rendered), href: urlFor(item.slug, "/business"), category: taxonomyLabel(item, "business_category")[0] || "Business" })),
+  ...calculatorPages.map((item) => ({ title: item.title, summary: item.meta, href: urlFor(item.slug), category: "Calculator" })),
+  ...bbPolls.map((item) => ({ title: item.h1, summary: item.metaDesc, href: urlFor(item.slug), category: "Bigg Boss 20" })),
+  { title: "Bigg Boss 20 Contestants List with Photos & Bio", summary: "Complete list of all 18 Bigg Boss Season 20 contestants with photos, bios and journey so far.", href: urlFor("bigg-boss-20-contestants"), category: "Bigg Boss 20" },
+  { title: "Bigg Boss 20 Voting Rules & Timings", summary: "How official Bigg Boss 20 voting works on JioCinema / JioHotstar — rules and timings.", href: urlFor("bigg-boss-20-voting-rules"), category: "Bigg Boss 20" },
+  ...(contentPackManifest.pages || []).map((p) => ({
+    title: p.title,
+    summary: p.kind === "article" ? `${p.title} research guide and dataset.` : `${p.title} directory hub.`,
+    href: p.path,
+    category: p.path.startsWith("/construction-companies") ? "Construction" : "Education",
+  })),
+];
+await fs.writeFile(path.join(distDir, "search-index.json"), `${JSON.stringify(searchIndex)}\n`);
+
+// ==== BEGIN fast-indexing patch: Google News sitemap (build-time) ====
+// buildNewsSitemap() writes dist/sitemap-news.xml at build time: every post
+// (content/source/posts.json) and every web story (public/web-stories/*/index.html)
+// published within 48 hours of the build, in Google News sitemap format.
+// Date sources: posts -> posts.json `date` (site-local IST, +05:30 pinned in code);
+// stories -> each story file's JSON-LD `datePublished` (fallback: <lastmod> in
+// public/sitemap-bigg-boss-20-new.xml). Titles: post title / <amp-story> title attr.
+async function buildNewsSitemap() {
+  const NEWS_WINDOW_MS = 48 * 60 * 60 * 1000; // Google News sitemaps: last 2 days only
+  const now = Date.now();
+  const cutoff = now - NEWS_WINDOW_MS;
+  const entries = [];
+  const toMs = (value) => {
+    if (!value) return NaN;
+    const s = String(value).trim();
+    // posts.json dates are site-local (IST) without an offset; pin them to
+    // +05:30 so the 48-hour window is identical on any build machine.
+    const iso = /([+-]\d{2}:?\d{2}|Z)$/.test(s) ? s : `${s}+05:30`;
+    return Date.parse(iso);
+  };
+  const toIso = (value) => {
+    const s = String(value).trim();
+    return /([+-]\d{2}:?\d{2}|Z)$/.test(s) ? s : `${s}+05:30`;
+  };
+  // --- Articles: content/source/posts.json (already loaded as `posts`) ---
+  for (const item of posts) {
+    if (item.status && item.status !== "publish") continue;
+    const ms = toMs(item.date);
+    if (!Number.isFinite(ms) || ms < cutoff || ms > now + 5 * 60 * 1000) continue;
+    entries.push({
+      loc: new URL(urlFor(item.slug), origin).href,
+      date: toIso(item.date),
+      ms,
+      title: decodeEntities(item.title?.rendered || item.slug),
+    });
+  }
+  // --- Web Stories: public/web-stories/<slug>/index.html ---
+  // Per-story date source: the story file's own JSON-LD `datePublished`
+  // (fallback: the story's <lastmod> in public/sitemap-bigg-boss-20-new.xml).
+  // Title source: the <amp-story> `title` attribute (fallback: JSON-LD headline).
+  const lastmodBySlug = new Map();
+  try {
+    const bbSitemap = await fs.readFile(path.join(publicDir, "sitemap-bigg-boss-20-new.xml"), "utf8");
+    for (const m of bbSitemap.matchAll(/<loc>https:\/\/visitbest\.in\/web-stories\/([^/<]+)\/<\/loc><lastmod>([^<]+)<\/lastmod>/g)) {
+      lastmodBySlug.set(m[1], m[2]);
+    }
+  } catch { /* sitemap is only a fallback; ignore if unreadable */ }
+  let storyDirs = [];
+  try {
+    storyDirs = (await fs.readdir(path.join(publicDir, "web-stories"), { withFileTypes: true }))
+      .filter((d) => d.isDirectory())
+      .map((d) => d.name);
+  } catch { /* no stories directory: news sitemap will hold posts only */ }
+  for (const slug of storyDirs) {
+    let html = "";
+    try {
+      html = await fs.readFile(path.join(publicDir, "web-stories", slug, "index.html"), "utf8");
+    } catch { continue; }
+    const dp = html.match(/"datePublished"\s*:\s*"([^"]+)"/);
+    const rawDate = dp ? dp[1] : (lastmodBySlug.has(slug) ? `${lastmodBySlug.get(slug)}T00:00:00` : null);
+    if (!rawDate) continue;
+    const ms = toMs(rawDate);
+    if (!Number.isFinite(ms) || ms < cutoff || ms > now + 5 * 60 * 1000) continue;
+    const storyTag = html.match(/<amp-story\b[^>]*>/s);
+    const titleAttr = storyTag ? storyTag[0].match(/\btitle="([^"]+)"/) : null;
+    const headline = html.match(/"headline"\s*:\s*"([^"]+)"/);
+    const title = decodeEntities(titleAttr ? titleAttr[1] : (headline ? headline[1] : slug));
+    entries.push({ loc: `${origin}/web-stories/${slug}/`, date: toIso(rawDate), ms, title });
+  }
+  entries.sort((a, b) => b.ms - a.ms);
+  const body = entries.slice(0, 1000).map((e) =>
+    `<url><loc>${escapeHtml(e.loc)}</loc><news:news><news:publication><news:name>VisitBest</news:name><news:language>en</news:language></news:publication><news:publication_date>${escapeHtml(e.date)}</news:publication_date><news:title>${escapeHtml(e.title)}</news:title></news:news></url>`
+  ).join("\n");
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${body}\n</urlset>\n`;
+  await fs.writeFile(path.join(distDir, "sitemap-news.xml"), xml);
+}
+await buildNewsSitemap();
+// ==== END fast-indexing patch: Google News sitemap ====
+
+const xml = [...canonicalRoutes].sort().map((route) => {
+  const meta = routeMeta.get(route);
+  const lastmod = meta?.dateModified || buildDate;
+  return `<url><loc>${escapeHtml(new URL(route, origin).href)}</loc><lastmod>${lastmod.slice(0, 10)}</lastmod></url>`;
+}).join("");
+await fs.writeFile(path.join(distDir, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${xml}</urlset>\n`);
+// (fast-indexing patch: sitemap-news.xml added to the generated robots.txt)
+await fs.writeFile(path.join(distDir, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\nSitemap: ${origin}/sitemap-bigg-boss-20-new.xml\nSitemap: ${origin}/sitemap-news.xml\n`);
+await fs.writeFile(path.join(distDir, "ads.txt"), `google.com, pub-6008816938247526, DIRECT, f08c47fec0942fa0\n`);
+await fs.writeFile(path.join(distDir, "404.html"), renderPage({ title: "Page not found · VisitBest", description: "The VisitBest page could not be found.", canonical: "/404.html", body: `<div class="container"><section class="section"><p class="eyebrow">404</p><h1>That page moved</h1><p>Try search or browse the directory to find a current VisitBest guide.</p><div class="button-row"><a class="button button-primary" href="/">Go home</a><a class="button button-quiet" href="/search/">Search guides</a></div></section></div>` }));
+
+const sourceReport = {
+  builtAt: buildDate,
+  livePosts: posts.length,
+  pages: pages.length,
+  businessProfiles: business.length,
+  restoredRoutes: legacyPages.length,
+  mirroredUploads: assetQueue.length,
+  canonicalRoutes: canonicalRoutes.size,
+  trafficRoutes: [...routeSet].filter((route) => landingCsv.includes(route.replace(/\/$/, ""))).length,
+};
+await fs.writeFile(path.join(distDir, "migration-report.json"), `${JSON.stringify(sourceReport, null, 2)}\n`);
+console.log(JSON.stringify(sourceReport));
