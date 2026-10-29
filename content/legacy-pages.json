@@ -2452,7 +2452,7 @@
       "Landlord, travel, and family suitability"
     ]
   },
-  {
+    {
     "slug": "tools",
     "title": "VisitBest Tools and Research Checklists",
     "category": "Technology",
@@ -2497,6 +2497,42 @@
       "Record comparable evidence",
       "Verify volatile facts at the source",
       "Revisit the shortlist when requirements change"
+    ],
+    "details": [
+      {
+        "name": "Site search",
+        "description": "Site search is the fastest way into everything already published on VisitBest. Start with the words you would naturally use for the product, company, place or person you have in mind, then open the most relevant results and check their titles and summaries before reading in full. If a first search returns too much, add a category word, a brand or a place name to narrow it. If it returns too little, try a shorter phrase or a common synonym instead. Search results are a starting point, not a verdict: open the guide itself, check when it was updated, and follow any links it gives to the original source before you act on it.",
+        "image": "public/assets/tools/site-search.jpg",
+        "imageAlt": "A man searching on a laptop computer, with a web search page on the screen"
+      },
+      {
+        "name": "Product comparison checklist",
+        "description": "A comparison only helps if every option is judged on the same points, so record the same fields for each product before deciding. Note what it must fit or work with, the specifications that matter for your actual use, what warranty or support is offered, who the seller is, and the full cost once every necessary charge is counted. Leave out features you will never use, however impressive they look in a listing. When two options are close, revisit your original requirements rather than chasing a small specification difference. Keep the written comparison with the shortlist, so a later price or stock change can be checked against the same evidence.",
+        "image": "public/assets/tools/product-comparison-checklist.jpg",
+        "imageAlt": "Shoppers choosing between packaged products on a supermarket shelf"
+      },
+      {
+        "name": "Company research checklist",
+        "description": "Before asking any company for a proposal, establish who you would actually be dealing with. Confirm the trading name and the legal entity behind it, where the company is based and which areas it serves, and whether it genuinely works in the service category you need. Ask what comparable work it has done and whether references or examples can be checked independently, rather than taken from its own marketing alone. Read any proposed contract for scope, payment stages, timelines and what happens if the work changes or is cancelled. Record each check with its source and date, so the shortlist can be revisited if a detail changes before you commit.",
+        "image": "public/assets/tools/company-research-checklist.jpg",
+        "imageAlt": "The headquarters building of a company in Columbus, Indiana, seen from its grounds"
+      },
+      {
+        "name": "Source-quality checklist",
+        "description": "Good decisions rest on sources that can be checked, so test every important claim before reusing it. Confirm when the source was published or last updated, who wrote it, and what evidence it actually shows rather than merely asserts. Wherever possible, follow a claim back to its primary source: an official document, an original announcement or first-hand reporting. Check whether other reliable sources agree, and note any conflict instead of smoothing it over. Be especially careful with figures, dates and quotations, which are easily distorted as they are copied from page to page. If a claim cannot be traced or confirmed, label it as unverified or leave it out.",
+        "image": "public/assets/tools/source-quality-checklist.jpg",
+        "imageAlt": "Participants at a fact-checking seminar in Abuja, working at tables with laptops"
+      },
+      {
+        "name": "Broken-link report",
+        "description": "The broken-link report is generated automatically while the site is being built. It lists internal links that point to pages which no longer exist at the address given, or that cannot be found when the build checks them. Links break in ordinary ways: a page is moved or renamed, a guide is retired or combined with another, or an address is typed incorrectly when the link is added. Each reported link is then corrected, redirected or removed, so readers following an older guide still reach useful information instead of an error page. Running this check as part of every build means new breakage is caught before publication rather than being left for a reader to find."
+      },
+      {
+        "name": "Reading-time estimate",
+        "description": "Article pages on VisitBest show a reading-time estimate, worked out at roughly 220 words per minute. Treat it as a planning guide rather than a promise. Reading speeds vary considerably between readers, and the same person will read familiar, straightforward material faster than dense, technical or unfamiliar material with many figures and unfamiliar terms. Pausing to follow links, compare details or take notes also adds time that no word count can predict. The estimate is still useful when choosing between a short checklist and a long guide, or when deciding whether to read something now or save it for later. If a topic matters, allow more time than the estimate suggests.",
+        "image": "public/assets/tools/reading-time-estimate.jpg",
+        "imageAlt": "A person lying back and reading an open printed book"
+      }
     ]
   },
   {
