@@ -1420,50 +1420,173 @@
     "category": "Nature",
     "type": "reference",
     "imageCluster": "wildlife",
-    "summary": "An introductory guide to pheasants, partridges, quail, grouse, wild turkey, guinea fowl, and commonly included waterfowl.",
-    "editorial": "The term ‘game bird’ reflects management and hunting traditions, not a single scientific family. Legal status differs by country and species; this page focuses on identification and observation.",
+    "summary": "An introductory guide to pheasants, partridges, quail, grouse, wild turkey and guinea fowl, expanded with fourteen notable species in detail — from India's francolins, chukar and Himalayan snowcock to the capercaillie, wild turkey and northern bobwhite — each with identification, habitat and behaviour notes and its own photograph.",
+    "editorial": "The term 'game bird' reflects management and hunting traditions, not a single scientific family. Legal status differs by country and species; in India all the wild species on this page are protected, and this page focuses on identification and observation only. Some celebrated game birds, such as the Himalayan monal, are fully protected and are best treated purely as birds to watch for, never as quarry.",
     "items": [
       [
-        "Pheasants",
-        "Long-tailed ground birds in the pheasant family",
-        "Woodland edges, farmland, and scrub"
+        "Ring-necked pheasant",
+        "Long-tailed, colourful cock; plain mottled hen",
+        "Green head, red face and white collar on the male"
       ],
       [
-        "Partridges",
-        "Compact ground birds adapted to grassland and dry country",
-        "Open fields, scrub, and rocky slopes"
+        "Grey partridge",
+        "Round farmland partridge of coveys and field margins",
+        "Orange-brown face and the male's chestnut belly horseshoe"
       ],
       [
-        "Quail",
-        "Small, secretive ground birds with rapid flight",
-        "Grassland, crops, and low cover"
+        "Chukar partridge",
+        "Partridge of dry rocky hills from the Mediterranean to the Himalaya",
+        "Black band through the eye framing a white throat; red bill and legs"
       ],
       [
-        "Grouse",
-        "Cold-climate and heath specialists in several regions",
-        "Forest, moorland, tundra, and prairie"
+        "Grey francolin",
+        "Barred grey-brown francolin of Indian dry scrub and farmland",
+        "Finely speckled plumage and a short chestnut tail"
+      ],
+      [
+        "Black francolin",
+        "Boldly patterned francolin of grassland near water",
+        "Black body, white cheek patch and chestnut collar on the male"
+      ],
+      [
+        "Common quail",
+        "Tiny migrant quail heard far more often than seen",
+        "The three-note 'wet-my-lips' whistle from deep grass"
+      ],
+      [
+        "Red junglefowl",
+        "Wild ancestor of the domestic chicken in Asian forests",
+        "Slim gamecock shape; golden hackles and arched dark tail"
+      ],
+      [
+        "Himalayan snowcock",
+        "Large, camouflaged game bird of high alpine slopes",
+        "Pale face and white throat patch edged with chestnut"
+      ],
+      [
+        "Red grouse",
+        "Heather-moorland grouse of Britain and Ireland",
+        "Red-brown plumage all year and a red comb over the eye"
+      ],
+      [
+        "Willow ptarmigan",
+        "Tundra grouse that changes colour with the seasons",
+        "White in winter, mottled brown in summer, feathered feet"
+      ],
+      [
+        "Western capercaillie",
+        "Turkey-sized grouse of old conifer forests",
+        "Fanned tail and dawn lek display in the male"
       ],
       [
         "Wild turkey",
-        "Large North American galliform",
-        "Woodland and open mosaics"
+        "Large, iridescent North American woodland bird",
+        "Fan tail, bare blue-red head and chest beard on the male"
       ],
       [
-        "Guinea fowl",
-        "African ground birds, some widely domesticated",
-        "Savanna, scrub, and farms"
+        "Helmeted guineafowl",
+        "Spotted African flocking bird with a bony casque",
+        "White-spotted grey body and helmeted bare head"
       ],
       [
-        "Ducks and geese",
-        "Included as game birds in some legal systems",
-        "Wetlands, coasts, lakes, and fields"
+        "Northern bobwhite",
+        "Small grassland quail of eastern North America",
+        "White face stripes on the male and the whistled 'bob-white' call"
       ]
     ],
     "criteria": [
-      "Use local identification guides",
-      "Observe nesting birds from a distance",
-      "Follow wildlife and access law",
-      "Never assume a species is huntable because of a common label"
+      "Identify by shape, call and habitat first, plumage second",
+      "Use a local field guide — several species look alike at a distance",
+      "Observe nesting birds and display grounds from a distance",
+      "Follow wildlife and access law wherever you watch",
+      "Never assume a species is huntable because of a common label",
+      "Leave gates, crops and moorland as you found them"
+    ],
+    "details": [
+      {
+        "name": "Ring-necked pheasant",
+        "description": "The ring-necked pheasant, also called the common pheasant, is the best-known game bird in the world. It began in Asia and has been introduced so widely, across Europe and North America, that many people meet it before any native species. A cock is unmistakable: glossy bottle-green head, bright red face, a crisp white collar, coppery barred body and a very long, barred tail that streams behind it in flight. Hens are quieter, mottled sandy brown all over, which hides them on the ground nest. Pheasants live along woodland edges, hedgerows, reedbeds and rough farmland, feeding on seeds, grain, berries and insects. They prefer to run from danger and only burst into the air, wings whirring, when pressed closely.",
+        "image": "/assets/game-birds/ring-necked-pheasant.jpg",
+        "imageAlt": "Ring-necked pheasant — photograph"
+      },
+      {
+        "name": "Grey partridge",
+        "description": "The grey partridge is a plump, ground-hugging bird of open farmland across Europe and central Asia, also introduced to North America. It is mostly soft grey and brown, with an orange-brown face, finely barred flanks and, on the male, a dark chestnut horseshoe mark on the belly. Grey partridges pair up in spring, then gather into family parties called coveys for autumn and winter, feeding together on seeds, shoots and fallen grain, with insects especially important for growing chicks. Their flight is a low, fast whirr of wings broken by long glides. Once among the commonest farmland birds, they have thinned out where farming became very intensive, so a covey rising from a stubbly field margin is now a sight worth pausing for.",
+        "image": "/assets/game-birds/grey-partridge.jpg",
+        "imageAlt": "Grey partridge — photograph"
+      },
+      {
+        "name": "Chukar partridge",
+        "description": "The chukar is a partridge of dry, rocky hillsides, ranging from the eastern Mediterranean through west and central Asia into the north-western Himalaya, including the arid slopes of Jammu and Kashmir, Himachal Pradesh and Uttarakhand. It is a handsome bird: sandy grey above, with bold black-and-white barred flanks, a black band that runs through the eye and down to frame the white throat, and coral-red bill and legs. Chukars live in coveys on steep, stony ground dotted with scrub, feeding on seeds, leaves and insects. Their ringing, chuckling calls, which give the bird its name, carry far across a hillside at dawn. When disturbed they usually run uphill, fast and sure-footed, and only take wing to glide down across a gully.",
+        "image": "/assets/game-birds/chukar-partridge.jpg",
+        "imageAlt": "Chukar partridge — photograph"
+      },
+      {
+        "name": "Grey francolin",
+        "description": "The grey francolin is one of the most familiar ground birds of the Indian subcontinent, at home in dry scrub, thorn forest edges, fallow fields and the rough ground around villages. It is finely patterned grey-brown all over, barred and speckled so closely that it seems to dissolve into dry grass, with a short chestnut tail that shows when it runs. Grey francolins go about in pairs or small family parties, scratching for seeds, shoots and insects and dust-bathing on bare patches. They are far more often heard than seen: at dawn and dusk the male throws out a loud, ringing series of notes from a stone or low bush. When flushed, they rocket away low and fast into the nearest cover.",
+        "image": "/assets/game-birds/grey-francolin.jpg",
+        "imageAlt": "Grey francolin — photograph"
+      },
+      {
+        "name": "Black francolin",
+        "description": "The black francolin is the striking counterpart of its grey cousin, found in grasslands, reed edges and scrub near water from northern India westwards to the Middle East. A male in good light is hard to confuse with anything else: glossy black head and underparts, a bold white cheek patch, a chestnut collar, and white spotting scattered over the black back and flanks. Females are mottled brown and far harder to spot. Black francolins keep to thick cover in pairs or small groups, feeding on seeds, shoots and insects, and the male advertises himself with a loud, buzzing, ringing call delivered from a mound or bush top. It is the state bird of Haryana, and a protected species in India like all wild francolins.",
+        "image": "/assets/game-birds/black-francolin.jpg",
+        "imageAlt": "Black francolin — photograph"
+      },
+      {
+        "name": "Common quail",
+        "description": "The common quail is a tiny, secretive game bird with an outsized secret: unlike most of its stay-at-home relatives, it is a true long-distance migrant, breeding across Europe and central Asia and travelling at night to winter in Africa and the Indian subcontinent. Streaked buff and brown from crown to tail, with a pale stripe over the eye and, on the male, a dark anchor mark on the throat, it is built for hiding in grass and standing crops. Almost nobody sees one well. What gives it away is the male's far-carrying three-note whistle, traditionally rendered as 'wet-my-lips', repeated from deep cover on summer evenings. If you do flush one, it rises almost from underfoot and drops back into cover within metres.",
+        "image": "/assets/game-birds/common-quail.jpg",
+        "imageAlt": "Common quail — photograph"
+      },
+      {
+        "name": "Red junglefowl",
+        "description": "The red junglefowl is the wild ancestor of every domestic chicken on Earth, and seeing a pure wild bird in the forests of north-east and central India, or in South-East Asia, is seeing a familiar farmyard shape returned to its original life. A cock is a slim, athletic version of a gamecock: red comb and wattles, a mane of golden-orange hackle feathers, a dark body and an arched, glossy green-black tail. Hens are small and drab brown. Junglefowl feed on the forest floor, scratching through leaf litter for seeds, shoots and insects, and fly up into trees to roost at night. Forest clearance and mixing with free-ranging village chickens are the main worries for pure wild populations, so unspoilt forest birds matter.",
+        "image": "/assets/game-birds/red-junglefowl.jpg",
+        "imageAlt": "Red junglefowl — photograph"
+      },
+      {
+        "name": "Himalayan snowcock",
+        "description": "The Himalayan snowcock is one of the highest-living game birds in the world, a big, heavy partridge relative of alpine slopes roughly between 3,600 and 5,000 metres, from Kashmir through Nepal to Bhutan. Its plumage is a study in camouflage: soft grey-brown above, finely streaked with chestnut and black, a pale face and a white throat patch edged with chestnut, all of which vanishes against lichen-spotted rock. Snowcocks spend the day walking steadily uphill as they feed on alpine shoots, bulbs and seeds, whistling mournfully across the slope, and when they need to change ground they launch into long, sweeping glides down into the next valley. Few watchers ever see one closely, which makes an unhurried view above the treeline a Himalayan highlight.",
+        "image": "/assets/game-birds/himalayan-snowcock.jpg",
+        "imageAlt": "Himalayan snowcock — photograph"
+      },
+      {
+        "name": "Red grouse",
+        "description": "The red grouse is the moorland specialist of Britain and Ireland, a rich red-brown bird of open heather country that differs from its willow ptarmigan relatives by never turning white in winter. Males show a bright red comb above the eye, most obvious in the breeding season, and both sexes are barred and mottled to match the heather. Red grouse feed largely on young heather shoots, with berries and insects in season, and they hold small territories on the moor through the year. Their alarm call, a harsh, accelerating 'go-back, go-back', is one of the classic sounds of northern uplands. Heather moorland management is debated by conservationists, so the most rewarding views are of undisturbed birds watched quietly from paths and tracks.",
+        "image": "/assets/game-birds/red-grouse.jpg",
+        "imageAlt": "Red grouse — photograph"
+      },
+      {
+        "name": "Willow ptarmigan",
+        "description": "The willow ptarmigan is the circumpolar grouse of tundra and willow scrub, found right around the northern hemisphere from Alaska and Canada to Scandinavia and Siberia. Its whole life is shaped by snow: in winter it turns pure white except for a black tail, with heavily feathered feet that work like snowshoes, while in summer it moults into a mottled chestnut-brown that matches bare tundra. Males in spring show a rich red-brown head and neck against the still-white body. Willow ptarmigan feed on willow and birch buds and shoots in winter and add leaves, berries and insects in summer. The red grouse of Britain and Ireland is its close island relative, adapted to a milder climate that rarely demands a white winter coat.",
+        "image": "/assets/game-birds/willow-ptarmigan.jpg",
+        "imageAlt": "Willow ptarmigan — photograph"
+      },
+      {
+        "name": "Western capercaillie",
+        "description": "The western capercaillie is the giant of the grouse family, a bird the size of a small turkey that lives in old conifer forests from Scotland, where it was reintroduced, across northern Europe to Siberia. A cock in display is a dramatic sight: dark slate plumage with a metallic green sheen, a huge tail fanned upright, and a strange song of clicks and pops ending in a sound like a cork leaving a bottle, performed at communal display grounds called leks at dawn. Hens are barred brown and much smaller. Capercaillie feed on pine needles in winter and bilberries, shoots and insects in summer. Numbers have fallen in much of Europe, and displaying birds are easily disturbed, so leks should only ever be watched from a respectful distance, if at all.",
+        "image": "/assets/game-birds/western-capercaillie.jpg",
+        "imageAlt": "Western capercaillie — photograph"
+      },
+      {
+        "name": "Wild turkey",
+        "description": "The wild turkey is North America's great game bird, far larger and more athletic than its domestic descendants. A gobbler carries iridescent bronze-green plumage, a broad tail that fans into a rust-tipped semicircle in display, a blue and red bare head whose colours shift with excitement, and a dangling 'beard' of coarse feathers on the chest. Hens are slimmer and duller. Wild turkeys live in woodland mixed with clearings and fields, feeding on acorns, seeds, grasses and insects, and despite their bulk they fly strongly to roost high in trees at night. Hunted almost to vanishing point by the early twentieth century, they were brought back by one of the great conservation restoration programmes and are now a common, if wary, sight again.",
+        "image": "/assets/game-birds/wild-turkey.jpg",
+        "imageAlt": "Wild turkey — photograph"
+      },
+      {
+        "name": "Helmeted guineafowl",
+        "description": "The helmeted guineafowl is Africa's contribution to the classic game birds, a flocking bird of savanna and open woodland that has also been domesticated and carried around the world. Its body is pearl-grey and densely spotted with white, like a star field, and its bare head carries blue and red skin topped by the bony casque, or 'helmet', that gives the species its name. Guineafowl spend the day walking in noisy parties, scratching for seeds, bulbs and insects, and they are famous lookouts: any predator or stranger triggers an outbreak of harsh, rattling alarm calls. At dusk the flock flies, heavily but willingly, up into trees to roost. Wild birds remain common across much of sub-Saharan Africa wherever cover and water are both within reach.",
+        "image": "/assets/game-birds/helmeted-guineafowl.jpg",
+        "imageAlt": "Helmeted guineafowl — photograph"
+      },
+      {
+        "name": "Northern bobwhite",
+        "description": "The northern bobwhite is the classic quail of eastern and central North America, a small, plump bird of grassland, hedgerows and open pine woods. The cock has a bold pattern of a white stripe through the eye and a white throat, set against mottled chestnut and grey; the hen wears the same pattern in buff. Its name comes straight from its clear, whistled call, 'bob-white', which rises from field edges on spring mornings. Bobwhites live in tight winter groups called coveys, famously roosting on the ground in a tight circle, tails together and heads facing outwards, ready to scatter in every direction. Like many grassland birds it has declined as field margins and rough ground have been tidied away, so its whistle is heard less often than it was.",
+        "image": "/assets/game-birds/northern-bobwhite.jpg",
+        "imageAlt": "Northern bobwhite — photograph"
+      }
     ]
   },
   {
@@ -2452,7 +2575,7 @@
       "Landlord, travel, and family suitability"
     ]
   },
-    {
+  {
     "slug": "tools",
     "title": "VisitBest Tools and Research Checklists",
     "category": "Technology",
@@ -3691,8 +3814,7 @@
       "Update the policy before adding analytics, ads, accounts, or a newsletter",
       "Respond to reasonable privacy requests subject to applicable law"
     ]
-  }
-,
+  },
   {
     "slug": "horse-breeds",
     "title": "Horse Breeds: 18 Famous Breeds, Their Origins, Sizes and Uses",
@@ -5283,8 +5405,7 @@
         "imageAlt": "Tanimbar corella — photograph"
       }
     ]
-  }
-,
+  },
   {
     "slug": "galliformes",
     "title": "Galliformes: Pheasants, Partridges, Quail, Grouse and Other Game Birds",
