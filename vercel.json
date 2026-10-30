@@ -1,7 +1,39 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
   "cleanUrls": true,
+  "outputDirectory": "dist",
+  "redirects": [
+    {
+      "destination": "/best-tea-brands-in-india/",
+      "permanent": true,
+      "source": "/best-tea-brand-in-india"
+    },
+    {
+      "destination": "/best-tea-brands-in-india/",
+      "permanent": true,
+      "source": "/best-tea-brand-in-india/"
+    },
+    {
+      "destination": "/earphones-under-2000/",
+      "permanent": true,
+      "source": "/best-earbuds-under-2000"
+    },
+    {
+      "destination": "/earphones-under-2000/",
+      "permanent": true,
+      "source": "/best-earbuds-under-2000/"
+    },
+    {
+      "destination": "/best-bluetooth-speakers-in-india/",
+      "permanent": true,
+      "source": "/best-bluetooth-speakers-under-2000"
+    },
+    {
+      "destination": "/best-bluetooth-speakers-in-india/",
+      "permanent": true,
+      "source": "/best-bluetooth-speakers-under-2000/"
+    }
+  ],
   "trailingSlash": true
 }

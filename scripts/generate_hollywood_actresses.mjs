@@ -370,6 +370,42 @@ const actresses = [
   }
 ];
 
+function actressSlug(name) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+// Photo credit source for each actress's real photograph (Wikimedia Commons, sources logged 28 Oct 2026).
+// Only actresses with an identity-verified photograph have an entry. Profiles with no entry
+// (Halle Bailey, Joey King, Kathryn Newton, Xochitl Gomez) render with no photo, exactly as before.
+const photoSources = {
+  "Jenna Ortega": "Colleen Sturtevant, CC BY 4.0, via Wikimedia Commons",
+  "Sydney Sweeney": "JoshPopov, CC BY 4.0, via Wikimedia Commons",
+  "Mikey Madison": "PhilipRomanoPhoto, CC BY 4.0, via Wikimedia Commons",
+  "Millie Bobby Brown": "TheWrap, CC BY 3.0, via Wikimedia Commons",
+  "Sadie Sink": "Gage Skidmore, CC BY-SA 2.0, via Wikimedia Commons",
+  "Hailee Steinfeld": "Gage Skidmore, CC BY-SA 2.0, via Wikimedia Commons",
+  "Elle Fanning": "Harald Krichel, CC BY-SA 3.0, via Wikimedia Commons",
+  "Sophie Wilde": "Harald Krichel, CC BY-SA 4.0, via Wikimedia Commons",
+  "Cailee Spaeny": "Max Surprenant, CC BY 4.0, via Wikimedia Commons",
+  "Rachel Zegler": "PhilipRomanoPhoto, CC BY-SA 4.0, via Wikimedia Commons",
+  "Lily-Rose Depp": "Sarran Hamilton, CC BY-SA 4.0, via Wikimedia Commons",
+  "Isabela Merced": "Bea Phi, CC BY-SA 4.0, via Wikimedia Commons",
+  "Hunter Schafer": "Mandilea16, CC BY 4.0, via Wikimedia Commons",
+  "Daisy Edgar-Jones": "Martin Kraft, CC BY-SA 4.0, via Wikimedia Commons",
+  "Emma Myers": "티비텐 TV10, CC BY 3.0, via Wikimedia Commons",
+  "Mckenna Grace": "Kevin Paul, CC BY 4.0, via Wikimedia Commons",
+  "Sophie Thatcher": "Elyot Boudart, CC BY-SA 4.0, via Wikimedia Commons",
+  "Milly Alcock": "Margaret Gardiner, CC BY 4.0, via Wikimedia Commons",
+  "Kaitlyn Dever": "Colleen Sturtevant, CC BY 4.0, via Wikimedia Commons",
+  "Dafne Keen": "Gage Skidmore, CC BY-SA 2.0, via Wikimedia Commons",
+  "Chase Infiniti": "JoshPopov, CC BY-SA 4.0, via Wikimedia Commons",
+  "Anna Cathcart": "Kevin Paul, CC BY 4.0, via Wikimedia Commons",
+  "Lola Tung": "Kevin Paul, CC BY 4.0, via Wikimedia Commons",
+  "Maude Apatow": "Danielle G. Campbell, CC BY-SA 4.0, via Wikimedia Commons",
+  "Amandla Stenberg": "Gage Skidmore, CC BY-SA 3.0, via Wikimedia Commons",
+  "Storm Reid": "Sister Circle TV, CC BY 3.0, via Wikimedia Commons"
+};
+
 const faqs = [
   { q: "Who is the most popular young Hollywood actress in 2026?", a: "Jenna Ortega and Sydney Sweeney currently lead young Hollywood in terms of global audience reach, box office draw, and social/fashion cultural momentum. Ortega leads major franchises like Wednesday and Beetlejuice, while Sweeney commands both prestige television and theatrical rom-coms." },
   { q: "How did VisitBest rank the young Hollywood actresses?", a: "Our editorial ranking utilizes an 8-pillar methodology: Screen Presence (20%), Acting Recognition & Awards (20%), Career Momentum (15%), Style & Fashion Influence (15%), Public Popularity (10%), Cultural Influence (10%), International Recognition (5%), and Versatility (5%). Beauty is treated as an editorial assessment of screen charisma rather than an objective physical measurement." },
@@ -530,7 +566,12 @@ const fullHtml = `<!doctype html>
                   </div>
                 </div>
 
-                <p style="margin:0.75rem 0 1rem 0;line-height:1.6;color:#333;">${a.bio}</p>
+                <p style="margin:0.75rem 0 1rem 0;line-height:1.6;color:#333;">${a.bio}</p>${photoSources[a.name] ? `
+
+                <figure class="profile-photo" style="margin:0 0 1rem;">
+                  <img src="/assets/beautiful-young-hollywood-actresses/${actressSlug(a.name)}.webp" alt="Portrait of ${a.name}" loading="lazy" decoding="async" style="width:100%;max-width:400px;border-radius:12px;display:block;">
+                  <figcaption style="font-size:0.82rem; color:var(--muted,#666); margin-top:0.45rem;">Photo: ${a.name} &middot; Source: ${photoSources[a.name]}</figcaption>
+                </figure>` : ""}
 
                 <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:0.75rem;background:#faf8f5;padding:1rem;border-radius:8px;font-size:0.88rem;margin-bottom:1rem;">
                   <div><strong>Best Known For:</strong><br>${a.bestKnown}</div>
