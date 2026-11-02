@@ -786,7 +786,7 @@ function renderSearch() {
 
 function renderRedirect(target, title = "VisitBest") {
   const targetPath = routePath(target);
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(title)} moved to its current VisitBest page."><meta http-equiv="refresh" content="0;url=${targetPath}"><link rel="canonical" href="${new URL(targetPath, origin).href}"><script>location.replace(${JSON.stringify(targetPath)});</script></head><body><h1>${escapeHtml(title)}</h1><p>This VisitBest address moved to <a href="${targetPath}">${escapeHtml(title)}</a>.</p></body></html>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(title)} moved to its current VisitBest page."><meta name="robots" content="noindex,follow"><meta http-equiv="refresh" content="0;url=${targetPath}"><link rel="canonical" href="${new URL(targetPath, origin).href}"><script>location.replace(${JSON.stringify(targetPath)});</script></head><body><h1>${escapeHtml(title)}</h1><p>This VisitBest address moved to <a href="${targetPath}">${escapeHtml(title)}</a>.</p></body></html>`;
 }
 
 async function writeRoute(route, html) {

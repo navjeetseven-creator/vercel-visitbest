@@ -893,5 +893,113 @@
     "local": "/assets/b-tech-colleges-in-delhi-university/hero.jpg",
     "slug": "b-tech-colleges-in-delhi-university",
     "source": "VisitBest"
+  },
+  {
+    "cluster": "business",
+    "slug": "event-management-companies-in-delhi",
+    "source": "VisitBest",
+    "alt": "Top Event Management Companies in Delhi: Best Picks for Weddings, Corporate Events & Exhibitions — VisitBest cover",
+    "local": "/assets/event-management-companies-in-delhi/hero.jpg",
+    "license": "VisitBest editorial cover",
+    "credit": "VisitBest cover — compiled from the official logos of Vibgyor Brand Services, E Factor Experiences, Teamwork Arts, Rashi Entertainment, Brandwidth Events, Encore Creations, MEX Exhibitions, The Wedding Design Company and Showtime Event, each taken from the company’s own website"
+  },
+  {
+    "cluster": "business",
+    "slug": "event-management-companies-in-ahmedabad",
+    "source": "VisitBest",
+    "alt": "Top Event Management Companies in Ahmedabad: Best Picks for Weddings, Corporate Events & Exhibitions — VisitBest cover",
+    "local": "/assets/event-management-companies-in-ahmedabad/hero.jpg",
+    "license": "VisitBest editorial cover",
+    "credit": "VisitBest cover — compiled from the official logos of the 12 companies listed, each taken from the company’s own website"
+  },
+  {
+    "alt": "Best Nuru Massage in Pune — VisitBest cover",
+    "cluster": "beauty",
+    "credit": "VisitBest cover — compiled from the spas' own logos (Tattva Wellness, Four Fountains De-Stress Spa, Meghavi Wellness Spa, Ode Spa, Four Seasons De-Stress Clinic — full credits in the pack sources)",
+    "license": "VisitBest editorial cover",
+    "local": "/assets/best-nuru-massage-in-pune/cover.jpg",
+    "slug": "best-nuru-massage-in-pune",
+    "source": "VisitBest"
+  },
+  {
+    "alt": "Most Handsome South Indian Actors — VisitBest cover",
+    "cluster": "cinema",
+    "credit": "VisitBest cover — compiled from real photographs via Wikimedia Commons (Gage Skidmore, Asianet, Shiva CK — full credits in the pack sources)",
+    "license": "VisitBest editorial cover",
+    "local": "/assets/most-handsome-south-indian-actors/cover.jpg",
+    "slug": "most-handsome-south-indian-actors",
+    "source": "VisitBest"
+  },
+  {
+    "cluster": "astrology",
+    "slug": "best-astrologers-in-kerala",
+    "source": "VisitBest",
+    "alt": "Best Astrologers in Kerala — VisitBest cover",
+    "local": "/assets/best-astrologers-in-kerala/cover.jpg",
+    "license": "VisitBest editorial cover",
+    "credit": "VisitBest cover — compiled from photographs published on the practitioners' own websites (Jayaram Sharma, from jayaramsharma.com; Sunitha Vishnupuram, cropped from the cover photograph at sunithaastro.com; Kanippayyur Mana, from kanippayyur.in; Navagraha Jyothishalayam consultation office, from navagrahaonline.com); title text only in the solid navy bottom band"
+  },
+  {
+    "cluster": "astrology",
+    "slug": "best-astrologers-in-jaipur",
+    "source": "VisitBest",
+    "alt": "Best Astrologers in Jaipur — VisitBest cover",
+    "local": "/assets/best-astrologers-in-jaipur/cover.jpg",
+    "license": "VisitBest editorial cover",
+    "credit": "VisitBest cover — compiled from a photograph and official logos published on the practitioners' own websites (Mukesh Gaur portrait, from astromukeshgaur.com; Dr. Yogesh Vyas logo, from astrologeryogesh.com; Vedic Puja Paths logo, from vedicpujapaths.com); title text only in the solid navy bottom band"
+  },
+  {
+    "cluster": "business",
+    "slug": "it-companies-in-hyderabad",
+    "source": "VisitBest",
+    "alt": "Top IT Companies in Hyderabad: 14 Major Tech Employers in Cyberabad — VisitBest cover",
+    "local": "/assets/it-companies-in-hyderabad/cover.jpg",
+    "license": "VisitBest editorial cover",
+    "credit": "VisitBest cover — compiled from the official logos of Tech Mahindra, ValueLabs, Microsoft, Google, Amazon, Wipro, HCLTech and Cognizant, each taken from the company's own website"
+  },
+  {
+    "cluster": "cinema",
+    "slug": "best-punjabi-movies",
+    "source": "VisitBest",
+    "alt": "Best Punjabi Movies: 14 Essential Films from the Classics to the Modern Hits — VisitBest cover",
+    "local": "/assets/best-punjabi-movies/cover.jpg",
+    "license": "VisitBest editorial cover",
+    "credit": "VisitBest cover — compiled from real photographs via Wikimedia Commons (Diljit Dosanjh and Neeru Bajwa promoting Shadaa; Gippy Grewal; Sonam Bajwa; Raj Babbar with Nadira Babbar — Bollywood Hungama, CC BY 3.0; full credits in the pack sources)"
+  },
+  {
+    "cluster": "cinema",
+    "slug": "sports-movies-bollywood",
+    "source": "VisitBest",
+    "alt": "Best Bollywood Sports Movies: 14 Films Where the Game Is the Story — VisitBest cover",
+    "local": "/assets/sports-movies-bollywood/cover.jpg",
+    "license": "VisitBest editorial cover",
+    "credit": "VisitBest cover — compiled from real photographs via Wikimedia Commons (Aamir Khan; Shah Rukh Khan; Priyanka Chopra; Ranveer Singh — Bollywood Hungama, CC BY 3.0; full credits in the pack sources)"
+  },
+  {
+    "alt": "RayAsianBoy Net Worth — VisitBest cover",
+    "cluster": "cinema",
+    "credit": "VisitBest cover — compiled from a real photograph: Photo: ImDavisss Live · Wikimedia Commons · CC BY 3.0 (full credit in the pack sources).",
+    "license": "VisitBest editorial cover",
+    "local": "/assets/rayasianboy-net-worth/cover.jpg",
+    "slug": "rayasianboy-net-worth",
+    "source": "VisitBest"
+  },
+  {
+    "cluster": "space",
+    "slug": "strange-planets-in-the-universe",
+    "source": "Compiled from the pack's verified artist's impressions: KELT-9b (NASA/JPL-Caltech), WASP-12b (NASA), Proxima Centauri b (ESO/M. Kornmesser, CC BY 4.0) and GJ 504 b (NASA Goddard) — see sources.md for licences",
+    "alt": "Strange Planets in the Universe — artist's impressions of KELT-9b, WASP-12b, Proxima Centauri b and GJ 504 b above the article title",
+    "local": "/assets/strange-planets-in-the-universe/cover.jpg",
+    "license": "Compilation of public-domain and CC BY 4.0 agency artwork; underlying credits in sources.md",
+    "credit": "NASA/JPL-Caltech; NASA; ESO/M. Kornmesser (CC BY 4.0); NASA Goddard Space Flight Center"
+  },
+  {
+    "cluster": "business",
+    "slug": "top-10-pesticides-companies-in-india",
+    "source": "Compiled from the companies' own logos as published on their official websites (UPL, PI Industries, Rallis India, Dhanuka Agritech, Insecticides (India), Crystal Crop Protection, Heranba Industries, Meghmani Organics) — see sources.md",
+    "alt": "Leading pesticide companies in India — official logos of UPL, PI Industries, Rallis India, Dhanuka, Insecticides (India), Crystal, Heranba and Meghmani above the article title",
+    "local": "/assets/top-10-pesticides-companies-in-india/cover.jpg",
+    "license": "Company logos are trademarks of their respective owners, reproduced for editorial identification",
+    "credit": "Logos © their respective companies, via their official websites"
   }
 ]
