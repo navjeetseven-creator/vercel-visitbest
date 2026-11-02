@@ -776,5 +776,122 @@
     "local": "/assets/scariest-animals-in-the-world/hero.jpg",
     "license": "VisitBest editorial cover",
     "credit": "VisitBest cover — compiled from real photographs via Wikimedia Commons (Tisha Mukherjee, Bernard DUPONT, Diego Delso, Buiobuione — full credits in the pack sources)"
+  },
+  {
+    "alt": "Famous Thai Actresses — VisitBest cover",
+    "cluster": "cinema",
+    "credit": "VisitBest cover — compiled from real photographs via Wikimedia Commons (3Plus, THHeadline, SMART LIVE, Tfamziepp — full credits in the pack sources)",
+    "license": "VisitBest editorial cover",
+    "local": "/assets/famous-thai-actress/cover.jpg",
+    "slug": "famous-thai-actress",
+    "source": "VisitBest"
+  },
+  {
+    "cluster": "education",
+    "slug": "list-of-educational-websites-in-india",
+    "source": "VisitBest",
+    "alt": "Best Educational Websites in India — VisitBest cover",
+    "local": "/assets/list-of-educational-websites-in-india/cover.jpg",
+    "license": "VisitBest editorial cover",
+    "credit": "VisitBest cover — compiled from the article's own official logos (DIKSHA, CBSE, SWAYAM, Khan Academy) in panels above a solid navy title band; full logo credits in the pack sources"
+  },
+  {
+    "cluster": "travel",
+    "slug": "spring-temple-buddha",
+    "source": "VisitBest",
+    "alt": "Spring Temple Buddha — VisitBest cover",
+    "local": "/assets/spring-temple-buddha/cover.jpg",
+    "license": "VisitBest editorial cover",
+    "credit": "VisitBest cover — compiled from real photographs via Wikimedia Commons (Gary Todd, Nyx Ning — full credits in the pack sources)"
+  },
+  {
+    "alt": "Best Fast Food Brands in India — VisitBest cover",
+    "cluster": "food",
+    "credit": "VisitBest cover — compiled from the brands' own official logos (Burger King, Pizza Hut, Haldiram's, Bikanervala, Wow! Momo and Burger Singh, each from the brand's own website; full credits in the pack sources). Logos are trademarks of their respective owners.",
+    "license": "VisitBest editorial cover",
+    "local": "/assets/best-fast-food-brands/cover.jpg",
+    "slug": "best-fast-food-brands",
+    "source": "VisitBest"
+  },
+  {
+    "alt": "Best Chappal Brands in India — VisitBest cover",
+    "cluster": "fashion",
+    "credit": "VisitBest cover — compiled from the brands' own official logos (Paragon, Relaxo, VKC Pride, Walkaroo, Campus and Sreeleathers, each from the brand's own website; full credits in the pack sources). Logos are trademarks of their respective owners.",
+    "license": "VisitBest editorial cover",
+    "local": "/assets/best-chappal-brands-in-india/cover.jpg",
+    "slug": "best-chappal-brands-in-india",
+    "source": "VisitBest"
+  },
+  {
+    "cluster": "construction",
+    "slug": "epc-companies-in-delhi",
+    "source": "VisitBest",
+    "alt": "Top 12 EPC Companies in Delhi NCR — VisitBest cover",
+    "local": "/assets/epc-companies-in-delhi/hero.jpg",
+    "license": "VisitBest editorial cover",
+    "credit": "VisitBest cover — compiled from the companies' own official logos (Engineers India Limited, NBCC, IRCON International, BHEL), each taken from the company's own website"
+  },
+  {
+    "cluster": "cinema",
+    "slug": "famous-south-korean-rapper",
+    "source": "VisitBest",
+    "alt": "Famous South Korean Rappers — VisitBest cover",
+    "local": "/assets/famous-south-korean-rapper/hero.jpg",
+    "license": "VisitBest editorial cover",
+    "credit": "VisitBest cover — compiled from real photographs via Wikimedia Commons (K-POPIT, nicole voon, Idolgraphy, Korea.net / Jeon Han — full credits in the pack sources)"
+  },
+  {
+    "cluster": "construction",
+    "slug": "epc-companies-in-mumbai",
+    "source": "VisitBest",
+    "alt": "Top 13 EPC Companies in Mumbai — VisitBest cover",
+    "local": "/assets/epc-companies-in-mumbai/hero.jpg",
+    "license": "VisitBest editorial cover",
+    "credit": "VisitBest cover — compiled from the companies' own official logos (Larsen & Toubro, Shapoorji Pallonji, KEC International, Cemindia Projects), each taken from the company's own website"
+  },
+  {
+    "cluster": "business",
+    "slug": "textile-machinery-manufacturers-in-india",
+    "source": "VisitBest",
+    "alt": "Textile Machinery Manufacturers in India — VisitBest cover",
+    "local": "/assets/textile-machinery-manufacturers-in-india/hero.jpg",
+    "license": "VisitBest editorial cover",
+    "credit": "VisitBest cover — compiled from the manufacturers' own official logos (LMW, Prashant Group, Sieger Spintech, SMEW), each taken from the company's own website"
+  },
+  {
+    "alt": "Best Cooking Oil Brands in India — VisitBest cover",
+    "cluster": "food",
+    "credit": "VisitBest cover — compiled from the brands' own official logos (Fortune, Saffola, Sundrop, Dhara, Figaro and Tata Simply Better, each from the brand owner's own website; full credits in the pack sources). Logos are trademarks of their respective owners.",
+    "license": "VisitBest editorial cover",
+    "local": "/assets/best-cooking-oil-brands-in-india/cover.jpg",
+    "slug": "best-cooking-oil-brands-in-india",
+    "source": "VisitBest"
+  },
+  {
+    "alt": "Best Sunglasses Brands in India — VisitBest cover",
+    "cluster": "fashion",
+    "credit": "VisitBest cover — compiled from the brands' own official logos (Fastrack, Titan Eye+, Lenskart, Polaroid and IDEE, each from the brand's own website; full credits in the pack sources). Logos are trademarks of their respective owners.",
+    "license": "VisitBest editorial cover",
+    "local": "/assets/best-sunglasses-brands-in-india/cover.jpg",
+    "slug": "best-sunglasses-brands-in-india",
+    "source": "VisitBest"
+  },
+  {
+    "alt": "Best Gyms in India — VisitBest cover",
+    "cluster": "fitness",
+    "credit": "VisitBest cover — compiled from the official logos published on each chain's own website (Cult.fit, Gold's Gym India, F45 Training, Snap Fitness, UFC GYM, Kris Gethin Gyms, MultiFit, Plus Fitness, Vault by Virat Kohli, Fitness First — full sources in the pack sources file). Logos are trademarks of their respective owners, shown for identification.",
+    "license": "VisitBest editorial cover",
+    "local": "/assets/best-gyms-in-india/hero.jpg",
+    "slug": "best-gyms-in-india",
+    "source": "VisitBest"
+  },
+  {
+    "alt": "B.Tech Colleges in Delhi University — VisitBest cover",
+    "cluster": "education",
+    "credit": "VisitBest cover — compiled from photographs by Abitatha via Wikimedia Commons (CC BY-SA 4.0 and CC BY 4.0 — full credits in the pack sources file)",
+    "license": "VisitBest editorial cover",
+    "local": "/assets/b-tech-colleges-in-delhi-university/hero.jpg",
+    "slug": "b-tech-colleges-in-delhi-university",
+    "source": "VisitBest"
   }
 ]
