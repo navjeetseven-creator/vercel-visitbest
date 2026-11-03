@@ -3,7 +3,6 @@
   "buildCommand": "npm run build",
   "cleanUrls": true,
   "outputDirectory": "dist",
-  "ignoreCommand": "[ \"$VERCEL_ENV\" != \"production\" ]",
   "github": {
     "silent": true
   },
