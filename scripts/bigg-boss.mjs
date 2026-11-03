@@ -48,8 +48,8 @@ export const contestants = [
     "status": "in-house",
     "bio": "Tanmay Singh (born 30 July 1996), universally known as Scout or ScoutOP, is one of the pioneers of Indian esports — a former professional BGMI/PUBG Mobile player turned one of the country's biggest gaming creators. In the house he has played tactically and spoken bluntly, captained the house in Week 7, and clashed repeatedly with Qazi Touqeer, including in the 23 October captaincy task.",
     "longBio": "Scout's personal life has become the season's biggest outside-the-house storyline. He has said in the house that he has been in a relationship for around five years with gaming creator Kaashvi Hiranandani, known as KaashPlays (born 28 April 1997, Mumbai, age 29 — a streamer who moved from a finance career into gaming and was named Female Streamer of the Year at the Indian Gaming Awards 2022). Scout has discussed a difficult past relationship and spoken of marriage plans, saying Kaashvi wants to be financially independent first. That is now colliding with his on-screen bond with Love Gill, which both describe as a brother-sister bond but which guest host Rohit Shetty questioned in Weekend Ka Vaar promos, and with Kaashvi's 25 October Weekend Ka Vaar appearance, in which she told him to 'cut Love out', said she felt disgusted, and alleged Love had trapped him (Times Now; Times of India, 25 October). In Episode 51 (26 October), Scout acknowledged Kaashvi had raised valid concerns about his behaviour, while Love confronted him over his silence, telling him he had spoiled her career (Times Now; Times of India, 26 October).",
-    "trend": "In house · Captain in Week 7, succeeded by Mahhi Vij · Nominated Week 8",
-    "highlight": "Week 7 captain whose game, his bond with Love Gill, and his relationship with girlfriend Kaashvi (KaashPlays) all collide on Weekend Ka Vaar — now nominated in Week 8."
+    "trend": "In house · Captain in Week 7, succeeded by Mahhi Vij · Nominated Week 9",
+    "highlight": "Week 7 captain whose game, his bond with Love Gill, and his relationship with girlfriend Kaashvi (KaashPlays) all collide on Weekend Ka Vaar — now nominated in Week 9."
   },
   {
     "id": "mary-kom",
@@ -111,8 +111,8 @@ export const contestants = [
     "status": "in-house",
     "bio": "Aamrapali Dubey is one of Bhojpuri cinema's biggest leading actresses. She made her Bhojpuri film debut in 2014 opposite Dinesh Lal Yadav 'Nirahua' in Nirahua Hindustani, after earlier television work, and built a career of blockbuster Bhojpuri hits and devotional releases that makes her a household name across Uttar Pradesh, Bihar and Jharkhand — and gives her the season's most loyal regional audience.",
     "longBio": "That regional audience is Aamrapali's Bigg Boss superpower: few housemates can match the loyalty of the Bhojpuri belt when she is nominated — and she is nominated again in Week 8, after surviving the Week 7 list from which Mary Kom was evicted (confirmed on air 24 October). Inside the house her journey has been less about engineered controversy and more about presence in daily life and group equations, including light-hearted kitchen-duty moments in the 23 October episode while the captaincy battle raged around her. Her birthday is 11 January; the birth year (1987) comes from secondary profiles rather than a primary source, so her age is shown with that caution.",
-    "trend": "In house · Nominated Week 8",
-    "highlight": "Bhojpuri superstar with the season's most loyal regional vote bank — on the Week 8 nomination list."
+    "trend": "In house · Nominated Week 9",
+    "highlight": "Bhojpuri superstar with the season's most loyal regional vote bank — on the Week 9 nomination list."
   },
   {
     "id": "aasif-khan",
@@ -139,12 +139,12 @@ export const contestants = [
     "age": 44,
     "city": "New Delhi / Mumbai",
     "image": "/assets/bb20/mahhi-vij.webp",
-    "nominated": false,
+    "nominated": true,
     "captain": false,
     "status": "in-house",
     "bio": "Mahhi Vij (born 1 April 1982, New Delhi) is Nakusha from Laagi Tujhse Lagan, a Jhalak Dikhhla Jaa 4 contestant and, with husband Jay Bhanushali, winner of Nach Baliye 5. One of the house's most experienced reality performers, her friendship with Qazi Touqeer was one of the season's defining bonds — which is why its crack in Episode 47 mattered, and why Qazi choosing her as captain days later mattered more.",
     "longBio": "Mahhi married actor Jay Bhanushali in 2011; they have a daughter, Tara (born 2019), and foster children Khushi and Rajveer. In Episode 47, Mahhi confronted Qazi over his loyalty after seeing him with Uditi Singh and Arishfa Khan, saying she felt used; Qazi disagreed and chose not to talk it through at that point. Yet on 23 October it was Qazi who won the captaincy task round and declared Mahhi the new captain, succeeding Scout. As captain going into Weekend Ka Vaar, every duty allocation and every defence of her friends will now be read as captaincy, not just personality.",
-    "trend": "In house · Captain until 28 October, voted out 6–5",
+    "trend": "In house · Captain until 28 October, voted out 6–5 · Nominated Week 9",
     "highlight": "Ex-captain — chosen by Qazi on 23 October, voted out of the captaincy race 6–5 on 28 October; served as sanchalak of the next captaincy task."
   },
   {
@@ -155,12 +155,12 @@ export const contestants = [
     "age": 23,
     "city": "Shahjahanpur / Mumbai",
     "image": "/assets/bb20/arishfa-khan.webp",
-    "nominated": false,
+    "nominated": true,
     "status": "in-house",
     "bio": "Arishfa Khan (born 3 April 2003, Shahjahanpur) debuted as a child artist in Chhal – Sheh Aur Maat in 2012 and became known as young Gunjan in Ek Veer Ki Ardaas… Veera, with credits including Jeannie Aur Juju, Uttaran and Papa By Chance. She rebuilt her career as a TikTok-era star on Instagram and YouTube, and at 23 is the season's youngest contestant — with more than 29 million Instagram followers, its biggest digital following.",
     "longBio": "Arishfa reportedly became interested in acting while accompanying her mother, who worked as a stunt performer, to shoots. In the house she has fought against being dismissed as 'bacchi' (a child) — a running tension for the youngest housemate. She was nominated in Week 7, was at the centre of a captaincy-task flashpoint in Episode 47 reporting, and her closeness with Qazi and Uditi Singh is the trigger Mahhi cited in the Episode 47 confrontation that cracked the Mahhi–Qazi friendship.",
-    "trend": "In house · Youngest housemate",
-    "highlight": "Youngest housemate with the house's biggest social following (29M+) — nominated in Week 7 and central to the Qazi–Mahhi split; safe in Week 8."
+    "trend": "In house · Youngest housemate · Nominated Week 9",
+    "highlight": "Youngest housemate with the house's biggest social following (29M+) — nominated in Week 7 and central to the Qazi–Mahhi split; nominated in Week 9."
   },
   {
     "id": "aman-gandhi",
@@ -253,12 +253,12 @@ export const contestants = [
     "age": null,
     "city": "Jaipur / Mumbai",
     "image": "/assets/bb20/uditi-singh.webp",
-    "nominated": false,
+    "nominated": true,
     "status": "in-house",
     "bio": "Uditi Singh is an actress and model with a fashion and pageant background, and the season's repeat danger-zone survivor. She received the fewest votes in Week 1 but, with no eviction that week, lost a life instead of leaving; she was in the Week 6 bottom three that sent Aman Gandhi home, was put straight into nominations by captain Scout, and was nominated in Week 7 — still in the house, safe in Week 8.",
     "longBio": "Uditi has played much of the season inside a friendship group with Arishfa Khan and, until his eviction, Aman Gandhi, and her closeness with Arishfa and with Qazi is the specific trigger Mahhi cited in the Episode 47 friendship crack with Qazi. She also won a round of the Episode 47 captaincy-contenders task, removing Yung and Scout from that race. Her exact age and date of birth are not reliably verified, so no precise age is published here.",
-    "trend": "In house · Repeat danger-zone survivor",
-    "highlight": "The season's repeat danger-zone survivor — fewest votes in Week 1, bottom three in Week 6, nominated again in Week 7, still in; safe in Week 8."
+    "trend": "In house · Repeat danger-zone survivor · Nominated Week 9",
+    "highlight": "The season's repeat danger-zone survivor — fewest votes in Week 1, bottom three in Week 6, nominated again in Week 7, still in; nominated in Week 9."
   },
   {
     "id": "manish-goel",
@@ -268,11 +268,11 @@ export const contestants = [
     "age": 50,
     "city": "Mumbai, Maharashtra",
     "image": "/assets/bb20/manish-goel.webp",
-    "nominated": false,
+    "nominated": true,
     "status": "in-house",
     "bio": "Manish Goel (born 27 August 1975, New Delhi) was not on this page at all until this update, despite entering as the season's first official wild card during Weekend Ka Vaar in Week 5. With a television career starting in the late 1990s — Kahaani Ghar Ghar Kii, Kasautii Zindagii Kay, Bhabhi, Ghar Ek Mandir and, most recently, Anupamaa as Raghav — he has worked in television longer than some housemates have been alive, and at 51 is the house's oldest housemate.",
     "longBio": "Manish arrived under a playful cover story, telling housemates he was there to promote a project, before Salman Khan revealed the 'project' was Bigg Boss itself. He is married to actress Poonam Narula (married 2002); they have two children, Aryaveer and Maliha, were runners-up on Nach Baliye 1 together, and he won Welcome – Baazi Mehmaan Nawazi Ki in 2013. In the house, the veteran has had to build bonds from zero against groups formed over five weeks, and he was nominated in Week 7. In the 24 October Weekend Ka Vaar, the Times of India reported that Manish lost a lifeline in the same twist that ended Mary Kom's journey, so he survives with less room for error. No /assets/bb20/ portrait exists for Manish yet, so his card deliberately shows a placeholder instead of another housemate's image.",
-    "trend": "In house · Wild card (Week 5)",
+    "trend": "In house · Wild card (Week 5) · Nominated Week 9",
     "highlight": "The season's first wild card and its oldest housemate at 51 — a three-decade TV career entering a house already five weeks formed."
   },
   {
