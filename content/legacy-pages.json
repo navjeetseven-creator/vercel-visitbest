@@ -12220,5 +12220,285 @@
         "linkLabel": "Visit the Meghmani Organics official website"
       }
     ]
+  },
+  {
+    "slug": "top-schools-in-haryana",
+    "title": "Top Schools in Haryana: 20 Schools Across Gurugram, Faridabad, Panchkula and Beyond",
+    "category": "Education",
+    "type": "reference",
+    "imageCluster": "education",
+    "summary": "Twenty verified schools across ten Haryana cities and districts: eight in Gurugram, three in Faridabad, two in Panchkula and one each in Ambala, Karnal, Panipat, Hisar, Rohtak, Sonipat and Kurukshetra. Every school's board and affiliation were checked against official school websites, CBSE records or the boards' own listings in November 2026. The list is grouped by city, not ranked, and no fees or ratings are published, because directories disagree with each other and fees change every session.",
+    "editorial": "Haryana parents comparing schools face a skewed map: most 'top schools' lists stop at Gurugram's international campuses. This guide deliberately spreads wider. Eight entries sit in Gurugram, where the state's IB and ICSE choice is concentrated, but the other twelve cover Faridabad, Panchkula and the district cities (Ambala, Karnal, Panipat, Hisar, Rohtak, Sonipat and Kurukshetra), where a strong school inside the home district usually beats a two-hour commute to the NCR. How this list was checked: every school's name, city, board and type were verified in November 2026 against the school's own website, CBSE affiliation records (affiliation numbers are quoted where CBSE or the school publishes them) or the board's listings. We have not published fees, ratings or rankings: fees change each session, directory ratings cannot be verified, and several directories contradict each other. One school here, the Convent of Jesus and Mary in Ambala Cantt, is listed as CBSE by some directories and CISCE by others, so its entry tells you to confirm the affiliation with the school office before applying. Frequently asked questions. Q: Which board should I choose, CBSE, ICSE or IB? A: CBSE suits families who may move within India or are targeting Indian entrance examinations; ICSE offers a broader, language-rich curriculum to Class X, with ISC after it; IB fits families planning international universities or an inquiry-led education. All three routes appear on this list, sometimes inside one school: Scottish High and Shiv Nadar both run more than one board, so always ask which curriculum a specific class follows. Q: Which of these schools offer boarding? A: Four do. Pathways World School offers flexible weekly, fortnightly and term boarding; GD Goenka World School is day-cum-boarding at Sohna; Vidya Devi Jindal School in Hisar is fully residential and girls only; and Swarnprastha in Sonipat boards boys from Class III. The other sixteen are day schools. Q: Why are there no fees in this guide? A: Because we could not verify them. Haryana schools publish their current fee structure in the mandatory disclosures on their own websites (Swarnprastha's disclosure page is a good example), and that is the only figure you should budget from. Q: Are the Gurugram schools automatically better than the district schools? A: No. They offer more board choice (IB, ICSE and Cambridge), but the district entries include schools with long records of their own: a girls' boarding school running since 1984, a convent school founded in 1909 and a Faridabad school whose alumni have topped IIT-JEE. Judge each school on the checks in the criteria list, not on its pin code.",
+    "items": [
+      [
+        "The Shri Ram School, Aravali",
+        "ICSE/ISC (CISCE HA021) · Gurugram · co-ed day",
+        "Aravali campus opened 2000; the IB Diploma sits at the group's Moulsari campus, not here"
+      ],
+      [
+        "Heritage Xperiential Learning School",
+        "CBSE · Gurugram (Sector 62) · co-ed day",
+        "Project-based model; the group's separate international school runs IB and IGCSE"
+      ],
+      [
+        "Scottish High International School",
+        "ICSE/ISC + IB + Cambridge · Gurugram (Sector 57) · co-ed day",
+        "One campus, several curricula — confirm your child's board route"
+      ],
+      [
+        "Shiv Nadar School, Gurugram",
+        "CBSE + Cambridge + IB DP · Gurugram (DLF Phase 1) · co-ed day",
+        "Opened 2012; CBSE mandatory disclosures published on its own site"
+      ],
+      [
+        "Pathways World School, Aravali",
+        "IB (PYP/MYP/DP) · Gurugram–Sohna Road · day + boarding",
+        "32-acre LEED Platinum campus; flexible weekly and term boarding"
+      ],
+      [
+        "GD Goenka World School",
+        "IB + Cambridge · Sohna · day-cum-boarding",
+        "60-acre Education City campus; no CBSE stream"
+      ],
+      [
+        "Delhi Public School, Sector 45",
+        "CBSE (530405) · Gurugram · co-ed day",
+        "DPS Society school, inaugurated in 2002"
+      ],
+      [
+        "Suncity School, Sector 54",
+        "CBSE + Cambridge + IB DP · Gurugram · co-ed day",
+        "Ask which board each year group is registered for"
+      ],
+      [
+        "Modern Vidya Niketan, Aravali Hills",
+        "CBSE (530422) · Faridabad (Sector 43) · co-ed day",
+        "MVN group teaching in Faridabad since 1983; strong senior science record"
+      ],
+      [
+        "Delhi Public School, Greater Faridabad",
+        "CBSE (531178) · Faridabad (Sector 81) · co-ed day",
+        "Opened 2013 on a 17-acre campus; a Cambridge wing is being added"
+      ],
+      [
+        "Apeejay School, Sector 15",
+        "CBSE · Faridabad · co-ed day",
+        "Founded 1972, the first Apeejay school in Haryana"
+      ],
+      [
+        "The Gurukul, Sector 20",
+        "CBSE (530645) · Panchkula · co-ed day",
+        "Darbari Lal Foundation school, established 2001"
+      ],
+      [
+        "Hansraj Public School, Sector 6",
+        "CBSE (530229) · Panchkula · co-ed day",
+        "DAV College Managing Committee school, since 1994"
+      ],
+      [
+        "Convent of Jesus and Mary, Ambala Cantt",
+        "Ambala Cantt · convent day school, est. 1909",
+        "Directories disagree on its board — confirm CBSE or CISCE with the office"
+      ],
+      [
+        "Dyal Singh Public School, Sector 7",
+        "CBSE (530301) · Karnal · co-ed day",
+        "Dyal Singh College Trust Society; not the Dyal Singh Colony school"
+      ],
+      [
+        "Delhi Public School, Panipat Refinery",
+        "CBSE (530296) · Panipat · co-ed day",
+        "DPS Society and Indian Oil joint venture in the refinery township"
+      ],
+      [
+        "Vidya Devi Jindal School",
+        "CBSE · Hisar · girls' residential",
+        "All-girls boarding on a 47-acre campus since 1984; Round Square member"
+      ],
+      [
+        "Scholars Rosary Senior Secondary School",
+        "CBSE · Rohtak · co-ed day",
+        "Science, commerce and humanities streams at senior secondary"
+      ],
+      [
+        "Swarnprastha Public School",
+        "CBSE (530474) · Sonipat · co-ed day + boys' boarding",
+        "Boarding for boys from Class III; on the NH-44 corridor"
+      ],
+      [
+        "Delhi Public School, Kurukshetra",
+        "CBSE (531143) · Kurukshetra · co-ed day",
+        "Opened 2012 near Jyotisar, under the DPS Society"
+      ]
+    ],
+    "criteria": [
+      "Board verified, not assumed: the school's CBSE affiliation number, CISCE code or IB authorisation was found in CBSE or board records, or on the school's own mandatory-disclosure page.",
+      "The school's own website is live and current, with admissions or disclosure information a parent can act on today.",
+      "A real spread of Haryana: at least one strong option in each of the state's main school markets, not a Gurugram-only list.",
+      "A mix of school types (day and boarding, co-educational and girls-only, CBSE, ICSE, IB and Cambridge) so the list works for different family situations.",
+      "An established track record: founding year and managing trust or society verified from the school's own history or affiliation records."
+    ],
+    "details": [
+      {
+        "name": "The Shri Ram School, Aravali",
+        "description": "The Shri Ram School's Aravali campus stands in the Hamilton Court Complex in DLF Phase IV, Gurugram, and teaches Nursery to Class XII under the Council for the Indian School Certificate Examinations (CISCE school code HA021), so pupils sit the ICSE in Class X and the ISC in Class XII; the campus also offers the NIOS board. The Aravali campus opened in 2000, and it remains a co-educational day school; the group's IB Diploma is taught at its separate Moulsari Avenue campus. It suits families who want the ICSE curriculum's language-rich, broad-based structure inside Gurugram rather than at the group's Delhi schools. Confirm the current admission notice on tsrs.org.",
+        "image": "/assets/top-schools-in-haryana/shri-ram-school-logo.png",
+        "imageAlt": "The Shri Ram School logo, from the school's official website",
+        "linkLabel": "Visit The Shri Ram School",
+        "linkUrl": "https://www.tsrs.org/"
+      },
+      {
+        "name": "Heritage Xperiential Learning School",
+        "description": "Heritage Xperiential Learning School's Sector 62 campus in Gurugram teaches Nursery to Class XII and is affiliated to CBSE through the senior secondary stage; the wider Heritage group also runs an IB and IGCSE international school in DLF Phase 5, so confirm which board a given class follows before applying. Founded in 2003, the school is known for its experiential, project-based classroom model rather than textbook-led teaching, and it runs as a co-educational day school. Families comparing it with conventional CBSE schools in the city usually visit the campus to judge the project work and assessment style in person.",
+        "image": "/assets/top-schools-in-haryana/heritage-xperiential-logo.png",
+        "imageAlt": "Heritage Xperiential Learning School logo, from the school's official website",
+        "linkLabel": "Visit Heritage Xperiential",
+        "linkUrl": "https://www.heritagexperiential.org/"
+      },
+      {
+        "name": "Scottish High International School",
+        "description": "Scottish High International School, in G Block, Sector 57 (Sushant Lok II), is one of the few Haryana schools where a child can stay on one campus across boards: it is a CISCE school (ISC code HA027) for ICSE and ISC, an authorised IB school for the PYP, MYP, Diploma and Career-related Programmes, and a Cambridge centre (IN448) for IGCSE. Established in 2005 on a five-acre campus, it is co-educational and day only, teaching Pre-Nursery to Class XII under the motto 'Building Personalities, Not Just People'. It fits families who want to keep international-board options open without changing schools.",
+        "image": "",
+        "imageAlt": "",
+        "linkLabel": "Visit Scottish High",
+        "linkUrl": "https://www.scottishigh.com/"
+      },
+      {
+        "name": "Shiv Nadar School, Gurugram",
+        "description": "Shiv Nadar School, Gurugram sits on Golf Course Road in DLF Phase 1 and opened in 2012 as part of the Shiv Nadar Foundation's school network. It teaches Nursery to Class XII as a co-educational day school, with CBSE affiliation alongside Cambridge (CAIE) assessment and the IB Diploma Programme in the senior years, so parents should check which curriculum their child's class is enrolled in. The school publishes its CBSE mandatory disclosures, including its provisional affiliation for 2025–30, on its website. It is a natural shortlist entry for DLF and Golf Course Road families who want a newer, technology-forward campus.",
+        "image": "/assets/top-schools-in-haryana/shiv-nadar-school-logo.png",
+        "imageAlt": "Shiv Nadar School logo, from the school's official website",
+        "linkLabel": "Visit Shiv Nadar School",
+        "linkUrl": "https://shivnadarschool.edu.in/gurgaon"
+      },
+      {
+        "name": "Pathways World School, Aravali",
+        "description": "Pathways World School stands on a 32-acre campus at Aravali Retreat, off the Gurugram–Sohna Road, and was founded in 2003 as the first school in North India authorised for the full IB continuum: the Primary Years, Middle Years and Diploma Programmes under one roof. It offers day places alongside flexible weekly, fortnightly and term boarding, which makes it unusual among Gurugram schools for families based elsewhere in the NCR. The campus holds LEED Platinum certification for its green design, and the school is accredited by NEASC and is a member of CIS. It suits families committed to the IB pathway through to Class XII.",
+        "image": "/assets/top-schools-in-haryana/pathways-world-school.jpg",
+        "imageAlt": "Pathways World School students — music, riding and reading — from the school's official website",
+        "linkLabel": "Visit Pathways World School",
+        "linkUrl": "https://www.pws.edu.in/"
+      },
+      {
+        "name": "GD Goenka World School",
+        "description": "GD Goenka World School anchors the 60-acre GD Goenka Education City on the Sohna–Gurugram Road, south of the city. It runs the IB Primary Years Programme with Cambridge Lower Secondary and IGCSE, and the IB Diploma and Career-related Programmes in the senior school; there is no CBSE stream here. Opened in 2003, it offers day, weekly-boarding and full-boarding places, so it draws pupils from across the NCR and beyond. Families choose it when they want an international curriculum with a genuine residential campus, and should weigh the Sohna commute, or boarding, into the decision.",
+        "image": "/assets/top-schools-in-haryana/gd-goenka-world-school-logo.png",
+        "imageAlt": "GD Goenka World School logo, from the school's official website",
+        "linkLabel": "Visit GD Goenka World School",
+        "linkUrl": "https://gdgws.gdgoenka.com/"
+      },
+      {
+        "name": "Delhi Public School, Sector 45",
+        "description": "Delhi Public School, Sector 45, Gurugram was inaugurated on 29 April 2002 and works under the Delhi Public School Society with CBSE affiliation (number 530405). It teaches Pre-Nursery to Class XII as a co-educational day school, following the DPS network's shared curriculum and the motto 'Service Before Self'. For many Sector 45, Sector 46 and Sushant Lok families it is the default neighbourhood CBSE option, with the society's standard mix of academics, sport and clubs. As with all DPS branches, confirm the current session's admission notice on the school's own website, dpsgurgaon.org, rather than on directory sites.",
+        "image": "",
+        "imageAlt": "",
+        "linkLabel": "Visit DPS Sector 45",
+        "linkUrl": "https://www.dpsgurgaon.org/"
+      },
+      {
+        "name": "Suncity School, Sector 54",
+        "description": "Suncity School, Sector 54, Gurugram (also styled Suncity School International Academia) teaches from the early years to Class XII on the Golf Course Road corridor. School and directory listings describe three curriculum routes on the campus — CBSE, Cambridge (CAIE) and the IB Diploma in the senior years — so ask the admissions office which board a specific year group is registered for before you apply. It is a co-educational day school and one of the established names in this part of the city, alongside Shiv Nadar School and Scottish High. Its notices and admission forms are published at suncityschool.in.",
+        "image": "/assets/top-schools-in-haryana/suncity-school-logo.png",
+        "imageAlt": "Suncity School logo, from the school's official website",
+        "linkLabel": "Visit Suncity School",
+        "linkUrl": "https://www.suncityschool.in/"
+      },
+      {
+        "name": "Modern Vidya Niketan, Aravali Hills",
+        "description": "Modern Vidya Niketan's Aravali Hills campus, in Sector 43 on the Badkhal–Surajkund Road in Faridabad, is affiliated to CBSE (number 530422) and teaches Classes I to XII. The MVN group has run schools in Faridabad since 1983, and the Aravali campus is best known locally for its senior-secondary science results: its alumni include Nitin Jain, who topped IIT-JEE in 2009, and Arpit Aggarwal, who topped it in 2012. It is a co-educational day school. Families in Surajkund, Charmwood and Greater Faridabad who prioritise a results-led CBSE senior school usually keep MVN on the shortlist.",
+        "image": "",
+        "imageAlt": "",
+        "linkLabel": "Visit MVN Aravali Hills",
+        "linkUrl": "https://mvneducation.com/"
+      },
+      {
+        "name": "Delhi Public School, Greater Faridabad",
+        "description": "Delhi Public School, Greater Faridabad opened on 22 April 2013 in Sector 81, under the Delhi Public School Society, and is affiliated to CBSE (number 531178). The co-educational day school teaches Nursery to Class XII on a 17-acre campus in the Greater Faridabad (Nehrpar) sectors, and the school says a Cambridge wing is being added alongside its CBSE core. It is the main DPS Society option for the new sectors across the Agra Canal, and admission notices, book lists and results are published on its own website. Parents should check bus routes carefully, as Greater Faridabad's sectors are still developing their road links.",
+        "image": "/assets/top-schools-in-haryana/dps-greater-faridabad-logo.jpg",
+        "imageAlt": "Delhi Public School, Greater Faridabad logo, from the school's official website",
+        "linkLabel": "Visit DPS Greater Faridabad",
+        "linkUrl": "https://www.dpsgfaridabad.com/"
+      },
+      {
+        "name": "Apeejay School, Sector 15",
+        "description": "Apeejay School, Sector 15, Faridabad is the oldest of the private-group schools on this list: founded in July 1972 by Dr Stya Paul, it was the first Apeejay school in Haryana, and its primary wing now sits in Sector 14. Affiliated to CBSE, it teaches Pre-Nursery to Class XII as a co-educational day school and is a member of the National Progressive Schools' Conference. Generations of Faridabad families have passed through it, and it remains the default CBSE shortlist entry for the older NIT and Sector 15 to 21 side of the city. Current notices are published on the school's Faridabad page at apeejay.edu.",
+        "image": "",
+        "imageAlt": "",
+        "linkLabel": "Visit Apeejay Faridabad",
+        "linkUrl": "https://www.apeejay.edu/faridabad/"
+      },
+      {
+        "name": "The Gurukul, Sector 20",
+        "description": "The Gurukul, Sector 20, Panchkula is a co-educational senior secondary school affiliated to CBSE (number 530645) and run by the Darbari Lal Foundation. Established in 2001, it teaches Pre-Nursery to Class XII from its Sector 20 campus, a short drive from the Chandigarh border, which makes it a common pick for families living between Panchkula and Chandigarh who want a Haryana CBSE school. Its 'gurukul' branding reflects a values-led ethos alongside the standard CBSE programme. The school publishes its affiliation and mandatory-disclosure details on its website, thegurukul.guru, where parents can also check the current admission schedule.",
+        "image": "/assets/top-schools-in-haryana/the-gurukul-logo.png",
+        "imageAlt": "The Gurukul, Panchkula logo, from the school's official website",
+        "linkLabel": "Visit The Gurukul",
+        "linkUrl": "https://www.thegurukul.guru/"
+      },
+      {
+        "name": "Hansraj Public School, Sector 6",
+        "description": "Hansraj Public School, Sector 6, Panchkula has been run by the DAV College Managing Committee since 1994 and is affiliated to CBSE (number 530229) through the senior secondary stage. It teaches Nursery to Class XII as a co-educational day school, following the DAV network's blend of the CBSE curriculum with its Arya Samaj values tradition. For Panchkula families it is one of the longest-established CBSE options in the older sectors, and its results and alumni notices are carried on the school's own website. Check the site for the current session's admission and fee notices before visiting the campus.",
+        "image": "",
+        "imageAlt": "",
+        "linkLabel": "Visit Hansraj Public School",
+        "linkUrl": "http://hansrajpublicschool.com/"
+      },
+      {
+        "name": "Convent of Jesus and Mary, Ambala Cantt",
+        "description": "The Convent of Jesus and Mary, on Staff Road in Ambala Cantt, has been schooling the cantonment since 1909 and is run by the sisters of the Religious of Jesus and Mary, the congregation behind the CJM schools across India. It is a co-educational day school teaching through the senior years, and one of the oldest continuously running schools in Haryana. One caution before applying: school directories currently disagree about its board, listing CBSE in some places and CISCE in others, so confirm the school's present affiliation directly with the office on Staff Road. Its own website is cjmambala.in.",
+        "image": "",
+        "imageAlt": "",
+        "linkLabel": "Visit CJM Ambala",
+        "linkUrl": "http://cjmambala.in/"
+      },
+      {
+        "name": "Dyal Singh Public School, Sector 7",
+        "description": "Dyal Singh Public School, Sector 7, Karnal is affiliated to CBSE (number 530301, recorded in CBSE's own SARAS portal for 2025–30) and is run by the Dyal Singh College Trust Society, the trust behind Karnal's Dyal Singh College. Established in 1998, it is a co-educational day school teaching through the senior secondary classes from its Sector 7 campus in the HUDA sectors. Do not confuse it with the older Dayal Singh Public School in Dyal Singh Colony, a separate institution connected to the same trust family; the Sector 7 school's own site is dsps7karnal.com.",
+        "image": "",
+        "imageAlt": "",
+        "linkLabel": "Visit Dyal Singh Public School",
+        "linkUrl": "https://www.dsps7karnal.com/"
+      },
+      {
+        "name": "Delhi Public School, Panipat Refinery",
+        "description": "Delhi Public School, Panipat Refinery was established in 1998 in the Refinery Township at Dadlana village, as a joint venture between the Delhi Public School Society and Indian Oil Corporation, which runs the Panipat Refinery next door. Affiliated to CBSE (number 530296), it teaches Nursery to Class XII as a co-educational day school, serving refinery families and the wider Panipat area. Its township setting gives it a quieter, greener campus feel than city-centre schools, and admission information is published on the school's website. Non-township families should confirm transport arrangements with the school office.",
+        "image": "",
+        "imageAlt": "",
+        "linkLabel": "Visit DPS Panipat Refinery",
+        "linkUrl": "http://dpspanipatref.com/"
+      },
+      {
+        "name": "Vidya Devi Jindal School",
+        "description": "Vidya Devi Jindal School, on Delhi Road in Hisar, is Haryana's best-known girls' residential school. Founded by industrialist O. P. Jindal in memory of his mother, it became functional in July 1984 and has been affiliated to CBSE since 1984; the 47-acre campus is a member of the Indian Public Schools' Conference and the Round Square network. Girls board on campus through the school years, with the programme built around academics, sport and pastoral care in a fully residential setting. It suits families anywhere in India who are looking specifically for an established girls' boarding school with a long track record.",
+        "image": "/assets/top-schools-in-haryana/vidya-devi-jindal-school.jpg",
+        "imageAlt": "Vidya Devi Jindal School students in dance, astronomy, art and craft activities, from the school's official website",
+        "linkLabel": "Visit Vidya Devi Jindal School",
+        "linkUrl": "https://www.vdjs.edu.in/"
+      },
+      {
+        "name": "Scholars Rosary Senior Secondary School",
+        "description": "Scholars Rosary Senior Secondary School stands at the 6 km stone on Sonipat Road at Bohar, on Rohtak's edge, and is affiliated to CBSE through Class XII. Run by the Scholars Rosary Education Society, it is a co-educational day school offering the standard senior-secondary streams (science, medical and non-medical, commerce and humanities) to pupils from Rohtak and the surrounding villages. Directory listings differ on its founding year, so treat history claims cautiously; what is verifiable is its current CBSE affiliation, its stream list and its campus on the Sonipat Road, all published on the school's own website.",
+        "image": "",
+        "imageAlt": "",
+        "linkLabel": "Visit Scholars Rosary",
+        "linkUrl": "https://scholarsrosary.co.in/"
+      },
+      {
+        "name": "Swarnprastha Public School",
+        "description": "Swarnprastha Public School, in Sector 19, Sonipat near Omaxe City on NH-44, is affiliated to CBSE (number 530474, shown in the school's own mandatory disclosure) and is run by the Indraprastha Education and Charitable Society under the Sparsh Group. It is mainly a co-educational day school for Sonipat and the NH-44 corridor towards Delhi, and it also offers boarding for boys from Class III, which is rare among Sonipat schools. Its mandatory disclosure page is a good model of the documents parents should ask every school on this list to share before paying any admission fee.",
+        "image": "/assets/top-schools-in-haryana/swarnprastha-public-school-logo.png",
+        "imageAlt": "Swarnprastha Public School crest, from the school's official website",
+        "linkLabel": "Visit Swarnprastha Public School",
+        "linkUrl": "https://www.swarnprastha.com/"
+      },
+      {
+        "name": "Delhi Public School, Kurukshetra",
+        "description": "Delhi Public School, Kurukshetra opened in 2012 on Pehowa Road near Jyotisar and works under the aegis of the Delhi Public School Society. Affiliated to CBSE (number 531143), it teaches from the pre-primary years to Class XII as a co-educational day school, managed locally by the Mahavir Educational Society. For Kurukshetra and Pehowa families it is the main DPS Society campus in the district, and its admission and disclosure documents are published on the school's own website. Confirm the senior-secondary streams on offer with the school, as district campuses often add streams in phases.",
+        "image": "",
+        "imageAlt": "",
+        "linkLabel": "Visit DPS Kurukshetra",
+        "linkUrl": "https://dpskurukshetra.com/"
+      }
+    ]
   }
 ]
