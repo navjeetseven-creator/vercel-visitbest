@@ -1001,5 +1001,14 @@
     "local": "/assets/top-10-pesticides-companies-in-india/cover.jpg",
     "license": "Company logos are trademarks of their respective owners, reproduced for editorial identification",
     "credit": "Logos © their respective companies, via their official websites"
+  },
+  {
+    "alt": "Students at Pathways World School and Vidya Devi Jindal School, two of the schools in the Haryana top 20",
+    "cluster": "education",
+    "credit": "Compilation from official school websites (Pathways World School, Vidya Devi Jindal School); logos and photos belong to the respective schools",
+    "license": "School logos and campus photos used for identification in an editorial list; all rights remain with the respective schools",
+    "local": "/assets/top-schools-in-haryana/hero.jpg",
+    "slug": "top-schools-in-haryana",
+    "source": "https://www.pws.edu.in/ and https://www.vdjs.edu.in/"
   }
 ]
