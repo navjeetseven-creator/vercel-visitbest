@@ -87018,5 +87018,144 @@
         }
       ]
     }
+  },
+  {
+    "id": 11358,
+    "date": "2026-11-03T22:55:00",
+    "date_gmt": "2026-11-03T17:25:00",
+    "guid": {
+      "rendered": "https://visitbest.in/wp-content/uploads/2026/11/hero.webp"
+    },
+    "modified": "2026-11-03T22:55:00",
+    "modified_gmt": "2026-11-03T17:25:00",
+    "slug": "best-dance-academies-in-chandigarh-2",
+    "status": "inherit",
+    "type": "attachment",
+    "link": "https://visitbest.in/best-dance-academies-in-chandigarh/attachment/best-dance-academies-in-chandigarh-2/",
+    "title": {
+      "rendered": "Best Dance Academies in Chandigarh"
+    },
+    "author": 1,
+    "comment_status": "open",
+    "ping_status": "closed",
+    "template": "",
+    "meta": {
+      "footnotes": "",
+      "_acf_changed": false,
+      "relevanssi_related_exclude_ids": "",
+      "timely_featured": false,
+      "timely_update": false
+    },
+    "description": {
+      "rendered": ""
+    },
+    "caption": {
+      "rendered": "<p>Compiled cover: real photographs from Rock N Roll Dance Institute and Jaskshan’s Dance Dacha, two of the Chandigarh dance academies reviewed in this guide.</p>\n"
+    },
+    "alt_text": "Dance academies in Chandigarh: students at Rock N Roll Dance Institute and performers and classes at Jaskshans Dance Dacha",
+    "media_type": "image",
+    "mime_type": "image/webp",
+    "media_details": {
+      "width": 2048,
+      "height": 1152,
+      "file": "2026/11/hero.webp",
+      "filesize": 171896,
+      "sizes": {
+        "medium": {
+          "file": "hero-300x169.webp",
+          "width": 300,
+          "height": 169,
+          "filesize": 0,
+          "mime_type": "image/webp",
+          "source_url": "https://visitbest.in/wp-content/uploads/2026/10/hero-300x169.webp"
+        },
+        "large": {
+          "file": "hero-1024x576.webp",
+          "width": 1024,
+          "height": 576,
+          "filesize": 0,
+          "mime_type": "image/webp",
+          "source_url": "https://visitbest.in/wp-content/uploads/2026/10/hero-1024x576.webp"
+        },
+        "thumbnail": {
+          "file": "hero-150x150.webp",
+          "width": 150,
+          "height": 150,
+          "filesize": 0,
+          "mime_type": "image/webp",
+          "source_url": "https://visitbest.in/wp-content/uploads/2026/10/hero-150x150.webp"
+        },
+        "medium_large": {
+          "file": "hero-768x432.webp",
+          "width": 768,
+          "height": 432,
+          "filesize": 0,
+          "mime_type": "image/webp",
+          "source_url": "https://visitbest.in/wp-content/uploads/2026/10/hero-768x432.webp"
+        },
+        "full": {
+          "file": "hero.webp",
+          "width": 2048,
+          "height": 1152,
+          "filesize": 182668,
+          "mime_type": "image/webp",
+          "source_url": "https://visitbest.in/wp-content/uploads/2026/10/hero.webp"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "0",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "0",
+        "keywords": []
+      }
+    },
+    "post": 11357,
+    "source_url": "https://visitbest.in/wp-content/uploads/2026/11/hero.webp",
+    "_links": {
+      "self": [
+        {
+          "href": "https://visitbest.in/wp-json/wp/v2/media/11358",
+          "targetHints": {
+            "allow": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://visitbest.in/wp-json/wp/v2/media"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://visitbest.in/wp-json/wp/v2/types/attachment"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://visitbest.in/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://visitbest.in/wp-json/wp/v2/comments?post=11268"
+        }
+      ]
+    }
   }
 ]
