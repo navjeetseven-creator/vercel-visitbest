@@ -92,12 +92,12 @@ export const contestants = [
     "city": "Panipat, Haryana",
     "image": "/assets/bb20/kanika-mann.webp",
     "nominated": true,
-    "captain": true,
+    "captain": false,
     "status": "in-house",
     "bio": "Kanika Mann (born 7 October 1993, Panipat) holds a Master of Laws (LL.M.) from Panjab University and is best known as Guddan in Guddan Tumse Na Ho Payega, after Badho Bahu, Punjabi films including Rocky Mental and Daana Paani, the web series Roohaniyat, and a finalist run on Khatron Ke Khiladi 12. She was this season's first confirmed contestant and its first housemate through the door on premiere night, 6 September.",
     "longBio": "Kanika's route into acting was not straightforward: her father initially opposed acting and wanted her to pursue law — she completed the law degree, then acting won, and he later helped her with her first audition. On entering, she received a 'Puppet Master' power to influence later entrants. Inside the house she has been competitive and emotionally direct, was praised by Salman Khan in Week 5 Weekend Ka Vaar coverage, took a life from Rohed Khan in the Week 2 sequence that preceded his eviction, and featured in Episode 47's key Scout conversation — teasing him about not knowing his girlfriend's birthday, a clip that fed the wider Kaashvi story. She is nominated in Week 8, in the six-name list from the 25 October nomination task (Business Upturn; IndiaForums).",
-    "trend": "In house · Captain (from 28 October) · Nominated Week 8",
-    "highlight": "The season's first entrant — a law graduate turned TV star, new captain from 28 October, nominated in Week 8."
+    "trend": "In house · Ex-captain (from 28 October) · Nominated Week 8",
+    "highlight": "The season's first entrant — a law graduate turned TV star, ex-captain (captain from 28 October), nominated in Week 8."
   },
   {
     "id": "amrapali-dubey",
@@ -156,11 +156,12 @@ export const contestants = [
     "city": "Shahjahanpur / Mumbai",
     "image": "/assets/bb20/arishfa-khan.webp",
     "nominated": true,
+    "captain": true,
     "status": "in-house",
     "bio": "Arishfa Khan (born 3 April 2003, Shahjahanpur) debuted as a child artist in Chhal – Sheh Aur Maat in 2012 and became known as young Gunjan in Ek Veer Ki Ardaas… Veera, with credits including Jeannie Aur Juju, Uttaran and Papa By Chance. She rebuilt her career as a TikTok-era star on Instagram and YouTube, and at 23 is the season's youngest contestant — with more than 29 million Instagram followers, its biggest digital following.",
     "longBio": "Arishfa reportedly became interested in acting while accompanying her mother, who worked as a stunt performer, to shoots. In the house she has fought against being dismissed as 'bacchi' (a child) — a running tension for the youngest housemate. She was nominated in Week 7, was at the centre of a captaincy-task flashpoint in Episode 47 reporting, and her closeness with Qazi and Uditi Singh is the trigger Mahhi cited in the Episode 47 confrontation that cracked the Mahhi–Qazi friendship.",
-    "trend": "In house · Youngest housemate · Nominated Week 9",
-    "highlight": "Youngest housemate with the house's biggest social following (29M+) — nominated in Week 7 and central to the Qazi–Mahhi split; nominated in Week 9."
+    "trend": "In house · Reported new captain (2X Room) · Nominated Week 9",
+    "highlight": "Youngest housemate with the house's biggest social following (29M+) — nominated in Week 7 and central to the Qazi–Mahhi split; nominated in Week 9; reported new captain (2X Room)."
   },
   {
     "id": "aman-gandhi",
