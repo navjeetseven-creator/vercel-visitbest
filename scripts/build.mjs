@@ -60,6 +60,32 @@ function escapeHtml(value = "") {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
 }
+function editorialParas(value = "") {
+  const raw = String(value || "");
+  const sentences = [];
+  let start = 0;
+  for (let i = 0; i < raw.length; i++) {
+    const c = raw[i];
+    if (c !== "." && c !== "!" && c !== "?") continue;
+    if (c === "." && /\d/.test(raw[i - 1] || "") && /\d/.test(raw[i + 1] || "")) continue;
+    let j = i + 1;
+    while (j < raw.length && "\"')\]]".includes(raw[j])) j++;
+    if (j < raw.length && !/\s/.test(raw[j])) continue;
+    sentences.push(raw.slice(start, j));
+    start = j;
+  }
+  if (start < raw.length) sentences.push(raw.slice(start));
+  const paras = [];
+  let cur = "";
+  const words = (s) => s.trim().split(/\s+/).filter(Boolean).length;
+  for (const s of sentences) {
+    if (cur && words(cur) >= 50 && words(cur) + words(s) > 110) { paras.push(cur.trim()); cur = s; }
+    else { cur += s; }
+  }
+  if (cur.trim()) paras.push(cur.trim());
+  return paras.map((p) => `<p>${escapeHtml(p)}</p>`).join("");
+}
+
 
 function stripHtml(value = "") {
   return decodeEntities(String(value)
@@ -571,11 +597,11 @@ function renderLegacyHtml(entry) {
     const image = safeDetailUrl(detail.image);
     const linkUrl = safeDetailUrl(detail.linkUrl);
     const rel = linkUrl.includes("amazon.in/dp/") ? "nofollow sponsored noopener" : "nofollow noopener";
-    return `<article class="brand-block"><h3>${escapeHtml(detail.name || "")}</h3>${image ? `<figure${/logo/i.test(image) ? ' class="brand-logo"' : ""}><img src="${escapeHtml(image)}" alt="${escapeHtml(detail.imageAlt || detail.name || "")}" loading="lazy"></figure>` : ""}<p>${escapeHtml(detail.description || "")}</p>${detail.modelTitle ? `<p class="brand-model">Featured model: ${escapeHtml(detail.modelTitle)}</p>` : ""}${linkUrl ? `<p><a class="buy-button" href="${escapeHtml(linkUrl)}" target="_blank" rel="${rel}">${escapeHtml(detail.linkLabel || "View details")}</a></p>` : ""}</article>`;
+    return `<article class="brand-block"><h3>${escapeHtml(detail.name || "")}</h3>${image ? `<figure${/logo/i.test(image) ? ' class="brand-logo"' : ""}><img src="${escapeHtml(image)}" alt="${escapeHtml(detail.imageAlt || detail.name || "")}" loading="lazy"></figure>` : ""}${editorialParas(detail.description || "")}${detail.modelTitle ? `<p class="brand-model">Featured model: ${escapeHtml(detail.modelTitle)}</p>` : ""}${linkUrl ? `<p><a class="buy-button" href="${escapeHtml(linkUrl)}" target="_blank" rel="${rel}">${escapeHtml(detail.linkLabel || "View details")}</a></p>` : ""}</article>`;
   }).join("");
   const hasAmazonDetail = detailEntries.some((detail) => typeof detail.linkUrl === "string" && detail.linkUrl.includes("amazon.in/dp/"));
   const brandGuide = detailBlocks ? `${hasAmazonDetail ? `<p class="affiliate-disclosure">This post contains affiliate links. As an Amazon Associate, we earn from qualifying purchases. This does not affect our editorial independence.</p>` : ""}<section class="content-section brand-guide"><h2>The brands in detail</h2>${detailBlocks}</section>` : "";
-  return `<section class="content-section"><div class="takeaway"><h2>At a glance</h2><p>${escapeHtml(entry.editorial || entry.summary)}</p></div><ul>${(entry.items || []).slice(0, 4).map((item) => `<li><strong>${escapeHtml(item[0])}</strong> — ${escapeHtml(item[1])}</li>`).join("")}</ul></section>${renderAdBanner("intro")}<section class="content-section"><h2>Shortlist and comparison</h2><div class="table-scroll"><table class="comparison-table"><thead><tr><th>${firstColumn}</th><th>${secondColumn}</th><th>${thirdColumn}</th></tr></thead><tbody>${rows}</tbody></table></div></section>${brandGuide}<section class="content-section"><h2>How to choose</h2><p>Start with the real decision: who will use this, where, how often, and what would make the choice unsafe or disappointing? The following checks keep the shortlist practical.</p><ol>${criteria}</ol></section><section class="content-section"><h2>What to verify before you commit</h2><p>Confirm the current specification, price or availability, terms, and seller or provider identity. For companies and services, request a written scope, named contact, references, and cancellation or warranty terms. For products, compare the unit price, compatibility, return window, and genuine support.</p></section><section class="content-section"><h2>Editorial update</h2><p>${escapeHtml(entry.editorial || "This page was refreshed for the static VisitBest migration.")}</p></section>${references}${renderAdBanner("outro")}${faq}`;
+  return `<section class="content-section"><div class="takeaway"><h2>At a glance</h2>${editorialParas(entry.editorial || entry.summary)}</div><ul>${(entry.items || []).slice(0, 4).map((item) => `<li><strong>${escapeHtml(item[0])}</strong> — ${escapeHtml(item[1])}</li>`).join("")}</ul></section>${renderAdBanner("intro")}<section class="content-section"><h2>Shortlist and comparison</h2><div class="table-scroll"><table class="comparison-table"><thead><tr><th>${firstColumn}</th><th>${secondColumn}</th><th>${thirdColumn}</th></tr></thead><tbody>${rows}</tbody></table></div></section>${brandGuide}<section class="content-section"><h2>How to choose</h2><p>Start with the real decision: who will use this, where, how often, and what would make the choice unsafe or disappointing? The following checks keep the shortlist practical.</p><ol>${criteria}</ol></section><section class="content-section"><h2>What to verify before you commit</h2><p>Confirm the current specification, price or availability, terms, and seller or provider identity. For companies and services, request a written scope, named contact, references, and cancellation or warranty terms. For products, compare the unit price, compatibility, return window, and genuine support.</p></section><section class="content-section"><h2>Editorial update</h2>${editorialParas(entry.editorial || "This page was refreshed for the static VisitBest migration.")}</section>${references}${renderAdBanner("outro")}${faq}`;
 }
 
 function fallbackForPage(page) {
