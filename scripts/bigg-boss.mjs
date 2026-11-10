@@ -13,13 +13,13 @@ export const contestants = [
     "age": "26–27",
     "city": "Gurugram, Haryana",
     "image": "/assets/bb20/gullu.webp",
-    "nominated": true,
+    "nominated": false,
     "captain": false,
     "status": "in-house",
     "bio": "Kushal Tanwar, known as Gullu or Gullu Boxer, is a reality-show winner — MTV Roadies XX: Double Cross (2025), Splitsvilla and Maa Hai Naa — and a hotel-management graduate from IHMCT Pune who worked in hospitality and event management before television. In the house he mixes entertainment and physical tasks, with an early captaincy stint that has long since ended.",
     "longBio": "Gullu came in as one of reality television's form players, with back-to-back reality wins giving him a ready fanbase. His long friendship with Roadies gang leader Elvish Yadav, the Bigg Boss OTT 2 winner, has been a talking point in the house, and Elvish publicly backed him after his clash with wild card Nakul Dhull — the altercation after which Nakul was removed in Week 6. Nominated again in Week 8, Gullu's survival depends on whether his reality-show fanbase converts into Bigg Boss support. Note: his exact date of birth is not reliably verified; secondary profiles give a birth year of 1999, so his age is shown as approximate.",
-    "trend": "In house · Nominated Week 8",
-    "highlight": "Roadies XX winner at the centre of the Nakul Dhull removal — now fighting a Week 8 nomination."
+    "trend": "In house · Survived Week 8 nomination",
+    "highlight": "Roadies XX winner at the centre of the Nakul Dhull removal — survived a Week 8 nomination."
   },
   {
     "id": "qazi-touqeer",
@@ -91,12 +91,12 @@ export const contestants = [
     "age": 33,
     "city": "Panipat, Haryana",
     "image": "/assets/bb20/kanika-mann.webp",
-    "nominated": true,
+    "nominated": false,
     "captain": false,
     "status": "in-house",
     "bio": "Kanika Mann (born 7 October 1993, Panipat) holds a Master of Laws (LL.M.) from Panjab University and is best known as Guddan in Guddan Tumse Na Ho Payega, after Badho Bahu, Punjabi films including Rocky Mental and Daana Paani, the web series Roohaniyat, and a finalist run on Khatron Ke Khiladi 12. She was this season's first confirmed contestant and its first housemate through the door on premiere night, 6 September.",
     "longBio": "Kanika's route into acting was not straightforward: her father initially opposed acting and wanted her to pursue law — she completed the law degree, then acting won, and he later helped her with her first audition. On entering, she received a 'Puppet Master' power to influence later entrants. Inside the house she has been competitive and emotionally direct, was praised by Salman Khan in Week 5 Weekend Ka Vaar coverage, took a life from Rohed Khan in the Week 2 sequence that preceded his eviction, and featured in Episode 47's key Scout conversation — teasing him about not knowing his girlfriend's birthday, a clip that fed the wider Kaashvi story. She is nominated in Week 8, in the six-name list from the 25 October nomination task (Business Upturn; IndiaForums).",
-    "trend": "In house · Ex-captain (from 28 October) · Nominated Week 8",
+    "trend": "In house · Ex-captain (from 28 October)",
     "highlight": "The season's first entrant — a law graduate turned TV star, ex-captain (captain from 28 October), nominated in Week 8."
   },
   {
@@ -160,8 +160,8 @@ export const contestants = [
     "status": "in-house",
     "bio": "Arishfa Khan (born 3 April 2003, Shahjahanpur) debuted as a child artist in Chhal – Sheh Aur Maat in 2012 and became known as young Gunjan in Ek Veer Ki Ardaas… Veera, with credits including Jeannie Aur Juju, Uttaran and Papa By Chance. She rebuilt her career as a TikTok-era star on Instagram and YouTube, and at 23 is the season's youngest contestant — with more than 29 million Instagram followers, its biggest digital following.",
     "longBio": "Arishfa reportedly became interested in acting while accompanying her mother, who worked as a stunt performer, to shoots. In the house she has fought against being dismissed as 'bacchi' (a child) — a running tension for the youngest housemate. She was nominated in Week 7, was at the centre of a captaincy-task flashpoint in Episode 47 reporting, and her closeness with Qazi and Uditi Singh is the trigger Mahhi cited in the Episode 47 confrontation that cracked the Mahhi–Qazi friendship.",
-    "trend": "In house · Reported new captain (2X Room) · Nominated Week 9",
-    "highlight": "Youngest housemate with the house's biggest social following (29M+) — nominated in Week 7 and central to the Qazi–Mahhi split; nominated in Week 9; reported new captain (2X Room)."
+    "trend": "In house · New captain (2X Room, unanimous house vote) · Nominated Week 9",
+    "highlight": "Youngest housemate with the house's biggest social following (29M+) — nominated in Week 7 and central to the Qazi–Mahhi split; nominated in Week 9; new captain (2X Room, unanimous house vote)."
   },
   {
     "id": "aman-gandhi",
@@ -222,11 +222,11 @@ export const contestants = [
     "age": null,
     "city": "Amritsar, Punjab",
     "image": "/assets/bb20/love-gill.webp",
-    "nominated": true,
+    "nominated": false,
     "status": "in-house",
     "bio": "Love Gill is a popular face from Punjabi music videos and Punjabi screen work who entered this season through the Fans Ka Faisla route — arriving with a public mandate rather than only a casting decision. Love is nominated in Week 8, after the Weekend Ka Vaar weekend in which guest host Rohit Shetty questioned the on-screen bond with Scout — which both Love and Scout consistently describe as a brother-sister bond — and Kaashvi told Scout to cut Love out.",
     "longBio": "In the Weekend Ka Vaar promo reported on 24 October, Rohit Shetty is reported to tell Love Gill and Scout that physical closeness including massages is 'looking absolutely wrong' from outside. Earlier house coverage also had the makers warning the pair, and Scout reflecting that being in a committed relationship makes house attachments harder. In Episode 51 (26 October), Love confronted Scout over Kaashvi's remarks, telling him he had destroyed her character and spoiled her career, while Scout admitted Kaashvi had raised valid concerns (Times Now; Times of India, 26 October). A day later, Kaashvi apologised for words she called insensitive, and former winner Gauahar Khan publicly backed Love, calling the perception around her very unfair (Latestly; TellyChakkar, 26–27 October). How Love answers on Weekend Ka Vaar — and whether the Fans Ka Faisla audience still backs Love — may decide both survival this week and the wider Kaashvi storyline. Love Gill's exact age and date of birth are not reliably verified, so no precise age is published here.",
-    "trend": "In house · Nominated Week 8",
+    "trend": "In house · Survived Week 8 nomination",
     "highlight": "The Fans Ka Faisla entrant facing Weekend Ka Vaar questions about Scout — nominated again in Week 8."
   },
   {
