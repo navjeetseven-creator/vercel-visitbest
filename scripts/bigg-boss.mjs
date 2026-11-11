@@ -337,7 +337,6 @@ export const polls = [
     leaderNote: "The Week 10 nominees poll opened on 11 November 2026 and starts from zero — standings build only from votes cast in this poll. [VisitBest Open Poll votes — not official votes.]",
     pollType: "weekly",
     optionIds: ["gullu", "qazi-touqeer", "yung-dsa", "kanika-mann", "love-gill", "scout", "amrapali-dubey", "mahhi-vij", "uditi-singh", "manish-goel"],
-    textOnlyIds: ["uditi-singh", "yung-dsa"],
     voteDistribution: {},
     dangerIds: [],
     embedEyebrow: "This Week's Poll · Week 10 · Nominees Only",
@@ -356,7 +355,6 @@ export const polls = [
     leaderNote: "The prediction poll opened on 11 November 2026. After the Week 10 eviction is confirmed on air, the readers' most-predicted name is recorded against the actual result in the scorecard on the voting hub. [VisitBest Open Poll — audience sentiment only.]",
     pollType: "prediction",
     optionIds: ["gullu", "qazi-touqeer", "yung-dsa", "kanika-mann", "love-gill", "scout", "amrapali-dubey", "mahhi-vij", "uditi-singh", "manish-goel"],
-    textOnlyIds: ["uditi-singh", "yung-dsa"],
     voteDistribution: {},
     dangerIds: [],
     embedEyebrow: "Eviction Prediction · Week 10",
@@ -867,9 +865,6 @@ function renderNominationCallout() {
 }
 
 // ---------- Weekly Voting Hub (queue entry 223, 11 Nov 2026) ----------
-// Nominees whose portraits are NOT verified: in the hub's new sections (and
-// on the two weekly polls, via textOnlyIds) their cards stay text-only.
-const HUB_TEXT_ONLY_IDS = new Set(["uditi-singh", "yung-dsa"]);
 
 // Season archive — every row is sourced from this file's own verified
 // contestant data and VisitBest's episode coverage (see entry 223 notes).
@@ -927,13 +922,13 @@ function renderThisWeekPanel() {
         .map(
           (c) => `
         <div class="bb-nom-card">
-          ${HUB_TEXT_ONLY_IDS.has(c.id) ? "" : `<div class="bb-nom-img-wrap">
+          <div class="bb-nom-img-wrap">
             ${c.image ? `<img src="${c.image}" alt="${c.name} Bigg Boss 20 Nominated" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${c.name}">Photo coming soon</span>`}
             <span class="bb-nom-danger-tag">At Risk</span>
-          </div>`}
+          </div>
           <div class="bb-nom-info">
             <h4>${c.name}</h4>
-            <span class="bb-nom-role">${c.role}${HUB_TEXT_ONLY_IDS.has(c.id) ? " · At Risk" : ""}</span>
+            <span class="bb-nom-role">${c.role}</span>
             <button class="bb-quick-vote-btn" data-vote-trigger="${c.id}" data-poll-id="bigg-boss-20-voting-week-10">⚡ VOTE FOR ${c.alias.toUpperCase()}</button>
           </div>
         </div>
@@ -976,7 +971,7 @@ function renderEmbeddedPoll(poll) {
               <span class="bb-rank-tag">#${idx + 1}</span>
               ${c.captain ? '<span class="bb-safe-captain-pill">🟢 SAFE – CAPTAIN</span>' : c.nominated ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : '<span class="bb-safe-pill">🟢 SAFE</span>'}
             </div>
-            ${HUB_TEXT_ONLY_IDS.has(c.id) ? "" : `<div class="bb-card-media">
+            ${(poll.textOnlyIds || []).includes(c.id) ? "" : `<div class="bb-card-media">
               ${c.image ? `<img src="${c.image}" alt="${c.name} Bigg Boss 20" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${c.name}">Photo coming soon</span>`}
               <div class="bb-live-share" id="pct-${poll.slug}-${c.id}">${c.pctStr}</div>
             </div>`}
@@ -987,7 +982,7 @@ function renderEmbeddedPoll(poll) {
                 <div class="bb-progress-bar" id="bar-${poll.slug}-${c.id}" style="width: ${c.pct}%;"></div>
               </div>
               <div class="bb-card-numbers">
-                <span class="bb-votes-display"><strong id="votes-${poll.slug}-${c.id}">${c.votes.toLocaleString("en-IN")}</strong> Open Poll votes${HUB_TEXT_ONLY_IDS.has(c.id) ? ` · <span id="pct-${poll.slug}-${c.id}">${c.pctStr}</span>` : ""}</span>
+                <span class="bb-votes-display"><strong id="votes-${poll.slug}-${c.id}">${c.votes.toLocaleString("en-IN")}</strong> Open Poll votes${(poll.textOnlyIds || []).includes(c.id) ? ` · <span id="pct-${poll.slug}-${c.id}">${c.pctStr}</span>` : ""}</span>
                 <span class="bb-trend-tag">${c.trend}</span>
               </div>
               <button class="bb-vote-btn" data-vote-btn="${c.id}" data-poll-slug="${poll.slug}">
