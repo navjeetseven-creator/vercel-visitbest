@@ -13,12 +13,12 @@ export const contestants = [
     "age": "26–27",
     "city": "Gurugram, Haryana",
     "image": "/assets/bb20/gullu.webp",
-    "nominated": false,
+    "nominated": true,
     "captain": false,
     "status": "in-house",
     "bio": "Kushal Tanwar, known as Gullu or Gullu Boxer, is a reality-show winner — MTV Roadies XX: Double Cross (2025), Splitsvilla and Maa Hai Naa — and a hotel-management graduate from IHMCT Pune who worked in hospitality and event management before television. In the house he mixes entertainment and physical tasks, with an early captaincy stint that has long since ended.",
     "longBio": "Gullu came in as one of reality television's form players, with back-to-back reality wins giving him a ready fanbase. His long friendship with Roadies gang leader Elvish Yadav, the Bigg Boss OTT 2 winner, has been a talking point in the house, and Elvish publicly backed him after his clash with wild card Nakul Dhull — the altercation after which Nakul was removed in Week 6. Nominated again in Week 8, Gullu's survival depends on whether his reality-show fanbase converts into Bigg Boss support. Note: his exact date of birth is not reliably verified; secondary profiles give a birth year of 1999, so his age is shown as approximate.",
-    "trend": "In house · Survived Week 8 nomination",
+    "trend": "In house · Nominated Week 10",
     "highlight": "Roadies XX winner at the centre of the Nakul Dhull removal — survived a Week 8 nomination."
   },
   {
@@ -29,11 +29,11 @@ export const contestants = [
     "age": 40,
     "city": "Srinagar, Kashmir",
     "image": "/assets/bb20/qazi-touqeer.webp",
-    "nominated": false,
+    "nominated": true,
     "status": "in-house",
     "bio": "Qazi Ahmed Touqeer (born 4 June 1986, Srinagar) won Fame Gurukul on 20 October 2005 alongside Ruprekha Banerjee — the season that also featured a young Arijit Singh — and became a household name for raw, emotional singing. Best remembered on film for his appearance in 'Afghan Jalebi' from Phantom (2015), he returns to national television exactly 21 years later as this season's great nostalgia story.",
     "longBio": "Qazi is the son of Mushtaq Ahmed Qazi, a lawyer who later embraced Sufism, and Syeda Rukhsana, a school teacher; his uncle Qazi Rafi is a well-known Kashmiri singer and his younger brother is entrepreneur Qazi Touseef. Inside the house he has been emotional, musical and confrontational in turn: a clash with Scout, a friendship with Mahhi Vij that cracked in Episode 47 over his closeness with Arishfa Khan and Uditi Singh, an apology to Aasif Khan over a remark Aasif took personally, and then winning the 23 October captaincy task round and handing the captaincy to Mahhi. Qazi kept his personal life private for years; in the house he revealed he married during Covid in 2020. His wife Ifsa (also spelt Hifza/Hifsa in reports) is a dentist nine years younger than him. Circulating photos said to be of his wife remain unverified.",
-    "trend": "In house · Won the Week 7 captaincy task round",
+    "trend": "In house · Nominated Week 10",
     "highlight": "Fame Gurukul winner marking 21 years in the house in October 2026 — and the man who made Mahhi captain."
   },
   {
@@ -48,7 +48,7 @@ export const contestants = [
     "status": "in-house",
     "bio": "Tanmay Singh (born 30 July 1996), universally known as Scout or ScoutOP, is one of the pioneers of Indian esports — a former professional BGMI/PUBG Mobile player turned one of the country's biggest gaming creators. In the house he has played tactically and spoken bluntly, captained the house in Week 7, and clashed repeatedly with Qazi Touqeer, including in the 23 October captaincy task.",
     "longBio": "Scout's personal life has become the season's biggest outside-the-house storyline. He has said in the house that he has been in a relationship for around five years with gaming creator Kaashvi Hiranandani, known as KaashPlays (born 28 April 1997, Mumbai, age 29 — a streamer who moved from a finance career into gaming and was named Female Streamer of the Year at the Indian Gaming Awards 2022). Scout has discussed a difficult past relationship and spoken of marriage plans, saying Kaashvi wants to be financially independent first. That is now colliding with his on-screen bond with Love Gill, which both describe as a brother-sister bond but which guest host Rohit Shetty questioned in Weekend Ka Vaar promos, and with Kaashvi's 25 October Weekend Ka Vaar appearance, in which she told him to 'cut Love out', said she felt disgusted, and alleged Love had trapped him (Times Now; Times of India, 25 October). In Episode 51 (26 October), Scout acknowledged Kaashvi had raised valid concerns about his behaviour, while Love confronted him over his silence, telling him he had spoiled her career (Times Now; Times of India, 26 October).",
-    "trend": "In house · Captain in Week 7, succeeded by Mahhi Vij · Nominated Week 9",
+    "trend": "In house · Captain in Week 7, succeeded by Mahhi Vij · Nominated Week 10",
     "highlight": "Week 7 captain whose game, his bond with Love Gill, and his relationship with girlfriend Kaashvi (KaashPlays) all collide on Weekend Ka Vaar — now nominated in Week 9."
   },
   {
@@ -76,11 +76,11 @@ export const contestants = [
     "age": null,
     "city": "Mumbai, Maharashtra",
     "image": "/assets/bb20/yung-dsa.webp",
-    "nominated": false,
+    "nominated": true,
     "status": "in-house",
     "bio": "Yung DSA is a Mumbai-based hip-hop artist and creator representing the underground gully-rap generation, whose appeal is built on raw, unfiltered lyricism rather than television familiarity. He won the Week 1 captaincy through the 2X Room round and has been one of the house's sharper, more confrontational voices in nominations and task arguments, with spontaneous disses that play well with younger viewers.",
     "longBio": "This season's early game was structured around 'lives' and lifelines, and Yung's Week 1 captaincy shaped it. Reporting early in the season said Yung and Scout approached Qazi in the first two weeks to plan together; Qazi says he chose to stay away and play his own game — a small detail that explains a lot about the house's shifting groups. Yung was among the housemates knocked out of the captaincy race in the volatile 23 October task. His youth and hip-hop community support remains his core audience base. His exact age and date of birth are not reliably verified, so no precise age is published here.",
-    "trend": "In house · Week 1 captain",
+    "trend": "In house · Week 1 captain · Nominated Week 10",
     "highlight": "Week 1 captain and the house's gully-rap voice — strong youth and hip-hop community support, still in the game in Week 7."
   },
   {
@@ -91,12 +91,12 @@ export const contestants = [
     "age": 33,
     "city": "Panipat, Haryana",
     "image": "/assets/bb20/kanika-mann.webp",
-    "nominated": false,
+    "nominated": true,
     "captain": false,
     "status": "in-house",
     "bio": "Kanika Mann (born 7 October 1993, Panipat) holds a Master of Laws (LL.M.) from Panjab University and is best known as Guddan in Guddan Tumse Na Ho Payega, after Badho Bahu, Punjabi films including Rocky Mental and Daana Paani, the web series Roohaniyat, and a finalist run on Khatron Ke Khiladi 12. She was this season's first confirmed contestant and its first housemate through the door on premiere night, 6 September.",
     "longBio": "Kanika's route into acting was not straightforward: her father initially opposed acting and wanted her to pursue law — she completed the law degree, then acting won, and he later helped her with her first audition. On entering, she received a 'Puppet Master' power to influence later entrants. Inside the house she has been competitive and emotionally direct, was praised by Salman Khan in Week 5 Weekend Ka Vaar coverage, took a life from Rohed Khan in the Week 2 sequence that preceded his eviction, and featured in Episode 47's key Scout conversation — teasing him about not knowing his girlfriend's birthday, a clip that fed the wider Kaashvi story. She is nominated in Week 8, in the six-name list from the 25 October nomination task (Business Upturn; IndiaForums).",
-    "trend": "In house · Ex-captain (from 28 October)",
+    "trend": "In house · Ex-captain (from 28 October) · Nominated Week 10",
     "highlight": "The season's first entrant — a law graduate turned TV star, ex-captain (captain from 28 October), nominated in Week 8."
   },
   {
@@ -111,7 +111,7 @@ export const contestants = [
     "status": "in-house",
     "bio": "Aamrapali Dubey is one of Bhojpuri cinema's biggest leading actresses. She made her Bhojpuri film debut in 2014 opposite Dinesh Lal Yadav 'Nirahua' in Nirahua Hindustani, after earlier television work, and built a career of blockbuster Bhojpuri hits and devotional releases that makes her a household name across Uttar Pradesh, Bihar and Jharkhand — and gives her the season's most loyal regional audience.",
     "longBio": "That regional audience is Aamrapali's Bigg Boss superpower: few housemates can match the loyalty of the Bhojpuri belt when she is nominated — and she is nominated again in Week 8, after surviving the Week 7 list from which Mary Kom was evicted (confirmed on air 24 October). Inside the house her journey has been less about engineered controversy and more about presence in daily life and group equations, including light-hearted kitchen-duty moments in the 23 October episode while the captaincy battle raged around her. Her birthday is 11 January; the birth year (1987) comes from secondary profiles rather than a primary source, so her age is shown with that caution.",
-    "trend": "In house · Nominated Week 9",
+    "trend": "In house · Nominated Week 10",
     "highlight": "Bhojpuri superstar with the season's most loyal regional vote bank — on the Week 9 nomination list."
   },
   {
@@ -144,7 +144,7 @@ export const contestants = [
     "status": "in-house",
     "bio": "Mahhi Vij (born 1 April 1982, New Delhi) is Nakusha from Laagi Tujhse Lagan, a Jhalak Dikhhla Jaa 4 contestant and, with husband Jay Bhanushali, winner of Nach Baliye 5. One of the house's most experienced reality performers, her friendship with Qazi Touqeer was one of the season's defining bonds — which is why its crack in Episode 47 mattered, and why Qazi choosing her as captain days later mattered more.",
     "longBio": "Mahhi married actor Jay Bhanushali in 2011; they have a daughter, Tara (born 2019), and foster children Khushi and Rajveer. In Episode 47, Mahhi confronted Qazi over his loyalty after seeing him with Uditi Singh and Arishfa Khan, saying she felt used; Qazi disagreed and chose not to talk it through at that point. Yet on 23 October it was Qazi who won the captaincy task round and declared Mahhi the new captain, succeeding Scout. As captain going into Weekend Ka Vaar, every duty allocation and every defence of her friends will now be read as captaincy, not just personality.",
-    "trend": "In house · Captain until 28 October, voted out 6–5 · Nominated Week 9",
+    "trend": "In house · Captain until 28 October, voted out 6–5 · Nominated Week 10",
     "highlight": "Ex-captain — chosen by Qazi on 23 October, voted out of the captaincy race 6–5 on 28 October; served as sanchalak of the next captaincy task."
   },
   {
@@ -155,12 +155,12 @@ export const contestants = [
     "age": 23,
     "city": "Shahjahanpur / Mumbai",
     "image": "/assets/bb20/arishfa-khan.webp",
-    "nominated": true,
+    "nominated": false,
     "captain": true,
     "status": "in-house",
     "bio": "Arishfa Khan (born 3 April 2003, Shahjahanpur) debuted as a child artist in Chhal – Sheh Aur Maat in 2012 and became known as young Gunjan in Ek Veer Ki Ardaas… Veera, with credits including Jeannie Aur Juju, Uttaran and Papa By Chance. She rebuilt her career as a TikTok-era star on Instagram and YouTube, and at 23 is the season's youngest contestant — with more than 29 million Instagram followers, its biggest digital following.",
     "longBio": "Arishfa reportedly became interested in acting while accompanying her mother, who worked as a stunt performer, to shoots. In the house she has fought against being dismissed as 'bacchi' (a child) — a running tension for the youngest housemate. She was nominated in Week 7, was at the centre of a captaincy-task flashpoint in Episode 47 reporting, and her closeness with Qazi and Uditi Singh is the trigger Mahhi cited in the Episode 47 confrontation that cracked the Mahhi–Qazi friendship.",
-    "trend": "In house · New captain (2X Room, unanimous house vote) · Nominated Week 9",
+    "trend": "In house · Captain (2X Room, unanimous house vote) · Safe in Week 10 as captain",
     "highlight": "Youngest housemate with the house's biggest social following (29M+) — nominated in Week 7 and central to the Qazi–Mahhi split; nominated in Week 9; new captain (2X Room, unanimous house vote)."
   },
   {
@@ -222,11 +222,11 @@ export const contestants = [
     "age": null,
     "city": "Amritsar, Punjab",
     "image": "/assets/bb20/love-gill.webp",
-    "nominated": false,
+    "nominated": true,
     "status": "in-house",
     "bio": "Love Gill is a popular face from Punjabi music videos and Punjabi screen work who entered this season through the Fans Ka Faisla route — arriving with a public mandate rather than only a casting decision. Love is nominated in Week 8, after the Weekend Ka Vaar weekend in which guest host Rohit Shetty questioned the on-screen bond with Scout — which both Love and Scout consistently describe as a brother-sister bond — and Kaashvi told Scout to cut Love out.",
     "longBio": "In the Weekend Ka Vaar promo reported on 24 October, Rohit Shetty is reported to tell Love Gill and Scout that physical closeness including massages is 'looking absolutely wrong' from outside. Earlier house coverage also had the makers warning the pair, and Scout reflecting that being in a committed relationship makes house attachments harder. In Episode 51 (26 October), Love confronted Scout over Kaashvi's remarks, telling him he had destroyed her character and spoiled her career, while Scout admitted Kaashvi had raised valid concerns (Times Now; Times of India, 26 October). A day later, Kaashvi apologised for words she called insensitive, and former winner Gauahar Khan publicly backed Love, calling the perception around her very unfair (Latestly; TellyChakkar, 26–27 October). How Love answers on Weekend Ka Vaar — and whether the Fans Ka Faisla audience still backs Love — may decide both survival this week and the wider Kaashvi storyline. Love Gill's exact age and date of birth are not reliably verified, so no precise age is published here.",
-    "trend": "In house · Survived Week 8 nomination",
+    "trend": "In house · Nominated Week 10",
     "highlight": "The Fans Ka Faisla entrant facing Weekend Ka Vaar questions about Scout — nominated again in Week 8."
   },
   {
@@ -258,7 +258,7 @@ export const contestants = [
     "status": "in-house",
     "bio": "Uditi Singh is an actress and model with a fashion and pageant background, and the season's repeat danger-zone survivor. She received the fewest votes in Week 1 but, with no eviction that week, lost a life instead of leaving; she was in the Week 6 bottom three that sent Aman Gandhi home, was put straight into nominations by captain Scout, and was nominated in Week 7 — still in the house, safe in Week 8.",
     "longBio": "Uditi has played much of the season inside a friendship group with Arishfa Khan and, until his eviction, Aman Gandhi, and her closeness with Arishfa and with Qazi is the specific trigger Mahhi cited in the Episode 47 friendship crack with Qazi. She also won a round of the Episode 47 captaincy-contenders task, removing Yung and Scout from that race. Her exact age and date of birth are not reliably verified, so no precise age is published here.",
-    "trend": "In house · Repeat danger-zone survivor · Nominated Week 9",
+    "trend": "In house · Repeat danger-zone survivor · Nominated Week 10",
     "highlight": "The season's repeat danger-zone survivor — fewest votes in Week 1, bottom three in Week 6, nominated again in Week 7, still in; nominated in Week 9."
   },
   {
@@ -273,7 +273,7 @@ export const contestants = [
     "status": "in-house",
     "bio": "Manish Goel (born 27 August 1975, New Delhi) was not on this page at all until this update, despite entering as the season's first official wild card during Weekend Ka Vaar in Week 5. With a television career starting in the late 1990s — Kahaani Ghar Ghar Kii, Kasautii Zindagii Kay, Bhabhi, Ghar Ek Mandir and, most recently, Anupamaa as Raghav — he has worked in television longer than some housemates have been alive, and at 51 is the house's oldest housemate.",
     "longBio": "Manish arrived under a playful cover story, telling housemates he was there to promote a project, before Salman Khan revealed the 'project' was Bigg Boss itself. He is married to actress Poonam Narula (married 2002); they have two children, Aryaveer and Maliha, were runners-up on Nach Baliye 1 together, and he won Welcome – Baazi Mehmaan Nawazi Ki in 2013. In the house, the veteran has had to build bonds from zero against groups formed over five weeks, and he was nominated in Week 7. In the 24 October Weekend Ka Vaar, the Times of India reported that Manish lost a lifeline in the same twist that ended Mary Kom's journey, so he survives with less room for error. No /assets/bb20/ portrait exists for Manish yet, so his card deliberately shows a placeholder instead of another housemate's image.",
-    "trend": "In house · Wild card (Week 5) · Nominated Week 9",
+    "trend": "In house · Wild card (Week 5) · Nominated Week 10",
     "highlight": "The season's first wild card and its oldest housemate at 51 — a three-decade TV career entering a house already five weeks formed."
   },
   {
@@ -302,11 +302,11 @@ export const polls = [
   {
     slug: "bigg-boss-20-voting",
     image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
-    title: "Bigg Boss 20 Voting – Week 7 Open Poll & Audience Sentiment - VisitBest",
-    h1: "Bigg Boss 20 Voting – Week 7 Open Poll",
-    lead: "VisitBest Open Poll for Week 7: Qazi Touqeer leads the audience sentiment standings, followed closely by ScoutOP, Gullu and Yung DSA. Seven contestants are nominated this week — Gullu, Mary Kom, Aamrapali Dubey, Arishfa Khan, Love Gill, Uditi Singh and wild card Manish Goel. Mahhi Vij is captain. This open poll does not decide evictions.",
-    heroBadge: "🔴 LIVE AUDIENCE POLL · WEEK 4 · OPEN POLL",
-    leaderNote: "🔥 CURRENT TREND: Qazi Touqeer (1,38,500) holds a narrow lead over ScoutOP (1,32,200), Gullu (1,26,800), and Yung DSA (1,20,900) in our fan sentiment tracker.",
+    title: "Bigg Boss 20 Voting – Week 10 Open Poll, Weekly Voting Hub & Audience Sentiment - VisitBest",
+    h1: "Bigg Boss 20 Voting – Week 10 Open Poll & Voting Hub",
+    lead: "VisitBest Open Poll, Week 10: the whole house is nominated except captain Arishfa Khan — Gullu, Qazi Touqeer, Yung DSA, Kanika Mann, Love Gill, Scout, Aamrapali Dubey, Mahhi Vij, Uditi Singh and Manish Goel are on the nomination line. Qazi Touqeer leads the season's cumulative audience sentiment standings. This page is the weekly voting hub: this week's nominees-only Open Poll, an eviction-prediction Open Poll, a dated trend snapshot and the week-by-week nomination and elimination archive. This open poll does not decide evictions.",
+    heroBadge: "🔴 LIVE AUDIENCE POLL · WEEK 10 · OPEN POLL",
+    leaderNote: "🔥 SEASON STANDINGS: Qazi Touqeer (1,38,500) holds a narrow lead over ScoutOP (1,32,200), Gullu (1,26,800) and Yung DSA (1,20,900) in the VisitBest Open Poll's cumulative audience sentiment standings. [VisitBest Open Poll votes — not official votes.]",
     pollType: "all",
     voteDistribution: {
       "qazi-touqeer": 138500,
@@ -324,8 +324,46 @@ export const polls = [
       "aman-gandhi": 18400,
       "uditi-singh": 11200,
     },
-    dangerIds: ["mary-kom", "uditi-singh", "love-gill"],
-    metaDesc: "Bigg Boss 20 Week 7 Open Poll: Qazi Touqeer leads VisitBest audience sentiment followed by ScoutOP, Gullu and Yung DSA. Check the 7 nominated contestants and the current captain. Open Poll only — official voting is only via JioCinema / JioHotstar as announced on air.",
+    dangerIds: ["manish-goel", "uditi-singh", "love-gill"],
+    metaDesc: "Bigg Boss 20 Week 10 Open Poll & voting hub: the whole house is nominated except captain Arishfa Khan. This week's nominees-only Open Poll, eviction-prediction poll, trend snapshot and the week-by-week nomination and elimination archive. Open Poll only — official voting is only via JioCinema / JioHotstar as announced on air.",
+  },
+  {
+    slug: "bigg-boss-20-voting-week-10",
+    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    title: "Bigg Boss 20 Week 10 Voting – Nominees Open Poll (Whole House Nominated) - VisitBest",
+    h1: "Bigg Boss 20 Week 10 Voting — Nominees Open Poll",
+    lead: "Week 10: the whole house is nominated except captain Arishfa Khan. This VisitBest Open Poll covers only this week's 10 nominees and opened on 11 November 2026. Open Poll — for audience sentiment only; it does not decide evictions.",
+    heroBadge: "🗳️ WEEK 10 NOMINEES POLL · OPEN POLL",
+    leaderNote: "The Week 10 nominees poll opened on 11 November 2026 and starts from zero — standings build only from votes cast in this poll. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "weekly",
+    optionIds: ["gullu", "qazi-touqeer", "yung-dsa", "kanika-mann", "love-gill", "scout", "amrapali-dubey", "mahhi-vij", "uditi-singh", "manish-goel"],
+    textOnlyIds: ["uditi-singh", "yung-dsa"],
+    voteDistribution: {},
+    dangerIds: [],
+    embedEyebrow: "This Week's Poll · Week 10 · Nominees Only",
+    embedIntro: "This week's Open Poll is restricted to the 10 nominated housemates — captain Arishfa Khan is not on the list. It opened on 11 November 2026 and starts from zero, so every standing here is built only from votes cast in this poll. For the season's cumulative standings, see the trend snapshot and the main Open Poll further down this page.",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 20 Week 10 Open Poll: the whole house is nominated except captain Arishfa Khan. Back Gullu, Qazi, Yung DSA, Kanika, Love, Scout, Aamrapali, Mahhi, Uditi or Manish in the VisitBest nominees-only Open Poll — audience sentiment only; official voting is only via JioCinema / JioHotstar as announced on air.",
+  },
+  {
+    slug: "bigg-boss-20-eviction-prediction-week-10",
+    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    title: "Who Will Be Evicted in Week 10? Bigg Boss 20 Eviction Prediction Poll — Open Poll - VisitBest",
+    h1: "Who Will Be Evicted in Week 10? (Eviction Prediction — Open Poll)",
+    lead: "A different question from the support poll: not who you back, but who you think is going home at this week's Weekend Ka Vaar. This Open Poll records reader expectation only — it is not a VisitBest forecast, it carries no insider information, and it does not decide evictions.",
+    heroBadge: "🔮 EVICTION PREDICTION · WEEK 10 · OPEN POLL",
+    leaderNote: "The prediction poll opened on 11 November 2026. After the Week 10 eviction is confirmed on air, the readers' most-predicted name is recorded against the actual result in the scorecard on the voting hub. [VisitBest Open Poll — audience sentiment only.]",
+    pollType: "prediction",
+    optionIds: ["gullu", "qazi-touqeer", "yung-dsa", "kanika-mann", "love-gill", "scout", "amrapali-dubey", "mahhi-vij", "uditi-singh", "manish-goel"],
+    textOnlyIds: ["uditi-singh", "yung-dsa"],
+    voteDistribution: {},
+    dangerIds: [],
+    embedEyebrow: "Eviction Prediction · Week 10",
+    embedIntro: "Not who you support — who you think is going home. Pick the nominee you expect to be evicted at this week's Weekend Ka Vaar. This records reader expectation only: it is not a VisitBest forecast, it carries no insider information, and it does not decide evictions. After the eviction is confirmed on air, the outcome is entered in the scorecard below.",
+    buttonLabel: "PREDICT IN OPEN POLL",
+    buttonIcon: "🔮",
+    metaDesc: "Bigg Boss 20 Week 10 eviction prediction Open Poll: who do readers think will be evicted at Weekend Ka Vaar? A VisitBest audience-expectation poll — not a forecast and not official voting; official voting is only via JioCinema / JioHotstar as announced on air.",
   },
   {
     slug: "bigg-boss-20-winner-prediction",
@@ -580,7 +618,7 @@ export const pollBySlug = new Map(polls.map((p) => [p.slug, p]));
 
 // Helper to calculate percentages
 export function getPollStats(poll) {
-  const ids = poll.duelIds || contestants.map((c) => c.id);
+  const ids = poll.optionIds || poll.duelIds || contestants.map((c) => c.id);
   const total = ids.reduce((sum, id) => sum + (poll.voteDistribution[id] || 0), 0);
   const list = ids.map((id) => {
     const c = contestantById.get(id);
@@ -813,18 +851,260 @@ function renderNominationCallout() {
   return `<div class="bb-nom-status-callout">
     <div class="bb-nom-callout-header">
       <span class="pulse-dot-red"></span>
-      <h2>🔴 Bigg Boss 20 Week 8 Nominations — Open Poll</h2>
+      <h2>🔴 Bigg Boss 20 Week 10 Nominations — Open Poll</h2>
     </div>
     <p class="bb-nom-list-text">
-      <strong>6 contestants are nominated this week:</strong><br>
-      <span class="bb-nom-names">Gullu (Kushal Tanwar) • Aamrapali Dubey • Kanika Mann • ScoutOP • Aasif Khan • Love Gill</span>
+      <strong>10 contestants are nominated this week — the whole house except the captain:</strong><br>
+      <span class="bb-nom-names">Gullu (Kushal Tanwar) • Qazi Touqeer • Yung DSA • Kanika Mann • Love Gill • ScoutOP • Aamrapali Dubey • Mahhi Vij • Uditi Singh • Manish Goel</span>
     </p>
     <div class="bb-nom-safe-bar">
-      <span class="bb-safe-indicator">🟢 <strong>Captain This Week:</strong> Mahhi Vij (chosen by Qazi Touqeer, who won the 23 October captaincy task round; Scout was the previous captain)</span>
-      <span class="bb-evicted-indicator">❌ <strong>Evicted:</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4), Aman Gandhi (Week 6), Mary Kom (Week 7) · <strong>Removed:</strong> Nakul Dhull (wild card, Week 6)</span>
+      <span class="bb-safe-indicator">🟢 <strong>Captain This Week:</strong> Arishfa Khan (confirmed by a unanimous house vote in the 2X Room — as captain she is not nominated this week)</span>
+      <span class="bb-evicted-indicator">❌ <strong>Evicted:</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4), Aman Gandhi (Week 6), Mary Kom (Week 7), Aasif Khan (Week 8) · <strong>Removed:</strong> Nakul Dhull (wild card, Week 6) · <strong>Week 9:</strong> no eviction (Diwali week)</span>
     </div>
     <p class="bb-nom-list-text"><strong>Open Poll — for audience sentiment only.</strong> Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
+    <p class="bb-nom-list-text">Last updated: 11 November 2026.</p>
   </div>`;
+}
+
+// ---------- Weekly Voting Hub (queue entry 223, 11 Nov 2026) ----------
+// Nominees whose portraits are NOT verified: in the hub's new sections (and
+// on the two weekly polls, via textOnlyIds) their cards stay text-only.
+const HUB_TEXT_ONLY_IDS = new Set(["uditi-singh", "yung-dsa"]);
+
+// Season archive — every row is sourced from this file's own verified
+// contestant data and VisitBest's episode coverage (see entry 223 notes).
+export const eliminationArchive = [
+  { week: 1, evicted: "No eviction", note: "Uditi Singh received the fewest votes and lost a life instead of leaving." },
+  { week: 2, evicted: "Rohed Khan", note: "First eviction of the season — lost both lives after the public vote." },
+  { week: 3, evicted: "Isha Rikhi", note: "Lost her last life after the public vote." },
+  { week: 4, evicted: "Rhiti Tiwari", note: "Evicted mid-week after her last life was taken by the captaincy contenders." },
+  { week: 5, evicted: "No eviction", note: "Aman Gandhi received the fewest votes and lost a lifeline. Wild cards Manish Goel and Nakul Dhull entered this week." },
+  { week: 6, evicted: "Aman Gandhi", note: "Evicted on public votes. Nakul Dhull was removed the same week for breaking house rules — recorded as Removed, not Evicted." },
+  { week: 7, evicted: "MC Mary Kom", note: "Announced on Weekend Ka Vaar by guest host Rohit Shetty." },
+  { week: 8, evicted: "Aasif Khan", note: "Eviction confirmed on Weekend Ka Vaar (Episode 57)." },
+  { week: 9, evicted: "No eviction", note: "Diwali week — the eviction was deferred and no housemate left the house." },
+  { week: 10, evicted: "—", note: "The whole house is nominated except captain Arishfa Khan; the eviction takes place at the coming Weekend Ka Vaar." },
+];
+
+export const nominationArchive = [
+  { week: 7, nominated: "Gullu, MC Mary Kom, Aamrapali Dubey, Arishfa Khan, Love Gill, Uditi Singh, Manish Goel" },
+  { week: 8, nominated: "Gullu, Aamrapali Dubey, Kanika Mann, Scout, Aasif Khan, Love Gill" },
+  { week: 9, nominated: "Mahhi Vij, Aamrapali Dubey, Arishfa Khan, Scout, Uditi Singh, Manish Goel" },
+  { week: 10, nominated: "Whole house except captain Arishfa Khan: Gullu, Qazi Touqeer, Yung DSA, Kanika Mann, Love Gill, Scout, Aamrapali Dubey, Mahhi Vij, Uditi Singh, Manish Goel" },
+];
+
+const HUB_DISCLAIMER_BOX = `<div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
+          ℹ️ <strong>Open Poll — for audience sentiment only.</strong> This is a VisitBest open audience poll. It does not decide nominations or evictions. Official Bigg Boss 20 voting, where opened by the show, is only via JioCinema / JioHotstar, as announced on air.
+        </div>`;
+
+function hubNominees() {
+  return contestants.filter((c) => c.nominated && !c.evicted && !c.removed);
+}
+
+// "This Week" panel — Week 10 nominees + captain (replaces the old strip)
+function renderThisWeekPanel() {
+  const nominees = hubNominees();
+  const captain = contestants.find((c) => c.captain && !c.evicted && !c.removed);
+  return `<section class="bb-nominated-strip bb-this-week-panel">
+    <div class="bb-strip-header">
+      <div class="bb-strip-badge"><span class="pulse-dot"></span> THIS WEEK — WEEK 10 · LAST UPDATED 11 NOVEMBER 2026</div>
+      <p class="bb-strip-sub">Week 10: the whole house is nominated except captain ${captain ? captain.name : ""}. These are this week's nominated housemates — back them in the Week 10 Open Poll below. The VisitBest Open Poll is open audience sentiment only and does not decide evictions. Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
+    </div>
+    ${captain ? `<div class="bb-nominated-grid">
+      <div class="bb-nom-card">
+        <div class="bb-nom-img-wrap">
+          ${captain.image ? `<img src="${captain.image}" alt="${captain.name} Bigg Boss 20 Captain" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${captain.name}">Photo coming soon</span>`}
+          <span class="bb-nom-danger-tag" style="background:#1a7f37;">CAPTAIN</span>
+        </div>
+        <div class="bb-nom-info">
+          <h4>${captain.name}</h4>
+          <span class="bb-nom-role">Captain this week — not nominated, safe from the Week 10 eviction</span>
+        </div>
+      </div>
+    </div>` : ""}
+    <div class="bb-nominated-grid">
+      ${nominees
+        .map(
+          (c) => `
+        <div class="bb-nom-card">
+          ${HUB_TEXT_ONLY_IDS.has(c.id) ? "" : `<div class="bb-nom-img-wrap">
+            ${c.image ? `<img src="${c.image}" alt="${c.name} Bigg Boss 20 Nominated" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${c.name}">Photo coming soon</span>`}
+            <span class="bb-nom-danger-tag">At Risk</span>
+          </div>`}
+          <div class="bb-nom-info">
+            <h4>${c.name}</h4>
+            <span class="bb-nom-role">${c.role}${HUB_TEXT_ONLY_IDS.has(c.id) ? " · At Risk" : ""}</span>
+            <button class="bb-quick-vote-btn" data-vote-trigger="${c.id}" data-poll-id="bigg-boss-20-voting-week-10">⚡ VOTE FOR ${c.alias.toUpperCase()}</button>
+          </div>
+        </div>
+      `
+        )
+        .join("")}
+    </div>
+  </section>`;
+}
+
+// Embedded Open Poll (weekly support poll + eviction-prediction poll).
+// No countdown is rendered here on purpose: no official voting-window close
+// time has been verified from an on-air / official announcement.
+function renderEmbeddedPoll(poll) {
+  if (!poll) return "";
+  const { list } = getPollStats(poll);
+  return `<section class="bb-leaderboard-section bb-hub-poll">
+    <div class="bb-section-head">
+      <div>
+        <p class="eyebrow">${poll.embedEyebrow || "Open Poll"}</p>
+        <h2>${poll.h1}</h2>
+        <p>${poll.embedIntro || ""}</p>
+        ${HUB_DISCLAIMER_BOX}
+      </div>
+    </div>
+    <div class="bb-poll-container" data-poll-slug="${poll.slug}">
+      <div class="bb-poll-meta-bar">
+        <div class="bb-status-pill"><span class="pulse-dot"></span> OPEN POLL — AUDIENCE SENTIMENT ONLY</div>
+        <div class="bb-timer-box">
+          <span>OPENED:</span>
+          <strong>11 NOVEMBER 2026</strong>
+        </div>
+      </div>
+      <div class="bb-cards-grid">
+        ${list
+          .map(
+            (c, idx) => `
+          <div class="bb-card" data-contestant-id="${c.id}">
+            <div class="bb-card-badge-row">
+              <span class="bb-rank-tag">#${idx + 1}</span>
+              ${c.captain ? '<span class="bb-safe-captain-pill">🟢 SAFE – CAPTAIN</span>' : c.nominated ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : '<span class="bb-safe-pill">🟢 SAFE</span>'}
+            </div>
+            ${HUB_TEXT_ONLY_IDS.has(c.id) ? "" : `<div class="bb-card-media">
+              ${c.image ? `<img src="${c.image}" alt="${c.name} Bigg Boss 20" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${c.name}">Photo coming soon</span>`}
+              <div class="bb-live-share" id="pct-${poll.slug}-${c.id}">${c.pctStr}</div>
+            </div>`}
+            <div class="bb-card-body">
+              <h3>${c.name}</h3>
+              <span class="bb-card-role">${c.role}</span>
+              <div class="bb-progress-bar-wrap">
+                <div class="bb-progress-bar" id="bar-${poll.slug}-${c.id}" style="width: ${c.pct}%;"></div>
+              </div>
+              <div class="bb-card-numbers">
+                <span class="bb-votes-display"><strong id="votes-${poll.slug}-${c.id}">${c.votes.toLocaleString("en-IN")}</strong> Open Poll votes${HUB_TEXT_ONLY_IDS.has(c.id) ? ` · <span id="pct-${poll.slug}-${c.id}">${c.pctStr}</span>` : ""}</span>
+                <span class="bb-trend-tag">${c.trend}</span>
+              </div>
+              <button class="bb-vote-btn" data-vote-btn="${c.id}" data-poll-slug="${poll.slug}">
+                <span class="btn-icon">${poll.buttonIcon || "🗳️"}</span> ${poll.buttonLabel || "VOTE IN OPEN POLL"}
+              </button>
+            </div>
+          </div>
+        `
+          )
+          .join("")}
+      </div>
+    </div>
+  </section>`;
+}
+
+// Dated trend snapshot — the cumulative Open Poll standings recorded on
+// 11 November 2026, computed from this file's own Open Poll data only.
+function renderTrendSnapshot() {
+  const mainPoll = pollBySlug.get("bigg-boss-20-voting");
+  const { list } = getPollStats(mainPoll);
+  const inHouse = list.filter((c) => !c.evicted && !c.removed);
+  return `<section class="bb-leaderboard-section bb-hub-snapshot">
+    <div class="bb-section-head">
+      <div>
+        <p class="eyebrow">Open Poll Trend Snapshot</p>
+        <h2>Open Poll Trend Snapshot — 11 November 2026</h2>
+        <p>Where the VisitBest Open Poll's cumulative audience sentiment stood when this hub was updated on 11 November 2026. Figures are VisitBest Open Poll votes only — they are not official Bigg Boss votes and do not decide evictions. The snapshot is refreshed each time this hub is updated.</p>
+        ${HUB_DISCLAIMER_BOX}
+      </div>
+    </div>
+    <div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Rank</th><th>Contestant</th><th>Open Poll Votes</th><th>Vote Share</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          ${inHouse
+            .map(
+              (c, idx) => `
+              <tr class="${idx < 3 ? "bb-row-top" : ""}">
+                <td><span class="bb-rank-circle">${idx + 1}</span></td>
+                <td class="bb-table-contestant"><strong>${c.name}</strong></td>
+                <td><strong>${c.votes.toLocaleString("en-IN")}</strong></td>
+                <td><span class="bb-table-pct">${c.pctStr}</span></td>
+                <td>${c.captain ? "🟢 Captain — Week 10" : c.nominated ? "🔴 Nominated — Week 10" : "In house"}</td>
+              </tr>`
+            )
+            .join("")}
+        </tbody>
+      </table>
+    </div>
+  </section>`;
+}
+
+// Week-by-week nomination + elimination archive
+function renderSeasonArchive() {
+  return `<section class="bb-leaderboard-section bb-hub-archive">
+    <div class="bb-section-head">
+      <div>
+        <p class="eyebrow">Season Archive</p>
+        <h2>Bigg Boss 20 Week-by-Week: Nominations & Eliminations</h2>
+        <p>Every week's confirmed outcome so far this season, from VisitBest's own episode coverage. Reported-but-unaired developments are never entered here — rows are added only after events are confirmed on air.</p>
+      </div>
+    </div>
+    <h3>Elimination archive</h3>
+    <div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Week</th><th>Evicted</th><th>What happened</th></tr>
+        </thead>
+        <tbody>
+          ${eliminationArchive
+            .map((r) => `<tr><td>Week ${r.week}</td><td><strong>${r.evicted}</strong></td><td>${r.note}</td></tr>`)
+            .join("")}
+        </tbody>
+      </table>
+    </div>
+    <h3>Nomination archive</h3>
+    <div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Week</th><th>Nominated contestants</th></tr>
+        </thead>
+        <tbody>
+          ${nominationArchive
+            .map((r) => `<tr><td>Week ${r.week}</td><td>${r.nominated}</td></tr>`)
+            .join("")}
+        </tbody>
+      </table>
+    </div>
+    <p>Full nomination lists for Weeks 1–6 were not published consistently while the season's lives format was running, so the nomination table starts at Week 7; every week's confirmed outcome is in the elimination archive above.</p>
+  </section>`;
+}
+
+// Prediction scorecard — structure only. A week's row is filled in only
+// after that week's eviction has been confirmed on air.
+function renderPredictionScorecard() {
+  return `<section class="bb-leaderboard-section bb-hub-scorecard">
+    <div class="bb-section-head">
+      <div>
+        <p class="eyebrow">Prediction Scorecard</p>
+        <h2>Eviction Prediction Scorecard — Readers vs Results</h2>
+        <p>The eviction-prediction Open Poll starts in Week 10. After each Weekend Ka Vaar, this table records the readers' most-predicted evictee against the housemate who actually left — a row is filled in only once an eviction is confirmed on air.</p>
+        ${HUB_DISCLAIMER_BOX}
+      </div>
+    </div>
+    <div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Week</th><th>Readers' most-predicted evictee (VisitBest Open Poll)</th><th>Actually evicted (confirmed on air)</th><th>Result</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Week 10</td><td>Prediction poll open — the most-predicted name is recorded when the poll closes at Weekend Ka Vaar</td><td>To be confirmed on air</td><td>Pending</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>`;
 }
 
 // Render Interactive Voting Poll Cards
@@ -881,7 +1161,7 @@ function renderPollCards(poll) {
               ${c.removed ? '<span class="bb-nom-pill">⛔ REMOVED</span>' : c.status === "reported-evicted" ? '<span class="bb-nom-pill">🟠 REPORTED EVICTED (UNCONFIRMED)</span>' : c.evicted ? '<span class="bb-nom-pill">❌ EVICTED</span>' : c.captain ? '<span class="bb-safe-captain-pill">🟢 SAFE – CAPTAIN</span>' : c.nominated ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : '<span class="bb-safe-pill">🟢 SAFE</span>'}
             </div>
             <div class="bb-card-media">
-              ${c.image ? `<img src="${c.image}" alt="${c.name} Bigg Boss 20" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${c.name}">Photo coming soon</span>`}
+              ${c.image && !(poll.textOnlyIds || []).includes(c.id) ? `<img src="${c.image}" alt="${c.name} Bigg Boss 20" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${c.name}">Photo coming soon</span>`}
               <div class="bb-live-share" id="pct-${poll.slug}-${c.id}">${c.pctStr}</div>
             </div>
             <div class="bb-card-body">
@@ -945,7 +1225,7 @@ function renderLeaderboard(poll) {
               <tr class="${idx < 3 ? "bb-row-top" : isDanger ? "bb-row-danger" : ""}">
                 <td><span class="bb-rank-circle">${idx + 1}</span></td>
                 <td class="bb-table-contestant">
-                  ${c.image ? `<img src="${c.image}" alt="${c.name}" class="bb-table-avatar" loading="lazy">` : ""}
+                  ${c.image && !(poll.textOnlyIds || []).includes(c.id) ? `<img src="${c.image}" alt="${c.name}" class="bb-table-avatar" loading="lazy">` : ""}
                   <strong>${c.name}</strong>
                 </td>
                 <td>${c.role}</td>
@@ -1095,11 +1375,16 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderDuelLinks(poll.slug)}
 
+    ${poll.slug === "bigg-boss-20-voting" ? renderThisWeekPanel() : ""}
+    ${poll.slug === "bigg-boss-20-voting" ? renderEmbeddedPoll(pollBySlug.get("bigg-boss-20-voting-week-10")) : ""}
+    ${poll.slug === "bigg-boss-20-voting" ? renderEmbeddedPoll(pollBySlug.get("bigg-boss-20-eviction-prediction-week-10")) : ""}
+    ${poll.slug === "bigg-boss-20-voting" ? renderPredictionScorecard() : ""}
+    ${poll.slug === "bigg-boss-20-voting" ? renderTrendSnapshot() : ""}
+    ${poll.slug === "bigg-boss-20-voting" ? renderSeasonArchive() : ""}
+
     ${renderPollCards(poll)}
 
     ${renderAdSenseUnit("after-voting", "Advertisement")}
-
-    ${poll.slug === "bigg-boss-20-voting" ? renderNominatedStrip(poll.slug) : ""}
 
     ${renderLeaderboard(poll)}
 
