@@ -87469,5 +87469,91 @@
    ]
   },
   "filename": "event-management-bangalore-hero.webp"
+ },
+ {
+  "id": 11366,
+  "date": "2026-11-11T15:20:24",
+  "date_gmt": "2026-11-11T09:50:24",
+  "modified": "2026-11-11T15:20:24",
+  "modified_gmt": "2026-11-11T09:50:24",
+  "slug": "best-sneaker-brands-in-india-2",
+  "status": "inherit",
+  "type": "attachment",
+  "link": "https://visitbest.in/best-sneaker-brands-in-india-2/",
+  "title": {
+   "rendered": "Top 15 Sneaker Brands in India (2026)"
+  },
+  "guid": {
+   "rendered": "https://visitbest.in/wp-content/uploads/2026/11/Best-Sneaker-Brands-In-India.webp"
+  },
+  "comment_status": "open",
+  "ping_status": "closed",
+  "template": "",
+  "meta": {
+   "footnotes": []
+  },
+  "class_list": false,
+  "description": {
+   "rendered": ""
+  },
+  "caption": {
+   "rendered": ""
+  },
+  "alt_text": "Top 15 Sneaker Brands in India",
+  "media_type": "image",
+  "mime_type": "image/webp",
+  "post": 11365,
+  "author": 1,
+  "media_details": {
+   "width": 2048,
+   "height": 1152,
+   "file": "2026/11/Best-Sneaker-Brands-In-India.webp",
+   "filesize": 65562,
+   "sizes": {},
+   "image_meta": {
+    "aperture": "0",
+    "credit": "",
+    "camera": "",
+    "caption": "",
+    "created_timestamp": "0",
+    "copyright": "",
+    "focal_length": "0",
+    "iso": "0",
+    "shutter_speed": "0",
+    "title": "",
+    "orientation": "0",
+    "keywords": []
+   }
+  },
+  "source_url": "https://visitbest.in/wp-content/uploads/2026/11/Best-Sneaker-Brands-In-India.webp",
+  "_links": {
+   "self": [
+    {
+     "href": "https://visitbest.in/wp-json/wp/v2/media/11366"
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://visitbest.in/wp-json/wp/v2/media"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://visitbest.in/wp-json/wp/v2/types/attachment"
+    }
+   ],
+   "author": [
+    {
+     "embeddable": true,
+     "href": "https://visitbest.in/wp-json/wp/v2/users/1"
+    }
+   ],
+   "replies": [
+    {
+     "embeddable": true,
+     "href": "https://visitbest.in/wp-json/wp/v2/comments?post=11366"
+    }
+   ]
+  }
  }
 ]
