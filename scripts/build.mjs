@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { pages as calculatorPages, renderCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient } from "./calculators.mjs";
+import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient } from "./calculators.mjs";
 import {
   polls as bbPolls,
   contestants as bbContestants,
@@ -499,6 +499,9 @@ function renderFooter() {
         <li><a href="/education/medical-colleges/">Medical Colleges (NIRF)</a></li>
         <li><a href="/business/">Business Directory (700+)</a></li>
         <li><a href="/wam-to-gpa-calculator/">WAM to GPA Calculator</a></li>
+        <li><a href="/ssc-age-calculator/">SSC Age Calculator</a></li>
+        <li><a href="/cgpa-to-percentage-calculator/">CGPA to Percentage Calculator</a></li>
+        <li><a href="/age-calculator/">Age Calculator</a></li>
         <li><a href="/search/">Search All Guides</a></li>
         <li><a href="/assets/bb20-new/image-credits.html">Image Credits</a></li>
         <li><a href="mailto:visitbest10@gmail.com">visitbest10@gmail.com</a></li>
@@ -923,8 +926,13 @@ for (let page = 1; page <= 72; page += 1) {
 
 for (let i = 0; i < calculatorPages.length; i++) {
   const item = calculatorPages[i];
-  const other = calculatorPages[1 - i];
-  const body = renderCalculatorBody(item, other, calculatorCss, calculatorClient.toString());
+  const body = item.kind === "age"
+    ? renderAgeCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, ageClient.toString())
+    : item.kind === "cgpa"
+      ? renderCgpaCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, cgpaClient.toString())
+      : item.kind === "general-age"
+        ? renderGeneralAgeCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, generalAgeClient.toString())
+        : renderCalculatorBody(item, calculatorPages[1 - i], calculatorCss, calculatorClient.toString());
   const html = renderPage({
     title: `${item.title} - VisitBest`,
     description: item.meta,
@@ -974,7 +982,6 @@ await writeRoute(urlFor("bigg-boss-20-voting-rules"), renderPage({
 
 await writeRoute("/search/", renderSearch());
 await writeRoute("/author/admin/", renderRedirect("/about/", "VisitBest Editorial Team"));
-await writeRoute("/cgpa-to-percentage-calculator/", renderRedirect("/wam-to-gpa-calculator/", "WAM to GPA Calculator"));
 
 const searchIndex = [
   ...posts.map((item) => ({ title: decodeEntities(item.title?.rendered), summary: truncate(item.excerpt?.rendered || item.content?.rendered), href: urlFor(item.slug), category: taxonomyLabel(item)[0] || "Guide" })),
