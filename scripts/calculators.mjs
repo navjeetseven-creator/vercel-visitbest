@@ -1152,6 +1152,251 @@ export const pages = [
       ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
     ]
   },
+
+  {
+    key: "tax",
+    kind: "tax",
+    slug: "income-tax-calculator",
+    title: "Income Tax Calculator",
+    meta: "Work out your income tax for FY 2025-26 (AY 2026-27) under the new and old regimes — slab tax, Section 87A rebate with marginal relief, surcharge and 4% cess — and see which regime saves you more. Free, instant, and calculated in your browser.",
+    lead: "Enter your salary and other income, your age group and your old-regime deductions — and get your tax under both regimes side by side, with the working, the slab-by-slab breakup and which regime saves you more.",
+    presets: [
+      { id: "lakh15", label: "₹15,00,000 salary, no deductions", salary: 1500000, other: 0, age: "below60", c80: 0, d80: 0, hra: 0, loan: 0, nps: 0, otherDed: 0 },
+      { id: "lakh1275", label: "₹12,75,000 salary — zero tax, new regime", salary: 1275000, other: 0, age: "below60", c80: 0, d80: 0, hra: 0, loan: 0, nps: 0, otherDed: 0 },
+      { id: "lakh25old", label: "₹25,00,000 salary, ₹10,00,000 deductions — old regime wins", salary: 2500000, other: 0, age: "below60", c80: 150000, d80: 25000, hra: 500000, loan: 200000, nps: 50000, otherDed: 75000 },
+      { id: "lakh60", label: "₹60,00,000 salary — surcharge applies", salary: 6000000, other: 0, age: "below60", c80: 0, d80: 0, hra: 0, loan: 0, nps: 0, otherDed: 0 }
+    ],
+    defaultPreset: "lakh15",
+    sampleSalary: 1500000,
+    sampleOther: 0,
+    sampleAge: "below60",
+    sampleC80: 0,
+    sampleD80: 0,
+    sampleHra: 0,
+    sampleLoan: 0,
+    sampleNps: 0,
+    sampleOtherDed: 0,
+    notice: "This tool estimates your tax for FY 2025-26 (AY 2026-27) from the rates in force under the Finance Act 2025 — it is not tax or financial advice. Rates change with every Budget, and your real return depends on your full income, including capital gains and other special-rate income, which this calculator does not cover. Check the Income Tax Department portal or ask a chartered accountant before you file.",
+    overviewTitle: "What does an income tax calculator do?",
+    overview: "India taxes salary and other income in slabs — a higher rate applies only to the income inside each band, never to the whole amount — and since FY 2023-24 you can choose between two regimes: the new regime, with lower rates and almost no deductions, and the old regime, with higher rates but the full set of deductions. This calculator works out your tax under both regimes from the same figures, so you can see which one actually costs less for you.",
+    inputNote: "Enter your gross annual salary and any other income (interest, rent, freelance work) in rupees — no commas or currency symbols. Salary runs from ₹0 to ₹10,00,00,000. Pick your age group: it changes only the old-regime exemption (₹2.5 lakh below 60, ₹3 lakh at 60–80, ₹5 lakh above 80). The deduction fields apply to the old regime only — the new regime ignores them except for the ₹75,000 standard deduction.",
+    modelNote: "Each regime starts from your gross income, takes off its standard deduction (₹75,000 new, ₹50,000 old — salary only) and, for the old regime, your capped deductions, then taxes the rest slab by slab. The new regime then applies the Section 87A rebate (up to ₹60,000, taxable income up to ₹12,00,000) with marginal relief just above that limit; the old regime applies its ₹12,500 rebate up to ₹5,00,000. Surcharge applies above ₹50 lakh of taxable income, and 4% health and education cess is added on the tax plus surcharge.",
+    steps: [
+      ["Enter your salary and other income", "Your gross annual salary and any other income — interest, rent, freelance work. The calculator adds them up; the standard deduction comes off the salary part only."],
+      ["Pick your age group", "Below 60, 60–80, or above 80. It changes only the old regime: senior citizens get a ₹3 lakh exemption and super-senior citizens ₹5 lakh, instead of ₹2.5 lakh."],
+      ["Add your old-regime deductions", "Section 80C, health insurance under 80D, HRA exemption, home-loan interest and NPS — each capped at its legal limit. They count only under the old regime."],
+      ["Compare the two answers", "The calculator shows both totals, the saving, and which regime wins — with the slab-by-slab working for each, so you can check every rupee."]
+    ],
+    stories: [
+      {
+        salary: 1500000, other: 0, age: "below60", c80: 0, d80: 0, hra: 0, loan: 0, nps: 0, otherDed: 0, preset: "lakh15",
+        title: "₹15,00,000 salary, no deductions: new regime ₹97,500, old regime ₹2,57,400",
+        body: "On ₹15,00,000 of salary the new regime taxes ₹14,25,000 (after the ₹75,000 standard deduction) at ₹97,500, while the old regime taxes ₹14,50,000 at ₹2,57,400 — the new regime saves ₹1,59,900."
+      },
+      {
+        salary: 1275000, other: 0, age: "below60", c80: 0, d80: 0, hra: 0, loan: 0, nps: 0, otherDed: 0, preset: "lakh1275",
+        title: "₹12,75,000 salary pays zero tax under the new regime",
+        body: "The ₹75,000 standard deduction brings taxable income to exactly ₹12,00,000, and the Section 87A rebate of ₹60,000 cancels the ₹60,000 slab tax — total tax ₹0. The old regime on the same salary charges ₹1,87,200."
+      },
+      {
+        salary: 1325000, other: 0, age: "below60", c80: 0, d80: 0, hra: 0, loan: 0, nps: 0, otherDed: 0,
+        title: "₹13,25,000 salary: marginal relief caps the new-regime tax at ₹52,000",
+        body: "Taxable income is ₹12,50,000, where the slab tax would be ₹67,500 — but marginal relief caps it at the ₹50,000 by which income exceeds ₹12,00,000, so with 4% cess the total is ₹52,000, not ₹70,200."
+      },
+      {
+        salary: 2500000, other: 0, age: "below60", c80: 150000, d80: 25000, hra: 500000, loan: 200000, nps: 50000, otherDed: 75000, preset: "lakh25old",
+        title: "₹25,00,000 salary with ₹10,00,000 of deductions: the old regime wins by ₹62,400",
+        body: "With ₹10,00,000 of deductions the old regime taxes ₹14,50,000 at ₹2,57,400, while the new regime taxes ₹24,25,000 at ₹3,19,800 — the old regime saves ₹62,400. Big deductions are the one case where the old regime still wins."
+      }
+    ],
+    rateRows: [
+      { rate: "₹12,75,000", applies: "Zero tax under the new regime (salaried)", example: "A salary of ₹12,75,000 minus the ₹75,000 standard deduction is ₹12,00,000 of taxable income, and the Section 87A rebate of up to ₹60,000 cancels the tax entirely." },
+      { rate: "₹60,000", applies: "Section 87A rebate, new regime", example: "Resident individuals with taxable income up to ₹12,00,000 get a rebate of up to ₹60,000. Just above ₹12,00,000, marginal relief caps the tax at the amount by which income exceeds ₹12,00,000." },
+      { rate: "₹12,500", applies: "Section 87A rebate, old regime", example: "Resident individuals with taxable income up to ₹5,00,000 get a rebate of up to ₹12,500. There is no marginal relief in the old regime." },
+      { rate: "₹75,000 / ₹50,000", applies: "Standard deduction on salary", example: "₹75,000 under the new regime and ₹50,000 under the old regime, taken off salary income only — other income gets no standard deduction." },
+      { rate: "₹1,50,000", applies: "Section 80C cap (old regime only)", example: "Investments and expenses under 80C, 80CCC and 80CCD(1) together are capped at ₹1,50,000 a year. NPS under 80CCD(1B) adds up to ₹50,000 more." },
+      { rate: "₹25,000 / ₹50,000", applies: "Section 80D cap (old regime only)", example: "Health insurance premium for self, spouse and children: up to ₹25,000, or ₹50,000 if you are a senior citizen. Premiums for parents are a separate claim — this calculator does not include them." },
+      { rate: "₹2,00,000", applies: "Home-loan interest, Section 24(b) (old regime only)", example: "Interest on a home loan for the house you live in is deductible up to ₹2,00,000 a year. HRA exemption has no fixed cap — enter the exemption your employer works out." },
+      { rate: "10% / 15% / 25% / 37%", applies: "Surcharge above ₹50 lakh", example: "Surcharge on the tax: 10% above ₹50 lakh, 15% above ₹1 crore, 25% above ₹2 crore of taxable income. The 37% band above ₹5 crore applies only in the old regime — the new regime is capped at 25%. Then 4% cess is added on tax plus surcharge." }
+    ],
+    rateTableTitle: "Tax rules at a glance",
+    rateTableNote: "The figures that decide your tax for FY 2025-26: the rebate limits, the standard deductions, the deduction caps and the surcharge bands. All of them come from the Finance Act 2025 and the Income-tax Act.",
+    rateTableConclusion: "The new regime wins for most salaried people — it only loses when your old-regime deductions are large enough to outweigh its lower rates. On ₹15,00,000 of salary you need roughly ₹5,45,000 of deductions for the old regime to catch up.",
+    calloutTitle: "₹12 lakh is tax-free, but ₹12,75,000 is the salary that is tax-free",
+    calloutNote: "The Section 87A rebate covers taxable income up to ₹12,00,000 — but a salaried person first knocks off the ₹75,000 standard deduction, so a gross salary of ₹12,75,000 lands exactly on ₹12,00,000 and pays nothing. Just above that, marginal relief keeps the tax small: at ₹13,25,000 of salary the tax is ₹52,000, not the ₹70,200 the slabs alone would give.",
+    faq: [
+      ["Which regime is better for me — new or old?", "It depends on your deductions. The new regime has lower slab rates and a ₹75,000 standard deduction, so it wins for most salaried people — on ₹15,00,000 of salary with no deductions it charges ₹97,500 against the old regime's ₹2,57,400. The old regime only wins when your deductions are large: at ₹25,00,000 of salary you need about ₹10,00,000 of deductions for it to come out ahead. Enter your real deductions above and compare the two totals."],
+      ["How is income tax calculated under the new regime?", "Take your gross income, subtract the ₹75,000 standard deduction from salary, and tax what is left slab by slab: nil up to ₹4 lakh, 5% from ₹4–8 lakh, 10% from ₹8–12 lakh, 15% from ₹12–16 lakh, 20% from ₹16–20 lakh, 25% from ₹20–24 lakh and 30% above ₹24 lakh. Then apply the Section 87A rebate (up to ₹60,000 if taxable income is ₹12,00,000 or less), add surcharge above ₹50 lakh, and add 4% health and education cess. On ₹15,00,000 of salary that is ₹93,750 of slab tax plus ₹3,750 of cess — ₹97,500."],
+      ["What is the Section 87A rebate?", "Section 87A gives resident individuals a rebate against the tax the slabs produce. Under the new regime for FY 2025-26 it is up to ₹60,000 when taxable income is ₹12,00,000 or less — exactly the slab tax on ₹12,00,000, so the tax becomes nil. Under the old regime it is up to ₹12,500 when taxable income is ₹5,00,000 or less. It applies only to income taxed at normal slab rates, not to capital gains taxed at special rates."],
+      ["What is marginal relief?", "Without it, crossing the ₹12,00,000 rebate limit would be a cliff: at ₹12,10,000 of taxable income the slab tax jumps to ₹61,500 with no rebate at all. Marginal relief caps the tax at the amount by which your income exceeds ₹12,00,000 — so at ₹12,10,000 you pay ₹10,000 of tax (₹10,400 with cess), and at ₹12,50,000 you pay ₹50,000 (₹52,000 with cess). The relief fades out at about ₹12,70,000 of taxable income, where the ordinary slab tax becomes the smaller figure. It applies only in the new regime."],
+      ["What deductions can I claim under the old regime?", "Section 80C up to ₹1,50,000 (EPF, PPF, ELSS, life insurance premium, tuition fees, home-loan principal), health insurance under Section 80D up to ₹25,000 (₹50,000 for a senior citizen), HRA exemption, home-loan interest under Section 24(b) up to ₹2,00,000 for the house you live in, your own NPS contribution under Section 80CCD(1B) up to ₹50,000, and other Chapter VI-A deductions. This calculator caps each one at its legal limit — enter what you actually pay and it takes the lower figure."],
+      ["Does the new regime allow any deductions?", "Almost none. The new regime allows the ₹75,000 standard deduction on salary (and on pension) and your employer's NPS contribution under Section 80CCD(2) — which this calculator does not model, since it is not part of your salary figure. Section 80C, 80D, HRA, home-loan interest and 80CCD(1B) are all unavailable under the new regime, which is why its slab rates are lower."],
+      ["How are surcharge and cess calculated?", "Surcharge is an extra percentage on the tax itself, charged when taxable income crosses ₹50 lakh: 10% above ₹50 lakh, 15% above ₹1 crore and 25% above ₹2 crore in both regimes, plus 37% above ₹5 crore in the old regime only (the new regime is capped at 25%). Health and education cess of 4% is then added on the tax plus surcharge. On a ₹60,00,000 salary the new-regime tax is ₹15,52,980, including ₹1,35,750 of surcharge and ₹59,730 of cess."],
+      ["Will this calculator's figure match my Form 16 or my tax return?", "It should be close for salary plus other income taxed at normal slab rates, but it is an estimate, not your return. It does not cover capital gains or other special-rate income, house-property losses, the employer's NPS contribution, surcharge marginal relief, or the rounding of the final tax to the nearest ₹10 that Section 288 requires on the return itself. Your Form 16 and your return are the final word — check them against this estimate and ask a chartered accountant if they differ by more than a few rupees."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
+
+  {
+    key: "rd",
+    kind: "rd",
+    slug: "rd-calculator",
+    title: "RD Calculator",
+    meta: "Work out your recurring deposit maturity in seconds — maturity amount, interest earned and the total return, with quarterly compounding. Free, instant, and calculated in your browser.",
+    lead: "Enter your monthly deposit, the rate your bank quotes and the tenure — and get the maturity value, the interest earned and the total return, with the working and the year-by-year growth shown.",
+    presets: [
+      { id: "postOffice5", label: "₹5,000 a month for 5 years at 6.7%", monthly: 5000, rate: 6.7, years: 5, months: 0, senior: false },
+      { id: "small3", label: "₹2,000 a month for 3 years at 7%", monthly: 2000, rate: 7, years: 3, months: 0, senior: false },
+      { id: "big10", label: "₹10,000 a month for 10 years at 7%", monthly: 10000, rate: 7, years: 10, months: 0, senior: false },
+      { id: "year1", label: "₹10,000 a month for 1 year at 6.5%", monthly: 10000, rate: 6.5, years: 1, months: 0, senior: false }
+    ],
+    defaultPreset: "postOffice5",
+    sampleMonthly: 5000,
+    sampleRate: 6.7,
+    sampleYears: 5,
+    sampleMonths: 0,
+    sampleSenior: false,
+    notice: "This tool projects your RD maturity at the rate you enter — it is not financial advice. The rate is the one your bank or the Post Office quotes, and it changes often; check the current rate card before you start. The projection assumes the rate stays fixed for the whole tenure and every instalment is paid on time.",
+    overviewTitle: "What does an RD calculator do?",
+    overview: "A recurring deposit is the monthly version of a fixed deposit: you put in the same amount every month, the bank pays a fixed rate, and at maturity you get all your deposits back plus interest. This calculator works out exactly what that adds up to — the maturity value, the interest earned and the total return — with each instalment compounding quarterly from the month it is paid in.",
+    inputNote: "Enter a plain monthly deposit in rupees — no commas or currency symbols. Deposits run from ₹100 to ₹1,00,000 a month. The rate defaults to 6.7%, the Post Office RD rate for October to December 2026; change it to the rate your bank quotes for your tenure. Tenure is 6 months to 10 years.",
+    modelNote: "Each monthly instalment earns interest from the month it is paid in, compounded quarterly — so the first instalment earns for the full tenure and the last one for a single month. The formula is M = Σ D × (1 + r ÷ 400)^((N − k + 1) ÷ 3), where D is the monthly deposit, r the yearly rate, N the number of monthly instalments and k each instalment in turn. The total return is (M ÷ deposited − 1) × 100.",
+    steps: [
+      ["Enter your monthly deposit", "The fixed amount you will save every month — from ₹100 to ₹1,00,000. Banks accept from ₹100 a month; the Post Office takes ₹100 and more in multiples of ₹10."],
+      ["Check the rate and tenure", "The rate is pre-filled at 6.7%, the Post Office RD rate for October to December 2026. Pick the tenure in years and months — 6 months to 10 years at a bank, exactly 5 years at the Post Office."],
+      ["Tick senior citizen if it applies", "Most banks pay senior citizens about 0.50% more on RDs. The Post Office pays no senior bonus — its 6.7% applies to everyone."],
+      ["Read the maturity and the breakup", "The answer appears as you type — maturity value, interest earned and the total return — with the step-by-step working and the year-by-year table underneath."]
+    ],
+    stories: [
+      {
+        monthly: 5000, rate: 6.7, years: 5, months: 0, senior: false, preset: "postOffice5",
+        title: "₹5,000 a month for 5 years at 6.7% grows to ₹3,56,829",
+        body: "₹5,000 a month for 60 months; you deposit ₹3,00,000 and the interest adds ₹56,829 — the Post Office RD rate for October to December 2026."
+      },
+      {
+        monthly: 2000, rate: 7, years: 3, months: 0, senior: false, preset: "small3",
+        title: "₹2,000 a month for 3 years at 7% grows to ₹80,275",
+        body: "₹2,000 a month for 36 months; you deposit ₹72,000 and the interest adds ₹8,275 — an 11.49% total return."
+      },
+      {
+        monthly: 10000, rate: 7, years: 10, months: 0, senior: false, preset: "big10",
+        title: "₹10,000 a month for 10 years at 7% grows to ₹17,37,017",
+        body: "₹10,000 a month for 120 months; you deposit ₹12,00,000 and the interest adds ₹5,37,017. A year's interest reaches ₹1,12,718, so the bank will deduct 10% TDS on the interest it pays that year."
+      },
+      {
+        monthly: 10000, rate: 6.5, years: 1, months: 0, senior: false, preset: "year1",
+        title: "₹10,000 a month for 1 year at 6.5% grows to ₹1,24,286",
+        body: "₹10,000 a month for 12 months; you deposit ₹1,20,000 and the interest adds ₹4,286 — a one-year RD for money you need soon."
+      }
+    ],
+    rateRows: [
+      { rate: "Quarterly", applies: "How interest compounds", example: "Indian banks compound RD interest quarterly — each quarter's interest is added to the balance and earns interest itself." },
+      { rate: "6 months – 10 years", applies: "Tenure range", example: "Bank RDs run from 6 months to 10 years; this calculator models tenures of 6 months to 10 years. The Post Office RD is fixed at 5 years." },
+      { rate: "₹5 lakh", applies: "DICGC deposit insurance", example: "Bank deposits are insured up to ₹5 lakh per depositor per bank, principal and interest together, by DICGC, an RBI subsidiary. Post Office deposits are backed by the Government of India." },
+      { rate: "10% TDS", applies: "Tax deducted at source", example: "Banks deduct 10% TDS (20% without PAN) when a year's interest crosses ₹50,000 — ₹1,00,000 for senior citizens — from 1 April 2025 (Section 194A). Post Office RDs have no TDS, but the interest is still taxable." },
+      { rate: "Fully taxable", applies: "Tax on the interest", example: "RD interest is added to your income and taxed at your slab rate; TDS is only an advance collection, not the final tax. RDs get no Section 80C deduction." },
+      { rate: "+0.50%", applies: "Senior citizen bonus", example: "Most banks pay senior citizens about 0.25–0.50% more on RDs — a common convention, not a guaranteed rate; confirm with your bank. The Post Office RD pays no senior bonus: 6.7% for everyone." },
+      { rate: "6.7%", applies: "Post Office RD rate", example: "The Post Office RD pays 6.7% a year, compounded quarterly, for October to December 2026 (Ministry of Finance OM of 30 September 2026); the rate is fixed for the full 5 years when you open the account." },
+      { rate: "No fixed rate", applies: "The rate you earn", example: "Bank RD rates move with the RBI repo rate and differ by bank and tenure — large banks pay roughly 6–7% on 1–5 year RDs; always check the bank's current rate card." }
+    ],
+    rateTableTitle: "RD rules at a glance",
+    rateTableNote: "The rules that decide what your recurring deposit actually pays: compounding, tenure, deposit insurance, TDS and tax. Rates are the ones your bank quotes — they change often, so check the rate card before you start.",
+    rateTableConclusion: "The rate is the only figure that moves — it is set by each bank and moves with the RBI repo rate. The compounding, insurance, TDS and tax rules are fixed by law and by the RBI.",
+    calloutTitle: "The first deposit does the heavy lifting",
+    calloutNote: "At 6.7% a year, your first ₹5,000 instalment earns for 60 months and grows to ₹6,970 — ₹1,970 of interest. Your last ₹5,000 earns for one month and grows to ₹5,028 — ₹28 of interest. That is why starting early matters more than the rate: every month you delay costs the first instalment a month of compounding.",
+    faq: [
+      ["What is a recurring deposit?", "A recurring deposit (RD) is a fixed monthly deposit with a bank or the Post Office: you put in the same amount every month for a fixed tenure, and at maturity you get all your deposits back plus interest. Banks accept from ₹100 a month for 6 months to 10 years; the Post Office RD takes ₹100 and more in multiples of ₹10 for a fixed 5 years. Unlike a savings account, you cannot skip months freely — a missed instalment usually draws a small penalty — but the return is fixed, and bank deposits are insured up to ₹5 lakh per depositor per bank by DICGC."],
+      ["How is RD maturity calculated?", "Each monthly instalment compounds quarterly from the month it is paid in: M = Σ D × (1 + r ÷ 400)^((N − k + 1) ÷ 3), where D is the monthly deposit, r the yearly rate, N the number of instalments and k each instalment in turn. At 6.7%, ₹5,000 a month for 5 years becomes ₹3,56,829: ₹3,00,000 deposited plus ₹56,829 of interest — an 18.94% total return. The first instalment earns for 60 months, the last for one month, which is why the total return is lower than five years of the headline rate."],
+      ["What is the difference between an RD and an FD?", "An FD takes one lump sum on day one, so the whole amount earns interest for the full tenure. An RD takes the same total in monthly instalments, so only the first instalment earns for the full tenure — ₹3,00,000 in an FD at 7% for 5 years grows to ₹4,24,433, while ₹5,000 a month in an RD at the same rate grows to ₹3,59,664. Choose an FD when you already have the money; choose an RD when you are saving from each month's income."],
+      ["What is the Post Office RD interest rate?", "The Post Office RD pays 6.7% a year, compounded quarterly, for October to December 2026 — the rate in the Ministry of Finance memorandum of 30 September 2026, which kept all small-savings rates unchanged. The rate on the day you open the account stays the same for the full 5 years. The tenure is fixed at 5 years (60 monthly deposits), extendable by another 5 years; the account can be closed early only after 3 years, and then the interest is paid at the savings-account rate of 4%."],
+      ["How much TDS is deducted on RD interest?", "Banks deduct 10% TDS when the interest they pay you in a financial year crosses ₹50,000 — ₹1,00,000 for senior citizens — from 1 April 2025 under Section 194A of the Income-tax Act. Without a PAN the rate is 20%. TDS is an advance collection, not the final tax: the interest is still taxed at your slab rate. Post Office RDs have no TDS deducted at all — but the interest is still taxable, so declare it. If your total income is below the taxable limit, submit Form 15G (or 15H for senior citizens) so the bank skips TDS."],
+      ["Is RD interest taxable?", "Yes — RD interest is added to your income and taxed at your slab rate, in the year it accrues. Unlike PPF, an RD gets no Section 80C deduction on the deposits and no tax exemption on the interest — PPF interest is fully tax-free, so compare the two on our PPF calculator before choosing. Senior citizens get a deduction of up to ₹50,000 a year on interest income under Section 80TTB."],
+      ["Are recurring deposits safe?", "Bank recurring deposits are among the safest places for your money: the Deposit Insurance and Credit Guarantee Corporation (DICGC), an RBI subsidiary, insures deposits up to ₹5 lakh per depositor per bank, principal and interest together, across all your accounts at that bank. The cover has been ₹5 lakh since February 2020. Post Office RDs are backed directly by the Government of India. Deposits with NBFCs and companies are NOT covered by DICGC, so a higher NBFC rate carries real credit risk."],
+      ["What happens if I miss an RD instalment?", "Banks generally charge around ₹1.50 per ₹100 of the monthly instalment for each month of delay, and the maturity falls because that month's deposit earns less interest. The Post Office charges a default fee of ₹1 for every ₹100 of the monthly deposit for each month of default (National Savings RD Scheme, 2019); after four defaults the account is treated as discontinued and can only be revived within two months. This calculator assumes every instalment is paid on time; if you miss one, the real maturity will be slightly lower."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
+
+  {
+    key: "hl",
+    kind: "hl",
+    slug: "home-loan-emi-calculator",
+    title: "Home Loan EMI Calculator",
+    meta: "Work out your home loan EMI in seconds — monthly instalment, total interest and total payment, with prepayment savings, a tenure comparison and the year-by-year amortisation. Free, instant, and calculated in your browser.",
+    lead: "Enter the loan amount, the rate and the tenure — and get the EMI, the total interest and the total payment, with the year-by-year amortisation, what prepayment saves and how the tenure changes the cost.",
+    presets: [
+      { id: "home50", label: "₹50 lakh for 20 years at 8.5%", amount: 5000000, rate: 8.5, years: 20, extra: 0, lump: 0, lumpYear: 1 },
+      { id: "small30", label: "₹30 lakh for 15 years at 9%", amount: 3000000, rate: 9, years: 15, extra: 0, lump: 0, lumpYear: 1 },
+      { id: "big75", label: "₹75 lakh for 25 years at 8%", amount: 7500000, rate: 8, years: 25, extra: 0, lump: 0, lumpYear: 1 },
+      { id: "prepayBoth", label: "₹50 lakh for 20 years at 8.5% + prepayment", amount: 5000000, rate: 8.5, years: 20, extra: 5000, lump: 500000, lumpYear: 5 }
+    ],
+    defaultPreset: "home50",
+    sampleAmount: 5000000,
+    sampleRate: 8.5,
+    sampleYears: 20,
+    sampleExtra: 0,
+    sampleLump: 0,
+    sampleLumpYear: 1,
+    notice: "This tool projects your EMI at the rate you enter — it is not financial advice. The rate is the one your lender sanctions, and it changes with the repo rate; check the sanction letter before you sign. The projection assumes a fixed rate for the whole tenure and no fees — processing fees, GST on charges, stamp duty, registration and home insurance are not in the EMI.",
+    overviewTitle: "What does a home loan EMI calculator do?",
+    overview: "A home loan EMI is the fixed amount you pay the bank every month until the loan is repaid. Each EMI first pays that month's interest on the balance you still owe, and the rest repays the principal — so the interest part shrinks every month and the principal part grows. This calculator works out the EMI, the total interest and the total payment, shows the year-by-year amortisation, and tells you exactly what an extra monthly payment or a lump sum saves.",
+    inputNote: "Enter the loan amount in rupees — no commas or currency symbols. Loans run from ₹1,00,000 to ₹10,00,00,000. The rate defaults to 8.5%, the typical home-loan rate in November 2026; change it to the rate your lender quotes. Tenure is 1 to 30 years. The extra monthly payment and the lump sum are optional — leave them at zero for a plain EMI.",
+    modelNote: "The EMI uses the reducing-balance formula: EMI = P × r × (1 + r)^n ÷ ((1 + r)^n − 1), where P is the loan amount, r the monthly rate (annual rate ÷ 12 ÷ 100) and n the tenure in months. Each month's interest is the balance × r; the EMI pays the interest first and the rest repays principal. An extra monthly payment adds to the principal repaid each month, and a lump sum is applied after the EMI of the month in the year you choose — both shorten the loan and cut the total interest. Only the final payment is adjusted, to clear the balance exactly.",
+    steps: [
+      ["Enter the loan amount", "The amount the bank sanctions — from ₹1,00,000 to ₹10,00,00,000. This is the principal; the interest is worked out on top of it, month by month, on the balance you still owe."],
+      ["Check the rate and tenure", "The rate is pre-filled at 8.5%, the typical home-loan rate in November 2026. Pick the tenure in years — 1 to 30. A longer tenure cuts the EMI but raises the total interest, so compare tenures in the table below before you choose."],
+      ["Add prepayment if you plan any", "An extra amount every month, a lump sum in a chosen year, or both. The calculator reworks the whole schedule with the prepayment in — the loan ends earlier and the interest falls."],
+      ["Read the EMI, the breakup and the tables", "The answer appears as you type — EMI, total interest and total payment — with the step-by-step working, the year-by-year amortisation, the prepayment saving and the tenure comparison underneath."]
+    ],
+    stories: [
+      {
+        amount: 5000000, rate: 8.5, years: 20, extra: 0, lump: 0, lumpYear: 1, preset: "home50",
+        title: "₹50 lakh for 20 years at 8.5% costs ₹43,391 a month",
+        body: "₹50,00,000 over 240 months; you pay ₹54,13,879 of interest — 52.0% of the ₹1,04,13,879 total — and the EMI stays ₹43,391 every month."
+      },
+      {
+        amount: 3000000, rate: 9, years: 15, extra: 0, lump: 0, lumpYear: 1, preset: "small30",
+        title: "₹30 lakh for 15 years at 9% costs ₹30,428 a month",
+        body: "₹30,00,000 over 180 months; you pay ₹24,77,040 of interest on a ₹54,77,040 total — the shorter tenure keeps the interest down."
+      },
+      {
+        amount: 7500000, rate: 8, years: 25, extra: 0, lump: 0, lumpYear: 1, preset: "big75",
+        title: "₹75 lakh for 25 years at 8% costs ₹57,886 a month",
+        body: "₹75,00,000 over 300 months; you pay ₹98,65,865 of interest — more than the ₹75,00,000 you borrowed — because the loan runs 25 years."
+      },
+      {
+        amount: 5000000, rate: 8.5, years: 20, extra: 5000, lump: 500000, lumpYear: 5, preset: "prepayBoth",
+        title: "₹5,000 extra a month plus ₹5 lakh in year 5 saves ₹20,16,615",
+        body: "On the ₹50 lakh loan, the extra ₹5,000 a month and a ₹5,00,000 lump sum in year 5 cut the interest from ₹54,13,879 to ₹33,97,264 and finish the loan 76 months early — in 13 years 8 months instead of 20 years."
+      }
+    ],
+    rateRows: [
+      { rate: "₹2,00,000", applies: "Section 24(b) — interest deduction", example: "Up to ₹2,00,000 a year of home-loan interest is deductible for a self-occupied house under the old tax regime. The loan must be taken on or after 1 April 1999 and the house completed within 5 years — otherwise the cap is ₹30,000." },
+      { rate: "₹1,50,000", applies: "Section 80C — principal repayment", example: "Principal repaid up to ₹1,50,000 a year counts under Section 80C, inside the overall ₹1,50,000 80C cap. Old regime only — and the same ₹1,50,000 cap covers all your other 80C items too." },
+      { rate: "₹1,50,000 — CLOSED", applies: "Section 80EEA — first-time buyers only", example: "An extra ₹1,50,000 a year of interest for first-time buyers whose loan was sanctioned 1 April 2019–31 March 2022 and whose stamp-duty value is ₹45 lakh or less. The window closed on 31 March 2022 — no new loan qualifies." },
+      { rate: "Old regime only", applies: "New regime gives no deduction", example: "Sections 24(b), 80C and 80EEA apply only under the old tax regime. Under the new regime you cannot claim them — check which regime leaves you better off before you choose." },
+      { rate: "No charge", applies: "Prepayment on floating-rate loans", example: "The RBI (Pre-payment Charges on Loans) Directions, 2025 bar prepayment charges on floating-rate home loans to individuals, for loans sanctioned or renewed on or after 1 January 2026. Fixed-rate loans may still carry a charge — check your sanction letter." },
+      { rate: "7.40%–9.25%", applies: "Typical home-loan rates, November 2026", example: "Indicative range for home loans from published November 2026 rate tables, after the RBI raised the repo rate to 5.50% in October 2026. Your sanction letter decides — rates move with the repo rate." },
+      { rate: "1–30 years", applies: "Tenure range", example: "Home loans run from 1 to 30 years. A longer tenure cuts the EMI but raises the total interest — compare the tenures in the table below before you choose." },
+      { rate: "No subsidy counted", applies: "Housing subsidy — check the official portal", example: "This calculator includes no subsidy in its figures. If you are a first-time buyer, check the current housing-subsidy rules on the official PMAY-Urban portal, pmay-urban.gov.in, before you apply — subsidy rules change with the scheme." }
+    ],
+    rateTableTitle: "Home loan rules and tax breaks at a glance",
+    rateTableNote: "The rules that decide what your home loan actually costs: the tax deductions, the prepayment charge rule, the typical rates and the tenure range. Rates are the ones your lender quotes — they change often, so check the sanction letter before you sign.",
+    rateTableConclusion: "The EMI is arithmetic — the rate, the tenure and any prepayment decide it. The tax breaks depend on the old regime and, for 80EEA, on a sanction window that has already closed.",
+    calloutTitle: "Interest is front-loaded — the first year is mostly interest",
+    calloutNote: "On the ₹50 lakh sample, the first year's ₹5,20,694 of payments splits into ₹4,21,183 of interest and only ₹99,511 of principal — four rupees of interest for every rupee of principal repaid. By year 20 the split has reversed: ₹23,201 of interest against ₹4,97,492 of principal. That is why prepayment early in the loan saves the most: every extra rupee then cuts the interest for all the years after it.",
+    faq: [
+      ["What is a home loan EMI?", "A home loan EMI is the fixed amount you pay the bank every month until the loan is repaid. Each EMI first pays that month's interest on the balance you still owe, and the rest repays the principal — so the interest part shrinks every month and the principal part grows. On a ₹50,00,000 loan at 8.5% for 20 years the EMI is ₹43,391 a month, and it stays ₹43,391 for all 240 months."],
+      ["How is home loan EMI calculated?", "With the reducing-balance formula: EMI = P × r × (1 + r)^n ÷ ((1 + r)^n − 1), where P is the loan amount, r the monthly rate (annual rate ÷ 12 ÷ 100) and n the tenure in months. For ₹50,00,000 at 8.5% for 20 years: r = 0.085 ÷ 12 = 0.007083 and n = 240, so the EMI is ₹43,391. Over 20 years you pay ₹1,04,13,879 in total — ₹50,00,000 of principal and ₹54,13,879 of interest."],
+      ["How is this different from the EMI calculator?", "The EMI calculator covers any loan — home, car or personal — with just an amount, a rate and a tenure. This page is built for home loans: it adds an extra monthly payment and a lump-sum prepayment with the saving worked out, a tax-breaks table for Sections 24(b), 80C and 80EEA, a tenure comparison across 10 to 30 years, a balance-transfer explainer and a year-by-year amortisation table with a prepayment column. Use the EMI calculator for any loan; use this one when the loan is a home loan."],
+      ["How much can prepayment save?", "A lot, and earlier is better. On the ₹50 lakh sample at 8.5% for 20 years, paying ₹5,000 extra a month saves ₹13,89,250 of interest and finishes the loan 53 months early. A single ₹5,00,000 lump sum in year 5 saves ₹10,69,153 and 36 months. Both together save ₹20,16,615 and 76 months — the loan ends in 13 years 8 months instead of 20. There is no prepayment charge on floating-rate home loans to individuals under the RBI Directions of 2025, for loans sanctioned or renewed on or after 1 January 2026."],
+      ["Should I choose a longer or shorter tenure?", "A longer tenure cuts the EMI but raises the total interest sharply. On ₹50,00,000 at 8.5%: 10 years costs ₹61,993 a month and ₹24,39,141 of interest; 20 years costs ₹43,391 a month and ₹54,13,879 of interest; 30 years costs ₹38,446 a month and ₹88,40,443 of interest. Stretching from 20 to 25 years saves ₹3,130 a month but adds ₹16,64,527 of interest. Pick the shortest tenure whose EMI you can pay comfortably — and prepay when you can."],
+      ["What tax benefits can I claim on a home loan?", "Three, all under the old tax regime only. Section 24(b) lets you deduct up to ₹2,00,000 a year of interest on a self-occupied house (the loan must be from 1 April 1999 and the house completed within 5 years, or the cap is ₹30,000). Section 80C covers principal repaid up to ₹1,50,000 a year, inside the overall 80C cap. Section 80EEA gave first-time buyers an extra ₹1,50,000 a year of interest — but only for loans sanctioned 1 April 2019–31 March 2022 with a stamp-duty value of ₹45 lakh or less; that window has closed, so no new loan qualifies. Under the new regime you cannot claim any of the three — confirm with your chartered accountant which regime leaves you better off."],
+      ["Is there a charge for prepaying a home loan?", "Not on a floating-rate home loan to an individual: the RBI (Pre-payment Charges on Loans) Directions, 2025 bar prepayment charges on floating-rate loans to individuals for non-business purposes, for loans sanctioned or renewed on or after 1 January 2026. Fixed-rate home loans may still carry a charge — check your sanction letter. This calculator assumes no prepayment charge; if your loan is fixed-rate, ask your lender what the charge is before you prepay."],
+      ["What is a home loan balance transfer?", "A balance transfer moves your outstanding home loan to another lender at a lower rate: the new lender pays off the old one and you repay the new lender on the new terms. It is worth it when the rate gap covers the new lender's processing fee and the remaining tenure is long enough for the saving to add up — on a loan with only a year left, the fee usually eats the gain. Because prepayment charges are barred on floating-rate loans to individuals, the old lender cannot charge you to leave. Compare the new EMI plus the fee, not the rate alone."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
 ];
 
 export const css = `
@@ -5187,6 +5432,30 @@ export const ppfCss = `
 export const fdCss = `
 .calc-page .tool-switch {
   grid-template-columns: repeat(15, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+`;
+
+export const taxCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(16, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+`;
+
+export const rdCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(16, 1fr);
 }
 
 @media(max-width: 760px) {
@@ -13597,6 +13866,255 @@ export function fdCompute(principal, rate, years, months, compounding, payout, s
   };
 }
 
+export function taxSlabNew(taxable) {
+  const t = Number(taxable);
+  if (!Number.isFinite(t) || t < 0) return null;
+  const bands = [[400000, 0], [800000, 0.05], [1200000, 0.10], [1600000, 0.15], [2000000, 0.20], [2400000, 0.25], [Infinity, 0.30]];
+  let tax = 0;
+  let prev = 0;
+  for (const [top, rate] of bands) {
+    if (t <= prev) break;
+    tax += (Math.min(t, top) - prev) * rate;
+    prev = top;
+  }
+  return roundRupee(tax);
+}
+
+export function taxSlabOld(taxable, ageGroup) {
+  const t = Number(taxable);
+  if (!Number.isFinite(t) || t < 0) return null;
+  if (ageGroup !== "below60" && ageGroup !== "senior" && ageGroup !== "super") return null;
+  const exempt = ageGroup === "below60" ? 250000 : ageGroup === "senior" ? 300000 : 500000;
+  const bands = [[500000, 0.05], [1000000, 0.20], [Infinity, 0.30]];
+  let tax = 0;
+  let prev = exempt;
+  for (const [top, rate] of bands) {
+    if (t <= prev) break;
+    tax += (Math.min(t, top) - prev) * rate;
+    prev = top;
+  }
+  return roundRupee(tax);
+}
+
+export function taxSurchargeRate(taxable, regime) {
+  const t = Number(taxable);
+  if (!Number.isFinite(t) || t < 0) return null;
+  if (regime !== "new" && regime !== "old") return null;
+  if (t <= 5000000) return 0;
+  if (t <= 10000000) return 0.10;
+  if (t <= 20000000) return 0.15;
+  if (regime === "old" && t > 50000000) return 0.37;
+  return 0.25;
+}
+
+export function taxRegime(taxable, regime, ageGroup) {
+  const t = Number(taxable);
+  if (!Number.isFinite(t) || t < 0) return null;
+  if (regime !== "new" && regime !== "old") return null;
+  const slabTax = regime === "new" ? taxSlabNew(t) : taxSlabOld(t, ageGroup);
+  if (slabTax === null) return null;
+  let rebate = 0;
+  let marginalRelief = 0;
+  let afterRebateBase = slabTax;
+  if (regime === "new") {
+    if (t <= 1200000) {
+      rebate = Math.min(slabTax, 60000);
+    } else if (slabTax > t - 1200000) {
+      marginalRelief = slabTax - (t - 1200000);
+      afterRebateBase = t - 1200000;
+    }
+  } else if (t <= 500000) {
+    rebate = Math.min(slabTax, 12500);
+  }
+  const afterRebate = afterRebateBase - rebate;
+  const surchargeRate = taxSurchargeRate(t, regime);
+  const surcharge = roundRupee(afterRebate * surchargeRate);
+  const cess = roundRupee((afterRebate + surcharge) * 0.04);
+  return {
+    slabTax,
+    rebate,
+    marginalRelief,
+    surchargeRate,
+    surcharge,
+    cess,
+    taxAfterRebate: afterRebate,
+    total: afterRebate + surcharge + cess
+  };
+}
+
+export function taxSlabBreakdown(taxable, regime, ageGroup) {
+  const t = Number(taxable);
+  if (!Number.isFinite(t) || t < 0) return null;
+  if (regime !== "new" && regime !== "old") return null;
+  const rows = [];
+  if (regime === "new") {
+    const bands = [
+      ["Up to ₹4,00,000", 400000, 0],
+      ["₹4,00,001 – ₹8,00,000", 800000, 0.05],
+      ["₹8,00,001 – ₹12,00,000", 1200000, 0.10],
+      ["₹12,00,001 – ₹16,00,000", 1600000, 0.15],
+      ["₹16,00,001 – ₹20,00,000", 2000000, 0.20],
+      ["₹20,00,001 – ₹24,00,000", 2400000, 0.25],
+      ["Above ₹24,00,000", Infinity, 0.30]
+    ];
+    let prev = 0;
+    for (const [label, top, rate] of bands) {
+      if (t <= prev) break;
+      const amount = Math.min(t, top) - prev;
+      if (amount <= 0) { prev = top; continue; }
+      rows.push({ label, rate, amount, tax: roundRupee(amount * rate) });
+      prev = top;
+    }
+  } else {
+    if (ageGroup !== "below60" && ageGroup !== "senior" && ageGroup !== "super") return null;
+    const exempt = ageGroup === "below60" ? 250000 : ageGroup === "senior" ? 300000 : 500000;
+    const exemptLabel = ageGroup === "below60" ? "Up to ₹2,50,000" : ageGroup === "senior" ? "Up to ₹3,00,000" : "Up to ₹5,00,000";
+    const bands = [
+      [exemptLabel, exempt, 0],
+      ["₹" + (exempt + 1).toLocaleString("en-IN") + " – ₹5,00,000", 500000, 0.05],
+      ["₹5,00,001 – ₹10,00,000", 1000000, 0.20],
+      ["Above ₹10,00,000", Infinity, 0.30]
+    ];
+    let prev = 0;
+    for (const [label, top, rate] of bands) {
+      if (t <= prev) break;
+      const amount = Math.min(t, top) - prev;
+      if (amount <= 0) { prev = top; continue; }
+      rows.push({ label, rate, amount, tax: roundRupee(amount * rate) });
+      prev = top;
+    }
+  }
+  return rows;
+}
+
+export function taxCompute(salary, other, ageGroup, deductions) {
+  const sal = Number(salary);
+  const oth = Number(other);
+  const d = deductions || {};
+  const fields = ["c80", "d80", "hra", "loan", "nps", "other"];
+  if (!Number.isFinite(sal) || !Number.isFinite(oth)) return null;
+  if (sal < 0 || sal > 100000000 || oth < 0 || oth > 100000000) return null;
+  if (ageGroup !== "below60" && ageGroup !== "senior" && ageGroup !== "super") return null;
+  for (const f of fields) {
+    const v = d[f] === undefined ? 0 : Number(d[f]);
+    if (!Number.isFinite(v) || v < 0 || v > 10000000) return null;
+  }
+  const gross = sal + oth;
+  const newStdDeduction = Math.min(sal, 75000);
+  const oldStdDeduction = Math.min(sal, 50000);
+  const dv = f => d[f] === undefined ? 0 : Number(d[f]);
+  const c80 = Math.min(dv("c80"), 150000);
+  const d80 = Math.min(dv("d80"), ageGroup === "below60" ? 25000 : 50000);
+  const hra = dv("hra");
+  const loan = Math.min(dv("loan"), 200000);
+  const nps = Math.min(dv("nps"), 50000);
+  const otherDed = dv("other");
+  const oldDeductionsTotal = oldStdDeduction + c80 + d80 + hra + loan + nps + otherDed;
+  const newTaxable = Math.max(0, gross - newStdDeduction);
+  const oldTaxable = Math.max(0, gross - oldDeductionsTotal);
+  const newRegime = taxRegime(newTaxable, "new", ageGroup);
+  const oldRegime = taxRegime(oldTaxable, "old", ageGroup);
+  if (!newRegime || !oldRegime) return null;
+  const better = newRegime.total < oldRegime.total ? "new" : oldRegime.total < newRegime.total ? "old" : "equal";
+  return {
+    salary: sal,
+    otherIncome: oth,
+    gross,
+    ageGroup,
+    newTaxable,
+    oldTaxable,
+    newStdDeduction,
+    oldStdDeduction,
+    oldDeductions: { c80, d80, hra, loan, nps, other: otherDed, total: oldDeductionsTotal },
+    newRegime,
+    oldRegime,
+    better,
+    saving: Math.abs(newRegime.total - oldRegime.total),
+    newEffectiveRate: gross > 0 ? Math.round(newRegime.total / gross * 100 * 100) / 100 : 0,
+    oldEffectiveRate: gross > 0 ? Math.round(oldRegime.total / gross * 100 * 100) / 100 : 0
+  };
+}
+
+export function rdValueAt(monthly, effRate, monthsElapsed) {
+  const D = Number(monthly);
+  const r = Number(effRate);
+  const T = Math.round(Number(monthsElapsed));
+  if (!Number.isFinite(D) || !Number.isFinite(r) || !Number.isFinite(T)) return null;
+  if (T < 0) return null;
+  let total = 0;
+  for (let k = 1; k <= T; k++) {
+    total += D * Math.pow(1 + r / 400, (T - k + 1) / 3);
+  }
+  return roundRupee(total);
+}
+
+export function rdSchedule(monthly, rate, years, months, senior) {
+  const D = Number(monthly);
+  const r = Number(rate) + (senior === true ? 0.5 : 0);
+  const y = Math.round(Number(years));
+  const m = Math.round(Number(months));
+  if (!Number.isFinite(D) || !Number.isFinite(r) || !Number.isFinite(y)
+    || !Number.isFinite(m)) return null;
+  if (D < 100 || D > 100000) return null;
+  if (Number(rate) < 0 || Number(rate) > 12) return null;
+  if (r > 12.5) return null;
+  if (y < 0 || y > 10 || String(y) !== String(Math.trunc(Number(years)))) return null;
+  if (m < 0 || m > 11 || String(m) !== String(Math.trunc(Number(months)))) return null;
+  const totalMonths = y * 12 + m;
+  if (totalMonths < 6 || totalMonths > 120) return null;
+  const rows = [];
+  const fullYears = Math.floor(totalMonths / 12);
+  for (let year = 1; year <= fullYears; year++) {
+    const opening = rdValueAt(D, r, 12 * (year - 1));
+    const closing = rdValueAt(D, r, 12 * year);
+    const deposits = 12 * D;
+    rows.push({ label: "Year " + year, opening, deposits, interest: closing - opening - deposits, closing });
+  }
+  const rem = totalMonths % 12;
+  if (rem > 0) {
+    const opening = rdValueAt(D, r, 12 * fullYears);
+    const closing = rdValueAt(D, r, totalMonths);
+    const deposits = rem * D;
+    rows.push({ label: "Final " + rem + " months", opening, deposits, interest: closing - opening - deposits, closing });
+  }
+  return rows;
+}
+
+export function rdCompute(monthly, rate, years, months, senior) {
+  const rows = rdSchedule(monthly, rate, years, months, senior);
+  if (!rows) return null;
+  const D = Number(monthly);
+  const eff = Number(rate) + (senior === true ? 0.5 : 0);
+  const totalMonths = Math.round(Number(years)) * 12 + Math.round(Number(months));
+  const t = totalMonths / 12;
+  const invested = D * totalMonths;
+  const interest = rows.reduce((sum, row) => sum + row.interest, 0);
+  const maturity = invested + interest;
+  const totalReturn = invested > 0
+    ? Math.round((maturity / invested - 1) * 100 * 100) / 100
+    : 0;
+  const maxYearInterest = Math.max.apply(null, rows.map(row => row.interest));
+  const tdsThreshold = senior === true ? 100000 : 50000;
+  return {
+    monthly: D,
+    rate: Number(rate),
+    effectiveRate: eff,
+    years: Math.round(Number(years)),
+    months: Math.round(Number(months)),
+    senior: senior === true,
+    tenureMonths: totalMonths,
+    tenureYears: t,
+    invested,
+    interest,
+    maturity,
+    totalReturn,
+    maxYearInterest,
+    tdsThreshold,
+    tdsApplies: maxYearInterest > tdsThreshold,
+    schedule: rows
+  };
+}
+
 export function pctClient(c) {
   const $ = id => document.getElementById(id);
 
@@ -17409,6 +17927,3650 @@ export function renderFdCalculatorBody(p, others, css, clientSource) {
             bank together in a financial year, not on a single FD alone
             — so a deposit that shows no TDS here can still attract TDS
             when combined with your other deposits at the same bank.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function taxClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  function taxSlabNew(taxable) {
+    const t = Number(taxable);
+    if (!Number.isFinite(t) || t < 0) return null;
+    const bands = [[400000, 0], [800000, 0.05], [1200000, 0.10], [1600000, 0.15], [2000000, 0.20], [2400000, 0.25], [Infinity, 0.30]];
+    let tax = 0;
+    let prev = 0;
+    for (const [top, rate] of bands) {
+      if (t <= prev) break;
+      tax += (Math.min(t, top) - prev) * rate;
+      prev = top;
+    }
+    return roundRupee(tax);
+  }
+
+  function taxSlabOld(taxable, ageGroup) {
+    const t = Number(taxable);
+    if (!Number.isFinite(t) || t < 0) return null;
+    if (ageGroup !== "below60" && ageGroup !== "senior" && ageGroup !== "super") return null;
+    const exempt = ageGroup === "below60" ? 250000 : ageGroup === "senior" ? 300000 : 500000;
+    const bands = [[500000, 0.05], [1000000, 0.20], [Infinity, 0.30]];
+    let tax = 0;
+    let prev = exempt;
+    for (const [top, rate] of bands) {
+      if (t <= prev) break;
+      tax += (Math.min(t, top) - prev) * rate;
+      prev = top;
+    }
+    return roundRupee(tax);
+  }
+
+  function taxSurchargeRate(taxable, regime) {
+    const t = Number(taxable);
+    if (!Number.isFinite(t) || t < 0) return null;
+    if (regime !== "new" && regime !== "old") return null;
+    if (t <= 5000000) return 0;
+    if (t <= 10000000) return 0.10;
+    if (t <= 20000000) return 0.15;
+    if (regime === "old" && t > 50000000) return 0.37;
+    return 0.25;
+  }
+
+  function taxRegime(taxable, regime, ageGroup) {
+    const t = Number(taxable);
+    if (!Number.isFinite(t) || t < 0) return null;
+    if (regime !== "new" && regime !== "old") return null;
+    const slabTax = regime === "new" ? taxSlabNew(t) : taxSlabOld(t, ageGroup);
+    if (slabTax === null) return null;
+    let rebate = 0;
+    let marginalRelief = 0;
+    let afterRebateBase = slabTax;
+    if (regime === "new") {
+      if (t <= 1200000) {
+        rebate = Math.min(slabTax, 60000);
+      } else if (slabTax > t - 1200000) {
+        marginalRelief = slabTax - (t - 1200000);
+        afterRebateBase = t - 1200000;
+      }
+    } else if (t <= 500000) {
+      rebate = Math.min(slabTax, 12500);
+    }
+    const afterRebate = afterRebateBase - rebate;
+    const surchargeRate = taxSurchargeRate(t, regime);
+    const surcharge = roundRupee(afterRebate * surchargeRate);
+    const cess = roundRupee((afterRebate + surcharge) * 0.04);
+    return {
+      slabTax,
+      rebate,
+      marginalRelief,
+      surchargeRate,
+      surcharge,
+      cess,
+      taxAfterRebate: afterRebate,
+      total: afterRebate + surcharge + cess
+    };
+  }
+
+  function taxSlabBreakdown(taxable, regime, ageGroup) {
+    const t = Number(taxable);
+    if (!Number.isFinite(t) || t < 0) return null;
+    if (regime !== "new" && regime !== "old") return null;
+    const rows = [];
+    if (regime === "new") {
+      const bands = [
+        ["Up to ₹4,00,000", 400000, 0],
+        ["₹4,00,001 – ₹8,00,000", 800000, 0.05],
+        ["₹8,00,001 – ₹12,00,000", 1200000, 0.10],
+        ["₹12,00,001 – ₹16,00,000", 1600000, 0.15],
+        ["₹16,00,001 – ₹20,00,000", 2000000, 0.20],
+        ["₹20,00,001 – ₹24,00,000", 2400000, 0.25],
+        ["Above ₹24,00,000", Infinity, 0.30]
+      ];
+      let prev = 0;
+      for (const [label, top, rate] of bands) {
+        if (t <= prev) break;
+        const amount = Math.min(t, top) - prev;
+        if (amount <= 0) { prev = top; continue; }
+        rows.push({ label, rate, amount, tax: roundRupee(amount * rate) });
+        prev = top;
+      }
+    } else {
+      if (ageGroup !== "below60" && ageGroup !== "senior" && ageGroup !== "super") return null;
+      const exempt = ageGroup === "below60" ? 250000 : ageGroup === "senior" ? 300000 : 500000;
+      const exemptLabel = ageGroup === "below60" ? "Up to ₹2,50,000" : ageGroup === "senior" ? "Up to ₹3,00,000" : "Up to ₹5,00,000";
+      const bands = [
+        [exemptLabel, exempt, 0],
+        ["₹" + (exempt + 1).toLocaleString("en-IN") + " – ₹5,00,000", 500000, 0.05],
+        ["₹5,00,001 – ₹10,00,000", 1000000, 0.20],
+        ["Above ₹10,00,000", Infinity, 0.30]
+      ];
+      let prev = 0;
+      for (const [label, top, rate] of bands) {
+        if (t <= prev) break;
+        const amount = Math.min(t, top) - prev;
+        if (amount <= 0) { prev = top; continue; }
+        rows.push({ label, rate, amount, tax: roundRupee(amount * rate) });
+        prev = top;
+      }
+    }
+    return rows;
+  }
+
+  function taxCompute(salary, other, ageGroup, deductions) {
+    const sal = Number(salary);
+    const oth = Number(other);
+    const d = deductions || {};
+    const fields = ["c80", "d80", "hra", "loan", "nps", "other"];
+    if (!Number.isFinite(sal) || !Number.isFinite(oth)) return null;
+    if (sal < 0 || sal > 100000000 || oth < 0 || oth > 100000000) return null;
+    if (ageGroup !== "below60" && ageGroup !== "senior" && ageGroup !== "super") return null;
+    for (const f of fields) {
+      const v = d[f] === undefined ? 0 : Number(d[f]);
+      if (!Number.isFinite(v) || v < 0 || v > 10000000) return null;
+    }
+    const gross = sal + oth;
+    const newStdDeduction = Math.min(sal, 75000);
+    const oldStdDeduction = Math.min(sal, 50000);
+    const dv = f => d[f] === undefined ? 0 : Number(d[f]);
+    const c80 = Math.min(dv("c80"), 150000);
+    const d80 = Math.min(dv("d80"), ageGroup === "below60" ? 25000 : 50000);
+    const hra = dv("hra");
+    const loan = Math.min(dv("loan"), 200000);
+    const nps = Math.min(dv("nps"), 50000);
+    const otherDed = dv("other");
+    const oldDeductionsTotal = oldStdDeduction + c80 + d80 + hra + loan + nps + otherDed;
+    const newTaxable = Math.max(0, gross - newStdDeduction);
+    const oldTaxable = Math.max(0, gross - oldDeductionsTotal);
+    const newRegime = taxRegime(newTaxable, "new", ageGroup);
+    const oldRegime = taxRegime(oldTaxable, "old", ageGroup);
+    if (!newRegime || !oldRegime) return null;
+    const better = newRegime.total < oldRegime.total ? "new" : oldRegime.total < newRegime.total ? "old" : "equal";
+    return {
+      salary: sal,
+      otherIncome: oth,
+      gross,
+      ageGroup,
+      newTaxable,
+      oldTaxable,
+      newStdDeduction,
+      oldStdDeduction,
+      oldDeductions: { c80, d80, hra, loan, nps, other: otherDed, total: oldDeductionsTotal },
+      newRegime,
+      oldRegime,
+      better,
+      saving: Math.abs(newRegime.total - oldRegime.total),
+      newEffectiveRate: gross > 0 ? Math.round(newRegime.total / gross * 100 * 100) / 100 : 0,
+      oldEffectiveRate: gross > 0 ? Math.round(oldRegime.total / gross * 100 * 100) / 100 : 0
+    };
+  }
+
+  const presetSelect = $("preset");
+  const taxPill = $("tax-pill");
+  const inputSalary = $("input-salary");
+  const inputSalaryError = $("input-salary-error");
+  const inputOther = $("input-other");
+  const inputOtherError = $("input-other-error");
+  const ageSelect = $("input-age");
+  const inputC80 = $("input-c80");
+  const inputD80 = $("input-d80");
+  const inputHra = $("input-hra");
+  const inputLoan = $("input-loan");
+  const inputNps = $("input-nps");
+  const inputOtherDed = $("input-other-ded");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const newBreakdownBody = $("new-breakdown-body");
+  const oldBreakdownBody = $("old-breakdown-body");
+  const compareNote = $("compare-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+  const ageLabel = a => a === "senior" ? "60–80" : a === "super" ? "above 80" : "below 60";
+
+  function renderBreakdown(tbody, rows) {
+    tbody.replaceChildren();
+    rows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row.label;
+      tr.appendChild(th);
+      const tdRate = document.createElement("td");
+      tdRate.textContent = row.rate === 0 ? "Nil" : (row.rate * 100) + "%";
+      tr.appendChild(tdRate);
+      const tdAmt = document.createElement("td");
+      tdAmt.textContent = inr(row.amount);
+      tr.appendChild(tdAmt);
+      const tdTax = document.createElement("td");
+      tdTax.textContent = inr(row.tax);
+      tr.appendChild(tdTax);
+      tbody.appendChild(tr);
+    });
+  }
+
+  function regimeWorking(r) {
+    const parts = [];
+    parts.push("Slab tax " + inr(r.slabTax));
+    if (r.rebate > 0) parts.push("less Section 87A rebate " + inr(r.rebate));
+    if (r.marginalRelief > 0) parts.push("less marginal relief " + inr(r.marginalRelief));
+    if (r.surcharge > 0) parts.push("plus surcharge " + inr(r.surcharge) + " (" + (r.surchargeRate * 100) + "%)");
+    parts.push("plus 4% cess " + inr(r.cess) + " = " + inr(r.total) + ".");
+    return parts.join(" ");
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your salary and deductions to compare the new and old regimes.";
+    working.textContent = "Enter your salary and deductions to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    newBreakdownBody.replaceChildren();
+    oldBreakdownBody.replaceChildren();
+    compareNote.textContent = "Enter your figures to see the regime comparison.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(salary, other, age, deds, r) {
+    const newR = r.newRegime;
+    const oldR = r.oldRegime;
+    output.textContent = inr(newR.total);
+    box1Val.textContent = inr(newR.total);
+    box1Label.textContent = "NEW REGIME TAX";
+    box2Val.textContent = inr(oldR.total);
+    box2Label.textContent = "OLD REGIME TAX";
+    box3Val.textContent = inr(r.saving);
+    box3Label.textContent = r.better === "equal" ? "DIFFERENCE" : "YOU SAVE";
+    const verdict = r.better === "new"
+      ? "The new regime saves you " + inr(r.saving) + "."
+      : r.better === "old"
+        ? "The old regime saves you " + inr(r.saving) + "."
+        : "Both regimes charge the same — " + inr(newR.total) + ".";
+    glanceText.textContent = inr(r.gross) + " gross income, age " + ageLabel(age) + ", " + inr(r.oldDeductions.total) + " of old-regime deductions → new regime " + inr(newR.total) + ", old regime " + inr(oldR.total) + ". " + verdict;
+    working.textContent = "New regime: " + inr(r.gross) + " gross − " + inr(r.newStdDeduction) + " standard deduction = " + inr(r.newTaxable) + " taxable. " + regimeWorking(newR);
+    working2.textContent = "Old regime: " + inr(r.gross) + " gross − " + inr(r.oldStdDeduction) + " standard deduction − " + inr(r.oldDeductions.total - r.oldStdDeduction) + " deductions = " + inr(r.oldTaxable) + " taxable. " + regimeWorking(oldR);
+    workingNote.textContent = "Deductions apply to the old regime only. The new regime ignores 80C, 80D, HRA, home-loan interest and NPS — it keeps only the ₹75,000 standard deduction."
+      + (newR.marginalRelief > 0 ? " Marginal relief applied: the new-regime slab tax of " + inr(newR.slabTax) + " was capped at " + inr(newR.taxAfterRebate) + ", the amount by which taxable income exceeds ₹12,00,000." : "")
+      + (newR.surcharge > 0 || oldR.surcharge > 0 ? " Surcharge applies above ₹50 lakh of taxable income." : "");
+    renderBreakdown(newBreakdownBody, taxSlabBreakdown(r.newTaxable, "new", age));
+    renderBreakdown(oldBreakdownBody, taxSlabBreakdown(r.oldTaxable, "old", age));
+    compareNote.textContent = "Comparison for " + inr(r.gross) + " gross income, age " + ageLabel(age) + ". New regime: taxable " + inr(r.newTaxable) + ", tax " + inr(newR.total) + " (" + fmt(r.newEffectiveRate) + "% of gross). Old regime: taxable " + inr(r.oldTaxable) + ", tax " + inr(oldR.total) + " (" + fmt(r.oldEffectiveRate) + "% of gross). " + verdict;
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | Income Tax Calculator (FY 2025-26)"
+      + "\nQuestion: " + inr(r.gross) + " gross income, age " + ageLabel(age) + ", " + inr(r.oldDeductions.total) + " of old-regime deductions"
+      + "\nAnswer: new regime " + inr(newR.total) + " (taxable " + inr(r.newTaxable) + "), old regime " + inr(oldR.total) + " (taxable " + inr(r.oldTaxable) + ")"
+      + "\nVerdict: " + verdict
+      + "\nWorking: new slab tax " + inr(newR.slabTax) + ", cess " + inr(newR.cess) + "; old slab tax " + inr(oldR.slabTax) + ", cess " + inr(oldR.cess);
+  }
+
+  function numValue(el) {
+    return el.value === "" ? NaN : Number(el.value);
+  }
+
+  function paint(showEmptyError = false) {
+    taxPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const salaryNum = numValue(inputSalary);
+    const otherNum = numValue(inputOther);
+    let salaryMsg = "";
+    let otherMsg = "";
+    if (inputSalary.value === "") {
+      if (showEmptyError) salaryMsg = "Enter your gross annual salary.";
+    } else if (!Number.isFinite(salaryNum) || salaryNum < 0 || salaryNum > 100000000) {
+      salaryMsg = "Enter a salary from ₹0 to ₹10,00,00,000.";
+    }
+    if (inputOther.value === "") {
+      if (showEmptyError) otherMsg = "Enter your other income (0 if none).";
+    } else if (!Number.isFinite(otherNum) || otherNum < 0 || otherNum > 100000000) {
+      otherMsg = "Enter other income from ₹0 to ₹10,00,00,000.";
+    }
+    inputSalaryError.textContent = salaryMsg;
+    inputOtherError.textContent = otherMsg;
+    inputSalary.setAttribute("aria-invalid", String(salaryMsg !== ""));
+    inputOther.setAttribute("aria-invalid", String(otherMsg !== ""));
+
+    const valid = salaryMsg === "" && otherMsg === "" && inputSalary.value !== "" && inputOther.value !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const deds = {
+      c80: Number(inputC80.value) || 0,
+      d80: Number(inputD80.value) || 0,
+      hra: Number(inputHra.value) || 0,
+      loan: Number(inputLoan.value) || 0,
+      nps: Number(inputNps.value) || 0,
+      other: Number(inputOtherDed.value) || 0
+    };
+    const r = taxCompute(salaryNum, otherNum, ageSelect.value, deds);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(salaryNum, otherNum, ageSelect.value, deds, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = taxCompute(item.salary, item.other, item.age, item);
+    if (!r) return "";
+    return inr(item.salary) + " salary · " + ageLabel(item.age) + " → new " + inr(r.newRegime.total) + " / old " + inr(r.oldRegime.total);
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputSalary.value, inputOther.value, ageSelect.value,
+      inputC80.value, inputD80.value, inputHra.value, inputLoan.value,
+      inputNps.value, inputOtherDed.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputSalary.value = String(item.salary);
+        inputOther.value = String(item.other);
+        ageSelect.value = item.age;
+        inputC80.value = String(item.c80);
+        inputD80.value = String(item.d80);
+        inputHra.value = String(item.hra);
+        inputLoan.value = String(item.loan);
+        inputNps.value = String(item.nps);
+        inputOtherDed.value = String(item.otherDed);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      salary: Number(inputSalary.value),
+      other: Number(inputOther.value),
+      age: ageSelect.value,
+      c80: Number(inputC80.value) || 0,
+      d80: Number(inputD80.value) || 0,
+      hra: Number(inputHra.value) || 0,
+      loan: Number(inputLoan.value) || 0,
+      nps: Number(inputNps.value) || 0,
+      otherDed: Number(inputOtherDed.value) || 0
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputSalary.value = button.dataset.salary || "";
+      inputOther.value = button.dataset.other || "0";
+      ageSelect.value = button.dataset.age || "below60";
+      inputC80.value = button.dataset.c80 || "0";
+      inputD80.value = button.dataset.d80 || "0";
+      inputHra.value = button.dataset.hra || "0";
+      inputLoan.value = button.dataset.loan || "0";
+      inputNps.value = button.dataset.nps || "0";
+      inputOtherDed.value = button.dataset.otherded || "0";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputSalary.value = String(rec.salary);
+    inputOther.value = String(rec.other);
+    ageSelect.value = rec.age;
+    inputC80.value = String(rec.c80);
+    inputD80.value = String(rec.d80);
+    inputHra.value = String(rec.hra);
+    inputLoan.value = String(rec.loan);
+    inputNps.value = String(rec.nps);
+    inputOtherDed.value = String(rec.otherDed);
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputSalary.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputOther.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    ageSelect.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputC80.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputD80.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputHra.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputLoan.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputNps.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputOtherDed.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("tax-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderTaxCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleSalary: p.sampleSalary, sampleOther: p.sampleOther, sampleAge: p.sampleAge, sampleC80: p.sampleC80, sampleD80: p.sampleD80, sampleHra: p.sampleHra, sampleLoan: p.sampleLoan, sampleNps: p.sampleNps, sampleOtherDed: p.sampleOtherDed };
+  const sampleDeds = { c80: p.sampleC80, d80: p.sampleD80, hra: p.sampleHra, loan: p.sampleLoan, nps: p.sampleNps, other: p.sampleOtherDed };
+  const sample = taxCompute(p.sampleSalary, p.sampleOther, p.sampleAge, sampleDeds);
+  const newRows = taxSlabBreakdown(sample.newTaxable, "new", p.sampleAge);
+  const oldRows = taxSlabBreakdown(sample.oldTaxable, "old", p.sampleAge);
+  const ageLabel = a => a === "senior" ? "60–80" : a === "super" ? "above 80" : "below 60";
+  const verdictText = sample.better === "new"
+    ? "The new regime saves you " + inr2(sample.saving) + "."
+    : sample.better === "old"
+      ? "The old regime saves you " + inr2(sample.saving) + "."
+      : "Both regimes charge the same — " + inr2(sample.newRegime.total) + ".";
+  const glanceText = inr2(sample.gross) + " gross income, age " + ageLabel(p.sampleAge) + ", " + inr2(sample.oldDeductions.total) + " of old-regime deductions → new regime " + inr2(sample.newRegime.total) + ", old regime " + inr2(sample.oldRegime.total) + ". " + verdictText;
+  const newWorking = "New regime: " + inr2(sample.gross) + " gross − " + inr2(sample.newStdDeduction) + " standard deduction = " + inr2(sample.newTaxable) + " taxable. Slab tax " + inr2(sample.newRegime.slabTax) + " plus 4% cess " + inr2(sample.newRegime.cess) + " = " + inr2(sample.newRegime.total) + ".";
+  const oldWorking = "Old regime: " + inr2(sample.gross) + " gross − " + inr2(sample.oldStdDeduction) + " standard deduction − " + inr2(sample.oldDeductions.total - sample.oldStdDeduction) + " deductions = " + inr2(sample.oldTaxable) + " taxable. Slab tax " + inr2(sample.oldRegime.slabTax) + " plus 4% cess " + inr2(sample.oldRegime.cess) + " = " + inr2(sample.oldRegime.total) + ".";
+
+  const presetSummary = pr => `${inr2(pr.salary)} salary · age ${ageLabel(pr.age)}`;
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = taxCompute(st.salary, st.other, st.age, { c80: st.c80, d80: st.d80, hra: st.hra, loan: st.loan, nps: st.nps, other: st.otherDed });
+    return `New regime ${inr2(r.newRegime.total)} · Old regime ${inr2(r.oldRegime.total)} · ${r.better === "equal" ? "No difference" : (r.better === "new" ? "New saves " : "Old saves ") + inr2(r.saving)}`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const compareRows = [
+    ["Gross income", inr2(sample.gross), inr2(sample.gross)],
+    ["Standard deduction", "− " + inr2(sample.newStdDeduction), "− " + inr2(sample.oldStdDeduction)],
+    ["Old-regime deductions", "— (not allowed)", "− " + inr2(sample.oldDeductions.total - sample.oldStdDeduction)],
+    ["Taxable income", inr2(sample.newTaxable), inr2(sample.oldTaxable)],
+    ["Slab tax", inr2(sample.newRegime.slabTax), inr2(sample.oldRegime.slabTax)],
+    ["Section 87A rebate", sample.newRegime.rebate > 0 ? "− " + inr2(sample.newRegime.rebate) : "₹0", sample.oldRegime.rebate > 0 ? "− " + inr2(sample.oldRegime.rebate) : "₹0"],
+    ["Marginal relief", sample.newRegime.marginalRelief > 0 ? "− " + inr2(sample.newRegime.marginalRelief) : "₹0", "— (none in the old regime)"],
+    ["Surcharge", sample.newRegime.surcharge > 0 ? inr2(sample.newRegime.surcharge) + " (" + fmt2(sample.newRegime.surchargeRate * 100) + "%)" : "₹0", sample.oldRegime.surcharge > 0 ? inr2(sample.oldRegime.surcharge) + " (" + fmt2(sample.oldRegime.surchargeRate * 100) + "%)" : "₹0"],
+    ["Health & education cess (4%)", inr2(sample.newRegime.cess), inr2(sample.oldRegime.cess)],
+    ["Total tax payable", inr2(sample.newRegime.total), inr2(sample.oldRegime.total)]
+  ].map(([label, nv, ov]) => `
+      <tr>
+        <th scope="row">${e(label)}</th>
+        <td>${e(nv)}</td>
+        <td>${e(ov)}</td>
+      </tr>`).join("");
+
+  const slabRows = rows => rows.map(row => `
+      <tr>
+        <th scope="row">${e(row.label)}</th>
+        <td>${row.rate === 0 ? "Nil" : fmt2(row.rate * 100) + "%"}</td>
+        <td>${inr2(row.amount)}</td>
+        <td>${inr2(row.tax)}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${taxCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free income tax calculator · FY 2025-26</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate my tax →
+              </a>
+              <a href="#method" class="calc-link">How income tax is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.newRegime.total)}</strong>
+                <small>New-regime tax on ${inr2(p.sampleSalary)} of salary</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.oldRegime.total)}</strong>
+                <small>Old-regime tax on the same salary, no deductions</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.saving)} saved</strong>
+                <small>By choosing the new regime here</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>An estimate for FY 2025-26 (AY 2026-27), not tax advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/">RRB Age</a>
+              <a href="/emi-calculator/">EMI</a>
+              <a href="/sip-calculator/">SIP</a>
+              <a href="/bmi-calculator/">BMI</a>
+              <a href="/percentage-calculator/">Percentage</a>
+              <a href="/gst-calculator/">GST</a>
+              <a href="/ppf-calculator/">PPF</a>
+              <a href="/fd-calculator/">FD</a>
+              <a href="/income-tax-calculator/" aria-current="page">Income Tax</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate your income tax</h2>
+              <span class="calc-pill" id="tax-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="tax-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-salary">
+                Gross annual salary (₹)
+                <span>Your salary before any deduction — from ₹0 to ₹10,00,00,000</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-salary"
+                type="number"
+                value="${p.sampleSalary}"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-salary-error"
+              >
+              <p class="calc-error" id="input-salary-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-other">
+                Other income (₹ a year)
+                <span>Interest, rent, freelance work — 0 if none</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-other"
+                type="number"
+                value="${p.sampleOther}"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-other-error"
+              >
+              <p class="calc-error" id="input-other-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-age">
+                Age group
+                <span>Changes only the old-regime exemption: ₹2.5 lakh below 60, ₹3 lakh at 60–80, ₹5 lakh above 80</span>
+              </label>
+
+              <select class="select-input" id="input-age">
+                <option value="below60"${p.sampleAge === "below60" ? " selected" : ""}>Below 60 years</option>
+                <option value="senior"${p.sampleAge === "senior" ? " selected" : ""}>60 to 80 years (senior citizen)</option>
+                <option value="super"${p.sampleAge === "super" ? " selected" : ""}>Above 80 years (super-senior citizen)</option>
+              </select>
+
+              <p class="calc-small" style="margin-top:18px"><strong>Old-regime deductions</strong> — counted only under the old regime. Each is capped at its legal limit; enter what you actually pay.</p>
+
+              <label class="field-label" for="input-c80">
+                Section 80C — investments &amp; expenses (₹)
+                <span>Capped at ₹1,50,000 (EPF, PPF, ELSS, life insurance, tuition fees, home-loan principal)</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-c80"
+                type="number"
+                value="${p.sampleC80}"
+                step="1000"
+                inputmode="numeric"
+              >
+
+              <label class="field-label" for="input-d80">
+                Section 80D — health insurance premium (₹)
+                <span>Capped at ₹25,000 for self, spouse and children (₹50,000 if you are a senior citizen). Premiums for parents are not included here.</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-d80"
+                type="number"
+                value="${p.sampleD80}"
+                step="1000"
+                inputmode="numeric"
+              >
+
+              <label class="field-label" for="input-hra">
+                HRA exemption (₹)
+                <span>The exemption your employer works out — no fixed cap; enter the exempt amount, not the HRA received</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-hra"
+                type="number"
+                value="${p.sampleHra}"
+                step="1000"
+                inputmode="numeric"
+              >
+
+              <label class="field-label" for="input-loan">
+                Home-loan interest — Section 24(b) (₹)
+                <span>Capped at ₹2,00,000 for the house you live in</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-loan"
+                type="number"
+                value="${p.sampleLoan}"
+                step="1000"
+                inputmode="numeric"
+              >
+
+              <label class="field-label" for="input-nps">
+                NPS — Section 80CCD(1B) (₹)
+                <span>Your own NPS contribution, capped at ₹50,000 over and above 80C</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-nps"
+                type="number"
+                value="${p.sampleNps}"
+                step="1000"
+                inputmode="numeric"
+              >
+
+              <label class="field-label" for="input-other-ded">
+                Other Chapter VI-A deductions (₹)
+                <span>Anything else you claim under Chapter VI-A, for example 80G donations or 80TTA savings interest</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-other-ded"
+                type="number"
+                value="${p.sampleOtherDed}"
+                step="1000"
+                inputmode="numeric"
+              >
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer — new regime</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-salary">${inr2(sample.newRegime.total)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.newRegime.total)}</strong>
+                  <small id="box1-label">NEW REGIME TAX</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.oldRegime.total)}</strong>
+                  <small id="box2-label">OLD REGIME TAX</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.saving)}</strong>
+                  <small id="box3-label">YOU SAVE</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">${e(glanceText)}</span>
+              </div>
+
+              <p class="working" id="working">
+                ${e(newWorking)}
+              </p>
+              <p class="working" id="working-2">${e(oldWorking)}</p>
+              <p class="working" id="working-note">Deductions apply to the old regime only. The new regime ignores 80C, 80D, HRA, home-loan interest and NPS — it keeps only the ₹75,000 standard deduction.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                This is an estimate for FY 2025-26 (AY 2026-27) on income
+                taxed at normal slab rates. Capital gains and other
+                special-rate income, house-property losses and the
+                employer&#39;s NPS contribution are not covered, and
+                the final tax on a return is rounded to the nearest
+                ₹10 under Section 288 — so your filed figure can
+                differ by a few rupees.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="compare">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Side by side</p>
+          <h2>New regime vs old regime — the sample figures</h2>
+          <p id="compare-note">Comparison for ${inr2(sample.gross)} gross income, age ${ageLabel(p.sampleAge)}. New regime: taxable ${inr2(sample.newTaxable)}, tax ${inr2(sample.newRegime.total)} (${fmt2(sample.newEffectiveRate)}% of gross). Old regime: taxable ${inr2(sample.oldTaxable)}, tax ${inr2(sample.oldRegime.total)} (${fmt2(sample.oldEffectiveRate)}% of gross). ${e(verdictText)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="compare-note">
+            <caption>New vs old regime — ${inr2(sample.gross)} gross income, FY 2025-26.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">New regime</th>
+                <th scope="col">Old regime</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${compareRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="slabs">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Slab by slab</p>
+          <h2>How the sample tax is built up</h2>
+          <p>Each slab taxes only the income inside its own band. The new regime taxes ${inr2(sample.newTaxable)}; the old regime taxes ${inr2(sample.oldTaxable)}.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="new-slabs-note">
+            <caption>New-regime slabs on ${inr2(sample.newTaxable)} of taxable income.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Income band</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Income in band</th>
+                <th scope="col">Tax</th>
+              </tr>
+            </thead>
+            <tbody id="new-breakdown-body">
+              ${slabRows(newRows)}
+            </tbody>
+          </table>
+          <p class="calc-small" id="new-slabs-note">New-regime slab tax: ${inr2(sample.newRegime.slabTax)}${sample.newRegime.rebate > 0 ? ", less the Section 87A rebate of " + inr2(sample.newRegime.rebate) : ""}${sample.newRegime.marginalRelief > 0 ? ", less marginal relief of " + inr2(sample.newRegime.marginalRelief) : ""}, plus 4% cess ${inr2(sample.newRegime.cess)} = ${inr2(sample.newRegime.total)}.</p>
+        </div>
+
+        <div class="table-wrap" style="margin-top:24px">
+          <table class="data-table" aria-describedby="old-slabs-note">
+            <caption>Old-regime slabs on ${inr2(sample.oldTaxable)} of taxable income.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Income band</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Income in band</th>
+                <th scope="col">Tax</th>
+              </tr>
+            </thead>
+            <tbody id="old-breakdown-body">
+              ${slabRows(oldRows)}
+            </tbody>
+          </table>
+          <p class="calc-small" id="old-slabs-note">Old-regime slab tax: ${inr2(sample.oldRegime.slabTax)}${sample.oldRegime.rebate > 0 ? ", less the Section 87A rebate of " + inr2(sample.oldRegime.rebate) : ""}, plus 4% cess ${inr2(sample.oldRegime.cess)} = ${inr2(sample.oldRegime.total)}.</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#compare">Compare</a>
+        <a href="#slabs">Slabs</a>
+        <a href="#rates-table">Tax rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / NEW REGIME</span>
+            <h3>Lower rates, almost no deductions</h3>
+            <p>The new regime is the default since FY 2023-24. Its slabs start at ₹4 lakh instead of ₹2.5 lakh, and the Section 87A rebate makes taxable income up to ₹12 lakh tax-free — but 80C, 80D, HRA and home-loan interest are all gone.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / OLD REGIME</span>
+            <h3>Higher rates, full deductions</h3>
+            <p>The old regime keeps every deduction — 80C, 80D, HRA, home-loan interest, NPS — and a higher exemption for senior citizens. It only wins when those deductions are large enough to outweigh the higher rates.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / THE COMPARISON</span>
+            <h3>Same income, two answers</h3>
+            <p>This calculator runs your figures through both regimes and shows the saving. On ₹15,00,000 of salary with no deductions the new regime saves ₹1,59,900; with ₹10,00,000 of deductions on ₹25,00,000 the old regime saves ₹62,400.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your salary to two tax figures</h2>
+          <p>
+            Enter your income first — the deductions are already
+            filled in with the usual example — then compare the two
+            totals and read the working for each.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How income tax is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The FY 2025-26 slabs</small>
+          New: nil to ₹4L · 5% ₹4–8L · 10% ₹8–12L · 15% ₹12–16L · 20% ₹16–20L · 25% ₹20–24L · 30% above ₹24L · Old: nil to ₹2.5L (₹3L senior, ₹5L super-senior) · 5% ₹2.5–5L · 20% ₹5–10L · 30% above ₹10L · Cess 4% on tax + surcharge
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. Taxable income under the new regime
+            <strong>${fmt2(sample.gross)} − ${fmt2(sample.newStdDeduction)} standard deduction = ${fmt2(sample.newTaxable)}</strong>
+            <span>The ₹75,000 standard deduction comes off salary only; the new regime allows no other deduction.</span>
+          </div>
+
+          <div class="math-step">
+            2. Slab tax under the new regime
+            <strong>₹93,750 on ${fmt2(sample.newTaxable)}</strong>
+            <span>5% of ₹4,00,000 (₹20,000) + 10% of ₹4,00,000 (₹40,000) + 15% of ₹2,25,000 (₹33,750). Each slab taxes only the income inside its own band.</span>
+          </div>
+
+          <div class="math-step">
+            3. Total with cess — and the comparison
+            <strong>${fmt2(sample.newRegime.slabTax)} + 4% cess ${fmt2(sample.newRegime.cess)} = ${fmt2(sample.newRegime.total)}</strong>
+            <span>The old regime on the same salary charges ${fmt2(sample.oldRegime.total)} — so the new regime saves ${fmt2(sample.saving)} here.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Four salaries, four verdicts</h2>
+          <p>
+            One example for each everyday case. Select any example to
+            load it into the calculator and check the working for
+            yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.salary / 100000)} LAKH SALARY</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-salary="${story.salary}" data-other="${story.other}" data-age="${e(story.age)}" data-c80="${story.c80}" data-d80="${story.d80}" data-hra="${story.hra}" data-loan="${story.loan}" data-nps="${story.nps}" data-otherded="${story.otherDed}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>Tax rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>FY 2025-26 rebate limits, standard deductions, deduction caps and surcharge bands.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get income tax wrong</h2>
+          <p>
+            The slabs look simple, but four readings trip people up.
+            Each one can cost thousands a year.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / GROSS VS TAXABLE</span>
+            <h3>Taxing the whole salary</h3>
+            <p>Tax applies to taxable income, not gross salary — the ₹75,000 standard deduction comes off first. On ₹15,00,000 the slabs tax ₹14,25,000, not ₹15,00,000, and the difference is ₹11,700 of tax.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE WRONG DEDUCTION</span>
+            <h3>Counting ₹75,000 under the old regime</h3>
+            <p>The standard deduction is ₹75,000 under the new regime but only ₹50,000 under the old regime. Mixing them up overstates the old regime's saving by ₹25,000 of income — about ₹7,800 of tax at the 30% slab.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / 80C IS NOT ENOUGH</span>
+            <h3>Assuming the old regime wins with 80C alone</h3>
+            <p>₹1,50,000 of 80C is not enough on its own: on ₹15,00,000 the old regime still charges ₹2,10,600 with it, against ₹97,500 new. You need roughly ₹5,45,000 of deductions at that salary for the old regime to catch up.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / THE ₹12 LAKH CLIFF</span>
+            <h3>Forgetting marginal relief</h3>
+            <p>Crossing ₹12,00,000 of taxable income does not suddenly cost ₹60,000 of tax — marginal relief caps it at the excess over ₹12,00,000. At ₹12,50,000 the tax is ₹52,000 with cess, not ₹70,200. This page applies the relief automatically.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>Income tax calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the FY 2025-26 (AY 2026-27) rates from the
+            Finance Act 2025 (Union Budget 2025): the new-regime slabs
+            under Section 115BAC, the old-regime slabs with the
+            age-based exemptions, the ₹75,000 / ₹50,000 standard
+            deductions, the Section 87A rebates (₹60,000 to
+            ₹12,00,000 new; ₹12,500 to ₹5,00,000 old) with marginal
+            relief in the new regime, the surcharge bands and the 4%
+            health and education cess. Each component — slab tax,
+            surcharge and cess — is rounded to the nearest rupee.
+            Deductions are capped at their legal limits (80C
+            ₹1,50,000; 80D ₹25,000, ₹50,000 for a senior citizen;
+            home-loan interest ₹2,00,000; NPS 80CCD(1B) ₹50,000).
+          </p>
+          <p>
+            Rate checked 11 November 2026 against the Income Tax
+            Department&#39;s tax-rates pages
+            (incometaxindia.gov.in) and the e-filing portal
+            (incometax.gov.in). Cross-checked against the ranking
+            income tax calculators: ₹15,00,000 of salary gives
+            ₹97,500 under the new regime on
+            <a href="https://calcsolver.in/tools/income-tax-calculator-fy-2025-26" rel="nofollow noopener" target="_blank">calcsolver.in</a>
+            and on
+            <a href="https://www.calvix.org.in/income-tax-calculator/" rel="nofollow noopener" target="_blank">calvix.org.in</a>,
+            which also gives ₹1,95,000 under the old regime with
+            ₹2,00,000 of deductions — both figures match this
+            calculator exactly. Two limits of this tool, stated
+            plainly: the final tax on a return is rounded to the
+            nearest ₹10 under Section 288, which this calculator
+            does not apply (the difference is a few rupees at most),
+            and surcharge marginal relief is not applied, so at
+            incomes just above a surcharge threshold (₹50 lakh,
+            ₹1 crore, ₹2 crore, ₹5 crore) the figure here can be
+            slightly higher than the return. Capital gains and other
+            special-rate income, house-property losses and the
+            employer&#39;s NPS contribution under Section 80CCD(2)
+            are not covered.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function hlEmi(principal, annualRatePct, months) {
+  const P = Number(principal);
+  const pct = Number(annualRatePct);
+  const n = Math.round(Number(months));
+  if (!Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(n)) return null;
+  if (!(P > 0) || !(n > 0) || !(pct >= 0)) return null;
+  const r = pct / 1200;
+  const emi = r === 0 ? P / n : P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+  return { emi, months: n, monthlyRate: r };
+}
+
+export function hlSimulate(principal, annualRatePct, years, extraPerMonth, lumpSum, lumpYear) {
+  const P = Number(principal);
+  const pct = Number(annualRatePct);
+  const y = Math.round(Number(years));
+  const extra = Number(extraPerMonth) || 0;
+  const lump = Number(lumpSum) || 0;
+  const ly = Math.round(Number(lumpYear));
+  if (!Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(y)
+    || !Number.isFinite(extra) || !Number.isFinite(lump) || !Number.isFinite(ly)) return null;
+  if (P < 100000 || P > 100000000) return null;
+  if (pct < 0 || pct > 15) return null;
+  if (y < 1 || y > 30 || String(y) !== String(Math.trunc(Number(years)))) return null;
+  if (extra < 0 || extra > 500000) return null;
+  if (lump < 0 || lump > 10000000) return null;
+  if (ly < 1 || ly > 30 || String(ly) !== String(Math.trunc(Number(lumpYear)))) return null;
+  if (lump > 0 && ly > y) return null;
+  const first = hlEmi(P, pct, y * 12);
+  if (!first) return null;
+  const r = first.monthlyRate;
+  const emi = first.emi;
+  let balance = P;
+  let months = 0;
+  const rawRows = [];
+  let yearIndex = 0;
+  while (balance > 0 && months < 360) {
+    yearIndex++;
+    const opening = balance;
+    let yearInterest = 0;
+    let yearPrincipal = 0;
+    let yearPrepay = 0;
+    let yearPayments = 0;
+    let monthsInYear = 0;
+    for (let m = 0; m < 12; m++) {
+      if (balance <= 0) break;
+      months++;
+      monthsInYear++;
+      const interest = balance * r;
+      const emiPortion = Math.min(emi, balance + interest);
+      const regularPay = Math.min(emi + extra, balance + interest);
+      const extraPaid = regularPay - emiPortion;
+      const principalPart = emiPortion - interest;
+      balance -= principalPart + extraPaid;
+      let lumpPaid = 0;
+      if (lump > 0 && months === ly * 12 && balance > 0) {
+        lumpPaid = Math.min(lump, balance);
+        balance -= lumpPaid;
+      }
+      // Float dust: the unrounded EMI amortises exactly in real
+      // arithmetic, so a residual under a paisa is rounding noise,
+      // not a real balance. Snap it so no phantom extra year forms.
+      if (balance > 0 && balance <= 0.01) balance = 0;
+      yearInterest += interest;
+      yearPrincipal += principalPart;
+      yearPrepay += extraPaid + lumpPaid;
+      yearPayments += regularPay + lumpPaid;
+    }
+    rawRows.push({
+      label: monthsInYear === 12 ? "Year " + yearIndex : "Year " + yearIndex + " (" + monthsInYear + " months)",
+      opening,
+      closing: Math.max(balance, 0),
+      prepaymentExact: yearPrepay,
+      paymentsExact: yearPayments
+    });
+  }
+  if (balance > 0) return null;
+  // Rounding convention: each year's payments round to the nearest
+  // rupee, but the last year's payments are set so the rows add up
+  // exactly to the total (rounded to the nearest rupee) — the same
+  // way a lender's final payment is adjusted to clear the balance.
+  // Each row then derives principal = opening - closing - prepayment
+  // and interest = payments - principal - prepayment, so the rows
+  // telescope exactly to the total interest and total payment.
+  const totalExact = rawRows.reduce((sum, row) => sum + row.paymentsExact, 0);
+  const targetTotal = roundRupee(totalExact);
+  const rows = [];
+  let paidSoFar = 0;
+  rawRows.forEach((raw, i) => {
+    const openingR = roundRupee(raw.opening);
+    const closingR = roundRupee(raw.closing);
+    const prepayR = roundRupee(raw.prepaymentExact);
+    const principalR = openingR - closingR - prepayR;
+    const paymentsR = i < rawRows.length - 1
+      ? roundRupee(raw.paymentsExact)
+      : targetTotal - paidSoFar;
+    paidSoFar += paymentsR;
+    const interestR = paymentsR - principalR - prepayR;
+    rows.push({
+      label: raw.label,
+      opening: openingR,
+      interest: interestR,
+      principal: principalR,
+      prepayment: prepayR,
+      closing: closingR,
+      payments: paymentsR
+    });
+  });
+  return { emi, months, totalPayment: targetTotal, interest: targetTotal - P, schedule: rows };
+}
+
+export function hlCompute(amount, rate, years, extra, lump, lumpYear) {
+  const base = hlSimulate(amount, rate, years, 0, 0, 1);
+  if (!base) return null;
+  const hasPrepay = (Number(extra) || 0) > 0 || (Number(lump) || 0) > 0;
+  const withPrepay = hasPrepay ? hlSimulate(amount, rate, years, extra, lump, lumpYear) : null;
+  if (hasPrepay && !withPrepay) return null;
+  const r = withPrepay || base;
+  return {
+    amount: Number(amount),
+    rate: Number(rate),
+    years: Math.round(Number(years)),
+    extra: Number(extra) || 0,
+    lump: Number(lump) || 0,
+    lumpYear: Math.round(Number(lumpYear)),
+    emi: base.emi,
+    months: base.months,
+    totalPayment: r.totalPayment,
+    interest: r.interest,
+    baseTotalPayment: base.totalPayment,
+    baseInterest: base.interest,
+    savedInterest: base.interest - r.interest,
+    savedMonths: base.months - r.months,
+    payoffMonths: r.months,
+    interestPct: r.totalPayment > 0
+      ? Math.round(r.interest / r.totalPayment * 1000) / 10
+      : 0,
+    schedule: r.schedule
+  };
+}
+
+export function hlTenureCompare(amount, annualRatePct) {
+  const P = Number(amount);
+  const pct = Number(annualRatePct);
+  if (!Number.isFinite(P) || !Number.isFinite(pct)) return null;
+  if (P < 100000 || P > 100000000) return null;
+  if (pct < 0 || pct > 15) return null;
+  const out = [];
+  for (const years of [10, 15, 20, 25, 30]) {
+    const s = hlSimulate(P, pct, years, 0, 0, 1);
+    if (!s) return null;
+    out.push({ years, emi: roundRupee(s.emi), interest: s.interest, total: s.totalPayment });
+  }
+  return out;
+}
+
+export const hlCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(18, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+`;
+
+export function rdClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  function rdValueAt(monthly, effRate, monthsElapsed) {
+    const D = Number(monthly);
+    const r = Number(effRate);
+    const T = Math.round(Number(monthsElapsed));
+    if (!Number.isFinite(D) || !Number.isFinite(r) || !Number.isFinite(T)) return null;
+    if (T < 0) return null;
+    let total = 0;
+    for (let k = 1; k <= T; k++) {
+      total += D * Math.pow(1 + r / 400, (T - k + 1) / 3);
+    }
+    return roundRupee(total);
+  }
+
+  function rdSchedule(monthly, rate, years, months, senior) {
+    const D = Number(monthly);
+    const r = Number(rate) + (senior === true ? 0.5 : 0);
+    const y = Math.round(Number(years));
+    const m = Math.round(Number(months));
+    if (!Number.isFinite(D) || !Number.isFinite(r) || !Number.isFinite(y)
+      || !Number.isFinite(m)) return null;
+    if (D < 100 || D > 100000) return null;
+    if (Number(rate) < 0 || Number(rate) > 12) return null;
+    if (r > 12.5) return null;
+    if (y < 0 || y > 10 || String(y) !== String(Math.trunc(Number(years)))) return null;
+    if (m < 0 || m > 11 || String(m) !== String(Math.trunc(Number(months)))) return null;
+    const totalMonths = y * 12 + m;
+    if (totalMonths < 6 || totalMonths > 120) return null;
+    const rows = [];
+    const fullYears = Math.floor(totalMonths / 12);
+    for (let year = 1; year <= fullYears; year++) {
+      const opening = rdValueAt(D, r, 12 * (year - 1));
+      const closing = rdValueAt(D, r, 12 * year);
+      const deposits = 12 * D;
+      rows.push({ label: "Year " + year, opening, deposits, interest: closing - opening - deposits, closing });
+    }
+    const rem = totalMonths % 12;
+    if (rem > 0) {
+      const opening = rdValueAt(D, r, 12 * fullYears);
+      const closing = rdValueAt(D, r, totalMonths);
+      const deposits = rem * D;
+      rows.push({ label: "Final " + rem + " months", opening, deposits, interest: closing - opening - deposits, closing });
+    }
+    return rows;
+  }
+
+  function rdCompute(monthly, rate, years, months, senior) {
+    const rows = rdSchedule(monthly, rate, years, months, senior);
+    if (!rows) return null;
+    const D = Number(monthly);
+    const eff = Number(rate) + (senior === true ? 0.5 : 0);
+    const totalMonths = Math.round(Number(years)) * 12 + Math.round(Number(months));
+    const t = totalMonths / 12;
+    const invested = D * totalMonths;
+    const interest = rows.reduce((sum, row) => sum + row.interest, 0);
+    const maturity = invested + interest;
+    const totalReturn = invested > 0
+      ? Math.round((maturity / invested - 1) * 100 * 100) / 100
+      : 0;
+    const maxYearInterest = Math.max.apply(null, rows.map(row => row.interest));
+    const tdsThreshold = senior === true ? 100000 : 50000;
+    return {
+      monthly: D,
+      rate: Number(rate),
+      effectiveRate: eff,
+      years: Math.round(Number(years)),
+      months: Math.round(Number(months)),
+      senior: senior === true,
+      tenureMonths: totalMonths,
+      tenureYears: t,
+      invested,
+      interest,
+      maturity,
+      totalReturn,
+      maxYearInterest,
+      tdsThreshold,
+      tdsApplies: maxYearInterest > tdsThreshold,
+      schedule: rows
+    };
+  }
+
+  const presetSelect = $("preset");
+  const rdPill = $("rd-pill");
+  const inputMonthly = $("input-monthly");
+  const inputMonthlyError = $("input-monthly-error");
+  const inputRate = $("input-rate");
+  const inputRateError = $("input-rate-error");
+  const yearsSelect = $("input-years");
+  const monthsSelect = $("input-months");
+  const tenureError = $("input-tenure-error");
+  const seniorCheck = $("input-senior");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const tdsNote = $("tds-note");
+  const scheduleBody = $("schedule-body");
+  const scheduleNote = $("schedule-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+  const tenureText = (years, months) => {
+    const total = years * 12 + months;
+    if (total < 12) return total + (total === 1 ? " month" : " months");
+    const y = years === 1 ? "1 year" : years + " years";
+    if (!months) return y;
+    const m = months === 1 ? "1 month" : months + " months";
+    return y + " " + m;
+  };
+
+  function renderSchedule(rows) {
+    scheduleBody.replaceChildren();
+    rows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row.label;
+      tr.appendChild(th);
+      [row.opening, row.deposits, row.interest, row.closing].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      scheduleBody.appendChild(tr);
+    });
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your monthly deposit, the rate and the tenure to see the maturity value with the working.";
+    working.textContent = "Enter your monthly deposit, the rate and the tenure to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    tdsNote.textContent = "";
+    scheduleBody.replaceChildren();
+    scheduleNote.textContent = "Enter your RD details to see the year-by-year growth.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(monthly, rate, years, months, senior, r) {
+    output.textContent = inr(r.maturity);
+    box1Val.textContent = inr(r.interest);
+    box1Label.textContent = "INTEREST EARNED";
+    box2Val.textContent = inr(r.invested);
+    box2Label.textContent = "YOUR DEPOSITS";
+    box3Val.textContent = fmt(r.totalReturn) + "%";
+    box3Label.textContent = "TOTAL RETURN";
+    const first = r.schedule[0];
+    const rateText = senior
+      ? fmt(rate) + "% + 0.5% senior bonus = " + fmt(r.effectiveRate) + "%"
+      : fmt(rate) + "%";
+    working.textContent = "Year 1: opening " + fmt(first.opening) + ", deposits " + fmt(first.deposits) + ", interest " + fmt(first.interest) + ", closing " + fmt(first.closing) + ".";
+    workingNote.textContent = "Interest compounds quarterly: each instalment earns from the month it is paid in, and each quarter's interest is added to the balance and earns interest itself. Only the final maturity is rounded to the nearest rupee."
+      + (senior ? " Senior citizen bonus applied: the quoted " + fmt(rate) + "% becomes " + fmt(r.effectiveRate) + "% (bank RDs only — the Post Office pays no senior bonus)." : "");
+    working2.textContent = "Maturity = " + fmt(r.invested) + " deposited + " + fmt(r.interest) + " interest = " + fmt(r.maturity) + ".";
+    tdsNote.textContent = r.tdsApplies
+      ? "A year's interest reaches " + inr(r.maxYearInterest) + ", above the " + inr(r.tdsThreshold) + " TDS threshold — the bank will deduct 10% TDS on the interest it pays that year. (TDS is checked on all your deposits at the bank together, not just this one.)"
+      : "No TDS on this deposit — no single year's interest crosses the " + inr(r.tdsThreshold) + " threshold. (TDS is checked on all your deposits at the bank together, not just this one.)";
+    glanceText.textContent = inr(monthly) + " a month for " + tenureText(years, months) + " at " + rateText + " compounded quarterly → " + inr(r.maturity) + " (" + inr(r.invested) + " deposited + " + inr(r.interest) + " interest; " + fmt(r.totalReturn) + "% total return).";
+    scheduleNote.textContent = "Year-by-year growth of " + inr(monthly) + " a month at " + rateText + " compounded quarterly over " + tenureText(years, months) + ".";
+    renderSchedule(r.schedule);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | RD Calculator"
+      + "\nQuestion: " + inr(monthly) + " a month for " + tenureText(years, months) + " at " + rateText + " compounded quarterly"
+      + "\nAnswer: " + inr(r.maturity) + " (deposited " + inr(r.invested) + ", interest " + inr(r.interest) + ", total return " + fmt(r.totalReturn) + "%)"
+      + "\nWorking: Year 1 interest " + fmt(first.interest) + "; maturity = " + fmt(r.invested) + " + " + fmt(r.interest) + " = " + fmt(r.maturity)
+      + "\nTDS: " + (r.tdsApplies ? "applies (a year's interest crosses " + inr(r.tdsThreshold) + ")" : "does not apply");
+  }
+
+  function paint(showEmptyError = false) {
+    rdPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const monthlyRaw = inputMonthly.value;
+    const rateRaw = inputRate.value;
+    const monthlyNum = monthlyRaw === "" ? NaN : Number(monthlyRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    let monthlyMsg = "";
+    let rateMsg = "";
+    let tenureMsg = "";
+    if (monthlyRaw === "") {
+      if (showEmptyError) monthlyMsg = "Enter the monthly deposit.";
+    } else if (!Number.isFinite(monthlyNum) || monthlyNum < 100 || monthlyNum > 100000) {
+      monthlyMsg = "Enter a monthly deposit from ₹100 to ₹1,00,000.";
+    }
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the interest rate.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 12) {
+      rateMsg = "Enter a rate from 0% to 12% a year.";
+    }
+    const totalMonths = Number(yearsSelect.value) * 12 + Number(monthsSelect.value);
+    if (totalMonths < 6 || totalMonths > 120) {
+      tenureMsg = "Choose a tenure from 6 months to 10 years.";
+    }
+    inputMonthlyError.textContent = monthlyMsg;
+    inputRateError.textContent = rateMsg;
+    tenureError.textContent = tenureMsg;
+    inputMonthly.setAttribute("aria-invalid", String(monthlyMsg !== ""));
+    inputRate.setAttribute("aria-invalid", String(rateMsg !== ""));
+
+    const valid = monthlyMsg === "" && rateMsg === "" && tenureMsg === ""
+      && monthlyRaw !== "" && rateRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = rdCompute(monthlyNum, rateNum, Number(yearsSelect.value), Number(monthsSelect.value),
+      seniorCheck.checked);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(monthlyNum, rateNum, Number(yearsSelect.value), Number(monthsSelect.value),
+      seniorCheck.checked, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = rdCompute(item.monthly, item.rate, item.years, item.months, item.senior);
+    if (!r) return "";
+    return inr(item.monthly) + "/month · " + tenureText(item.years, item.months) + " @ " + fmt(r.effectiveRate) + "% → " + inr(r.maturity);
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputMonthly.value, inputRate.value, yearsSelect.value,
+      monthsSelect.value, seniorCheck.checked].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputMonthly.value = String(item.monthly);
+        inputRate.value = String(item.rate);
+        yearsSelect.value = String(item.years);
+        monthsSelect.value = String(item.months);
+        seniorCheck.checked = item.senior;
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      monthly: Number(inputMonthly.value),
+      rate: Number(inputRate.value),
+      years: Number(yearsSelect.value),
+      months: Number(monthsSelect.value),
+      senior: seniorCheck.checked
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputMonthly.value = button.dataset.monthly || "";
+      inputRate.value = button.dataset.rate || "";
+      yearsSelect.value = button.dataset.years || "5";
+      monthsSelect.value = button.dataset.months || "0";
+      seniorCheck.checked = button.dataset.senior === "true";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputMonthly.value = String(rec.monthly);
+    inputRate.value = String(rec.rate);
+    yearsSelect.value = String(rec.years);
+    monthsSelect.value = String(rec.months);
+    seniorCheck.checked = rec.senior === true;
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputMonthly.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    yearsSelect.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    monthsSelect.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    seniorCheck.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("rd-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderRdCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleMonthly: p.sampleMonthly, sampleRate: p.sampleRate, sampleYears: p.sampleYears, sampleMonths: p.sampleMonths, sampleSenior: p.sampleSenior };
+  const sample = rdCompute(p.sampleMonthly, p.sampleRate, p.sampleYears, p.sampleMonths, p.sampleSenior);
+  const firstYear = sample.schedule[0];
+  const tenureText = (years, months) => {
+    const total = years * 12 + months;
+    if (total < 12) return total + (total === 1 ? " month" : " months");
+    const y = years === 1 ? "1 year" : years + " years";
+    if (!months) return y;
+    const m = months === 1 ? "1 month" : months + " months";
+    return y + " " + m;
+  };
+  const tdsText = r => r.tdsApplies
+    ? "A year's interest reaches " + inr2(r.maxYearInterest) + ", above the " + inr2(r.tdsThreshold) + " TDS threshold — the bank will deduct 10% TDS on the interest it pays that year. (TDS is checked on all your deposits at the bank together, not just this one.)"
+    : "No TDS on this deposit — no single year's interest crosses the " + inr2(r.tdsThreshold) + " threshold. (TDS is checked on all your deposits at the bank together, not just this one.)";
+
+  const presetSummary = pr => `${inr2(pr.monthly)}/month · ${pr.years} years @ ${fmt2(pr.rate)}%`;
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = rdCompute(st.monthly, st.rate, st.years, st.months, st.senior);
+    return `${inr2(st.monthly)}/month × ${st.years} years @ ${fmt2(st.rate)}% → ${inr2(r.maturity)} (interest ${inr2(r.interest)})`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const scheduleRows = sample.schedule.map(row => `
+      <tr>
+        <th scope="row">${e(row.label)}</th>
+        <td>${inr2(row.opening)}</td>
+        <td>${inr2(row.deposits)}</td>
+        <td>${inr2(row.interest)}</td>
+        <td>${inr2(row.closing)}</td>
+      </tr>`).join("");
+
+  const yearsOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(y => `
+                <option value="${y}"${y === p.sampleYears ? " selected" : ""}>${y} year${y === 1 ? "" : "s"}</option>`).join("");
+  const monthsOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(m => `
+                <option value="${m}"${m === p.sampleMonths ? " selected" : ""}>${m} month${m === 1 ? "" : "s"}</option>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free RD calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate RD →
+              </a>
+              <a href="#method" class="calc-link">How RD maturity is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.maturity)}</strong>
+                <small>Maturity on ${inr2(p.sampleMonthly)} a month for ${p.sampleYears} years at ${fmt2(p.sampleRate)}%</small>
+              </div>
+              <div>
+                <strong>${fmt2(sample.totalReturn)}% total return</strong>
+                <small>Total return on the sample deposit</small>
+              </div>
+              <div>
+                <strong>Quarterly compounding</strong>
+                <small>The Indian bank standard</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>A projection at the rate you enter, not financial advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/">RRB Age</a>
+              <a href="/emi-calculator/">EMI</a>
+              <a href="/sip-calculator/">SIP</a>
+              <a href="/bmi-calculator/">BMI</a>
+              <a href="/percentage-calculator/">Percentage</a>
+              <a href="/gst-calculator/">GST</a>
+              <a href="/ppf-calculator/">PPF</a>
+              <a href="/fd-calculator/">FD</a>
+              <a href="/rd-calculator/" aria-current="page">RD</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate RD maturity</h2>
+              <span class="calc-pill" id="rd-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="rd-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-monthly">
+                Monthly deposit (₹)
+                <span>From ₹100 to ₹1,00,000 a month, the same amount every month</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-monthly"
+                type="number"
+                value="${p.sampleMonthly}"
+                step="100"
+                inputmode="numeric"
+                aria-describedby="input-monthly-error"
+              >
+              <p class="calc-error" id="input-monthly-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-rate">
+                Interest rate (% a year)
+                <span>The rate your bank quotes for this tenure — the Post Office RD pays 6.7% for October to December 2026</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-rate"
+                type="number"
+                value="${p.sampleRate}"
+                step="any"
+                inputmode="decimal"
+                aria-describedby="input-rate-error"
+              >
+              <p class="calc-error" id="input-rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-years">
+                Tenure — years
+                <span>0 to 10 years</span>
+              </label>
+
+              <select class="select-input" id="input-years">${yearsOptions}
+              </select>
+
+              <label class="field-label" for="input-months">
+                Tenure — extra months
+                <span>0 to 11 extra months on top of the years</span>
+              </label>
+
+              <select class="select-input" id="input-months">${monthsOptions}
+              </select>
+              <p class="calc-error" id="input-tenure-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-senior" style="display:flex;align-items:center;gap:10px">
+                <input type="checkbox" id="input-senior" style="width:auto">
+                Senior citizen — add the usual 0.50% bonus rate (bank RDs only)
+              </label>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-monthly">${inr2(sample.maturity)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.interest)}</strong>
+                  <small id="box1-label">INTEREST EARNED</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.invested)}</strong>
+                  <small id="box2-label">YOUR DEPOSITS</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${fmt2(sample.totalReturn)}%</strong>
+                  <small id="box3-label">TOTAL RETURN</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">${inr2(p.sampleMonthly)} a month for ${tenureText(p.sampleYears, p.sampleMonths)} at ${fmt2(p.sampleRate)}% compounded quarterly → ${inr2(sample.maturity)} (${inr2(sample.invested)} deposited + ${inr2(sample.interest)} interest; ${fmt2(sample.totalReturn)}% total return).</span>
+              </div>
+
+              <p class="working" id="working">
+                Year 1: opening ${fmt2(firstYear.opening)}, deposits ${fmt2(firstYear.deposits)}, interest ${fmt2(firstYear.interest)}, closing ${fmt2(firstYear.closing)}.
+              </p>
+              <p class="working" id="working-2">Maturity = ${fmt2(sample.invested)} deposited + ${fmt2(sample.interest)} interest = ${fmt2(sample.maturity)}.</p>
+              <p class="working" id="working-note">Interest compounds quarterly: each instalment earns from the month it is paid in, and each quarter's interest is added to the balance and earns interest itself. Only the final maturity is rounded to the nearest rupee.</p>
+              <p class="working" id="tds-note">${e(tdsText(sample))}</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The projection holds the rate you enter constant for the
+                whole tenure. Banks change RD rates often, so check the
+                current rate card before you start.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="schedule">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your growth, year by year</p>
+          <h2>Year by year: how the deposit grows</h2>
+          <p id="schedule-note">Year-by-year growth of ${inr2(p.sampleMonthly)} a month at ${fmt2(p.sampleRate)}% compounded quarterly over ${tenureText(p.sampleYears, p.sampleMonths)}.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="schedule-note">
+            <caption>RD growth — ${inr2(p.sampleMonthly)} a month at ${fmt2(p.sampleRate)}% compounded quarterly over ${tenureText(p.sampleYears, p.sampleMonths)}.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Opening balance</th>
+                <th scope="col">Deposits</th>
+                <th scope="col">Interest</th>
+                <th scope="col">Closing balance</th>
+              </tr>
+            </thead>
+            <tbody id="schedule-body">
+              ${scheduleRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#schedule">Year by year</a>
+        <a href="#rates-table">RD rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / MONTHLY HABIT</span>
+            <h3>Save from each salary</h3>
+            <p>An RD turns a monthly habit into a lump sum: the same amount leaves your account every month, so the corpus builds without a decision each time. Start with ₹100 a month — the habit matters more than the amount.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / COMPOUNDING</span>
+            <h3>Quarterly, the Indian standard</h3>
+            <p>Indian banks add the interest to the balance every quarter, so each quarter earns interest on interest. The first instalment earns for the full tenure; the last earns for one month.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / INSURED UP TO ₹5 LAKH</span>
+            <h3>DICGC cover</h3>
+            <p>Bank deposits are insured up to ₹5 lakh per depositor per bank, principal and interest together, by DICGC, an RBI subsidiary. Post Office RDs are backed directly by the Government of India.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From a monthly habit to a maturity value</h2>
+          <p>
+            Enter the monthly deposit first — the rate and tenure are
+            already filled in with the usual figures — then read the
+            maturity, the breakup and the year-by-year table.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How RD maturity is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The RD formula</small>
+          M = Σ D × (1 + r ÷ 400)^((N − k + 1) ÷ 3) · Total return = (M ÷ deposited − 1) × 100
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. First year: twelve instalments in
+            <strong>${fmt2(p.sampleMonthly)} a month · ${fmt2(firstYear.deposits)} deposited · ${fmt2(firstYear.interest)} interest</strong>
+            <span>Each instalment earns from the month it is paid in. Closing balance: ${fmt2(firstYear.closing)}.</span>
+          </div>
+
+          <div class="math-step">
+            2. Five years of deposits
+            <strong>${fmt2(sample.invested)} deposited · ${fmt2(sample.interest)} interest</strong>
+            <span>Each quarter's interest is added to the balance, so the next quarter's interest is earned on a bigger sum.</span>
+          </div>
+
+          <div class="math-step">
+            3. Maturity after 5 years
+            <strong>${fmt2(sample.invested)} + ${fmt2(sample.interest)} = ${fmt2(sample.maturity)}</strong>
+            <span>Total return ${fmt2(sample.totalReturn)}% — the headline ${fmt2(p.sampleRate)}% applies to each instalment for its own months, not to the whole deposit for five years.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Four deposits, four maturities</h2>
+          <p>
+            One example for each everyday case. Select any example to
+            load it into the calculator and check the working for
+            yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.rate)}% · ${story.years} YEARS</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-monthly="${story.monthly}" data-rate="${story.rate}" data-years="${story.years}" data-months="${story.months}" data-senior="${story.senior}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>RD rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>RD compounding, tenure, insurance, TDS and tax rules.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get RD wrong</h2>
+          <p>
+            The formula is short, but four readings trip people up.
+            Each one can cost thousands over five years.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / COUNTING THE FULL RATE</span>
+            <h3>Expecting 6.7% on the whole deposit</h3>
+            <p>Only the first instalment earns 6.7% for five years. On ₹5,000 a month at 6.7%, the total return is 18.94% over five years — not 33.5%. Judge an RD by its maturity, not by multiplying the rate by the years.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / FORGETTING TAX</span>
+            <h3>Counting the full interest as yours</h3>
+            <p>RD interest is fully taxable at your slab rate, and an RD gets no 80C deduction. On ₹5,000 a month at 6.7%, the ₹56,829 of interest is all taxable — at the 20% slab that is ₹11,366 of tax.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / COMPARING RD WITH FD RATES</span>
+            <h3>Same rate, different return</h3>
+            <p>₹3,00,000 in an FD at 7% for 5 years grows to ₹4,24,433; ₹5,000 a month in an RD at 7% grows to ₹3,59,664. The rates match but the money goes in at different times — compare maturities, not rates.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / MISSING INSTALMENTS</span>
+            <h3>Assuming every month is paid</h3>
+            <p>A missed instalment draws a penalty — about ₹1.50 per ₹100 at banks, ₹1 per ₹100 at the Post Office — and the maturity falls. Set up an auto-debit for the day after your salary lands.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>RD calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the standard RD formula: M = Σ D × (1 + r ÷
+            400)^((N − k + 1) ÷ 3), with each monthly instalment
+            compounding quarterly from the month it is paid in — the
+            Indian bank standard. Only the final maturity is rounded
+            to the nearest rupee; each schedule row's opening and
+            closing are the exact balances rounded to the nearest
+            rupee, and the row's interest is its closing balance minus
+            its opening balance minus the deposits in that year, so
+            the rows add up exactly to the total interest. The
+            senior-citizen toggle adds 0.50% to the quoted rate, the
+            common bank convention — confirm your bank's actual
+            bonus before you start, and note the Post Office RD pays
+            no senior bonus at all.
+          </p>
+          <p>
+            Rate checked 11 November 2026: the rate is user-entered;
+            the 6.7% default is the Post Office RD rate for October to
+            December 2026, from the Ministry of Finance memorandum of
+            30 September 2026 (F.No.1/4/2019-NS), which kept all
+            small-savings rates unchanged. Cross-checked against the
+            ranking RD calculators: ₹5,000 a month at 7% for 3 years
+            gives ₹2,00,686 on
+            <a href="https://www.onlycalculators.com/finance/indian-finance/rd-calculator-recurring-deposit/" rel="nofollow noopener" target="_blank">onlycalculators.com</a>,
+            ₹5,000 a month at 6.5% for 5 years gives ₹3,54,954 on
+            <a href="https://calcsolver.in/tools/rd-calculator" rel="nofollow noopener" target="_blank">calcsolver.in</a>,
+            and the Post Office example — ₹5,000 a month at 6.7% for
+            5 years — is ₹3,56,829 here against India Post's own
+            published ₹3,56,830, a ₹1 rounding difference on the final
+            instalment's fractional quarter. The TDS thresholds
+            (₹50,000; ₹1,00,000 for senior citizens, from 1 April
+            2025) are from Section 194A of the Income-tax Act as
+            amended by the Finance Act 2025. The ₹5 lakh DICGC cover
+            is from DICGC's "A Guide to Deposit Insurance"
+            (dicgc.org.in). TDS is checked on all your deposits at one
+            bank together in a financial year, not on a single RD alone
+            — so a deposit that shows no TDS here can still attract TDS
+            when combined with your other deposits at the same bank.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function hlClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  function hlEmi(principal, annualRatePct, months) {
+    const P = Number(principal);
+    const pct = Number(annualRatePct);
+    const n = Math.round(Number(months));
+    if (!Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(n)) return null;
+    if (!(P > 0) || !(n > 0) || !(pct >= 0)) return null;
+    const r = pct / 1200;
+    const emi = r === 0 ? P / n : P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+    return { emi, months: n, monthlyRate: r };
+  }
+
+  function hlSimulate(principal, annualRatePct, years, extraPerMonth, lumpSum, lumpYear) {
+    const P = Number(principal);
+    const pct = Number(annualRatePct);
+    const y = Math.round(Number(years));
+    const extra = Number(extraPerMonth) || 0;
+    const lump = Number(lumpSum) || 0;
+    const ly = Math.round(Number(lumpYear));
+    if (!Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(y)
+      || !Number.isFinite(extra) || !Number.isFinite(lump) || !Number.isFinite(ly)) return null;
+    if (P < 100000 || P > 100000000) return null;
+    if (pct < 0 || pct > 15) return null;
+    if (y < 1 || y > 30 || String(y) !== String(Math.trunc(Number(years)))) return null;
+    if (extra < 0 || extra > 500000) return null;
+    if (lump < 0 || lump > 10000000) return null;
+    if (ly < 1 || ly > 30 || String(ly) !== String(Math.trunc(Number(lumpYear)))) return null;
+    if (lump > 0 && ly > y) return null;
+    const first = hlEmi(P, pct, y * 12);
+    if (!first) return null;
+    const r = first.monthlyRate;
+    const emi = first.emi;
+    let balance = P;
+    let months = 0;
+    const rawRows = [];
+    let yearIndex = 0;
+    while (balance > 0 && months < 360) {
+      yearIndex++;
+      const opening = balance;
+      let yearInterest = 0;
+      let yearPrincipal = 0;
+      let yearPrepay = 0;
+      let yearPayments = 0;
+      let monthsInYear = 0;
+      for (let m = 0; m < 12; m++) {
+        if (balance <= 0) break;
+        months++;
+        monthsInYear++;
+        const interest = balance * r;
+        const emiPortion = Math.min(emi, balance + interest);
+        const regularPay = Math.min(emi + extra, balance + interest);
+        const extraPaid = regularPay - emiPortion;
+        const principalPart = emiPortion - interest;
+        balance -= principalPart + extraPaid;
+        let lumpPaid = 0;
+        if (lump > 0 && months === ly * 12 && balance > 0) {
+          lumpPaid = Math.min(lump, balance);
+          balance -= lumpPaid;
+        }
+        // Float dust: the unrounded EMI amortises exactly in real
+        // arithmetic, so a residual under a paisa is rounding noise,
+        // not a real balance. Snap it so no phantom extra year forms.
+        if (balance > 0 && balance <= 0.01) balance = 0;
+        yearInterest += interest;
+        yearPrincipal += principalPart;
+        yearPrepay += extraPaid + lumpPaid;
+        yearPayments += regularPay + lumpPaid;
+      }
+      rawRows.push({
+        label: monthsInYear === 12 ? "Year " + yearIndex : "Year " + yearIndex + " (" + monthsInYear + " months)",
+        opening,
+        closing: Math.max(balance, 0),
+        prepaymentExact: yearPrepay,
+        paymentsExact: yearPayments
+      });
+    }
+    if (balance > 0) return null;
+    // Rounding convention: each year's payments round to the nearest
+    // rupee, but the last year's payments are set so the rows add up
+    // exactly to the total (rounded to the nearest rupee) — the same
+    // way a lender's final payment is adjusted to clear the balance.
+    // Each row then derives principal = opening - closing - prepayment
+    // and interest = payments - principal - prepayment, so the rows
+    // telescope exactly to the total interest and total payment.
+    const totalExact = rawRows.reduce((sum, row) => sum + row.paymentsExact, 0);
+    const targetTotal = roundRupee(totalExact);
+    const rows = [];
+    let paidSoFar = 0;
+    rawRows.forEach((raw, i) => {
+      const openingR = roundRupee(raw.opening);
+      const closingR = roundRupee(raw.closing);
+      const prepayR = roundRupee(raw.prepaymentExact);
+      const principalR = openingR - closingR - prepayR;
+      const paymentsR = i < rawRows.length - 1
+        ? roundRupee(raw.paymentsExact)
+        : targetTotal - paidSoFar;
+      paidSoFar += paymentsR;
+      const interestR = paymentsR - principalR - prepayR;
+      rows.push({
+        label: raw.label,
+        opening: openingR,
+        interest: interestR,
+        principal: principalR,
+        prepayment: prepayR,
+        closing: closingR,
+        payments: paymentsR
+      });
+    });
+    return { emi, months, totalPayment: targetTotal, interest: targetTotal - P, schedule: rows };
+  }
+
+  function hlCompute(amount, rate, years, extra, lump, lumpYear) {
+    const base = hlSimulate(amount, rate, years, 0, 0, 1);
+    if (!base) return null;
+    const hasPrepay = (Number(extra) || 0) > 0 || (Number(lump) || 0) > 0;
+    const withPrepay = hasPrepay ? hlSimulate(amount, rate, years, extra, lump, lumpYear) : null;
+    if (hasPrepay && !withPrepay) return null;
+    const r = withPrepay || base;
+    return {
+      amount: Number(amount),
+      rate: Number(rate),
+      years: Math.round(Number(years)),
+      extra: Number(extra) || 0,
+      lump: Number(lump) || 0,
+      lumpYear: Math.round(Number(lumpYear)),
+      emi: base.emi,
+      months: base.months,
+      totalPayment: r.totalPayment,
+      interest: r.interest,
+      baseTotalPayment: base.totalPayment,
+      baseInterest: base.interest,
+      savedInterest: base.interest - r.interest,
+      savedMonths: base.months - r.months,
+      payoffMonths: r.months,
+      interestPct: r.totalPayment > 0
+        ? Math.round(r.interest / r.totalPayment * 1000) / 10
+        : 0,
+      schedule: r.schedule
+    };
+  }
+
+  function hlTenureCompare(amount, annualRatePct) {
+    const P = Number(amount);
+    const pct = Number(annualRatePct);
+    if (!Number.isFinite(P) || !Number.isFinite(pct)) return null;
+    if (P < 100000 || P > 100000000) return null;
+    if (pct < 0 || pct > 15) return null;
+    const out = [];
+    for (const years of [10, 15, 20, 25, 30]) {
+      const s = hlSimulate(P, pct, years, 0, 0, 1);
+      if (!s) return null;
+      out.push({ years, emi: roundRupee(s.emi), interest: s.interest, total: s.totalPayment });
+    }
+    return out;
+  }
+
+  const presetSelect = $("preset");
+  const hlPill = $("hl-pill");
+  const inputAmount = $("input-amount");
+  const inputAmountError = $("input-amount-error");
+  const inputRate = $("input-rate");
+  const inputRateError = $("input-rate-error");
+  const yearsSelect = $("input-years");
+  const inputExtra = $("input-extra");
+  const inputExtraError = $("input-extra-error");
+  const inputLump = $("input-lump");
+  const inputLumpError = $("input-lump-error");
+  const lumpYearSelect = $("input-lump-year");
+  const lumpYearError = $("input-lump-year-error");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const prepayNote = $("prepay-note");
+  const scheduleBody = $("schedule-body");
+  const scheduleNote = $("schedule-note");
+  const tenureBody = $("tenure-body");
+  const tenureNote = $("tenure-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+  const tenureText = years => years === 1 ? "1 year" : years + " years";
+  const monthsText = months => {
+    if (months < 12) return months + (months === 1 ? " month" : " months");
+    const y = Math.floor(months / 12);
+    const m = months % 12;
+    const yText = y === 1 ? "1 year" : y + " years";
+    if (!m) return yText;
+    return yText + " " + (m === 1 ? "1 month" : m + " months");
+  };
+  const prepayText = (extra, lump, lumpYear) => {
+    const parts = [];
+    if (extra > 0) parts.push(inr(extra) + " extra a month");
+    if (lump > 0) parts.push(inr(lump) + " lump sum in year " + lumpYear);
+    return parts.join(" and ");
+  };
+
+  function renderSchedule(rows) {
+    scheduleBody.replaceChildren();
+    rows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row.label;
+      tr.appendChild(th);
+      [row.opening, row.interest, row.principal, row.prepayment, row.closing].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      scheduleBody.appendChild(tr);
+    });
+  }
+
+  function renderTenure(amount, rate) {
+    const rows = hlTenureCompare(amount, rate);
+    tenureBody.replaceChildren();
+    if (!rows) {
+      tenureNote.textContent = "Enter a loan amount and a rate to see the tenure comparison.";
+      return;
+    }
+    rows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = tenureText(row.years);
+      tr.appendChild(th);
+      [row.emi, row.interest, row.total].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      tenureBody.appendChild(tr);
+    });
+    tenureNote.textContent = "Tenure comparison at " + inr(amount) + " and " + fmt(rate) + "% — the same loan, five tenures.";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your loan amount, the rate and the tenure to see the EMI with the working.";
+    working.textContent = "Enter your loan amount, the rate and the tenure to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    prepayNote.textContent = "";
+    scheduleBody.replaceChildren();
+    scheduleNote.textContent = "Enter your home loan details to see the year-by-year amortisation.";
+    tenureBody.replaceChildren();
+    tenureNote.textContent = "Enter a loan amount and a rate to see the tenure comparison.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(amount, rate, years, extra, lump, lumpYear, r) {
+    output.textContent = inr(roundRupee(r.emi));
+    box1Val.textContent = inr(roundRupee(r.emi));
+    box1Label.textContent = "MONTHLY EMI";
+    box2Val.textContent = inr(r.interest);
+    box2Label.textContent = "TOTAL INTEREST";
+    box3Val.textContent = inr(r.totalPayment);
+    box3Label.textContent = "TOTAL PAYMENT";
+    const first = r.schedule[0];
+    working.textContent = "Year 1: opening " + fmt(first.opening) + ", interest " + fmt(first.interest) + ", principal " + fmt(first.principal) + ", prepayment " + fmt(first.prepayment) + ", closing " + fmt(first.closing) + ".";
+    workingNote.textContent = "Reducing balance: each EMI pays the month's interest first and the rest repays principal, so the interest part shrinks every month. Only the final payment is adjusted, to clear the balance exactly."
+      + (extra > 0 || lump > 0 ? " Prepayment is applied after the EMI — the extra " + fmt(extra) + " a month and the lump sum both go straight to principal." : "");
+    working2.textContent = "Total = " + fmt(amount) + " loan + " + fmt(r.interest) + " interest = " + fmt(r.totalPayment) + ".";
+    prepayNote.textContent = r.savedInterest > 0
+      ? "With " + prepayText(extra, lump, lumpYear) + ": the loan ends " + r.savedMonths + " months early (" + monthsText(r.payoffMonths) + " instead of " + tenureText(years) + ") and saves " + inr(r.savedInterest) + " of interest."
+      : "Add an extra monthly payment or a lump sum above to see how much interest prepayment saves.";
+    glanceText.textContent = inr(amount) + " for " + tenureText(years) + " at " + fmt(rate) + "% → EMI " + inr(roundRupee(r.emi)) + " a month (" + inr(r.interest) + " interest; " + inr(r.totalPayment) + " in total).";
+    scheduleNote.textContent = "Year-by-year amortisation of " + inr(amount) + " at " + fmt(rate) + "% over " + tenureText(years) + (extra > 0 || lump > 0 ? " with " + prepayText(extra, lump, lumpYear) : "") + ".";
+    renderSchedule(r.schedule);
+    renderTenure(amount, rate);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | Home Loan EMI Calculator"
+      + "\nQuestion: " + inr(amount) + " for " + tenureText(years) + " at " + fmt(rate) + "%"
+      + (extra > 0 || lump > 0 ? " with " + prepayText(extra, lump, lumpYear) : "")
+      + "\nAnswer: EMI " + inr(roundRupee(r.emi)) + " a month (interest " + inr(r.interest) + ", total " + inr(r.totalPayment) + ")"
+      + "\nWorking: Year 1 interest " + fmt(first.interest) + ", principal " + fmt(first.principal) + "; total = " + fmt(amount) + " + " + fmt(r.interest) + " = " + fmt(r.totalPayment)
+      + (r.savedInterest > 0 ? "\nPrepayment: saves " + inr(r.savedInterest) + " and " + r.savedMonths + " months" : "\nPrepayment: none entered");
+  }
+
+  function paint(showEmptyError = false) {
+    hlPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const amountRaw = inputAmount.value;
+    const rateRaw = inputRate.value;
+    const extraRaw = inputExtra.value;
+    const lumpRaw = inputLump.value;
+    const amountNum = amountRaw === "" ? NaN : Number(amountRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    const extraNum = extraRaw === "" ? 0 : Number(extraRaw);
+    const lumpNum = lumpRaw === "" ? 0 : Number(lumpRaw);
+    let amountMsg = "";
+    let rateMsg = "";
+    let extraMsg = "";
+    let lumpMsg = "";
+    let lumpYearMsg = "";
+    if (amountRaw === "") {
+      if (showEmptyError) amountMsg = "Enter the loan amount.";
+    } else if (!Number.isFinite(amountNum) || amountNum < 100000 || amountNum > 100000000) {
+      amountMsg = "Enter a loan amount from ₹1,00,000 to ₹10,00,00,000.";
+    }
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the interest rate.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 15) {
+      rateMsg = "Enter a rate from 0% to 15% a year.";
+    }
+    if (!Number.isFinite(extraNum) || extraNum < 0 || extraNum > 500000) {
+      extraMsg = "Enter an extra payment from ₹0 to ₹5,00,000 a month.";
+    }
+    if (!Number.isFinite(lumpNum) || lumpNum < 0 || lumpNum > 10000000) {
+      lumpMsg = "Enter a lump sum from ₹0 to ₹1,00,00,000.";
+    }
+    const yearsNum = Number(yearsSelect.value);
+    const lumpYearNum = Number(lumpYearSelect.value);
+    if (lumpNum > 0 && lumpYearNum > yearsNum) {
+      lumpYearMsg = "The lump-sum year cannot be after the loan ends.";
+    }
+    inputAmountError.textContent = amountMsg;
+    inputRateError.textContent = rateMsg;
+    inputExtraError.textContent = extraMsg;
+    inputLumpError.textContent = lumpMsg;
+    lumpYearError.textContent = lumpYearMsg;
+    inputAmount.setAttribute("aria-invalid", String(amountMsg !== ""));
+    inputRate.setAttribute("aria-invalid", String(rateMsg !== ""));
+    inputExtra.setAttribute("aria-invalid", String(extraMsg !== ""));
+    inputLump.setAttribute("aria-invalid", String(lumpMsg !== ""));
+
+    const valid = amountMsg === "" && rateMsg === "" && extraMsg === ""
+      && lumpMsg === "" && lumpYearMsg === ""
+      && amountRaw !== "" && rateRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = hlCompute(amountNum, rateNum, yearsNum, extraNum, lumpNum, lumpYearNum);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(amountNum, rateNum, yearsNum, extraNum, lumpNum, lumpYearNum, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = hlCompute(item.amount, item.rate, item.years, item.extra, item.lump, item.lumpYear);
+    if (!r) return "";
+    let text = inr(item.amount) + " · " + tenureText(item.years) + " @ " + fmt(r.rate) + "% → EMI " + inr(roundRupee(r.emi));
+    if (item.extra > 0 || item.lump > 0) text += " · prepay: " + prepayText(item.extra, item.lump, item.lumpYear);
+    return text;
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputAmount.value, inputRate.value, yearsSelect.value,
+      inputExtra.value, inputLump.value, lumpYearSelect.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputAmount.value = String(item.amount);
+        inputRate.value = String(item.rate);
+        yearsSelect.value = String(item.years);
+        inputExtra.value = String(item.extra);
+        inputLump.value = String(item.lump);
+        lumpYearSelect.value = String(item.lumpYear);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      amount: Number(inputAmount.value),
+      rate: Number(inputRate.value),
+      years: Number(yearsSelect.value),
+      extra: Number(inputExtra.value) || 0,
+      lump: Number(inputLump.value) || 0,
+      lumpYear: Number(lumpYearSelect.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputAmount.value = button.dataset.amount || "";
+      inputRate.value = button.dataset.rate || "";
+      yearsSelect.value = button.dataset.years || "20";
+      inputExtra.value = button.dataset.extra || "0";
+      inputLump.value = button.dataset.lump || "0";
+      lumpYearSelect.value = button.dataset.lumpYear || "1";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputAmount.value = String(rec.amount);
+    inputRate.value = String(rec.rate);
+    yearsSelect.value = String(rec.years);
+    inputExtra.value = String(rec.extra);
+    inputLump.value = String(rec.lump);
+    lumpYearSelect.value = String(rec.lumpYear);
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputAmount.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    yearsSelect.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputExtra.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputLump.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    lumpYearSelect.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("hl-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderHlCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleAmount: p.sampleAmount, sampleRate: p.sampleRate, sampleYears: p.sampleYears, sampleExtra: p.sampleExtra, sampleLump: p.sampleLump, sampleLumpYear: p.sampleLumpYear };
+  const sample = hlCompute(p.sampleAmount, p.sampleRate, p.sampleYears, p.sampleExtra, p.sampleLump, p.sampleLumpYear);
+  const firstYear = sample.schedule[0];
+  const prepaySample = hlCompute(p.sampleAmount, p.sampleRate, p.sampleYears, 5000, 500000, 5);
+  const tenureRows = hlTenureCompare(p.sampleAmount, p.sampleRate);
+  const tenureText = years => years === 1 ? "1 year" : years + " years";
+  const monthsText = months => {
+    if (months < 12) return months + (months === 1 ? " month" : " months");
+    const y = Math.floor(months / 12);
+    const m = months % 12;
+    const yText = y === 1 ? "1 year" : y + " years";
+    if (!m) return yText;
+    return yText + " " + (m === 1 ? "1 month" : m + " months");
+  };
+
+  const presetSummary = pr => `${inr2(pr.amount)} · ${pr.years} years @ ${fmt2(pr.rate)}%`;
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = hlCompute(st.amount, st.rate, st.years, st.extra, st.lump, st.lumpYear);
+    return `${inr2(st.amount)} · ${st.years} years @ ${fmt2(st.rate)}% → EMI ${inr2(roundRupee(r.emi))} (interest ${inr2(r.interest)})`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const scheduleRows = sample.schedule.map(row => `
+      <tr>
+        <th scope="row">${e(row.label)}</th>
+        <td>${inr2(row.opening)}</td>
+        <td>${inr2(row.interest)}</td>
+        <td>${inr2(row.principal)}</td>
+        <td>${inr2(row.prepayment)}</td>
+        <td>${inr2(row.closing)}</td>
+      </tr>`).join("");
+
+  const tenureTableRows = tenureRows.map(row => `
+      <tr>
+        <th scope="row">${tenureText(row.years)}</th>
+        <td>${inr2(row.emi)}</td>
+        <td>${inr2(row.interest)}</td>
+        <td>${inr2(row.total)}</td>
+      </tr>`).join("");
+
+  const yearsOptions = Array.from({ length: 30 }, (_, i) => i + 1).map(y => `
+                <option value="${y}"${y === p.sampleYears ? " selected" : ""}>${y} year${y === 1 ? "" : "s"}</option>`).join("");
+  const lumpYearOptions = Array.from({ length: 30 }, (_, i) => i + 1).map(y => `
+                <option value="${y}"${y === p.sampleLumpYear ? " selected" : ""}>Year ${y}</option>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free home loan EMI calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate EMI →
+              </a>
+              <a href="#method" class="calc-link">How home loan EMI is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(roundRupee(sample.emi))} a month</strong>
+                <small>EMI on ${inr2(p.sampleAmount)} for ${p.sampleYears} years at ${fmt2(p.sampleRate)}%</small>
+              </div>
+              <div>
+                <strong>${fmt2(sample.interestPct)}% of all you pay is interest</strong>
+                <small>${inr2(sample.interest)} of interest on the sample loan</small>
+              </div>
+              <div>
+                <strong>${inr2(prepaySample.savedInterest)} saved by prepaying</strong>
+                <small>₹5,000 a month extra + ₹5 lakh in year 5, on the sample loan</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>A projection at the rate you enter, not financial advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/">RRB Age</a>
+              <a href="/emi-calculator/">EMI</a>
+              <a href="/sip-calculator/">SIP</a>
+              <a href="/bmi-calculator/">BMI</a>
+              <a href="/percentage-calculator/">Percentage</a>
+              <a href="/gst-calculator/">GST</a>
+              <a href="/ppf-calculator/">PPF</a>
+              <a href="/fd-calculator/">FD</a>
+              <a href="/income-tax-calculator/">Income Tax</a>
+              <a href="/rd-calculator/">RD</a>
+              <a href="/home-loan-emi-calculator/" aria-current="page">Home Loan EMI</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate home loan EMI</h2>
+              <span class="calc-pill" id="hl-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="hl-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-amount">
+                Loan amount (₹)
+                <span>From ₹1,00,000 to ₹10,00,00,000 — the amount the bank sanctions</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-amount"
+                type="number"
+                value="${p.sampleAmount}"
+                step="50000"
+                inputmode="numeric"
+                aria-describedby="input-amount-error"
+              >
+              <p class="calc-error" id="input-amount-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-rate">
+                Interest rate (% a year)
+                <span>The rate your lender quotes — home loans typically run 7.40% to 9.25% in November 2026</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-rate"
+                type="number"
+                value="${p.sampleRate}"
+                step="any"
+                inputmode="decimal"
+                aria-describedby="input-rate-error"
+              >
+              <p class="calc-error" id="input-rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-years">
+                Tenure — years
+                <span>1 to 30 years</span>
+              </label>
+
+              <select class="select-input" id="input-years">${yearsOptions}
+              </select>
+
+              <label class="field-label" for="input-extra">
+                Extra payment every month (₹) — optional
+                <span>An extra amount on top of the EMI, from ₹0 to ₹5,00,000 a month</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-extra"
+                type="number"
+                value="${p.sampleExtra}"
+                step="500"
+                inputmode="numeric"
+                aria-describedby="input-extra-error"
+              >
+              <p class="calc-error" id="input-extra-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-lump">
+                Lump-sum prepayment (₹) — optional
+                <span>One lump sum, from ₹0 to ₹1,00,00,000, paid in the year below</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-lump"
+                type="number"
+                value="${p.sampleLump}"
+                step="50000"
+                inputmode="numeric"
+                aria-describedby="input-lump-error"
+              >
+              <p class="calc-error" id="input-lump-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-lump-year">
+                Lump-sum year
+                <span>The year the lump sum is paid, counting from the first year of the loan</span>
+              </label>
+
+              <select class="select-input" id="input-lump-year">${lumpYearOptions}
+              </select>
+              <p class="calc-error" id="input-lump-year-error" aria-live="polite"></p>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-amount">${inr2(roundRupee(sample.emi))}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(roundRupee(sample.emi))}</strong>
+                  <small id="box1-label">MONTHLY EMI</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.interest)}</strong>
+                  <small id="box2-label">TOTAL INTEREST</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.totalPayment)}</strong>
+                  <small id="box3-label">TOTAL PAYMENT</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">${inr2(p.sampleAmount)} for ${tenureText(p.sampleYears)} at ${fmt2(p.sampleRate)}% → EMI ${inr2(roundRupee(sample.emi))} a month (${inr2(sample.interest)} interest; ${inr2(sample.totalPayment)} in total).</span>
+              </div>
+
+              <p class="working" id="working">
+                Year 1: opening ${fmt2(firstYear.opening)}, interest ${fmt2(firstYear.interest)}, principal ${fmt2(firstYear.principal)}, prepayment ${fmt2(firstYear.prepayment)}, closing ${fmt2(firstYear.closing)}.
+              </p>
+              <p class="working" id="working-2">Total = ${fmt2(sample.amount)} loan + ${fmt2(sample.interest)} interest = ${fmt2(sample.totalPayment)}.</p>
+              <p class="working" id="working-note">Reducing balance: each EMI pays the month's interest first and the rest repays principal, so the interest part shrinks every month. Only the final payment is adjusted, to clear the balance exactly.</p>
+              <p class="working" id="prepay-note">Add an extra monthly payment or a lump sum above to see how much interest prepayment saves.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The projection holds the rate you enter constant for the
+                whole tenure. Home loan rates move with the RBI repo rate,
+                so check the current rate on your sanction letter before
+                you sign.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="schedule">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your repayment, year by year</p>
+          <h2>Year by year: how the loan is repaid</h2>
+          <p id="schedule-note">Year-by-year amortisation of ${inr2(p.sampleAmount)} at ${fmt2(p.sampleRate)}% over ${tenureText(p.sampleYears)}.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="schedule-note">
+            <caption>Home loan amortisation — ${inr2(p.sampleAmount)} at ${fmt2(p.sampleRate)}% over ${tenureText(p.sampleYears)}.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Opening balance</th>
+                <th scope="col">Interest</th>
+                <th scope="col">Principal</th>
+                <th scope="col">Prepayment</th>
+                <th scope="col">Closing balance</th>
+              </tr>
+            </thead>
+            <tbody id="schedule-body">
+              ${scheduleRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="tenure">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Shorter tenure, less interest</p>
+          <h2>Same loan, five tenures</h2>
+          <p id="tenure-note">Tenure comparison at ${inr2(p.sampleAmount)} and ${fmt2(p.sampleRate)}% — the same loan, five tenures.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="tenure-note">
+            <caption>EMI, total interest and total payment for ${inr2(p.sampleAmount)} at ${fmt2(p.sampleRate)}% across five tenures.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Tenure</th>
+                <th scope="col">Monthly EMI</th>
+                <th scope="col">Total interest</th>
+                <th scope="col">Total payment</th>
+              </tr>
+            </thead>
+            <tbody id="tenure-body">
+              ${tenureTableRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#schedule">Year by year</a>
+        <a href="#tenure">Tenure</a>
+        <a href="#rates-table">Tax rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / REDUCING BALANCE</span>
+            <h3>Interest on what you still owe</h3>
+            <p>Each EMI pays the month's interest first; the rest repays principal, so the interest part shrinks every month and the principal part grows. You never pay interest on money you have already repaid.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / FRONT-LOADED INTEREST</span>
+            <h3>The first years are mostly interest</h3>
+            <p>In year 1 of the ₹50 lakh sample, ₹4,21,183 of the ₹5,20,694 paid is interest and only ₹99,511 is principal. Prepaying early cuts the interest for every year after.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / NO PREPAYMENT CHARGE</span>
+            <h3>Floating-rate loans, individuals</h3>
+            <p>The RBI (Pre-payment Charges on Loans) Directions, 2025 bar prepayment charges on floating-rate home loans to individuals, for loans sanctioned or renewed on or after 1 January 2026. Fixed-rate loans may still carry a charge.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From a loan amount to a monthly EMI</h2>
+          <p>
+            Enter the loan amount first — the rate and tenure are
+            already filled in with the usual figures — then read the
+            EMI, the breakup and the year-by-year table.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How home loan EMI is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The home loan EMI formula</small>
+          EMI = P × r × (1 + r)^n ÷ ((1 + r)^n − 1) · r = annual rate ÷ 12 ÷ 100 · n = tenure in months
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. First year: mostly interest
+            <strong>${fmt2(firstYear.payments)} paid · ${fmt2(firstYear.interest)} interest · ${fmt2(firstYear.principal)} principal</strong>
+            <span>Each EMI pays the month's interest first. Closing balance after year 1: ${fmt2(firstYear.closing)}.</span>
+          </div>
+
+          <div class="math-step">
+            2. Twenty years of EMIs
+            <strong>${fmt2(sample.totalPayment)} paid · ${fmt2(sample.interest)} interest</strong>
+            <span>Interest is ${fmt2(sample.interestPct)}% of everything paid — more than half the money goes to interest, not to the house.</span>
+          </div>
+
+          <div class="math-step">
+            3. Prepayment changes everything
+            <strong>${fmt2(prepaySample.savedInterest)} saved · ${prepaySample.savedMonths} months early</strong>
+            <span>₹5,000 extra a month plus a ₹5,00,000 lump sum in year 5 finish the loan in ${monthsText(prepaySample.payoffMonths)} and cut the interest to ${fmt2(prepaySample.interest)}.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Four loans, four EMIs</h2>
+          <p>
+            One example for each everyday case, including one with
+            prepayment. Select any example to load it into the
+            calculator and check the working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.rate)}% · ${story.years} YEARS</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-amount="${story.amount}" data-rate="${story.rate}" data-years="${story.years}" data-extra="${story.extra}" data-lump="${story.lump}" data-lump-year="${story.lumpYear}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>Home loan rules and tax breaks at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>Home loan tax deductions, prepayment charges, typical rates and tenure range.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get a home loan wrong</h2>
+          <p>
+            The formula is short, but four readings trip people up.
+            Each one can cost lakhs over twenty years.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / CHOOSING BY EMI ALONE</span>
+            <h3>Picking the longest tenure for the lowest EMI</h3>
+            <p>Stretching the ₹50 lakh sample from 20 to 25 years cuts the EMI from ₹43,391 to ₹40,261 — but adds ₹16,64,527 of interest. Pick the shortest tenure whose EMI you can pay comfortably.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / IGNORING PREPAYMENT</span>
+            <h3>Paying only the EMI for twenty years</h3>
+            <p>₹5,000 extra a month on the sample saves ₹13,89,250 of interest and 53 months. The earlier the prepayment, the bigger the saving — a lump sum in year 1 beats the same sum in year 10.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / COUNTING THE FULL TAX DEDUCTION</span>
+            <h3>Assuming all the interest is deductible</h3>
+            <p>Section 24(b) caps the interest deduction at ₹2,00,000 a year, and only under the old regime. The sample's first-year interest is ₹4,21,183 — only ₹2,00,000 of it is deductible. Section 80EEA is closed to new loans entirely.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / FORGETTING THE COSTS OUTSIDE THE EMI</span>
+            <h3>Budgeting only the EMI</h3>
+            <p>The EMI is principal plus interest only. The processing fee (plus GST on the fee), stamp duty, registration, home insurance and legal charges are all extra — budget for them before you sign, not after.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>Home loan EMI calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the standard reducing-balance EMI formula:
+            EMI = P × r × (1 + r)^n ÷ ((1 + r)^n − 1), with r the
+            monthly rate (annual rate ÷ 12 ÷ 100) and n the tenure in
+            months — the formula every RBI-regulated lender uses. Each
+            month's interest is the balance × r; the EMI pays the
+            interest first and the rest repays principal. An extra
+            monthly payment and any lump sum go straight to principal
+            after the EMI of that month. Each schedule row's opening
+            and closing are the exact balances rounded to the nearest
+            rupee, and the row's principal is its opening balance
+            minus its closing balance minus the prepayment in that
+            year, so the rows add up exactly to the loan amount and
+            the total interest. Each year's payments round to the
+            nearest rupee, and the last year's payments are set so the
+            rows add up exactly to the total — the same way a lender's
+            final payment is adjusted to clear the balance.
+          </p>
+          <p>
+            Rate checked 11 November 2026: the rate is user-entered;
+            the 8.5% default and the 7.40%–9.25% indicative range are
+            from published November 2026 home-loan rate tables, after
+            the RBI raised the repo rate to 5.50% in October 2026.
+            Cross-checked against the ranking home loan EMI
+            calculators: ₹50,00,000 at 8.5% for 20 years gives an EMI
+            of ₹43,391 and total interest of ₹54,13,879 on
+            <a href="https://easy-emi.com/" rel="nofollow noopener" target="_blank">easy-emi.com</a>
+            and on
+            <a href="https://moneykarma.com/calculators/home-loan-emi-calculator/" rel="nofollow noopener" target="_blank">moneykarma.com</a>,
+            and the same loan at 8.75% gives an EMI of ₹44,186 on
+            <a href="https://www.loancalc.tech/in/home-loan-emi-calculator.html" rel="nofollow noopener" target="_blank">loancalc.tech</a>
+            (which prints total interest of ₹56,04,528.51 — the exact
+            figure to two decimals; rounded to the nearest rupee that
+            is ₹56,04,529, which is what this calculator shows). The
+            tenure table cross-checks too: 10 years at 8.5% gives
+            ₹61,993 a month and ₹24,39,141 of interest, and 30 years
+            gives ₹38,446 a month and ₹88,40,443 of interest, on
+            easy-emi.com. The tax figures are from the Income-tax Act,
+            1961 — Section 24(b) (₹2,00,000), Section 80C (₹1,50,000)
+            and Section 80EEA (₹1,50,000; sanction window 1 April
+            2019–31 March 2022, stamp-duty value ₹45 lakh or less,
+            first-time buyer, old regime only). The prepayment-charge
+            rule is the RBI (Pre-payment Charges on Loans) Directions,
+            2025. The PMAY-Urban portal (pmay-urban.gov.in) was
+            checked on 11 November 2026: its homepage shows only the
+            PMAY-U mission and the old CLSS, and the PMAY-U 2.0
+            application portal did not load, so no interest-subsidy
+            figure from the scheme appears on this page — the
+            calculator counts no subsidy, and the page points readers
+            to the official portal to check the current rules.
           </p>
         </div>
       </div>
