@@ -844,6 +844,314 @@ export const pages = [
       ["Does this calculator send my figures anywhere?", "No. Your height and weight stay in your browser — the calculation runs entirely on this page, nothing is sent to a server, and reloading the page clears your recent checks. This tool is a screening aid, not medical advice; for advice about your own health, talk to a doctor."]
     ]
   },
+
+  {
+    key: "pct",
+    kind: "pct",
+    slug: "percentage-calculator",
+    title: "Percentage Calculator",
+    meta: "Work out any percentage in seconds — X% of a number, what percent one number is of another, percentage increase or decrease, and a number after a percent rise or fall. Free, instant, and calculated in your browser.",
+    lead: "Pick the question, enter two numbers, and get the answer with the working shown — whether it is a discount, exam marks, a salary hike or a price change.",
+    presets: [
+      { id: "discount", label: "15% off ₹2,000", mode: "of", a: 15, b: 2000, direction: null },
+      { id: "marks", label: "450 marks out of 600", mode: "is-what", a: 450, b: 600, direction: null },
+      { id: "hike", label: "Salary ₹50,000 to ₹55,000", mode: "change", a: 50000, b: 55000, direction: null },
+      { id: "raise", label: "Raise ₹2,000 by 15%", mode: "after", a: 15, b: 2000, direction: "increase" }
+    ],
+    defaultPreset: "discount",
+    sampleMode: "of",
+    samplePct: 15,
+    sampleValue: 80,
+    notice: "This tool is for everyday maths — discounts, marks, salary hikes and price changes. It is not financial, tax or legal advice; for tax, GST or loan figures, check with a qualified adviser.",
+    overviewTitle: "What does a percentage calculator do?",
+    overview: "A percentage is a part out of 100 — 15% means 15 out of every 100. The same four questions come up again and again: what is X% of a number, what percent is one number of another, how much did a number change by, and what does a number become after a percent rise or fall. This calculator answers all four, with the working shown, so you can check every number instead of trusting a black box.",
+    inputNote: "Enter plain numbers — no % signs, commas or currency symbols. Percentages from −10,000% to 10,000% and numbers from −1,000,000,000 to 1,000,000,000 are accepted; the two numbers in a 'what percent' or 'change' question cannot have a zero base.",
+    modelNote: "Four formulas, one idea: a percentage is a fraction out of 100. X% of Y = (X ÷ 100) × Y. X as a percentage of Y = (X ÷ Y) × 100. Percentage change from A to B = (B − A) ÷ |A| × 100. A number after a percentage change = Y × (1 ± X ÷ 100). Results are shown to two decimal places; the full figure is used until the final rounding.",
+    steps: [
+      ["Pick the question", "Four modes cover almost every percentage question: X% of a number, X as a percentage of Y, the percentage change from one number to another, and a number after a percentage rise or fall."],
+      ["Enter the two numbers", "Plain numbers only — no % signs, commas or currency symbols. The labels change to match the mode you picked."],
+      ["Read the answer with the working", "The result appears as you type, with the step-by-step working underneath so you can check every number."],
+      ["Try a preset, or check the table", "Load a real-life example — a discount, exam marks, a salary hike — or look the figure up in the common-percentages table."]
+    ],
+    stories: [
+      {
+        mode: "of", a: 15, b: 80, direction: null, preset: "discount",
+        title: "15% of 80 is 12",
+        body: "15 ÷ 100 = 0.15, and 0.15 × 80 = 12. So 15% of 80 is 12 — the same working a shopkeeper uses for a 15% discount."
+      },
+      {
+        mode: "is-what", a: 450, b: 600, direction: null, preset: "marks",
+        title: "450 out of 600 is 75%",
+        body: "450 ÷ 600 = 0.75, and 0.75 × 100 = 75%. So 450 marks out of 600 is 75% — divide the marks scored by the total, then multiply by 100."
+      },
+      {
+        mode: "change", a: 50000, b: 55000, direction: null, preset: "hike",
+        title: "₹50,000 to ₹55,000 is a 10% rise",
+        body: "55,000 − 50,000 = 5,000, and 5,000 ÷ 50,000 × 100 = 10%. So a salary moving from ₹50,000 to ₹55,000 rose by 10%."
+      },
+      {
+        mode: "after", a: 15, b: 2000, direction: "decrease", preset: null,
+        title: "15% off ₹2,000 leaves ₹1,700",
+        body: "15% of 2,000 is 300, so the sale price is 2,000 − 300 = 1,700. That is the discount taken off, then subtracted from the original price."
+      }
+    ],
+    commonPercents: [5, 10, 15, 20, 25, 50, 75, 90],
+    commonBases: [100, 500, 1000, 5000],
+    commonTitle: "Common percentages at a glance",
+    commonNote: "What each common percentage works out to on four round numbers — the figures people look up most.",
+    commonConclusion: "The table shows why the base matters: 25% is 25 on a base of 100, but 1,250 on a base of 5,000. Always check which number the percentage is taken from before trusting an answer.",
+    pointsTitle: "Percentage points are not the same as percent",
+    pointsNote: "If a rate rises from 20% to 25%, that is a rise of 5 percentage points — but a 25% relative increase (5 ÷ 20 × 100). Mixing the two up is the most common percentage mistake in news reports and exam answers alike.",
+    faq: [
+      ["How do I calculate a percentage of a number?", "Divide the percentage by 100, then multiply by the number. For 15% of 80: 15 ÷ 100 = 0.15, and 0.15 × 80 = 12. The same method works for money: 18% GST on ₹5,000 is 0.18 × 5,000 = ₹900."],
+      ["How do I work out what percentage one number is of another?", "Divide the first number by the second and multiply by 100. For 450 marks out of 600: 450 ÷ 600 = 0.75, and 0.75 × 100 = 75%. That is how exam percentages are calculated in India — obtained marks divided by total marks, times 100."],
+      ["How do I calculate percentage increase?", "Subtract the old value from the new value, divide by the old value, and multiply by 100. A price rising from ₹200 to ₹250 is (250 − 200) ÷ 200 × 100 = 25%. If the result is negative, the value fell — a price dropping from ₹250 to ₹200 is a 20% decrease."],
+      ["What is the difference between percentage change and percentage points?", "Percentage points measure the gap between two percentages; percentage change measures that gap against the starting value. A rate rising from 20% to 25% is a rise of 5 percentage points, but a 25% relative increase (5 ÷ 20 × 100). News reports usually mean percentage points when they say 'up 5 points'."],
+      ["How do I find the original price after a discount?", "Divide the sale price by (1 − discount ÷ 100). A jacket selling for ₹1,700 after 15% off cost 1,700 ÷ 0.85 = ₹2,000 before the discount. The same trick works for a price after a rise: divide by (1 + rise ÷ 100)."],
+      ["How do I calculate a discount price?", "Work out the discount first, then subtract it. At 15% off ₹2,000 the discount is 15 ÷ 100 × 2,000 = ₹300, so you pay 2,000 − 300 = ₹1,700. Or use the 'after a change' mode on this page — decrease ₹2,000 by 15%."],
+      ["How do I calculate my exam percentage from marks?", "Divide the marks you scored by the total marks and multiply by 100. Scoring 450 out of 600 gives 450 ÷ 600 × 100 = 75%. If subjects carry different maximum marks, add all your marks and all the maximums first, then divide the two totals."],
+      ["Why is a 10% rise followed by a 10% fall not back to the start?", "Because the second percentage is taken from a different base. Start at 100: a 10% rise gives 110, and a 10% fall from 110 takes off 11, leaving 99 — a net fall of 1%. Percentage changes are never added together; each one applies to the new value."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
+
+  {
+    key: "gst",
+    kind: "gst",
+    slug: "gst-calculator",
+    title: "GST Calculator",
+    meta: "Add or remove GST from any amount in seconds — work out the GST, the CGST + SGST split or IGST, and the total at the current Indian GST rates (0%, 5%, 18%, 40%). Free, instant, and calculated in your browser.",
+    lead: "Pick add or remove, enter the amount, choose the GST rate and the supply type — and get the full invoice breakup with the working shown.",
+    presets: [
+      { id: "invoice", label: "Add 18% to ₹10,000", mode: "add", amount: 10000, rate: 18, supply: "intra" },
+      { id: "mrp", label: "Remove 18% from ₹11,800", mode: "remove", amount: 11800, rate: 18, supply: "intra" },
+      { id: "gold", label: "Add 3% to ₹1,00,000 gold", mode: "add", amount: 100000, rate: 3, supply: "intra" },
+      { id: "restaurant", label: "Add 5% to a ₹2,000 bill", mode: "add", amount: 2000, rate: 5, supply: "intra" }
+    ],
+    defaultPreset: "invoice",
+    sampleMode: "add",
+    sampleAmount: 10000,
+    sampleRate: 18,
+    sampleSupply: "intra",
+    notice: "This tool is for everyday invoice maths — adding GST to a quote or pulling it out of an MRP. It is not tax advice; the rate depends on the HSN or SAC code of the item, so check the rate for your item on the CBIC rate schedule or with your CA.",
+    overviewTitle: "What does a GST calculator do?",
+    overview: "GST is charged on the price before tax, so every GST question is one of two: add the tax to a base price when you raise an invoice, or pull the tax out of a total that already includes it, as an MRP does. This calculator does both, at the current Indian GST rates, and splits the tax into CGST + SGST for a sale within one state or IGST for a sale between states — with the working shown, so you can check every number instead of trusting a black box.",
+    inputNote: "Enter a plain amount in rupees — no commas or currency symbols. Amounts from ₹0 to ₹1,000,000,000 are accepted; rates from 0% to 100%. The rate list carries the current GST 2.0 rates (0%, 0.25%, 1.5%, 3%, 5%, 18%, 40%); pick Custom rate for anything else.",
+    modelNote: "Two formulas, one idea: GST is always charged on the price before tax. Adding GST: GST = base × rate ÷ 100, and total = base + GST. Removing GST: base = total × 100 ÷ (100 + rate), and GST = total − base. Within one state the GST is split equally into CGST and SGST; between states the whole amount is charged as IGST. Every figure is rounded to the paisa.",
+    steps: [
+      ["Pick the direction", "Adding GST is for a base price — a quote or an invoice before tax. Removing GST is for a total that already includes it, like an MRP or a vendor's bill."],
+      ["Enter the amount and the rate", "Type the amount in rupees and pick the GST rate for the item. The rate list carries the current GST 2.0 rates; use Custom rate for anything else."],
+      ["Choose within-state or between-states", "A sale within one state splits the GST into CGST + SGST, half each. A sale between states charges the whole amount as IGST. The total is the same either way."],
+      ["Read the breakup with the working", "The answer appears as you type — base, GST, split and total — with the step-by-step working underneath so you can check every number."]
+    ],
+    stories: [
+      {
+        mode: "add", amount: 10000, rate: 18, supply: "intra", preset: "invoice",
+        title: "18% GST on ₹10,000 is ₹1,800",
+        body: "10,000 × 18 ÷ 100 = 1,800, so the total is 10,000 + 1,800 = 11,800. Within one state that ₹1,800 splits into ₹900 CGST and ₹900 SGST."
+      },
+      {
+        mode: "remove", amount: 11800, rate: 18, supply: "intra", preset: "mrp",
+        title: "₹11,800 at 18% GST hides a ₹10,000 base",
+        body: "11,800 × 100 ÷ 118 = 10,000, so the GST inside is 11,800 − 10,000 = 1,800. Multiplying the total by 18% would wrongly give ₹2,124."
+      },
+      {
+        mode: "add", amount: 100000, rate: 3, supply: "intra", preset: "gold",
+        title: "3% GST on ₹1,00,000 of gold is ₹3,000",
+        body: "1,00,000 × 3 ÷ 100 = 3,000, so the total is 1,03,000. Gold and jewellery carry the special 3% rate, not the standard 18%."
+      },
+      {
+        mode: "add", amount: 2000, rate: 5, supply: "inter", preset: "restaurant",
+        title: "5% GST on a ₹2,000 bill is ₹100",
+        body: "2,000 × 5 ÷ 100 = 100, so the total is 2,100. A restaurant bill or a service at 5% works the same way — and between states the ₹100 is charged in full as IGST."
+      }
+    ],
+    rateRows: [
+      { rate: "0%", applies: "Exempt essentials", example: "Fresh milk, vegetables, cereals, healthcare and education services" },
+      { rate: "5%", applies: "Merit rate — everyday goods and services", example: "Restaurants, household consumables, clothing and footwear up to ₹2,500" },
+      { rate: "18%", applies: "Standard rate — most goods and services", example: "Small cars, air conditioners, most services such as telecom, banking and IT" },
+      { rate: "40%", applies: "Demerit rate — luxury and sin goods", example: "Large cars and SUVs, pan masala, tobacco products, aerated sugary drinks" },
+      { rate: "3%", applies: "Special rate — gold, silver and jewellery", example: "Gold ornaments and jewellery on the transaction value" },
+      { rate: "0.25%", applies: "Special rate — rough precious stones", example: "Rough diamonds and precious stones" },
+      { rate: "1.5%", applies: "Special rate — cut and polished diamonds", example: "Cut and polished diamonds" }
+    ],
+    rateTableTitle: "GST rates in India after GST 2.0",
+    rateTableNote: "The rates in force for new supplies from 22 September 2025, after the 56th GST Council meeting. The old 12% and 28% slabs were abolished for new supplies — a bill dated before 22 September 2025 may still correctly show them.",
+    rateTableConclusion: "The rate always depends on the item: the same product can sit in a different slab under a different HSN code, so confirm the rate for your exact item on the CBIC rate schedule before invoicing.",
+    calloutTitle: "CGST + SGST is the same tax as IGST",
+    calloutNote: "Within one state, the GST is split equally — half CGST, half SGST. Between states, the whole amount is charged as IGST. The total never changes: 18% GST on ₹10,000 is ₹1,800 whether it is ₹900 + ₹900 or ₹1,800 of IGST.",
+    faq: [
+      ["How do I add GST to a price?", "Multiply the base price by the rate and divide by 100, then add it to the base. At 18% on ₹10,000: 10,000 × 18 ÷ 100 = ₹1,800 GST, so the total is 10,000 + 1,800 = ₹11,800. Use the 'Add GST' mode on this page and the working is shown for you."],
+      ["How do I remove GST from a price that already includes it?", "Divide the total by (1 + rate ÷ 100). At 18% on ₹11,800: 11,800 ÷ 1.18 = ₹10,000 base, so the GST inside is 11,800 − 10,000 = ₹1,800. Never multiply the total by the rate — ₹11,800 × 18% = ₹2,124, which is ₹324 too much."],
+      ["What are the current GST rates in India?", "Since 22 September 2025, under GST 2.0, the main slabs are 0% (exempt essentials), 5% (merit rate) and 18% (standard rate), with a 40% demerit rate for luxury and sin goods. Special rates continue: 3% on gold, silver and jewellery, 0.25% on rough precious stones and 1.5% on cut and polished diamonds. The old 12% and 28% slabs were abolished for new supplies. The rates come from CBIC Notification 9/2025-Central Tax (Rate), dated 17 September 2025."],
+      ["What is the difference between CGST, SGST and IGST?", "CGST and SGST apply when buyer and seller are in the same state: the GST is split equally, half CGST (Centre) and half SGST (State). IGST applies when the supply crosses a state border: the whole GST is charged as IGST. The total is identical either way — 18% on ₹10,000 is ₹1,800 as ₹900 + ₹900 or as ₹1,800 of IGST."],
+      ["How is GST calculated on gold?", "Gold, silver and jewellery carry a special 3% rate on the transaction value. On ₹1,00,000 of gold: 1,00,000 × 3 ÷ 100 = ₹3,000 GST, so the total is ₹1,03,000. Making charges on jewellery are also taxed — check the invoice breakup or ask your jeweller for the HSN-wise split."],
+      ["Why can't I just multiply the total by the rate to remove GST?", "Because the rate applies to the base price, not to the total. The total already contains the tax, so multiplying it by 18% taxes the tax as well. On ₹11,800 at 18% that gives ₹2,124 instead of the correct ₹1,800. The right move is to divide: 11,800 × 100 ÷ 118 = ₹10,000 base, then subtract."],
+      ["Do I need to register for GST?", "Generally, a business must register once its annual turnover crosses ₹40 lakh for goods or ₹20 lakh for services (₹10 lakh in special-category states). Registration is also compulsory for inter-state supplies and e-commerce sellers regardless of turnover. These are the usual thresholds — confirm your position on gst.gov.in or with a CA before acting."],
+      ["What happened to the 12% and 28% GST slabs?", "They were abolished for new supplies from 22 September 2025, when GST 2.0 merged the old four-slab structure into 5% and 18% plus a 40% demerit rate. Most items that sat at 12% moved to 5%, and most at 28% moved to 18%. A bill dated before 22 September 2025 may still correctly show 12% or 28%."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
+
+  {
+    key: "ppf",
+    kind: "ppf",
+    slug: "ppf-calculator",
+    title: "PPF Calculator",
+    meta: "Work out your Public Provident Fund maturity value in seconds — total deposited, tax-free interest earned and the year-by-year growth at the current 7.1% PPF rate. Free, instant, and calculated in your browser.",
+    lead: "Enter your yearly deposit, the current PPF rate and the tenure — and get the maturity value, the interest earned and the full year-by-year passbook, with the working shown.",
+    presets: [
+      { id: "max15", label: "₹1,50,000 a year for 15 years", deposit: 150000, rate: 7.1, years: 15 },
+      { id: "lakh15", label: "₹1,00,000 a year for 15 years", deposit: 100000, rate: 7.1, years: 15 },
+      { id: "max20", label: "₹1,50,000 a year for 20 years (one extension)", deposit: 150000, rate: 7.1, years: 20 },
+      { id: "fifty15", label: "₹50,000 a year for 15 years", deposit: 50000, rate: 7.1, years: 15 }
+    ],
+    defaultPreset: "max15",
+    sampleDeposit: 150000,
+    sampleRate: 7.1,
+    sampleYears: 15,
+    notice: "This tool projects your PPF maturity at today's rate held constant — it is not financial advice. The PPF rate is reviewed every quarter by the Ministry of Finance, so the real maturity moves if the rate moves. The projection assumes one deposit a year, made by 5 April so it earns interest for the full year.",
+    overviewTitle: "What does a PPF calculator do?",
+    overview: "The Public Provident Fund is a government-backed savings scheme with a 15-year lock-in: you deposit up to ₹1,50,000 a year, the balance earns interest that is reviewed every quarter — 7.1% a year since April 2020 — and the whole maturity amount is tax-free. This calculator works out what that adds up to: the maturity value, the total you deposit, the tax-free interest you earn, and the balance year by year, so you can see exactly how compounding builds the corpus — and what five more years are worth.",
+    inputNote: "Enter a plain yearly deposit in rupees — no commas or currency symbols. Deposits run from ₹500 to ₹1,50,000 a year, in multiples of ₹50. The rate defaults to the current 7.1%; change it to test what a rate rise or cut would do. Tenure is 15 years, or 20, 25 or 30 years if you extend in 5-year blocks.",
+    modelNote: "One deposit a year, made by 5 April, earns interest for the full year. Each year's interest is (opening balance + deposit) × rate ÷ 100, rounded to the nearest rupee, and added to the balance. Maturity = total deposited + total interest. The closed form is M = P × [((1 + r)^n − 1) ÷ r] × (1 + r), where P is the yearly deposit, r the rate and n the years.",
+    steps: [
+      ["Enter your yearly deposit", "How much you will put in each financial year — from ₹500 to ₹1,50,000, in multiples of ₹50. The maximum deposit gives the maximum maturity."],
+      ["Check the rate and the tenure", "The rate is pre-filled at the current 7.1%. Pick 15 years, or 20, 25 or 30 years if you plan to extend in 5-year blocks after maturity."],
+      ["Read the maturity and the breakup", "The answer appears as you type — maturity value, total deposited and total interest — with the step-by-step working underneath so you can check every number."],
+      ["Scroll the year-by-year table", "Each row shows the opening balance, the deposit, the interest and the closing balance for that year, so you can see compounding build the corpus."]
+    ],
+    stories: [
+      {
+        deposit: 150000, rate: 7.1, years: 15, preset: "max15",
+        title: "₹1,50,000 a year for 15 years grows to ₹40,68,208",
+        body: "15 × ₹1,50,000 = ₹22,50,000 deposited; the interest adds ₹18,18,208, so the maturity is ₹40,68,208 — your money grows 1.81 times, all of it tax-free."
+      },
+      {
+        deposit: 100000, rate: 7.1, years: 15, preset: "lakh15",
+        title: "₹1,00,000 a year for 15 years grows to ₹27,12,139",
+        body: "15 × ₹1,00,000 = ₹15,00,000 deposited; the interest adds ₹12,12,139, so the maturity is ₹27,12,139. Two-thirds of the final amount is your own money, one-third is interest."
+      },
+      {
+        deposit: 150000, rate: 7.1, years: 20, preset: "max20",
+        title: "One 5-year extension lifts the same ₹1,50,000 a year to ₹66,58,287",
+        body: "20 × ₹1,50,000 = ₹30,00,000 deposited; the interest adds ₹36,58,287. Five extra years nearly double the interest — from ₹18,18,208 to ₹36,58,287 — because the bigger balance compounds."
+      },
+      {
+        deposit: 50000, rate: 7.1, years: 15, preset: "fifty15",
+        title: "₹50,000 a year for 15 years grows to ₹13,56,070",
+        body: "15 × ₹50,000 = ₹7,50,000 deposited; the interest adds ₹6,06,070, so the maturity is ₹13,56,070. Even a modest yearly deposit nearly doubles over the lock-in."
+      }
+    ],
+    rateRows: [
+      { rate: "7.1%", applies: "Interest rate, Oct–Dec 2026", example: "Set every quarter by the Ministry of Finance; unchanged since April 2020. Compounded annually." },
+      { rate: "₹500", applies: "Minimum deposit a year", example: "Deposit at least this much every financial year, or the account becomes discontinued." },
+      { rate: "₹1,50,000", applies: "Maximum deposit a year", example: "In multiples of ₹50. Anything above this earns no interest and gets no Section 80C deduction." },
+      { rate: "15 years", applies: "Lock-in and maturity", example: "Counted from the end of the financial year you open the account; then withdraw in full or extend." },
+      { rate: "5-year blocks", applies: "Extension after maturity", example: "Extend with or without further deposits, as many times as you like." },
+      { rate: "From year 7", applies: "Partial withdrawal", example: "Once a year, up to 50% of the lower of the balance at the end of the 4th preceding year or the preceding year. Tax-free." },
+      { rate: "Years 3–6", applies: "Loan against the balance", example: "Up to 25% of the balance at the end of the 2nd preceding year; repay within 36 months at 1% above the PPF rate." },
+      { rate: "EEE", applies: "Tax status", example: "Deposit deductible under Section 80C (old regime only); interest and maturity fully tax-free." }
+    ],
+    rateTableTitle: "PPF rules at a glance",
+    rateTableNote: "The rules of the Public Provident Fund Scheme, 2019 (G.S.R. 915(E), 12 December 2019), with the rate from the Ministry of Finance's quarterly notification for 1 October to 31 December 2026.",
+    rateTableConclusion: "The rate is the only figure that moves — it is reviewed every quarter. The deposit limits, tenure and withdrawal rules are fixed by the scheme.",
+    calloutTitle: "Deposit by 5 April to earn a full year's interest",
+    calloutNote: "PPF interest is worked out on the minimum balance between the 5th and the last day of each month. A deposit made by 5 April earns interest for the whole year; a deposit made on 10 April misses April's interest on that money. Across 15 years, depositing early every year is worth thousands.",
+    faq: [
+      ["What is PPF?", "The Public Provident Fund is a government-backed, long-term savings scheme, introduced in 1968 and now governed by the Public Provident Fund Scheme, 2019. You deposit up to ₹1,50,000 a year, the balance earns interest set by the government, and after a 15-year lock-in you withdraw the whole amount tax-free. You can open an account at a post office or an authorised bank."],
+      ["What is the current PPF interest rate?", "7.1% a year, compounded annually. The rate is set every quarter by the Ministry of Finance (Department of Economic Affairs) and has been unchanged since April 2020. The latest notification — Office Memorandum F.No.1/4/2019-NS, dated 30 September 2026 — keeps 7.1% for 1 October to 31 December 2026. The next review is due around 31 December 2026."],
+      ["How is the PPF maturity amount calculated?", "One deposit a year, made by 5 April, earns interest for the full year. Each year's interest is (opening balance + deposit) × rate ÷ 100, rounded to the nearest rupee, and added to the balance. Over 15 years at 7.1%, ₹1,50,000 a year becomes ₹40,68,208: ₹22,50,000 deposited plus ₹18,18,208 of interest. The closed form is M = P × [((1 + r)^n − 1) ÷ r] × (1 + r)."],
+      ["What are the minimum and maximum PPF deposits?", "At least ₹500 a year to keep the account active, and at most ₹1,50,000 a year, in multiples of ₹50. The ₹1,50,000 cap covers your own account plus any account you hold as a guardian for a minor. Anything deposited above the cap earns no interest and gets no Section 80C deduction."],
+      ["Can I extend my PPF account after 15 years?", "Yes — in blocks of 5 years each, as many times as you like, with or without making further deposits. To keep depositing after maturity, apply in Form 4 within one year of maturity. If you extend without deposits, the balance keeps earning interest and you may withdraw any amount once a year."],
+      ["When can I withdraw from my PPF account?", "Partial withdrawals open from the 7th financial year: once a year, up to 50% of the lower of the balance at the end of the 4th year before the withdrawal year or the balance at the end of the preceding year — and the amount is tax-free. After 15 years you may withdraw the full maturity amount. Premature closure is allowed only in specific cases, such as serious illness or a child's higher education, after 5 years."],
+      ["Can I take a loan against my PPF balance?", "Yes, between the 3rd and 6th financial years: up to 25% of the balance at the end of the 2nd year immediately preceding the year you apply, repayable within 36 months, at 1% above the prevailing PPF rate. Only one loan a year, and no fresh loan until the earlier one is fully repaid. Once partial withdrawals open in year 7, the loan facility ends."],
+      ["Is PPF tax-free?", "Yes — PPF has EEE status: Exempt-Exempt-Exempt. The deposit is deductible under Section 80C (up to ₹1,50,000 a year, under the old tax regime only), the interest earned each year is exempt, and the maturity amount is fully tax-free under Section 10(11) in both tax regimes."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
+
+  {
+    key: "fd",
+    kind: "fd",
+    slug: "fd-calculator",
+    title: "FD Calculator",
+    meta: "Work out your fixed deposit maturity value in seconds — maturity amount, interest earned and the effective yearly return, with quarterly, monthly, half-yearly or annual compounding. Free, instant, and calculated in your browser.",
+    lead: "Enter your deposit, the rate your bank quotes and the tenure — and get the maturity value, the interest earned and the effective yearly return, with the working and the year-by-year growth shown.",
+    presets: [
+      { id: "lakh5", label: "₹1,00,000 for 5 years at 7%", principal: 100000, rate: 7, years: 5, months: 0, compounding: 4, payout: "cumulative", senior: false },
+      { id: "fiveLakh5", label: "₹5,00,000 for 5 years at 7.25%", principal: 500000, rate: 7.25, years: 5, months: 0, compounding: 4, payout: "cumulative", senior: false },
+      { id: "tenLakh3", label: "₹10,00,000 for 3 years at 7%", principal: 1000000, rate: 7, years: 3, months: 0, compounding: 4, payout: "cumulative", senior: false },
+      { id: "fifty1", label: "₹50,000 for 1 year at 6.5%", principal: 50000, rate: 6.5, years: 1, months: 0, compounding: 4, payout: "cumulative", senior: false }
+    ],
+    defaultPreset: "lakh5",
+    samplePrincipal: 100000,
+    sampleRate: 7,
+    sampleYears: 5,
+    sampleMonths: 0,
+    sampleCompounding: 4,
+    samplePayout: "cumulative",
+    sampleSenior: false,
+    notice: "This tool projects your FD maturity at the rate you enter — it is not financial advice. The rate is the one your bank quotes for that tenure, and it changes often; check the bank's current rate card before you deposit. The projection assumes the rate stays fixed for the whole tenure.",
+    overviewTitle: "What does an FD calculator do?",
+    overview: "A fixed deposit is the simplest guaranteed return in India: you lock a lump sum with a bank for a fixed tenure, the bank pays a fixed rate, and at maturity you get the deposit back plus interest. This calculator works out exactly what that adds up to — the maturity value, the interest earned and the effective yearly return — for cumulative deposits that reinvest the interest and for payout deposits that pay it out, at the compounding frequency your bank actually uses.",
+    inputNote: "Enter a plain deposit in rupees — no commas or currency symbols. Deposits run from ₹1,000 to ₹1,00,00,000. The rate defaults to 7%, the rate large banks pay on 5-year deposits; change it to the rate your bank quotes for your tenure. Tenure is 1 to 10 years, plus extra months. Quarterly compounding is the Indian bank standard — change it only if your bank compounds differently.",
+    modelNote: "A cumulative FD compounds: each period's interest is added to the balance and earns interest itself. The formula is M = P × (1 + r ÷ (100 × n))^(n × t), where P is the deposit, r the yearly rate, n the compounding frequency (4 for quarterly) and t the tenure in years. A non-cumulative FD pays simple interest out instead: interest = P × r ÷ 100 × t, and the maturity is the deposit plus that interest. The effective yearly return is (maturity ÷ deposit)^(1 ÷ t) − 1.",
+    steps: [
+      ["Enter your deposit", "The lump sum you will lock away — from ₹1,000 to ₹1,00,00,000. This calculator models one deposit, not monthly instalments."],
+      ["Check the rate, tenure and compounding", "The rate is pre-filled at 7%, the rate large banks pay on 5-year deposits. Pick the tenure in years and months, and how often interest compounds — quarterly is the Indian bank standard."],
+      ["Choose cumulative or payout", "Cumulative reinvests the interest so it compounds; non-cumulative pays the interest out, so the maturity is the deposit plus simple interest."],
+      ["Read the maturity and the breakup", "The answer appears as you type — maturity value, interest earned and the effective yearly return — with the step-by-step working and the year-by-year table underneath."]
+    ],
+    stories: [
+      {
+        principal: 100000, rate: 7, years: 5, months: 0, compounding: 4, payout: "cumulative", senior: false, preset: "lakh5",
+        title: "₹1,00,000 for 5 years at 7% grows to ₹1,41,478",
+        body: "₹1,00,000 deposited; the interest adds ₹41,478, so the maturity is ₹1,41,478 — quarterly compounding lifts the effective return to 7.19% a year."
+      },
+      {
+        principal: 500000, rate: 7.25, years: 5, months: 0, compounding: 4, payout: "cumulative", senior: false, preset: "fiveLakh5",
+        title: "₹5,00,000 for 5 years at 7.25% grows to ₹7,16,130",
+        body: "₹5,00,000 deposited; the interest adds ₹2,16,130, so the maturity is ₹7,16,130. The biggest single year's interest is ₹49,649 — just under the ₹50,000 TDS threshold."
+      },
+      {
+        principal: 1000000, rate: 7, years: 3, months: 0, compounding: 4, payout: "cumulative", senior: false, preset: "tenLakh3",
+        title: "₹10,00,000 for 3 years at 7% grows to ₹12,31,439",
+        body: "₹10,00,000 deposited; the interest adds ₹2,31,439. A year's interest reaches ₹82,557, so the bank will deduct 10% TDS on the interest it pays that year."
+      },
+      {
+        principal: 50000, rate: 6.5, years: 1, months: 0, compounding: 4, payout: "cumulative", senior: false, preset: "fifty1",
+        title: "₹50,000 for 1 year at 6.5% grows to ₹53,330",
+        body: "₹50,000 deposited; the interest adds ₹3,330, so the maturity is ₹53,330 — a one-year deposit for money you need soon."
+      }
+    ],
+    rateRows: [
+      { rate: "Quarterly", applies: "How interest compounds", example: "Most Indian banks compound FD interest quarterly — each quarter's interest is added to the balance and earns interest itself." },
+      { rate: "7 days – 10 years", applies: "Tenure range", example: "Banks accept FDs from 7 days to 10 years; this calculator models tenures of 1 to 10 years." },
+      { rate: "₹5 lakh", applies: "DICGC deposit insurance", example: "Bank deposits are insured up to ₹5 lakh per depositor per bank, principal and interest together, by DICGC, an RBI subsidiary." },
+      { rate: "10% TDS", applies: "Tax deducted at source", example: "Banks deduct 10% TDS (20% without PAN) when a year's interest crosses ₹50,000 — ₹1,00,000 for senior citizens — from 1 April 2025 (Section 194A)." },
+      { rate: "Fully taxable", applies: "Tax on the interest", example: "FD interest is added to your income and taxed at your slab rate; TDS is only an advance collection, not the final tax." },
+      { rate: "+0.50%", applies: "Senior citizen bonus", example: "Most banks pay senior citizens about 0.25–0.50% more — a common convention, not a guaranteed rate; confirm with your bank." },
+      { rate: "0.5–1%", applies: "Premature withdrawal penalty", example: "Breaking an FD early usually costs 0.5–1% off the applicable rate; the exact penalty is set by each bank." },
+      { rate: "No fixed rate", applies: "The rate you earn", example: "FD rates move with the RBI repo rate and differ by bank and tenure — large banks pay roughly 6–7% on 1–5 year deposits; always check the bank's current rate card." }
+    ],
+    rateTableTitle: "FD rules at a glance",
+    rateTableNote: "The rules that decide what your fixed deposit actually pays: compounding, tenure, deposit insurance, TDS and tax. Rates are the ones your bank quotes — they change often, so check the rate card before you deposit.",
+    rateTableConclusion: "The rate is the only figure that moves — it is set by each bank and moves with the RBI repo rate. The compounding, insurance, TDS and tax rules are fixed by law and by the RBI.",
+    calloutTitle: "Quarterly compounding is where the extra money hides",
+    calloutNote: "At 7% a year, simple interest on ₹1,00,000 for 5 years is ₹35,000. Compounded quarterly it is ₹41,478 — ₹6,478 more — because each quarter's interest earns interest too. That is why the effective yearly return is 7.19%, not 7%.",
+    faq: [
+      ["What is a fixed deposit?", "A fixed deposit (FD) is a lump sum you lock with a bank for a fixed tenure at a fixed interest rate. The bank pays you back the deposit plus interest at maturity. Unlike a savings account, you cannot withdraw freely — breaking the deposit early usually costs a penalty — but the return is guaranteed, and bank deposits are insured up to ₹5 lakh per depositor per bank by DICGC."],
+      ["How is FD maturity calculated?", "For a cumulative FD, the formula is M = P × (1 + r ÷ (100 × n))^(n × t), where P is the deposit, r the yearly rate, n how often interest compounds each year (4 for quarterly) and t the tenure in years. At 7% compounded quarterly, ₹1,00,000 for 5 years becomes ₹1,41,478: ₹1,00,000 deposited plus ₹41,478 of interest. The effective yearly return is 7.19% — higher than the quoted 7% because each quarter's interest earns interest too."],
+      ["What is the difference between a cumulative and a non-cumulative FD?", "A cumulative FD reinvests the interest, so it compounds and is paid with the deposit at maturity — ₹1,00,000 at 7% for 5 years grows to ₹1,41,478. A non-cumulative FD pays the interest out monthly, quarterly or annually, so the same deposit pays ₹7,000 a year and returns ₹1,35,000 at maturity. Cumulative earns more over the same tenure; non-cumulative suits people who want a regular income."],
+      ["How often is FD interest compounded?", "Most Indian banks compound FD interest quarterly — every three months the interest is added to the balance and starts earning interest itself. Some banks and NBFCs compound monthly, half-yearly or annually. This calculator lets you pick the frequency: monthly compounding on ₹1,00,000 at 7% for 5 years gives ₹1,41,763, quarterly gives ₹1,41,478 and annual compounding gives ₹1,40,255."],
+      ["How much TDS is deducted on FD interest?", "Banks deduct 10% TDS when the interest they pay you in a financial year crosses ₹50,000 — ₹1,00,000 for senior citizens — from 1 April 2025 under Section 194A of the Income-tax Act. Without a PAN the rate is 20%. TDS is an advance collection, not the final tax: the interest is still taxed at your slab rate. If your total income is below the taxable limit, submit Form 15G (or 15H for senior citizens) so the bank skips TDS."],
+      ["Is FD interest taxable?", "Yes — FD interest is added to your income and taxed at your slab rate, in the year it accrues, whether you take it as a payout or at maturity. Senior citizens get a deduction of up to ₹50,000 a year on interest income under Section 80TTB. PPF interest, by contrast, is fully tax-free — compare the two on our PPF calculator before choosing."],
+      ["Are fixed deposits safe?", "Bank fixed deposits are among the safest places for your money: the Deposit Insurance and Credit Guarantee Corporation (DICGC), an RBI subsidiary, insures deposits up to ₹5 lakh per depositor per bank, principal and interest together, across all your accounts at that bank. The cover has been ₹5 lakh since February 2020. Deposits with NBFCs and companies are NOT covered by DICGC, so a higher NBFC rate carries real credit risk."],
+      ["What happens if I break my FD early?", "You can usually break an FD before maturity, but the bank pays the rate for the period actually completed, minus a premature-withdrawal penalty of typically 0.5–1%. The exact penalty is set by each bank and is printed on the FD receipt. Some special deposits — tax-saving FDs with a 5-year lock-in — cannot be broken at all."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
 ];
 
 export const css = `
@@ -4831,6 +5139,60 @@ export const bmiCss = `
   background: #fff7e0;
   color: #6b4e00;
   border: 1px solid #e3c878;
+}
+`;
+
+export const pctCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.verdict-warn {
+  background: #fff7e0;
+  color: #6b4e00;
+  border: 1px solid #e3c878;
+}
+`;
+
+export const gstCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(13, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+`;
+
+export const ppfCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(14, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+`;
+
+export const fdCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(15, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 `;
 
@@ -12014,6 +12376,72 @@ export function renderSipCalculatorBody(p, others, css, clientSource) {
   <script>(${clientSource})(${safeJSON(config)});</script>`;
 }
 
+export function pctOf(pct, value) {
+  const p = Number(pct);
+  const v = Number(value);
+  if (!Number.isFinite(p) || !Number.isFinite(v)) return null;
+  return p / 100 * v;
+}
+
+export function pctIsWhat(part, whole) {
+  const a = Number(part);
+  const b = Number(whole);
+  if (!Number.isFinite(a) || !Number.isFinite(b) || b === 0) return null;
+  return a / b * 100;
+}
+
+export function pctChange(from, to) {
+  const a = Number(from);
+  const b = Number(to);
+  if (!Number.isFinite(a) || !Number.isFinite(b) || a === 0) return null;
+  const difference = b - a;
+  const percent = difference / Math.abs(a) * 100;
+  return {
+    percent,
+    difference,
+    direction: difference > 0 ? "increase" : difference < 0 ? "decrease" : "no change"
+  };
+}
+
+export function pctAfter(value, pct, direction) {
+  const v = Number(value);
+  const p = Number(pct);
+  if (!Number.isFinite(v) || !Number.isFinite(p)) return null;
+  if (direction !== "increase" && direction !== "decrease") return null;
+  const change = v * p / 100;
+  return {
+    result: direction === "increase" ? v + change : v - change,
+    change
+  };
+}
+
+export function pctCompute(mode, a, b, direction) {
+  const x = Number(a);
+  const y = Number(b);
+  if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+  if (mode === "of") {
+    const result = pctOf(x, y);
+    if (result === null) return null;
+    return { mode, result, extra: x / 100, direction: null, difference: null };
+  }
+  if (mode === "is-what") {
+    const result = pctIsWhat(x, y);
+    if (result === null) return null;
+    return { mode, result, extra: x / y, direction: null, difference: y - x };
+  }
+  if (mode === "change") {
+    const r = pctChange(x, y);
+    if (r === null) return null;
+    return { mode, result: r.percent, extra: r.difference, direction: r.direction, difference: r.difference };
+  }
+  if (mode === "after") {
+    const r = pctAfter(y, x, direction);
+    if (r === null) return null;
+    return { mode, result: r.result, extra: r.change, direction, difference: r.change };
+  }
+  return null;
+}
+
 export function bmiClient(c) {
   const $ = id => document.getElementById(id);
 
@@ -12969,6 +13397,4030 @@ export function renderBmiCalculatorBody(p, others, css, clientSource) {
           <p>
             Try a different height or weight — or run the same check with
             the related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function round2(n) {
+  return Math.round((n + Number.EPSILON) * 100) / 100;
+}
+
+export function gstSplit(gst) {
+  const cgst = round2(gst / 2);
+  return { cgst, sgst: round2(gst - cgst), igst: gst };
+}
+
+export function gstAdd(base, rate) {
+  const b = Number(base);
+  const r = Number(rate);
+  if (!Number.isFinite(b) || !Number.isFinite(r) || b < 0 || r < 0 || r > 100) return null;
+  const gst = round2(b * r / 100);
+  const total = round2(b + gst);
+  const split = gstSplit(gst);
+  return { base: round2(b), gst, total, cgst: split.cgst, sgst: split.sgst, igst: split.igst };
+}
+
+export function gstRemove(total, rate) {
+  const t = Number(total);
+  const r = Number(rate);
+  if (!Number.isFinite(t) || !Number.isFinite(r) || t < 0 || r < 0 || r > 100) return null;
+  const base = round2(t * 100 / (100 + r));
+  const gst = round2(t - base);
+  const split = gstSplit(gst);
+  return { base, gst, total: round2(t), cgst: split.cgst, sgst: split.sgst, igst: split.igst };
+}
+
+export function gstCompute(mode, amount, rate, supply) {
+  const a = Number(amount);
+  const r = Number(rate);
+  if (!Number.isFinite(a) || !Number.isFinite(r)) return null;
+  if (supply !== "intra" && supply !== "inter") return null;
+  if (mode === "add") {
+    const res = gstAdd(a, r);
+    if (res === null) return null;
+    return { mode, supply, rate: r, base: res.base, gst: res.gst, total: res.total, cgst: res.cgst, sgst: res.sgst, igst: res.igst };
+  }
+  if (mode === "remove") {
+    const res = gstRemove(a, r);
+    if (res === null) return null;
+    return { mode, supply, rate: r, base: res.base, gst: res.gst, total: res.total, cgst: res.cgst, sgst: res.sgst, igst: res.igst };
+  }
+  return null;
+}
+
+export function roundRupee(n) {
+  return Math.round(n);
+}
+
+export function ppfSchedule(deposit, rate, years) {
+  const P = Number(deposit);
+  const r = Number(rate);
+  const y = Math.round(Number(years));
+  if (!Number.isFinite(P) || !Number.isFinite(r) || !Number.isFinite(y)) return null;
+  if (P < 500 || P > 150000 || P % 50 !== 0) return null;
+  if (r < 0 || r > 15) return null;
+  if (y !== 15 && y !== 20 && y !== 25 && y !== 30) return null;
+  const rows = [];
+  let balance = 0;
+  for (let year = 1; year <= y; year++) {
+    const opening = balance;
+    balance += P;
+    const interest = roundRupee(balance * r / 100);
+    balance += interest;
+    rows.push({ year, opening, deposit: P, interest, closing: balance });
+  }
+  return rows;
+}
+
+export function ppfCompute(deposit, rate, years) {
+  const rows = ppfSchedule(deposit, rate, years);
+  if (!rows) return null;
+  const P = Number(deposit);
+  const invested = P * rows.length;
+  const maturity = rows[rows.length - 1].closing;
+  const interest = maturity - invested;
+  return {
+    deposit: P,
+    rate: Number(rate),
+    years: rows.length,
+    invested,
+    interest,
+    maturity,
+    multiple: invested > 0 ? maturity / invested : null,
+    schedule: rows
+  };
+}
+
+export function ppfWithdrawalLimit(deposit, rate, years) {
+  const rows = ppfSchedule(deposit, rate, years);
+  if (!rows) return null;
+  return Math.floor(0.5 * Math.min(rows[2].closing, rows[5].closing));
+}
+
+export function ppfLoanLimit(deposit, rate, years, loanYear) {
+  const rows = ppfSchedule(deposit, rate, years);
+  if (!rows) return null;
+  const ly = Math.round(Number(loanYear));
+  if (ly < 3 || ly > 6) return null;
+  return Math.floor(0.25 * rows[ly - 3].closing);
+}
+
+export function fdSchedule(principal, rate, years, months, compounding, payout, senior) {
+  const P = Number(principal);
+  const r = Number(rate) + (senior === true ? 0.5 : 0);
+  const y = Math.round(Number(years));
+  const m = Math.round(Number(months));
+  const n = Number(compounding);
+  if (!Number.isFinite(P) || !Number.isFinite(r) || !Number.isFinite(y)
+    || !Number.isFinite(m) || !Number.isFinite(n)) return null;
+  if (P < 1000 || P > 10000000) return null;
+  if (Number(rate) < 0 || Number(rate) > 12) return null;
+  if (r > 12.5) return null;
+  if (y < 1 || y > 10 || String(y) !== String(Math.trunc(Number(years)))) return null;
+  if (m < 0 || m > 11 || String(m) !== String(Math.trunc(Number(months)))) return null;
+  if (n !== 1 && n !== 2 && n !== 4 && n !== 12) return null;
+  if (payout !== "cumulative" && payout !== "non-cumulative") return null;
+  const rows = [];
+  if (payout === "cumulative") {
+    for (let year = 1; year <= y; year++) {
+      const opening = roundRupee(P * Math.pow(1 + r / (100 * n), n * (year - 1)));
+      const closing = roundRupee(P * Math.pow(1 + r / (100 * n), n * year));
+      rows.push({ label: "Year " + year, opening, interest: closing - opening, closing });
+    }
+    if (m > 0) {
+      const t = y + m / 12;
+      const opening = roundRupee(P * Math.pow(1 + r / (100 * n), n * y));
+      const closing = roundRupee(P * Math.pow(1 + r / (100 * n), n * t));
+      rows.push({ label: "Final " + m + " months", opening, interest: closing - opening, closing });
+    }
+  } else {
+    const yearly = roundRupee(P * r / 100);
+    for (let year = 1; year <= y; year++) {
+      rows.push({ label: "Year " + year, opening: P, interest: yearly, closing: P });
+    }
+    if (m > 0) {
+      rows.push({ label: "Final " + m + " months", opening: P, interest: roundRupee(P * r / 100 * m / 12), closing: P });
+    }
+  }
+  return rows;
+}
+
+export function fdCompute(principal, rate, years, months, compounding, payout, senior) {
+  const rows = fdSchedule(principal, rate, years, months, compounding, payout, senior);
+  if (!rows) return null;
+  const P = Number(principal);
+  const eff = Number(rate) + (senior === true ? 0.5 : 0);
+  const t = Math.round(Number(years)) + Math.round(Number(months)) / 12;
+  const interest = rows.reduce((sum, row) => sum + row.interest, 0);
+  const maturity = P + interest;
+  const effectiveYield = payout === "cumulative" && P > 0 && t > 0
+    ? Math.round((Math.pow(maturity / P, 1 / t) - 1) * 100 * 100) / 100
+    : Math.round(eff * 100) / 100;
+  const maxYearInterest = Math.max.apply(null, rows.map(row => row.interest));
+  const tdsThreshold = senior === true ? 100000 : 50000;
+  return {
+    principal: P,
+    rate: Number(rate),
+    effectiveRate: eff,
+    years: Math.round(Number(years)),
+    months: Math.round(Number(months)),
+    compounding: Number(compounding),
+    payout,
+    senior: senior === true,
+    tenureYears: t,
+    invested: P,
+    interest,
+    maturity,
+    effectiveYield,
+    maxYearInterest,
+    tdsThreshold,
+    tdsApplies: maxYearInterest > tdsThreshold,
+    schedule: rows
+  };
+}
+
+export function pctClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function pctOf(pct, value) {
+    const p = Number(pct);
+    const v = Number(value);
+    if (!Number.isFinite(p) || !Number.isFinite(v)) return null;
+    return p / 100 * v;
+  }
+
+  function pctIsWhat(part, whole) {
+    const a = Number(part);
+    const b = Number(whole);
+    if (!Number.isFinite(a) || !Number.isFinite(b) || b === 0) return null;
+    return a / b * 100;
+  }
+
+  function pctChange(from, to) {
+    const a = Number(from);
+    const b = Number(to);
+    if (!Number.isFinite(a) || !Number.isFinite(b) || a === 0) return null;
+    const difference = b - a;
+    const percent = difference / Math.abs(a) * 100;
+    return {
+      percent,
+      difference,
+      direction: difference > 0 ? "increase" : difference < 0 ? "decrease" : "no change"
+    };
+  }
+
+  function pctAfter(value, pct, direction) {
+    const v = Number(value);
+    const p = Number(pct);
+    if (!Number.isFinite(v) || !Number.isFinite(p)) return null;
+    if (direction !== "increase" && direction !== "decrease") return null;
+    const change = v * p / 100;
+    return {
+      result: direction === "increase" ? v + change : v - change,
+      change
+    };
+  }
+
+  function pctCompute(mode, a, b, direction) {
+    const x = Number(a);
+    const y = Number(b);
+    if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+    if (mode === "of") {
+      const result = pctOf(x, y);
+      if (result === null) return null;
+      return { mode, result, extra: x / 100, direction: null, difference: null };
+    }
+    if (mode === "is-what") {
+      const result = pctIsWhat(x, y);
+      if (result === null) return null;
+      return { mode, result, extra: x / y, direction: null, difference: y - x };
+    }
+    if (mode === "change") {
+      const r = pctChange(x, y);
+      if (r === null) return null;
+      return { mode, result: r.percent, extra: r.difference, direction: r.direction, difference: r.difference };
+    }
+    if (mode === "after") {
+      const r = pctAfter(y, x, direction);
+      if (r === null) return null;
+      return { mode, result: r.result, extra: r.change, direction, difference: r.change };
+    }
+    return null;
+  }
+
+  const presetSelect = $("preset");
+  const modeSelect = $("mode");
+  const directionSelect = $("direction");
+  const directionRow = $("direction-row");
+  const pctPill = $("pct-pill");
+  const inputA = $("input-a");
+  const inputB = $("input-b");
+  const inputAError = $("input-a-error");
+  const inputBError = $("input-b-error");
+  const labelAText = $("label-a-text");
+  const labelAHint = $("label-a-hint");
+  const labelBText = $("label-b-text");
+  const labelBHint = $("label-b-hint");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-GB", { maximumFractionDigits: 2 }).format(n);
+  const signed = n => (n >= 0 ? "+" : "") + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+
+  const MODES = {
+    "of": {
+      aLabel: "Percentage (%)", aHint: "The percent — for example 15",
+      bLabel: "Number", bHint: "The number to take the percent of",
+      aMin: -10000, aMax: 10000, bMin: -1000000000, bMax: 1000000000,
+      aMsg: "Enter a percentage from -10,000% to 10,000%.",
+      bMsg: "Enter a number from -1,000,000,000 to 1,000,000,000."
+    },
+    "is-what": {
+      aLabel: "Part", aHint: "The part — for example 450 marks",
+      bLabel: "Whole", bHint: "The whole — for example 600 marks",
+      aMin: -1000000000, aMax: 1000000000, bMin: -1000000000, bMax: 1000000000,
+      aMsg: "Enter a number from -1,000,000,000 to 1,000,000,000.",
+      bMsg: "Enter a number from -1,000,000,000 to 1,000,000,000."
+    },
+    "change": {
+      aLabel: "Original value", aHint: "The starting value — for example 200",
+      bLabel: "New value", bHint: "The later value — for example 250",
+      aMin: -1000000000, aMax: 1000000000, bMin: -1000000000, bMax: 1000000000,
+      aMsg: "Enter a number from -1,000,000,000 to 1,000,000,000.",
+      bMsg: "Enter a number from -1,000,000,000 to 1,000,000,000."
+    },
+    "after": {
+      aLabel: "Percentage (%)", aHint: "The percent change — for example 15",
+      bLabel: "Number", bHint: "The number to change — for example 2,000",
+      aMin: -10000, aMax: 10000, bMin: -1000000000, bMax: 1000000000,
+      aMsg: "Enter a percentage from -10,000% to 10,000%.",
+      bMsg: "Enter a number from -1,000,000,000 to 1,000,000,000."
+    }
+  };
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter two numbers to see the answer with the working.";
+    working.textContent = "Enter two numbers to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(mode, a, b, direction, r) {
+    if (mode === "of") {
+      output.textContent = fmt(r.result);
+      box1Val.textContent = fmt(r.result);
+      box1Label.textContent = fmt(a) + "% OF " + fmt(b);
+      box2Val.textContent = fmt(r.extra);
+      box2Label.textContent = "AS A DECIMAL";
+      box3Val.textContent = fmt(b);
+      box3Label.textContent = "THE WHOLE (100%)";
+      working.textContent = fmt(a) + " ÷ 100 = " + fmt(r.extra) + ".";
+      working2.textContent = fmt(r.extra) + " × " + fmt(b) + " = " + fmt(r.result) + ".";
+      workingNote.textContent = "A percentage is a part out of 100 — 15% means 15 out of every 100.";
+      glanceText.textContent = fmt(a) + "% of " + fmt(b) + " is " + fmt(r.result) + ".";
+      summary = "VisitBest | Percentage Calculator"
+        + "\nQuestion: " + fmt(a) + "% of " + fmt(b)
+        + "\nAnswer: " + fmt(r.result)
+        + "\nWorking: " + fmt(a) + " ÷ 100 = " + fmt(r.extra) + "; " + fmt(r.extra) + " × " + fmt(b) + " = " + fmt(r.result);
+    } else if (mode === "is-what") {
+      output.textContent = fmt(r.result) + "%";
+      box1Val.textContent = fmt(r.result) + "%";
+      box1Label.textContent = fmt(a) + " AS % OF " + fmt(b);
+      box2Val.textContent = fmt(r.extra);
+      box2Label.textContent = "AS A FRACTION";
+      box3Val.textContent = fmt(r.difference);
+      box3Label.textContent = "THE REMAINDER";
+      working.textContent = fmt(a) + " ÷ " + fmt(b) + " = " + fmt(r.extra) + ".";
+      working2.textContent = fmt(r.extra) + " × 100 = " + fmt(r.result) + "%.";
+      workingNote.textContent = "A percentage is a part out of 100 — divide the part by the whole, then multiply by 100.";
+      glanceText.textContent = fmt(a) + " is " + fmt(r.result) + "% of " + fmt(b) + ".";
+      summary = "VisitBest | Percentage Calculator"
+        + "\nQuestion: " + fmt(a) + " is what percent of " + fmt(b)
+        + "\nAnswer: " + fmt(r.result) + "%"
+        + "\nWorking: " + fmt(a) + " ÷ " + fmt(b) + " = " + fmt(r.extra) + "; " + fmt(r.extra) + " × 100 = " + fmt(r.result) + "%";
+    } else if (mode === "change") {
+      output.textContent = signed(r.result) + "%";
+      box1Val.textContent = signed(r.result) + "%";
+      box1Label.textContent = "PERCENTAGE CHANGE";
+      box2Val.textContent = signed(r.extra);
+      box2Label.textContent = "CHANGE IN VALUE";
+      box3Val.textContent = r.direction === "no change" ? "No change" : r.direction === "increase" ? "Increase" : "Decrease";
+      box3Label.textContent = "DIRECTION";
+      working.textContent = "(" + fmt(b) + " - " + fmt(a) + ") = " + fmt(r.difference) + ".";
+      working2.textContent = fmt(r.difference) + " ÷ " + fmt(Math.abs(a)) + " × 100 = " + signed(r.result) + "%.";
+      workingNote.textContent = "Percentage change always divides by the old value — the starting number, not the new one.";
+      glanceText.textContent = r.direction === "no change"
+        ? "No change — " + fmt(a) + " and " + fmt(b) + " are the same."
+        : "From " + fmt(a) + " to " + fmt(b) + ": a " + fmt(Math.abs(r.result)) + "% " + r.direction + ".";
+      summary = "VisitBest | Percentage Calculator"
+        + "\nQuestion: Percentage change from " + fmt(a) + " to " + fmt(b)
+        + "\nAnswer: " + signed(r.result) + "% (" + r.direction + ")"
+        + "\nWorking: (" + fmt(b) + " - " + fmt(a) + ") = " + fmt(r.difference) + "; " + fmt(r.difference) + " ÷ " + fmt(Math.abs(a)) + " × 100 = " + signed(r.result) + "%";
+    } else {
+      output.textContent = fmt(r.result);
+      box1Val.textContent = fmt(r.result);
+      box1Label.textContent = "NEW VALUE";
+      box2Val.textContent = fmt(r.extra);
+      box2Label.textContent = "AMOUNT OF CHANGE";
+      box3Val.textContent = (direction === "increase" ? "Increase" : "Decrease") + " by " + fmt(a) + "%";
+      box3Label.textContent = "DIRECTION";
+      working.textContent = fmt(a) + "% of " + fmt(b) + " = " + fmt(r.extra) + ".";
+      working2.textContent = fmt(b) + (direction === "increase" ? " + " : " - ") + fmt(r.extra) + " = " + fmt(r.result) + ".";
+      workingNote.textContent = "Work out the change first, then add it for a rise or subtract it for a fall.";
+      glanceText.textContent = fmt(b) + " " + direction + "d by " + fmt(a) + "% is " + fmt(r.result) + ".";
+      summary = "VisitBest | Percentage Calculator"
+        + "\nQuestion: " + fmt(b) + " " + direction + "d by " + fmt(a) + "%"
+        + "\nAnswer: " + fmt(r.result)
+        + "\nWorking: " + fmt(a) + "% of " + fmt(b) + " = " + fmt(r.extra) + "; " + fmt(b) + (direction === "increase" ? " + " : " - ") + fmt(r.extra) + " = " + fmt(r.result);
+    }
+
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+  }
+
+  function paint(showEmptyError = false) {
+    const mode = modeSelect.value;
+    const cfg = MODES[mode] || MODES["of"];
+    directionRow.hidden = mode !== "after";
+    labelAText.textContent = cfg.aLabel;
+    labelAHint.textContent = cfg.aHint;
+    labelBText.textContent = cfg.bLabel;
+    labelBHint.textContent = cfg.bHint;
+    pctPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const aRaw = inputA.value;
+    const bRaw = inputB.value;
+    const aNum = aRaw === "" ? NaN : Number(aRaw);
+    const bNum = bRaw === "" ? NaN : Number(bRaw);
+    let aMsg = "";
+    let bMsg = "";
+    if (aRaw === "") {
+      if (showEmptyError) aMsg = "Enter the first number.";
+    } else if (!Number.isFinite(aNum) || aNum < cfg.aMin || aNum > cfg.aMax) {
+      aMsg = cfg.aMsg;
+    }
+    if (bRaw === "") {
+      if (showEmptyError) bMsg = "Enter the second number.";
+    } else if (!Number.isFinite(bNum) || bNum < cfg.bMin || bNum > cfg.bMax) {
+      bMsg = cfg.bMsg;
+    }
+    if (mode === "is-what" && bRaw !== "" && bNum === 0) {
+      bMsg = "The whole cannot be zero.";
+    }
+    if (mode === "change" && aRaw !== "" && aNum === 0) {
+      aMsg = "The original value cannot be zero.";
+    }
+    inputAError.textContent = aMsg;
+    inputBError.textContent = bMsg;
+    inputA.setAttribute("aria-invalid", String(aMsg !== ""));
+    inputB.setAttribute("aria-invalid", String(bMsg !== ""));
+
+    const valid = aMsg === "" && bMsg === "" && aRaw !== "" && bRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = pctCompute(mode, aNum, bNum, directionSelect.value);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(mode, aNum, bNum, directionSelect.value, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = pctCompute(item.mode, item.a, item.b, item.direction);
+    if (!r) return "";
+    if (item.mode === "of") return fmt(item.a) + "% of " + fmt(item.b) + " = " + fmt(r.result);
+    if (item.mode === "is-what") return fmt(item.a) + " is " + fmt(r.result) + "% of " + fmt(item.b);
+    if (item.mode === "change") return fmt(item.a) + " → " + fmt(item.b) + " = " + signed(r.result) + "%";
+    return fmt(item.b) + " " + item.direction + "d by " + fmt(item.a) + "% = " + fmt(r.result);
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, modeSelect.value, directionSelect.value, inputA.value, inputB.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        modeSelect.value = item.mode;
+        directionSelect.value = item.direction || "increase";
+        inputA.value = String(item.a);
+        inputB.value = String(item.b);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      mode: modeSelect.value,
+      direction: directionSelect.value,
+      a: Number(inputA.value),
+      b: Number(inputB.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      modeSelect.value = button.dataset.mode;
+      directionSelect.value = button.dataset.direction || "increase";
+      inputA.value = button.dataset.a || "";
+      inputB.value = button.dataset.b || "";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    const rec = presetRec(presetSelect.value);
+    modeSelect.value = rec.mode;
+    directionSelect.value = rec.direction || "increase";
+    inputA.value = String(rec.a);
+    inputB.value = String(rec.b);
+    paint();
+  });
+
+  modeSelect.addEventListener("change", () => {
+    presetSelect.value = "custom";
+    paint();
+  });
+
+  directionSelect.addEventListener("change", () => {
+    presetSelect.value = "custom";
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputA.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputB.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("pct-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    modeSelect.value = rec.mode;
+    directionSelect.value = rec.direction || "increase";
+    inputA.value = String(rec.a);
+    inputB.value = String(rec.b);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderPctCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-GB", { maximumFractionDigits: 2 }).format(n);
+  const signed2 = n => (n >= 0 ? "+" : "") + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleMode: p.sampleMode, samplePct: p.samplePct, sampleValue: p.sampleValue };
+  const sample = pctCompute(p.sampleMode, p.samplePct, p.sampleValue, null);
+  const sampleDecimal = p.samplePct / 100;
+
+  const presetSummary = pr => {
+    if (pr.mode === "of") return `${fmt2(pr.a)}% of ${fmt2(pr.b)}`;
+    if (pr.mode === "is-what") return `${fmt2(pr.a)} of ${fmt2(pr.b)}`;
+    if (pr.mode === "change") return `${fmt2(pr.a)} → ${fmt2(pr.b)}`;
+    return `${fmt2(pr.b)} ${pr.direction === "increase" ? "+" : "-"}${fmt2(pr.a)}%`;
+  };
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = pctCompute(st.mode, st.a, st.b, st.direction);
+    if (st.mode === "of") return `${fmt2(st.a)}% of ${fmt2(st.b)} = ${fmt2(r.result)}`;
+    if (st.mode === "is-what") return `${fmt2(st.a)} is ${fmt2(r.result)}% of ${fmt2(st.b)}`;
+    if (st.mode === "change") return `${fmt2(st.a)} → ${fmt2(st.b)} = ${signed2(r.result)}% (${r.direction})`;
+    return `${fmt2(st.b)} ${st.direction}d by ${fmt2(st.a)}% = ${fmt2(r.result)}`;
+  };
+
+  const commonRows = p.commonPercents.map(pct => `
+      <tr>
+        <th scope="row">${pct}%</th>
+        ${p.commonBases.map(b => `<td>${fmt2(pctOf(pct, b))}</td>`).join("")}
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${pctCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free percentage calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate a percentage →
+              </a>
+              <a href="#method" class="calc-link">How the formulas work ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${fmt2(sample.result)}</strong>
+                <small>${p.samplePct}% of ${p.sampleValue}</small>
+              </div>
+              <div>
+                <strong>4 modes</strong>
+                <small>Percent of, percent, change, after</small>
+              </div>
+              <div>
+                <strong>Instant</strong>
+                <small>Working shown</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>Everyday maths, not financial advice.</strong>
+              This tool is for discounts, marks, salary hikes and price
+              changes. It is not financial, tax or legal advice; for tax,
+              GST or loan figures, check with a qualified adviser.
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/">RRB Age</a>
+              <a href="/emi-calculator/">EMI</a>
+              <a href="/sip-calculator/">SIP</a>
+              <a href="/bmi-calculator/">BMI</a>
+              <a href="/percentage-calculator/" aria-current="page">Percentage</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate a percentage</h2>
+              <span class="calc-pill" id="pct-pill">${p.samplePct}% of ${p.sampleValue}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="pct-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="mode">
+                What do you want to work out?
+                <span>The labels below change to match the question</span>
+              </label>
+
+              <select class="select-input" id="mode">
+                <option value="of" selected>What is X% of Y?</option>
+                <option value="is-what">X is what percent of Y?</option>
+                <option value="change">Percentage change from A to B</option>
+                <option value="after">Increase or decrease by X%</option>
+              </select>
+
+              <div id="direction-row" hidden>
+                <label class="field-label" for="direction">
+                  Direction
+                  <span>Rise or fall</span>
+                </label>
+
+                <select class="select-input" id="direction">
+                  <option value="increase" selected>Increase by X%</option>
+                  <option value="decrease">Decrease by X%</option>
+                </select>
+              </div>
+
+              <label class="field-label" for="input-a">
+                <span id="label-a-text">Percentage (%)</span>
+                <span id="label-a-hint">The percent — for example 15</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-a"
+                type="number"
+                value="${p.samplePct}"
+                step="any"
+                inputmode="decimal"
+                aria-describedby="input-a-error"
+              >
+              <p class="calc-error" id="input-a-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-b">
+                <span id="label-b-text">Number</span>
+                <span id="label-b-hint">The number to take the percent of</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-b"
+                type="number"
+                value="${p.sampleValue}"
+                step="any"
+                inputmode="decimal"
+                aria-describedby="input-b-error"
+              >
+              <p class="calc-error" id="input-b-error" aria-live="polite"></p>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-a">${fmt2(sample.result)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${fmt2(sample.result)}</strong>
+                  <small id="box1-label">${p.samplePct}% OF ${p.sampleValue}</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${fmt2(sampleDecimal)}</strong>
+                  <small id="box2-label">AS A DECIMAL</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${fmt2(p.sampleValue)}</strong>
+                  <small id="box3-label">THE WHOLE (100%)</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">${p.samplePct}% of ${p.sampleValue} is ${fmt2(sample.result)}.</span>
+              </div>
+
+              <p class="working" id="working">
+                ${p.samplePct} ÷ 100 = ${fmt2(sampleDecimal)}.
+              </p>
+              <p class="working" id="working-2">${fmt2(sampleDecimal)} × ${p.sampleValue} = ${fmt2(sample.result)}.</p>
+              <p class="working" id="working-note">A percentage is a part out of 100 — 15% means 15 out of every 100.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                Results are shown to two decimal places; the full figure
+                is used until the final rounding, so the working above
+                always reproduces the answer.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formulas</a>
+        <a href="#examples">Examples</a>
+        <a href="#common-table">Common percentages</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / PARTS OF 100</span>
+            <h3>A percentage is a part out of 100</h3>
+            <p>15% means 15 out of every 100, whether the 100 is marks, rupees or people. Every formula on this page is that one idea, rearranged — divide by 100 to get the decimal, multiply by 100 to get the percent.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE BASE DECIDES</span>
+            <h3>The base decides the answer</h3>
+            <p>The same percent means a different amount on a different base: 15% of 80 is 12, but 15% of 2,000 is 300. Most percentage mistakes are base mistakes — dividing by the new value instead of the old one, or adding percentages from different bases.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / FOUR QUESTIONS</span>
+            <h3>Four questions cover almost everything</h3>
+            <p>Almost every percentage question is one of four: X% of a number, X as a percentage of Y, the change from one number to another, or a number after a rise or fall. Pick the mode that matches your question and the calculator does the rest.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From two numbers to an answer</h2>
+          <p>
+            Pick the question first — the labels change to match it — then
+            enter two numbers and read the answer with the working.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>The four percentage formulas</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The four percentage formulas</small>
+          X% of Y = (X ÷ 100) × Y · X as % of Y = (X ÷ Y) × 100 · % change = (B − A) ÷ |A| × 100 · After a change = Y × (1 ± X ÷ 100)
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. Turn the percent into a decimal
+            <strong>${p.samplePct} ÷ 100 = ${fmt2(sampleDecimal)}</strong>
+            <span>Divide the percentage by 100.</span>
+          </div>
+
+          <div class="math-step">
+            2. Multiply by the number
+            <strong>${fmt2(sampleDecimal)} × ${p.sampleValue} = ${fmt2(sample.result)}</strong>
+            <span>Multiply the decimal by the number.</span>
+          </div>
+
+          <div class="math-step">
+            3. Read the answer
+            <strong>${p.samplePct}% of ${p.sampleValue} = ${fmt2(sample.result)}</strong>
+            <span>The result is shown to two decimal places.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.pointsTitle)}</strong>
+          ${e(p.pointsNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Four questions, four answers</h2>
+          <p>
+            One example for each mode. Select any example to load it into
+            the calculator and check the working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            const modeLabel = story.mode === "of" ? "X% OF Y" : story.mode === "is-what" ? "X AS % OF Y" : story.mode === "change" ? "PERCENTAGE CHANGE" : "AFTER A CHANGE";
+            return `
+            <article class="card">
+              <span class="number-label">${modeLabel}</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-mode="${e(story.mode)}" data-a="${story.a}" data-b="${story.b}"${story.direction ? ` data-direction="${e(story.direction)}"` : ""}>Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="common-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.commonTitle)}</p>
+          <h2>Common percentages at a glance</h2>
+          <p>${e(p.commonNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="common-note">
+            <caption>Common percentages of 100, 500, 1,000 and 5,000.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Percentage</th>
+                ${p.commonBases.map(b => `<th scope="col">of ${fmt2(b)}</th>`).join("")}
+              </tr>
+            </thead>
+            <tbody>
+              ${commonRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="common-note">${e(p.commonConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get a percentage wrong</h2>
+          <p>
+            The formulas are short, but four readings trip people up.
+            Each one can turn a right method into a wrong answer.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / ADDING PERCENTAGES</span>
+            <h3>Adding percentages from different bases</h3>
+            <p>A 10% rise followed by a 10% fall is not back to the start — it is 99% of the original, a net fall of 1%. Each percentage applies to the new value, so changes are multiplied, never added.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / POINTS VS PERCENT</span>
+            <h3>Confusing percentage points with percent</h3>
+            <p>A rate rising from 20% to 25% is up 5 percentage points, but the relative rise is 25%. Saying "up 25%" and "up 5 points" describe the same move in different units — pick the right one.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / THE WRONG BASE</span>
+            <h3>Dividing by the wrong number</h3>
+            <p>Percentage change divides by the old value, and "X as a percent of Y" divides by Y. Dividing by the new value instead gives a different, wrong answer — 50 on 200 is 25%, not 20%.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / ROUNDING TOO EARLY</span>
+            <h3>Rounding in the middle of the working</h3>
+            <p>Rounding 0.15 × 80 is harmless, but rounding a decimal like 1 ÷ 3 to 0.33 before multiplying turns 33.33% into 33%. Keep the full figure until the final answer, as this calculator does.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>Percentage calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the four standard percentage formulas: X% of Y
+            = (X ÷ 100) × Y; X as a percentage of Y = (X ÷ Y) × 100;
+            percentage change from A to B = (B − A) ÷ |A| × 100; and a
+            number after a percentage change = Y × (1 ± X ÷ 100). Results
+            are shown to two decimal places, and the full figure is used
+            until the final rounding, so the working you see always
+            reproduces the answer shown. A "what percent" or "change"
+            question needs a non-zero base — dividing by zero has no
+            answer, so the calculator says so instead of guessing.
+          </p>
+          <p>
+            Cross-checked 11 November 2026 against the ranking percentage
+            calculators: 15% of 80 is 12 on
+            <a href="https://calcsolver.in/tools/percentage-calculator" rel="nofollow noopener" target="_blank">calcsolver.in</a>,
+            which shows the same working (15 ÷ 100 = 0.15; 0.15 × 80 =
+            12), and 450 out of 600 is 75% on
+            <a href="https://www.realbill.in/calculators/percentage" rel="nofollow noopener" target="_blank">realbill.in</a>,
+            which uses the same marks example. The formulas are standard
+            arithmetic; no rule on this page comes from a competitor.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function gstClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function round2(n) {
+    return Math.round((n + Number.EPSILON) * 100) / 100;
+  }
+
+  function gstSplit(gst) {
+    const cgst = round2(gst / 2);
+    return { cgst, sgst: round2(gst - cgst), igst: gst };
+  }
+
+  function gstAdd(base, rate) {
+    const b = Number(base);
+    const r = Number(rate);
+    if (!Number.isFinite(b) || !Number.isFinite(r) || b < 0 || r < 0 || r > 100) return null;
+    const gst = round2(b * r / 100);
+    const total = round2(b + gst);
+    const split = gstSplit(gst);
+    return { base: round2(b), gst, total, cgst: split.cgst, sgst: split.sgst, igst: split.igst };
+  }
+
+  function gstRemove(total, rate) {
+    const t = Number(total);
+    const r = Number(rate);
+    if (!Number.isFinite(t) || !Number.isFinite(r) || t < 0 || r < 0 || r > 100) return null;
+    const base = round2(t * 100 / (100 + r));
+    const gst = round2(t - base);
+    const split = gstSplit(gst);
+    return { base, gst, total: round2(t), cgst: split.cgst, sgst: split.sgst, igst: split.igst };
+  }
+
+  function gstCompute(mode, amount, rate, supply) {
+    const a = Number(amount);
+    const r = Number(rate);
+    if (!Number.isFinite(a) || !Number.isFinite(r)) return null;
+    if (supply !== "intra" && supply !== "inter") return null;
+    if (mode === "add") {
+      const res = gstAdd(a, r);
+      if (res === null) return null;
+      return { mode, supply, rate: r, base: res.base, gst: res.gst, total: res.total, cgst: res.cgst, sgst: res.sgst, igst: res.igst };
+    }
+    if (mode === "remove") {
+      const res = gstRemove(a, r);
+      if (res === null) return null;
+      return { mode, supply, rate: r, base: res.base, gst: res.gst, total: res.total, cgst: res.cgst, sgst: res.sgst, igst: res.igst };
+    }
+    return null;
+  }
+
+  const presetSelect = $("preset");
+  const modeSelect = $("mode");
+  const supplySelect = $("supply");
+  const rateSelect = $("rate");
+  const customRateRow = $("custom-rate-row");
+  const customRate = $("custom-rate");
+  const customRateError = $("custom-rate-error");
+  const gstPill = $("gst-pill");
+  const inputAmount = $("input-amount");
+  const inputAmountError = $("input-amount-error");
+  const labelAmountText = $("label-amount-text");
+  const labelAmountHint = $("label-amount-hint");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+  const RATE_OPTIONS = ["0", "0.25", "1.5", "3", "5", "18", "40"];
+
+  function splitText(r) {
+    return r.supply === "intra"
+      ? inr(r.cgst) + " CGST + " + inr(r.sgst) + " SGST"
+      : inr(r.igst) + " IGST";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter an amount and pick a rate to see the breakup with the working.";
+    working.textContent = "Enter an amount and pick a rate to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(mode, amount, rate, supply, r) {
+    const split = splitText(r);
+    const splitLabel = supply === "intra" ? "CGST + SGST" : "IGST";
+    if (mode === "add") {
+      output.textContent = inr(r.total);
+      box1Val.textContent = inr(r.gst);
+      box1Label.textContent = "GST @ " + fmt(rate) + "%";
+      box2Val.textContent = supply === "intra" ? inr(r.cgst) + " + " + inr(r.sgst) : inr(r.igst);
+      box2Label.textContent = splitLabel;
+      box3Val.textContent = inr(r.base);
+      box3Label.textContent = "BASE PRICE";
+      working.textContent = "GST = " + fmt(r.base) + " × " + fmt(rate) + " ÷ 100 = " + fmt(r.gst) + ".";
+      working2.textContent = "Total = " + fmt(r.base) + " + " + fmt(r.gst) + " = " + fmt(r.total) + ".";
+      workingNote.textContent = supply === "intra"
+        ? "Within one state the GST splits equally: " + inr(r.cgst) + " CGST + " + inr(r.sgst) + " SGST."
+        : "Between states the whole GST is charged as IGST: " + inr(r.igst) + ".";
+      glanceText.textContent = inr(r.base) + " + " + fmt(rate) + "% GST = " + inr(r.total) + " (" + split + ").";
+      summary = "VisitBest | GST Calculator"
+        + "\nQuestion: Add " + fmt(rate) + "% GST to " + inr(r.base) + " (" + supply + ")"
+        + "\nAnswer: " + inr(r.total) + " (GST " + inr(r.gst) + ")"
+        + "\nWorking: GST = " + fmt(r.base) + " × " + fmt(rate) + " ÷ 100 = " + fmt(r.gst) + "; Total = " + fmt(r.base) + " + " + fmt(r.gst) + " = " + fmt(r.total)
+        + "\nSplit: " + split;
+    } else {
+      output.textContent = inr(r.base);
+      box1Val.textContent = inr(r.gst);
+      box1Label.textContent = "GST @ " + fmt(rate) + "%";
+      box2Val.textContent = supply === "intra" ? inr(r.cgst) + " + " + inr(r.sgst) : inr(r.igst);
+      box2Label.textContent = splitLabel;
+      box3Val.textContent = inr(r.total);
+      box3Label.textContent = "TOTAL PAID";
+      working.textContent = "Base = " + fmt(r.total) + " × 100 ÷ (100 + " + fmt(rate) + ") = " + fmt(r.base) + ".";
+      working2.textContent = "GST = " + fmt(r.total) + " − " + fmt(r.base) + " = " + fmt(r.gst) + ".";
+      workingNote.textContent = supply === "intra"
+        ? "Within one state the GST splits equally: " + inr(r.cgst) + " CGST + " + inr(r.sgst) + " SGST."
+        : "Between states the whole GST is charged as IGST: " + inr(r.igst) + ".";
+      glanceText.textContent = inr(r.total) + " includes " + inr(r.gst) + " GST — the base price is " + inr(r.base) + ".";
+      summary = "VisitBest | GST Calculator"
+        + "\nQuestion: Remove " + fmt(rate) + "% GST from " + inr(r.total) + " (" + supply + ")"
+        + "\nAnswer: base " + inr(r.base) + " (GST " + inr(r.gst) + ")"
+        + "\nWorking: Base = " + fmt(r.total) + " × 100 ÷ (100 + " + fmt(rate) + ") = " + fmt(r.base) + "; GST = " + fmt(r.total) + " − " + fmt(r.base) + " = " + fmt(r.gst)
+        + "\nSplit: " + split;
+    }
+
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+  }
+
+  function effectiveRate() {
+    if (rateSelect.value === "custom") {
+      const v = customRate.value === "" ? NaN : Number(customRate.value);
+      return v;
+    }
+    return Number(rateSelect.value);
+  }
+
+  function paint(showEmptyError = false) {
+    const mode = modeSelect.value;
+    const supply = supplySelect.value;
+    customRateRow.hidden = rateSelect.value !== "custom";
+    labelAmountText.textContent = mode === "add" ? "Amount before GST (₹)" : "Total including GST (₹)";
+    labelAmountHint.textContent = mode === "add"
+      ? "The base price — a quote or an invoice before tax"
+      : "The total already including GST — an MRP or a vendor's bill";
+    gstPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const amountRaw = inputAmount.value;
+    const amountNum = amountRaw === "" ? NaN : Number(amountRaw);
+    const rate = effectiveRate();
+    let amountMsg = "";
+    let rateMsg = "";
+    if (amountRaw === "") {
+      if (showEmptyError) amountMsg = "Enter the amount.";
+    } else if (!Number.isFinite(amountNum) || amountNum < 0 || amountNum > 1000000000) {
+      amountMsg = "Enter an amount from ₹0 to ₹1,000,000,000.";
+    }
+    if (rateSelect.value === "custom") {
+      if (customRate.value === "") {
+        if (showEmptyError) rateMsg = "Enter a custom rate.";
+      } else if (!Number.isFinite(rate) || rate < 0 || rate > 100) {
+        rateMsg = "Enter a rate from 0% to 100%.";
+      }
+    }
+    inputAmountError.textContent = amountMsg;
+    customRateError.textContent = rateMsg;
+    inputAmount.setAttribute("aria-invalid", String(amountMsg !== ""));
+    customRate.setAttribute("aria-invalid", String(rateMsg !== ""));
+
+    const valid = amountMsg === "" && rateMsg === "" && amountRaw !== ""
+      && (rateSelect.value !== "custom" || customRate.value !== "");
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = gstCompute(mode, amountNum, rate, supply);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(mode, amountNum, rate, supply, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = gstCompute(item.mode, item.amount, item.rate, item.supply);
+    if (!r) return "";
+    if (item.mode === "add") return inr(item.amount) + " + " + fmt(item.rate) + "% = " + inr(r.total) + " (" + splitText(r) + ")";
+    return inr(item.amount) + " incl. " + fmt(item.rate) + "% → base " + inr(r.base) + " (GST " + inr(r.gst) + ")";
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, modeSelect.value, supplySelect.value, rateSelect.value, customRate.value, inputAmount.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        modeSelect.value = item.mode;
+        supplySelect.value = item.supply;
+        if (RATE_OPTIONS.includes(String(item.rate))) {
+          rateSelect.value = String(item.rate);
+          customRate.value = "";
+        } else {
+          rateSelect.value = "custom";
+          customRate.value = String(item.rate);
+        }
+        inputAmount.value = String(item.amount);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      mode: modeSelect.value,
+      supply: supplySelect.value,
+      rate: effectiveRate(),
+      amount: Number(inputAmount.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      modeSelect.value = button.dataset.mode;
+      supplySelect.value = button.dataset.supply || "intra";
+      const rate = button.dataset.rate;
+      if (RATE_OPTIONS.includes(rate)) {
+        rateSelect.value = rate;
+        customRate.value = "";
+      } else {
+        rateSelect.value = "custom";
+        customRate.value = rate || "";
+      }
+      inputAmount.value = button.dataset.amount || "";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    modeSelect.value = rec.mode;
+    supplySelect.value = rec.supply;
+    if (RATE_OPTIONS.includes(String(rec.rate))) {
+      rateSelect.value = String(rec.rate);
+      customRate.value = "";
+    } else {
+      rateSelect.value = "custom";
+      customRate.value = String(rec.rate);
+    }
+    inputAmount.value = String(rec.amount);
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  modeSelect.addEventListener("change", () => {
+    presetSelect.value = "custom";
+    paint();
+  });
+
+  supplySelect.addEventListener("change", () => {
+    presetSelect.value = "custom";
+    paint();
+  });
+
+  rateSelect.addEventListener("change", () => {
+    presetSelect.value = "custom";
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputAmount.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    customRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("gst-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderGstCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleMode: p.sampleMode, sampleAmount: p.sampleAmount, sampleRate: p.sampleRate, sampleSupply: p.sampleSupply };
+  const sample = gstCompute(p.sampleMode, p.sampleAmount, p.sampleRate, p.sampleSupply);
+  const sampleSplit = p.sampleSupply === "intra"
+    ? inr2(sample.cgst) + " + " + inr2(sample.sgst)
+    : inr2(sample.igst);
+  const sampleSplitLabel = p.sampleSupply === "intra" ? "CGST + SGST" : "IGST";
+
+  const presetSummary = pr => {
+    if (pr.mode === "add") return `${inr2(pr.amount)} + ${fmt2(pr.rate)}%`;
+    return `${inr2(pr.amount)} incl. ${fmt2(pr.rate)}%`;
+  };
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = gstCompute(st.mode, st.amount, st.rate, st.supply);
+    if (st.mode === "add") return `${inr2(st.amount)} + ${fmt2(st.rate)}% GST = ${inr2(r.total)} (GST ${inr2(r.gst)})`;
+    return `${inr2(st.amount)} incl. ${fmt2(st.rate)}% GST → base ${inr2(r.base)} (GST ${inr2(r.gst)})`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${gstCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free GST calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate GST →
+              </a>
+              <a href="#method" class="calc-link">How GST is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.gst)}</strong>
+                <small>GST on ${inr2(p.sampleAmount)} at ${fmt2(p.sampleRate)}%</small>
+              </div>
+              <div>
+                <strong>2 directions</strong>
+                <small>Add GST or remove GST</small>
+              </div>
+              <div>
+                <strong>Split shown</strong>
+                <small>CGST + SGST or IGST</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>Everyday invoice maths, not tax advice.</strong>
+              This tool adds GST to a quote or pulls it out of an MRP.
+              It is not tax advice; the rate depends on the HSN or SAC
+              code of the item, so check the rate for your item on the
+              CBIC rate schedule or with your CA.
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/">RRB Age</a>
+              <a href="/emi-calculator/">EMI</a>
+              <a href="/sip-calculator/">SIP</a>
+              <a href="/bmi-calculator/">BMI</a>
+              <a href="/percentage-calculator/">Percentage</a>
+              <a href="/gst-calculator/" aria-current="page">GST</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate GST</h2>
+              <span class="calc-pill" id="gst-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="gst-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="mode">
+                What do you want to work out?
+                <span>Add GST to a base price, or pull it out of a total</span>
+              </label>
+
+              <select class="select-input" id="mode">
+                <option value="add" selected>Add GST to a base price</option>
+                <option value="remove">Remove GST from a total</option>
+              </select>
+
+              <label class="field-label" for="supply">
+                Where is the buyer?
+                <span>Same state splits the tax; another state charges IGST</span>
+              </label>
+
+              <select class="select-input" id="supply">
+                <option value="intra" selected>Within the same state (CGST + SGST)</option>
+                <option value="inter">Between states (IGST)</option>
+              </select>
+
+              <label class="field-label" for="rate">
+                GST rate
+                <span>Current GST 2.0 rates — pick Custom rate for anything else</span>
+              </label>
+
+              <select class="select-input" id="rate">
+                <option value="0">0% — Exempt</option>
+                <option value="0.25">0.25% — Rough precious stones</option>
+                <option value="1.5">1.5% — Cut and polished diamonds</option>
+                <option value="3">3% — Gold, silver and jewellery</option>
+                <option value="5">5% — Merit rate</option>
+                <option value="18" selected>18% — Standard rate</option>
+                <option value="40">40% — Demerit rate</option>
+                <option value="custom">Custom rate…</option>
+              </select>
+
+              <div id="custom-rate-row" hidden>
+                <label class="field-label" for="custom-rate">
+                  Custom rate (%)
+                  <span>From 0% to 100%</span>
+                </label>
+
+                <input
+                  class="number-input"
+                  id="custom-rate"
+                  type="number"
+                  step="any"
+                  inputmode="decimal"
+                  aria-describedby="custom-rate-error"
+                >
+                <p class="calc-error" id="custom-rate-error" aria-live="polite"></p>
+              </div>
+
+              <label class="field-label" for="input-amount">
+                <span id="label-amount-text">Amount before GST (₹)</span>
+                <span id="label-amount-hint">The base price — a quote or an invoice before tax</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-amount"
+                type="number"
+                value="${p.sampleAmount}"
+                step="any"
+                inputmode="decimal"
+                aria-describedby="input-amount-error"
+              >
+              <p class="calc-error" id="input-amount-error" aria-live="polite"></p>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-amount">${inr2(sample.total)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.gst)}</strong>
+                  <small id="box1-label">GST @ ${fmt2(p.sampleRate)}%</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${sampleSplit}</strong>
+                  <small id="box2-label">${sampleSplitLabel}</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.base)}</strong>
+                  <small id="box3-label">BASE PRICE</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">${inr2(p.sampleAmount)} + ${fmt2(p.sampleRate)}% GST = ${inr2(sample.total)} (${inr2(sample.cgst)} CGST + ${inr2(sample.sgst)} SGST).</span>
+              </div>
+
+              <p class="working" id="working">
+                GST = ${fmt2(p.sampleAmount)} × ${fmt2(p.sampleRate)} ÷ 100 = ${fmt2(sample.gst)}.
+              </p>
+              <p class="working" id="working-2">Total = ${fmt2(p.sampleAmount)} + ${fmt2(sample.gst)} = ${fmt2(sample.total)}.</p>
+              <p class="working" id="working-note">Within one state the GST splits equally: ${inr2(sample.cgst)} CGST + ${inr2(sample.sgst)} SGST.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                Every figure is rounded to the paisa; the full figure is
+                used until the final rounding, so the working above
+                always reproduces the answer.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formulas</a>
+        <a href="#examples">Examples</a>
+        <a href="#rates-table">GST rates</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / TWO DIRECTIONS</span>
+            <h3>Add GST, or pull it out</h3>
+            <p>A quote before tax needs GST added: base × rate ÷ 100. An MRP already includes it, so the tax has to be pulled out: total × 100 ÷ (100 + rate). The two directions use different formulas — mixing them up is the most common GST mistake.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE BASE DECIDES</span>
+            <h3>GST is charged on the price before tax</h3>
+            <p>The rate always applies to the base price, never to the total. That is why removing GST means dividing by (1 + rate ÷ 100) instead of multiplying the total by the rate — multiplying taxes the tax as well.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / THE SPLIT IS ROUTING</span>
+            <h3>CGST + SGST is the same tax as IGST</h3>
+            <p>Within one state the GST is split equally into CGST and SGST; between states the whole amount is charged as IGST. The total never changes — only which government receives which share.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From one amount to a full breakup</h2>
+          <p>
+            Pick the direction first — the labels change to match it —
+            then enter the amount, the rate and the supply type.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How GST is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The GST formulas</small>
+          GST = base × rate ÷ 100 · Total = base + GST · Base = total × 100 ÷ (100 + rate) · GST = total − base
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. Work out the GST
+            <strong>${fmt2(p.sampleAmount)} × ${fmt2(p.sampleRate)} ÷ 100 = ${fmt2(sample.gst)}</strong>
+            <span>Multiply the base by the rate, divide by 100.</span>
+          </div>
+
+          <div class="math-step">
+            2. Add it to the base
+            <strong>${fmt2(p.sampleAmount)} + ${fmt2(sample.gst)} = ${fmt2(sample.total)}</strong>
+            <span>The total payable is base plus GST.</span>
+          </div>
+
+          <div class="math-step">
+            3. Split it by state
+            <strong>${inr2(sample.cgst)} CGST + ${inr2(sample.sgst)} SGST</strong>
+            <span>Within one state, half each. Between states, the whole ${inr2(sample.gst)} is IGST.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Four amounts, four answers</h2>
+          <p>
+            One example for each everyday case. Select any example to
+            load it into the calculator and check the working for
+            yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            const modeLabel = story.mode === "add" ? "ADD GST" : "REMOVE GST";
+            return `
+            <article class="card">
+              <span class="number-label">${modeLabel}</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-mode="${e(story.mode)}" data-amount="${story.amount}" data-rate="${story.rate}" data-supply="${e(story.supply)}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>GST rates in India after GST 2.0</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>Current GST rates and what they usually apply to.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Rate</th>
+                <th scope="col">Typically applies to</th>
+                <th scope="col">Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get GST wrong</h2>
+          <p>
+            The formulas are short, but four readings trip people up.
+            Each one can turn a right method into a wrong invoice.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / TAXING THE TAX</span>
+            <h3>Multiplying the total by the rate</h3>
+            <p>Removing GST is not total × rate ÷ 100. On ₹11,800 at 18% that gives ₹2,124 — ₹324 too much. Divide instead: 11,800 × 100 ÷ 118 = ₹10,000 base, so the GST is ₹1,800.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / OLD SLABS</span>
+            <h3>Using 12% or 28% on a new supply</h3>
+            <p>The 12% and 28% slabs were abolished for new supplies on 22 September 2025. Most 12% items moved to 5% and most 28% items to 18%. Only a bill dated before that date may still correctly show them.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / THE WRONG SPLIT</span>
+            <h3>Charging IGST within one state</h3>
+            <p>CGST + SGST is for a sale within one state; IGST is for a sale between states. The split changes, but the total never does — 18% on ₹10,000 is ₹1,800 either way.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / ROUNDING TOO EARLY</span>
+            <h3>Rounding the base before subtracting</h3>
+            <p>Round each figure to the paisa only at the end. Rounding the base first and then subtracting can leave the GST a paisa out — and a paisa out on every line adds up across an invoice.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>GST calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the two standard GST formulas: adding GST,
+            GST = base × rate ÷ 100 and total = base + GST; removing
+            GST, base = total × 100 ÷ (100 + rate) and GST = total −
+            base. Within one state the GST is split equally into CGST
+            and SGST; between states the whole amount is IGST. Every
+            figure is rounded to the paisa, and the full figure is used
+            until the final rounding, so the working you see always
+            reproduces the answer shown.
+          </p>
+          <p>
+            Rates checked 11 November 2026 against the GST 2.0
+            structure in force from 22 September 2025: the main slabs
+            are 0%, 5% and 18% with a 40% demerit rate, and the special
+            rates are 3% on gold, silver and jewellery, 0.25% on rough
+            precious stones and 1.5% on cut and polished diamonds, per
+            CBIC Notification 9/2025-Central Tax (Rate), dated 17
+            September 2025, following the 56th GST Council meeting.
+            Cross-checked against the ranking GST calculators:
+            18% on ₹10,000 is ₹1,800, total ₹11,800, on
+            <a href="https://www.primoerp.com/tools/gst-calculator" rel="nofollow noopener" target="_blank">primoerp.com</a>
+            and
+            <a href="https://www.calxo.in/gst/gst-calculator/" rel="nofollow noopener" target="_blank">calxo.in</a>,
+            and the same ₹11,800 reverse case gives a ₹10,000 base on
+            <a href="https://taxgarden.in/gst-calculator" rel="nofollow noopener" target="_blank">taxgarden.in</a>.
+            Compensation cess is not calculated here — it was withdrawn
+            for most goods from 22 September 2025. Confirm the rate for
+            your exact item on the CBIC rate schedule before invoicing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function ppfClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  function ppfSchedule(deposit, rate, years) {
+    const P = Number(deposit);
+    const r = Number(rate);
+    const y = Math.round(Number(years));
+    if (!Number.isFinite(P) || !Number.isFinite(r) || !Number.isFinite(y)) return null;
+    if (P < 500 || P > 150000 || P % 50 !== 0) return null;
+    if (r < 0 || r > 15) return null;
+    if (y !== 15 && y !== 20 && y !== 25 && y !== 30) return null;
+    const rows = [];
+    let balance = 0;
+    for (let year = 1; year <= y; year++) {
+      const opening = balance;
+      balance += P;
+      const interest = roundRupee(balance * r / 100);
+      balance += interest;
+      rows.push({ year, opening, deposit: P, interest, closing: balance });
+    }
+    return rows;
+  }
+
+  function ppfCompute(deposit, rate, years) {
+    const rows = ppfSchedule(deposit, rate, years);
+    if (!rows) return null;
+    const P = Number(deposit);
+    const invested = P * rows.length;
+    const maturity = rows[rows.length - 1].closing;
+    const interest = maturity - invested;
+    return {
+      deposit: P,
+      rate: Number(rate),
+      years: rows.length,
+      invested,
+      interest,
+      maturity,
+      multiple: invested > 0 ? maturity / invested : null,
+      schedule: rows
+    };
+  }
+
+  function ppfWithdrawalLimit(deposit, rate, years) {
+    const rows = ppfSchedule(deposit, rate, years);
+    if (!rows) return null;
+    return Math.floor(0.5 * Math.min(rows[2].closing, rows[5].closing));
+  }
+
+  function ppfLoanLimit(deposit, rate, years, loanYear) {
+    const rows = ppfSchedule(deposit, rate, years);
+    if (!rows) return null;
+    const ly = Math.round(Number(loanYear));
+    if (ly < 3 || ly > 6) return null;
+    return Math.floor(0.25 * rows[ly - 3].closing);
+  }
+
+  const presetSelect = $("preset");
+  const ppfPill = $("ppf-pill");
+  const inputDeposit = $("input-deposit");
+  const inputDepositError = $("input-deposit-error");
+  const inputRate = $("input-rate");
+  const inputRateError = $("input-rate-error");
+  const yearsSelect = $("input-years");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const withdrawalNote = $("withdrawal-note");
+  const scheduleBody = $("schedule-body");
+  const scheduleNote = $("schedule-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+
+  function renderSchedule(rows) {
+    scheduleBody.replaceChildren();
+    rows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = "Year " + row.year;
+      tr.appendChild(th);
+      [row.opening, row.deposit, row.interest, row.closing].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      scheduleBody.appendChild(tr);
+    });
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your yearly deposit, the rate and the tenure to see the maturity value with the working.";
+    working.textContent = "Enter your yearly deposit, the rate and the tenure to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    withdrawalNote.textContent = "";
+    scheduleBody.replaceChildren();
+    scheduleNote.textContent = "Enter your PPF details to see the year-by-year growth.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(deposit, rate, years, r) {
+    output.textContent = inr(r.maturity);
+    box1Val.textContent = inr(r.interest);
+    box1Label.textContent = "INTEREST EARNED (TAX-FREE)";
+    box2Val.textContent = inr(r.invested);
+    box2Label.textContent = "TOTAL DEPOSITED";
+    box3Val.textContent = fmt(r.multiple) + "×";
+    box3Label.textContent = "YOUR MONEY GROWS";
+    const first = r.schedule[0];
+    const wLimit = ppfWithdrawalLimit(deposit, rate, years);
+    working.textContent = "Year 1: " + fmt(first.deposit) + " × " + fmt(rate) + " ÷ 100 = " + fmt(first.interest) + " interest; closing balance " + fmt(first.closing) + ".";
+    working2.textContent = "Maturity = " + fmt(r.invested) + " deposited + " + fmt(r.interest) + " interest = " + fmt(r.maturity) + ".";
+    workingNote.textContent = "Each year's interest is rounded to the nearest rupee, as the government does, and added to the balance.";
+    withdrawalNote.textContent = "From year 7 you could withdraw up to " + inr(wLimit) + " — 50% of the lower of the year-3 balance (" + inr(r.schedule[2].closing) + ") and the year-6 balance (" + inr(r.schedule[5].closing) + ").";
+    glanceText.textContent = inr(deposit) + " a year for " + years + " years at " + fmt(rate) + "% → " + inr(r.maturity) + " (" + inr(r.invested) + " deposited + " + inr(r.interest) + " interest).";
+    scheduleNote.textContent = "Year-by-year growth of " + inr(deposit) + " a year at " + fmt(rate) + "% over " + years + " years. Each deposit is assumed to be made by 5 April, so it earns interest for the full year.";
+    renderSchedule(r.schedule);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | PPF Calculator"
+      + "\nQuestion: " + inr(deposit) + " a year for " + years + " years at " + fmt(rate) + "%"
+      + "\nAnswer: " + inr(r.maturity) + " (deposited " + inr(r.invested) + ", interest " + inr(r.interest) + ")"
+      + "\nWorking: Year 1 interest " + fmt(first.interest) + "; maturity = " + fmt(r.invested) + " + " + fmt(r.interest) + " = " + fmt(r.maturity)
+      + "\nWithdrawal from year 7: up to " + inr(wLimit);
+  }
+
+  function paint(showEmptyError = false) {
+    ppfPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const depositRaw = inputDeposit.value;
+    const rateRaw = inputRate.value;
+    const yearsNum = Number(yearsSelect.value);
+    const depositNum = depositRaw === "" ? NaN : Number(depositRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    let depositMsg = "";
+    let rateMsg = "";
+    if (depositRaw === "") {
+      if (showEmptyError) depositMsg = "Enter the yearly deposit.";
+    } else if (!Number.isFinite(depositNum) || depositNum < 500 || depositNum > 150000) {
+      depositMsg = "Enter a deposit from ₹500 to ₹1,50,000 a year.";
+    } else if (depositNum % 50 !== 0) {
+      depositMsg = "Deposits are in multiples of ₹50 — ₹1,50,000, not ₹1,50,025.";
+    }
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the interest rate.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 15) {
+      rateMsg = "Enter a rate from 0% to 15% a year.";
+    }
+    inputDepositError.textContent = depositMsg;
+    inputRateError.textContent = rateMsg;
+    inputDeposit.setAttribute("aria-invalid", String(depositMsg !== ""));
+    inputRate.setAttribute("aria-invalid", String(rateMsg !== ""));
+
+    const valid = depositMsg === "" && rateMsg === "" && depositRaw !== "" && rateRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = ppfCompute(depositNum, rateNum, yearsNum);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(depositNum, rateNum, yearsNum, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = ppfCompute(item.deposit, item.rate, item.years);
+    if (!r) return "";
+    return inr(item.deposit) + "/year @ " + fmt(item.rate) + "% · " + item.years + " years → " + inr(r.maturity);
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputDeposit.value, inputRate.value, yearsSelect.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputDeposit.value = String(item.deposit);
+        inputRate.value = String(item.rate);
+        yearsSelect.value = String(item.years);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      deposit: Number(inputDeposit.value),
+      rate: Number(inputRate.value),
+      years: Number(yearsSelect.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputDeposit.value = button.dataset.deposit || "";
+      inputRate.value = button.dataset.rate || "";
+      yearsSelect.value = button.dataset.years || "15";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputDeposit.value = String(rec.deposit);
+    inputRate.value = String(rec.rate);
+    yearsSelect.value = String(rec.years);
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputDeposit.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    yearsSelect.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("ppf-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderPpfCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleDeposit: p.sampleDeposit, sampleRate: p.sampleRate, sampleYears: p.sampleYears };
+  const sample = ppfCompute(p.sampleDeposit, p.sampleRate, p.sampleYears);
+  const wLimit = ppfWithdrawalLimit(p.sampleDeposit, p.sampleRate, p.sampleYears);
+  const firstYear = sample.schedule[0];
+
+  const presetSummary = pr => `${inr2(pr.deposit)}/year · ${pr.years} years @ ${fmt2(pr.rate)}%`;
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = ppfCompute(st.deposit, st.rate, st.years);
+    return `${inr2(st.deposit)} a year × ${st.years} years @ ${fmt2(st.rate)}% → ${inr2(r.maturity)} (interest ${inr2(r.interest)})`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const scheduleRows = sample.schedule.map(row => `
+      <tr>
+        <th scope="row">Year ${row.year}</th>
+        <td>${inr2(row.opening)}</td>
+        <td>${inr2(row.deposit)}</td>
+        <td>${inr2(row.interest)}</td>
+        <td>${inr2(row.closing)}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free PPF calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate PPF →
+              </a>
+              <a href="#method" class="calc-link">How PPF is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.maturity)}</strong>
+                <small>Maturity on ${inr2(p.sampleDeposit)} a year for ${p.sampleYears} years at ${fmt2(p.sampleRate)}%</small>
+              </div>
+              <div>
+                <strong>${fmt2(p.sampleRate)}% a year</strong>
+                <small>Current PPF rate, Oct–Dec 2026</small>
+              </div>
+              <div>
+                <strong>15-year lock-in</strong>
+                <small>Extendable in 5-year blocks</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>A projection at today's rate, not financial advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/">RRB Age</a>
+              <a href="/emi-calculator/">EMI</a>
+              <a href="/sip-calculator/">SIP</a>
+              <a href="/bmi-calculator/">BMI</a>
+              <a href="/percentage-calculator/">Percentage</a>
+              <a href="/gst-calculator/">GST</a>
+              <a href="/ppf-calculator/" aria-current="page">PPF</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate PPF maturity</h2>
+              <span class="calc-pill" id="ppf-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="ppf-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-deposit">
+                Yearly deposit (₹)
+                <span>From ₹500 to ₹1,50,000 a year, in multiples of ₹50</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-deposit"
+                type="number"
+                value="${p.sampleDeposit}"
+                step="50"
+                inputmode="numeric"
+                aria-describedby="input-deposit-error"
+              >
+              <p class="calc-error" id="input-deposit-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-rate">
+                Interest rate (% a year)
+                <span>Current PPF rate is 7.1% — change it to test a rate rise or cut</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-rate"
+                type="number"
+                value="${p.sampleRate}"
+                step="any"
+                inputmode="decimal"
+                aria-describedby="input-rate-error"
+              >
+              <p class="calc-error" id="input-rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-years">
+                Tenure
+                <span>15 years, or longer if you extend in 5-year blocks</span>
+              </label>
+
+              <select class="select-input" id="input-years">
+                <option value="15" selected>15 years</option>
+                <option value="20">20 years (one extension)</option>
+                <option value="25">25 years (two extensions)</option>
+                <option value="30">30 years (three extensions)</option>
+              </select>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-deposit">${inr2(sample.maturity)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.interest)}</strong>
+                  <small id="box1-label">INTEREST EARNED (TAX-FREE)</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.invested)}</strong>
+                  <small id="box2-label">TOTAL DEPOSITED</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${fmt2(sample.multiple)}×</strong>
+                  <small id="box3-label">YOUR MONEY GROWS</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">${inr2(p.sampleDeposit)} a year for ${p.sampleYears} years at ${fmt2(p.sampleRate)}% → ${inr2(sample.maturity)} (${inr2(sample.invested)} deposited + ${inr2(sample.interest)} interest).</span>
+              </div>
+
+              <p class="working" id="working">
+                Year 1: ${fmt2(p.sampleDeposit)} × ${fmt2(p.sampleRate)} ÷ 100 = ${fmt2(firstYear.interest)} interest; closing balance ${fmt2(firstYear.closing)}.
+              </p>
+              <p class="working" id="working-2">Maturity = ${fmt2(sample.invested)} deposited + ${fmt2(sample.interest)} interest = ${fmt2(sample.maturity)}.</p>
+              <p class="working" id="working-note">Each year's interest is rounded to the nearest rupee, as the government does, and added to the balance.</p>
+              <p class="working" id="withdrawal-note">From year 7 you could withdraw up to ${inr2(wLimit)} — 50% of the lower of the year-3 balance (${inr2(sample.schedule[2].closing)}) and the year-6 balance (${inr2(sample.schedule[5].closing)}).</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The projection holds today's rate constant for the whole
+                tenure. The government reviews the rate every quarter,
+                so the real maturity moves if the rate moves.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="schedule">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your growth, year by year</p>
+          <h2>Year by year: how the balance grows</h2>
+          <p id="schedule-note">Year-by-year growth of ${inr2(p.sampleDeposit)} a year at ${fmt2(p.sampleRate)}% over ${p.sampleYears} years. Each deposit is assumed to be made by 5 April, so it earns interest for the full year.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="schedule-note">
+            <caption>PPF passbook — ${inr2(p.sampleDeposit)} a year at ${fmt2(p.sampleRate)}% over ${p.sampleYears} years.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Opening balance</th>
+                <th scope="col">Deposit</th>
+                <th scope="col">Interest</th>
+                <th scope="col">Closing balance</th>
+              </tr>
+            </thead>
+            <tbody id="schedule-body">
+              ${scheduleRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#schedule">Year by year</a>
+        <a href="#rates-table">PPF rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / FIFTEEN YEARS</span>
+            <h3>A lock-in with a payoff</h3>
+            <p>Fifteen years is a long time to leave money alone — and that is the point. The balance compounds for a decade and a half, and the interest in the later years is earned on a balance several times the yearly deposit. Extending in 5-year blocks adds even more.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE 5 APRIL RULE</span>
+            <h3>Deposit early, earn the full year</h3>
+            <p>PPF interest is worked out on the minimum balance between the 5th and the last day of each month. A deposit made by 5 April earns interest for the whole year; a deposit made on 10 April misses April's interest on that money — and that gap compounds for 15 years.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / TAX-FREE END TO END</span>
+            <h3>EEE status</h3>
+            <p>PPF is one of the few investments that is tax-free at every stage: the deposit is deductible under Section 80C (old regime), the interest each year is exempt, and the maturity amount is fully tax-free. The interest figure on this page is money you keep in full.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From one deposit to a maturity value</h2>
+          <p>
+            Enter the yearly deposit first — the rate and tenure are
+            already filled in with the current figures — then read the
+            maturity, the breakup and the year-by-year table.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How PPF maturity is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The PPF formula</small>
+          M = P × [((1 + r)^n − 1) ÷ r] × (1 + r) · Interest each year = (opening balance + deposit) × rate ÷ 100, rounded to the rupee · Maturity = total deposited + total interest
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. First year: deposit earns a full year
+            <strong>${fmt2(p.sampleDeposit)} × ${fmt2(p.sampleRate)} ÷ 100 = ${fmt2(firstYear.interest)}</strong>
+            <span>Deposit by 5 April and the whole deposit earns interest for the year. Closing balance: ${fmt2(firstYear.closing)}.</span>
+          </div>
+
+          <div class="math-step">
+            2. Fifteen years of compounding
+            <strong>${fmt2(sample.invested)} deposited · ${fmt2(sample.interest)} interest</strong>
+            <span>Each year's interest is added to the balance, so the next year's interest is earned on a bigger sum.</span>
+          </div>
+
+          <div class="math-step">
+            3. Maturity after 15 years
+            <strong>${fmt2(sample.invested)} + ${fmt2(sample.interest)} = ${fmt2(sample.maturity)}</strong>
+            <span>Withdraw the full amount tax-free, or extend in 5-year blocks.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Four deposits, four maturities</h2>
+          <p>
+            One example for each everyday case. Select any example to
+            load it into the calculator and check the working for
+            yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.rate)}% · ${story.years} YEARS</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-deposit="${story.deposit}" data-rate="${story.rate}" data-years="${story.years}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>PPF rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>PPF limits, tenure, withdrawal and tax rules.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get PPF wrong</h2>
+          <p>
+            The formula is short, but four readings trip people up.
+            Each one can cost thousands over fifteen years.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / DEPOSITING LATE</span>
+            <h3>Depositing after the 5th</h3>
+            <p>Interest is calculated on the minimum balance between the 5th and the last day of the month. A deposit on 10 April misses April's interest on that money — and that gap compounds for 15 years.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / COUNTING 16 DEPOSITS</span>
+            <h3>Assuming 16 deposits in 15 years</h3>
+            <p>Maturity is counted from the end of the financial year you open the account, so you may make a 16th deposit in the opening year. The standard 15-year figure assumes 15 deposits — the FAQ explains the difference.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / FREEZING THE RATE</span>
+            <h3>Treating 7.1% as fixed for 15 years</h3>
+            <p>The rate is reviewed every quarter and can change. This page projects at today's rate held constant; the real maturity moves if the rate moves. Try 8% or 6% in the rate box to see the difference.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / OVER THE CAP</span>
+            <h3>Depositing more than ₹1,50,000 a year</h3>
+            <p>Anything above the cap earns no interest and gets no Section 80C deduction. Put the extra into another instrument instead of letting it sit idle in the PPF account.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>PPF calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the standard PPF formula: one deposit a year,
+            made by 5 April so it earns interest for the full year;
+            each year's interest is (opening balance + deposit) × rate
+            ÷ 100, rounded to the nearest rupee, and added to the
+            balance; maturity = total deposited + total interest. The
+            closed form is M = P × [((1 + r)^n − 1) ÷ r] × (1 + r).
+            The model assumes 15 yearly deposits for a 15-year tenure —
+            the same convention as the standard PPF calculators. Because
+            maturity is counted from the end of the financial year you
+            open the account, you may be able to make a 16th deposit in
+            the opening year; at the maximum deposit that would lift the
+            15-year maturity from ₹40,68,208 to ₹45,17,701.
+          </p>
+          <p>
+            Rate checked 11 November 2026: 7.1% a year for 1 October to
+            31 December 2026, per the Ministry of Finance (Department
+            of Economic Affairs) Office Memorandum F.No.1/4/2019-NS,
+            dated 30 September 2026, keeping small savings rates
+            unchanged for the third quarter of FY 2026-27. The deposit
+            limits, tenure, loan and withdrawal rules are from the
+            Public Provident Fund Scheme, 2019 (G.S.R. 915(E), 12
+            December 2019). Cross-checked against the ranking PPF
+            calculators: ₹1,50,000 a year for 15 years at 7.1% gives
+            ₹40,68,208 on
+            <a href="https://calcsolver.in/tools/ppf-calculator" rel="nofollow noopener" target="_blank">calcsolver.in</a>,
+            and ₹1,00,000 a year for 15 years gives ₹27,12,139 on
+            <a href="https://www.onlycalculators.com/finance/indian-finance/ppf-calculator/" rel="nofollow noopener" target="_blank">onlycalculators.com</a>.
+            Spreading the same yearly deposit across monthly
+            instalments earns less, because later instalments miss
+            months of interest — this calculator models the yearly lump
+            sum made by 5 April, and says so on the page.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function fdClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  function fdSchedule(principal, rate, years, months, compounding, payout, senior) {
+    const P = Number(principal);
+    const r = Number(rate) + (senior === true ? 0.5 : 0);
+    const y = Math.round(Number(years));
+    const m = Math.round(Number(months));
+    const n = Number(compounding);
+    if (!Number.isFinite(P) || !Number.isFinite(r) || !Number.isFinite(y)
+      || !Number.isFinite(m) || !Number.isFinite(n)) return null;
+    if (P < 1000 || P > 10000000) return null;
+    if (Number(rate) < 0 || Number(rate) > 12) return null;
+    if (r > 12.5) return null;
+    if (y < 1 || y > 10 || String(y) !== String(Math.trunc(Number(years)))) return null;
+    if (m < 0 || m > 11 || String(m) !== String(Math.trunc(Number(months)))) return null;
+    if (n !== 1 && n !== 2 && n !== 4 && n !== 12) return null;
+    if (payout !== "cumulative" && payout !== "non-cumulative") return null;
+    const rows = [];
+    if (payout === "cumulative") {
+      for (let year = 1; year <= y; year++) {
+        const opening = roundRupee(P * Math.pow(1 + r / (100 * n), n * (year - 1)));
+        const closing = roundRupee(P * Math.pow(1 + r / (100 * n), n * year));
+        rows.push({ label: "Year " + year, opening, interest: closing - opening, closing });
+      }
+      if (m > 0) {
+        const t = y + m / 12;
+        const opening = roundRupee(P * Math.pow(1 + r / (100 * n), n * y));
+        const closing = roundRupee(P * Math.pow(1 + r / (100 * n), n * t));
+        rows.push({ label: "Final " + m + " months", opening, interest: closing - opening, closing });
+      }
+    } else {
+      const yearly = roundRupee(P * r / 100);
+      for (let year = 1; year <= y; year++) {
+        rows.push({ label: "Year " + year, opening: P, interest: yearly, closing: P });
+      }
+      if (m > 0) {
+        rows.push({ label: "Final " + m + " months", opening: P, interest: roundRupee(P * r / 100 * m / 12), closing: P });
+      }
+    }
+    return rows;
+  }
+
+  function fdCompute(principal, rate, years, months, compounding, payout, senior) {
+    const rows = fdSchedule(principal, rate, years, months, compounding, payout, senior);
+    if (!rows) return null;
+    const P = Number(principal);
+    const eff = Number(rate) + (senior === true ? 0.5 : 0);
+    const t = Math.round(Number(years)) + Math.round(Number(months)) / 12;
+    const interest = rows.reduce((sum, row) => sum + row.interest, 0);
+    const maturity = P + interest;
+    const effectiveYield = payout === "cumulative" && P > 0 && t > 0
+      ? Math.round((Math.pow(maturity / P, 1 / t) - 1) * 100 * 100) / 100
+      : Math.round(eff * 100) / 100;
+    const maxYearInterest = Math.max.apply(null, rows.map(row => row.interest));
+    const tdsThreshold = senior === true ? 100000 : 50000;
+    return {
+      principal: P,
+      rate: Number(rate),
+      effectiveRate: eff,
+      years: Math.round(Number(years)),
+      months: Math.round(Number(months)),
+      compounding: Number(compounding),
+      payout,
+      senior: senior === true,
+      tenureYears: t,
+      invested: P,
+      interest,
+      maturity,
+      effectiveYield,
+      maxYearInterest,
+      tdsThreshold,
+      tdsApplies: maxYearInterest > tdsThreshold,
+      schedule: rows
+    };
+  }
+
+  const presetSelect = $("preset");
+  const fdPill = $("fd-pill");
+  const inputPrincipal = $("input-principal");
+  const inputPrincipalError = $("input-principal-error");
+  const inputRate = $("input-rate");
+  const inputRateError = $("input-rate-error");
+  const yearsSelect = $("input-years");
+  const monthsSelect = $("input-months");
+  const compoundingSelect = $("input-compounding");
+  const payoutSelect = $("input-payout");
+  const seniorCheck = $("input-senior");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const tdsNote = $("tds-note");
+  const scheduleBody = $("schedule-body");
+  const scheduleNote = $("schedule-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+  const compoundingLabel = n => ({ 1: "annually", 2: "half-yearly", 4: "quarterly", 12: "monthly" })[n] || "quarterly";
+  const tenureText = (years, months) => {
+    const y = years === 1 ? "1 year" : years + " years";
+    if (!months) return y;
+    const m = months === 1 ? "1 month" : months + " months";
+    return y + " " + m;
+  };
+
+  function renderSchedule(rows) {
+    scheduleBody.replaceChildren();
+    rows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row.label;
+      tr.appendChild(th);
+      [row.opening, row.interest, row.closing].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      scheduleBody.appendChild(tr);
+    });
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your deposit, the rate and the tenure to see the maturity value with the working.";
+    working.textContent = "Enter your deposit, the rate and the tenure to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    tdsNote.textContent = "";
+    scheduleBody.replaceChildren();
+    scheduleNote.textContent = "Enter your FD details to see the year-by-year growth.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(principal, rate, years, months, compounding, payout, senior, r) {
+    output.textContent = inr(r.maturity);
+    box1Val.textContent = inr(r.interest);
+    box1Label.textContent = "INTEREST EARNED";
+    box2Val.textContent = inr(r.invested);
+    box2Label.textContent = "YOUR DEPOSIT";
+    box3Val.textContent = fmt(r.effectiveYield) + "%";
+    box3Label.textContent = "EFFECTIVE RETURN / YEAR";
+    const first = r.schedule[0];
+    const rateText = senior
+      ? fmt(rate) + "% + 0.5% senior bonus = " + fmt(r.effectiveRate) + "%"
+      : fmt(rate) + "%";
+    if (payout === "cumulative") {
+      working.textContent = "Year 1: opening " + fmt(first.opening) + ", interest " + fmt(first.interest) + ", closing " + fmt(first.closing) + ".";
+      workingNote.textContent = "Interest compounds " + compoundingLabel(compounding) + ": each period's interest is added to the balance and earns interest itself. Only the final maturity is rounded to the nearest rupee."
+        + (senior ? " Senior citizen bonus applied: the quoted " + fmt(rate) + "% becomes " + fmt(r.effectiveRate) + "%." : "");
+    } else {
+      working.textContent = "Each year pays " + fmt(first.interest) + " of interest; the deposit stays " + fmt(first.opening) + ".";
+      workingNote.textContent = "Non-cumulative: the interest is paid out, so nothing compounds. Maturity = deposit + total interest paid out."
+        + (senior ? " Senior citizen bonus applied: the quoted " + fmt(rate) + "% becomes " + fmt(r.effectiveRate) + "%." : "");
+    }
+    working2.textContent = "Maturity = " + fmt(r.invested) + " deposited + " + fmt(r.interest) + " interest = " + fmt(r.maturity) + ".";
+    tdsNote.textContent = r.tdsApplies
+      ? "A year's interest reaches " + inr(r.maxYearInterest) + ", above the " + inr(r.tdsThreshold) + " TDS threshold — the bank will deduct 10% TDS on the interest it pays that year. (TDS is checked on all your deposits at the bank together, not just this one.)"
+      : "No TDS on this deposit — no single year's interest crosses the " + inr(r.tdsThreshold) + " threshold. (TDS is checked on all your deposits at the bank together, not just this one.)";
+    glanceText.textContent = inr(principal) + " for " + tenureText(years, months) + " at " + rateText + " compounded " + compoundingLabel(compounding) + " → " + inr(r.maturity) + " (" + inr(r.invested) + " deposited + " + inr(r.interest) + " interest; " + fmt(r.effectiveYield) + "% a year).";
+    scheduleNote.textContent = "Year-by-year growth of " + inr(principal) + " at " + rateText + " compounded " + compoundingLabel(compounding) + " over " + tenureText(years, months) + ".";
+    renderSchedule(r.schedule);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | FD Calculator"
+      + "\nQuestion: " + inr(principal) + " for " + tenureText(years, months) + " at " + rateText + " compounded " + compoundingLabel(compounding) + (payout === "cumulative" ? "" : " (interest paid out)")
+      + "\nAnswer: " + inr(r.maturity) + " (deposited " + inr(r.invested) + ", interest " + inr(r.interest) + ", effective return " + fmt(r.effectiveYield) + "% a year)"
+      + "\nWorking: Year 1 interest " + fmt(first.interest) + "; maturity = " + fmt(r.invested) + " + " + fmt(r.interest) + " = " + fmt(r.maturity)
+      + "\nTDS: " + (r.tdsApplies ? "applies (a year's interest crosses " + inr(r.tdsThreshold) + ")" : "does not apply");
+  }
+
+  function paint(showEmptyError = false) {
+    fdPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const principalRaw = inputPrincipal.value;
+    const rateRaw = inputRate.value;
+    const principalNum = principalRaw === "" ? NaN : Number(principalRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    let principalMsg = "";
+    let rateMsg = "";
+    if (principalRaw === "") {
+      if (showEmptyError) principalMsg = "Enter the deposit amount.";
+    } else if (!Number.isFinite(principalNum) || principalNum < 1000 || principalNum > 10000000) {
+      principalMsg = "Enter a deposit from ₹1,000 to ₹1,00,00,000.";
+    }
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the interest rate.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 12) {
+      rateMsg = "Enter a rate from 0% to 12% a year.";
+    }
+    inputPrincipalError.textContent = principalMsg;
+    inputRateError.textContent = rateMsg;
+    inputPrincipal.setAttribute("aria-invalid", String(principalMsg !== ""));
+    inputRate.setAttribute("aria-invalid", String(rateMsg !== ""));
+
+    const valid = principalMsg === "" && rateMsg === "" && principalRaw !== "" && rateRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = fdCompute(principalNum, rateNum, Number(yearsSelect.value), Number(monthsSelect.value),
+      Number(compoundingSelect.value), payoutSelect.value, seniorCheck.checked);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(principalNum, rateNum, Number(yearsSelect.value), Number(monthsSelect.value),
+      Number(compoundingSelect.value), payoutSelect.value, seniorCheck.checked, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = fdCompute(item.principal, item.rate, item.years, item.months,
+      item.compounding, item.payout, item.senior);
+    if (!r) return "";
+    return inr(item.principal) + " · " + tenureText(item.years, item.months) + " @ " + fmt(r.effectiveRate) + "% → " + inr(r.maturity);
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputPrincipal.value, inputRate.value, yearsSelect.value,
+      monthsSelect.value, compoundingSelect.value, payoutSelect.value, seniorCheck.checked].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputPrincipal.value = String(item.principal);
+        inputRate.value = String(item.rate);
+        yearsSelect.value = String(item.years);
+        monthsSelect.value = String(item.months);
+        compoundingSelect.value = String(item.compounding);
+        payoutSelect.value = item.payout;
+        seniorCheck.checked = item.senior;
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      principal: Number(inputPrincipal.value),
+      rate: Number(inputRate.value),
+      years: Number(yearsSelect.value),
+      months: Number(monthsSelect.value),
+      compounding: Number(compoundingSelect.value),
+      payout: payoutSelect.value,
+      senior: seniorCheck.checked
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputPrincipal.value = button.dataset.principal || "";
+      inputRate.value = button.dataset.rate || "";
+      yearsSelect.value = button.dataset.years || "5";
+      monthsSelect.value = button.dataset.months || "0";
+      compoundingSelect.value = button.dataset.compounding || "4";
+      payoutSelect.value = button.dataset.payout || "cumulative";
+      seniorCheck.checked = button.dataset.senior === "true";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputPrincipal.value = String(rec.principal);
+    inputRate.value = String(rec.rate);
+    yearsSelect.value = String(rec.years);
+    monthsSelect.value = String(rec.months);
+    compoundingSelect.value = String(rec.compounding);
+    payoutSelect.value = rec.payout;
+    seniorCheck.checked = rec.senior === true;
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputPrincipal.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    yearsSelect.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    monthsSelect.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    compoundingSelect.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    payoutSelect.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    seniorCheck.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("fd-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderFdCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, samplePrincipal: p.samplePrincipal, sampleRate: p.sampleRate, sampleYears: p.sampleYears, sampleMonths: p.sampleMonths, sampleCompounding: p.sampleCompounding, samplePayout: p.samplePayout, sampleSenior: p.sampleSenior };
+  const sample = fdCompute(p.samplePrincipal, p.sampleRate, p.sampleYears, p.sampleMonths, p.sampleCompounding, p.samplePayout, p.sampleSenior);
+  const firstYear = sample.schedule[0];
+  const lastYear = sample.schedule[sample.schedule.length - 1];
+  const compoundingLabel = n => ({ 1: "annually", 2: "half-yearly", 4: "quarterly", 12: "monthly" })[n] || "quarterly";
+  const tenureText = (years, months) => {
+    const y = years === 1 ? "1 year" : years + " years";
+    if (!months) return y;
+    const m = months === 1 ? "1 month" : months + " months";
+    return y + " " + m;
+  };
+  const tdsText = r => r.tdsApplies
+    ? "A year's interest reaches " + inr2(r.maxYearInterest) + ", above the " + inr2(r.tdsThreshold) + " TDS threshold — the bank will deduct 10% TDS on the interest it pays that year. (TDS is checked on all your deposits at the bank together, not just this one.)"
+    : "No TDS on this deposit — no single year's interest crosses the " + inr2(r.tdsThreshold) + " threshold. (TDS is checked on all your deposits at the bank together, not just this one.)";
+
+  const presetSummary = pr => `${inr2(pr.principal)} · ${pr.years} years @ ${fmt2(pr.rate)}%`;
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = fdCompute(st.principal, st.rate, st.years, st.months, st.compounding, st.payout, st.senior);
+    return `${inr2(st.principal)} × ${st.years} years @ ${fmt2(st.rate)}% → ${inr2(r.maturity)} (interest ${inr2(r.interest)})`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const scheduleRows = sample.schedule.map(row => `
+      <tr>
+        <th scope="row">${e(row.label)}</th>
+        <td>${inr2(row.opening)}</td>
+        <td>${inr2(row.interest)}</td>
+        <td>${inr2(row.closing)}</td>
+      </tr>`).join("");
+
+  const yearsOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(y => `
+                <option value="${y}"${y === p.sampleYears ? " selected" : ""}>${y} year${y === 1 ? "" : "s"}</option>`).join("");
+  const monthsOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(m => `
+                <option value="${m}"${m === p.sampleMonths ? " selected" : ""}>${m} month${m === 1 ? "" : "s"}</option>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free FD calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate FD →
+              </a>
+              <a href="#method" class="calc-link">How FD maturity is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.maturity)}</strong>
+                <small>Maturity on ${inr2(p.samplePrincipal)} for ${p.sampleYears} years at ${fmt2(p.sampleRate)}%</small>
+              </div>
+              <div>
+                <strong>${fmt2(sample.effectiveYield)}% a year</strong>
+                <small>Effective return on the sample deposit</small>
+              </div>
+              <div>
+                <strong>Quarterly compounding</strong>
+                <small>The Indian bank standard</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>A projection at the rate you enter, not financial advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/">RRB Age</a>
+              <a href="/emi-calculator/">EMI</a>
+              <a href="/sip-calculator/">SIP</a>
+              <a href="/bmi-calculator/">BMI</a>
+              <a href="/percentage-calculator/">Percentage</a>
+              <a href="/gst-calculator/">GST</a>
+              <a href="/ppf-calculator/">PPF</a>
+              <a href="/fd-calculator/" aria-current="page">FD</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate FD maturity</h2>
+              <span class="calc-pill" id="fd-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="fd-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-principal">
+                Deposit amount (₹)
+                <span>From ₹1,000 to ₹1,00,00,000, in one lump sum</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-principal"
+                type="number"
+                value="${p.samplePrincipal}"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-principal-error"
+              >
+              <p class="calc-error" id="input-principal-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-rate">
+                Interest rate (% a year)
+                <span>The rate your bank quotes for this tenure — large banks pay roughly 6–7% on 1–5 year deposits</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-rate"
+                type="number"
+                value="${p.sampleRate}"
+                step="any"
+                inputmode="decimal"
+                aria-describedby="input-rate-error"
+              >
+              <p class="calc-error" id="input-rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-years">
+                Tenure — years
+                <span>1 to 10 years</span>
+              </label>
+
+              <select class="select-input" id="input-years">${yearsOptions}
+              </select>
+
+              <label class="field-label" for="input-months">
+                Tenure — extra months
+                <span>0 to 11 extra months on top of the years</span>
+              </label>
+
+              <select class="select-input" id="input-months">${monthsOptions}
+              </select>
+
+              <label class="field-label" for="input-compounding">
+                Compounding frequency
+                <span>Quarterly is the Indian bank standard</span>
+              </label>
+
+              <select class="select-input" id="input-compounding">
+                <option value="4" selected>Quarterly (every 3 months)</option>
+                <option value="12">Monthly</option>
+                <option value="2">Half-yearly (every 6 months)</option>
+                <option value="1">Annually</option>
+              </select>
+
+              <label class="field-label" for="input-payout">
+                Payout type
+                <span>Cumulative reinvests the interest; non-cumulative pays it out</span>
+              </label>
+
+              <select class="select-input" id="input-payout">
+                <option value="cumulative" selected>Cumulative — interest reinvested</option>
+                <option value="non-cumulative">Non-cumulative — interest paid out</option>
+              </select>
+
+              <label class="field-label" for="input-senior" style="display:flex;align-items:center;gap:10px">
+                <input type="checkbox" id="input-senior" style="width:auto">
+                Senior citizen — add the usual 0.50% bonus rate
+              </label>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-principal">${inr2(sample.maturity)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.interest)}</strong>
+                  <small id="box1-label">INTEREST EARNED</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.invested)}</strong>
+                  <small id="box2-label">YOUR DEPOSIT</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${fmt2(sample.effectiveYield)}%</strong>
+                  <small id="box3-label">EFFECTIVE RETURN / YEAR</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">${inr2(p.samplePrincipal)} for ${tenureText(p.sampleYears, p.sampleMonths)} at ${fmt2(p.sampleRate)}% compounded ${compoundingLabel(p.sampleCompounding)} → ${inr2(sample.maturity)} (${inr2(sample.invested)} deposited + ${inr2(sample.interest)} interest; ${fmt2(sample.effectiveYield)}% a year).</span>
+              </div>
+
+              <p class="working" id="working">
+                Year 1: opening ${fmt2(firstYear.opening)}, interest ${fmt2(firstYear.interest)}, closing ${fmt2(firstYear.closing)}.
+              </p>
+              <p class="working" id="working-2">Maturity = ${fmt2(sample.invested)} deposited + ${fmt2(sample.interest)} interest = ${fmt2(sample.maturity)}.</p>
+              <p class="working" id="working-note">Interest compounds quarterly: each period's interest is added to the balance and earns interest itself. Only the final maturity is rounded to the nearest rupee.</p>
+              <p class="working" id="tds-note">${e(tdsText(sample))}</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The projection holds the rate you enter constant for the
+                whole tenure. Banks change FD rates often, so check the
+                current rate card before you deposit.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="schedule">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your growth, year by year</p>
+          <h2>Year by year: how the deposit grows</h2>
+          <p id="schedule-note">Year-by-year growth of ${inr2(p.samplePrincipal)} at ${fmt2(p.sampleRate)}% compounded ${compoundingLabel(p.sampleCompounding)} over ${tenureText(p.sampleYears, p.sampleMonths)}.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="schedule-note">
+            <caption>FD growth — ${inr2(p.samplePrincipal)} at ${fmt2(p.sampleRate)}% compounded ${compoundingLabel(p.sampleCompounding)} over ${tenureText(p.sampleYears, p.sampleMonths)}.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Opening balance</th>
+                <th scope="col">Interest</th>
+                <th scope="col">Closing balance</th>
+              </tr>
+            </thead>
+            <tbody id="schedule-body">
+              ${scheduleRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#schedule">Year by year</a>
+        <a href="#rates-table">FD rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / GUARANTEED RETURN</span>
+            <h3>A fixed rate, locked in</h3>
+            <p>The rate is fixed when you book the deposit, so the maturity is certain whatever markets do. The trade-off is that the rate cannot rise with inflation either — so match the tenure to when you need the money.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / COMPOUNDING</span>
+            <h3>Quarterly, the Indian standard</h3>
+            <p>Most Indian banks add the interest to the balance every quarter, so each quarter earns interest on interest. Monthly compounding pays a little more; annual compounding pays a little less. This calculator lets you pick the frequency your bank uses.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / INSURED UP TO ₹5 LAKH</span>
+            <h3>DICGC cover</h3>
+            <p>Bank deposits are insured up to ₹5 lakh per depositor per bank, principal and interest together, by DICGC, an RBI subsidiary. Split deposits above ₹5 lakh across banks to keep the whole amount insured.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From one deposit to a maturity value</h2>
+          <p>
+            Enter the deposit first — the rate and tenure are already
+            filled in with the usual figures — then read the maturity,
+            the breakup and the year-by-year table.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How FD maturity is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The FD formula</small>
+          M = P × (1 + r ÷ (100 × n))^(n × t) · Effective yearly return = (M ÷ P)^(1 ÷ t) − 1 · Non-cumulative: interest = P × r ÷ 100 × t, paid out
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. First year: interest on the deposit
+            <strong>${fmt2(p.samplePrincipal)} × ${fmt2(p.sampleRate)} ÷ 100, compounded quarterly = ${fmt2(firstYear.interest)}</strong>
+            <span>Four quarters of compounding in the first year. Closing balance: ${fmt2(firstYear.closing)}.</span>
+          </div>
+
+          <div class="math-step">
+            2. Five years of compounding
+            <strong>${fmt2(sample.invested)} deposited · ${fmt2(sample.interest)} interest</strong>
+            <span>Each quarter's interest is added to the balance, so the next quarter's interest is earned on a bigger sum.</span>
+          </div>
+
+          <div class="math-step">
+            3. Maturity after 5 years
+            <strong>${fmt2(sample.invested)} + ${fmt2(sample.interest)} = ${fmt2(sample.maturity)}</strong>
+            <span>Effective yearly return ${fmt2(sample.effectiveYield)}% — higher than the quoted ${fmt2(p.sampleRate)}%.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Four deposits, four maturities</h2>
+          <p>
+            One example for each everyday case. Select any example to
+            load it into the calculator and check the working for
+            yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.rate)}% · ${story.years} YEARS</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-principal="${story.principal}" data-rate="${story.rate}" data-years="${story.years}" data-months="${story.months}" data-compounding="${story.compounding}" data-payout="${e(story.payout)}" data-senior="${story.senior}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>FD rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>FD compounding, tenure, insurance, TDS and tax rules.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get FD wrong</h2>
+          <p>
+            The formula is short, but four readings trip people up.
+            Each one can cost thousands over five years.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / SIMPLE INTEREST</span>
+            <h3>Multiplying the rate by the years</h3>
+            <p>₹1,00,000 at 7% for 5 years is not ₹35,000 of interest — quarterly compounding makes it ₹41,478. Simple interest understates every FD by thousands.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / FORGETTING TDS</span>
+            <h3>Counting the full interest as yours</h3>
+            <p>Once a year's interest crosses ₹50,000 (₹1,00,000 for seniors), the bank deducts 10% TDS. On a ₹10,00,000 deposit the TDS is real money — this page flags it for your figures.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / OVER THE ₹5 LAKH COVER</span>
+            <h3>One bank, one ₹5 lakh limit</h3>
+            <p>DICGC insures ₹5 lakh per depositor per bank, principal and interest together. A ₹10,00,000 FD at one bank leaves more than half uninsured — split large deposits across banks.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / COMPARING THE WRONG RATES</span>
+            <h3>Nominal rates hide the compounding</h3>
+            <p>7% compounded monthly beats 7% compounded annually by ₹1,508 on ₹1,00,000 over 5 years. Compare the effective yearly return, not the quoted rate — this calculator shows both.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>FD calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the standard FD formula: M = P × (1 + r ÷
+            (100 × n))^(n × t) for cumulative deposits, with n = 4 for
+            quarterly compounding — the Indian bank standard — and
+            simple interest for non-cumulative deposits. Only the final
+            maturity is rounded to the nearest rupee; each schedule
+            row's interest is its closing balance minus its opening
+            balance, so the rows add up exactly to the total interest.
+            The senior-citizen toggle adds 0.50% to the quoted rate,
+            the common bank convention — confirm your bank's actual
+            bonus before you deposit.
+          </p>
+          <p>
+            Rate checked 11 November 2026: the rate is user-entered;
+            the 7% default matches the rate large banks paid on 5-year
+            deposits as of September 2026, when the RBI repo rate was
+            5.25%. Cross-checked against the ranking FD calculators:
+            ₹1,00,000 at 7% for 5 years compounded quarterly gives
+            ₹1,41,478 on
+            <a href="https://calcsolver.in/tools/fd-calculator" rel="nofollow noopener" target="_blank">calcsolver.in</a>,
+            and ₹5,00,000 at 7.25% for 5 years gives ₹7,16,130 on
+            <a href="https://www.aalekh.ai/calculators/fd" rel="nofollow noopener" target="_blank">aalekh.ai</a>.
+            The TDS thresholds (₹50,000; ₹1,00,000 for senior citizens,
+            from 1 April 2025) are from Section 194A of the Income-tax
+            Act as amended by the Finance Act 2025. The ₹5 lakh DICGC
+            cover is from DICGC's "A Guide to Deposit Insurance"
+            (dicgc.org.in). TDS is checked on all your deposits at one
+            bank together in a financial year, not on a single FD alone
+            — so a deposit that shows no TDS here can still attract TDS
+            when combined with your other deposits at the same bank.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
           </p>
         </div>
 
