@@ -635,6 +635,215 @@ export const pages = [
       ["Does this check my education, qualification or medical standard?", "No. This tool checks age only. You also need the qualification each CEN asks for — a degree for NTPC Graduate, JE and Section Controller, 12th pass for NTPC Undergraduate, 10th or ITI for Group D, ALP and Technician Grade III — and the medical standard of the post. Only the CEN on rrb.indianrailways.gov.in decides your eligibility."]
     ]
   },
+
+  {
+    key: "emi",
+    kind: "emi",
+    slug: "emi-calculator",
+    title: "EMI Calculator",
+    meta: "Work out your monthly EMI for a home, personal or car loan in India — loan amount, interest rate and tenure in, EMI, total interest and total payment out. Reducing-balance formula, with a year-by-year repayment schedule.",
+    lead: "Enter your loan amount, annual interest rate and tenure, and see your monthly EMI, the total interest you will pay and the full repayment — with a year-by-year schedule that shows how each EMI splits between interest and principal.",
+    presets: [
+      { id: "home", label: "Home loan", amount: 5000000, rate: 8.75, years: 20, months: 0 },
+      { id: "personal", label: "Personal loan", amount: 500000, rate: 13, years: 5, months: 0 },
+      { id: "car", label: "Car loan", amount: 1000000, rate: 9.5, years: 7, months: 0 }
+    ],
+    defaultPreset: "home",
+    sampleAmount: 5000000,
+    sampleRate: 8.75,
+    sampleYears: 20,
+    sampleMonths: 0,
+    notice: "Reducing-balance method — the method RBI-regulated lenders use. RBI repo rate 5.50% (October 2026). The rate ranges below are indicative, from lenders' published pages, November 2026 — your sanction letter decides.",
+    overviewTitle: "What does an EMI calculator do?",
+    overview: "It turns three inputs — the loan amount, the annual interest rate and the tenure — into the single number that decides whether a loan is affordable: the equated monthly instalment. Every EMI pays interest first and principal second, so the split changes every month: early EMIs are mostly interest, late EMIs mostly principal. This calculator shows the EMI, the total interest and the full repayment, plus a year-by-year schedule of that split, so you can see the true cost of the loan before you sign.",
+    inputNote: "Use the figures from your sanction letter: the loan amount after any down payment, the annual rate as printed (not a monthly rate), and the full tenure in years and months. The calculator assumes the rate stays fixed for the whole tenure.",
+    modelNote: "The formula is the standard amortising-loan formula on a reducing balance: EMI = P × r × (1 + r)^n ÷ ((1 + r)^n − 1), where P is the loan amount, r is the monthly rate (annual rate ÷ 12 ÷ 100) and n is the tenure in months. Interest each month is charged on the balance still owed, not on the original amount — so the balance falls faster as the principal share of each EMI grows. The EMI stays fixed while the rate stays fixed; on a floating-rate loan the EMI holds only until the next rate reset.",
+    steps: [
+      ["Pick a loan type, or enter your own figures", "Home, personal or car loan fills in typical starting figures — a ₹50 lakh home loan at 8.75% over 20 years, a ₹5 lakh personal loan at 13% over 5 years, or a ₹10 lakh car loan at 9.5% over 7 years. Change any figure to match your sanction letter."],
+      ["Enter the loan amount", "The amount you actually borrow, after the down payment. The calculator accepts ₹10,000 to ₹10 crore."],
+      ["Enter the annual rate and the tenure", "The annual rate as printed on the sanction letter, and the tenure in years plus any extra months — up to 30 years (360 months) in total."],
+      ["Read the EMI, the totals and the schedule", "Your monthly EMI, the total interest and the full repayment, the interest share of the loan, and a year-by-year schedule showing how much of each year's payments went to interest and how much to principal."]
+    ],
+    stories: [
+      {
+        amount: 5000000, rate: 8.75, years: 20, months: 0, preset: "home",
+        title: "A ₹50 lakh home loan over 20 years",
+        body: "Borrow ₹50,00,000 at 8.75% a year for 20 years and the EMI is ₹44,186 a month. Over the full tenure you repay ₹1,06,04,529 — ₹56,04,529 of it interest, more than the amount borrowed. In the first year you pay ₹5,30,226, of which ₹4,33,689 is interest and only ₹96,537 is principal; by the final year the split has reversed."
+      },
+      {
+        amount: 500000, rate: 13, years: 5, months: 0, preset: "personal",
+        title: "A ₹5 lakh personal loan over 5 years",
+        body: "Borrow ₹5,00,000 at 13% a year for 5 years and the EMI is ₹11,377 a month. You repay ₹6,82,592 in total — ₹1,82,592 of interest. In the first year ₹60,581 of your payments is interest and ₹75,937 is principal, leaving a balance of ₹4,24,063."
+      },
+      {
+        amount: 1000000, rate: 9.5, years: 7, months: 0, preset: "car",
+        title: "A ₹10 lakh car loan over 7 years",
+        body: "Borrow ₹10,00,000 at 9.5% a year for 7 years and the EMI is ₹16,344 a month. You repay ₹13,72,894 in total — ₹3,72,894 of interest. In the first year ₹90,478 of your payments is interest and ₹1,05,649 is principal, leaving a balance of ₹8,94,351."
+      }
+    ],
+    compareAmount: 5000000,
+    compareRate: 8.75,
+    compareYears: [15, 20, 25],
+    exampleTitle: "One loan, three tenures",
+    exampleNote: "The same ₹50,00,000 home loan at 8.75% a year. A shorter tenure means a higher EMI — but the total interest falls sharply, because the balance shrinks faster.",
+    exampleConclusion: "Five extra years cut the EMI by ₹5,786 a month but add ₹16,09,491 of interest. Ten extra years cut the EMI by ₹8,865 a month but add ₹33,37,117 of interest. The cheapest EMI is rarely the cheapest loan — compare the total interest, not the monthly figure alone.",
+    rates: [
+      { type: "Home loan", range: "7.40% – 9.25% p.a.", tenure: "Up to 30 years", amount: "Up to ₹10 crore", note: "Repo-linked (EBLR) at most banks since October 2019; the RBI repo rate is 5.50% after the October 2026 hike." },
+      { type: "Personal loan", range: "10.50% – 24% p.a.", tenure: "1 – 7 years", amount: "₹10,000 – ₹50 lakh", note: "Unsecured, so the rate depends heavily on your credit score and employer; the lowest published starting rates are about 10.49%." },
+      { type: "Car loan", range: "7.85% – 11.55% p.a.", tenure: "1 – 7 years", amount: "Up to ₹1.5 crore", note: "PSU banks start near 7.85% for new cars after the October 2026 hike; manufacturer tie-ups can add discounts." }
+    ],
+    faq: [
+      ["What is the EMI formula?", "EMI = P × r × (1 + r)^n ÷ ((1 + r)^n − 1). P is the loan amount, r is the monthly rate — the annual rate divided by 12 and by 100 — and n is the tenure in months. For a ₹50,00,000 loan at 8.75% a year over 20 years, r is 0.0072917, n is 240, (1 + r)^n is 5.7182, and the EMI works out to ₹44,186 a month. The formula assumes the rate stays fixed for the whole tenure."],
+      ["Why is my bank's EMI a few rupees different from this calculator?", "Banks round the EMI and accrue interest daily rather than monthly, and some start the schedule on the disbursal date rather than the first of the month. A difference of ₹50–200 a month on a large home loan is normal rounding, not an error in either figure. If the difference is larger, check that you entered the same amount, rate and tenure as the sanction letter."],
+      ["Does the EMI include the processing fee, GST or insurance?", "No. The EMI covers principal and interest only. Add the processing fee (usually 0.5%–2% of the loan, plus GST), stamp duty, registration and any home or loan insurance separately — they are real costs, just not part of the EMI. GST applies to the lender's fees and charges, not to the principal or interest in the EMI."],
+      ["What happens to my EMI when the repo rate changes?", "On a floating-rate loan, the rate resets at the interval in your loan agreement — usually every three or six months for repo-linked loans. Most lenders keep the EMI the same and change the tenure instead, so a rate rise stretches the loan and a rate cut shortens it. On a fixed-rate loan the EMI does not change at all. This calculator gives the EMI only until the next reset."],
+      ["Can I prepay my loan without a penalty?", "On a floating-rate loan taken by an individual for a non-business purpose, yes — the RBI (Pre-payment Charges on Loans) Directions, 2025 bar prepayment charges on such loans sanctioned or renewed on or after 1 January 2026. Fixed-rate loans may still carry a charge of 2%–5%. Prepaying early matters most: paying ₹5,000 extra a month on the ₹50 lakh home loan above clears it in 187 months instead of 240 and saves ₹14,52,427 of interest."],
+      ["How much of my early EMIs goes to principal?", "Very little at first, because interest is charged on the full balance. On the ₹50 lakh home loan at 8.75%, only ₹96,537 of the ₹5,30,226 you pay in the first year is principal — the other ₹4,33,689 is interest. By year 10 the split is ₹2,11,573 principal against ₹3,18,654 interest, and in the final year ₹5,05,928 of the ₹5,30,226 is principal. The schedule on this page shows the split for every year."],
+      ["What is the difference between reducing balance and flat rate?", "On a reducing balance the interest each month is charged on the balance still owed, so it falls as you repay. On a flat rate the interest is charged on the original amount for the whole tenure — so a flat 10% costs far more than a reducing-balance 10%. Always compare loans on the reducing-balance rate; a flat-rate quote that looks cheaper usually is not."],
+      ["Can I claim tax benefits on a home loan?", "Under the old tax regime, yes: up to ₹2,00,000 a year of the interest on a self-occupied home loan is deductible under Section 24(b), and the principal repaid is deductible up to ₹1,50,000 a year under Section 80C, shared with ELSS, PPF and other eligible investments. Under the new regime there is no deduction for a self-occupied home. Confirm which regime suits you with your Chartered Accountant before relying on either figure."],
+      ["Does this calculator send my loan details anywhere?", "No. The loan amount, rate and tenure stay in your browser — the calculation runs entirely on this page, nothing is sent to a server, and reloading the page clears your recent checks."]
+    ]
+  },
+
+  {
+    key: "sip",
+    kind: "sip",
+    slug: "sip-calculator",
+    title: "SIP Calculator",
+    meta: "Work out what a monthly SIP in India could grow to — monthly amount, expected return and years in, invested amount, estimated returns and maturity value out. Standard monthly-compounding formula, with a year-by-year growth table.",
+    lead: "Enter your monthly SIP amount, the return you expect and how many years you will invest, and see the estimated maturity value, how much of it is your own money and how much is growth — with a year-by-year table that shows the compounding at work.",
+    presets: [
+      { id: "starter", label: "Starter SIP", monthly: 5000, rate: 12, years: 10 },
+      { id: "growth", label: "₹10,000 a month", monthly: 10000, rate: 12, years: 15 },
+      { id: "ambitious", label: "₹25,000 a month", monthly: 25000, rate: 12, years: 20 }
+    ],
+    defaultPreset: "growth",
+    sampleMonthly: 10000,
+    sampleRate: 12,
+    sampleYears: 15,
+    goalTarget: 10000000,
+    notice: "Expected return is an assumption, not a promise. Mutual fund returns are market-linked and not guaranteed — past returns do not predict future ones. Figures are before tax, exit load and fund expenses.",
+    overviewTitle: "What does a SIP calculator do?",
+    overview: "It turns three inputs — the monthly amount, the expected annual return and the number of years — into the estimated value of a systematic investment plan. Every month's instalment compounds from the month it is paid, so the earliest instalments do the most work: on a 15-year SIP, the money you invest in the first five years earns for a decade or more. This calculator shows the estimated maturity value, the total you invest and the estimated gains, plus a year-by-year table of that growth, so you can see what time does to a fixed monthly habit.",
+    inputNote: "Use a return you can defend, not the best year a fund ever had: 10–12% a year is the range most long-term equity planning uses in India, 6–7% for debt. The calculator assumes the same return every month — real market returns vary, and they can be negative for stretches.",
+    modelNote: "The formula is the standard SIP future-value formula with monthly compounding: FV = P × ((1 + i)^n − 1) ÷ i × (1 + i), where P is the monthly instalment, i is the monthly rate (annual return ÷ 12 ÷ 100) and n is the number of months. The final × (1 + i) counts each instalment from the start of its month — the convention Groww, ET Money, ClearTax and most Indian fund-house calculators use. Each instalment is assumed to be paid on the same date every month and to earn the same return until the end.",
+    steps: [
+      ["Pick a starting point, or enter your own figures", "A ₹5,000-a-month starter SIP at 12% over 10 years, ₹10,000 a month at 12% over 15 years, or ₹25,000 a month at 12% over 20 years. Change any figure to match your own plan."],
+      ["Enter the monthly SIP amount", "The fixed amount you will invest every month. The calculator accepts ₹500 to ₹10,00,000 a month."],
+      ["Enter the expected return and the tenure", "The annual return you are assuming for planning — not a forecast — and the number of years you will keep investing, from 1 to 40 years."],
+      ["Read the value, the split and the growth table", "Your estimated maturity value, how much of it is money you invested and how much is estimated gains, the gains share, and a year-by-year table showing the value at the end of each year."]
+    ],
+    stories: [
+      {
+        monthly: 5000, rate: 12, years: 10, preset: "starter",
+        title: "A ₹5,000-a-month SIP over 10 years",
+        body: "Invest ₹5,000 a month at an assumed 12% a year for 10 years and the estimated value is ₹11,61,695 on ₹6,00,000 invested — ₹5,61,695 of estimated gains. After the first year the value is ₹64,047 on ₹60,000 invested; after five years it is ₹4,12,432 on ₹3,00,000 invested."
+      },
+      {
+        monthly: 10000, rate: 12, years: 15, preset: "growth",
+        title: "A ₹10,000-a-month SIP over 15 years",
+        body: "Invest ₹10,000 a month at an assumed 12% a year for 15 years and the estimated value is ₹50,45,760 on ₹18,00,000 invested — ₹32,45,760 of estimated gains, nearly twice what you put in. After the first year the value is ₹1,28,093 on ₹1,20,000 invested; after ten years it is ₹23,23,391 on ₹12,00,000 invested."
+      },
+      {
+        monthly: 25000, rate: 12, years: 20, preset: "ambitious",
+        title: "A ₹25,000-a-month SIP over 20 years",
+        body: "Invest ₹25,000 a month at an assumed 12% a year for 20 years and the estimated value is ₹2,49,78,698 on ₹60,00,000 invested — ₹1,89,78,698 of estimated gains, more than three times what you put in. After the first year the value is ₹3,20,233 on ₹3,00,000 invested; the gains overtake the amount invested in year 11."
+      }
+    ],
+    compareMonthly: 10000,
+    compareRate: 12,
+    compareYears: [10, 15, 20],
+    exampleTitle: "One SIP, three tenures",
+    exampleNote: "The same ₹10,000 a month at an assumed 12% a year. A longer tenure means more invested — but the estimated value grows far faster than the amount invested, because the early instalments compound for longer.",
+    exampleConclusion: "Five extra years turn ₹23,23,391 into ₹50,45,760 — more than double — on ₹6,00,000 more invested. Ten extra years turn it into ₹99,91,479, over four times the 10-year value, on ₹12,00,000 more invested. In a SIP, time is the biggest lever after the amount itself.",
+    returnsMonthly: 10000,
+    returnsYears: 15,
+    returnsRates: [8, 10, 12, 15],
+    returnsTitle: "What the return assumption does",
+    returnsNote: "The same ₹10,000 a month for 15 years at four different assumed returns. The return is the single biggest lever on the outcome — and the least certain, because no fund guarantees it.",
+    returnsConclusion: "Four percentage points of assumed return — 8% against 12% — move the estimated value from ₹34,83,451 to ₹50,45,760. That is why the return you type in matters more than any other input, and why it should be a planning assumption, never a promise.",
+    faq: [
+      ["What is the SIP formula?", "FV = P × ((1 + i)^n − 1) ÷ i × (1 + i). P is the monthly instalment, i is the monthly rate — the annual return divided by 12 and by 100 — and n is the number of months. For ₹10,000 a month at 12% a year over 15 years, i is 0.0100000, n is 180, (1 + i)^n is 5.9958, and the estimated value works out to ₹50,45,760. The formula assumes the same return every month and instalments paid at the start of each month."],
+      ["Why does another SIP calculator show a different figure?", "Mostly the instalment timing. This calculator counts each instalment from the start of its month — the convention Groww, ET Money and ClearTax use — which adds one month of growth to every instalment. A calculator that counts instalments from the end of the month shows ₹49,95,802 for the same ₹10,000 a month at 12% over 15 years, ₹49,958 less. A smaller difference can also come from rounding the monthly rate differently. Check the convention before comparing two calculators."],
+      ["Are SIP returns guaranteed?", "No. A SIP is a way of buying mutual fund units every month, and the units rise and fall with the market. The calculator applies one constant return to show a possible outcome; your actual value will follow the fund's real returns, and it can be below what you invested — especially over short periods. The 12% in the examples is a planning assumption for long-term equity investing, not a forecast for any fund. Mutual fund investments are subject to market risk; read the scheme documents before investing."],
+      ["SIP or lump sum — which grows more?", "The same money invested at once grows more, because it is all invested from day one. Put the whole ₹18,00,000 in at once at 12% for 15 years and it becomes ₹1,07,92,444, against ₹50,45,760 for ₹10,000 a month over the same 15 years. But that comparison assumes you already have ₹18,00,000 and that you invest it at a good moment. A SIP's job is different: it spreads the entry over time, so a market fall buys you more units, and it turns a monthly salary into an investment habit. If you have a lump sum, investing it in parts over 6–12 months is the usual middle path."],
+      ["What return should I assume?", "For long-term equity planning in India, 10–12% a year is the range most planners use — roughly the long-run record of diversified Indian equity, before tax and expenses. For debt funds, 6–7% is the usual planning range. Never assume the best year a fund ever had, and never use a past return as a promise: use the returns table on this page to see how much the assumption moves the outcome, then pick the lower end for a plan you must be able to keep."],
+      ["What is a step-up SIP?", "A step-up SIP raises the monthly amount by a fixed percentage every year, usually in line with a salary rise. Raising ₹10,000 a month by 10% every year makes ₹33,74,326 in 10 years at 12%, on ₹19,12,491 invested — against ₹23,23,391 without the step-up. The extra ₹10,50,935 comes from investing more as your income grows, not from a higher return. This calculator shows the fixed-SIP case; add a step-up to your own plan by raising the monthly amount once a year."],
+      ["Can I stop or pause a SIP?", "Yes — pause or stop a SIP at any time, with no penalty for stopping itself. The units you already bought stay invested and keep growing or falling with the market; only the future instalments stop. If you redeem units within a year of buying them, an exit load — usually 1% on equity funds — may apply, and the gains are taxed as short-term gains. Pausing for a few months during a tight patch is better than stopping for good: the units bought cheap in a falling market are the ones that do the most work later."],
+      ["How are SIP gains taxed?", "The figures on this page are before tax. On equity funds — at least 65% in Indian shares — gains on units held up to 12 months are taxed at 20% as short-term gains; after 12 months, 12.5% on your total long-term gains above ₹1.25 lakh in a year, under the Finance Act 2024 (from 23 July 2024), plus 4% cess. Debt funds bought from 1 April 2023 are taxed at your income-tax slab rate. Each instalment's units count from the month you bought them, so a SIP's gains are a mix of short- and long-term. Confirm the figures with your Chartered Accountant before you file."],
+      ["Does this calculator send my figures anywhere?", "No. The monthly amount, return and tenure stay in your browser — the calculation runs entirely on this page, nothing is sent to a server, and reloading the page clears your recent checks. This tool is a planning estimate, not investment advice; for advice on which funds suit you, talk to a SEBI-registered investment adviser."]
+    ]
+  },
+
+  {
+    key: "bmi",
+    kind: "bmi",
+    slug: "bmi-calculator",
+    title: "BMI Calculator",
+    meta: "Work out your Body Mass Index from your height and weight — BMI to one decimal place, the WHO category, and the healthy weight range for your height. Free, instant, and calculated in your browser.",
+    lead: "Enter your height and weight and see your BMI, which WHO weight category it falls in, and the healthy weight range for your height — with the working shown, so you can check every number.",
+    presets: [
+      { id: "average", label: "Average adult", heightCm: 170, weightKg: 70 },
+      { id: "taller", label: "Taller adult", heightCm: 180, weightKg: 85 },
+      { id: "shorter", label: "Shorter adult", heightCm: 160, weightKg: 55 }
+    ],
+    defaultPreset: "average",
+    sampleHeightCm: 170,
+    sampleWeightKg: 70,
+    notice: "BMI is a screening tool, not a diagnosis. It does not measure body fat directly, and it does not suit children, pregnant women, very muscular people or older adults. Talk to a doctor before acting on a result.",
+    overviewTitle: "What does a BMI calculator do?",
+    overview: "It turns two measurements — your height and your weight — into one number, the Body Mass Index. That number is then compared with the World Health Organization's adult weight categories, so you can see at a glance whether you are underweight, in the healthy range, overweight or obese. This calculator also works out the healthy weight range for your exact height, so you have a concrete target instead of just a label.",
+    inputNote: "Measure your height without shoes and your weight in the morning, before eating, on the same scales each time. A centimetre or two of height makes a visible difference to the result, so measure rather than guess.",
+    modelNote: "BMI is your weight in kilograms divided by your height in metres, squared: BMI = weight (kg) ÷ height (m)². The categories are the World Health Organization's adult classification: below 18.5 is underweight, 18.5 to 24.9 is healthy weight, 25.0 to 29.9 is overweight, and 30.0 and above is obese. The healthy weight range for a height is the weight that gives a BMI of 18.5 at the low end and 24.9 at the high end.",
+    steps: [
+      ["Pick a starting point, or enter your own figures", "An average adult at 170 cm and 70 kg, a taller adult at 180 cm and 85 kg, or a shorter adult at 160 cm and 55 kg. Change any figure to match your own measurements."],
+      ["Enter your height", "In centimetres, or switch to feet and inches. The calculator accepts heights from 100 cm to 220 cm."],
+      ["Enter your weight", "In kilograms. The calculator accepts weights from 20 kg to 300 kg."],
+      ["Read your BMI, category and healthy range", "Your BMI to one decimal place, the WHO category, the healthy weight range for your height, and how far you are from that range — with the working shown underneath."]
+    ],
+    stories: [
+      {
+        heightCm: 170, weightKg: 70, preset: "average",
+        title: "170 cm and 70 kg — healthy weight",
+        body: "At 170 cm and 70 kg, the BMI is 70 ÷ (1.70 × 1.70) = 70 ÷ 2.89 = 24.2, which is in the healthy range. The healthy weight range for 170 cm is 53.5 to 72.0 kg, so 70 kg sits comfortably inside it — 2.0 kg below the top of the range."
+      },
+      {
+        heightCm: 165, weightKg: 75, preset: null,
+        title: "165 cm and 75 kg — overweight",
+        body: "At 165 cm and 75 kg, the BMI is 75 ÷ (1.65 × 1.65) = 75 ÷ 2.7225 = 27.5, which is overweight. The healthy weight range for 165 cm is 50.4 to 67.8 kg, so 75 kg is 7.2 kg above the top of the range."
+      },
+      {
+        heightCm: 175, weightKg: 55, preset: null,
+        title: "175 cm and 55 kg — underweight",
+        body: "At 175 cm and 55 kg, the BMI is 55 ÷ (1.75 × 1.75) = 55 ÷ 3.0625 = 18.0, which is underweight. The healthy weight range for 175 cm is 56.7 to 76.3 kg, so 55 kg is 1.7 kg below the bottom of the range."
+      }
+    ],
+    categories: [
+      ["Below 18.5", "Underweight", "Possible nutritional deficiency; talk to a doctor if you have lost weight without trying."],
+      ["18.5 – 24.9", "Healthy weight", "The range linked to the lowest health risk for most adults."],
+      ["25.0 – 29.9", "Overweight", "Increased risk of type 2 diabetes, heart disease and joint problems."],
+      ["30.0 – 34.9", "Obese — Class I", "Moderate health risk; a plan with a doctor is worth making."],
+      ["35.0 – 39.9", "Obese — Class II", "Severe health risk; medical advice is recommended."],
+      ["40.0 and above", "Obese — Class III", "Very severe health risk; medical advice is strongly recommended."]
+    ],
+    rangeHeights: [150, 155, 160, 165, 170, 175, 180, 185, 190],
+    rangeTitle: "Healthy weight for your height",
+    rangeNote: "The weight range that gives a BMI of 18.5 to 24.9 at each height — the WHO healthy range. Find your height and read across.",
+    rangeConclusion: "A 10 cm difference in height moves the healthy range by about 6 kg. That is why the same weight can be healthy for one person and overweight for another — the number only makes sense against your own height.",
+    asianTitle: "A note for Indian readers: lower cut-offs apply",
+    asianNote: "South Asians tend to develop diabetes and heart disease at lower BMIs than Europeans, so the WHO identifies lower public-health action points for Asian populations — 23 for overweight and 27.5 for obesity — and the Indian consensus guidelines (Misra et al., 2009) count 23.0–24.9 as overweight and 25 and above as obese, with a healthy range of 18.0–22.9. This calculator shows the WHO international categories as its main result; if you are of South Asian descent, treat a BMI from 23 upwards as a reason to talk to a doctor, even though the international table still calls it healthy weight.",
+    faq: [
+      ["What is the BMI formula?", "BMI = weight (kg) ÷ height (m)². Convert your height to metres first, square it, then divide your weight by that number. For 70 kg at 170 cm: 1.70 × 1.70 = 2.89, and 70 ÷ 2.89 = 24.2. In imperial units the same formula is BMI = (weight in pounds ÷ height in inches²) × 703."],
+      ["What is a healthy BMI?", "The World Health Organization calls 18.5 to 24.9 the healthy range for adults. For a height of 170 cm that means a weight of 53.5 to 72.0 kg. The healthy range is different for every height — check the table on this page for yours. For Indian adults, the Indian consensus guidelines use a narrower healthy range of 18.0 to 22.9."],
+      ["What are the BMI cut-offs for Indians?", "South Asians develop metabolic risk at lower BMIs, so lower cut-offs are used. The WHO identifies public-health action points of 23 for overweight and 27.5 for obesity in Asian populations, and the Indian consensus guidelines (Misra et al., 2009) count 23.0–24.9 as overweight and 25 and above as obese, with a healthy range of 18.0–22.9. This calculator's main result uses the WHO international bands; the note above explains the Indian cut-offs."],
+      ["Is BMI accurate?", "BMI is a useful screening tool, not a diagnosis. It cannot tell muscle from fat, so a very muscular person can score as overweight without excess body fat, and an older adult can score as healthy while carrying too much fat and too little muscle. It also says nothing about where fat sits — fat around the waist carries more risk than fat elsewhere. Treat the number as a starting point for a conversation with a doctor, not a verdict."],
+      ["How do I convert feet and inches to centimetres?", "Multiply the total inches by 2.54. For 5 ft 7 in: 5 × 12 + 7 = 67 inches, and 67 × 2.54 = 170.18 cm. At 70 kg that gives a BMI of 24.2 — the same as 170 cm. This calculator has a feet-and-inches option that does the conversion for you."],
+      ["What should I do if my BMI is over 25?", "First, check the measurement — height without shoes, weight in the morning. Then talk to a doctor, especially if your BMI is 30 or more, or if you have diabetes, high blood pressure or a family history of heart disease. Small, steady changes work best: a 5–10% weight loss over six months already lowers risk, and crash diets rarely hold."],
+      ["Does BMI work for children?", "No. Children's healthy weight changes with age and sex, so doctors use BMI-for-age percentile charts instead of the fixed adult bands. A child's BMI is plotted against other children of the same age and sex. This calculator is for adults only."],
+      ["What is the difference between BMI and body fat percentage?", "BMI is a ratio of weight to height — it never measures fat directly. Body fat percentage is the share of your weight that is fat, measured by skinfold calipers, bioelectrical impedance scales or a DEXA scan. Two people with the same BMI can have very different body fat percentages, which is why BMI is a screening tool and body fat percentage is a closer measure."],
+      ["Does this calculator send my figures anywhere?", "No. Your height and weight stay in your browser — the calculation runs entirely on this page, nothing is sent to a server, and reloading the page clears your recent checks. This tool is a screening aid, not medical advice; for advice about your own health, talk to a doctor."]
+    ]
+  },
 ];
 
 export const css = `
@@ -4377,6 +4586,254 @@ export const rrbAgeCss = `
 }
 `;
 
+export const emiCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(9, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.number-input {
+  width: 100%;
+  min-height: 56px;
+  font-size: 17px;
+  font-weight: 700;
+  border: 1.5px solid #aebfca;
+  border-radius: 11px;
+  padding: 10px 14px;
+  color: var(--calc-ink);
+  background: white;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.number-input[aria-invalid="true"] {
+  border-color: #b42318;
+}
+
+.split-bar {
+  display: flex;
+  height: 14px;
+  border-radius: 7px;
+  overflow: hidden;
+  margin-top: 12px;
+  background: #16414f;
+}
+
+.split-bar i {
+  display: block;
+  height: 100%;
+}
+
+.split-principal {
+  background: #7fd1a8;
+}
+
+.split-interest {
+  background: #ffb454;
+}
+
+.split-legend {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #c8dce6;
+}
+
+.split-legend b {
+  color: #fff;
+}
+
+.split-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: -1px;
+}
+`;
+
+export const sipCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(10, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.number-input {
+  width: 100%;
+  min-height: 56px;
+  font-size: 17px;
+  font-weight: 700;
+  border: 1.5px solid #aebfca;
+  border-radius: 11px;
+  padding: 10px 14px;
+  color: var(--calc-ink);
+  background: white;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.number-input[aria-invalid="true"] {
+  border-color: #b42318;
+}
+
+.split-bar {
+  display: flex;
+  height: 14px;
+  border-radius: 7px;
+  overflow: hidden;
+  margin-top: 12px;
+  background: #16414f;
+}
+
+.split-bar i {
+  display: block;
+  height: 100%;
+}
+
+.split-invested {
+  background: #7fd1a8;
+}
+
+.split-gains {
+  background: #ffb454;
+}
+
+.split-legend {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #c8dce6;
+}
+
+.split-legend b {
+  color: #fff;
+}
+
+.split-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: -1px;
+}
+`;
+
+export const bmiCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(11, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.number-input {
+  width: 100%;
+  min-height: 56px;
+  font-size: 17px;
+  font-weight: 700;
+  border: 1.5px solid #aebfca;
+  border-radius: 11px;
+  padding: 10px 14px;
+  color: var(--calc-ink);
+  background: white;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.number-input[aria-invalid="true"] {
+  border-color: #b42318;
+}
+
+.unit-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.bmi-scale {
+  position: relative;
+  display: flex;
+  height: 16px;
+  border-radius: 8px;
+  overflow: visible;
+  margin: 18px 4px 26px;
+}
+
+.bmi-scale i {
+  display: block;
+  height: 100%;
+}
+
+.bmi-scale i:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.bmi-scale i:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+.bmi-under {
+  background: #7fb3d5;
+}
+
+.bmi-healthy {
+  background: #7fd1a8;
+}
+
+.bmi-over {
+  background: #ffb454;
+}
+
+.bmi-obese {
+  background: #e0655a;
+}
+
+.bmi-marker {
+  position: absolute;
+  top: -6px;
+  width: 4px;
+  height: 28px;
+  background: #fff;
+  border: 1px solid #16414f;
+  border-radius: 2px;
+  transform: translateX(-2px);
+}
+
+.bmi-scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #c8dce6;
+  margin-top: -18px;
+  margin-bottom: 6px;
+}
+
+.verdict-warn {
+  background: #fff7e0;
+  color: #6b4e00;
+  border: 1px solid #e3c878;
+}
+`;
+
 export function generalAgeTotals(dobISO, refISO) {
   const age = sscAgeParts(dobISO, refISO);
   if (!age) return null;
@@ -5465,6 +5922,65 @@ export function ibpsClient(c) {
   });
 
   paint();
+}
+
+export function emiCompute(principal, annualRatePct, months) {
+  const P = Number(principal);
+  const pct = Number(annualRatePct);
+  const n = Math.round(Number(months));
+  if (!(P > 0) || !(n > 0) || !(pct >= 0) || !Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(n)) return null;
+  const r = pct / 1200;
+  const emi = r === 0 ? P / n : P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+  const total = emi * n;
+  return { emi, total, interest: total - P, months: n, monthlyRate: r };
+}
+
+export function emiSchedule(principal, annualRatePct, months) {
+  const first = emiCompute(principal, annualRatePct, months);
+  if (!first) return null;
+  const P = Number(principal);
+  const r = first.monthlyRate;
+  const emi = first.emi;
+  const n = first.months;
+  let balance = P;
+  const years = [];
+  for (let y = 0; y * 12 < n; y++) {
+    let yearInterest = 0;
+    let yearPrincipal = 0;
+    for (let m = 0; m < 12; m++) {
+      const idx = y * 12 + m;
+      if (idx >= n) break;
+      const interest = balance * r;
+      let principal = emi - interest;
+      if (idx === n - 1) principal = balance;
+      balance -= principal;
+      yearInterest += interest;
+      yearPrincipal += principal;
+    }
+    years.push({ year: y + 1, interest: yearInterest, principal: yearPrincipal, balance });
+  }
+  return years;
+}
+
+export function emiPrepay(principal, annualRatePct, months, extraPerMonth) {
+  const first = emiCompute(principal, annualRatePct, months);
+  if (!first) return null;
+  const extra = Number(extraPerMonth) || 0;
+  if (extra <= 0) return { months: first.months, interest: first.interest, savedMonths: 0, savedInterest: 0 };
+  const r = first.monthlyRate;
+  const emi = first.emi;
+  let balance = Number(principal);
+  let paid = 0;
+  let totalInterest = 0;
+  while (balance > 0 && paid < 1200) {
+    const interest = balance * r;
+    const pay = Math.min(emi + extra, balance + interest);
+    const principal = pay - interest;
+    balance -= principal;
+    totalInterest += interest;
+    paid++;
+  }
+  return { months: paid, interest: totalInterest, savedMonths: first.months - paid, savedInterest: first.interest - totalInterest };
 }
 
 export function rrbClient(c) {
@@ -9425,5 +9941,3052 @@ export function renderCalculatorBody(p, other, css, clientSource) {
       </div>
     </section>
   </div>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function sipCompute(monthly, annualRatePct, years) {
+  const P = Number(monthly);
+  const pct = Number(annualRatePct);
+  const y = Math.round(Number(years));
+  if (!(P > 0) || !(y > 0) || !(pct >= 0) || !Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(y)) return null;
+  const n = y * 12;
+  const i = pct / 1200;
+  const invested = P * n;
+  const value = i === 0 ? invested : P * (Math.pow(1 + i, n) - 1) / i * (1 + i);
+  return { value, invested, gains: value - invested, months: n, years: y, monthlyRate: i };
+}
+
+export function sipSchedule(monthly, annualRatePct, years) {
+  const first = sipCompute(monthly, annualRatePct, years);
+  if (!first) return null;
+  const rows = [];
+  for (let y = 1; y <= first.years; y++) {
+    const r = sipCompute(monthly, annualRatePct, y);
+    rows.push({ year: y, invested: r.invested, value: r.value, gains: r.gains });
+  }
+  return rows;
+}
+
+export function sipRequired(target, annualRatePct, years) {
+  const T = Number(target);
+  const pct = Number(annualRatePct);
+  const y = Math.round(Number(years));
+  if (!(T > 0) || !(y > 0) || !(pct >= 0) || !Number.isFinite(T) || !Number.isFinite(pct) || !Number.isFinite(y)) return null;
+  const n = y * 12;
+  const i = pct / 1200;
+  if (i === 0) return { monthly: Math.ceil(T / n), target: T, months: n, years: y };
+  const factor = (Math.pow(1 + i, n) - 1) / i * (1 + i);
+  return { monthly: Math.ceil(T / factor), target: T, months: n, years: y };
+}
+
+export function emiClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function emiCompute(principal, annualRatePct, months) {
+    const P = Number(principal);
+    const pct = Number(annualRatePct);
+    const n = Math.round(Number(months));
+    if (!(P > 0) || !(n > 0) || !(pct >= 0) || !Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(n)) return null;
+    const r = pct / 1200;
+    const emi = r === 0 ? P / n : P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+    const total = emi * n;
+    return { emi, total, interest: total - P, months: n, monthlyRate: r };
+  }
+
+  function emiSchedule(principal, annualRatePct, months) {
+    const first = emiCompute(principal, annualRatePct, months);
+    if (!first) return null;
+    const P = Number(principal);
+    const r = first.monthlyRate;
+    const emi = first.emi;
+    const n = first.months;
+    let balance = P;
+    const years = [];
+    for (let y = 0; y * 12 < n; y++) {
+      let yearInterest = 0;
+      let yearPrincipal = 0;
+      for (let m = 0; m < 12; m++) {
+        const idx = y * 12 + m;
+        if (idx >= n) break;
+        const interest = balance * r;
+        let principal = emi - interest;
+        if (idx === n - 1) principal = balance;
+        balance -= principal;
+        yearInterest += interest;
+        yearPrincipal += principal;
+      }
+      years.push({ year: y + 1, interest: yearInterest, principal: yearPrincipal, balance });
+    }
+    return years;
+  }
+
+  function emiPrepay(principal, annualRatePct, months, extraPerMonth) {
+    const first = emiCompute(principal, annualRatePct, months);
+    if (!first) return null;
+    const extra = Number(extraPerMonth) || 0;
+    if (extra <= 0) return { months: first.months, interest: first.interest, savedMonths: 0, savedInterest: 0 };
+    const r = first.monthlyRate;
+    const emi = first.emi;
+    let balance = Number(principal);
+    let paid = 0;
+    let totalInterest = 0;
+    while (balance > 0 && paid < 1200) {
+      const interest = balance * r;
+      const pay = Math.min(emi + extra, balance + interest);
+      const principal = pay - interest;
+      balance -= principal;
+      totalInterest += interest;
+      paid++;
+    }
+    return { months: paid, interest: totalInterest, savedMonths: first.months - paid, savedInterest: first.interest - totalInterest };
+  }
+
+  const presetSelect = $("preset");
+  const loanPill = $("loan-pill");
+  const amountInput = $("amount");
+  const rateInput = $("rate");
+  const yearsInput = $("years");
+  const monthsInput = $("months");
+  const amountError = $("amount-error");
+  const rateError = $("rate-error");
+  const tenureError = $("tenure-error");
+  const output = $("answer");
+  const interestVal = $("interest-val");
+  const totalVal = $("total-val");
+  const shareVal = $("share-val");
+  const splitPrincipal = $("split-principal");
+  const splitInterest = $("split-interest");
+  const splitPrincipalLabel = $("split-principal-label");
+  const splitInterestLabel = $("split-interest-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const workingFirstYear = $("working-first-year");
+  const workingPrepay = $("working-prepay");
+  const workingNote = $("working-note");
+  const scheduleBody = $("schedule-body");
+  const scheduleNote = $("schedule-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmtINR = n => "₹" + new Intl.NumberFormat("en-IN", { maximumFractionDigits: 0 }).format(Math.round(n));
+  const fmtNum = n => new Intl.NumberFormat("en-GB").format(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+
+  function clearResult() {
+    output.textContent = "—";
+    interestVal.textContent = "—";
+    totalVal.textContent = "—";
+    shareVal.textContent = "—";
+    splitPrincipal.style.width = "0%";
+    splitInterest.style.width = "0%";
+    splitPrincipalLabel.textContent = "Principal —";
+    splitInterestLabel.textContent = "Interest —";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your loan at a glance";
+    glanceText.textContent = "Enter your loan details to see the EMI, the total interest and the full repayment.";
+    working.textContent = "Enter your loan details to see the working.";
+    workingFirstYear.textContent = "";
+    workingPrepay.textContent = "";
+    workingNote.textContent = "";
+    scheduleBody.replaceChildren();
+    scheduleNote.textContent = "Enter your loan details to see the year-by-year schedule.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function renderSchedule(years) {
+    scheduleBody.replaceChildren();
+    years.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = "Year " + row.year;
+      tr.appendChild(th);
+      [row.interest, row.principal, row.balance].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = fmtINR(v);
+        tr.appendChild(td);
+      });
+      scheduleBody.appendChild(tr);
+    });
+  }
+
+  function paint(showEmptyError = false) {
+    loanPill.textContent = presetSelect.value === "custom" ? "Custom figures" : presetRec(presetSelect.value).label;
+    const amountRaw = amountInput.value;
+    const rateRaw = rateInput.value;
+    const yearsRaw = yearsInput.value;
+    const monthsRaw = monthsInput.value;
+    const amountNum = amountRaw === "" ? NaN : Number(amountRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    const yearsNum = yearsRaw === "" ? NaN : Number(yearsRaw);
+    const monthsNum = monthsRaw === "" ? NaN : Number(monthsRaw);
+
+    let amountMsg = "";
+    if (amountRaw === "") {
+      if (showEmptyError) amountMsg = "Enter the loan amount.";
+    } else if (!Number.isFinite(amountNum) || !Number.isInteger(amountNum) || amountNum < 10000 || amountNum > 100000000) {
+      amountMsg = "Enter a whole-rupee amount from ₹10,000 to ₹10,00,00,000.";
+    }
+    amountError.textContent = amountMsg;
+    amountInput.setAttribute("aria-invalid", String(amountMsg !== ""));
+
+    let rateMsg = "";
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the annual interest rate.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 36) {
+      rateMsg = "Enter an annual rate from 0% to 36%.";
+    }
+    rateError.textContent = rateMsg;
+    rateInput.setAttribute("aria-invalid", String(rateMsg !== ""));
+
+    let tenureMsg = "";
+    const totalMonths = (Number.isFinite(yearsNum) ? yearsNum : NaN) * 12 + (Number.isFinite(monthsNum) ? monthsNum : NaN);
+    if (yearsRaw === "" || monthsRaw === "") {
+      if (showEmptyError) tenureMsg = "Enter the tenure in years and months.";
+    } else if (!Number.isInteger(yearsNum) || yearsNum < 0 || yearsNum > 30 || !Number.isInteger(monthsNum) || monthsNum < 0 || monthsNum > 11) {
+      tenureMsg = "Enter whole years from 0 to 30 and whole months from 0 to 11.";
+    } else if (!(totalMonths >= 1 && totalMonths <= 360)) {
+      tenureMsg = "The tenure must be at least 1 month and at most 30 years.";
+    }
+    tenureError.textContent = tenureMsg;
+    yearsInput.setAttribute("aria-invalid", String(tenureMsg !== ""));
+    monthsInput.setAttribute("aria-invalid", String(tenureMsg !== ""));
+
+    const valid = amountMsg === "" && rateMsg === "" && tenureMsg === "" && amountRaw !== "" && rateRaw !== "" && yearsRaw !== "" && monthsRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const result = emiCompute(amountNum, rateNum, totalMonths);
+    const years = emiSchedule(amountNum, rateNum, totalMonths);
+    if (!result || !years) {
+      clearResult();
+      return false;
+    }
+
+    output.textContent = fmtINR(result.emi);
+    interestVal.textContent = fmtINR(result.interest);
+    totalVal.textContent = fmtINR(result.total);
+    const share = result.total > 0 ? Math.round(result.interest / result.total * 100) : 0;
+    shareVal.textContent = share + "%";
+    const principalShare = result.total > 0 ? amountNum / result.total * 100 : 0;
+    splitPrincipal.style.width = principalShare.toFixed(1) + "%";
+    splitInterest.style.width = (100 - principalShare).toFixed(1) + "%";
+    splitPrincipalLabel.textContent = "Principal " + fmtINR(amountNum) + " (" + Math.round(principalShare) + "%)";
+    splitInterestLabel.textContent = "Interest " + fmtINR(result.interest) + " (" + (100 - Math.round(principalShare)) + "%)";
+
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your loan at a glance";
+    glanceText.textContent = result.interest > amountNum
+      ? "Over " + fmtNum(totalMonths) + " months you pay " + fmtINR(result.interest) + " in interest — more than the " + fmtINR(amountNum) + " you borrowed."
+      : "Over " + fmtNum(totalMonths) + " months you pay " + fmtINR(result.interest) + " in interest on " + fmtINR(amountNum) + " borrowed.";
+
+    const firstYear = years[0];
+    working.textContent = "EMI = " + fmtINR(amountNum) + " × " + (rateNum / 1200).toFixed(7) + " × (1 + " + (rateNum / 1200).toFixed(7) + ")^" + totalMonths + " ÷ ((1 + " + (rateNum / 1200).toFixed(7) + ")^" + totalMonths + " − 1) = " + fmtINR(result.emi) + " a month.";
+    workingFirstYear.textContent = "First year: " + fmtINR(firstYear.interest) + " interest and " + fmtINR(firstYear.principal) + " principal — balance " + fmtINR(firstYear.balance) + " after 12 payments.";
+    const prepay = emiPrepay(amountNum, rateNum, totalMonths, 5000);
+    workingPrepay.textContent = prepay && prepay.savedMonths > 0
+      ? "Pay ₹5,000 extra a month and the loan clears in " + fmtNum(prepay.months) + " months instead of " + fmtNum(totalMonths) + ", saving " + fmtINR(prepay.savedInterest) + " of interest."
+      : "Paying extra each month cuts the tenure and the total interest — the earlier the extra payment, the bigger the saving.";
+    workingNote.textContent = "Principal + interest only. Processing fee, GST, stamp duty, registration and insurance are extra, and a lender's rounding may move the EMI by a few rupees.";
+
+    renderSchedule(years);
+    scheduleNote.textContent = "Year-by-year split of your " + fmtNum(totalMonths) + " monthly payments of " + fmtINR(result.emi) + ". Interest is charged on the balance still owed, so the principal share grows every year.";
+
+    copyButton.disabled = false;
+    summary =
+      "VisitBest | EMI Calculator" +
+      "\nLoan amount: " + fmtINR(amountNum) +
+      "\nAnnual interest rate: " + rateNum + "%" +
+      "\nTenure: " + fmtNum(totalMonths) + " months" +
+      "\nMonthly EMI: " + fmtINR(result.emi) +
+      "\nTotal interest: " + fmtINR(result.interest) +
+      "\nTotal payment: " + fmtINR(result.total) +
+      "\nInterest share: " + share + "% of the total payment";
+    return true;
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, amountInput.value, rateInput.value, yearsInput.value, monthsInput.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      const result = emiCompute(item.amount, item.rate, item.years * 12 + item.months);
+      button.textContent = fmtINR(item.amount) + " @ " + item.rate + "% · " + fmtNum(item.years * 12 + item.months) + " months → " + (result ? fmtINR(result.emi) : "—") + "/month";
+      button.setAttribute("aria-label", "Load check for " + fmtINR(item.amount) + " at " + item.rate + " percent over " + fmtNum(item.years * 12 + item.months) + " months");
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        amountInput.value = String(item.amount);
+        rateInput.value = String(item.rate);
+        yearsInput.value = String(item.years);
+        monthsInput.value = String(item.months);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      amount: Number(amountInput.value),
+      rate: Number(rateInput.value),
+      years: Number(yearsInput.value),
+      months: Number(monthsInput.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      amountInput.value = button.dataset.amount || "";
+      rateInput.value = button.dataset.rate || "";
+      yearsInput.value = button.dataset.years || "";
+      monthsInput.value = button.dataset.months || "0";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    const rec = presetRec(presetSelect.value);
+    amountInput.value = String(rec.amount);
+    rateInput.value = String(rec.rate);
+    yearsInput.value = String(rec.years);
+    monthsInput.value = String(rec.months);
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    amountInput.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    rateInput.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    yearsInput.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    monthsInput.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("emi-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    amountInput.value = String(rec.amount);
+    rateInput.value = String(rec.rate);
+    yearsInput.value = String(rec.years);
+    monthsInput.value = String(rec.months);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderEmiCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmtINR = n => "₹" + new Intl.NumberFormat("en-IN", { maximumFractionDigits: 0 }).format(Math.round(n));
+  const fmtNum = n => new Intl.NumberFormat("en-GB").format(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleAmount: p.sampleAmount, sampleRate: p.sampleRate, sampleYears: p.sampleYears, sampleMonths: p.sampleMonths };
+  const sampleMonths = p.sampleYears * 12 + p.sampleMonths;
+  const sample = emiCompute(p.sampleAmount, p.sampleRate, sampleMonths);
+  const sampleSchedule = emiSchedule(p.sampleAmount, p.sampleRate, sampleMonths);
+  const sampleFirstYear = sampleSchedule[0];
+  const samplePrepay = emiPrepay(p.sampleAmount, p.sampleRate, sampleMonths, 5000);
+  const sampleMonthlyRate = p.sampleRate / 1200;
+  const sampleGrowth = Math.pow(1 + sampleMonthlyRate, sampleMonths);
+
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${fmtINR(pr.amount)} at ${pr.rate}% over ${pr.years} years</option>
+  `).join("");
+
+  const compareRows = p.compareYears.map(y => {
+    const r = emiCompute(p.compareAmount, p.compareRate, y * 12);
+    return `
+      <tr>
+        <th scope="row">${y} years (${y * 12} months)</th>
+        <td>${fmtINR(r.emi)}</td>
+        <td>${fmtINR(r.interest)}</td>
+        <td>${fmtINR(r.total)}</td>
+      </tr>`;
+  }).join("");
+
+  const ratesRows = p.rates.map(row => `
+      <tr>
+        <th scope="row">${e(row.type)}</th>
+        <td>${e(row.range)}</td>
+        <td>${e(row.tenure)}</td>
+        <td>${e(row.amount)}</td>
+        <td>${e(row.note)}</td>
+      </tr>`).join("");
+
+  const scheduleRows = sampleSchedule.map(row => `
+      <tr>
+        <th scope="row">Year ${row.year}</th>
+        <td>${fmtINR(row.interest)}</td>
+        <td>${fmtINR(row.principal)}</td>
+        <td>${fmtINR(row.balance)}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${emiCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free loan EMI calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate your EMI →
+              </a>
+              <a href="#method" class="calc-link">How the EMI is worked out ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${fmtINR(sample.emi)}</strong>
+                <small>EMI on ${fmtINR(p.sampleAmount)} at ${p.sampleRate}%</small>
+              </div>
+              <div>
+                <strong>3 inputs</strong>
+                <small>Amount, rate, tenure</small>
+              </div>
+              <div>
+                <strong>Reducing balance</strong>
+                <small>The method lenders use</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>Principal + interest only.</strong>
+              The EMI does not include the processing fee, GST, stamp duty,
+              registration or insurance — and a lender's rounding may move
+              the EMI by a few rupees.
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/">RRB Age</a>
+              <a href="/emi-calculator/" aria-current="page">EMI</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate your EMI</h2>
+              <span class="calc-pill" id="loan-pill">Home loan</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own loan.</p>
+
+            <form id="emi-form" novalidate>
+              <label class="field-label" for="preset">
+                Loan type
+                <span>Pick one to fill in typical figures, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="amount">
+                Loan amount (₹)
+                <span>The amount you borrow, after the down payment</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="amount"
+                type="number"
+                value="${p.sampleAmount}"
+                min="10000"
+                max="100000000"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="amount-error"
+              >
+              <p class="calc-error" id="amount-error" aria-live="polite"></p>
+
+              <label class="field-label" for="rate">
+                Annual interest rate (%)
+                <span>As printed on the sanction letter</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="rate"
+                type="number"
+                value="${p.sampleRate}"
+                min="0"
+                max="36"
+                step="0.01"
+                inputmode="decimal"
+                aria-describedby="rate-error"
+              >
+              <p class="calc-error" id="rate-error" aria-live="polite"></p>
+
+              <div class="field-row">
+                <div>
+                  <label class="field-label" for="years">
+                    Tenure — years
+                    <span>0 to 30 years</span>
+                  </label>
+
+                  <input
+                    class="number-input"
+                    id="years"
+                    type="number"
+                    value="${p.sampleYears}"
+                    min="0"
+                    max="30"
+                    step="1"
+                    inputmode="numeric"
+                    aria-describedby="tenure-error"
+                  >
+                </div>
+                <div>
+                  <label class="field-label" for="months">
+                    Tenure — months
+                    <span>0 to 11 months</span>
+                  </label>
+
+                  <input
+                    class="number-input"
+                    id="months"
+                    type="number"
+                    value="${p.sampleMonths}"
+                    min="0"
+                    max="11"
+                    step="1"
+                    inputmode="numeric"
+                    aria-describedby="tenure-error"
+                  >
+                </div>
+              </div>
+              <p class="calc-error" id="tenure-error" aria-live="polite"></p>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate my EMI →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR MONTHLY EMI</span>
+                <span>REDUCING BALANCE</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your monthly EMI</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="amount">${fmtINR(sample.emi)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="interest-val">${fmtINR(sample.interest)}</strong>
+                  <small>TOTAL INTEREST</small>
+                </div>
+                <div>
+                  <strong id="total-val">${fmtINR(sample.total)}</strong>
+                  <small>TOTAL PAYMENT</small>
+                </div>
+                <div>
+                  <strong id="share-val">${Math.round(sample.interest / sample.total * 100)}%</strong>
+                  <small>INTEREST SHARE</small>
+                </div>
+              </div>
+
+              <div class="split-bar" aria-hidden="true">
+                <i class="split-principal" id="split-principal" style="width:${(p.sampleAmount / sample.total * 100).toFixed(1)}%"></i><i class="split-interest" id="split-interest" style="width:${(sample.interest / sample.total * 100).toFixed(1)}%"></i>
+              </div>
+              <div class="split-legend">
+                <span><i class="split-dot" style="background:#7fd1a8"></i><b id="split-principal-label">Principal ${fmtINR(p.sampleAmount)} (${Math.round(p.sampleAmount / sample.total * 100)}%)</b></span>
+                <span><i class="split-dot" style="background:#ffb454"></i><b id="split-interest-label">Interest ${fmtINR(sample.interest)} (${Math.round(sample.interest / sample.total * 100)}%)</b></span>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your loan at a glance</strong>
+                <span id="glance-text">Over ${fmtNum(sampleMonths)} months you pay ${fmtINR(sample.interest)} in interest — more than the ${fmtINR(p.sampleAmount)} you borrowed.</span>
+              </div>
+
+              <p class="working" id="working">
+                EMI = ${fmtINR(p.sampleAmount)} × ${sampleMonthlyRate.toFixed(7)} × (1 + ${sampleMonthlyRate.toFixed(7)})^${sampleMonths} ÷ ((1 + ${sampleMonthlyRate.toFixed(7)})^${sampleMonths} − 1) = ${fmtINR(sample.emi)} a month.
+              </p>
+              <p class="working" id="working-first-year">First year: ${fmtINR(sampleFirstYear.interest)} interest and ${fmtINR(sampleFirstYear.principal)} principal — balance ${fmtINR(sampleFirstYear.balance)} after 12 payments.</p>
+              <p class="working" id="working-prepay">Pay ₹5,000 extra a month and the loan clears in ${fmtNum(samplePrepay.months)} months instead of ${fmtNum(sampleMonths)}, saving ${fmtINR(samplePrepay.savedInterest)} of interest.</p>
+              <p class="working" id="working-note">Principal + interest only. Processing fee, GST, stamp duty, registration and insurance are extra, and a lender's rounding may move the EMI by a few rupees.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The EMI stays fixed while the rate stays fixed. On a floating-rate
+                loan it holds only until the next rate reset.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate my EMI to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="schedule">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your repayment schedule</p>
+          <h2>Year by year: interest vs principal</h2>
+          <p id="schedule-note">Year-by-year split of your ${fmtNum(sampleMonths)} monthly payments of ${fmtINR(sample.emi)}. Interest is charged on the balance still owed, so the principal share grows every year.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="schedule-note">
+            <caption>Repayment schedule — ${fmtINR(p.sampleAmount)} at ${p.sampleRate}% over ${p.sampleYears} years.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Interest paid</th>
+                <th scope="col">Principal paid</th>
+                <th scope="col">Balance at year end</th>
+              </tr>
+            </thead>
+            <tbody id="schedule-body">
+              ${scheduleRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#comparison">One loan, three tenures</a>
+        <a href="#rates">Indicative rates</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / THREE INPUTS</span>
+            <h3>Amount, rate, tenure</h3>
+            <p>Three numbers decide the EMI. The amount is what you borrow after the down payment, the rate is the annual rate on your sanction letter, and the tenure is the full repayment period in years and months.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / REDUCING BALANCE</span>
+            <h3>Interest on what you still owe</h3>
+            <p>Interest each month is charged on the balance still owed, not the original amount. That is why early EMIs are mostly interest and late EMIs mostly principal — and why a flat-rate quote that looks cheaper usually is not.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / FIXED UNTIL RESET</span>
+            <h3>One EMI, until the rate moves</h3>
+            <p>The EMI stays fixed while the rate stays fixed. On a floating-rate loan the rate resets every few months, and most lenders then keep the EMI and change the tenure. This calculator gives the EMI only until the next reset.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From loan figures to your EMI</h2>
+          <p>
+            Start with the figures on your sanction letter. Then read the
+            EMI together with the total interest and the schedule.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>The EMI formula</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The standard amortising-loan formula, reducing balance</small>
+          EMI = P × r × (1 + r)^n ÷ ((1 + r)^n − 1)
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. Find the monthly rate
+            <strong>r = ${sampleMonthlyRate.toFixed(7)}</strong>
+            <span>${p.sampleRate}% a year ÷ 12 ÷ 100 = ${sampleMonthlyRate.toFixed(7)} a month.</span>
+          </div>
+
+          <div class="math-step">
+            2. Raise it to the tenure
+            <strong>(1 + r)^${sampleMonths} = ${sampleGrowth.toFixed(4)}</strong>
+            <span>Compounding the monthly rate over ${sampleMonths} months gives ${sampleGrowth.toFixed(4)}.</span>
+          </div>
+
+          <div class="math-step">
+            3. Apply the formula
+            <strong>EMI = ${fmtINR(sample.emi)}</strong>
+            <span>${fmtINR(p.sampleAmount)} × ${sampleMonthlyRate.toFixed(7)} × ${sampleGrowth.toFixed(4)} ÷ (${sampleGrowth.toFixed(4)} − 1) = ${fmtINR(sample.emi)} a month.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>Paying ₹5,000 extra a month clears this loan in ${fmtNum(samplePrepay.months)} months instead of ${fmtNum(sampleMonths)} — and saves ${fmtINR(samplePrepay.savedInterest)} of interest.</strong>
+          Extra payments cut the balance early, so less interest accrues on everything after them. On a floating-rate loan taken by an individual, the RBI (Pre-payment Charges on Loans) Directions, 2025 bar prepayment charges for loans sanctioned or renewed on or after 1 January 2026. A lender's rounding may move the EMI by a few rupees.
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Three loans, three EMIs</h2>
+          <p>
+            Select any example to load it into the calculator and check the
+            working for yourself.
+          </p>
+        </div>
+
+        <div class="grid3">
+          ${p.stories.map(story => {
+            const r = emiCompute(story.amount, story.rate, story.years * 12 + story.months);
+            const sched = emiSchedule(story.amount, story.rate, story.years * 12 + story.months);
+            const first = sched[0];
+            return `
+            <article class="card">
+              <span class="number-label">${fmtINR(story.amount)} · ${story.rate}% · ${story.years} years</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                EMI ${fmtINR(r.emi)} · Total interest ${fmtINR(r.interest)} · First year ${fmtINR(first.interest)} interest, ${fmtINR(first.principal)} principal
+              </p>
+              <button class="calc-btn" type="button" data-scenario data-preset="${e(story.preset)}" data-amount="${story.amount}" data-rate="${story.rate}" data-years="${story.years}" data-months="${story.months}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="comparison">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.exampleTitle)}</p>
+          <h2>One loan, three tenures</h2>
+          <p>${e(p.exampleNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="comparison-note">
+            <caption>${fmtINR(p.compareAmount)} at ${p.compareRate}% a year.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Tenure</th>
+                <th scope="col">Monthly EMI</th>
+                <th scope="col">Total interest</th>
+                <th scope="col">Total payment</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${compareRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="comparison-note">${e(p.exampleConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="rates">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">What rates look like now</p>
+          <h2>Indicative loan rates in India, November 2026</h2>
+          <p>
+            Typical ranges from lenders' published pages, after the RBI
+            raised the repo rate to 5.50% in October 2026. Your rate depends
+            on your credit score, income and the lender — your sanction
+            letter decides, not this table.
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>Indicative ranges — check the lender's own page before you apply.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Loan type</th>
+                <th scope="col">Indicative rate</th>
+                <th scope="col">Tenure</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${ratesRows}
+            </tbody>
+          </table>
+          <p class="calc-small">
+            ${e(p.notice)}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to read a loan wrong</h2>
+          <p>
+            The EMI formula is short, but four readings trip borrowers up.
+            Each one can make an expensive loan look cheap.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / FLAT VS REDUCING</span>
+            <h3>Comparing a flat rate as if it were reducing</h3>
+            <p>A flat 10% charges interest on the full amount for the whole tenure; a reducing-balance 10% charges it only on what you still owe. The flat quote costs far more — compare reducing-balance rates only.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE LOWEST EMI</span>
+            <h3>Choosing the lowest EMI</h3>
+            <p>Stretching a ₹50 lakh home loan from 15 to 25 years cuts the EMI by ₹8,865 a month but adds ₹33,37,117 of interest. The cheapest EMI is rarely the cheapest loan — compare the total interest.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / THE HIDDEN COSTS</span>
+            <h3>Forgetting the fees</h3>
+            <p>The EMI is principal and interest only. Processing fees, GST on those fees, stamp duty, registration and insurance can add lakhs to the true cost of a home loan — add them before you compare.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / THE RESET</span>
+            <h3>Assuming the EMI never changes</h3>
+            <p>On a floating-rate loan the rate resets every few months. Most lenders keep the EMI and change the tenure, so a rate rise quietly stretches your loan by years. Re-check after every reset.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>EMI calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the standard amortising-loan formula on a
+            reducing balance: EMI = P × r × (1 + r)^n ÷ ((1 + r)^n − 1),
+            with r the monthly rate and n the tenure in months. Interest
+            each month is charged on the balance still owed. The EMI is
+            rounded to the nearest rupee for display; the schedule uses the
+            unrounded EMI, so yearly figures can differ from the displayed
+            totals by a rupee or two. A lender's rounding and daily interest
+            accrual can move the EMI by a few rupees — the figures here are
+            an estimate, not a sanction.
+          </p>
+          <p>
+            The indicative rate ranges are from lenders' published pages as
+            reported in November 2026: home loans 7.40%–9.25%, personal
+            loans 10.50%–24%, car loans 7.85%–11.55%. The RBI repo rate is
+            5.50% after the Monetary Policy Committee's October 2026 hike.
+            The prepayment rule is the RBI (Pre-payment Charges on Loans)
+            Directions, 2025, which bar prepayment charges on floating-rate
+            loans to individuals sanctioned or renewed on or after
+            1 January 2026. The tax notes are Sections 24(b) and 80C of the
+            Income Tax Act under the old regime. No lender or regulator
+            endorses this tool.
+          </p>
+          <p>
+            Sources: the RBI Monetary Policy Statement, October 2026, and
+            the RBI (Pre-payment Charges on Loans) Directions, 2025, on
+            <a href="https://www.rbi.org.in/" rel="nofollow noopener" target="_blank">rbi.org.in</a>;
+            rate ranges as published on
+            <a href="https://arthzo.com/loans/" rel="nofollow noopener" target="_blank">arthzo.com</a>,
+            <a href="https://www.aalekh.ai/calculators/emi" rel="nofollow noopener" target="_blank">aalekh.ai</a> and
+            <a href="https://moneykarma.com/calculators/home-loan-emi-calculator/" rel="nofollow noopener" target="_blank">moneykarma.com</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another loan before you sign</h2>
+          <p>
+            Try a different amount, rate or tenure — or run the same check
+            with the related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function bmiCategory(bmi) {
+  const b = Number(bmi);
+  if (!(b > 0) || !Number.isFinite(b)) return null;
+  if (b < 18.5) return { key: "underweight", label: "Underweight", note: "Below the healthy range. A low BMI can mean too little body fat or muscle for your height — if you have lost weight without trying, or you feel unwell, talk to a doctor." };
+  if (b < 25) return { key: "healthy", label: "Healthy weight", note: "In the healthy range. A balanced diet and regular activity are the way to stay here." };
+  if (b < 30) return { key: "overweight", label: "Overweight", note: "Above the healthy range. Even a small, steady weight loss lowers the risk of type 2 diabetes and heart disease — talk to a doctor before starting a diet." };
+  return { key: "obese", label: "Obese", note: "Well above the healthy range. A BMI of 30 or more is linked to a higher risk of type 2 diabetes, heart disease and joint problems — talk to a doctor about a plan." };
+}
+
+export function bmiHealthyRange(heightCm) {
+  const h = Number(heightCm) / 100;
+  if (!(h > 0) || !Number.isFinite(h)) return null;
+  return { low: 18.5 * h * h, high: 24.9 * h * h, heightCm: Number(heightCm) };
+}
+
+export function bmiCompute(heightCm, weightKg) {
+  const h = Number(heightCm) / 100;
+  const w = Number(weightKg);
+  if (!(h > 0) || !(w > 0) || !Number.isFinite(h) || !Number.isFinite(w)) return null;
+  const bmi = w / (h * h);
+  const category = bmiCategory(bmi);
+  const range = bmiHealthyRange(heightCm);
+  let toHealthy = { direction: "within", kg: 0 };
+  if (bmi < 18.5) toHealthy = { direction: "gain", kg: range.low - w };
+  else if (bmi > 24.9) toHealthy = { direction: "lose", kg: w - range.high };
+  return { bmi, bmi1dp: Math.round(bmi * 10) / 10, category, healthyLow: range.low, healthyHigh: range.high, heightCm: Number(heightCm), weightKg: w, toHealthy };
+}
+
+export function bmiFromFeetInches(feet, inches, weightKg) {
+  const ft = Number(feet);
+  const inch = Number(inches);
+  const w = Number(weightKg);
+  if (!Number.isFinite(ft) || !Number.isFinite(inch) || !(w > 0)) return null;
+  const totalInches = ft * 12 + inch;
+  if (!(totalInches > 0)) return null;
+  const heightCm = totalInches * 2.54;
+  const result = bmiCompute(heightCm, w);
+  if (!result) return null;
+  result.heightCm = heightCm;
+  result.heightFeet = ft;
+  result.heightInches = inch;
+  return result;
+}
+
+export function sipClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function sipCompute(monthly, annualRatePct, years) {
+    const P = Number(monthly);
+    const pct = Number(annualRatePct);
+    const y = Math.round(Number(years));
+    if (!(P > 0) || !(y > 0) || !(pct >= 0) || !Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(y)) return null;
+    const n = y * 12;
+    const i = pct / 1200;
+    const invested = P * n;
+    const value = i === 0 ? invested : P * (Math.pow(1 + i, n) - 1) / i * (1 + i);
+    return { value, invested, gains: value - invested, months: n, years: y, monthlyRate: i };
+  }
+
+  function sipSchedule(monthly, annualRatePct, years) {
+    const first = sipCompute(monthly, annualRatePct, years);
+    if (!first) return null;
+    const rows = [];
+    for (let y = 1; y <= first.years; y++) {
+      const r = sipCompute(monthly, annualRatePct, y);
+      rows.push({ year: y, invested: r.invested, value: r.value, gains: r.gains });
+    }
+    return rows;
+  }
+
+  function sipRequired(target, annualRatePct, years) {
+    const T = Number(target);
+    const pct = Number(annualRatePct);
+    const y = Math.round(Number(years));
+    if (!(T > 0) || !(y > 0) || !(pct >= 0) || !Number.isFinite(T) || !Number.isFinite(pct) || !Number.isFinite(y)) return null;
+    const n = y * 12;
+    const i = pct / 1200;
+    if (i === 0) return { monthly: Math.ceil(T / n), target: T, months: n, years: y };
+    const factor = (Math.pow(1 + i, n) - 1) / i * (1 + i);
+    return { monthly: Math.ceil(T / factor), target: T, months: n, years: y };
+  }
+
+  const presetSelect = $("preset");
+  const sipPill = $("sip-pill");
+  const monthlyInput = $("monthly");
+  const rateInput = $("rate");
+  const yearsInput = $("years");
+  const monthlyError = $("monthly-error");
+  const rateError = $("rate-error");
+  const tenureError = $("tenure-error");
+  const output = $("answer");
+  const investedVal = $("invested-val");
+  const gainsVal = $("gains-val");
+  const shareVal = $("share-val");
+  const splitInvested = $("split-invested");
+  const splitGains = $("split-gains");
+  const splitInvestedLabel = $("split-invested-label");
+  const splitGainsLabel = $("split-gains-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const workingFirstYear = $("working-first-year");
+  const workingGoal = $("working-goal");
+  const workingNote = $("working-note");
+  const scheduleBody = $("schedule-body");
+  const scheduleNote = $("schedule-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmtINR = n => "₹" + new Intl.NumberFormat("en-IN", { maximumFractionDigits: 0 }).format(Math.round(n));
+  const fmtNum = n => new Intl.NumberFormat("en-GB").format(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+
+  function clearResult() {
+    output.textContent = "—";
+    investedVal.textContent = "—";
+    gainsVal.textContent = "—";
+    shareVal.textContent = "—";
+    splitInvested.style.width = "0%";
+    splitGains.style.width = "0%";
+    splitInvestedLabel.textContent = "Invested —";
+    splitGainsLabel.textContent = "Estimated gains —";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your SIP at a glance";
+    glanceText.textContent = "Enter your monthly amount, expected return and tenure to see the estimated value, what you invest and the estimated gains.";
+    working.textContent = "Enter your SIP details to see the working.";
+    workingFirstYear.textContent = "";
+    workingGoal.textContent = "";
+    workingNote.textContent = "";
+    scheduleBody.replaceChildren();
+    scheduleNote.textContent = "Enter your SIP details to see the year-by-year growth.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function renderSchedule(years) {
+    scheduleBody.replaceChildren();
+    years.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = "Year " + row.year;
+      tr.appendChild(th);
+      [row.invested, row.gains, row.value].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = fmtINR(v);
+        tr.appendChild(td);
+      });
+      scheduleBody.appendChild(tr);
+    });
+  }
+
+  function paint(showEmptyError = false) {
+    sipPill.textContent = presetSelect.value === "custom" ? "Custom figures" : presetRec(presetSelect.value).label;
+    const monthlyRaw = monthlyInput.value;
+    const rateRaw = rateInput.value;
+    const yearsRaw = yearsInput.value;
+    const monthlyNum = monthlyRaw === "" ? NaN : Number(monthlyRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    const yearsNum = yearsRaw === "" ? NaN : Number(yearsRaw);
+
+    let monthlyMsg = "";
+    if (monthlyRaw === "") {
+      if (showEmptyError) monthlyMsg = "Enter the monthly SIP amount.";
+    } else if (!Number.isFinite(monthlyNum) || !Number.isInteger(monthlyNum) || monthlyNum < 500 || monthlyNum > 1000000) {
+      monthlyMsg = "Enter a whole-rupee amount from ₹500 to ₹10,00,000 a month.";
+    }
+    monthlyError.textContent = monthlyMsg;
+    monthlyInput.setAttribute("aria-invalid", String(monthlyMsg !== ""));
+
+    let rateMsg = "";
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the expected annual return.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 30) {
+      rateMsg = "Enter an expected return from 0% to 30% a year.";
+    }
+    rateError.textContent = rateMsg;
+    rateInput.setAttribute("aria-invalid", String(rateMsg !== ""));
+
+    let tenureMsg = "";
+    if (yearsRaw === "") {
+      if (showEmptyError) tenureMsg = "Enter the tenure in years.";
+    } else if (!Number.isInteger(yearsNum) || yearsNum < 1 || yearsNum > 40) {
+      tenureMsg = "Enter whole years from 1 to 40.";
+    }
+    tenureError.textContent = tenureMsg;
+    yearsInput.setAttribute("aria-invalid", String(tenureMsg !== ""));
+
+    const valid = monthlyMsg === "" && rateMsg === "" && tenureMsg === "" && monthlyRaw !== "" && rateRaw !== "" && yearsRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const result = sipCompute(monthlyNum, rateNum, yearsNum);
+    const years = sipSchedule(monthlyNum, rateNum, yearsNum);
+    if (!result || !years) {
+      clearResult();
+      return false;
+    }
+
+    output.textContent = fmtINR(result.value);
+    investedVal.textContent = fmtINR(result.invested);
+    gainsVal.textContent = fmtINR(result.gains);
+    const share = result.value > 0 ? Math.round(result.gains / result.value * 100) : 0;
+    shareVal.textContent = share + "%";
+    const investedShare = result.value > 0 ? result.invested / result.value * 100 : 0;
+    splitInvested.style.width = investedShare.toFixed(1) + "%";
+    splitGains.style.width = (100 - investedShare).toFixed(1) + "%";
+    splitInvestedLabel.textContent = "Invested " + fmtINR(result.invested) + " (" + Math.round(investedShare) + "%)";
+    splitGainsLabel.textContent = "Estimated gains " + fmtINR(result.gains) + " (" + (100 - Math.round(investedShare)) + "%)";
+
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your SIP at a glance";
+    glanceText.textContent = result.gains > result.invested
+      ? "Over " + fmtNum(yearsNum) + " years the estimated gains of " + fmtINR(result.gains) + " overtake the " + fmtINR(result.invested) + " you invest."
+      : "Over " + fmtNum(yearsNum) + " years you invest " + fmtINR(result.invested) + " and the estimate adds " + fmtINR(result.gains) + " of gains.";
+
+    const firstYear = years[0];
+    working.textContent = "FV = " + fmtINR(monthlyNum) + " × ((1 + " + result.monthlyRate.toFixed(7) + ")^" + result.months + " − 1) ÷ " + result.monthlyRate.toFixed(7) + " × (1 + " + result.monthlyRate.toFixed(7) + ") = " + fmtINR(result.value) + ".";
+    workingFirstYear.textContent = "First year: " + fmtINR(firstYear.invested) + " invested, " + fmtINR(firstYear.gains) + " estimated gains — value " + fmtINR(firstYear.value) + " after 12 instalments.";
+    const goal = sipRequired(c.goalTarget, rateNum, yearsNum);
+    workingGoal.textContent = goal
+      ? "To reach " + fmtINR(c.goalTarget) + " in " + fmtNum(yearsNum) + " years at " + rateNum + "% you would need " + fmtINR(goal.monthly) + " a month."
+      : "Enter a return above 0% to see the monthly SIP a ₹1 crore goal would need.";
+    workingNote.textContent = "Estimated, not guaranteed. Mutual fund returns are market-linked — the value can fall below what you invest, and the figures are before tax, exit load and fund expenses.";
+
+    renderSchedule(years);
+    scheduleNote.textContent = "Year-by-year growth of your " + fmtNum(result.months) + " monthly instalments of " + fmtINR(monthlyNum) + ". Each instalment compounds from the month it is paid, so the earliest instalments do the most work.";
+
+    copyButton.disabled = false;
+    summary =
+      "VisitBest | SIP Calculator" +
+      "\nMonthly SIP: " + fmtINR(monthlyNum) +
+      "\nExpected annual return: " + rateNum + "%" +
+      "\nTenure: " + fmtNum(yearsNum) + " years" +
+      "\nEstimated maturity value: " + fmtINR(result.value) +
+      "\nInvested: " + fmtINR(result.invested) +
+      "\nEstimated gains: " + fmtINR(result.gains) +
+      "\nGains share: " + share + "% of the estimated value";
+    return true;
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, monthlyInput.value, rateInput.value, yearsInput.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      const result = sipCompute(item.monthly, item.rate, item.years);
+      button.textContent = fmtINR(item.monthly) + "/month @ " + item.rate + "% · " + fmtNum(item.years) + " years → " + (result ? fmtINR(result.value) : "—");
+      button.setAttribute("aria-label", "Load check for " + fmtINR(item.monthly) + " a month at " + item.rate + " percent over " + fmtNum(item.years) + " years");
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        monthlyInput.value = String(item.monthly);
+        rateInput.value = String(item.rate);
+        yearsInput.value = String(item.years);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      monthly: Number(monthlyInput.value),
+      rate: Number(rateInput.value),
+      years: Number(yearsInput.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      monthlyInput.value = button.dataset.monthly || "";
+      rateInput.value = button.dataset.rate || "";
+      yearsInput.value = button.dataset.years || "";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    const rec = presetRec(presetSelect.value);
+    monthlyInput.value = String(rec.monthly);
+    rateInput.value = String(rec.rate);
+    yearsInput.value = String(rec.years);
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    monthlyInput.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    rateInput.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    yearsInput.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("sip-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    monthlyInput.value = String(rec.monthly);
+    rateInput.value = String(rec.rate);
+    yearsInput.value = String(rec.years);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderSipCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmtINR = n => "₹" + new Intl.NumberFormat("en-IN", { maximumFractionDigits: 0 }).format(Math.round(n));
+  const fmtNum = n => new Intl.NumberFormat("en-GB").format(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleMonthly: p.sampleMonthly, sampleRate: p.sampleRate, sampleYears: p.sampleYears, goalTarget: p.goalTarget };
+  const sampleMonths = p.sampleYears * 12;
+  const sample = sipCompute(p.sampleMonthly, p.sampleRate, p.sampleYears);
+  const sampleSchedule = sipSchedule(p.sampleMonthly, p.sampleRate, p.sampleYears);
+  const sampleFirstYear = sampleSchedule[0];
+  const sampleGoal = sipRequired(p.goalTarget, p.sampleRate, p.sampleYears);
+  const sampleMonthlyRate = p.sampleRate / 1200;
+  const sampleGrowth = Math.pow(1 + sampleMonthlyRate, sampleMonths);
+
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${fmtINR(pr.monthly)} a month at ${pr.rate}% over ${pr.years} years</option>
+  `).join("");
+
+  const compareRows = p.compareYears.map(y => {
+    const r = sipCompute(p.compareMonthly, p.compareRate, y);
+    return `
+      <tr>
+        <th scope="row">${y} years (${y * 12} months)</th>
+        <td>${fmtINR(r.invested)}</td>
+        <td>${fmtINR(r.value)}</td>
+        <td>${fmtINR(r.gains)}</td>
+      </tr>`;
+  }).join("");
+
+  const returnsRows = p.returnsRates.map(rate => {
+    const r = sipCompute(p.returnsMonthly, rate, p.returnsYears);
+    return `
+      <tr>
+        <th scope="row">${rate}% a year</th>
+        <td>${fmtINR(r.value)}</td>
+        <td>${fmtINR(r.gains)}</td>
+      </tr>`;
+  }).join("");
+
+  const scheduleRows = sampleSchedule.map(row => `
+      <tr>
+        <th scope="row">Year ${row.year}</th>
+        <td>${fmtINR(row.invested)}</td>
+        <td>${fmtINR(row.gains)}</td>
+        <td>${fmtINR(row.value)}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${sipCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free SIP calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate your SIP →
+              </a>
+              <a href="#method" class="calc-link">How the SIP value is worked out ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${fmtINR(sample.value)}</strong>
+                <small>Estimated value on ${fmtINR(p.sampleMonthly)} a month at ${p.sampleRate}%</small>
+              </div>
+              <div>
+                <strong>3 inputs</strong>
+                <small>Amount, return, years</small>
+              </div>
+              <div>
+                <strong>Market-linked</strong>
+                <small>No guaranteed return</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>Estimated, not guaranteed.</strong>
+              Mutual fund returns are market-linked — the ${p.sampleRate}% is
+              an assumption, and the value can fall below what you invest.
+              Figures are before tax, exit load and fund expenses.
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/">RRB Age</a>
+              <a href="/emi-calculator/">EMI</a>
+              <a href="/sip-calculator/" aria-current="page">SIP</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate your SIP</h2>
+              <span class="calc-pill" id="sip-pill">₹10,000 a month</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own plan.</p>
+
+            <form id="sip-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in typical figures, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="monthly">
+                Monthly SIP amount (₹)
+                <span>The fixed amount you invest every month</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="monthly"
+                type="number"
+                value="${p.sampleMonthly}"
+                min="500"
+                max="1000000"
+                step="500"
+                inputmode="numeric"
+                aria-describedby="monthly-error"
+              >
+              <p class="calc-error" id="monthly-error" aria-live="polite"></p>
+
+              <label class="field-label" for="rate">
+                Expected annual return (%)
+                <span>A planning assumption, not a forecast — 10–12% for equity, 6–7% for debt</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="rate"
+                type="number"
+                value="${p.sampleRate}"
+                min="0"
+                max="30"
+                step="0.1"
+                inputmode="decimal"
+                aria-describedby="rate-error"
+              >
+              <p class="calc-error" id="rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="years">
+                Tenure — years
+                <span>1 to 40 years</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="years"
+                type="number"
+                value="${p.sampleYears}"
+                min="1"
+                max="40"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="tenure-error"
+              >
+              <p class="calc-error" id="tenure-error" aria-live="polite"></p>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate my SIP →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ESTIMATED MATURITY VALUE</span>
+                <span>MONTHLY COMPOUNDING</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your estimated maturity value</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="monthly">${fmtINR(sample.value)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="invested-val">${fmtINR(sample.invested)}</strong>
+                  <small>INVESTED</small>
+                </div>
+                <div>
+                  <strong id="gains-val">${fmtINR(sample.gains)}</strong>
+                  <small>ESTIMATED GAINS</small>
+                </div>
+                <div>
+                  <strong id="share-val">${Math.round(sample.gains / sample.value * 100)}%</strong>
+                  <small>GAINS SHARE</small>
+                </div>
+              </div>
+
+              <div class="split-bar" aria-hidden="true">
+                <i class="split-invested" id="split-invested" style="width:${(sample.invested / sample.value * 100).toFixed(1)}%"></i><i class="split-gains" id="split-gains" style="width:${(sample.gains / sample.value * 100).toFixed(1)}%"></i>
+              </div>
+              <div class="split-legend">
+                <span><i class="split-dot" style="background:#7fd1a8"></i><b id="split-invested-label">Invested ${fmtINR(sample.invested)} (${Math.round(sample.invested / sample.value * 100)}%)</b></span>
+                <span><i class="split-dot" style="background:#ffb454"></i><b id="split-gains-label">Estimated gains ${fmtINR(sample.gains)} (${Math.round(sample.gains / sample.value * 100)}%)</b></span>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your SIP at a glance</strong>
+                <span id="glance-text">Over ${fmtNum(p.sampleYears)} years you invest ${fmtINR(sample.invested)} and the estimate adds ${fmtINR(sample.gains)} of gains.</span>
+              </div>
+
+              <p class="working" id="working">
+                FV = ${fmtINR(p.sampleMonthly)} × ((1 + ${sampleMonthlyRate.toFixed(7)})^${sampleMonths} − 1) ÷ ${sampleMonthlyRate.toFixed(7)} × (1 + ${sampleMonthlyRate.toFixed(7)}) = ${fmtINR(sample.value)}.
+              </p>
+              <p class="working" id="working-first-year">First year: ${fmtINR(sampleFirstYear.invested)} invested, ${fmtINR(sampleFirstYear.gains)} estimated gains — value ${fmtINR(sampleFirstYear.value)} after 12 instalments.</p>
+              <p class="working" id="working-goal">To reach ${fmtINR(p.goalTarget)} in ${fmtNum(p.sampleYears)} years at ${p.sampleRate}% you would need ${fmtINR(sampleGoal.monthly)} a month.</p>
+              <p class="working" id="working-note">Estimated, not guaranteed. Mutual fund returns are market-linked — the value can fall below what you invest, and the figures are before tax, exit load and fund expenses.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The value assumes the same return every month. Real market
+                returns vary, and they can be negative for stretches — the
+                estimate is a planning figure, not a forecast.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate my SIP to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="schedule">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your growth, year by year</p>
+          <h2>Year by year: invested vs value</h2>
+          <p id="schedule-note">Year-by-year growth of your ${fmtNum(sampleMonths)} monthly instalments of ${fmtINR(p.sampleMonthly)}. Each instalment compounds from the month it is paid, so the earliest instalments do the most work.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="schedule-note">
+            <caption>Growth table — ${fmtINR(p.sampleMonthly)} a month at ${p.sampleRate}% over ${p.sampleYears} years.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Invested so far</th>
+                <th scope="col">Estimated gains</th>
+                <th scope="col">Estimated value</th>
+              </tr>
+            </thead>
+            <tbody id="schedule-body">
+              ${scheduleRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#comparison">One SIP, three tenures</a>
+        <a href="#returns">Returns table</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / THREE INPUTS</span>
+            <h3>Amount, return, years</h3>
+            <p>Three numbers decide the estimate. The amount is what you invest every month, the return is the annual rate you are assuming for planning, and the tenure is how many years you keep investing.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / COMPOUNDING MONTHLY</span>
+            <h3>Every instalment earns from its month</h3>
+            <p>Each month's instalment starts compounding the month it is paid. That is why the earliest instalments do the most work — and why starting five years earlier matters more than investing a little more each month.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / AN ASSUMPTION, NOT A PROMISE</span>
+            <h3>The return is a planning input</h3>
+            <p>The calculator applies one constant return to show a possible outcome. Real market returns vary year to year and can be negative for stretches — the value can end below what you invested, especially over short periods.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From monthly amount to estimated value</h2>
+          <p>
+            Start with a monthly amount you can keep paying through a bad
+            year as well as a good one. Then read the value together with
+            the split and the growth table.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>The SIP formula</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The standard SIP future-value formula, monthly compounding</small>
+          FV = P × ((1 + i)^n − 1) ÷ i × (1 + i)
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. Find the monthly rate
+            <strong>i = ${sampleMonthlyRate.toFixed(7)}</strong>
+            <span>${p.sampleRate}% a year ÷ 12 ÷ 100 = ${sampleMonthlyRate.toFixed(7)} a month.</span>
+          </div>
+
+          <div class="math-step">
+            2. Raise it to the tenure
+            <strong>(1 + i)^${sampleMonths} = ${sampleGrowth.toFixed(4)}</strong>
+            <span>Compounding the monthly rate over ${sampleMonths} months gives ${sampleGrowth.toFixed(4)}.</span>
+          </div>
+
+          <div class="math-step">
+            3. Apply the formula
+            <strong>FV = ${fmtINR(sample.value)}</strong>
+            <span>${fmtINR(p.sampleMonthly)} × (${sampleGrowth.toFixed(4)} − 1) ÷ ${sampleMonthlyRate.toFixed(7)} × (1 + ${sampleMonthlyRate.toFixed(7)}) = ${fmtINR(sample.value)}.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${fmtINR(sampleGoal.monthly)} a month at ${p.sampleRate}% reaches ${fmtINR(p.goalTarget)} in ${fmtNum(p.sampleYears)} years.</strong>
+          Work backwards from a goal instead of forwards from an amount: the calculator shows the monthly SIP any target needs at your assumed return and tenure. Raising ₹10,000 a month by 10% every year — a step-up SIP — makes ₹33,74,326 in 10 years at 12%, on ₹19,12,491 invested, against ₹23,23,391 without the step-up.
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Three SIPs, three outcomes</h2>
+          <p>
+            Select any example to load it into the calculator and check the
+            working for yourself.
+          </p>
+        </div>
+
+        <div class="grid3">
+          ${p.stories.map(story => {
+            const r = sipCompute(story.monthly, story.rate, story.years);
+            const sched = sipSchedule(story.monthly, story.rate, story.years);
+            const first = sched[0];
+            return `
+            <article class="card">
+              <span class="number-label">${fmtINR(story.monthly)} a month · ${story.rate}% · ${story.years} years</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                Value ${fmtINR(r.value)} · Invested ${fmtINR(r.invested)} · First year ${fmtINR(first.invested)} invested, ${fmtINR(first.gains)} gains
+              </p>
+              <button class="calc-btn" type="button" data-scenario data-preset="${e(story.preset)}" data-monthly="${story.monthly}" data-rate="${story.rate}" data-years="${story.years}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="comparison">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.exampleTitle)}</p>
+          <h2>One SIP, three tenures</h2>
+          <p>${e(p.exampleNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="comparison-note">
+            <caption>${fmtINR(p.compareMonthly)} a month at ${p.compareRate}% a year.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Tenure</th>
+                <th scope="col">Invested</th>
+                <th scope="col">Estimated value</th>
+                <th scope="col">Estimated gains</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${compareRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="comparison-note">${e(p.exampleConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="returns">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.returnsTitle)}</p>
+          <h2>What the return assumption does</h2>
+          <p>${e(p.returnsNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="returns-note">
+            <caption>${fmtINR(p.returnsMonthly)} a month for ${p.returnsYears} years, at four assumed returns.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Assumed return</th>
+                <th scope="col">Estimated value</th>
+                <th scope="col">Estimated gains</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${returnsRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="returns-note">${e(p.returnsConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to read a SIP wrong</h2>
+          <p>
+            The SIP formula is short, but four readings trip investors up.
+            Each one can make a risky plan look safe.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / THE GUARANTEED RETURN</span>
+            <h3>Treating 12% as a promise</h3>
+            <p>Twelve percent is a planning assumption, not a rate any fund guarantees. Equity returns vary year to year, and a bad stretch early on can leave the value below what you invested. Plan on the lower end of the range.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / STOPPING WHEN MARKETS FALL</span>
+            <h3>Stopping the SIP in a fall</h3>
+            <p>A falling market buys more units for the same monthly amount — that is the whole point of rupee-cost averaging. Stopping when prices fall locks in the loss of the cheap units you would have bought.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / COMPARING WITH AN FD</span>
+            <h3>Comparing a SIP with a fixed deposit</h3>
+            <p>An FD's 7% is fixed and guaranteed; a SIP's 12% is an assumption about a market-linked return. Comparing the two headline numbers hides the risk — compare a SIP with other market-linked options, and an FD with other fixed options.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / FORGETTING TAX AND INFLATION</span>
+            <h3>Forgetting tax and inflation</h3>
+            <p>The ₹50,45,760 estimate is before tax — equity gains are taxed when you sell — and it is in future rupees, which buy less than today's. A step-up SIP, raising the amount as your income grows, is the usual answer to both.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>SIP calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the standard SIP future-value formula with monthly
+            compounding: FV = P × ((1 + i)^n − 1) ÷ i × (1 + i), with i the
+            monthly rate and n the number of months. Instalments are counted
+            from the start of each month, the convention Groww, ET Money and
+            ClearTax use; a calculator that counts them from the end of the
+            month shows a slightly lower value for the same inputs. The
+            return is assumed constant for the whole tenure. Values are
+            rounded to the nearest rupee for display. The figures are
+            estimates for planning, not a forecast and not investment
+            advice — no fund or regulator endorses this tool.
+          </p>
+          <p>
+            The tax notes are the Finance Act 2024 rules from 23 July 2024:
+            on equity funds, 20% short-term gains on units held up to
+            12 months and 12.5% long-term gains above ₹1.25 lakh in a year,
+            plus 4% cess; debt funds bought from 1 April 2023 are taxed at
+            the investor's slab rate. The step-up illustration — ₹10,000 a
+            month rising 10% a year making ₹33,74,326 in 10 years at 12% —
+            is computed on the same formula. Mutual fund investments are
+            subject to market risk; read the scheme documents before
+            investing.
+          </p>
+          <p>
+            Cross-checked 11 November 2026 against the ranking SIP
+            calculators: the ₹10,000-a-month, 12%, 15-year figure of
+            ₹50,45,760, the 10-year figure of ₹23,23,391 and the ₹1-crore
+            goal SIP of ₹19,819 a month agree with
+            <a href="https://finlyzers.com/calculators/sip-calculator" rel="nofollow noopener" target="_blank">finlyzers.com</a>,
+            <a href="https://www.ap7am.com/calculators/sip-calculator" rel="nofollow noopener" target="_blank">ap7am.com</a> and
+            <a href="https://www.toolsfiesta.com/finance/sip-calculator" rel="nofollow noopener" target="_blank">toolsfiesta.com</a>.
+            See also
+            <a href="https://www.amfiindia.com/" rel="nofollow noopener" target="_blank">amfiindia.com</a>
+            for the market-risk disclosure.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try a different amount, return or tenure — or run the same check
+            with the related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function bmiClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function bmiCategory(bmi) {
+    const b = Number(bmi);
+    if (!(b > 0) || !Number.isFinite(b)) return null;
+    if (b < 18.5) return { key: "underweight", label: "Underweight", note: "Below the healthy range. A low BMI can mean too little body fat or muscle for your height — if you have lost weight without trying, or you feel unwell, talk to a doctor." };
+    if (b < 25) return { key: "healthy", label: "Healthy weight", note: "In the healthy range. A balanced diet and regular activity are the way to stay here." };
+    if (b < 30) return { key: "overweight", label: "Overweight", note: "Above the healthy range. Even a small, steady weight loss lowers the risk of type 2 diabetes and heart disease — talk to a doctor before starting a diet." };
+    return { key: "obese", label: "Obese", note: "Well above the healthy range. A BMI of 30 or more is linked to a higher risk of type 2 diabetes, heart disease and joint problems — talk to a doctor about a plan." };
+  }
+
+  function bmiHealthyRange(heightCm) {
+    const h = Number(heightCm) / 100;
+    if (!(h > 0) || !Number.isFinite(h)) return null;
+    return { low: 18.5 * h * h, high: 24.9 * h * h, heightCm: Number(heightCm) };
+  }
+
+  function bmiCompute(heightCm, weightKg) {
+    const h = Number(heightCm) / 100;
+    const w = Number(weightKg);
+    if (!(h > 0) || !(w > 0) || !Number.isFinite(h) || !Number.isFinite(w)) return null;
+    const bmi = w / (h * h);
+    const category = bmiCategory(bmi);
+    const range = bmiHealthyRange(heightCm);
+    let toHealthy = { direction: "within", kg: 0 };
+    if (bmi < 18.5) toHealthy = { direction: "gain", kg: range.low - w };
+    else if (bmi > 24.9) toHealthy = { direction: "lose", kg: w - range.high };
+    return { bmi, bmi1dp: Math.round(bmi * 10) / 10, category, healthyLow: range.low, healthyHigh: range.high, heightCm: Number(heightCm), weightKg: w, toHealthy };
+  }
+
+  function bmiFromFeetInches(feet, inches, weightKg) {
+    const ft = Number(feet);
+    const inch = Number(inches);
+    const w = Number(weightKg);
+    if (!Number.isFinite(ft) || !Number.isFinite(inch) || !(w > 0)) return null;
+    const totalInches = ft * 12 + inch;
+    if (!(totalInches > 0)) return null;
+    const heightCm = totalInches * 2.54;
+    const result = bmiCompute(heightCm, w);
+    if (!result) return null;
+    result.heightCm = heightCm;
+    result.heightFeet = ft;
+    result.heightInches = inch;
+    return result;
+  }
+
+  const presetSelect = $("preset");
+  const unitSelect = $("height-unit");
+  const bmiPill = $("bmi-pill");
+  const heightCmInput = $("height-cm");
+  const heightFtInput = $("height-ft");
+  const heightInInput = $("height-in");
+  const weightInput = $("weight");
+  const heightCmError = $("height-cm-error");
+  const heightFtError = $("height-ft-error");
+  const heightInError = $("height-in-error");
+  const weightError = $("weight-error");
+  const cmFields = $("unit-cm-fields");
+  const ftinFields = $("unit-ftin-fields");
+  const output = $("answer");
+  const categoryVal = $("category-val");
+  const rangeVal = $("range-val");
+  const deltaVal = $("delta-val");
+  const scaleMarker = $("bmi-scale-marker");
+  const scaleLabel = $("bmi-scale-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const workingRange = $("working-range");
+  const workingNote = $("working-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt1dp = n => (Math.round(n * 10) / 10).toFixed(1);
+  const fmtNum = n => new Intl.NumberFormat("en-GB").format(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+
+  function clearResult() {
+    output.textContent = "—";
+    categoryVal.textContent = "—";
+    rangeVal.textContent = "—";
+    deltaVal.textContent = "—";
+    scaleMarker.style.left = "0%";
+    scaleLabel.textContent = "Enter your height and weight to see where you fall on the scale.";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your BMI at a glance";
+    glanceText.textContent = "Enter your height and weight to see your BMI, its category and the healthy weight range for your height.";
+    working.textContent = "Enter your height and weight to see the working.";
+    workingRange.textContent = "";
+    workingNote.textContent = "";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paint(showEmptyError = false) {
+    const isMetric = unitSelect.value === "cm";
+    cmFields.hidden = !isMetric;
+    ftinFields.hidden = isMetric;
+    bmiPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const weightRaw = weightInput.value;
+    const weightNum = weightRaw === "" ? NaN : Number(weightRaw);
+    let weightMsg = "";
+    if (weightRaw === "") {
+      if (showEmptyError) weightMsg = "Enter your weight.";
+    } else if (!Number.isFinite(weightNum) || weightNum < 20 || weightNum > 300) {
+      weightMsg = "Enter a weight from 20 kg to 300 kg.";
+    }
+    weightError.textContent = weightMsg;
+    weightInput.setAttribute("aria-invalid", String(weightMsg !== ""));
+
+    let result = null;
+    let heightCm = NaN;
+    let heightMsg = "";
+    let heightFtMsg = "";
+    let heightInMsg = "";
+    if (isMetric) {
+      const hRaw = heightCmInput.value;
+      const hNum = hRaw === "" ? NaN : Number(hRaw);
+      if (hRaw === "") {
+        if (showEmptyError) heightMsg = "Enter your height.";
+      } else if (!Number.isFinite(hNum) || hNum < 100 || hNum > 220) {
+        heightMsg = "Enter a height from 100 cm to 220 cm.";
+      }
+      heightCmError.textContent = heightMsg;
+      heightCmInput.setAttribute("aria-invalid", String(heightMsg !== ""));
+      heightCm = hNum;
+    } else {
+      const ftRaw = heightFtInput.value;
+      const inRaw = heightInInput.value;
+      const ftNum = ftRaw === "" ? NaN : Number(ftRaw);
+      const inNum = inRaw === "" ? NaN : Number(inRaw);
+      if (ftRaw === "") {
+        if (showEmptyError) heightFtMsg = "Enter the feet.";
+      } else if (!Number.isInteger(ftNum) || ftNum < 3 || ftNum > 7) {
+        heightFtMsg = "Enter whole feet from 3 to 7.";
+      }
+      if (inRaw === "") {
+        if (showEmptyError) heightInMsg = "Enter the inches.";
+      } else if (!Number.isInteger(inNum) || inNum < 0 || inNum > 11) {
+        heightInMsg = "Enter whole inches from 0 to 11.";
+      }
+      heightFtError.textContent = heightFtMsg;
+      heightInError.textContent = heightInMsg;
+      heightFtInput.setAttribute("aria-invalid", String(heightFtMsg !== ""));
+      heightInInput.setAttribute("aria-invalid", String(heightInMsg !== ""));
+      if (heightFtMsg === "" && heightInMsg === "" && ftRaw !== "" && inRaw !== "") {
+        result = bmiFromFeetInches(ftNum, inNum, weightNum);
+        heightCm = result ? result.heightCm : NaN;
+      }
+    }
+
+    const valid = weightMsg === "" && heightMsg === "" && heightFtMsg === "" && heightInMsg === ""
+      && weightRaw !== ""
+      && (isMetric ? heightCmInput.value !== "" : heightFtInput.value !== "" && heightInInput.value !== "");
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    if (isMetric) result = bmiCompute(heightCm, weightNum);
+    if (!result) {
+      clearResult();
+      return false;
+    }
+
+    const heightM = result.heightCm / 100;
+    const heightSq = heightM * heightM;
+    output.textContent = fmt1dp(result.bmi);
+    categoryVal.textContent = result.category.label;
+    rangeVal.textContent = fmt1dp(result.healthyLow) + " – " + fmt1dp(result.healthyHigh) + " kg";
+    deltaVal.textContent = result.toHealthy.direction === "within"
+      ? "Inside the healthy range"
+      : result.toHealthy.direction === "gain"
+        ? fmt1dp(result.toHealthy.kg) + " kg below the healthy range"
+        : fmt1dp(result.toHealthy.kg) + " kg above the healthy range";
+    const markerPct = Math.min(100, Math.max(0, (result.bmi - 15) / 25 * 100));
+    scaleMarker.style.left = markerPct.toFixed(1) + "%";
+    scaleLabel.textContent = "BMI " + fmt1dp(result.bmi) + " — " + result.category.label + " (scale 15 to 40).";
+
+    glanceBox.className = "verdict " + (result.category.key === "healthy" ? "verdict-ok" : "verdict-warn");
+    glanceTitle.textContent = "Your BMI at a glance";
+    glanceText.textContent = result.category.note;
+
+    working.textContent = "BMI = " + fmtNum(result.weightKg) + " ÷ (" + heightM.toFixed(2) + " × " + heightM.toFixed(2) + ") = " + fmtNum(result.weightKg) + " ÷ " + heightSq.toFixed(2) + " = " + fmt1dp(result.bmi) + ".";
+    workingRange.textContent = "Healthy weight for " + fmt1dp(result.heightCm) + " cm: 18.5 × " + heightSq.toFixed(2) + " = " + fmt1dp(result.healthyLow) + " kg to 24.9 × " + heightSq.toFixed(2) + " = " + fmt1dp(result.healthyHigh) + " kg.";
+    workingNote.textContent = "BMI is a screening tool, not a diagnosis. It does not measure body fat directly, and it does not suit children, pregnant women, very muscular people or older adults.";
+
+    copyButton.disabled = false;
+    summary =
+      "VisitBest | BMI Calculator" +
+      "\nHeight: " + fmt1dp(result.heightCm) + " cm" +
+      "\nWeight: " + fmtNum(result.weightKg) + " kg" +
+      "\nBMI: " + fmt1dp(result.bmi) +
+      "\nCategory: " + result.category.label +
+      "\nHealthy weight range: " + fmt1dp(result.healthyLow) + " – " + fmt1dp(result.healthyHigh) + " kg";
+    return true;
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, unitSelect.value, heightCmInput.value, heightFtInput.value, heightInInput.value, weightInput.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      const result = bmiCompute(item.heightCm, item.weightKg);
+      button.textContent = fmt1dp(item.heightCm) + " cm · " + fmtNum(item.weightKg) + " kg → BMI " + (result ? fmt1dp(result.bmi) : "—") + (result ? " (" + result.category.label + ")" : "");
+      button.setAttribute("aria-label", "Load check for " + fmt1dp(item.heightCm) + " centimetres and " + fmtNum(item.weightKg) + " kilograms");
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        unitSelect.value = "cm";
+        heightCmInput.value = String(item.heightCm);
+        weightInput.value = String(item.weightKg);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    const heightCm = unitSelect.value === "cm"
+      ? Number(heightCmInput.value)
+      : (Number(heightFtInput.value) * 12 + Number(heightInInput.value)) * 2.54;
+    history.unshift({ key, heightCm, weightKg: Number(weightInput.value) });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      unitSelect.value = "cm";
+      heightCmInput.value = button.dataset.heightCm || "";
+      weightInput.value = button.dataset.weight || "";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    const rec = presetRec(presetSelect.value);
+    unitSelect.value = "cm";
+    heightCmInput.value = String(rec.heightCm);
+    weightInput.value = String(rec.weightKg);
+    paint();
+  });
+
+  unitSelect.addEventListener("change", () => {
+    presetSelect.value = "custom";
+    if (unitSelect.value === "ftin") {
+      const cm = Number(heightCmInput.value);
+      if (Number.isFinite(cm) && cm > 0) {
+        const totalIn = Math.round(cm / 2.54);
+        heightFtInput.value = String(Math.floor(totalIn / 12));
+        heightInInput.value = String(totalIn % 12);
+      }
+    } else {
+      const totalIn = Number(heightFtInput.value) * 12 + Number(heightInInput.value);
+      if (Number.isFinite(totalIn) && totalIn > 0) {
+        heightCmInput.value = String(Math.round(totalIn * 2.54 * 10) / 10);
+      }
+    }
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    heightCmInput.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    heightFtInput.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    heightInInput.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    weightInput.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("bmi-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    unitSelect.value = "cm";
+    heightCmInput.value = String(rec.heightCm);
+    weightInput.value = String(rec.weightKg);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderBmiCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt1dp = n => (Math.round(n * 10) / 10).toFixed(1);
+  const fmtNum = n => new Intl.NumberFormat("en-GB").format(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleHeightCm: p.sampleHeightCm, sampleWeightKg: p.sampleWeightKg };
+  const sample = bmiCompute(p.sampleHeightCm, p.sampleWeightKg);
+  const sampleHeightM = p.sampleHeightCm / 100;
+  const sampleHeightSq = sampleHeightM * sampleHeightM;
+  const sampleMarkerPct = Math.min(100, Math.max(0, (sample.bmi - 15) / 25 * 100));
+
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${pr.heightCm} cm, ${pr.weightKg} kg</option>
+  `).join("");
+
+  const categoryRows = p.categories.map(([range, label, note]) => `
+      <tr>
+        <th scope="row">${e(range)}</th>
+        <td>${e(label)}</td>
+        <td>${e(note)}</td>
+      </tr>`).join("");
+
+  const rangeRows = p.rangeHeights.map(h => {
+    const r = bmiHealthyRange(h);
+    return `
+      <tr>
+        <th scope="row">${h} cm</th>
+        <td>${fmt1dp(r.low)} kg</td>
+        <td>${fmt1dp(r.high)} kg</td>
+      </tr>`;
+  }).join("");
+
+  return `<style>${css}${ageCss}${bmiCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free BMI calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate your BMI →
+              </a>
+              <a href="#method" class="calc-link">How BMI is worked out ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${fmt1dp(sample.bmi)}</strong>
+                <small>BMI for ${p.sampleHeightCm} cm and ${p.sampleWeightKg} kg — ${sample.category.label}</small>
+              </div>
+              <div>
+                <strong>2 inputs</strong>
+                <small>Height and weight</small>
+              </div>
+              <div>
+                <strong>Screening tool</strong>
+                <small>Not a diagnosis</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>Screening tool, not a diagnosis.</strong>
+              BMI does not measure body fat directly, and it does not suit
+              children, pregnant women, very muscular people or older
+              adults. Talk to a doctor before acting on a result.
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/">RRB Age</a>
+              <a href="/emi-calculator/">EMI</a>
+              <a href="/sip-calculator/">SIP</a>
+              <a href="/bmi-calculator/" aria-current="page">BMI</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate your BMI</h2>
+              <span class="calc-pill" id="bmi-pill">${p.sampleHeightCm} cm · ${p.sampleWeightKg} kg</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own measurements.</p>
+
+            <form id="bmi-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in typical figures, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="height-unit">
+                Height unit
+                <span>Centimetres, or feet and inches</span>
+              </label>
+
+              <select class="select-input" id="height-unit">
+                <option value="cm" selected>Centimetres (cm)</option>
+                <option value="ftin">Feet and inches (ft/in)</option>
+              </select>
+
+              <div id="unit-cm-fields">
+                <label class="field-label" for="height-cm">
+                  Height (cm)
+                  <span>Without shoes, from 100 cm to 220 cm</span>
+                </label>
+
+                <input
+                  class="number-input"
+                  id="height-cm"
+                  type="number"
+                  value="${p.sampleHeightCm}"
+                  min="100"
+                  max="220"
+                  step="0.1"
+                  inputmode="decimal"
+                  aria-describedby="height-cm-error"
+                >
+                <p class="calc-error" id="height-cm-error" aria-live="polite"></p>
+              </div>
+
+              <div id="unit-ftin-fields" hidden>
+                <div class="unit-row">
+                  <div>
+                    <label class="field-label" for="height-ft">
+                      Feet
+                      <span>3 to 7 ft</span>
+                    </label>
+
+                    <input
+                      class="number-input"
+                      id="height-ft"
+                      type="number"
+                      value="5"
+                      min="3"
+                      max="7"
+                      step="1"
+                      inputmode="numeric"
+                      aria-describedby="height-ft-error"
+                    >
+                    <p class="calc-error" id="height-ft-error" aria-live="polite"></p>
+                  </div>
+                  <div>
+                    <label class="field-label" for="height-in">
+                      Inches
+                      <span>0 to 11 in</span>
+                    </label>
+
+                    <input
+                      class="number-input"
+                      id="height-in"
+                      type="number"
+                      value="7"
+                      min="0"
+                      max="11"
+                      step="1"
+                      inputmode="numeric"
+                      aria-describedby="height-in-error"
+                    >
+                    <p class="calc-error" id="height-in-error" aria-live="polite"></p>
+                  </div>
+                </div>
+              </div>
+
+              <label class="field-label" for="weight">
+                Weight (kg)
+                <span>From 20 kg to 300 kg</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="weight"
+                type="number"
+                value="${p.sampleWeightKg}"
+                min="20"
+                max="300"
+                step="0.1"
+                inputmode="decimal"
+                aria-describedby="weight-error"
+              >
+              <p class="calc-error" id="weight-error" aria-live="polite"></p>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate my BMI →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR BODY MASS INDEX</span>
+                <span>WHO ADULT CATEGORIES</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your BMI</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="height-cm">${fmt1dp(sample.bmi)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="category-val">${sample.category.label}</strong>
+                  <small>CATEGORY</small>
+                </div>
+                <div>
+                  <strong id="range-val">${fmt1dp(sample.healthyLow)} – ${fmt1dp(sample.healthyHigh)} kg</strong>
+                  <small>HEALTHY WEIGHT FOR YOUR HEIGHT</small>
+                </div>
+                <div>
+                  <strong id="delta-val">Inside the healthy range</strong>
+                  <small>DISTANCE FROM HEALTHY RANGE</small>
+                </div>
+              </div>
+
+              <div class="bmi-scale" aria-hidden="true">
+                <i class="bmi-under" style="width:14%"></i><i class="bmi-healthy" style="width:26%"></i><i class="bmi-over" style="width:20%"></i><i class="bmi-obese" style="width:40%"></i>
+                <span class="bmi-marker" id="bmi-scale-marker" style="left:${sampleMarkerPct.toFixed(1)}%"></span>
+              </div>
+              <div class="bmi-scale-labels" aria-hidden="true">
+                <span>15</span><span>18.5</span><span>25</span><span>30</span><span>40</span>
+              </div>
+              <p class="calc-small" id="bmi-scale-label" style="color:#c8dce6">BMI ${fmt1dp(sample.bmi)} — ${sample.category.label} (scale 15 to 40).</p>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your BMI at a glance</strong>
+                <span id="glance-text">${e(sample.category.note)}</span>
+              </div>
+
+              <p class="working" id="working">
+                BMI = ${fmtNum(p.sampleWeightKg)} ÷ (${sampleHeightM.toFixed(2)} × ${sampleHeightM.toFixed(2)}) = ${fmtNum(p.sampleWeightKg)} ÷ ${sampleHeightSq.toFixed(2)} = ${fmt1dp(sample.bmi)}.
+              </p>
+              <p class="working" id="working-range">Healthy weight for ${fmtNum(p.sampleHeightCm)} cm: 18.5 × ${sampleHeightSq.toFixed(2)} = ${fmt1dp(sample.healthyLow)} kg to 24.9 × ${sampleHeightSq.toFixed(2)} = ${fmt1dp(sample.healthyHigh)} kg.</p>
+              <p class="working" id="working-note">BMI is a screening tool, not a diagnosis. It does not measure body fat directly, and it does not suit children, pregnant women, very muscular people or older adults.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The categories are the World Health Organization's adult
+                classification. For Indian readers, lower cut-offs apply —
+                see the note below the category table.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate my BMI to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#categories">Categories</a>
+        <a href="#range-table">Healthy weights</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / TWO MEASUREMENTS</span>
+            <h3>Height and weight</h3>
+            <p>Two numbers decide the result. Height goes in as metres, squared, and weight as kilograms. A centimetre or two of height makes a visible difference, so measure rather than guess.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / FOUR CATEGORIES</span>
+            <h3>Underweight to obese</h3>
+            <p>The World Health Organization sorts adult BMIs into underweight, healthy weight, overweight and obese, with obesity split into three classes. The bands are the same for men and women and for all adult ages.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / A SCREEN, NOT A VERDICT</span>
+            <h3>BMI flags, it does not diagnose</h3>
+            <p>BMI cannot tell muscle from fat, and it says nothing about where fat sits. A result outside the healthy range is a prompt to talk to a doctor, not a diagnosis on its own.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From height and weight to BMI</h2>
+          <p>
+            Measure in the morning, before eating, on the same scales each
+            time. Then read the BMI together with the category and the
+            healthy weight range for your height.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>The BMI formula</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The World Health Organization's BMI formula</small>
+          BMI = weight (kg) ÷ height (m)²
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. Convert height to metres
+            <strong>170 cm = ${sampleHeightM.toFixed(2)} m</strong>
+            <span>Divide the height in centimetres by 100.</span>
+          </div>
+
+          <div class="math-step">
+            2. Square the height
+            <strong>${sampleHeightM.toFixed(2)} × ${sampleHeightM.toFixed(2)} = ${sampleHeightSq.toFixed(2)}</strong>
+            <span>Multiply the height in metres by itself.</span>
+          </div>
+
+          <div class="math-step">
+            3. Divide the weight by it
+            <strong>${fmtNum(p.sampleWeightKg)} ÷ ${sampleHeightSq.toFixed(2)} = ${fmt1dp(sample.bmi)}</strong>
+            <span>The result is the BMI, shown to one decimal place.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.asianTitle)}</strong>
+          ${e(p.asianNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Three BMIs, three categories</h2>
+          <p>
+            Select any example to load it into the calculator and check the
+            working for yourself.
+          </p>
+        </div>
+
+        <div class="grid3">
+          ${p.stories.map(story => {
+            const r = bmiCompute(story.heightCm, story.weightKg);
+            return `
+            <article class="card">
+              <span class="number-label">${story.heightCm} cm · ${story.weightKg} kg</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                BMI ${fmt1dp(r.bmi)} · ${r.category.label} · Healthy range ${fmt1dp(r.healthyLow)} – ${fmt1dp(r.healthyHigh)} kg
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-height-cm="${story.heightCm}" data-weight="${story.weightKg}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="categories">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">WHO adult BMI classification</p>
+          <h2>BMI categories</h2>
+          <p>The World Health Organization's adult classification, from the 1995 Technical Report Series No. 854. The bands are age-independent for adults and the same for both genders.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="categories-note">
+            <caption>WHO BMI categories for adults.</caption>
+            <thead>
+              <tr>
+                <th scope="col">BMI (kg/m²)</th>
+                <th scope="col">Category</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${categoryRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="categories-note">${e(p.asianNote)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="range-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rangeTitle)}</p>
+          <h2>Healthy weight for your height</h2>
+          <p>${e(p.rangeNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="range-note">
+            <caption>Healthy weight range (BMI 18.5–24.9) for common heights.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Height</th>
+                <th scope="col">Healthy weight from</th>
+                <th scope="col">Healthy weight to</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rangeRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="range-note">${e(p.rangeConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to read a BMI wrong</h2>
+          <p>
+            The BMI formula is short, but four readings trip people up.
+            Each one can make a healthy result look worrying, or a risky
+            one look fine.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / THE DIAGNOSIS</span>
+            <h3>Treating BMI as a diagnosis</h3>
+            <p>BMI is a screening tool. It flags a result worth checking with a doctor; it does not by itself diagnose obesity, malnutrition or any disease. Blood pressure, blood sugar, cholesterol and waist size all matter alongside it.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / GUESSING THE INPUTS</span>
+            <h3>Measuring height or weight wrong</h3>
+            <p>Height in shoes adds a centimetre or two, and weight after a meal or on a different scale can shift by a kilogram. Both errors move the BMI. Measure height without shoes and weight in the morning, before eating, on the same scales.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / MIXING UP THE UNITS</span>
+            <h3>Using the wrong units</h3>
+            <p>The formula needs kilograms and metres. Entering pounds as kilograms, or centimetres as metres, gives a nonsense number. Use the feet-and-inches option if you think in imperial units, and let the calculator convert.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / CHASING ONE NUMBER</span>
+            <h3>Chasing a single number</h3>
+            <p>A BMI inside the healthy range is not a guarantee of health, and a BMI just outside it is not a disaster. Crash diets that force the number down fast rarely hold — steady habits, strength, sleep and waist size matter at least as much as the number itself.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>BMI calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the World Health Organization's BMI formula:
+            BMI = weight (kg) ÷ height (m)², with the adult categories from
+            the WHO Technical Report Series No. 854 (1995) — below 18.5
+            underweight, 18.5–24.9 healthy weight, 25.0–29.9 overweight,
+            30.0 and above obese, with obesity split into Class I (30.0–
+            34.9), Class II (35.0–39.9) and Class III (40.0 and above). The
+            healthy weight range for a height is the weight that gives a BMI
+            of 18.5 at the low end and 24.9 at the high end. BMI is shown to
+            one decimal place; the healthy-range weights are shown to one
+            decimal place. For feet and inches, 1 inch = 2.54 cm exactly.
+          </p>
+          <p>
+            The Indian cut-offs in the note are the WHO's lower public-
+            health action points for Asian populations (23 for overweight,
+            27.5 for obesity) and the Indian consensus guidelines of Misra
+            et al. (2009), which count 23.0–24.9 as overweight and 25 and
+            above as obese, with a healthy range of 18.0–22.9. BMI is a
+            screening tool, not a diagnosis, and it does not apply to
+            children, who are assessed on BMI-for-age percentile charts.
+          </p>
+          <p>
+            Cross-checked 11 November 2026 against the ranking BMI
+            calculators: 170 cm and 70 kg gives BMI 24.2 with a healthy
+            range of 53.5–72.0 kg on
+            <a href="https://www.calculatorplanet.in/calculators/bmi-calculator" rel="nofollow noopener" target="_blank">calculatorplanet.in</a>,
+            and 78 kg at 1.72 m gives 26.4 on
+            <a href="https://www.calkulator.in/bmi-calculator" rel="nofollow noopener" target="_blank">calkulator.in</a>.
+            Category thresholds follow the
+            <a href="https://apps.who.int/nutrition/landscape/help.aspx?helpid=420&amp;menu=0" rel="nofollow noopener" target="_blank">WHO Nutrition Landscape Information System</a>
+            and the
+            <a href="https://www.cdc.gov/bmi/adult-calculator/bmi-categories.html" rel="nofollow noopener" target="_blank">CDC adult BMI categories</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try a different height or weight — or run the same check with
+            the related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
   <script>(${clientSource})(${safeJSON(config)});</script>`;
 }
