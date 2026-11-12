@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, renderUpscAgeCalculatorBody, renderIbpsAgeCalculatorBody, renderRrbAgeCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient, upscClient, ibpsClient, rrbClient } from "./calculators.mjs";
+import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, renderUpscAgeCalculatorBody, renderIbpsAgeCalculatorBody, renderRrbAgeCalculatorBody, renderEmiCalculatorBody, renderSipCalculatorBody, renderBmiCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient, upscClient, ibpsClient, rrbClient, emiClient, sipClient, bmiClient } from "./calculators.mjs";
 import {
   polls as bbPolls,
   contestants as bbContestants,
@@ -505,6 +505,9 @@ function renderFooter() {
         <li><a href="/upsc-age-calculator/">UPSC Age Calculator</a></li>
         <li><a href="/ibps-age-calculator/">IBPS Age Calculator</a></li>
         <li><a href="/rrb-age-calculator/">RRB Age Calculator</a></li>
+        <li><a href="/emi-calculator/">EMI Calculator</a></li>
+        <li><a href="/sip-calculator/">SIP Calculator</a></li>
+        <li><a href="/bmi-calculator/">BMI Calculator</a></li>
         <li><a href="/search/">Search All Guides</a></li>
         <li><a href="/assets/bb20-new/image-credits.html">Image Credits</a></li>
         <li><a href="mailto:visitbest10@gmail.com">visitbest10@gmail.com</a></li>
@@ -941,6 +944,12 @@ for (let i = 0; i < calculatorPages.length; i++) {
             ? renderIbpsAgeCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, ibpsClient.toString())
             : item.kind === "rrb-age"
               ? renderRrbAgeCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, rrbClient.toString())
+              : item.kind === "emi"
+                ? renderEmiCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, emiClient.toString())
+              : item.kind === "sip"
+                ? renderSipCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, sipClient.toString())
+              : item.kind === "bmi"
+                ? renderBmiCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, bmiClient.toString())
               : renderCalculatorBody(item, calculatorPages[1 - i], calculatorCss, calculatorClient.toString());
   const html = renderPage({
     title: `${item.title} - VisitBest`,
