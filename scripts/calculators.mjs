@@ -409,8 +409,232 @@ export const pages = [
       ["Why does another age calculator give a different result?", "Some calculators divide by 365.25 days a year, or treat every month as 30 days. Those shortcuts drift by days around month ends and leap years. This calculator subtracts real calendar dates, so it matches the date arithmetic a form or a notice uses."],
       ["Can I use this age for an exam or an official form?", "For an exam, use the calculator for that exam: the SSC Age Calculator on this site checks your age on the crucial date in the SSC notice, with the category relaxation applied. For a form, use the date of birth on your certificate — this tool counts age, it does not verify identity or eligibility."]
     ]
-  }
+  },
 
+  {
+    key: "upsc-age",
+    kind: "upsc-age",
+    slug: "upsc-age-calculator",
+    title: "UPSC Age Calculator",
+    meta: "Check your exact age as on 1 August of the UPSC Civil Services exam year, with your category relaxation and attempts left. Age limits and attempt rules from the official CSE 2026 notification.",
+    lead: "Enter your date of birth and check your exact age on 1 August of your Civil Services exam year — then see whether you meet the age limit for your category, with the relaxation applied, and how many attempts you have left.",
+    years: [2026, 2027, 2028],
+    defaultYear: 2027,
+    sampleDob: "2000-03-15",
+    notice: "Civil Services Examination Rules, 2026 — Gazette of India, 4 February 2026 (F. No. 13018/02/2025-AIS-I); Examination Notice No. 05/2026-CSE, 4 February 2026",
+    categories: [
+      { id: "gen", label: "General", relax: 0, attempts: 6 },
+      { id: "ews", label: "EWS", relax: 0, attempts: 6 },
+      { id: "obc", label: "OBC (non-creamy layer)", relax: 3, attempts: 9 },
+      { id: "sc", label: "SC", relax: 5, attempts: null },
+      { id: "st", label: "ST", relax: 5, attempts: null }
+    ],
+    extras: [
+      { id: "none", label: "No extra relaxation", relax: 0 },
+      { id: "pwbd", label: "Person with benchmark disability (PwBD)", relax: 10 },
+      { id: "esm", label: "Ex-serviceman — 5 or more years of service", relax: 5 },
+      { id: "defence", label: "Defence personnel disabled in operations", relax: 3 }
+    ],
+    overviewTitle: "What does a UPSC age calculator do?",
+    overview: "It counts your exact age — years, months and days — on 1 August of the Civil Services exam year, and checks it against the age limit for your category. UPSC counts age on that one date only. Your age on the day you apply, or on the Prelims day, does not decide eligibility. The calculator also counts your attempts, because age and attempts together decide whether you can still appear.",
+    inputNote: "Use the date of birth on your Class 10 certificate. UPSC accepts that date for determining age and allows no later change.",
+    modelNote: "The rule is Rule 5 of the Civil Services Examination Rules, 2026: a candidate must have attained 21 years and must not have attained 32 years on 1 August of the exam year. For CSE 2026 that means born not earlier than 2 August 1994 and not later than 1 August 2005. Category relaxations raise the upper limit only — the minimum age of 21 applies to every category. The upper limit is exclusive: you must not have attained it on 1 August.",
+    steps: [
+      ["Enter your date of birth", "Use the date on your Class 10 certificate. UPSC accepts no other date for determining age."],
+      ["Choose the exam year", "CSE 2027 is the next cycle. The cut-off is always 1 August of that year."],
+      ["Pick your category and any extra relaxation", "SC/ST get 5 years, OBC 3 years. PwBD adds 10 years, ex-servicemen 5, defence personnel disabled in operations 3 — and a category relaxation stacks with one of those."],
+      ["Read the verdict", "Your exact age, the birth-date window for your category, your attempts left, and your first and last eligible exam years."]
+    ],
+    stories: [
+      {
+        dob: "2000-03-15", year: 2027, categoryId: "gen", extraId: "none", used: 0,
+        title: "Inside the limit with attempts to spare",
+        body: "Born 15 March 2000, she is 27 years, 4 months and 17 days old on 1 August 2027 — inside 21–32, so eligible for CSE 2027 as a General candidate, with all 6 attempts still available. Her first eligible year was 2021 and her last is 2031."
+      },
+      {
+        dob: "1994-08-01", year: 2026, categoryId: "gen", extraId: "none", used: 0,
+        title: "Exactly 32 on the cut-off — over the limit",
+        body: "Born 1 August 1994, he is exactly 32 years old on 1 August 2026. He has attained 32, so he is over the General limit for CSE 2026 — but as an OBC candidate the upper limit is 35, and he is eligible."
+      },
+      {
+        dob: "1990-06-15", year: 2027, categoryId: "sc", extraId: "pwbd", used: 0,
+        title: "Category and disability relaxations stack",
+        body: "Born 15 June 1990, she is 37 years, 1 month and 17 days old on 1 August 2027. As an SC candidate with a benchmark disability the upper limit is 47 — 32 plus 5 for SC plus 10 for PwBD — so she is eligible, with unlimited attempts. Her first eligible year was 2011 and her last is 2036."
+      }
+    ],
+    compareDob: "1993-08-02",
+    compareYear: 2027,
+    exampleTitle: "One birthday, five different answers",
+    exampleNote: "Born 2 August 1993, checked for CSE 2027. The age is the same for everyone — 33 years, 11 months and 30 days on 1 August 2027 — but the verdict changes with the category, because the upper limit changes.",
+    exampleConclusion: "The same person is over the limit as a General candidate and eligible in every other category. The category — not the birthday — decides. Always check with the relaxation you can actually claim, with the certificate to prove it.",
+    faq: [
+      ["What is the cut-off date for UPSC age calculation?", "1 August of the exam year. For CSE 2026 it is 1 August 2026; for CSE 2027 it is 1 August 2027. It is not the Prelims date (24 May 2026 for CSE 2026) and not the day you apply. Your age on that one date decides eligibility."],
+      ["I turn 32 on 1 August. Am I eligible?", "No. The rule says you must not have attained 32 years on 1 August. Born 1 August 1994, you are exactly 32 on 1 August 2026 and over the General limit. Born 2 August 1994, you are 31 years, 11 months and 30 days old and eligible."],
+      ["How do the age relaxations stack?", "The category relaxation and one further relaxation add together: SC/ST get 5 years, OBC 3 years, PwBD 10 years, ex-servicemen 5 years, and defence personnel disabled in operations 3 years. An SC candidate with a benchmark disability gets 32 + 5 + 10 = 47. An OBC ex-serviceman gets 32 + 3 + 5 = 40. The minimum age of 21 never changes."],
+      ["How many attempts do I get?", "General and EWS candidates get 6 attempts, OBC candidates 9, and SC/ST candidates have no limit within their age limit. PwBD candidates get 9 attempts (General, EWS or OBC) or unlimited attempts (SC/ST). An attempt counts when you appear in even one Prelims paper — merely applying does not count."],
+      ["What are my first and last eligible exam years?", "The first year you can appear is the first year in which you are 21 on 1 August; the last year is the last year in which you are still under your upper limit on 1 August. Born 15 March 2000 as a General candidate, your first eligible year is 2021 and your last is 2031."],
+      ["My birthday is 29 February. How is my age counted?", "Your birthday falls on 1 March in a non-leap year — the same rule the SSC Age Calculator and the Age Calculator on this site use. Born 29 February 2000, you are 25 years, 11 months and 30 days old on 28 February 2026 and exactly 26 on 1 March 2026. If your eligibility turns on that single day, confirm it with UPSC before applying."],
+      ["Can I use this calculator for CSE 2027?", "Yes — choose 2027 as the exam year. The limits on this page come from the Civil Services Examination Rules, 2026, the latest published rules. The CSE 2027 notification is tentatively due on 13 January 2027; when it releases, check the age and attempt rules against it before you apply."],
+      ["Does this check my education, nationality or service restrictions?", "No. This tool checks age and attempts only. You also need a graduate degree, and nationality rules apply by service. Serving IAS and IFS officers cannot reappear without resigning. Read the full notification on upsc.gov.in before applying."]
+    ]
+  },
+
+  {
+    key: "ibps-age",
+    kind: "ibps-age",
+    slug: "ibps-age-calculator",
+    title: "IBPS Age Calculator",
+    meta: "Check your exact age on the IBPS cut-off date for PO, Clerk, Specialist Officer and RRB posts, with your category relaxation. Age limits from the official IBPS CRP PO/MT-XVI, CSA-XVI, SPL-XVI and RRBs-XV notifications.",
+    lead: "Pick your IBPS exam, enter your date of birth, and check your exact age on that exam's cut-off date — then see whether you meet the age limit for your category, with the relaxation applied.",
+    exams: [
+      { id: "po", label: "IBPS PO / MT", cycle: "CRP PO/MT-XVI", cut: "2026-07-01", min: 20, upper: 30, exsm: "flat5", widow: false },
+      { id: "clerk", label: "IBPS Clerk / Customer Service Associate", cycle: "CRP CSA-XVI", cut: "2026-08-01", min: 20, upper: 28, exsm: "service3", widow: true },
+      { id: "so", label: "IBPS Specialist Officer (Scale I)", cycle: "CRP SPL-XVI", cut: "2026-07-01", min: 20, upper: 30, exsm: "flat5", widow: false },
+      { id: "rrb-oa", label: "IBPS RRB Office Assistant", cycle: "CRP RRBs-XV", cut: "2026-09-01", min: 18, upper: 28, exsm: "service3", widow: true },
+      { id: "rrb-1", label: "IBPS RRB Officer Scale I", cycle: "CRP RRBs-XV", cut: "2026-09-01", min: 18, upper: 30, exsm: "flat5", widow: false },
+      { id: "rrb-2", label: "IBPS RRB Officer Scale II", cycle: "CRP RRBs-XV", cut: "2026-09-01", min: 21, upper: 32, exsm: "flat5", widow: false },
+      { id: "rrb-3", label: "IBPS RRB Officer Scale III", cycle: "CRP RRBs-XV", cut: "2026-09-01", min: 21, upper: 40, exsm: "flat5", widow: false }
+    ],
+    defaultExam: "po",
+    sampleDob: "2000-03-15",
+    notice: "CRP PO/MT-XVI detailed notification (1 July 2026); CRP CSA-XVI detailed notification (1 August 2026); CRP SPL-XVI detailed notification (1 July 2026); CRP RRBs-XV detailed notification (1 September 2026) — all on ibps.in",
+    categories: [
+      { id: "gen", label: "General", relax: 0 },
+      { id: "ews", label: "EWS", relax: 0 },
+      { id: "obc", label: "OBC (non-creamy layer)", relax: 3 },
+      { id: "sc", label: "SC", relax: 5 },
+      { id: "st", label: "ST", relax: 5 }
+    ],
+    extras: [
+      { id: "none", label: "No extra relaxation" },
+      { id: "pwbd", label: "Person with benchmark disability (PwBD)" },
+      { id: "esm", label: "Ex-serviceman / commissioned officer" },
+      { id: "widow", label: "Widow, divorced or legally separated woman (not remarried) — Clerk and RRB Office Assistant only" }
+    ],
+    overviewTitle: "What does an IBPS age calculator do?",
+    overview: "It counts your exact age — years, months and days — on the cut-off date of the IBPS exam you choose, and checks it against the age limit for your category. IBPS counts age on that one date only, and every exam has its own: 1 July 2026 for PO and Specialist Officer, 1 August 2026 for Clerk, 1 September 2026 for the RRB posts. Your age on the day you apply, or on the exam day, does not decide eligibility. IBPS sets no limit on the number of attempts — only the age limit decides whether you can still appear.",
+    inputNote: "Use the date of birth on your Class 10 certificate. IBPS accepts that date for determining age.",
+    modelNote: "The rule is clause B.II (Age) of each IBPS notification: a candidate must be within the stated band on the notification's cut-off date. For IBPS PO that means 20 to 30 years as on 1 July 2026 — born not earlier than 2 July 1996 and not later than 1 July 2006. Category relaxations raise the upper limit only — the minimum age applies to every category. The upper limit is exclusive: you must not have attained it on the cut-off date.",
+    steps: [
+      ["Enter your date of birth", "Use the date on your Class 10 certificate. IBPS accepts no other date for determining age."],
+      ["Choose your IBPS exam", "PO, Clerk, Specialist Officer or one of the four RRB posts. Each exam has its own cut-off date — the calculator switches to it automatically."],
+      ["Pick your category and any extra relaxation", "SC/ST get 5 years, OBC 3 years. PwBD adds 10 years. Ex-servicemen get 5 years for PO, Specialist Officer and RRB officer posts, or their service plus 3 years for Clerk and RRB Office Assistant. A category relaxation stacks with one of those."],
+      ["Read the verdict", "Your exact age, the birth-date window for your category, and your first and last eligible exam years. IBPS sets no attempt limit, so age is the whole check."]
+    ],
+    stories: [
+      {
+        dob: "2000-03-15", examId: "po", categoryId: "gen", extraId: "none", service: 5,
+        title: "Inside the limit for IBPS PO",
+        body: "Born 15 March 2000, she is 26 years, 3 months and 16 days old on 1 July 2026 — inside 20–30, so eligible for IBPS PO as a General candidate. Her first eligible year was 2020 and her last is 2029."
+      },
+      {
+        dob: "1998-08-01", examId: "clerk", categoryId: "gen", extraId: "none", service: 5,
+        title: "Exactly 28 on the cut-off — over the limit",
+        body: "Born 1 August 1998, he is exactly 28 years old on 1 August 2026. He has attained 28, so he is over the General limit for IBPS Clerk — but as an OBC candidate the upper limit is 31, and he is eligible. His first eligible year as an OBC candidate was 2018 and his last is 2028."
+      },
+      {
+        dob: "1986-09-15", examId: "rrb-3", categoryId: "sc", extraId: "pwbd", service: 5,
+        title: "Category and disability relaxations stack",
+        body: "Born 15 September 1986, she is 39 years, 11 months and 17 days old on 1 September 2026. As an SC candidate with a benchmark disability the upper limit for Officer Scale III is 55 — 40 plus 5 for SC plus 10 for PwBD — so she is eligible. Her first eligible year was 2008 and her last is 2041."
+      }
+    ],
+    compareDob: "1996-07-02",
+    compareExam: "po",
+    exampleTitle: "One birthday, seven different answers",
+    exampleNote: "Born 2 July 1996, checked for the 2026 cycle. The age is nearly the same at each cut-off — 29 years, 11 months and 29 days on 1 July 2026 — but the verdict changes with the exam and the category, because the cut-off date and the upper limit change.",
+    exampleConclusion: "The same person is eligible for IBPS PO and RRB Officer Scale III, and over the limit for Clerk, RRB Office Assistant and RRB Officer Scale I as a General candidate. The exam and the category — not the birthday alone — decide. Always check against the cut-off date in your own notification.",
+    faq: [
+      ["What is the cut-off date for IBPS age calculation?", "It depends on the exam. IBPS PO and Specialist Officer count age on 1 July 2026, Clerk (Customer Service Associate) on 1 August 2026, and all four RRB posts on 1 September 2026. It is not the exam date and not the day you apply. Your age on that one date decides eligibility."],
+      ["I turn 30 on 1 July 2026 for IBPS PO. Am I eligible?", "No. The notification says you must have been born not earlier than 2 July 1996. Born 1 July 1996, you are exactly 30 on 1 July 2026 and over the General limit. Born 2 July 1996, you are 29 years, 11 months and 29 days old and eligible. The same exclusive rule applies to every IBPS exam on this page."],
+      ["How do the age relaxations stack?", "The category relaxation and one further relaxation add together: SC/ST get 5 years, OBC 3 years, PwBD 10 years. An OBC candidate with a benchmark disability gets 30 + 3 + 10 = 43 years for IBPS PO. An SC ex-serviceman gets 30 + 5 + 5 = 40 years. For Clerk and RRB Office Assistant, an ex-serviceman adds actual service plus 3 years, up to a maximum age of 50. The minimum age never changes."],
+      ["Is there a limit on the number of IBPS attempts?", "No. Unlike UPSC, IBPS sets no limit on the number of attempts for PO, Clerk, Specialist Officer or the RRB posts. You can appear every year for as long as you stay inside the age limit for your category. That is why this calculator shows first and last eligible exam years instead of attempts."],
+      ["What are my first and last eligible exam years?", "The first year you can appear is the first year in which you meet the minimum age on that exam's cut-off date; the last year is the last year in which you are still under your upper limit on the cut-off date. They assume the cut-off falls on the same date each year, as it has in recent cycles. Born 15 March 2000 as a General candidate for IBPS PO, your first eligible year is 2020 and your last is 2029."],
+      ["My birthday is 29 February. How is my age counted?", "Your birthday falls on 1 March in a non-leap year — the same rule the SSC Age Calculator and the Age Calculator on this site use. Born 29 February 2000, you are 26 years, 4 months and 2 days old on 1 July 2026 and 26 years, 6 months and 3 days old on 1 September 2026. If your eligibility turns on that single day, confirm it with IBPS before applying."],
+      ["Can I use this calculator for the 2027 cycle?", "The limits on this page come from the 2026-cycle notifications (CRP PO/MT-XVI, CSA-XVI, SPL-XVI and RRBs-XV), the latest published. The 2027 cycle (CRP XVII) will publish new cut-off dates; when it does, check the age band against the new notification before you apply, and this page will be updated to the new cut-offs."],
+      ["Does this check my education, nationality or experience?", "No. This tool checks age only. You also need a graduation degree (and, for RRB Officer Scale II and III, the experience the notification asks for), local-language proficiency where the notification requires it, and the nationality rules in the notification. Only the notification on ibps.in decides your eligibility."]
+    ]
+  },
+
+  {
+    key: "rrb-age",
+    kind: "rrb-age",
+    slug: "rrb-age-calculator",
+    title: "RRB Age Calculator",
+    meta: "Check your exact age on the RRB crucial date for NTPC, Group D, ALP, JE, Technician and Section Controller, with your category relaxation. Age limits from the official RRB CENs 01/2026 to 07/2026 and 09/2025.",
+    lead: "Pick your RRB exam, enter your date of birth, and check your exact age on that exam's crucial date — then see whether you meet the age limit for your category, with the relaxation applied.",
+    exams: [
+      { id: "ntpc-g", label: "NTPC Graduate", cycle: "CEN 06/2026", cut: "2027-01-01", min: 18, upper: 33, pwbd: true, ccaa: false },
+      { id: "ntpc-ug", label: "NTPC Undergraduate", cycle: "CEN 07/2026", cut: "2027-01-01", min: 18, upper: 30, pwbd: true, ccaa: false },
+      { id: "groupd", label: "Group D / Level 1", cycle: "CEN 09/2025", cut: "2026-01-01", min: 18, upper: 33, pwbd: true, ccaa: true },
+      { id: "alp", label: "Assistant Loco Pilot (ALP)", cycle: "CEN 01/2026", cut: "2026-07-01", min: 18, upper: 30, pwbd: false, ccaa: true },
+      { id: "tech1", label: "Technician Grade I Signal", cycle: "CEN 02/2026", cut: "2026-07-01", min: 18, upper: 33, pwbd: true, ccaa: false },
+      { id: "tech3", label: "Technician Grade III", cycle: "CEN 02/2026", cut: "2026-07-01", min: 18, upper: 30, pwbd: true, ccaa: true },
+      { id: "je", label: "Junior Engineer / DMS / CMA", cycle: "CEN 04/2026", cut: "2027-01-01", min: 18, upper: 33, pwbd: true, ccaa: false },
+      { id: "sc", label: "Section Controller", cycle: "CEN 03/2026", cut: "2026-07-01", min: 20, upper: 33, pwbd: true, ccaa: false }
+    ],
+    defaultExam: "ntpc-g",
+    sampleDob: "2000-03-15",
+    notice: "CEN 06/2026 NTPC Graduate and CEN 07/2026 NTPC Undergraduate (1 January 2027); CEN 09/2025 Group D (1 January 2026); CEN 01/2026 ALP, CEN 02/2026 Technician and CEN 03/2026 Section Controller (1 July 2026); CEN 04/2026 JE/DMS (1 January 2027) — all on rrb.indianrailways.gov.in",
+    categories: [
+      { id: "gen", label: "General", relax: 0 },
+      { id: "ews", label: "EWS", relax: 0 },
+      { id: "obc", label: "OBC (non-creamy layer)", relax: 3 },
+      { id: "sc", label: "SC", relax: 5 },
+      { id: "st", label: "ST", relax: 5 }
+    ],
+    extras: [
+      { id: "none", label: "No extra relaxation" },
+      { id: "pwbd", label: "Person with benchmark disability (PwBD) — the ALP CEN has no PwBD row" },
+      { id: "esm", label: "Ex-serviceman" },
+      { id: "widow", label: "Widow, divorced or legally separated woman (not remarried)" },
+      { id: "staff", label: "Serving railway staff, casual labour or substitute (3+ years of service)" },
+      { id: "ccaa", label: "Course Completed Act Apprentice (railway establishments) — ALP, Technician Grade III and Group D only" },
+      { id: "ccaa25", label: "Course Completed Act Apprentice who became one before age 25 — same three exams only" }
+    ],
+    overviewTitle: "What does an RRB age calculator do?",
+    overview: "It counts your exact age — years, months and days — on the crucial date of the RRB exam you choose, and checks it against the age limit for your category. RRB counts age on that one date only, and every exam has its own: 1 July 2026 for ALP, Technician and Section Controller, 1 January 2027 for JE and both NTPC streams, and 1 January 2026 for Group D. Your age on the day you apply, or on the exam day, does not decide eligibility. RRB sets no limit on the number of attempts — only the age limit decides whether you can still appear. And unlike IBPS and UPSC, RRB does not add relaxations together: you get the maximum relaxation you are eligible for, not the sum.",
+    inputNote: "Use the date of birth on your Class 10 certificate. RRB accepts that date for determining age — any difference leads to disqualification.",
+    modelNote: "The rule is the age section of each RRB CEN: a candidate must be within the stated band on the notification's crucial date. For NTPC Graduate that means 18 to 33 years as on 1 January 2027 — born not earlier than 2 January 1994 and not later than 1 January 2009. Category relaxations raise the upper limit only — the minimum age applies to every category. The upper limit is exclusive: you must not have attained it on the crucial date. Relaxations do not add up: a PwBD candidate gets 10, 13 or 15 years in total depending on category, and an ex-serviceman's service is deducted from the age first, then 3, 6 or 8 years apply.",
+    steps: [
+      ["Enter your date of birth", "Use the date on your Class 10 certificate. RRB accepts no other date for determining age."],
+      ["Choose your RRB exam", "NTPC Graduate or Undergraduate, Group D, ALP, Technician Grade I or III, JE/DMS/CMA or Section Controller. Each exam has its own crucial date — the calculator switches to it automatically."],
+      ["Pick your category and any extra relaxation", "SC/ST get 5 years, OBC 3 years. PwBD adds 10, 13 or 15 years in total. Ex-servicemen deduct their service from their age and then add 3, 6 or 8 years. Widows get up to 35, 38 or 40 years; serving railway staff up to 40, 43 or 45. RRB takes the maximum, never the sum."],
+      ["Read the verdict", "Your exact age, the birth-date window for your category, and your first and last eligible exam years. RRB sets no attempt limit, so age is the whole check."]
+    ],
+    stories: [
+      {
+        dob: "2000-03-15", examId: "ntpc-g", categoryId: "gen", extraId: "none", years: 5,
+        title: "Inside the limit for NTPC Graduate",
+        body: "Born 15 March 2000, she is 26 years, 9 months and 17 days old on 1 January 2027 — inside 18–33, so eligible for NTPC Graduate as a General candidate. Her first eligible year was 2019 and her last is 2033."
+      },
+      {
+        dob: "1996-07-01", examId: "alp", categoryId: "gen", extraId: "none", years: 5,
+        title: "Exactly 30 on the cut-off — over the limit",
+        body: "Born 1 July 1996, he is exactly 30 years old on 1 July 2026. He has attained 30, so he is over the General limit for ALP — but as an OBC candidate the upper limit is 33, and he is eligible. His first eligible year as an OBC candidate was 2014 and his last is 2028."
+      },
+      {
+        dob: "1988-06-15", examId: "groupd", categoryId: "sc", extraId: "pwbd", years: 5,
+        title: "Disability relaxation, counted once",
+        body: "Born 15 June 1988, she is 37 years, 6 months and 17 days old on 1 January 2026. As an SC candidate with a benchmark disability the upper limit for Group D is 48 — 33 plus 15 for PwBD, which already includes her 5-year SC relaxation — so she is eligible. Her first eligible year was 2007 and her last is 2036."
+      }
+    ],
+    compareDob: "1993-07-02",
+    compareExam: "ntpc-g",
+    exampleTitle: "One birthday, eight different answers",
+    exampleNote: "Born 2 July 1993. The age is nearly the same at each crucial date — 33 years, 5 months and 30 days on 1 January 2027 — but the verdict changes with the exam, because the crucial date and the upper limit change.",
+    exampleConclusion: "The same person is eligible for Group D, Technician Grade I and Section Controller, and over the limit for both NTPC streams, ALP, Technician Grade III and JE as a General candidate. The exam and the category — not the birthday alone — decide. Always check against the crucial date in your own CEN.",
+    faq: [
+      ["What is the cut-off date for RRB age calculation?", "It depends on the exam. ALP, Technician and Section Controller count age on 1 July 2026, JE and both NTPC streams on 1 January 2027, and Group D on 1 January 2026. It is not the exam date and not the day you apply. Your age on that one date decides eligibility."],
+      ["I turn 30 on 1 July 2026 for ALP. Am I eligible?", "No. The CEN says you must have been born not earlier than 2 July 1996. Born 1 July 1996, you are exactly 30 on 1 July 2026 and over the General limit. Born 2 July 1996, you are 29 years, 11 months and 29 days old and eligible. The same exclusive rule applies to every RRB exam on this page."],
+      ["How do the age relaxations work — do they add up?", "No. RRB gives you the maximum relaxation you are eligible for, not the sum of them. A PwBD candidate gets 10 years (General/EWS), 13 years (OBC) or 15 years (SC/ST) in total — the category relaxation is already inside those figures. An SC ex-serviceman with 10 years of service is counted at his age minus 10 years against an upper limit of 33 + 8 = 41 years for NTPC Graduate — the 8 already includes his 5-year SC relaxation. A candidate who is both a widow and railway staff gets the higher of the two limits — 40 years, not 35 + 40. Pick the one extra relaxation that gives you the most, and the calculator applies it."],
+      ["How does the ex-serviceman relaxation work?", "Your service is deducted from your age first, and then 3 years (General/EWS), 6 years (OBC) or 8 years (SC/ST) are added to the upper limit. You need more than six months of service after attestation. There is no maximum-age cap for ex-servicemen. Example: an SC ex-serviceman with 10 years of service applying for NTPC Graduate is counted at his age minus 10 years against an upper limit of 41 years."],
+      ["Is there a limit on the number of RRB attempts?", "No. None of the eight CENs states a limit on the number of attempts. You can appear every year for as long as you stay inside the age limit for your category. That is why this calculator shows first and last eligible exam years instead of attempts."],
+      ["What are my first and last eligible exam years?", "The first year you can appear is the first year in which you meet the minimum age on that exam's crucial date; the last year is the last year in which you are still under your upper limit on the crucial date. They assume the crucial date falls on the same date each year, as it has in recent cycles. Born 15 March 2000 as a General candidate for NTPC Graduate, your first eligible year is 2019 and your last is 2033."],
+      ["My birthday is 29 February. How is my age counted?", "Your birthday falls on 1 March in a non-leap year — the same rule the SSC Age Calculator and the Age Calculator on this site use. Born 29 February 2000, you are 26 years, 4 months and 2 days old on 1 July 2026 and 26 years, 10 months and 3 days old on 1 January 2027. If your eligibility turns on that single day, confirm it with RRB before applying."],
+      ["Why isn't Paramedical (CEN 05/2026) in this calculator?", "The Paramedical CEN covers nine posts with six different age bands — Nursing Superintendent 20–40, Pharmacist 20–35, Audiologist 21–30, Radiographer 19–33 and the rest 18–33, all as on 1 January 2027. One exam choice cannot represent them, so this page leaves Paramedical out rather than guessing. Check the per-post table in CEN 05/2026 on rrb.indianrailways.gov.in."],
+      ["Does this check my education, qualification or medical standard?", "No. This tool checks age only. You also need the qualification each CEN asks for — a degree for NTPC Graduate, JE and Section Controller, 12th pass for NTPC Undergraduate, 10th or ITI for Group D, ALP and Technician Grade III — and the medical standard of the post. Only the CEN on rrb.indianrailways.gov.in decides your eligibility."]
+    ]
+  },
 ];
 
 export const css = `
@@ -1558,6 +1782,189 @@ export function sscWindow(cutISO, min, max, relaxYears, serviceY, serviceM) {
   const earliest = sscAddDuration(sscISODate(earliestPlusDay), -(serviceY || 0), -(serviceM || 0));
   const latest = sscAddDuration(cutISO, -min, 0);
   return { earliest: sscISODate(earliest), latest: sscISODate(latest) };
+}
+
+export function upscCutoff(year) {
+  return year + "-08-01";
+}
+
+export function upscLimits(catId, extraId) {
+  const cats = { gen: { relax: 0, attempts: 6 }, ews: { relax: 0, attempts: 6 }, obc: { relax: 3, attempts: 9 }, sc: { relax: 5, attempts: null }, st: { relax: 5, attempts: null } };
+  const extras = { none: 0, pwbd: 10, esm: 5, defence: 3 };
+  const cat = cats[catId] || cats.gen;
+  const extraRelax = extras[extraId] === undefined ? 0 : extras[extraId];
+  const upper = 32 + cat.relax + extraRelax;
+  const attempts = (catId === "sc" || catId === "st") ? null : (extraId === "pwbd" ? 9 : cat.attempts);
+  return { upper, attempts, relax: cat.relax + extraRelax };
+}
+
+export function upscAttemptsLeft(allowed, used) {
+  if (allowed === null) return null;
+  return Math.max(0, allowed - (used || 0));
+}
+
+export function upscEligibleYears(dobISO, upper) {
+  const dob = new Date(dobISO + "T00:00:00Z");
+  if (Number.isNaN(dob.getTime())) return null;
+  let first = null;
+  for (let y = dob.getUTCFullYear() + 20; y <= dob.getUTCFullYear() + 24; y++) {
+    const a = sscAgeParts(dobISO, y + "-08-01");
+    if (a && a.y >= 21) {
+      first = y;
+      break;
+    }
+  }
+  if (first === null) return null;
+  let last = null;
+  for (let y = first; y <= first + 44; y++) {
+    const a = sscAgeParts(dobISO, y + "-08-01");
+    if (a && a.y < upper) last = y;
+    else break;
+  }
+  return { first, last };
+}
+
+export function ibpsExam(examId) {
+  const exams = {
+    po: { cut: "2026-07-01", min: 20, upper: 30, exsm: "flat5", widow: false },
+    clerk: { cut: "2026-08-01", min: 20, upper: 28, exsm: "service3", widow: true },
+    so: { cut: "2026-07-01", min: 20, upper: 30, exsm: "flat5", widow: false },
+    "rrb-oa": { cut: "2026-09-01", min: 18, upper: 28, exsm: "service3", widow: true },
+    "rrb-1": { cut: "2026-09-01", min: 18, upper: 30, exsm: "flat5", widow: false },
+    "rrb-2": { cut: "2026-09-01", min: 21, upper: 32, exsm: "flat5", widow: false },
+    "rrb-3": { cut: "2026-09-01", min: 21, upper: 40, exsm: "flat5", widow: false }
+  };
+  return exams[examId] || exams.po;
+}
+
+export function ibpsCutoff(examId) {
+  return ibpsExam(examId).cut;
+}
+
+export function ibpsLimits(examId, catId, extraId, serviceYears) {
+  const exam = ibpsExam(examId);
+  const cats = { gen: 0, ews: 0, obc: 3, sc: 5, st: 5 };
+  const catRelax = cats[catId] === undefined ? 0 : cats[catId];
+  const service = Number(serviceYears) || 0;
+  let upper;
+  let capped = false;
+  if (extraId === "pwbd") {
+    upper = exam.upper + catRelax + 10;
+  } else if (extraId === "esm") {
+    if (exam.exsm === "flat5") {
+      upper = exam.upper + catRelax + (service >= 5 ? 5 : 0);
+    } else {
+      upper = exam.upper + catRelax + service + 3;
+      if (upper > 50) {
+        upper = 50;
+        capped = true;
+      }
+    }
+  } else if (extraId === "widow" && exam.widow) {
+    upper = 35 + catRelax;
+  } else {
+    upper = exam.upper + catRelax;
+  }
+  return { upper, min: exam.min, relax: upper - exam.upper, capped };
+}
+
+export function ibpsEligibleYears(dobISO, examId, upper) {
+  const exam = ibpsExam(examId);
+  const dob = new Date(dobISO + "T00:00:00Z");
+  if (Number.isNaN(dob.getTime())) return null;
+  const md = exam.cut.slice(5);
+  let first = null;
+  for (let y = dob.getUTCFullYear() + exam.min - 1; y <= dob.getUTCFullYear() + exam.min + 4; y++) {
+    const a = sscAgeParts(dobISO, y + "-" + md);
+    if (a && a.y >= exam.min) {
+      first = y;
+      break;
+    }
+  }
+  if (first === null) return null;
+  let last = null;
+  for (let y = first; y <= first + 44; y++) {
+    const a = sscAgeParts(dobISO, y + "-" + md);
+    if (a && a.y < upper) last = y;
+    else break;
+  }
+  return { first, last };
+}
+
+export function rrbExam(examId) {
+  const exams = {
+    "ntpc-g": { cut: "2027-01-01", min: 18, upper: 33, pwbd: true, ccaa: false },
+    "ntpc-ug": { cut: "2027-01-01", min: 18, upper: 30, pwbd: true, ccaa: false },
+    groupd: { cut: "2026-01-01", min: 18, upper: 33, pwbd: true, ccaa: true },
+    alp: { cut: "2026-07-01", min: 18, upper: 30, pwbd: false, ccaa: true },
+    tech1: { cut: "2026-07-01", min: 18, upper: 33, pwbd: true, ccaa: false },
+    tech3: { cut: "2026-07-01", min: 18, upper: 30, pwbd: true, ccaa: true },
+    je: { cut: "2027-01-01", min: 18, upper: 33, pwbd: true, ccaa: false },
+    sc: { cut: "2026-07-01", min: 20, upper: 33, pwbd: true, ccaa: false }
+  };
+  return exams[examId] || exams["ntpc-g"];
+}
+
+export function rrbCutoff(examId) {
+  return rrbExam(examId).cut;
+}
+
+export function rrbLimits(examId, catId, extraId, years) {
+  const exam = rrbExam(examId);
+  const cats = { gen: 0, ews: 0, obc: 3, sc: 5, st: 5 };
+  const catRelax = cats[catId] === undefined ? 0 : cats[catId];
+  const yrs = Number(years) || 0;
+  // RRB gives the MAXIMUM relaxation a candidate is eligible for — the
+  // relaxations do not add up (unlike IBPS/UPSC, where a category relaxation
+  // stacks with one further clause). Every figure below already includes
+  // the category relaxation where the CEN states it by category:
+  // PwBD 10/13/15, ex-serviceman 3/6/8 (after service is deducted from
+  // age), widow and CCAA-before-25 35/38/40, railway staff 40/43/45.
+  const pwbdExtra = { gen: 10, ews: 10, obc: 13, sc: 15, st: 15 };
+  const esmExtra = { gen: 3, ews: 3, obc: 6, sc: 8, st: 8 };
+  const ccaaCap = { gen: 3, ews: 3, obc: 6, sc: 8, st: 8 };
+  let upper;
+  if (extraId === "pwbd" && exam.pwbd) {
+    upper = exam.upper + pwbdExtra[catId];
+  } else if (extraId === "esm") {
+    // Needs more than six months of service (whole years >= 1); the service
+    // is deducted from the age first, then the extra years apply. No cap.
+    upper = yrs >= 1 ? exam.upper + yrs + esmExtra[catId] : exam.upper + catRelax;
+  } else if (extraId === "widow") {
+    upper = 35 + catRelax;
+  } else if (extraId === "staff") {
+    upper = 40 + catRelax;
+  } else if (extraId === "ccaa" && exam.ccaa) {
+    upper = exam.upper + Math.min(catRelax + yrs, ccaaCap[catId]);
+  } else if (extraId === "ccaa25" && exam.ccaa) {
+    upper = 35 + catRelax;
+  } else {
+    upper = exam.upper + catRelax;
+  }
+  return { upper, min: exam.min, relax: upper - exam.upper };
+}
+
+export function rrbEligibleYears(dobISO, examId, upper) {
+  const exam = rrbExam(examId);
+  const dob = new Date(dobISO + "T00:00:00Z");
+  if (Number.isNaN(dob.getTime())) return null;
+  const md = exam.cut.slice(5);
+  let first = null;
+  for (let y = dob.getUTCFullYear() + exam.min - 1; y <= dob.getUTCFullYear() + exam.min + 4; y++) {
+    const a = sscAgeParts(dobISO, y + "-" + md);
+    if (a && a.y >= exam.min) {
+      first = y;
+      break;
+    }
+  }
+  if (first === null) return null;
+  let last = null;
+  for (let y = first; y <= first + 44; y++) {
+    const a = sscAgeParts(dobISO, y + "-" + md);
+    if (a && a.y < upper) last = y;
+    else break;
+  }
+  return { first, last };
 }
 
 export function ageClient(c) {
@@ -3811,6 +4218,165 @@ export const generalAgeCss = `
 }
 `;
 
+export const upscAgeCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.number-input {
+  width: 100%;
+  min-height: 56px;
+  font-size: 17px;
+  font-weight: 700;
+  border: 1.5px solid #aebfca;
+  border-radius: 11px;
+  padding: 10px 14px;
+  color: var(--calc-ink);
+  background: white;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.number-input[aria-invalid="true"] {
+  border-color: #b42318;
+}
+
+.radio-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.radio-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.radio-row input {
+  margin-top: 3px;
+  accent-color: var(--calc-brand);
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+`;
+
+export const ibpsAgeCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.number-input {
+  width: 100%;
+  min-height: 56px;
+  font-size: 17px;
+  font-weight: 700;
+  border: 1.5px solid #aebfca;
+  border-radius: 11px;
+  padding: 10px 14px;
+  color: var(--calc-ink);
+  background: white;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.number-input[aria-invalid="true"] {
+  border-color: #b42318;
+}
+
+.radio-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.radio-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.radio-row input {
+  margin-top: 3px;
+  accent-color: var(--calc-brand);
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+`;
+
+export const rrbAgeCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.number-input {
+  width: 100%;
+  min-height: 56px;
+  font-size: 17px;
+  font-weight: 700;
+  border: 1.5px solid #aebfca;
+  border-radius: 11px;
+  padding: 10px 14px;
+  color: var(--calc-ink);
+  background: white;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.number-input[aria-invalid="true"] {
+  border-color: #b42318;
+}
+
+.radio-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.radio-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.radio-row input {
+  margin-top: 3px;
+  accent-color: var(--calc-brand);
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+`;
+
 export function generalAgeTotals(dobISO, refISO) {
   const age = sscAgeParts(dobISO, refISO);
   if (!age) return null;
@@ -4132,6 +4698,1210 @@ export function generalAgeClient(c) {
   if (!refInput.value) refInput.value = todayISO();
   paint();
   renderHistory();
+}
+
+export function upscClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function sscAgeParts(dobISO, cutISO) {
+    const dob = new Date(dobISO + "T00:00:00Z");
+    const cut = new Date(cutISO + "T00:00:00Z");
+    if (Number.isNaN(dob.getTime()) || Number.isNaN(cut.getTime()) || cut < dob) return null;
+    let y = cut.getUTCFullYear() - dob.getUTCFullYear();
+    let m = cut.getUTCMonth() - dob.getUTCMonth();
+    let d = cut.getUTCDate() - dob.getUTCDate();
+    if (d < 0) {
+      m -= 1;
+      const prev = new Date(Date.UTC(cut.getUTCFullYear(), cut.getUTCMonth(), 0));
+      d += prev.getUTCDate();
+    }
+    if (m < 0) {
+      y -= 1;
+      m += 12;
+    }
+    return { y, m, d };
+  }
+
+  function sscISODate(date) {
+    const y = date.getUTCFullYear();
+    const m = String(date.getUTCMonth() + 1).padStart(2, "0");
+    const d = String(date.getUTCDate()).padStart(2, "0");
+    return y + "-" + m + "-" + d;
+  }
+
+  function sscAddDuration(dobISO, years, months) {
+    const dob = new Date(dobISO + "T00:00:00Z");
+    if (Number.isNaN(dob.getTime())) return null;
+    let y = dob.getUTCFullYear() + (years || 0);
+    let m = dob.getUTCMonth() + (months || 0);
+    y += Math.floor(m / 12);
+    m = ((m % 12) + 12) % 12;
+    const last = new Date(Date.UTC(y, m + 1, 0)).getUTCDate();
+    const d = Math.min(dob.getUTCDate(), last);
+    return new Date(Date.UTC(y, m, d));
+  }
+
+  function sscWindow(cutISO, min, max, relaxYears, serviceY, serviceM) {
+    const cut = new Date(cutISO + "T00:00:00Z");
+    if (Number.isNaN(cut.getTime())) return null;
+    const earliestBase = sscAddDuration(cutISO, -(max + (relaxYears || 0)), 0);
+    const earliestPlusDay = new Date(earliestBase.getTime() + 86400000);
+    const earliest = sscAddDuration(sscISODate(earliestPlusDay), -(serviceY || 0), -(serviceM || 0));
+    const latest = sscAddDuration(cutISO, -min, 0);
+    return { earliest: sscISODate(earliest), latest: sscISODate(latest) };
+  }
+
+  function upscCutoff(year) {
+    return year + "-08-01";
+  }
+
+  function upscLimits(catId, extraId) {
+    const cats = { gen: { relax: 0, attempts: 6 }, ews: { relax: 0, attempts: 6 }, obc: { relax: 3, attempts: 9 }, sc: { relax: 5, attempts: null }, st: { relax: 5, attempts: null } };
+    const extras = { none: 0, pwbd: 10, esm: 5, defence: 3 };
+    const cat = cats[catId] || cats.gen;
+    const extraRelax = extras[extraId] === undefined ? 0 : extras[extraId];
+    const upper = 32 + cat.relax + extraRelax;
+    const attempts = (catId === "sc" || catId === "st") ? null : (extraId === "pwbd" ? 9 : cat.attempts);
+    return { upper, attempts, relax: cat.relax + extraRelax };
+  }
+
+  function upscAttemptsLeft(allowed, used) {
+    if (allowed === null) return null;
+    return Math.max(0, allowed - (used || 0));
+  }
+
+  function upscEligibleYears(dobISO, upper) {
+    const dob = new Date(dobISO + "T00:00:00Z");
+    if (Number.isNaN(dob.getTime())) return null;
+    let first = null;
+    for (let y = dob.getUTCFullYear() + 20; y <= dob.getUTCFullYear() + 24; y++) {
+      const a = sscAgeParts(dobISO, y + "-08-01");
+      if (a && a.y >= 21) {
+        first = y;
+        break;
+      }
+    }
+    if (first === null) return null;
+    let last = null;
+    for (let y = first; y <= first + 44; y++) {
+      const a = sscAgeParts(dobISO, y + "-08-01");
+      if (a && a.y < upper) last = y;
+      else break;
+    }
+    return { first, last };
+  }
+
+  const dobInput = $("dob");
+  const yearSelect = $("year");
+  const categorySelect = $("category");
+  const usedInput = $("used");
+  const dobError = $("dob-error");
+  const usedError = $("used-error");
+  const output = $("answer");
+  const yearsVal = $("years-val");
+  const monthsVal = $("months-val");
+  const daysVal = $("days-val");
+  const verdictBox = $("verdict-box");
+  const verdictTitle = $("verdict-title");
+  const verdictText = $("verdict-text");
+  const working = $("working");
+  const workingWindow = $("working-window");
+  const workingAttempts = $("working-attempts");
+  const workingYears = $("working-years");
+  const cutoffNote = $("cutoff-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmtDate = iso => {
+    const d = new Date(iso + "T00:00:00Z");
+    if (Number.isNaN(d.getTime())) return iso;
+    return new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(d);
+  };
+
+  const plural = (n, one, many) => n + " " + (n === 1 ? one : many);
+  const ageText = a => plural(a.y, "year", "years") + ", " + plural(a.m, "month", "months") + " and " + plural(a.d, "day", "days");
+  const catLabel = id => {
+    const f = c.categories.find(x => x.id === id);
+    return f ? f.label : id;
+  };
+  const extraLabel = id => {
+    const f = c.extras.find(x => x.id === id);
+    return f ? f.label : id;
+  };
+  const extraChecked = () => {
+    const r = document.querySelector('input[name="extra"]:checked');
+    return r ? r.value : "none";
+  };
+  const setExtra = id => {
+    const r = document.querySelector('input[name="extra"][value="' + id + '"]');
+    if (r) r.checked = true;
+  };
+
+  function clearResult() {
+    output.textContent = "—";
+    yearsVal.textContent = "—";
+    monthsVal.textContent = "—";
+    daysVal.textContent = "—";
+    verdictBox.className = "verdict";
+    verdictTitle.textContent = "Your UPSC verdict";
+    verdictText.textContent = "Enter your details to see whether you meet the age limit.";
+    working.textContent = "Enter your date of birth to see the working.";
+    workingWindow.textContent = "";
+    workingAttempts.textContent = "";
+    workingYears.textContent = "";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paint(showEmptyError = false) {
+    const dobVal = dobInput.value;
+    const yearVal = Number(yearSelect.value);
+    const cutoff = upscCutoff(yearVal);
+    const catVal = categorySelect.value;
+    const extraVal = extraChecked();
+    const usedRaw = usedInput.value;
+    const usedVal = usedRaw === "" ? 0 : Number(usedRaw);
+    cutoffNote.textContent = "Age is counted on 1 August " + yearVal + ".";
+
+    let dobMsg = "";
+    if (!dobVal) {
+      if (showEmptyError) dobMsg = "Enter your date of birth.";
+    } else if (dobInput.validity.badInput) {
+      dobMsg = "Enter a valid date of birth.";
+    } else if (dobVal < "1900-01-01") {
+      dobMsg = "Enter a date of birth on or after 1 January 1900.";
+    } else if (dobVal > cutoff) {
+      dobMsg = "Date of birth must be on or before 1 August " + yearVal + ".";
+    }
+    dobError.textContent = dobMsg;
+    dobInput.setAttribute("aria-invalid", String(dobMsg !== ""));
+
+    let usedMsg = "";
+    if (usedRaw !== "" && (!Number.isInteger(usedVal) || usedVal < 0 || usedVal > 30)) {
+      usedMsg = "Enter whole attempts from 0 to 30.";
+    }
+    usedError.textContent = usedMsg;
+    usedInput.setAttribute("aria-invalid", String(usedMsg !== ""));
+
+    const valid = dobMsg === "" && usedMsg === "" && dobVal;
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const age = sscAgeParts(dobVal, cutoff);
+    const lim = upscLimits(catVal, extraVal);
+    const win = sscWindow(cutoff, 21, lim.upper, 0, 0, 0);
+    const years = upscEligibleYears(dobVal, lim.upper);
+    const left = upscAttemptsLeft(lim.attempts, usedVal);
+    if (!age || !win || !years) {
+      clearResult();
+      return false;
+    }
+
+    const verdict = age.y < 21 ? "Too young" : age.y >= lim.upper ? "Over the upper limit" : "Eligible";
+    output.textContent = ageText(age);
+    yearsVal.textContent = String(age.y);
+    monthsVal.textContent = String(age.m);
+    daysVal.textContent = String(age.d);
+
+    let boxClass = verdict === "Eligible" ? "verdict-ok" : verdict === "Too young" ? "verdict-young" : "verdict-no";
+    let title = verdict + " for CSE " + yearVal;
+    let text = verdict === "Eligible"
+      ? "You meet the age condition for " + catLabel(catVal) + (extraVal !== "none" ? " (" + extraLabel(extraVal) + ")" : "") + ": under " + lim.upper + " years on 1 August " + yearVal + "."
+      : verdict === "Too young"
+        ? "You are under 21 on 1 August " + yearVal + ". The minimum age applies to every category."
+        : "You have attained " + lim.upper + " years on 1 August " + yearVal + ". The upper limit is exclusive — you must not have attained it.";
+    if (verdict === "Eligible" && left === 0) {
+      boxClass = "verdict-young";
+      title = "Eligible by age — no attempts left";
+      text = "You meet the age condition, but you have used all " + lim.attempts + " attempts allowed for this category.";
+    }
+    verdictBox.className = "verdict " + boxClass;
+    verdictTitle.textContent = title;
+    verdictText.textContent = text;
+
+    working.textContent = fmtDate(dobVal) + " → 1 August " + yearVal + " = " + ageText(age) + ".";
+    workingWindow.textContent = "Upper age limit: under " + lim.upper + " years. Born between " + fmtDate(win.earliest) + " and " + fmtDate(win.latest) + ".";
+    workingAttempts.textContent = lim.attempts === null
+      ? "Attempts: unlimited for " + catLabel(catVal) + " candidates within the age limit."
+      : "Attempts: " + lim.attempts + " allowed · " + usedVal + " used · " + left + " left" + (left === 0 ? " — you have used all " + lim.attempts + " attempts allowed for this category." : ".");
+    workingYears.textContent = "Eligible exam years: " + years.first + "–" + years.last + ".";
+
+    copyButton.disabled = false;
+    summary =
+      "VisitBest | UPSC Age Calculator" +
+      "\nDate of birth: " + fmtDate(dobVal) +
+      "\nExam: CSE " + yearVal + " (cut-off 1 August " + yearVal + ")" +
+      "\nCategory: " + catLabel(catVal) + (extraVal !== "none" ? " + " + extraLabel(extraVal) : "") +
+      "\nExact age: " + ageText(age) +
+      "\nUpper age limit: under " + lim.upper + " years" +
+      "\nBorn between: " + fmtDate(win.earliest) + " and " + fmtDate(win.latest) +
+      "\nVerdict: " + verdict + (verdict === "Eligible" && left === 0 ? " by age — no attempts left" : "") +
+      "\nAttempts: " + (lim.attempts === null ? "unlimited" : lim.attempts + " allowed, " + usedVal + " used, " + left + " left") +
+      "\nEligible exam years: " + years.first + "–" + years.last;
+    return true;
+  }
+
+  function scenarioKey() {
+    return [dobInput.value, yearSelect.value, categorySelect.value, extraChecked(), usedInput.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      const age = sscAgeParts(item.dob, upscCutoff(item.year));
+      button.textContent = fmtDate(item.dob) + " → " + (age ? ageText(age) : "—") + " · CSE " + item.year;
+      button.setAttribute("aria-label", "Load check for " + fmtDate(item.dob) + ", CSE " + item.year);
+      button.addEventListener("click", () => {
+        dobInput.value = item.dob;
+        yearSelect.value = String(item.year);
+        categorySelect.value = item.cat;
+        setExtra(item.extra);
+        usedInput.value = String(item.used);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      dob: dobInput.value,
+      year: Number(yearSelect.value),
+      cat: categorySelect.value,
+      extra: extraChecked(),
+      used: usedInput.value === "" ? 0 : Number(usedInput.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      dobInput.value = button.dataset.dob || "";
+      yearSelect.value = button.dataset.year || String(c.defaultYear);
+      categorySelect.value = button.dataset.cat || "gen";
+      setExtra(button.dataset.extra || "none");
+      usedInput.value = button.dataset.used || "0";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  ["input", "change"].forEach(evt => {
+    dobInput.addEventListener(evt, () => paint());
+    yearSelect.addEventListener(evt, () => paint());
+    categorySelect.addEventListener(evt, () => paint());
+    usedInput.addEventListener(evt, () => paint());
+  });
+  document.querySelectorAll('input[name="extra"]').forEach(radio => {
+    radio.addEventListener("change", () => paint());
+  });
+
+  $("age-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    dobInput.value = c.sampleDob;
+    yearSelect.value = String(c.defaultYear);
+    categorySelect.value = "gen";
+    setExtra("none");
+    usedInput.value = "0";
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function ibpsClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function sscAgeParts(dobISO, cutISO) {
+    const dob = new Date(dobISO + "T00:00:00Z");
+    const cut = new Date(cutISO + "T00:00:00Z");
+    if (Number.isNaN(dob.getTime()) || Number.isNaN(cut.getTime()) || cut < dob) return null;
+    let y = cut.getUTCFullYear() - dob.getUTCFullYear();
+    let m = cut.getUTCMonth() - dob.getUTCMonth();
+    let d = cut.getUTCDate() - dob.getUTCDate();
+    if (d < 0) {
+      m -= 1;
+      const prev = new Date(Date.UTC(cut.getUTCFullYear(), cut.getUTCMonth(), 0));
+      d += prev.getUTCDate();
+    }
+    if (m < 0) {
+      y -= 1;
+      m += 12;
+    }
+    return { y, m, d };
+  }
+
+  function sscISODate(date) {
+    const y = date.getUTCFullYear();
+    const m = String(date.getUTCMonth() + 1).padStart(2, "0");
+    const d = String(date.getUTCDate()).padStart(2, "0");
+    return y + "-" + m + "-" + d;
+  }
+
+  function sscAddDuration(dobISO, years, months) {
+    const dob = new Date(dobISO + "T00:00:00Z");
+    if (Number.isNaN(dob.getTime())) return null;
+    let y = dob.getUTCFullYear() + (years || 0);
+    let m = dob.getUTCMonth() + (months || 0);
+    y += Math.floor(m / 12);
+    m = ((m % 12) + 12) % 12;
+    const last = new Date(Date.UTC(y, m + 1, 0)).getUTCDate();
+    const d = Math.min(dob.getUTCDate(), last);
+    return new Date(Date.UTC(y, m, d));
+  }
+
+  function sscWindow(cutISO, min, max, relaxYears, serviceY, serviceM) {
+    const cut = new Date(cutISO + "T00:00:00Z");
+    if (Number.isNaN(cut.getTime())) return null;
+    const earliestBase = sscAddDuration(cutISO, -(max + (relaxYears || 0)), 0);
+    const earliestPlusDay = new Date(earliestBase.getTime() + 86400000);
+    const earliest = sscAddDuration(sscISODate(earliestPlusDay), -(serviceY || 0), -(serviceM || 0));
+    const latest = sscAddDuration(cutISO, -min, 0);
+    return { earliest: sscISODate(earliest), latest: sscISODate(latest) };
+  }
+
+  function ibpsExam(examId) {
+    const exams = {
+      po: { cut: "2026-07-01", min: 20, upper: 30, exsm: "flat5", widow: false },
+      clerk: { cut: "2026-08-01", min: 20, upper: 28, exsm: "service3", widow: true },
+      so: { cut: "2026-07-01", min: 20, upper: 30, exsm: "flat5", widow: false },
+      "rrb-oa": { cut: "2026-09-01", min: 18, upper: 28, exsm: "service3", widow: true },
+      "rrb-1": { cut: "2026-09-01", min: 18, upper: 30, exsm: "flat5", widow: false },
+      "rrb-2": { cut: "2026-09-01", min: 21, upper: 32, exsm: "flat5", widow: false },
+      "rrb-3": { cut: "2026-09-01", min: 21, upper: 40, exsm: "flat5", widow: false }
+    };
+    return exams[examId] || exams.po;
+  }
+
+  function ibpsCutoff(examId) {
+    return ibpsExam(examId).cut;
+  }
+
+  function ibpsLimits(examId, catId, extraId, serviceYears) {
+    const exam = ibpsExam(examId);
+    const cats = { gen: 0, ews: 0, obc: 3, sc: 5, st: 5 };
+    const catRelax = cats[catId] === undefined ? 0 : cats[catId];
+    const service = Number(serviceYears) || 0;
+    let upper;
+    let capped = false;
+    if (extraId === "pwbd") {
+      upper = exam.upper + catRelax + 10;
+    } else if (extraId === "esm") {
+      if (exam.exsm === "flat5") {
+        upper = exam.upper + catRelax + (service >= 5 ? 5 : 0);
+      } else {
+        upper = exam.upper + catRelax + service + 3;
+        if (upper > 50) {
+          upper = 50;
+          capped = true;
+        }
+      }
+    } else if (extraId === "widow" && exam.widow) {
+      upper = 35 + catRelax;
+    } else {
+      upper = exam.upper + catRelax;
+    }
+    return { upper, min: exam.min, relax: upper - exam.upper, capped };
+  }
+
+  function ibpsEligibleYears(dobISO, examId, upper) {
+    const exam = ibpsExam(examId);
+    const dob = new Date(dobISO + "T00:00:00Z");
+    if (Number.isNaN(dob.getTime())) return null;
+    const md = exam.cut.slice(5);
+    let first = null;
+    for (let y = dob.getUTCFullYear() + exam.min - 1; y <= dob.getUTCFullYear() + exam.min + 4; y++) {
+      const a = sscAgeParts(dobISO, y + "-" + md);
+      if (a && a.y >= exam.min) {
+        first = y;
+        break;
+      }
+    }
+    if (first === null) return null;
+    let last = null;
+    for (let y = first; y <= first + 44; y++) {
+      const a = sscAgeParts(dobISO, y + "-" + md);
+      if (a && a.y < upper) last = y;
+      else break;
+    }
+    return { first, last };
+  }
+
+  const dobInput = $("dob");
+  const examSelect = $("exam");
+  const categorySelect = $("category");
+  const serviceInput = $("service");
+  const serviceField = $("service-field");
+  const dobError = $("dob-error");
+  const serviceError = $("service-error");
+  const output = $("answer");
+  const yearsVal = $("years-val");
+  const monthsVal = $("months-val");
+  const daysVal = $("days-val");
+  const verdictBox = $("verdict-box");
+  const verdictTitle = $("verdict-title");
+  const verdictText = $("verdict-text");
+  const working = $("working");
+  const workingWindow = $("working-window");
+  const workingNote = $("working-note");
+  const workingYears = $("working-years");
+  const cutoffNote = $("cutoff-note");
+  const examPill = $("exam-pill");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmtDate = iso => {
+    const d = new Date(iso + "T00:00:00Z");
+    if (Number.isNaN(d.getTime())) return iso;
+    return new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(d);
+  };
+
+  const plural = (n, one, many) => n + " " + (n === 1 ? one : many);
+  const ageText = a => plural(a.y, "year", "years") + ", " + plural(a.m, "month", "months") + " and " + plural(a.d, "day", "days");
+  const examRec = id => {
+    const f = c.exams.find(x => x.id === id);
+    return f || c.exams[0];
+  };
+  const catLabel = id => {
+    const f = c.categories.find(x => x.id === id);
+    return f ? f.label : id;
+  };
+  const extraLabel = id => {
+    const f = c.extras.find(x => x.id === id);
+    return f ? f.label : id;
+  };
+  const extraChecked = () => {
+    const r = document.querySelector('input[name="extra"]:checked');
+    return r ? r.value : "none";
+  };
+  const setExtra = id => {
+    const r = document.querySelector('input[name="extra"][value="' + id + '"]');
+    if (r) r.checked = true;
+  };
+
+  function syncExtraVisibility() {
+    const rec = examRec(examSelect.value);
+    document.querySelectorAll('[data-extra-row="widow"]').forEach(row => {
+      row.hidden = !rec.widow;
+    });
+    if (extraChecked() === "widow" && !rec.widow) setExtra("none");
+    serviceField.hidden = extraChecked() !== "esm";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    yearsVal.textContent = "—";
+    monthsVal.textContent = "—";
+    daysVal.textContent = "—";
+    verdictBox.className = "verdict";
+    verdictTitle.textContent = "Your IBPS verdict";
+    verdictText.textContent = "Enter your details to see whether you meet the age limit.";
+    working.textContent = "Enter your date of birth to see the working.";
+    workingWindow.textContent = "";
+    workingNote.textContent = "";
+    workingYears.textContent = "";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paint(showEmptyError = false) {
+    syncExtraVisibility();
+    const dobVal = dobInput.value;
+    const examVal = examSelect.value;
+    const rec = examRec(examVal);
+    const cutoff = ibpsCutoff(examVal);
+    const catVal = categorySelect.value;
+    const extraVal = extraChecked();
+    const serviceRaw = serviceInput.value;
+    const serviceVal = serviceRaw === "" ? 0 : Number(serviceRaw);
+    cutoffNote.textContent = "Age is counted on " + fmtDate(cutoff) + " (" + rec.cycle + ").";
+    examPill.textContent = rec.cycle;
+
+    let dobMsg = "";
+    if (!dobVal) {
+      if (showEmptyError) dobMsg = "Enter your date of birth.";
+    } else if (dobInput.validity.badInput) {
+      dobMsg = "Enter a valid date of birth.";
+    } else if (dobVal < "1900-01-01") {
+      dobMsg = "Enter a date of birth on or after 1 January 1900.";
+    } else if (dobVal > cutoff) {
+      dobMsg = "Date of birth must be on or before " + fmtDate(cutoff) + ".";
+    }
+    dobError.textContent = dobMsg;
+    dobInput.setAttribute("aria-invalid", String(dobMsg !== ""));
+
+    let serviceMsg = "";
+    if (extraVal === "esm" && serviceRaw !== "" && (!Number.isInteger(serviceVal) || serviceVal < 0 || serviceVal > 40)) {
+      serviceMsg = "Enter whole years of service from 0 to 40.";
+    }
+    serviceError.textContent = serviceMsg;
+    serviceInput.setAttribute("aria-invalid", String(serviceMsg !== ""));
+
+    const valid = dobMsg === "" && serviceMsg === "" && dobVal;
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const age = sscAgeParts(dobVal, cutoff);
+    const lim = ibpsLimits(examVal, catVal, extraVal, serviceVal);
+    const win = sscWindow(cutoff, lim.min, lim.upper, 0, 0, 0);
+    const years = ibpsEligibleYears(dobVal, examVal, lim.upper);
+    if (!age || !win || !years) {
+      clearResult();
+      return false;
+    }
+
+    const verdict = age.y < lim.min ? "Too young" : age.y >= lim.upper ? "Over the upper limit" : "Eligible";
+    output.textContent = ageText(age);
+    yearsVal.textContent = String(age.y);
+    monthsVal.textContent = String(age.m);
+    daysVal.textContent = String(age.d);
+
+    const boxClass = verdict === "Eligible" ? "verdict-ok" : verdict === "Too young" ? "verdict-young" : "verdict-no";
+    const title = verdict + " for " + rec.label;
+    let text = verdict === "Eligible"
+      ? "You meet the age condition for " + rec.label + " (" + rec.cycle + "): under " + lim.upper + " years on " + fmtDate(cutoff) + "."
+      : verdict === "Too young"
+        ? "You are under " + lim.min + " on " + fmtDate(cutoff) + ". The minimum age applies to every category."
+        : "You have attained " + lim.upper + " years on " + fmtDate(cutoff) + ". The upper limit is exclusive — you must not have attained it.";
+    verdictBox.className = "verdict " + boxClass;
+    verdictTitle.textContent = title;
+    verdictText.textContent = text;
+
+    working.textContent = fmtDate(dobVal) + " → " + fmtDate(cutoff) + " = " + ageText(age) + ".";
+    workingWindow.textContent = "Upper age limit: under " + lim.upper + " years. Born between " + fmtDate(win.earliest) + " and " + fmtDate(win.latest) + "." + (lim.capped ? " The ex-serviceman relaxation is capped at 50 years." : "");
+    let note = "Attempts: IBPS sets no limit on the number of attempts — only the age limit applies.";
+    if (extraVal === "esm" && rec.exsm === "service3") {
+      note += " Ex-serviceman relaxation: " + serviceVal + " years of service + 3 = +" + (serviceVal + 3) + " years" + (lim.capped ? ", capped at 50 years." : ".");
+    } else if (extraVal === "esm") {
+      note += serviceVal >= 5 ? " Ex-serviceman relaxation: +5 years (5 or more years of service)." : " Ex-serviceman relaxation: none — the +5 years needs 5 or more years of service.";
+    } else if (extraVal === "widow") {
+      note += " Widow concession: up to " + lim.upper + " years for " + catLabel(catVal) + ".";
+    }
+    workingNote.textContent = note;
+    workingYears.textContent = "Eligible exam years: " + years.first + "–" + years.last + ".";
+
+    copyButton.disabled = false;
+    summary =
+      "VisitBest | IBPS Age Calculator" +
+      "\nDate of birth: " + fmtDate(dobVal) +
+      "\nExam: " + rec.label + " (" + rec.cycle + ", cut-off " + fmtDate(cutoff) + ")" +
+      "\nCategory: " + catLabel(catVal) + (extraVal !== "none" ? " + " + extraLabel(extraVal) : "") +
+      (extraVal === "esm" ? " (" + serviceVal + " years of service)" : "") +
+      "\nExact age: " + ageText(age) +
+      "\nUpper age limit: under " + lim.upper + " years" +
+      "\nBorn between: " + fmtDate(win.earliest) + " and " + fmtDate(win.latest) +
+      "\nVerdict: " + verdict +
+      "\nAttempts: no limit" +
+      "\nEligible exam years: " + years.first + "–" + years.last;
+    return true;
+  }
+
+  function scenarioKey() {
+    return [dobInput.value, examSelect.value, categorySelect.value, extraChecked(), serviceInput.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      const age = sscAgeParts(item.dob, ibpsCutoff(item.exam));
+      const rec = examRec(item.exam);
+      button.textContent = fmtDate(item.dob) + " → " + (age ? ageText(age) : "—") + " · " + rec.cycle;
+      button.setAttribute("aria-label", "Load check for " + fmtDate(item.dob) + ", " + rec.label);
+      button.addEventListener("click", () => {
+        dobInput.value = item.dob;
+        examSelect.value = item.exam;
+        categorySelect.value = item.cat;
+        setExtra(item.extra);
+        serviceInput.value = String(item.service);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      dob: dobInput.value,
+      exam: examSelect.value,
+      cat: categorySelect.value,
+      extra: extraChecked(),
+      service: serviceInput.value === "" ? 0 : Number(serviceInput.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      dobInput.value = button.dataset.dob || "";
+      examSelect.value = button.dataset.exam || c.defaultExam;
+      categorySelect.value = button.dataset.cat || "gen";
+      setExtra(button.dataset.extra || "none");
+      serviceInput.value = button.dataset.service || "5";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  ["input", "change"].forEach(evt => {
+    dobInput.addEventListener(evt, () => paint());
+    examSelect.addEventListener(evt, () => paint());
+    categorySelect.addEventListener(evt, () => paint());
+    serviceInput.addEventListener(evt, () => paint());
+  });
+  document.querySelectorAll('input[name="extra"]').forEach(radio => {
+    radio.addEventListener("change", () => paint());
+  });
+
+  $("age-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    dobInput.value = c.sampleDob;
+    examSelect.value = c.defaultExam;
+    categorySelect.value = "gen";
+    setExtra("none");
+    serviceInput.value = "5";
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function rrbClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function sscAgeParts(dobISO, cutISO) {
+    const dob = new Date(dobISO + "T00:00:00Z");
+    const cut = new Date(cutISO + "T00:00:00Z");
+    if (Number.isNaN(dob.getTime()) || Number.isNaN(cut.getTime()) || cut < dob) return null;
+    let y = cut.getUTCFullYear() - dob.getUTCFullYear();
+    let m = cut.getUTCMonth() - dob.getUTCMonth();
+    let d = cut.getUTCDate() - dob.getUTCDate();
+    if (d < 0) {
+      m -= 1;
+      const prev = new Date(Date.UTC(cut.getUTCFullYear(), cut.getUTCMonth(), 0));
+      d += prev.getUTCDate();
+    }
+    if (m < 0) {
+      y -= 1;
+      m += 12;
+    }
+    return { y, m, d };
+  }
+
+  function sscISODate(date) {
+    const y = date.getUTCFullYear();
+    const m = String(date.getUTCMonth() + 1).padStart(2, "0");
+    const d = String(date.getUTCDate()).padStart(2, "0");
+    return y + "-" + m + "-" + d;
+  }
+
+  function sscAddDuration(dobISO, years, months) {
+    const dob = new Date(dobISO + "T00:00:00Z");
+    if (Number.isNaN(dob.getTime())) return null;
+    let y = dob.getUTCFullYear() + (years || 0);
+    let m = dob.getUTCMonth() + (months || 0);
+    y += Math.floor(m / 12);
+    m = ((m % 12) + 12) % 12;
+    const last = new Date(Date.UTC(y, m + 1, 0)).getUTCDate();
+    const d = Math.min(dob.getUTCDate(), last);
+    return new Date(Date.UTC(y, m, d));
+  }
+
+  function sscWindow(cutISO, min, max, relaxYears, serviceY, serviceM) {
+    const cut = new Date(cutISO + "T00:00:00Z");
+    if (Number.isNaN(cut.getTime())) return null;
+    const earliestBase = sscAddDuration(cutISO, -(max + (relaxYears || 0)), 0);
+    const earliestPlusDay = new Date(earliestBase.getTime() + 86400000);
+    const earliest = sscAddDuration(sscISODate(earliestPlusDay), -(serviceY || 0), -(serviceM || 0));
+    const latest = sscAddDuration(cutISO, -min, 0);
+    return { earliest: sscISODate(earliest), latest: sscISODate(latest) };
+  }
+
+  function rrbExam(examId) {
+    const exams = {
+      "ntpc-g": { cut: "2027-01-01", min: 18, upper: 33, pwbd: true, ccaa: false },
+      "ntpc-ug": { cut: "2027-01-01", min: 18, upper: 30, pwbd: true, ccaa: false },
+      groupd: { cut: "2026-01-01", min: 18, upper: 33, pwbd: true, ccaa: true },
+      alp: { cut: "2026-07-01", min: 18, upper: 30, pwbd: false, ccaa: true },
+      tech1: { cut: "2026-07-01", min: 18, upper: 33, pwbd: true, ccaa: false },
+      tech3: { cut: "2026-07-01", min: 18, upper: 30, pwbd: true, ccaa: true },
+      je: { cut: "2027-01-01", min: 18, upper: 33, pwbd: true, ccaa: false },
+      sc: { cut: "2026-07-01", min: 20, upper: 33, pwbd: true, ccaa: false }
+    };
+    return exams[examId] || exams["ntpc-g"];
+  }
+
+  function rrbCutoff(examId) {
+    return rrbExam(examId).cut;
+  }
+
+  function rrbLimits(examId, catId, extraId, years) {
+    const exam = rrbExam(examId);
+    const cats = { gen: 0, ews: 0, obc: 3, sc: 5, st: 5 };
+    const catRelax = cats[catId] === undefined ? 0 : cats[catId];
+    const yrs = Number(years) || 0;
+    // RRB gives the MAXIMUM relaxation a candidate is eligible for — the
+    // relaxations do not add up (unlike IBPS/UPSC, where a category relaxation
+    // stacks with one further clause). Every figure below already includes
+    // the category relaxation where the CEN states it by category:
+    // PwBD 10/13/15, ex-serviceman 3/6/8 (after service is deducted from
+    // age), widow and CCAA-before-25 35/38/40, railway staff 40/43/45.
+    const pwbdExtra = { gen: 10, ews: 10, obc: 13, sc: 15, st: 15 };
+    const esmExtra = { gen: 3, ews: 3, obc: 6, sc: 8, st: 8 };
+    const ccaaCap = { gen: 3, ews: 3, obc: 6, sc: 8, st: 8 };
+    let upper;
+    if (extraId === "pwbd" && exam.pwbd) {
+      upper = exam.upper + pwbdExtra[catId];
+    } else if (extraId === "esm") {
+      // Needs more than six months of service (whole years >= 1); the service
+      // is deducted from the age first, then the extra years apply. No cap.
+      upper = yrs >= 1 ? exam.upper + yrs + esmExtra[catId] : exam.upper + catRelax;
+    } else if (extraId === "widow") {
+      upper = 35 + catRelax;
+    } else if (extraId === "staff") {
+      upper = 40 + catRelax;
+    } else if (extraId === "ccaa" && exam.ccaa) {
+      upper = exam.upper + Math.min(catRelax + yrs, ccaaCap[catId]);
+    } else if (extraId === "ccaa25" && exam.ccaa) {
+      upper = 35 + catRelax;
+    } else {
+      upper = exam.upper + catRelax;
+    }
+    return { upper, min: exam.min, relax: upper - exam.upper };
+  }
+
+  function rrbEligibleYears(dobISO, examId, upper) {
+    const exam = rrbExam(examId);
+    const dob = new Date(dobISO + "T00:00:00Z");
+    if (Number.isNaN(dob.getTime())) return null;
+    const md = exam.cut.slice(5);
+    let first = null;
+    for (let y = dob.getUTCFullYear() + exam.min - 1; y <= dob.getUTCFullYear() + exam.min + 4; y++) {
+      const a = sscAgeParts(dobISO, y + "-" + md);
+      if (a && a.y >= exam.min) {
+        first = y;
+        break;
+      }
+    }
+    if (first === null) return null;
+    let last = null;
+    for (let y = first; y <= first + 44; y++) {
+      const a = sscAgeParts(dobISO, y + "-" + md);
+      if (a && a.y < upper) last = y;
+      else break;
+    }
+    return { first, last };
+  }
+
+  const dobInput = $("dob");
+  const examSelect = $("exam");
+  const categorySelect = $("category");
+  const yearsInput = $("years");
+  const yearsField = $("years-field");
+  const yearsNote = $("years-note");
+  const dobError = $("dob-error");
+  const yearsError = $("years-error");
+  const output = $("answer");
+  const yearsVal = $("years-val");
+  const monthsVal = $("months-val");
+  const daysVal = $("days-val");
+  const verdictBox = $("verdict-box");
+  const verdictTitle = $("verdict-title");
+  const verdictText = $("verdict-text");
+  const working = $("working");
+  const workingWindow = $("working-window");
+  const workingNote = $("working-note");
+  const workingYears = $("working-years");
+  const cutoffNote = $("cutoff-note");
+  const examPill = $("exam-pill");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmtDate = iso => {
+    const d = new Date(iso + "T00:00:00Z");
+    if (Number.isNaN(d.getTime())) return iso;
+    return new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(d);
+  };
+
+  const plural = (n, one, many) => n + " " + (n === 1 ? one : many);
+  const ageText = a => plural(a.y, "year", "years") + ", " + plural(a.m, "month", "months") + " and " + plural(a.d, "day", "days");
+  const examRec = id => {
+    const f = c.exams.find(x => x.id === id);
+    return f || c.exams[0];
+  };
+  const catLabel = id => {
+    const f = c.categories.find(x => x.id === id);
+    return f ? f.label : id;
+  };
+  const extraLabel = id => {
+    const f = c.extras.find(x => x.id === id);
+    return f ? f.label : id;
+  };
+  const extraChecked = () => {
+    const r = document.querySelector('input[name="extra"]:checked');
+    return r ? r.value : "none";
+  };
+  const setExtra = id => {
+    const r = document.querySelector('input[name="extra"][value="' + id + '"]');
+    if (r) r.checked = true;
+  };
+
+  function syncExtraVisibility() {
+    const rec = examRec(examSelect.value);
+    document.querySelectorAll('[data-extra-row="pwbd"]').forEach(row => {
+      row.hidden = !rec.pwbd;
+    });
+    document.querySelectorAll('[data-extra-row="ccaa"]').forEach(row => {
+      row.hidden = !rec.ccaa;
+    });
+    if (extraChecked() === "pwbd" && !rec.pwbd) setExtra("none");
+    if ((extraChecked() === "ccaa" || extraChecked() === "ccaa25") && !rec.ccaa) setExtra("none");
+    const extraVal = extraChecked();
+    const showYears = extraVal === "esm" || extraVal === "ccaa";
+    yearsField.hidden = !showYears;
+    yearsNote.textContent = extraVal === "ccaa"
+      ? "Years of apprenticeship training (0 to 3)"
+      : "Years of defence service (0 to 40)";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    yearsVal.textContent = "—";
+    monthsVal.textContent = "—";
+    daysVal.textContent = "—";
+    verdictBox.className = "verdict";
+    verdictTitle.textContent = "Your RRB verdict";
+    verdictText.textContent = "Enter your details to see whether you meet the age limit.";
+    working.textContent = "Enter your date of birth to see the working.";
+    workingWindow.textContent = "";
+    workingNote.textContent = "";
+    workingYears.textContent = "";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paint(showEmptyError = false) {
+    syncExtraVisibility();
+    const dobVal = dobInput.value;
+    const examVal = examSelect.value;
+    const rec = examRec(examVal);
+    const cutoff = rrbCutoff(examVal);
+    const catVal = categorySelect.value;
+    const extraVal = extraChecked();
+    const yearsRaw = yearsInput.value;
+    const yearsNum = yearsRaw === "" ? 0 : Number(yearsRaw);
+    cutoffNote.textContent = "Age is counted on " + fmtDate(cutoff) + " (" + rec.cycle + ").";
+    examPill.textContent = rec.cycle;
+
+    let dobMsg = "";
+    if (!dobVal) {
+      if (showEmptyError) dobMsg = "Enter your date of birth.";
+    } else if (dobInput.validity.badInput) {
+      dobMsg = "Enter a valid date of birth.";
+    } else if (dobVal < "1900-01-01") {
+      dobMsg = "Enter a date of birth on or after 1 January 1900.";
+    } else if (dobVal > cutoff) {
+      dobMsg = "Date of birth must be on or before " + fmtDate(cutoff) + ".";
+    }
+    dobError.textContent = dobMsg;
+    dobInput.setAttribute("aria-invalid", String(dobMsg !== ""));
+
+    let yearsMsg = "";
+    if (extraVal === "esm" && yearsRaw !== "" && (!Number.isInteger(yearsNum) || yearsNum < 0 || yearsNum > 40)) {
+      yearsMsg = "Enter whole years of service from 0 to 40.";
+    } else if (extraVal === "ccaa" && yearsRaw !== "" && (!Number.isInteger(yearsNum) || yearsNum < 0 || yearsNum > 3)) {
+      yearsMsg = "Enter whole years of training from 0 to 3.";
+    }
+    yearsError.textContent = yearsMsg;
+    yearsInput.setAttribute("aria-invalid", String(yearsMsg !== ""));
+
+    const valid = dobMsg === "" && yearsMsg === "" && dobVal;
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const age = sscAgeParts(dobVal, cutoff);
+    const lim = rrbLimits(examVal, catVal, extraVal, yearsNum);
+    const win = sscWindow(cutoff, lim.min, lim.upper, 0, 0, 0);
+    const years = rrbEligibleYears(dobVal, examVal, lim.upper);
+    if (!age || !win || !years) {
+      clearResult();
+      return false;
+    }
+
+    const verdict = age.y < lim.min ? "Too young" : age.y >= lim.upper ? "Over the upper limit" : "Eligible";
+    output.textContent = ageText(age);
+    yearsVal.textContent = String(age.y);
+    monthsVal.textContent = String(age.m);
+    daysVal.textContent = String(age.d);
+
+    const boxClass = verdict === "Eligible" ? "verdict-ok" : verdict === "Too young" ? "verdict-young" : "verdict-no";
+    const title = verdict + " for " + rec.label;
+    let text = verdict === "Eligible"
+      ? "You meet the age condition for " + rec.label + " (" + rec.cycle + "): under " + lim.upper + " years on " + fmtDate(cutoff) + "."
+      : verdict === "Too young"
+        ? "You are under " + lim.min + " on " + fmtDate(cutoff) + ". The minimum age applies to every category."
+        : "You have attained " + lim.upper + " years on " + fmtDate(cutoff) + ". The upper limit is exclusive — you must not have attained it.";
+    verdictBox.className = "verdict " + boxClass;
+    verdictTitle.textContent = title;
+    verdictText.textContent = text;
+
+    working.textContent = fmtDate(dobVal) + " → " + fmtDate(cutoff) + " = " + ageText(age) + ".";
+    workingWindow.textContent = "Upper age limit: under " + lim.upper + " years. Born between " + fmtDate(win.earliest) + " and " + fmtDate(win.latest) + ".";
+    let note = "Attempts: RRB sets no limit on the number of attempts — only the age limit applies.";
+    if (extraVal === "esm") {
+      note += yearsNum >= 1
+        ? " Ex-serviceman relaxation: " + yearsNum + " years of service deducted from your age, then +" + (lim.relax - yearsNum) + " years."
+        : " Ex-serviceman relaxation: none — it needs more than six months of service.";
+    } else if (extraVal === "pwbd") {
+      note += " PwBD relaxation: +" + lim.relax + " years in total, including your category relaxation. RRB takes the maximum, not the sum.";
+    } else if (extraVal === "widow") {
+      note += " Widow concession: up to " + lim.upper + " years for " + catLabel(catVal) + ".";
+    } else if (extraVal === "staff") {
+      note += " Railway staff concession: up to " + lim.upper + " years for " + catLabel(catVal) + ".";
+    } else if (extraVal === "ccaa") {
+      note += " CCAA relaxation: " + yearsNum + " years of apprenticeship training, +" + lim.relax + " years in total including your category relaxation.";
+    } else if (extraVal === "ccaa25") {
+      note += " CCAA before 25: up to " + lim.upper + " years for " + catLabel(catVal) + ".";
+    }
+    workingNote.textContent = note;
+    workingYears.textContent = "Eligible exam years: " + years.first + "–" + years.last + ".";
+
+    copyButton.disabled = false;
+    summary =
+      "VisitBest | RRB Age Calculator" +
+      "\nDate of birth: " + fmtDate(dobVal) +
+      "\nExam: " + rec.label + " (" + rec.cycle + ", crucial date " + fmtDate(cutoff) + ")" +
+      "\nCategory: " + catLabel(catVal) + (extraVal !== "none" ? " + " + extraLabel(extraVal) : "") +
+      (extraVal === "esm" ? " (" + yearsNum + " years of service)" : "") +
+      (extraVal === "ccaa" ? " (" + yearsNum + " years of training)" : "") +
+      "\nExact age: " + ageText(age) +
+      "\nUpper age limit: under " + lim.upper + " years" +
+      "\nBorn between: " + fmtDate(win.earliest) + " and " + fmtDate(win.latest) +
+      "\nVerdict: " + verdict +
+      "\nAttempts: no limit" +
+      "\nEligible exam years: " + years.first + "–" + years.last;
+    return true;
+  }
+
+  function scenarioKey() {
+    return [dobInput.value, examSelect.value, categorySelect.value, extraChecked(), yearsInput.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      const age = sscAgeParts(item.dob, rrbCutoff(item.exam));
+      const rec = examRec(item.exam);
+      button.textContent = fmtDate(item.dob) + " → " + (age ? ageText(age) : "—") + " · " + rec.cycle;
+      button.setAttribute("aria-label", "Load check for " + fmtDate(item.dob) + ", " + rec.label);
+      button.addEventListener("click", () => {
+        dobInput.value = item.dob;
+        examSelect.value = item.exam;
+        categorySelect.value = item.cat;
+        setExtra(item.extra);
+        yearsInput.value = String(item.years);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      dob: dobInput.value,
+      exam: examSelect.value,
+      cat: categorySelect.value,
+      extra: extraChecked(),
+      years: yearsInput.value === "" ? 0 : Number(yearsInput.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      dobInput.value = button.dataset.dob || "";
+      examSelect.value = button.dataset.exam || c.defaultExam;
+      categorySelect.value = button.dataset.cat || "gen";
+      setExtra(button.dataset.extra || "none");
+      yearsInput.value = button.dataset.years || "5";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  ["input", "change"].forEach(evt => {
+    dobInput.addEventListener(evt, () => paint());
+    examSelect.addEventListener(evt, () => paint());
+    categorySelect.addEventListener(evt, () => paint());
+    yearsInput.addEventListener(evt, () => paint());
+  });
+  document.querySelectorAll('input[name="extra"]').forEach(radio => {
+    radio.addEventListener("change", () => paint());
+  });
+
+  $("age-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    dobInput.value = c.sampleDob;
+    examSelect.value = c.defaultExam;
+    categorySelect.value = "gen";
+    setExtra("none");
+    yearsInput.value = "5";
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
 }
 
 export function renderGeneralAgeCalculatorBody(p, others, css, clientSource) {
@@ -4712,6 +6482,2231 @@ export function renderGeneralAgeCalculatorBody(p, others, css, clientSource) {
   <script>(${clientSource})(${safeJSON(config)});</script>`;
 }
 
+export function renderUpscAgeCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const fmtDate = iso => {
+    const parts = String(iso).split("-");
+    if (parts.length !== 3) return iso;
+    return Number(parts[2]) + " " + MONTHS[Number(parts[1]) - 1] + " " + parts[0];
+  };
+  const fmtNum = n => new Intl.NumberFormat("en-GB").format(n);
+  const plural = (n, one, many) => n + " " + (n === 1 ? one : many);
+  const fmtAge = a => plural(a.y, "year", "years") + ", " + plural(a.m, "month", "months") + " and " + plural(a.d, "day", "days");
+
+  const config = { key: p.key, title: p.title, sampleDob: p.sampleDob, defaultYear: p.defaultYear, years: p.years, categories: p.categories, extras: p.extras };
+  const sampleYear = p.defaultYear;
+  const sampleCutoff = upscCutoff(sampleYear);
+  const sampleAge = sscAgeParts(p.sampleDob, sampleCutoff);
+  const sampleTotals = generalAgeTotals(p.sampleDob, sampleCutoff);
+
+  const categoryOptions = p.categories.map(cat => `
+    <option value="${e(cat.id)}">${e(cat.label)}${cat.relax ? " (+" + cat.relax + " years)" : " (no relaxation)"}</option>
+  `).join("");
+  const yearOptions = p.years.map(y => `
+    <option value="${y}"${y === p.defaultYear ? " selected" : ""}>CSE ${y} — cut-off 1 August ${y}</option>
+  `).join("");
+  const extraRadios = p.extras.map((x, i) => `
+    <label class="radio-row">
+      <input type="radio" name="extra" value="${e(x.id)}"${i === 0 ? " checked" : ""}>
+      <span>${e(x.label)}${x.relax ? " (+" + x.relax + " years)" : ""}</span>
+    </label>
+  `).join("");
+
+  const compareRows = [
+    ["gen", "none"], ["obc", "none"], ["sc", "none"], ["gen", "pwbd"], ["sc", "pwbd"]
+  ].map(([catId, extraId]) => {
+    const lim = upscLimits(catId, extraId);
+    const age = sscAgeParts(p.compareDob, upscCutoff(p.compareYear));
+    const verdict = age.y < 21 ? "Too young" : age.y >= lim.upper ? "Over the upper limit" : "Eligible";
+    const cat = p.categories.find(c => c.id === catId);
+    const extra = p.extras.find(x => x.id === extraId);
+    return `
+      <tr>
+        <th scope="row">${e(cat.label)}${extraId !== "none" ? " + " + e(extra.label) : ""}</th>
+        <td>Under ${lim.upper} years</td>
+        <td>${fmtAge(age)}</td>
+        <td>${verdict}</td>
+        <td>${lim.attempts === null ? "Unlimited" : lim.attempts}</td>
+      </tr>`;
+  }).join("");
+
+  const limitsRows = p.categories.map(cat => {
+    const lim = upscLimits(cat.id, "none");
+    const win = sscWindow(upscCutoff(p.defaultYear), 21, lim.upper, 0, 0, 0);
+    return `
+      <tr>
+        <th scope="row">${e(cat.label)}</th>
+        <td>${cat.relax ? "+" + cat.relax + " years" : "—"}</td>
+        <td>Under ${lim.upper} years</td>
+        <td>${fmtDate(win.earliest)} – ${fmtDate(win.latest)}</td>
+        <td>${lim.attempts === null ? "Unlimited" : lim.attempts}</td>
+      </tr>`;
+  }).join("");
+
+  const extrasRows = p.extras.filter(x => x.id !== "none").map(x => `
+    <tr>
+      <th scope="row">${e(x.label)}</th>
+      <td>+${x.relax} years</td>
+      <td>${x.id === "pwbd" ? "Adds to the category relaxation. PwBD (General/EWS/OBC) get 9 attempts; PwBD (SC/ST) keep unlimited attempts." : x.id === "esm" ? "Needs 5 or more years of military service as on 1 August. Attempts follow the category." : "Disabled in operations during hostilities or in a disturbed area. Attempts follow the category."}</td>
+    </tr>
+  `).join("");
+
+  return `<style>${css}${ageCss}${upscAgeCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free UPSC eligibility checker</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Check your UPSC age →
+              </a>
+              <a href="#method" class="calc-link">How UPSC counts age ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>21–32</strong>
+                <small>Standard age band</small>
+              </div>
+              <div>
+                <strong>1 August</strong>
+                <small>Cut-off date</small>
+              </div>
+              <div>
+                <strong>6 / 9 / Unlimited</strong>
+                <small>Attempts by category</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>Age and attempts only.</strong>
+              The official notification decides eligibility. Always check
+              <a href="https://upsc.gov.in/" rel="nofollow noopener" target="_blank">upsc.gov.in</a>
+              before applying.
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/" aria-current="page">UPSC Age</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Check your UPSC age eligibility</h2>
+              <span class="calc-pill">CSE ${p.defaultYear}</span>
+            </div>
+
+            <p class="calc-small">An example date is filled in. Replace it with your own date of birth.</p>
+
+            <form id="age-form" novalidate>
+              <label class="field-label" for="dob">
+                Your date of birth
+                <span>As on your Class 10 certificate</span>
+              </label>
+
+              <input
+                class="date-input"
+                id="dob"
+                type="date"
+                value="${p.sampleDob}"
+                min="1900-01-01"
+                required
+                aria-describedby="dob-error"
+              >
+              <p class="calc-error" id="dob-error" aria-live="polite"></p>
+
+              <label class="field-label" for="year">
+                Exam year
+                <span>The next cycle is CSE ${p.defaultYear}</span>
+              </label>
+
+              <select class="select-input" id="year" aria-describedby="cutoff-note">
+                ${yearOptions}
+              </select>
+              <p class="band-note" id="cutoff-note">Age is counted on 1 August ${p.defaultYear}.</p>
+
+              <label class="field-label" for="category">
+                Category
+                <span>As on your certificate</span>
+              </label>
+
+              <select class="select-input" id="category">
+                ${categoryOptions}
+              </select>
+
+              <fieldset style="border:0;padding:0;margin:18px 0 0">
+                <legend class="field-label" style="margin-bottom:8px">
+                  Any extra relaxation?
+                  <span>Pick one — it stacks with your category</span>
+                </legend>
+                <div class="radio-list">
+                  ${extraRadios}
+                </div>
+              </fieldset>
+
+              <label class="field-label" for="used" style="margin-top:18px">
+                Attempts already used
+                <span>Appearing in even one Prelims paper counts as an attempt</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="used"
+                type="number"
+                value="0"
+                min="0"
+                max="30"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="used-error"
+              >
+              <p class="calc-error" id="used-error" aria-live="polite"></p>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Check my UPSC eligibility →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR AGE ON 1 AUGUST</span>
+                <span>CSE ${p.defaultYear}</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your exact age</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="dob">—</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="years-val">—</strong>
+                  <small>YEARS</small>
+                </div>
+                <div>
+                  <strong id="months-val">—</strong>
+                  <small>MONTHS</small>
+                </div>
+                <div>
+                  <strong id="days-val">—</strong>
+                  <small>DAYS</small>
+                </div>
+              </div>
+
+              <div class="verdict" id="verdict-box">
+                <strong id="verdict-title">Your UPSC verdict</strong>
+                <span id="verdict-text">Enter your details to see whether you meet the age limit.</span>
+              </div>
+
+              <p class="working" id="working">
+                Enter your date of birth to see the working.
+              </p>
+              <p class="working" id="working-window"></p>
+              <p class="working" id="working-attempts"></p>
+              <p class="working" id="working-years"></p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The upper limit is exclusive: you must not have attained it on 1 August.
+                A date of birth after 1 August of the exam year is an error, not a negative age.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result" disabled>
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Check my UPSC eligibility to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">How UPSC counts age</a>
+        <a href="#examples">Examples</a>
+        <a href="#comparison">One birthday, five answers</a>
+        <a href="#limits">Age limits</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / 1 AUGUST</span>
+            <h3>One cut-off date</h3>
+            <p>UPSC counts your age on 1 August of the exam year — not on the Prelims date, not on the day you apply. For CSE 2026 the Prelims were held on 24 May 2026, but the age was still counted on 1 August 2026.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / EXCLUSIVE LIMIT</span>
+            <h3>“Must not have attained”</h3>
+            <p>The upper limit is exclusive. Turning 32 on 1 August means you have attained 32 and are over the General limit — the same wording decides every category and relaxation on this page.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / ATTEMPTS</span>
+            <h3>Age is only half the check</h3>
+            <p>General and EWS candidates get 6 attempts, OBC 9, and SC/ST unlimited attempts within the age limit. An attempt counts when you appear in even one Prelims paper.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From date of birth to your UPSC verdict</h2>
+          <p>
+            Start with the date on your Class 10 certificate. Then choose the
+            exam year, your category and any extra relaxation.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How UPSC counts your age</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>Rule 5, Civil Services Examination Rules, 2026</small>
+          Age on 1 August = 1 August of the exam year − Date of birth
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. Count completed years
+            <strong>${sampleAge.y} completed years</strong>
+            <span>${fmtDate(p.sampleDob)} to ${fmtDate(sampleCutoff)} is ${sampleAge.y} full years.</span>
+          </div>
+
+          <div class="math-step">
+            2. Then completed months
+            <strong>${sampleAge.m} completed months</strong>
+            <span>From 15 March to 1 August is ${sampleAge.m} full months.</span>
+          </div>
+
+          <div class="math-step">
+            3. Then remaining days
+            <strong>${sampleAge.d} days</strong>
+            <span>The result is ${fmtAge(sampleAge)} — ${fmtNum(sampleTotals.days)} days in total.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>29 February birthdays fall on 1 March in non-leap years.</strong>
+          Born 29 February 2000, you are 25 years, 11 months and 30 days old on
+          28 February 2026 and exactly 26 on 1 March 2026. For CSE ${p.defaultYear} and CSE 2028 the same limits are used as planning figures from the CSE 2026 Rules — the CSE 2027 notification is tentatively due on 13 January 2027, so re-check the rules against it before you apply.
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>See the method with three real birthdays</h2>
+          <p>
+            Each example uses the rule above.
+            Select one to load it into the calculator.
+          </p>
+        </div>
+
+        <div class="grid3">
+          ${p.stories.map(story => {
+            const cutoff = upscCutoff(story.year);
+            const age = sscAgeParts(story.dob, cutoff);
+            const lim = upscLimits(story.categoryId, story.extraId);
+            const years = upscEligibleYears(story.dob, lim.upper);
+            const verdict = age.y < 21 ? "Too young" : age.y >= lim.upper ? "Over the upper limit" : "Eligible";
+            return `
+            <article class="card example-card">
+              <h3>${e(story.title)}</h3>
+
+              <div class="example-score">
+                <div>
+                  <strong>${fmtDate(story.dob)}</strong>
+                  <small>DATE OF BIRTH</small>
+                </div>
+
+                <span class="arrow" aria-hidden="true">→</span>
+
+                <div>
+                  <strong>${fmtAge(age)}</strong>
+                  <small>AGE ON ${fmtDate(cutoff).toUpperCase()}</small>
+                </div>
+              </div>
+
+              <p>${e(story.body)}</p>
+              <p class="calc-small">${verdict} · upper limit under ${lim.upper} years · ${lim.attempts === null ? "unlimited attempts" : lim.attempts + " attempts"} · eligible ${years.first}–${years.last}</p>
+
+              <button class="calc-btn" type="button" data-scenario data-dob="${e(story.dob)}" data-year="${story.year}" data-cat="${e(story.categoryId)}" data-extra="${e(story.extraId)}" data-used="${story.used}" data-jump>
+                Try this date →
+              </button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="comparison">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Why the category matters</p>
+          <h2>${e(p.exampleTitle)}</h2>
+          <p>${e(p.exampleNote)}</p>
+        </div>
+
+        <div
+          class="calc-table-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="One date of birth checked in five categories"
+        >
+          <table class="calc-table">
+            <caption>Born ${fmtDate(p.compareDob)} — a ${e(generalAgeWeekday(p.compareDob))} — for CSE ${p.compareYear}.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Upper age limit</th>
+                <th scope="col">Exact age on 1 August ${p.compareYear}</th>
+                <th scope="col">Verdict</th>
+                <th scope="col">Attempts allowed</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              ${compareRows}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">${e(p.exampleConclusion)}</div>
+
+        <div class="grid2" style="margin-top:26px">
+          <article class="card">
+            <h3>When this check is useful</h3>
+            <ul class="bullets">
+              <li>Working out whether you can still appear — by age and by attempts — before you spend a year preparing.</li>
+              <li>Finding your first and last eligible exam years, so you can plan how many attempts you really have.</li>
+              <li>Checking what a category or disability relaxation changes for your own date of birth.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>When another tool decides</h3>
+            <ul class="bullets">
+              <li>SSC exams use different crucial dates and bands — use the <a href="/ssc-age-calculator/">SSC Age Calculator</a> for those.</li>
+              <li>A plain age on any date is the <a href="/age-calculator/">Age Calculator</a> on this site.</li>
+              <li>Only the notification on upsc.gov.in decides your eligibility — this tool counts age and attempts, it does not verify certificates.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="limits">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The official limits</p>
+          <h2>Age limits and attempts by category</h2>
+          <p>
+            From Rule 3 (attempts) and Rule 5 (age) of the Civil Services
+            Examination Rules, 2026. The birth-date window below is for CSE ${p.defaultYear};
+            it shifts by one year for each exam year.
+          </p>
+        </div>
+
+        <div
+          class="calc-table-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="Age limits and attempts by category"
+        >
+          <table class="calc-table">
+            <caption>Category limits for CSE ${p.defaultYear} — cut-off 1 August ${p.defaultYear}.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Relaxation</th>
+                <th scope="col">Upper age limit</th>
+                <th scope="col">Born between</th>
+                <th scope="col">Attempts allowed</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              ${limitsRows}
+            </tbody>
+          </table>
+        </div>
+
+        <div
+          class="calc-table-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="Extra relaxations"
+          style="margin-top:26px"
+        >
+          <table class="calc-table">
+            <caption>Extra relaxations — each stacks with the category relaxation above.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Extra relaxation</th>
+                <th scope="col">Added years</th>
+                <th scope="col">What it needs</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              ${extrasRows}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">Two stacking examples: an OBC candidate with a benchmark disability gets 32 + 3 + 10 = 45 years, with 9 attempts. An SC ex-serviceman gets 32 + 5 + 5 = 42 years, with unlimited attempts. Only one extra relaxation is applied at a time on this page — the Rules stack a category relaxation with one further clause.</div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Get the input right</p>
+          <h2>Common UPSC age mistakes to avoid</h2>
+        </div>
+
+        <div class="grid4">
+          <article class="step">
+            <span class="step-index">01 / PRELIMS</span>
+            <h3>Counting from the Prelims date</h3>
+            <p>
+              The Prelims were held on 24 May 2026 for CSE 2026, but age is
+              counted on 1 August 2026. Counting from May makes you look three
+              months younger than UPSC counts you.
+            </p>
+          </article>
+
+          <article class="step">
+            <span class="step-index">02 / INCLUSIVE</span>
+            <h3>Reading 32 as “up to 32”</h3>
+            <p>
+              The rule is “must not have attained 32”. Turning 32 on 1 August
+              means you are over the limit, not inside it — born 1 August 1994,
+              you are exactly 32 on 1 August 2026 and over.
+            </p>
+          </article>
+
+          <article class="step">
+            <span class="step-index">03 / ATTEMPTS</span>
+            <h3>Forgetting attempts run out first</h3>
+            <p>
+              A General candidate who has used all 6 attempts by age 28 is done,
+              even though the age limit runs to 32. Check attempts alongside age.
+            </p>
+          </article>
+
+          <article class="step">
+            <span class="step-index">04 / APPLICATION</span>
+            <h3>Counting an application as an attempt</h3>
+            <p>
+              Only appearing in a Prelims paper counts as an attempt. Applying
+              and not appearing uses no attempt — and an attempt counts even if
+              your candidature is later cancelled.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="faq">
+      <div class="calc-wrap faq-grid">
+        <div class="faq-intro">
+          <p class="eyebrow">Frequently asked questions</p>
+          <h2>UPSC age questions, answered</h2>
+          <p>
+            Clear answers about the cut-off date, relaxations, attempts and
+            what this tool does not do.
+          </p>
+          <p><a href="#calculator" class="calc-link">Back to the calculator ↑</a></p>
+        </div>
+
+        <div>
+          ${p.faq.map(([question, answer]) => `
+            <details class="calc-faq">
+              <summary>${e(question)}</summary>
+              <p>${e(answer)}</p>
+            </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="methodology">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Methodology and sources</p>
+          <h2>Know the rules behind the answer</h2>
+          <p>
+            This page applies Rule 3 (number of attempts) and Rule 5 (age) of
+            the Civil Services Examination Rules, 2026, as published in the
+            Gazette of India on 4 February 2026 and carried into UPSC's
+            Examination Notice No. 05/2026-CSE. Age is counted by calendar
+            subtraction on Gregorian dates: complete years, then complete
+            months, then the remaining days, with borrowing from the previous
+            month. Dates are counted in UTC, so the result does not depend on
+            your time zone. A 29 February birthday falls on 1 March in a
+            non-leap year — the same rule the SSC Age Calculator on this site
+            uses. No exam body endorses this tool, and it checks age and
+            attempts only.
+          </p>
+        </div>
+
+        <div class="method-box">
+          <strong>About the method</strong>
+          <p>
+            Every number on this page is computed from the dates shown — the
+            worked examples, the comparison table and the calculator all use
+            the same code. For CSE 2027 and CSE 2028 the same limits are used
+            as planning figures from the CSE 2026 Rules; the CSE 2027
+            notification is tentatively due on 13 January 2027, and the rules
+            must be re-checked against it when it releases. Your dates are
+            never sent anywhere: the calculation runs entirely in your browser.
+          </p>
+
+          <div class="sources">
+            <a href="https://upsc.gov.in/sites/default/files/Notif-CSP-26-Engl-040226.pdf" target="_blank" rel="nofollow noopener">
+              UPSC: Civil Services Examination 2026 — Examination Notice No. 05/2026-CSE (official PDF) ↗
+            </a>
+            <a href="https://upsc.gov.in/" target="_blank" rel="nofollow noopener">
+              Union Public Service Commission — upsc.gov.in ↗
+            </a>
+            <a href="/ssc-age-calculator/" target="_blank">
+              VisitBest: SSC Age Calculator — age on the SSC crucial date ↗
+            </a>
+            <a href="/age-calculator/" target="_blank">
+              VisitBest: Age Calculator — exact age on any date ↗
+            </a>
+            <a href="/education/" target="_blank">
+              VisitBest: Education Guides Hub ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft">
+      <div class="calc-wrap">
+        <div class="calc-cta">
+          <div>
+            <p class="eyebrow" style="color:#a9dce4">Ready for another check?</p>
+            <h2>Check another date. Understand the result.</h2>
+            <p>Use the calculator above, or try one of the other VisitBest calculators.</p>
+          </div>
+
+          <div class="actions">
+            <a class="calc-btn" href="#calculator">Check your UPSC age ↑</a>
+            ${others.map(o => `
+              <a class="calc-btn copy-btn" href="/${e(o.slug)}/">
+                ${e(o.title)} →
+              </a>
+            `).join("")}
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+export function renderIbpsAgeCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const fmtDate = iso => {
+    const parts = String(iso).split("-");
+    if (parts.length !== 3) return iso;
+    return Number(parts[2]) + " " + MONTHS[Number(parts[1]) - 1] + " " + parts[0];
+  };
+  const fmtNum = n => new Intl.NumberFormat("en-GB").format(n);
+  const plural = (n, one, many) => n + " " + (n === 1 ? one : many);
+  const fmtAge = a => plural(a.y, "year", "years") + ", " + plural(a.m, "month", "months") + " and " + plural(a.d, "day", "days");
+
+  const config = { key: p.key, title: p.title, sampleDob: p.sampleDob, defaultExam: p.defaultExam, exams: p.exams, categories: p.categories, extras: p.extras };
+  const sampleExam = p.exams.find(x => x.id === p.defaultExam);
+  const sampleCutoff = sampleExam.cut;
+  const sampleAge = sscAgeParts(p.sampleDob, sampleCutoff);
+  const sampleTotals = generalAgeTotals(p.sampleDob, sampleCutoff);
+
+  const examOptions = p.exams.map(ex => `
+    <option value="${e(ex.id)}"${ex.id === p.defaultExam ? " selected" : ""}>${e(ex.label)} — ${e(ex.cycle)} — cut-off ${fmtDate(ex.cut)}</option>
+  `).join("");
+  const categoryOptions = p.categories.map(cat => `
+    <option value="${e(cat.id)}">${e(cat.label)}${cat.relax ? " (+" + cat.relax + " years)" : " (no relaxation)"}</option>
+  `).join("");
+  const extraSuffix = x => x.id === "pwbd" ? " (+10 years)" : x.id === "esm" ? " (+5 years, or service + 3 years)" : x.id === "widow" ? " (up to 35 / 38 / 40 years)" : "";
+  const extraRadios = p.extras.map((x, i) => `
+    <label class="radio-row"${x.id === "widow" ? ' data-extra-row="widow"' : ""}>
+      <input type="radio" name="extra" value="${e(x.id)}"${i === 0 ? " checked" : ""}>
+      <span>${e(x.label)}${extraSuffix(x)}</span>
+    </label>
+  `).join("");
+
+  const compareRows = [
+    ["po", "gen", "none"], ["po", "obc", "none"], ["po", "sc", "pwbd"],
+    ["clerk", "gen", "none"], ["rrb-oa", "gen", "none"], ["rrb-1", "gen", "none"], ["rrb-3", "gen", "none"]
+  ].map(([examId, catId, extraId]) => {
+    const exam = p.exams.find(x => x.id === examId);
+    const lim = ibpsLimits(examId, catId, extraId, 5);
+    const age = sscAgeParts(p.compareDob, exam.cut);
+    const verdict = age.y < exam.min ? "Too young" : age.y >= lim.upper ? "Over the upper limit" : "Eligible";
+    const cat = p.categories.find(c => c.id === catId);
+    const extra = p.extras.find(x => x.id === extraId);
+    return `
+      <tr>
+        <th scope="row">${e(exam.label)} — ${e(cat.label)}${extraId !== "none" ? " + " + e(extra.label) : ""}</th>
+        <td>${fmtDate(exam.cut)}</td>
+        <td>Under ${lim.upper} years</td>
+        <td>${fmtAge(age)}</td>
+        <td>${verdict}</td>
+      </tr>`;
+  }).join("");
+
+  const examRows = p.exams.map(ex => {
+    const lim = ibpsLimits(ex.id, "gen", "none", 5);
+    const win = sscWindow(ex.cut, ex.min, lim.upper, 0, 0, 0);
+    return `
+      <tr>
+        <th scope="row">${e(ex.label)} (${e(ex.cycle)})</th>
+        <td>${fmtDate(ex.cut)}</td>
+        <td>${ex.min}–${ex.upper} years</td>
+        <td>${fmtDate(win.earliest)} – ${fmtDate(win.latest)}</td>
+      </tr>`;
+  }).join("");
+
+  const categoryRows = p.categories.map(cat => {
+    const lim = ibpsLimits("po", cat.id, "none", 5);
+    return `
+      <tr>
+        <th scope="row">${e(cat.label)}</th>
+        <td>${cat.relax ? "+" + cat.relax + " years" : "—"}</td>
+        <td>Under ${lim.upper} years</td>
+      </tr>`;
+  }).join("");
+
+  const extrasRows = `
+    <tr>
+      <th scope="row">Person with benchmark disability (PwBD)</th>
+      <td>+10 years</td>
+      <td>Adds to the category relaxation for every exam: PwBD (General/EWS) get 10 years, PwBD (OBC) 13 years and PwBD (SC/ST) 15 years in total.</td>
+    </tr>
+    <tr>
+      <th scope="row">Ex-serviceman / commissioned officer</th>
+      <td>+5 years, or service + 3 years</td>
+      <td>PO, Specialist Officer and RRB officer posts: +5 years with 5 or more years of military service. Clerk and RRB Office Assistant: actual service + 3 years, up to a maximum age of 50 (8 years instead of 3 for disabled ex-servicemen of SC/ST).</td>
+    </tr>
+    <tr>
+      <th scope="row">Widow, divorced or legally separated woman (not remarried)</th>
+      <td>Up to 35 / 38 / 40 years</td>
+      <td>Clerk and RRB Office Assistant only. The upper limit becomes 35 years (General/EWS), 38 years (OBC) or 40 years (SC/ST). The PO, Specialist Officer and RRB officer notifications list no widow row.</td>
+    </tr>
+  `;
+
+  return `<style>${css}${ageCss}${ibpsAgeCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free IBPS eligibility checker</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Check your IBPS age →
+              </a>
+              <a href="#method" class="calc-link">How IBPS counts age ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>20–30</strong>
+                <small>IBPS PO age band</small>
+              </div>
+              <div>
+                <strong>7 exams</strong>
+                <small>PO, Clerk, SO + 4 RRB posts</small>
+              </div>
+              <div>
+                <strong>No attempt limit</strong>
+                <small>Only the age limit applies</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>Age only.</strong>
+              The official notification decides eligibility. Always check
+              <a href="https://www.ibps.in/" rel="nofollow noopener" target="_blank">ibps.in</a>
+              before applying.
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/" aria-current="page">IBPS Age</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Check your IBPS age eligibility</h2>
+              <span class="calc-pill" id="exam-pill">CRP PO/MT-XVI</span>
+            </div>
+
+            <p class="calc-small">An example date is filled in. Replace it with your own date of birth.</p>
+
+            <form id="age-form" novalidate>
+              <label class="field-label" for="dob">
+                Your date of birth
+                <span>As on your Class 10 certificate</span>
+              </label>
+
+              <input
+                class="date-input"
+                id="dob"
+                type="date"
+                value="${p.sampleDob}"
+                min="1900-01-01"
+                required
+                aria-describedby="dob-error"
+              >
+              <p class="calc-error" id="dob-error" aria-live="polite"></p>
+
+              <label class="field-label" for="exam">
+                Your IBPS exam
+                <span>Each exam has its own cut-off date</span>
+              </label>
+
+              <select class="select-input" id="exam" aria-describedby="cutoff-note">
+                ${examOptions}
+              </select>
+              <p class="band-note" id="cutoff-note">Age is counted on 1 July 2026 (CRP PO/MT-XVI).</p>
+
+              <label class="field-label" for="category">
+                Category
+                <span>As on your certificate</span>
+              </label>
+
+              <select class="select-input" id="category">
+                ${categoryOptions}
+              </select>
+
+              <fieldset style="border:0;padding:0;margin:18px 0 0">
+                <legend class="field-label" style="margin-bottom:8px">
+                  Any extra relaxation?
+                  <span>Pick one — it stacks with your category</span>
+                </legend>
+                <div class="radio-list">
+                  ${extraRadios}
+                </div>
+              </fieldset>
+
+              <div id="service-field" style="margin-top:18px" hidden>
+                <label class="field-label" for="service">
+                  Years of defence service
+                  <span>Only for the ex-serviceman relaxation</span>
+                </label>
+
+                <input
+                  class="number-input"
+                  id="service"
+                  type="number"
+                  value="5"
+                  min="0"
+                  max="40"
+                  step="1"
+                  inputmode="numeric"
+                  aria-describedby="service-error"
+                >
+                <p class="calc-error" id="service-error" aria-live="polite"></p>
+                <p class="band-note">PO, Specialist Officer and RRB officer posts need 5 or more years of service for +5 years. Clerk and RRB Office Assistant add your service plus 3 years, up to age 50.</p>
+              </div>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Check my IBPS eligibility →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR AGE ON THE CUT-OFF DATE</span>
+                <span>2026 CYCLE</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your exact age</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="dob">—</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="years-val">—</strong>
+                  <small>YEARS</small>
+                </div>
+                <div>
+                  <strong id="months-val">—</strong>
+                  <small>MONTHS</small>
+                </div>
+                <div>
+                  <strong id="days-val">—</strong>
+                  <small>DAYS</small>
+                </div>
+              </div>
+
+              <div class="verdict" id="verdict-box">
+                <strong id="verdict-title">Your IBPS verdict</strong>
+                <span id="verdict-text">Enter your details to see whether you meet the age limit.</span>
+              </div>
+
+              <p class="working" id="working">
+                Enter your date of birth to see the working.
+              </p>
+              <p class="working" id="working-window"></p>
+              <p class="working" id="working-note"></p>
+              <p class="working" id="working-years"></p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The upper limit is exclusive: you must not have attained it on the cut-off date.
+                A date of birth after the cut-off date is an error, not a negative age.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result" disabled>
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Check my IBPS eligibility to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">How IBPS counts age</a>
+        <a href="#examples">Examples</a>
+        <a href="#comparison">One birthday, seven answers</a>
+        <a href="#limits">Age limits</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / FOUR CUT-OFFS</span>
+            <h3>One date per exam</h3>
+            <p>PO and Specialist Officer count age on 1 July 2026, Clerk on 1 August 2026, and the RRB posts on 1 September 2026. Picking the wrong exam can move your age by two months and flip the verdict.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / EXCLUSIVE LIMIT</span>
+            <h3>“Must not have attained”</h3>
+            <p>The upper limit is exclusive. Turning 30 on 1 July means you have attained 30 and are over the General limit for IBPS PO — the same wording decides every exam and relaxation on this page.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / NO ATTEMPTS</span>
+            <h3>Age is the whole check</h3>
+            <p>IBPS sets no limit on the number of attempts. You can appear every year for as long as you stay inside the age limit — so this page shows your first and last eligible exam years instead of attempts.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From date of birth to your IBPS verdict</h2>
+          <p>
+            Start with the date on your Class 10 certificate. Then choose
+            your exam, your category and any extra relaxation.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How IBPS counts your age</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>Clause B.II (Age) of the IBPS notifications, 2026 cycle</small>
+          Age on the cut-off date = Cut-off date − Date of birth
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. Count completed years
+            <strong>${sampleAge.y} completed years</strong>
+            <span>${fmtDate(p.sampleDob)} to ${fmtDate(sampleCutoff)} is ${sampleAge.y} full years.</span>
+          </div>
+
+          <div class="math-step">
+            2. Then completed months
+            <strong>${sampleAge.m} completed months</strong>
+            <span>From 15 March to 1 July is ${sampleAge.m} full months.</span>
+          </div>
+
+          <div class="math-step">
+            3. Then remaining days
+            <strong>${sampleAge.d} days</strong>
+            <span>The result is ${fmtAge(sampleAge)} — ${fmtNum(sampleTotals.days)} days in total.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>29 February birthdays fall on 1 March in non-leap years.</strong>
+          Born 29 February 2000, you are 26 years, 4 months and 2 days old on
+          1 July 2026 and 26 years, 6 months and 3 days old on 1 September 2026. The limits on this page come from the 2026-cycle notifications (CRP PO/MT-XVI, CSA-XVI, SPL-XVI and RRBs-XV); the 2027 cycle will publish new cut-off dates, so re-check the rules against the new notification before you apply.
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>See the method with three real birthdays</h2>
+          <p>
+            Each example uses the rule above.
+            Select one to load it into the calculator.
+          </p>
+        </div>
+
+        <div class="grid3">
+          ${p.stories.map(story => {
+            const exam = p.exams.find(x => x.id === story.examId);
+            const cutoff = exam.cut;
+            const age = sscAgeParts(story.dob, cutoff);
+            const lim = ibpsLimits(story.examId, story.categoryId, story.extraId, story.service);
+            const years = ibpsEligibleYears(story.dob, story.examId, lim.upper);
+            const verdict = age.y < lim.min ? "Too young" : age.y >= lim.upper ? "Over the upper limit" : "Eligible";
+            return `
+            <article class="card example-card">
+              <h3>${e(story.title)}</h3>
+
+              <div class="example-score">
+                <div>
+                  <strong>${fmtDate(story.dob)}</strong>
+                  <small>DATE OF BIRTH</small>
+                </div>
+
+                <span class="arrow" aria-hidden="true">→</span>
+
+                <div>
+                  <strong>${fmtAge(age)}</strong>
+                  <small>AGE ON ${fmtDate(cutoff).toUpperCase()}</small>
+                </div>
+              </div>
+
+              <p>${e(story.body)}</p>
+              <p class="calc-small">${verdict} · upper limit under ${lim.upper} years · eligible ${years.first}–${years.last}</p>
+
+              <button class="calc-btn" type="button" data-scenario data-dob="${e(story.dob)}" data-exam="${e(story.examId)}" data-cat="${e(story.categoryId)}" data-extra="${e(story.extraId)}" data-service="${story.service}" data-jump>
+                Try this date →
+              </button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="comparison">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Why the exam matters</p>
+          <h2>${e(p.exampleTitle)}</h2>
+          <p>${e(p.exampleNote)}</p>
+        </div>
+
+        <div
+          class="calc-table-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="One date of birth checked in seven exams and categories"
+        >
+          <table class="calc-table">
+            <caption>Born ${fmtDate(p.compareDob)} — a ${e(generalAgeWeekday(p.compareDob))} — for the 2026 cycle.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Exam and category</th>
+                <th scope="col">Cut-off date</th>
+                <th scope="col">Upper age limit</th>
+                <th scope="col">Exact age on the cut-off</th>
+                <th scope="col">Verdict</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              ${compareRows}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">${e(p.exampleConclusion)}</div>
+
+        <div class="grid2" style="margin-top:26px">
+          <article class="card">
+            <h3>When this check is useful</h3>
+            <ul class="bullets">
+              <li>Working out whether you can still appear — by age alone, since IBPS sets no attempt limit — before you spend a year preparing.</li>
+              <li>Finding your first and last eligible exam years, so you can plan how many cycles you really have.</li>
+              <li>Checking what a category or disability relaxation changes for your own date of birth, and which exam's cut-off date applies to you.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>When another tool decides</h3>
+            <ul class="bullets">
+              <li>SSC exams use different crucial dates and bands — use the <a href="/ssc-age-calculator/">SSC Age Calculator</a> for those.</li>
+              <li>UPSC Civil Services has its own 1 August cut-off and attempt limits — use the <a href="/upsc-age-calculator/">UPSC Age Calculator</a> for that.</li>
+              <li>A plain age on any date is the <a href="/age-calculator/">Age Calculator</a> on this site.</li>
+              <li>Only the notification on ibps.in decides your eligibility — this tool counts age, it does not verify certificates.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="limits">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The official limits</p>
+          <h2>Age limits by exam and category</h2>
+          <p>
+            From clause B.II (Age) of the four 2026-cycle IBPS notifications.
+            The birth-date window below is for General and EWS candidates; it
+            shifts earlier by the relaxation years for other categories.
+          </p>
+        </div>
+
+        <div
+          class="calc-table-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="Age limits by exam"
+        >
+          <table class="calc-table">
+            <caption>Age limits for the 2026 cycle — General and EWS candidates.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Exam</th>
+                <th scope="col">Cut-off date</th>
+                <th scope="col">Age band</th>
+                <th scope="col">Born between</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              ${examRows}
+            </tbody>
+          </table>
+        </div>
+
+        <div
+          class="calc-table-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="Category relaxations"
+          style="margin-top:26px"
+        >
+          <table class="calc-table">
+            <caption>Category relaxations — the same in all four notifications.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Relaxation</th>
+                <th scope="col">Upper age limit for IBPS PO</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              ${categoryRows}
+            </tbody>
+          </table>
+        </div>
+
+        <div
+          class="calc-table-scroll"
+          tabindex="0"
+          role="region"
+          aria-label="Extra relaxations"
+          style="margin-top:26px"
+        >
+          <table class="calc-table">
+            <caption>Extra relaxations — each stacks with the category relaxation above.</caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Extra relaxation</th>
+                <th scope="col">Added years</th>
+                <th scope="col">What it needs</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              ${extrasRows}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">Two stacking examples: an OBC candidate with a benchmark disability gets 30 + 3 + 10 = 43 years for IBPS PO. An SC ex-serviceman gets 30 + 5 + 5 = 40 years. Only one extra relaxation is applied at a time on this page — the notifications stack a category relaxation with one further clause.</div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Get the input right</p>
+          <h2>Common IBPS age mistakes to avoid</h2>
+        </div>
+
+        <div class="grid4">
+          <article class="step">
+            <span class="step-index">01 / EXAM DATE</span>
+            <h3>Counting from the exam date</h3>
+            <p>
+              The IBPS PO Prelims were held on 22–23 August 2026, but age is
+              counted on 1 July 2026. Counting from August makes you look
+              almost two months younger than IBPS counts you.
+            </p>
+          </article>
+
+          <article class="step">
+            <span class="step-index">02 / INCLUSIVE</span>
+            <h3>Reading 30 as “up to 30”</h3>
+            <p>
+              The notification prints the window 2 July 1996 to 1 July 2006.
+              Turning 30 on 1 July means you are over the limit, not inside
+              it — born 1 July 1996, you are exactly 30 on 1 July 2026 and over.
+            </p>
+          </article>
+
+          <article class="step">
+            <span class="step-index">03 / WRONG CUT-OFF</span>
+            <h3>Using another exam's cut-off</h3>
+            <p>
+              PO counts on 1 July, Clerk on 1 August and the RRB posts on
+              1 September. Born 2 July 1996, you are eligible for PO but over
+              the limit for Clerk — the same birthday, two different answers.
+            </p>
+          </article>
+
+          <article class="step">
+            <span class="step-index">04 / SERVICE</span>
+            <h3>Forgetting the service years</h3>
+            <p>
+              For Clerk and RRB Office Assistant, the ex-serviceman relaxation
+              is your actual service plus 3 years — not a flat 5. The flat +5
+              applies only to PO, Specialist Officer and the RRB officer posts.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="faq">
+      <div class="calc-wrap faq-grid">
+        <div class="faq-intro">
+          <p class="eyebrow">Frequently asked questions</p>
+          <h2>IBPS age questions, answered</h2>
+          <p>
+            Clear answers about the cut-off dates, relaxations, attempts and
+            what this tool does not do.
+          </p>
+          <p><a href="#calculator" class="calc-link">Back to the calculator ↑</a></p>
+        </div>
+
+        <div>
+          ${p.faq.map(([question, answer]) => `
+            <details class="calc-faq">
+              <summary>${e(question)}</summary>
+              <p>${e(answer)}</p>
+            </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="methodology">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Methodology and sources</p>
+          <h2>Know the rules behind the answer</h2>
+          <p>
+            This page applies clause B.II (Age) of the four IBPS detailed
+            notifications for the 2026 cycle: CRP PO/MT-XVI (1 July 2026),
+            CRP CSA-XVI (1 August 2026), CRP SPL-XVI (1 July 2026) and CRP
+            RRBs-XV (1 September 2026). Age is counted by calendar
+            subtraction on Gregorian dates: complete years, then complete
+            months, then the remaining days, with borrowing from the previous
+            month. Dates are counted in UTC, so the result does not depend on
+            your time zone. A 29 February birthday falls on 1 March in a
+            non-leap year — the same rule the SSC Age Calculator on this site
+            uses. No exam body endorses this tool, and it checks age only.
+          </p>
+        </div>
+
+        <div class="method-box">
+          <strong>About the method</strong>
+          <p>
+            Every number on this page is computed from the dates shown — the
+            worked examples, the comparison table and the calculator all use
+            the same code. The first and last eligible exam years assume the
+            cut-off falls on the same date each year, as it has in recent
+            cycles; the 2027 cycle will publish new cut-off dates, and the
+            rules must be re-checked against the new notification when it
+            releases. Your dates are never sent anywhere: the calculation runs
+            entirely in your browser.
+          </p>
+
+          <div class="sources">
+            <a href="https://www.ibps.in/wp-content/uploads/Detailed-Notification_CRP-PO-XVI_Final_V1_30.06.2026.pdf" target="_blank" rel="nofollow noopener">
+              IBPS: CRP PO/MT-XVI detailed notification, 2026 (official PDF) ↗
+            </a>
+            <a href="https://www.ibps.in/wp-content/uploads/Notification_CRP_CSA_XVI-Final.pdf" target="_blank" rel="nofollow noopener">
+              IBPS: CRP CSA-XVI detailed notification, 2026 (official PDF) ↗
+            </a>
+            <a href="https://rojgarpedia.com/wp-content/uploads/2026/09/CRP-RRBs-XV-notification.pdf" target="_blank" rel="nofollow noopener">
+              IBPS: CRP RRBs-XV detailed notification, 2026 (copy of the official PDF) ↗
+            </a>
+            <a href="https://www.ibps.in/" target="_blank" rel="nofollow noopener">
+              Institute of Banking Personnel Selection — ibps.in ↗
+            </a>
+            <a href="/ssc-age-calculator/" target="_blank">
+              VisitBest: SSC Age Calculator — age on the SSC crucial date ↗
+            </a>
+            <a href="/upsc-age-calculator/" target="_blank">
+              VisitBest: UPSC Age Calculator — age, relaxations and attempts ↗
+            </a>
+            <a href="/age-calculator/" target="_blank">
+              VisitBest: Age Calculator — exact age on any date ↗
+            </a>
+            <a href="/education/" target="_blank">
+              VisitBest: Education Guides Hub ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft">
+      <div class="calc-wrap">
+        <div class="calc-cta">
+          <div>
+            <p class="eyebrow" style="color:#a9dce4">Ready for another check?</p>
+            <h2>Check another date. Understand the result.</h2>
+            <p>Use the calculator above, or try one of the other VisitBest calculators.</p>
+          </div>
+
+          <div class="actions">
+            <a class="calc-btn" href="#calculator">Check your IBPS age ↑</a>
+            ${others.map(o => `
+              <a class="calc-btn copy-btn" href="/${e(o.slug)}/">
+                ${e(o.title)} →
+              </a>
+            `).join("")}
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+export function renderRrbAgeCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const fmtDate = iso => {
+    const parts = String(iso).split("-");
+    if (parts.length !== 3) return iso;
+    return Number(parts[2]) + " " + MONTHS[Number(parts[1]) - 1] + " " + parts[0];
+  };
+  const fmtNum = n => new Intl.NumberFormat("en-GB").format(n);
+  const plural = (n, one, many) => n + " " + (n === 1 ? one : many);
+  const fmtAge = a => plural(a.y, "year", "years") + ", " + plural(a.m, "month", "months") + " and " + plural(a.d, "day", "days");
+
+  const config = { key: p.key, title: p.title, sampleDob: p.sampleDob, defaultExam: p.defaultExam, exams: p.exams, categories: p.categories, extras: p.extras };
+  const sampleExam = p.exams.find(x => x.id === p.defaultExam);
+  const sampleCutoff = sampleExam.cut;
+  const sampleAge = sscAgeParts(p.sampleDob, sampleCutoff);
+  const sampleTotals = generalAgeTotals(p.sampleDob, sampleCutoff);
+
+  const examOptions = p.exams.map(ex => `
+    <option value="${e(ex.id)}"${ex.id === p.defaultExam ? " selected" : ""}>${e(ex.label)} — ${e(ex.cycle)} — crucial date ${fmtDate(ex.cut)}</option>
+  `).join("");
+  const categoryOptions = p.categories.map(cat => `
+    <option value="${e(cat.id)}">${e(cat.label)}${cat.relax ? " (+" + cat.relax + " years)" : " (no relaxation)"}</option>
+  `).join("");
+  const extraSuffix = x => x.id === "pwbd" ? " (+10 / +13 / +15 years)" : x.id === "esm" ? " (service deducted, then +3 / +6 / +8 years)" : x.id === "widow" ? " (up to 35 / 38 / 40 years)" : x.id === "staff" ? " (up to 40 / 43 / 45 years)" : x.id === "ccaa" ? " (training period, up to 3 years)" : x.id === "ccaa25" ? " (up to 35 / 38 / 40 years)" : "";
+  const extraRowAttr = x => x.id === "pwbd" ? ' data-extra-row="pwbd"' : (x.id === "ccaa" || x.id === "ccaa25") ? ' data-extra-row="ccaa"' : "";
+  const extraRadios = p.extras.map((x, i) => `
+    <label class="radio-row"${extraRowAttr(x)}>
+      <input type="radio" name="extra" value="${e(x.id)}"${i === 0 ? " checked" : ""}>
+      <span>${e(x.label)}${extraSuffix(x)}</span>
+    </label>
+  `).join("");
+
+  const compareRows = p.exams.map(ex => {
+    const lim = rrbLimits(ex.id, "gen", "none", 5);
+    const age = sscAgeParts(p.compareDob, ex.cut);
+    const verdict = age.y < ex.min ? "Too young" : age.y >= lim.upper ? "Over the upper limit" : "Eligible";
+    return `
+      <tr>
+        <th scope="row">${e(ex.label)} — General</th>
+        <td>${fmtDate(ex.cut)}</td>
+        <td>Under ${lim.upper} years</td>
+        <td>${fmtAge(age)}</td>
+        <td>${verdict}</td>
+      </tr>`;
+  }).join("");
+
+  const examRows = p.exams.map(ex => {
+    const lim = rrbLimits(ex.id, "gen", "none", 5);
+    const win = sscWindow(ex.cut, ex.min, lim.upper, 0, 0, 0);
+    return `
+      <tr>
+        <th scope="row">${e(ex.label)} (${e(ex.cycle)})</th>
+        <td>${fmtDate(ex.cut)}</td>
+        <td>${ex.min}–${ex.upper} years</td>
+        <td>${fmtDate(win.earliest)} – ${fmtDate(win.latest)}</td>
+      </tr>`;
+  }).join("");
+
+  const categoryRows = p.categories.map(cat => {
+    const lim = rrbLimits("ntpc-g", cat.id, "none", 5);
+    return `
+      <tr>
+        <th scope="row">${e(cat.label)}</th>
+        <td>${cat.relax ? "+" + cat.relax + " years" : "—"}</td>
+        <td>Under ${lim.upper} years</td>
+      </tr>`;
+  }).join("");
+
+  const extrasRows = `
+    <tr>
+      <th scope="row">Person with benchmark disability (PwBD)</th>
+      <td>+10 / +13 / +15 years</td>
+      <td>Total, including the category relaxation: PwBD (General/EWS) get 10 years, PwBD (OBC) 13 years and PwBD (SC/ST) 15 years. The ALP CEN has no PwBD row, so this choice is not offered for ALP.</td>
+    </tr>
+    <tr>
+      <th scope="row">Ex-serviceman</th>
+      <td>Service deducted, then +3 / +6 / +8 years</td>
+      <td>Your service is deducted from your age first, then 3 years (General/EWS), 6 years (OBC) or 8 years (SC/ST) are added to the upper limit. Needs more than six months of service after attestation. No maximum-age cap.</td>
+    </tr>
+    <tr>
+      <th scope="row">Widow, divorced or legally separated woman (not remarried)</th>
+      <td>Up to 35 / 38 / 40 years</td>
+      <td>Every CEN. The upper limit becomes 35 years (General/EWS), 38 years (OBC) or 40 years (SC/ST).</td>
+    </tr>
+    <tr>
+      <th scope="row">Serving railway staff, casual labour or substitute (3+ years of service)</th>
+      <td>Up to 40 / 43 / 45 years</td>
+      <td>Every CEN. Group C and erstwhile Group D railway staff, casual labour and substitutes with minimum 3 years of service: the upper limit becomes 40 years (General/EWS), 43 years (OBC) or 45 years (SC/ST).</td>
+    </tr>
+    <tr>
+      <th scope="row">Course Completed Act Apprentice (CCAA)</th>
+      <td>Training period, up to 3 years</td>
+      <td>ALP, Technician Grade III and Group D only. Relaxed by the apprenticeship training undergone, up to 3 years (General/EWS), 6 years (OBC) or 8 years (SC/ST) in total including the category relaxation. Railway establishments only.</td>
+    </tr>
+    <tr>
+      <th scope="row">Course Completed Act Apprentice who became one before age 25</th>
+      <td>Up to 35 / 38 / 40 years</td>
+      <td>ALP, Technician Grade III and Group D only. The upper limit becomes 35 years (General/EWS), 38 years (OBC) or 40 years (SC/ST).</td>
+    </tr>
+  `;
+
+  return `<style>${css}${ageCss}${rrbAgeCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free RRB eligibility checker</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Check your RRB age →
+              </a>
+              <a href="#method" class="calc-link">How RRB counts age ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>18–33</strong>
+                <small>NTPC, JE &amp; Group D band</small>
+              </div>
+              <div>
+                <strong>8 exams</strong>
+                <small>NTPC, Group D, ALP, JE + more</small>
+              </div>
+              <div>
+                <strong>No attempt limit</strong>
+                <small>Only the age limit applies</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>Age only.</strong>
+              The official CEN decides eligibility. Always check
+              <a href="https://rrb.indianrailways.gov.in/" rel="nofollow noopener" target="_blank">rrb.indianrailways.gov.in</a>
+              before applying.
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/" aria-current="page">RRB Age</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Check your RRB age eligibility</h2>
+              <span class="calc-pill" id="exam-pill">CEN 06/2026</span>
+            </div>
+
+            <p class="calc-small">An example date is filled in. Replace it with your own date of birth.</p>
+
+            <form id="age-form" novalidate>
+              <label class="field-label" for="dob">
+                Your date of birth
+                <span>As on your Class 10 certificate</span>
+              </label>
+
+              <input
+                class="date-input"
+                id="dob"
+                type="date"
+                value="${p.sampleDob}"
+                min="1900-01-01"
+                required
+                aria-describedby="dob-error"
+              >
+              <p class="calc-error" id="dob-error" aria-live="polite"></p>
+
+              <label class="field-label" for="exam">
+                Your RRB exam
+                <span>Each exam has its own crucial date</span>
+              </label>
+
+              <select class="select-input" id="exam" aria-describedby="cutoff-note">
+                ${examOptions}
+              </select>
+              <p class="band-note" id="cutoff-note">Age is counted on 1 January 2027 (CEN 06/2026).</p>
+
+              <label class="field-label" for="category">
+                Category
+                <span>As on your certificate</span>
+              </label>
+
+              <select class="select-input" id="category">
+                ${categoryOptions}
+              </select>
+
+              <fieldset style="border:0;padding:0;margin:18px 0 0">
+                <legend class="field-label" style="margin-bottom:8px">
+                  Any extra relaxation?
+                  <span>Pick one — RRB takes the maximum, never the sum</span>
+                </legend>
+                <div class="radio-list">
+                  ${extraRadios}
+                </div>
+              </fieldset>
+
+              <div id="years-field" style="margin-top:18px" hidden>
+                <label class="field-label" for="years">
+                  Years of service or training
+                  <span id="years-note">Years of defence service (0 to 40)</span>
+                </label>
+
+                <input
+                  class="number-input"
+                  id="years"
+                  type="number"
+                  value="5"
+                  min="0"
+                  max="40"
+                  step="1"
+                  inputmode="numeric"
+                  aria-describedby="years-error"
+                >
+                <p class="calc-error" id="years-error" aria-live="polite"></p>
+                <p class="band-note">Ex-servicemen: your service is deducted from your age first, then 3, 6 or 8 years apply — it needs more than six months of service. Apprentices: enter your training period, up to 3 years.</p>
+              </div>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Check my RRB eligibility →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR AGE ON THE CRUCIAL DATE</span>
+                <span>2026–27 CYCLE</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your exact age</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="dob">—</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="years-val">—</strong>
+                  <small>YEARS</small>
+                </div>
+                <div>
+                  <strong id="months-val">—</strong>
+                  <small>MONTHS</small>
+                </div>
+                <div>
+                  <strong id="days-val">—</strong>
+                  <small>DAYS</small>
+                </div>
+              </div>
+
+              <div class="verdict" id="verdict-box">
+                <strong id="verdict-title">Your RRB verdict</strong>
+                <span id="verdict-text">Enter your details to see whether you meet the age limit.</span>
+              </div>
+
+              <p class="working" id="working">
+                Enter your date of birth to see the working.
+              </p>
+              <p class="working" id="working-window"></p>
+              <p class="working" id="working-note"></p>
+              <p class="working" id="working-years"></p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The upper limit is exclusive: you must not have attained it on the crucial date.
+                A date of birth after the crucial date is an error, not a negative age.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result" disabled>
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Check my RRB eligibility to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">How RRB counts age</a>
+        <a href="#examples">Examples</a>
+        <a href="#comparison">One birthday, eight answers</a>
+        <a href="#limits">Age limits</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / THREE CRUCIAL DATES</span>
+            <h3>One date per exam</h3>
+            <p>ALP, Technician and Section Controller count age on 1 July 2026, JE and both NTPC streams on 1 January 2027, and Group D on 1 January 2026. Picking the wrong exam can move your age by six months and flip the verdict.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / EXCLUSIVE LIMIT</span>
+            <h3>“Must not have attained”</h3>
+            <p>The upper limit is exclusive. Turning 30 on 1 July means you have attained 30 and are over the General limit for ALP — the same wording decides every exam and relaxation on this page.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / MAXIMUM, NOT THE SUM</span>
+            <h3>One relaxation at a time</h3>
+            <p>RRB gives the maximum relaxation you are eligible for, never the sum. An SC ex-serviceman gets 8 years on top of his service deduction — not 5 + 8. The PwBD figures of 10, 13 and 15 years already include the category relaxation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From date of birth to your RRB verdict</h2>
+          <p>
+            Start with the date on your Class 10 certificate. Then choose
+            your exam, your category and any extra relaxation.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How RRB counts your age</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The age sections of the RRB CENs, 2026 cycle</small>
+          Age on the crucial date = Crucial date − Date of birth
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. Count completed years
+            <strong>${sampleAge.y} completed years</strong>
+            <span>${fmtDate(p.sampleDob)} to ${fmtDate(sampleCutoff)} is ${sampleAge.y} full years.</span>
+          </div>
+
+          <div class="math-step">
+            2. Then completed months
+            <strong>${sampleAge.m} completed months</strong>
+            <span>From 15 March to 1 January is ${sampleAge.m} full months.</span>
+          </div>
+
+          <div class="math-step">
+            3. Then remaining days
+            <strong>${sampleAge.d} days</strong>
+            <span>The result is ${fmtAge(sampleAge)} — ${fmtNum(sampleTotals.days)} days in total.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>29 February birthdays fall on 1 March in non-leap years.</strong>
+          Born 29 February 2000, you are 26 years, 4 months and 2 days old on
+          1 July 2026 and 26 years, 10 months and 3 days old on 1 January 2027. The limits on this page come from the 2026-cycle CENs (01/2026 to 07/2026 and 09/2025); the next cycle will publish new crucial dates, so re-check the rules against the new CEN before you apply.
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Three dates, three verdicts</h2>
+          <p>
+            Select any example to load it into the calculator and check the
+            working for yourself.
+          </p>
+        </div>
+
+        <div class="grid3">
+          ${p.stories.map(story => {
+            const exam = p.exams.find(x => x.id === story.examId);
+            const age = sscAgeParts(story.dob, exam.cut);
+            const lim = rrbLimits(story.examId, story.categoryId, story.extraId, story.years);
+            const years = rrbEligibleYears(story.dob, story.examId, lim.upper);
+            const verdict = age.y < lim.min ? "Too young" : age.y >= lim.upper ? "Over the upper limit" : "Eligible";
+            return `
+            <article class="card">
+              <span class="number-label">${e(exam.label)} · ${e(exam.cycle)}</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${fmtAge(age)} on ${fmtDate(exam.cut)} · <strong>${verdict}</strong> · Eligible years ${years.first}–${years.last}
+              </p>
+              <button class="calc-btn" type="button" data-scenario data-dob="${story.dob}" data-exam="${story.examId}" data-cat="${story.categoryId}" data-extra="${story.extraId}" data-years="${story.years}">Try this date</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="comparison">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.exampleTitle)}</p>
+          <h2>One birthday, eight different answers</h2>
+          <p>${e(p.exampleNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="comparison-note">
+            <caption>Born ${fmtDate(p.compareDob)} — ${generalAgeWeekday(p.compareDob)} — for the 2026–27 cycle.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Exam</th>
+                <th scope="col">Crucial date</th>
+                <th scope="col">Upper limit</th>
+                <th scope="col">Age on that date</th>
+                <th scope="col">Verdict</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${compareRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="comparison-note">${e(p.exampleConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="limits">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The official rules</p>
+          <h2>RRB age limits, by exam and category</h2>
+          <p>
+            From the age sections of the eight RRB CENs. Every figure is for
+            the 2026 cycle — a new CEN publishes new crucial dates, so
+            re-check before you apply.
+          </p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>Age limits for the 2026 cycle — General and EWS candidates.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Exam</th>
+                <th scope="col">Crucial date</th>
+                <th scope="col">Age band</th>
+                <th scope="col">Born between</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${examRows}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>Category relaxations — the same in all eight CENs.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Category</th>
+                <th scope="col">Relaxation</th>
+                <th scope="col">Upper age limit for NTPC Graduate</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${categoryRows}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>Extra relaxations — RRB takes the maximum, never the sum.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Relaxation</th>
+                <th scope="col">How much</th>
+                <th scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${extrasRows}
+            </tbody>
+          </table>
+          <p class="calc-small">
+            Two maximum-rule examples: an SC ex-serviceman with 10 years of
+            service is counted at his age minus 10 years against 33 + 8 = 41
+            years for NTPC Graduate — the 8 already includes his 5-year SC
+            relaxation. An OBC candidate with a benchmark disability gets
+            33 + 13 = 46 years. Only one extra relaxation is applied at a
+            time on this page — the CENs give the maximum, not the sum.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to read the age limit wrong</h2>
+          <p>
+            The RRB age rules are short, but four readings trip people up
+            every cycle. Each one can make an eligible candidate apply late
+            or an over-age candidate waste an application.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / THE EXAM DATE</span>
+            <h3>Counting from the exam date</h3>
+            <p>The age is fixed on the crucial date, not the exam date. An ALP candidate who turns 30 in September 2026 is still under 30 on 1 July 2026 — and eligible.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / “UP TO 30”</span>
+            <h3>Reading 30 as “up to 30”</h3>
+            <p>The limit is exclusive: you must not have attained 30. Born 1 July 1996, you are exactly 30 on 1 July 2026 and over the General limit for ALP; born 2 July 1996, you are eligible.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / THE WRONG EXAM</span>
+            <h3>Using another exam’s cut-off</h3>
+            <p>NTPC counts on 1 January 2027, Group D on 1 January 2026, ALP on 1 July 2026. Using NTPC’s date for an ALP application moves your age by six months and can flip the verdict.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / THE STACKING TRAP</span>
+            <h3>Adding relaxations together</h3>
+            <p>RRB gives the maximum relaxation, not the sum. An SC candidate with a benchmark disability gets 15 years in total, not 5 + 15. Adding them overstates your limit by years.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>RRB age calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page applies the age sections of the eight RRB detailed
+            CENs for the 2026 cycle: CEN 01/2026 ALP (1 July 2026),
+            CEN 02/2026 Technician (1 July 2026), CEN 03/2026 Section
+            Controller (1 July 2026), CEN 04/2026 JE/DMS (1 January 2027),
+            CEN 06/2026 NTPC Graduate (1 January 2027), CEN 07/2026 NTPC
+            Undergraduate (1 January 2027) and CEN 09/2025 Group D
+            (1 January 2026). CMA posts were added to the JE CEN by
+            Corrigendum No. 1 and share the JE band. Paramedical
+            (CEN 05/2026) is not included: its nine posts carry six
+            different age bands, so one exam choice cannot represent them.
+            The quasi-administrative offices relaxation, present in the
+            CENs, is not modelled: its interaction with the maximum rule
+            is ambiguous and the group is small.
+          </p>
+          <p>
+            Age is counted by calendar subtraction on Gregorian dates:
+            complete years, then complete months, then the remaining days,
+            with borrowing from the previous month. Dates are counted in
+            UTC, so the result is the same in every time zone. A 29
+            February birthday falls on 1 March in a non-leap year — the
+            same rule the SSC Age Calculator on this site uses. No exam
+            body endorses this tool, and it checks age only.
+          </p>
+          <p>
+            Sources: the detailed CENs on
+            <a href="https://rrb.indianrailways.gov.in/" rel="nofollow noopener" target="_blank">rrb.indianrailways.gov.in</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another date before you apply</h2>
+          <p>
+            Try a family member’s date, a different exam, or another
+            category. Then run the same check with the related tool
+            for your other applications.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>${clientSource}</script>`;
+}
 export function escapeHTML(value) {
   return String(value).replace(/[&<>"']/g, ch => ({
     "&": "&amp;",
