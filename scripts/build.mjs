@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, renderUpscAgeCalculatorBody, renderIbpsAgeCalculatorBody, renderRrbAgeCalculatorBody, renderEmiCalculatorBody, renderSipCalculatorBody, renderBmiCalculatorBody, renderPctCalculatorBody, renderGstCalculatorBody, renderPpfCalculatorBody, renderFdCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient, upscClient, ibpsClient, rrbClient, emiClient, sipClient, bmiClient, pctClient, gstClient, ppfClient, fdClient } from "./calculators.mjs";
+import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, renderUpscAgeCalculatorBody, renderIbpsAgeCalculatorBody, renderRrbAgeCalculatorBody, renderEmiCalculatorBody, renderSipCalculatorBody, renderBmiCalculatorBody, renderPctCalculatorBody, renderGstCalculatorBody, renderPpfCalculatorBody, renderFdCalculatorBody, renderTaxCalculatorBody, renderRdCalculatorBody, renderHlCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient, upscClient, ibpsClient, rrbClient, emiClient, sipClient, bmiClient, pctClient, gstClient, ppfClient, fdClient, taxClient, rdClient, hlClient } from "./calculators.mjs";
 import {
   polls as bbPolls,
   contestants as bbContestants,
@@ -512,6 +512,9 @@ function renderFooter() {
         <li><a href="/gst-calculator/">GST Calculator</a></li>
         <li><a href="/ppf-calculator/">PPF Calculator</a></li>
         <li><a href="/fd-calculator/">FD Calculator</a></li>
+        <li><a href="/income-tax-calculator/">Income Tax Calculator</a></li>
+        <li><a href="/rd-calculator/">RD Calculator</a></li>
+        <li><a href="/home-loan-emi-calculator/">Home Loan EMI Calculator</a></li>
         <li><a href="/search/">Search All Guides</a></li>
         <li><a href="/assets/bb20-new/image-credits.html">Image Credits</a></li>
         <li><a href="mailto:visitbest10@gmail.com">visitbest10@gmail.com</a></li>
@@ -962,6 +965,12 @@ for (let i = 0; i < calculatorPages.length; i++) {
                 ? renderPpfCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, ppfClient.toString())
               : item.kind === "fd"
                 ? renderFdCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, fdClient.toString())
+              : item.kind === "tax"
+                ? renderTaxCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, taxClient.toString())
+              : item.kind === "rd"
+                ? renderRdCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, rdClient.toString())
+              : item.kind === "hl"
+                ? renderHlCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, hlClient.toString())
               : renderCalculatorBody(item, calculatorPages[1 - i], calculatorCss, calculatorClient.toString());
   const html = renderPage({
     title: `${item.title} - VisitBest`,
