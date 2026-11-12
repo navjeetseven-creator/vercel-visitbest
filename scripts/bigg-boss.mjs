@@ -156,12 +156,13 @@ export const contestants = [
     "city": "Shahjahanpur / Mumbai",
     "image": "/assets/bb20/arishfa-khan.webp",
     "nominated": false,
-    "captain": true,
+    "captain": false,
+    "exCaptain": true,
     "status": "in-house",
     "bio": "Arishfa Khan (born 3 April 2003, Shahjahanpur) debuted as a child artist in Chhal – Sheh Aur Maat in 2012 and became known as young Gunjan in Ek Veer Ki Ardaas… Veera, with credits including Jeannie Aur Juju, Uttaran and Papa By Chance. She rebuilt her career as a TikTok-era star on Instagram and YouTube, and at 23 is the season's youngest contestant — with more than 29 million Instagram followers, its biggest digital following.",
     "longBio": "Arishfa reportedly became interested in acting while accompanying her mother, who worked as a stunt performer, to shoots. In the house she has fought against being dismissed as 'bacchi' (a child) — a running tension for the youngest housemate. She was nominated in Week 7, was at the centre of a captaincy-task flashpoint in Episode 47 reporting, and her closeness with Qazi and Uditi Singh is the trigger Mahhi cited in the Episode 47 confrontation that cracked the Mahhi–Qazi friendship.",
-    "trend": "In house · Captain (2X Room, unanimous house vote) · Safe in Week 10 as captain",
-    "highlight": "Youngest housemate with the house's biggest social following (29M+) — nominated in Week 7 and central to the Qazi–Mahhi split; nominated in Week 9; new captain (2X Room, unanimous house vote)."
+    "trend": "In house · Ex-captain (removed in Episode 67, 11 Nov) · Safe in Week 10 (not nominated)",
+    "highlight": "Youngest housemate with the house's biggest social following (29M+) — nominated in Week 7 and central to the Qazi–Mahhi split; nominated in Week 9; captain in Week 10 (2X Room, unanimous house vote), removed in Episode 67 (11 Nov)."
   },
   {
     "id": "aman-gandhi",
@@ -302,9 +303,9 @@ export const polls = [
   {
     slug: "bigg-boss-20-voting",
     image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
-    title: "Bigg Boss 20 Voting – Week 10 Open Poll, Weekly Voting Hub & Audience Sentiment - VisitBest",
+    title: "Bigg Boss 20 Voting – Week 10 Open Poll, Weekly Voting Hub & Audience Sentiment",
     h1: "Bigg Boss 20 Voting – Week 10 Open Poll & Voting Hub",
-    lead: "VisitBest Open Poll, Week 10: the whole house is nominated except captain Arishfa Khan — Gullu, Qazi Touqeer, Yung DSA, Kanika Mann, Love Gill, Scout, Aamrapali Dubey, Mahhi Vij, Uditi Singh and Manish Goel are on the nomination line. Qazi Touqeer leads the season's cumulative audience sentiment standings. This page is the weekly voting hub: this week's nominees-only Open Poll, an eviction-prediction Open Poll, a dated trend snapshot and the week-by-week nomination and elimination archive. This open poll does not decide evictions.",
+    lead: "VisitBest Open Poll, Week 10: the whole house is nominated except Arishfa Khan — Gullu, Qazi Touqeer, Yung DSA, Kanika Mann, Love Gill, Scout, Aamrapali Dubey, Mahhi Vij, Uditi Singh and Manish Goel are on the nomination line. Qazi Touqeer leads the season's cumulative audience sentiment standings. This page is the weekly voting hub: this week's nominees-only Open Poll, an eviction-prediction Open Poll, a dated trend snapshot and the week-by-week nomination and elimination archive. This open poll does not decide evictions.",
     heroBadge: "🔴 LIVE AUDIENCE POLL · WEEK 10 · OPEN POLL",
     leaderNote: "🔥 SEASON STANDINGS: Qazi Touqeer (1,38,500) holds a narrow lead over ScoutOP (1,32,200), Gullu (1,26,800) and Yung DSA (1,20,900) in the VisitBest Open Poll's cumulative audience sentiment standings. [VisitBest Open Poll votes — not official votes.]",
     pollType: "all",
@@ -325,14 +326,14 @@ export const polls = [
       "uditi-singh": 11200,
     },
     dangerIds: ["manish-goel", "uditi-singh", "love-gill"],
-    metaDesc: "Bigg Boss 20 Week 10 Open Poll & voting hub: the whole house is nominated except captain Arishfa Khan. This week's nominees-only Open Poll, eviction-prediction poll, trend snapshot and the week-by-week nomination and elimination archive. Open Poll only — official voting is only via JioCinema / JioHotstar as announced on air.",
+    metaDesc: "Bigg Boss 20 Week 10 Open Poll & voting hub: the whole house is nominated except Arishfa Khan. This week's nominees-only Open Poll, eviction-prediction poll, trend snapshot and the week-by-week nomination and elimination archive. Open Poll only — official voting is only via JioCinema / JioHotstar as announced on air.",
   },
   {
     slug: "bigg-boss-20-voting-week-10",
     image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
-    title: "Bigg Boss 20 Week 10 Voting – Nominees Open Poll (Whole House Nominated) - VisitBest",
+    title: "Bigg Boss 20 Week 10 Voting – Nominees Open Poll (Whole House Nominated)",
     h1: "Bigg Boss 20 Week 10 Voting — Nominees Open Poll",
-    lead: "Week 10: the whole house is nominated except captain Arishfa Khan. This VisitBest Open Poll covers only this week's 10 nominees and opened on 11 November 2026. Open Poll — for audience sentiment only; it does not decide evictions.",
+    lead: "Week 10: the whole house is nominated except Arishfa Khan. This VisitBest Open Poll covers only this week's 10 nominees and opened on 11 November 2026. Open Poll — for audience sentiment only; it does not decide evictions.",
     heroBadge: "🗳️ WEEK 10 NOMINEES POLL · OPEN POLL",
     leaderNote: "The Week 10 nominees poll opened on 11 November 2026 and starts from zero — standings build only from votes cast in this poll. [VisitBest Open Poll votes — not official votes.]",
     pollType: "weekly",
@@ -340,15 +341,15 @@ export const polls = [
     voteDistribution: {},
     dangerIds: [],
     embedEyebrow: "This Week's Poll · Week 10 · Nominees Only",
-    embedIntro: "This week's Open Poll is restricted to the 10 nominated housemates — captain Arishfa Khan is not on the list. It opened on 11 November 2026 and starts from zero, so every standing here is built only from votes cast in this poll. For the season's cumulative standings, see the trend snapshot and the main Open Poll further down this page.",
+    embedIntro: "This week's Open Poll is restricted to the 10 nominated housemates — Arishfa Khan is not on the list. It opened on 11 November 2026 and starts from zero, so every standing here is built only from votes cast in this poll. For the season's cumulative standings, see the trend snapshot and the main Open Poll further down this page.",
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
-    metaDesc: "Bigg Boss 20 Week 10 Open Poll: the whole house is nominated except captain Arishfa Khan. Back Gullu, Qazi, Yung DSA, Kanika, Love, Scout, Aamrapali, Mahhi, Uditi or Manish in the VisitBest nominees-only Open Poll — audience sentiment only; official voting is only via JioCinema / JioHotstar as announced on air.",
+    metaDesc: "Bigg Boss 20 Week 10 Open Poll: the whole house is nominated except Arishfa Khan. Back Gullu, Qazi, Yung DSA, Kanika, Love, Scout, Aamrapali, Mahhi, Uditi or Manish in the VisitBest nominees-only Open Poll — audience sentiment only; official voting is only via JioCinema / JioHotstar as announced on air.",
   },
   {
     slug: "bigg-boss-20-eviction-prediction-week-10",
     image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
-    title: "Who Will Be Evicted in Week 10? Bigg Boss 20 Eviction Prediction Poll — Open Poll - VisitBest",
+    title: "Who Will Be Evicted in Week 10? Bigg Boss 20 Eviction Prediction Poll — Open Poll",
     h1: "Who Will Be Evicted in Week 10? (Eviction Prediction — Open Poll)",
     lead: "A different question from the support poll: not who you back, but who you think is going home at this week's Weekend Ka Vaar. This Open Poll records reader expectation only — it is not a VisitBest forecast, it carries no insider information, and it does not decide evictions.",
     heroBadge: "🔮 EVICTION PREDICTION · WEEK 10 · OPEN POLL",
@@ -610,12 +611,145 @@ export const polls = [
     },
     metaDesc: "Open Poll: Kanika Mann vs Mahhi Vij: Vote in the ultimate Bigg Boss 20 TV Queens clash! Kanika leads with 54% votes. Check live trends and cast your vote.",
   },
+  {
+    slug: "bigg-boss-20-scout-love-story",
+    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    title: "Scout and Love Gill in Bigg Boss 20: The Bond, the Kaashvi Question & the Fallout — Open Poll",
+    h1: "Scout and Love Gill: The Bond, the Kaashvi Question and the Fallout (Open Poll)",
+    lead: "It is the friendship everyone outside the house is talking about. Scout (Tanmay 'Scout' Singh — ScoutOP, the gaming star) and Love Gill (Lovepreet Kaur 'Love' Gill) describe their bond as brother-sister. But a Weekend Ka Vaar appearance by Scout's girlfriend Kaashvi Hiranandani, a 'homebreaker' remark revealed in Episode 66 and a fall-out in Episode 67 have put that bond under strain. This page pulls the story so far together — what is confirmed, and what is only reported — and then asks readers what they make of it. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
+    heroBadge: "💞 SCOUT & LOVE — STORY SO FAR · OPEN POLL",
+    leaderNote: "This Open Poll opened on 12 November 2026 and starts from zero — standings build only from votes cast in this poll. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "sentiment",
+    question: "What do you make of the Scout–Love bond?",
+    textOptions: [
+      { id: "just-friendship", label: "Just friendship — a brother-sister bond", sub: "You believe Scout and Love's own description of their bond." },
+      { id: "feelings-changing", label: "Scout's feelings are changing", sub: "You think the bond has moved beyond friendship on Scout's side. (A single-source India Forums report says this — it is not confirmed.)" },
+      { id: "should-have-defended", label: "Scout should have defended Love", sub: "Whatever the bond is, Scout should have taken a stand for Love when she was questioned." },
+      { id: "love-should-end", label: "Love should end this friendship", sub: "You think Love should stop expecting support from this friendship, as she said in Episode 67." },
+    ],
+    voteDistribution: {},
+    dangerIds: [],
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Scout and Love Gill's bond in Bigg Boss 20: the brother-sister friendship, Kaashvi Hiranandani's Weekend Ka Vaar questions, the 'homebreaker' remark and the Episode 67 fall-out — plus a VisitBest Open Poll on what readers make of it. Audience sentiment only, not official voting.",
+  },
+  {
+    slug: "bigg-boss-20-yung-vs-scout",
+    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    title: "Yung DSA vs Scout: The Captaincy-Task Clash in Bigg Boss 20 (Reported) — Open Poll",
+    h1: "Yung DSA vs Scout: The Captaincy-Task Clash (Open Poll)",
+    lead: "Reports from the live feed say a captaincy task turned physical between Yung DSA and Scout: a burnt family photograph, a push, a friendship declared over, and season-long punishments reported for Scout. None of it had been confirmed in a telecast episode at the time of writing, and this page labels it as reported throughout. Read what the reports say happened, then vote in the Open Poll on who was more at fault. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
+    heroBadge: "🥊 YUNG VS SCOUT · REPORTED CLASH · OPEN POLL",
+    leaderNote: "This Open Poll opened on 12 November 2026 and starts from zero — standings build only from votes cast in this poll. The clash it asks about is reported from the live feed and had not been confirmed in a telecast episode at the time of writing. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "sentiment",
+    question: "Who was more at fault in the Yung–Scout clash?",
+    textOptions: [
+      { id: "scout-at-fault", label: "Scout — he got physical", sub: "Reports say Scout pushed Yung during the captaincy task." },
+      { id: "yung-at-fault", label: "Yung — he provoked him", sub: "Reports say Yung kept interrupting and commenting while the task was on." },
+      { id: "both-equally", label: "Both equally", sub: "You think both sides crossed lines, as the reports describe." },
+    ],
+    voteDistribution: {},
+    dangerIds: [],
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Yung DSA vs Scout: multiple outlets report a physical clash in the Bigg Boss 20 captaincy task and season-long punishments for Scout — not yet confirmed in a telecast episode. Read the reported sequence and vote in the VisitBest Open Poll. Audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-20-next-captain-poll",
+    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    title: "Who Should Be the Next Captain of Bigg Boss 20? — Open Poll",
+    h1: "Who Should Be the Next Captain of Bigg Boss 20? (Open Poll)",
+    lead: "Arishfa Khan's time as captain has ended: she was removed as captain in Episode 67 (aired 11 November), which announced a new captaincy task. No successor has been named. If the choice were yours, who should lead the house next? Vote for one of the ten other housemates below. Open Poll — for audience sentiment only; the show's own process decides the real captain.",
+    heroBadge: "👑 NEXT CAPTAIN · OPEN POLL",
+    leaderNote: "This Open Poll opened on 12 November 2026 and starts from zero — standings build only from votes cast in this poll. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "captain",
+    optionIds: ["gullu", "qazi-touqeer", "yung-dsa", "kanika-mann", "love-gill", "scout", "amrapali-dubey", "mahhi-vij", "uditi-singh", "manish-goel"],
+    voteDistribution: {},
+    dangerIds: [],
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Who should be the next captain of Bigg Boss 20? With Arishfa Khan removed as captain in Episode 67 and a new captaincy task announced, vote for Gullu, Qazi Touqeer, Yung DSA, Kanika Mann, Love Gill, Scout, Aamrapali Dubey, Mahhi Vij, Uditi Singh or Manish Goel in the VisitBest Open Poll. Audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-20-contestant-journey",
+    image: "/assets/bb20-new/covers/bigg-boss-20-contestants.jpg",
+    title: "Bigg Boss 20 Contestant Journey: Week-by-Week Safe, Nominated, Captain & Evicted Matrix",
+    h1: "Bigg Boss 20 Contestant Journey — Week by Week",
+    lead: "Every housemate's season at a glance: who was safe, who was nominated, who captained the house and who went home, week by week from Week 1 to Week 10. The matrix is built only from VisitBest's own season records — the nomination and elimination archives and contestant records kept on this site. Where those records do not establish a week for a housemate, the cell is left blank rather than guessed. Updated weekly.",
+    heroBadge: "🗓️ CONTESTANT JOURNEY · WEEKS 1–10",
+    leaderNote: "The journey matrix is updated weekly from VisitBest's own nomination and elimination archives; the Week 10 eviction is added only after it is confirmed on air at Weekend Ka Vaar.",
+    pollType: "journey",
+    voteDistribution: {},
+    dangerIds: [],
+    metaDesc: "Bigg Boss 20 contestant journey matrix: week-by-week Safe, Nominated, Captain and Evicted status for all 18 housemates across Weeks 1–10, built from VisitBest's own season archives. Updated weekly.",
+  },
+  {
+    slug: "bigg-boss-20-scout-vs-kaashvi",
+    image: "/assets/bb20-new/photos/scout-kaashvi-couple.webp",
+    title: "Scout vs Kaashvi: The Breakup Story So Far in Bigg Boss 20 — Open Poll",
+    h1: "Scout vs Kaashvi: The Breakup Story So Far (Open Poll)",
+    lead: "They are gaming's love birds outside the house: Scout (Tanmay 'Scout' Singh — ScoutOP) and his girlfriend Kaashvi Hiranandani, both gaming creators. But Kaashvi's Weekend Ka Vaar appearance — questioning Scout's growing closeness with Love Gill inside the house — and one remark, that she would keep supporting Scout \"like a friend\", set off breakup rumours everywhere. Here is the full story so far, with what is confirmed kept strictly separate from what is only rumour: neither Scout nor Kaashvi has confirmed any breakup. Then vote in the Open Poll on what you think happens next. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
+    heroBadge: "🎮 SCOUT VS KAASHVI · THE BREAKUP QUESTION · OPEN POLL",
+    leaderNote: "This Open Poll opened on 12 November 2026 and starts from zero — standings build only from votes cast in this poll. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "sentiment",
+    question: "What do you think happens next for Scout and Kaashvi?",
+    textOptions: [
+      { id: "sort-it-out", label: "They sort it out after the show", sub: "You think the couple talks it through once Scout is out of the house." },
+      { id: "rumours-true", label: "The breakup rumours are true", sub: "You believe the speculation — though neither Scout nor Kaashvi has confirmed any breakup." },
+      { id: "clear-the-air", label: "Scout should clear the air publicly", sub: "You think Scout owes Kaashvi — and the fans — a clear statement." },
+      { id: "one-more-chance", label: "Kaashvi should give him one more chance", sub: "You think the relationship deserves one more chance after the show." },
+    ],
+    voteDistribution: {},
+    dangerIds: [],
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Scout vs Kaashvi: the full breakup story so far in Bigg Boss 20 — Kaashvi Hiranandani's Weekend Ka Vaar questions about Scout and Love Gill, the 'like a friend' remark, and the breakup rumours neither of them has confirmed — plus a VisitBest Open Poll on what happens next. Audience sentiment only, not official voting.",
+  },
+  {
+    slug: "bigg-boss-20-captain",
+    image: "/assets/bb20-new/covers/bigg-boss-20-contestants.jpg",
+    title: "Who Is the Current Captain of Bigg Boss 20? — Captain History & Next Captain",
+    h1: "Who Is the Current Captain of Bigg Boss 20?",
+    lead: "Arishfa Khan is the last confirmed captain — she took the captaincy in Week 10 after a unanimous housemate vote in Episode 61. Her captaincy ended in Episode 67 (11 November 2026), when Bigg Boss removed her as captain and announced a new captaincy task; the next captain is yet to be decided. This is a living page — it is refreshed when a new captain is confirmed on air. Below: the quick answer, every captain this season, what the captain gets, and what happens next.",
+    heroBadge: "👑 CAPTAIN OF THE HOUSE · LIVING PAGE",
+    leaderNote: "Living page — updated when a new captain is confirmed on air. The next captain is yet to be decided (12 November 2026).",
+    pollType: "captain-page",
+    voteDistribution: {},
+    dangerIds: [],
+    metaDesc: "Who is the current captain of Bigg Boss 20? Arishfa Khan is the last confirmed captain (Week 10); a new captaincy task was announced in Episode 67 and the next captain is yet to be decided. Captain history, what the captain gets, and the transition — updated when a new captain is confirmed on air.",
+  },
 ];
 
 export const pollBySlug = new Map(polls.map((p) => [p.slug, p]));
 
 // Helper to calculate percentages
 export function getPollStats(poll) {
+  if (poll.textOptions) {
+    // Text-option polls (entry 280): options are statements, not contestants.
+    const total = poll.textOptions.reduce((sum, o) => sum + (poll.voteDistribution[o.id] || 0), 0);
+    const list = poll.textOptions.map((o) => {
+      const votes = poll.voteDistribution[o.id] || 0;
+      const pct = total > 0 ? ((votes / total) * 100).toFixed(1) : "0.0";
+      return {
+        id: o.id,
+        name: o.label,
+        alias: o.label,
+        role: o.sub || "",
+        city: "",
+        image: null,
+        trend: "",
+        nominated: false,
+        captain: false,
+        evicted: false,
+        removed: false,
+        votes,
+        pct: parseFloat(pct),
+        pctStr: `${pct}%`,
+      };
+    });
+    list.sort((a, b) => b.votes - a.votes);
+    return { list, total };
+  }
   const ids = poll.optionIds || poll.duelIds || contestants.map((c) => c.id);
   const total = ids.reduce((sum, id) => sum + (poll.voteDistribution[id] || 0), 0);
   const list = ids.map((id) => {
@@ -636,6 +770,26 @@ export function getPollStats(poll) {
 // Bigg Boss Schema generator
 export function biggBossSchema(item, isContestantsPage = false, isRulesPage = false) {
   const baseUri = "https://visitbest.in";
+  if (item && item.pollType === "journey") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: item.title,
+      description: item.lead,
+      url: `${baseUri}/${item.slug}/`,
+      ...(item.image ? { image: `${baseUri}${item.image}` } : {}),
+    };
+  }
+  if (item && item.pollType === "captain-page") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: item.title,
+      description: item.lead,
+      url: `${baseUri}/${item.slug}/`,
+      ...(item.image ? { image: `${baseUri}${item.image}` } : {}),
+    };
+  }
   if (isRulesPage) {
     return {
       "@context": "https://schema.org",
@@ -774,6 +928,11 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-20-joker-of-the-house", "🤡 Joker of House (Aman #1)"],
     ["bigg-boss-20-who-is-boss", "👑 Real Boss (Mary Kom #1)"],
     ["bigg-boss-20-entertainer", "🎭 Entertainer Clash"],
+    ["bigg-boss-20-scout-love-story", "💞 Scout & Love Story"],
+    ["bigg-boss-20-yung-vs-scout", "🥊 Yung vs Scout Clash"],
+    ["bigg-boss-20-next-captain-poll", "👑 Next Captain Poll"],
+    ["bigg-boss-20-scout-vs-kaashvi", "🎮 Scout vs Kaashvi"],
+    ["bigg-boss-20-captain", "👑 Captain of the House"],
     ["bigg-boss-20-contestants", "👥 18 Contestants Wiki"],
     ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
@@ -852,15 +1011,15 @@ function renderNominationCallout() {
       <h2>🔴 Bigg Boss 20 Week 10 Nominations — Open Poll</h2>
     </div>
     <p class="bb-nom-list-text">
-      <strong>10 contestants are nominated this week — the whole house except the captain:</strong><br>
+      <strong>10 contestants are nominated this week — the whole house except Arishfa Khan:</strong><br>
       <span class="bb-nom-names">Gullu (Kushal Tanwar) • Qazi Touqeer • Yung DSA • Kanika Mann • Love Gill • ScoutOP • Aamrapali Dubey • Mahhi Vij • Uditi Singh • Manish Goel</span>
     </p>
     <div class="bb-nom-safe-bar">
-      <span class="bb-safe-indicator">🟢 <strong>Captain This Week:</strong> Arishfa Khan (confirmed by a unanimous house vote in the 2X Room — as captain she is not nominated this week)</span>
+      <span class="bb-safe-indicator">🟢 <strong>No captain this week:</strong> Arishfa Khan was removed as captain in Episode 67 (11 November 2026); a new-captain task is under way and no successor has been named. She was not nominated this week, so she is safe from the Week 10 eviction.</span>
       <span class="bb-evicted-indicator">❌ <strong>Evicted:</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4), Aman Gandhi (Week 6), Mary Kom (Week 7), Aasif Khan (Week 8) · <strong>Removed:</strong> Nakul Dhull (wild card, Week 6) · <strong>Week 9:</strong> no eviction (Diwali week)</span>
     </div>
     <p class="bb-nom-list-text"><strong>Open Poll — for audience sentiment only.</strong> Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
-    <p class="bb-nom-list-text">Last updated: 11 November 2026.</p>
+    <p class="bb-nom-list-text">Last updated: 12 November 2026.</p>
   </div>`;
 }
 
@@ -878,14 +1037,14 @@ export const eliminationArchive = [
   { week: 7, evicted: "MC Mary Kom", note: "Announced on Weekend Ka Vaar by guest host Rohit Shetty." },
   { week: 8, evicted: "Aasif Khan", note: "Eviction confirmed on Weekend Ka Vaar (Episode 57)." },
   { week: 9, evicted: "No eviction", note: "Diwali week — the eviction was deferred and no housemate left the house." },
-  { week: 10, evicted: "—", note: "The whole house is nominated except captain Arishfa Khan; the eviction takes place at the coming Weekend Ka Vaar." },
+  { week: 10, evicted: "—", note: "The whole house is nominated except Arishfa Khan (not nominated this week). Arishfa was removed as captain in Episode 67 (11 November 2026); a new-captain task is under way and no successor has been named. The eviction takes place at the coming Weekend Ka Vaar." },
 ];
 
 export const nominationArchive = [
   { week: 7, nominated: "Gullu, MC Mary Kom, Aamrapali Dubey, Arishfa Khan, Love Gill, Uditi Singh, Manish Goel" },
   { week: 8, nominated: "Gullu, Aamrapali Dubey, Kanika Mann, Scout, Aasif Khan, Love Gill" },
   { week: 9, nominated: "Mahhi Vij, Aamrapali Dubey, Arishfa Khan, Scout, Uditi Singh, Manish Goel" },
-  { week: 10, nominated: "Whole house except captain Arishfa Khan: Gullu, Qazi Touqeer, Yung DSA, Kanika Mann, Love Gill, Scout, Aamrapali Dubey, Mahhi Vij, Uditi Singh, Manish Goel" },
+  { week: 10, nominated: "Whole house except Arishfa Khan (not nominated): Gullu, Qazi Touqeer, Yung DSA, Kanika Mann, Love Gill, Scout, Aamrapali Dubey, Mahhi Vij, Uditi Singh, Manish Goel" },
 ];
 
 const HUB_DISCLAIMER_BOX = `<div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
@@ -899,21 +1058,23 @@ function hubNominees() {
 // "This Week" panel — Week 10 nominees + captain (replaces the old strip)
 function renderThisWeekPanel() {
   const nominees = hubNominees();
-  const captain = contestants.find((c) => c.captain && !c.evicted && !c.removed);
+  // Week 10 has no captain: Arishfa Khan was removed in Episode 67 (11 Nov).
+  // The panel shows the one in-house housemate who was not nominated.
+  const safeHousemate = contestants.find((c) => !c.nominated && !c.evicted && !c.removed && c.status === "in-house");
   return `<section class="bb-nominated-strip bb-this-week-panel">
     <div class="bb-strip-header">
-      <div class="bb-strip-badge"><span class="pulse-dot"></span> THIS WEEK — WEEK 10 · LAST UPDATED 11 NOVEMBER 2026</div>
-      <p class="bb-strip-sub">Week 10: the whole house is nominated except captain ${captain ? captain.name : ""}. These are this week's nominated housemates — back them in the Week 10 Open Poll below. The VisitBest Open Poll is open audience sentiment only and does not decide evictions. Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
+      <div class="bb-strip-badge"><span class="pulse-dot"></span> THIS WEEK — WEEK 10 · LAST UPDATED 12 NOVEMBER 2026</div>
+      <p class="bb-strip-sub">Week 10: the whole house is nominated except Arishfa Khan, who was not nominated this week. These are this week's nominated housemates — back them in the Week 10 Open Poll below. The VisitBest Open Poll is open audience sentiment only and does not decide evictions. Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
     </div>
-    ${captain ? `<div class="bb-nominated-grid">
+    ${safeHousemate ? `<div class="bb-nominated-grid">
       <div class="bb-nom-card">
         <div class="bb-nom-img-wrap">
-          ${captain.image ? `<img src="${captain.image}" alt="${captain.name} Bigg Boss 20 Captain" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${captain.name}">Photo coming soon</span>`}
-          <span class="bb-nom-danger-tag" style="background:#1a7f37;">CAPTAIN</span>
+          ${safeHousemate.image ? `<img src="${safeHousemate.image}" alt="${safeHousemate.name} Bigg Boss 20 Ex-Captain" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${safeHousemate.name}">Photo coming soon</span>`}
+          <span class="bb-nom-danger-tag" style="background:#1a7f37;">EX-CAPTAIN</span>
         </div>
         <div class="bb-nom-info">
-          <h4>${captain.name}</h4>
-          <span class="bb-nom-role">Captain this week — not nominated, safe from the Week 10 eviction</span>
+          <h4>${safeHousemate.name}</h4>
+          <span class="bb-nom-role">Ex-captain — removed in Episode 67 (11 Nov); not nominated, safe from the Week 10 eviction</span>
         </div>
       </div>
     </div>` : ""}
@@ -999,7 +1160,7 @@ function renderEmbeddedPoll(poll) {
 }
 
 // Dated trend snapshot — the cumulative Open Poll standings recorded on
-// 11 November 2026, computed from this file's own Open Poll data only.
+// 12 November 2026, computed from this file's own Open Poll data only.
 function renderTrendSnapshot() {
   const mainPoll = pollBySlug.get("bigg-boss-20-voting");
   const { list } = getPollStats(mainPoll);
@@ -1008,8 +1169,8 @@ function renderTrendSnapshot() {
     <div class="bb-section-head">
       <div>
         <p class="eyebrow">Open Poll Trend Snapshot</p>
-        <h2>Open Poll Trend Snapshot — 11 November 2026</h2>
-        <p>Where the VisitBest Open Poll's cumulative audience sentiment stood when this hub was updated on 11 November 2026. Figures are VisitBest Open Poll votes only — they are not official Bigg Boss votes and do not decide evictions. The snapshot is refreshed each time this hub is updated.</p>
+        <h2>Open Poll Trend Snapshot — 12 November 2026</h2>
+        <p>Where the VisitBest Open Poll's cumulative audience sentiment stood when this hub was updated on 12 November 2026. Figures are VisitBest Open Poll votes only — they are not official Bigg Boss votes and do not decide evictions. The snapshot is refreshed each time this hub is updated.</p>
         ${HUB_DISCLAIMER_BOX}
       </div>
     </div>
@@ -1027,7 +1188,7 @@ function renderTrendSnapshot() {
                 <td class="bb-table-contestant"><strong>${c.name}</strong></td>
                 <td><strong>${c.votes.toLocaleString("en-IN")}</strong></td>
                 <td><span class="bb-table-pct">${c.pctStr}</span></td>
-                <td>${c.captain ? "🟢 Captain — Week 10" : c.nominated ? "🔴 Nominated — Week 10" : "In house"}</td>
+                <td>${c.captain ? "🟢 Captain — Week 10" : c.exCaptain ? "🟢 Ex-captain — removed Ep 67" : c.nominated ? "🔴 Nominated — Week 10" : "In house"}</td>
               </tr>`
             )
             .join("")}
@@ -1074,6 +1235,7 @@ function renderSeasonArchive() {
       </table>
     </div>
     <p>Full nomination lists for Weeks 1–6 were not published consistently while the season's lives format was running, so the nomination table starts at Week 7; every week's confirmed outcome is in the elimination archive above.</p>
+    <p><a href="/bigg-boss-20-contestant-journey/"><strong>New: the Contestant Journey Matrix</strong></a> — every housemate's Safe / Nominated / Captain / Evicted status, week by week.</p>
   </section>`;
 }
 
@@ -1104,6 +1266,7 @@ function renderPredictionScorecard() {
 
 // Render Interactive Voting Poll Cards
 function renderPollCards(poll) {
+  if (poll.textOptions) return renderTextOptionCards(poll);
   const { list } = getPollStats(poll);
   const isDuel = poll.duelIds && poll.duelIds.length === 2;
 
@@ -1191,8 +1354,8 @@ function renderLeaderboard(poll) {
     <div class="bb-section-head">
       <div>
         <p class="eyebrow">Audience Sentiment Standings</p>
-        <h2>Open Poll – Audience Sentiment Standings</h2>
-        <p>Ranking of housemates by votes cast in the VisitBest Open Poll on this page. Figures are VisitBest Open Poll votes only — they are not official Bigg Boss votes and do not decide evictions.</p>
+        <h2>${poll.textOptions ? "Open Poll – How Readers Are Voting" : "Open Poll – Audience Sentiment Standings"}</h2>
+        <p>${poll.textOptions ? "How the options in the VisitBest Open Poll on this page are ranked by votes cast here." : "Ranking of housemates by votes cast in the VisitBest Open Poll on this page."} Figures are VisitBest Open Poll votes only — they are not official Bigg Boss votes and do not decide evictions.</p>
         <div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
           ℹ️ <strong>Open Poll — for audience sentiment only.</strong> This leaderboard represents open audience sentiment tracked on VisitBest. It does not decide nominations or evictions. Official Bigg Boss 20 voting, where opened by the show, is only via JioCinema / JioHotstar, as announced on air.
         </div>
@@ -1204,8 +1367,8 @@ function renderLeaderboard(poll) {
         <thead>
           <tr>
             <th>Rank</th>
-            <th>Contestant</th>
-            <th>Profession</th>
+            <th>${poll.textOptions ? "Option" : "Contestant"}</th>
+            <th>${poll.textOptions ? "What it means" : "Profession"}</th>
             <th>Open Poll Votes</th>
             <th>Vote Share</th>
             <th>Status / Danger Level</th>
@@ -1228,7 +1391,9 @@ function renderLeaderboard(poll) {
                 <td><span class="bb-table-pct" id="table-pct-${poll.slug}-${c.id}">${c.pctStr}</span></td>
                 <td>
                   ${
-                    isDanger
+                    poll.textOptions
+                      ? '<span class="bb-badge-neutral">🗳️ Open Poll option</span>'
+                      : isDanger
                       ? '<span class="bb-badge-danger">⚠️ DANGER ZONE (High Risk)</span>'
                       : idx < 5
                       ? '<span class="bb-badge-safe">🟢 SAFE (Strong Lead)</span>'
@@ -1340,8 +1505,544 @@ export function renderAdSenseUnit(position = "mid", label = "Advertisement") {
   </div>`;
 }
 
+
+// ---------- Engagement pages (queue entry 280, 12 Nov 2026) ----------
+
+// The reported-punishments poll is embedded on the Yung vs Scout page only
+// (not a standalone route), following the hub's embedded-poll pattern.
+export const yungScoutFairnessPoll = {
+  slug: "bigg-boss-20-yung-scout-punishments-fair",
+  h1: "Are the Reported Punishments for Scout Fair?",
+  embedEyebrow: "Reported Punishments · Open Poll",
+  embedIntro: "The punishments listed above are reported, not confirmed on air. Judging them as reported: are they fair, too harsh, or should judgement wait until the episode airs?",
+  pollType: "sentiment",
+  textOptions: [
+    { id: "fair", label: "Fair", sub: "Getting physical in a task deserves a season-long cost." },
+    { id: "too-harsh", label: "Too harsh", sub: "The reported punishment goes beyond what a task clash should cost." },
+    { id: "wait-for-episode", label: "Wait for the episode first", sub: "Nothing should be judged until the clash is shown on air." },
+  ],
+  voteDistribution: {},
+  dangerIds: [],
+  buttonLabel: "VOTE IN OPEN POLL",
+  buttonIcon: "🗳️",
+};
+
+const BB_OPTION_LETTERS = ["A", "B", "C", "D", "E", "F"];
+
+function renderPortraitStrip(ids) {
+  return `<div class="bb-nominated-grid">
+    ${ids
+      .map((id) => {
+        const c = contestantById.get(id);
+        if (!c) return "";
+        return `
+      <div class="bb-nom-card">
+        <div class="bb-nom-img-wrap">
+          ${c.image ? `<img src="${c.image}" alt="${c.name} Bigg Boss 20" loading="lazy" decoding="async">` : ""}
+        </div>
+        <div class="bb-nom-info">
+          <h4>${c.name}</h4>
+          <span class="bb-nom-role">${c.role}</span>
+        </div>
+      </div>`;
+      })
+      .join("")}
+  </div>`;
+}
+
+function storySection(eyebrow, heading, bodyHtml) {
+  return `<section class="bb-leaderboard-section bb-story-section">
+    <div class="bb-section-head">
+      <div>
+        <p class="eyebrow">${eyebrow}</p>
+        <h2>${heading}</h2>
+      </div>
+    </div>
+    ${bodyHtml}
+  </section>`;
+}
+
+// Poll cards for text-option polls (options are statements, not contestants)
+function renderTextOptionCards(poll) {
+  const { list } = getPollStats(poll);
+  return `<div class="bb-poll-container" data-poll-slug="${poll.slug}">
+    <div class="bb-poll-meta-bar">
+      <div class="bb-status-pill"><span class="pulse-dot"></span> OPEN POLL — AUDIENCE SENTIMENT ONLY</div>
+      <div class="bb-timer-box">
+        <span>POLL CLOSES IN:</span>
+        <strong id="bb-countdown">Calculating...</strong>
+      </div>
+    </div>
+    ${poll.question ? `<h2 style="margin:1rem 0 0.25rem;">${poll.question}</h2>` : ""}
+    <div class="bb-cards-grid">
+      ${list
+        .map(
+          (c, idx) => `
+        <div class="bb-card" data-contestant-id="${c.id}">
+          <div class="bb-card-badge-row">
+            <span class="bb-rank-tag">OPTION ${BB_OPTION_LETTERS[idx] || idx + 1}</span>
+            <span class="bb-safe-pill">🗳️ OPEN POLL</span>
+          </div>
+          <div class="bb-card-body">
+            <h3>${c.name}</h3>
+            ${c.role ? `<span class="bb-card-role">${c.role}</span>` : ""}
+            <div class="bb-progress-bar-wrap">
+              <div class="bb-progress-bar" id="bar-${poll.slug}-${c.id}" style="width: ${c.pct}%;"></div>
+            </div>
+            <div class="bb-card-numbers">
+              <span class="bb-votes-display"><strong id="votes-${poll.slug}-${c.id}">${c.votes.toLocaleString("en-IN")}</strong> Open Poll votes · <span id="pct-${poll.slug}-${c.id}">${c.pctStr}</span></span>
+            </div>
+            <button class="bb-vote-btn" data-vote-btn="${c.id}" data-poll-slug="${poll.slug}">
+              <span class="btn-icon">${poll.buttonIcon || "🗳️"}</span> ${poll.buttonLabel || "VOTE IN OPEN POLL"}
+            </button>
+          </div>
+        </div>
+      `
+        )
+        .join("")}
+    </div>
+  </div>`;
+}
+
+// Embedded text-option poll (hub-style embed; used for the fairness poll)
+function renderEmbeddedTextPoll(poll) {
+  if (!poll) return "";
+  const { list } = getPollStats(poll);
+  return `<section class="bb-leaderboard-section bb-hub-poll">
+    <div class="bb-section-head">
+      <div>
+        <p class="eyebrow">${poll.embedEyebrow || "Open Poll"}</p>
+        <h2>${poll.h1}</h2>
+        <p>${poll.embedIntro || ""}</p>
+        ${HUB_DISCLAIMER_BOX}
+      </div>
+    </div>
+    <div class="bb-poll-container" data-poll-slug="${poll.slug}">
+      <div class="bb-poll-meta-bar">
+        <div class="bb-status-pill"><span class="pulse-dot"></span> OPEN POLL — AUDIENCE SENTIMENT ONLY</div>
+        <div class="bb-timer-box">
+          <span>OPENED:</span>
+          <strong>12 NOVEMBER 2026</strong>
+        </div>
+      </div>
+      <div class="bb-cards-grid">
+        ${list
+          .map(
+            (c, idx) => `
+          <div class="bb-card" data-contestant-id="${c.id}">
+            <div class="bb-card-badge-row">
+              <span class="bb-rank-tag">OPTION ${BB_OPTION_LETTERS[idx] || idx + 1}</span>
+              <span class="bb-safe-pill">🗳️ OPEN POLL</span>
+            </div>
+            <div class="bb-card-body">
+              <h3>${c.name}</h3>
+              ${c.role ? `<span class="bb-card-role">${c.role}</span>` : ""}
+              <div class="bb-progress-bar-wrap">
+                <div class="bb-progress-bar" id="bar-${poll.slug}-${c.id}" style="width: ${c.pct}%;"></div>
+              </div>
+              <div class="bb-card-numbers">
+                <span class="bb-votes-display"><strong id="votes-${poll.slug}-${c.id}">${c.votes.toLocaleString("en-IN")}</strong> Open Poll votes · <span id="pct-${poll.slug}-${c.id}">${c.pctStr}</span></span>
+              </div>
+              <button class="bb-vote-btn" data-vote-btn="${c.id}" data-poll-slug="${poll.slug}">
+                <span class="btn-icon">${poll.buttonIcon || "🗳️"}</span> ${poll.buttonLabel || "VOTE IN OPEN POLL"}
+              </button>
+            </div>
+          </div>
+        `
+          )
+          .join("")}
+      </div>
+    </div>
+  </section>`;
+}
+
+function renderScoutLoveSections() {
+  return (
+    storySection(
+      "The Bond",
+      "Scout and Love: a brother-sister bond inside the house",
+      `${renderPortraitStrip(["scout", "love-gill"])}
+    <p>Scout is Tanmay 'Scout' Singh — ScoutOP, one of India's best-known gaming creators. Love is Lovepreet Kaur 'Love' Gill. Inside the house the two have been close from early on, and both describe the bond in exactly the same way: a brother-sister bond — a "behen jaisi dost", a friend who is like a sister.</p>
+    <p>The house has played along with the joke: at the Episode 62 award night, Love received the jokey title "Maha Behen" — the great sister.</p>
+    <p>The bond has been tested, and it held. In Episode 60, Love sacrificed her own lifeline so that Scout could hear a message from Kaashvi. Love has called Scout the only person in the house she considers her own.</p>
+    ${renderStoryPhoto("/assets/bb20-new/photos/love-gill-buzzer.webp", "Love Gill in the Bigg Boss 20 house, at the buzzer", "Love Gill in the house, at the buzzer.")}
+    ${renderStoryPhoto("/assets/bb20-new/photos/love-gill-pool.webp", "Love Gill (Lovepreet Kaur Gill)", "Love Gill (Lovepreet Kaur 'Love' Gill).")}`
+    ) +
+    storySection(
+      "The Kaashvi Question",
+      "Kaashvi's Weekend Ka Vaar questions",
+      `<p>Outside the house, Scout's girlfriend is Kaashvi Hiranandani. Kaashvi appeared during the Rohit Shetty-hosted Weekend Ka Vaar and questioned Scout's closeness with Love — including the incident in which Scout massaged Love's feet, hands and neck.</p>
+    <p>Salman Khan later questioned Scout as well, in a Weekend Ka Vaar promo: why had he not defended Love when Kaashvi questioned her?</p>
+    <p>Kaashvi also said she would keep supporting Scout "like a friend" — wording that fuelled speculation of a breakup. To be clear: <strong>a breakup is NOT confirmed.</strong> Kaashvi apologised on social media on 26 October. Kaashvi is not a housemate, so she appears in this story in words only.</p>
+    ${renderStoryPhoto("/assets/bb20-new/photos/scout-gaming-chair.webp", "Scout (ScoutOP) at his gaming setup", "Scout at his gaming setup, outside the house.")}`
+    ) +
+    storySection(
+      "The Fallout",
+      "The 'homebreaker' remark — and Love's stand",
+      `<p>In Episode 66 (aired 10 November), Uditi Singh revealed that Mahhi Vij had called Love a "homebreaker".</p>
+    <p>In Episode 67 (aired 11 November), Love confronted Scout for not taking a stand for her over that remark — while Yung DSA did take a stand for her. Scout apologised repeatedly. Love's answer was that she was done keeping expectations from the friendship.</p>
+    ${renderStoryPhoto("/assets/bb20-new/photos/scout-alone-house.webp", "Scout alone in the Bigg Boss 20 house", "Scout, alone in the house after the fall-out.")}
+    ${renderStoryPhoto("/assets/bb20-new/photos/love-gill-brown.webp", "Love Gill", "Love Gill.")}`
+    ) +
+    storySection(
+      "Reported — Single Source",
+      "Reported: what Yung is said to have told Aamrapali",
+      `<div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
+          ⚠️ <strong>Single-source report.</strong> The following comes from one report by India Forums. It has not been confirmed on air or by a second source, and VisitBest presents it as a report — not as established fact.
+        </div>
+    <p>India Forums reported that, in Episode 67, Yung DSA told Aamrapali Dubey that Scout had confessed his feelings for Love had changed — that he no longer saw her only as a sister.</p>
+    <p>If that report is accurate, it changes how the whole bond reads. Until it is confirmed, it stays labelled as reported — and it is one of the options in the Open Poll below, marked as the report it is.</p>
+    ${renderStoryPhoto("/assets/bb20-new/photos/love-gill-floral.webp", "Love Gill", "Love Gill.")}`
+    )
+  );
+}
+
+function renderYungScoutSections() {
+  return (
+    storySection(
+      "Reported From the Live Feed",
+      "First, a straight note on what is confirmed — and what is not",
+      `<div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
+          ⚠️ <strong>Reported, not confirmed on air.</strong> The clash described on this page has been reported from the show's live feed by multiple outlets — ABP Live, Siasat, NewsX, India Times and NewsBytes. At the time of writing it had NOT been shown or confirmed in a telecast episode. Read everything below as reported.
+        </div>
+    <p>Scout and Yung DSA were friends in this house — which is why the reported end to that friendship, in the middle of a task, is the story. Here is the sequence the reports agree on.</p>`
+    ) +
+    storySection(
+      "The Reported Sequence",
+      "What the reports say happened in the captaincy task",
+      `${renderPortraitStrip(["yung-dsa", "scout"])}
+    <ul>
+      <li>Round 2 of the captaincy task: Uditi Singh sat on a robot chair while Team A tried to make her cry.</li>
+      <li>Scout slightly burnt the edge of Uditi's family photograph.</li>
+      <li>Gullu and Yung kept interrupting and commenting, and abuses were exchanged.</li>
+      <li>Scout pushed Yung. Yung's response: "Ab dosti khatam" — the friendship is over.</li>
+      <li>Bigg Boss stopped the task and separated them — Scout to the bedroom area, Yung to the garden.</li>
+      <li>Scout later apologised. Reports differ on whether Yung accepted the apology, so that point stays open rather than settled either way here.</li>
+    </ul>`
+    )
+  );
+}
+
+function renderYungScoutPunishments() {
+  return (
+    storySection(
+      "Reported Punishments",
+      "The punishments reported for Scout",
+      `<p>Alongside the clash, the same reporting described a set of punishments for Scout. Like the clash itself, <strong>these are reported — they had not been confirmed in a telecast episode at the time of writing</strong>:</p>
+    <ul>
+      <li><strong>Nominated for the entire season</strong></li>
+      <li><strong>Barred from captaincy</strong></li>
+      <li><strong>No special powers</strong></li>
+      <li><strong>Can be evicted at any time</strong></li>
+    </ul>
+    <p>A season-long nomination plus a captaincy bar would be among the harshest punishments of this season — if they are confirmed when the episode airs. Is that proportionate for a task clash that reportedly turned physical, or does it go too far before viewers have seen the footage for themselves? Vote below.</p>`
+    ) + renderEmbeddedTextPoll(yungScoutFairnessPoll)
+  );
+}
+
+function renderNextCaptainExplainer() {
+  return storySection(
+    "Why This Poll, Why Now",
+    "Arishfa's captaincy has ended — a new captaincy task is under way",
+    `<p>Episode 67 (aired 11 November) announced a new captaincy task, as covered in Times Now's episode highlights — so the house will have a new captain soon, one way or another.</p>
+    <p>Arishfa was removed as captain in Episode 67 (aired 11 November), which announced the new captaincy task. No new captain has been named, and this page does not present one as chosen.</p>
+    <div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
+          ℹ️ <strong>One name to weigh carefully:</strong> Scout is <strong>reported</strong> to be barred from captaincy, as part of the punishments reported after the captaincy-task clash with Yung DSA (see <a href="/bigg-boss-20-yung-vs-scout/">Yung vs Scout</a>). That bar is reported, not confirmed on air — keep it in mind as you vote.
+        </div>
+    <p>The ten names in the poll below are the ten housemates other than Arishfa. Pick the one you would hand the captaincy to.</p>`
+  );
+}
+
+
+// ---------- Contestant journey matrix (queue entry 281, 12 Nov 2026) ----------
+
+// Week-by-week status for every contestant, derived ONLY from this file's
+// own records: contestants (evictedWeek / removed), eliminationArchive,
+// nominationArchive, and the captain facts stated in contestant records
+// (Yung DSA — Week 1; Aasif Khan — Week 5; Scout — Week 7; Arishfa Khan —
+// Week 10). "na" means this file's records do not establish that week for
+// that contestant, and the matrix honestly shows "—" instead of a guess.
+// Documented derivations: Uditi Singh is marked Nominated in Week 1 and
+// Aman Gandhi in Week 5 (eliminationArchive: each "received the fewest
+// votes" that week); Uditi Singh and MC Mary Kom are marked Nominated in
+// Week 6 (the Week 6 bottom three recorded in Aman Gandhi's record).
+// Mahhi Vij (captain after Scout, until 28 October) and Kanika Mann
+// (captain from 28 October) also served as captains, but this file does
+// not pin their captaincies to one specific week, so their rows follow
+// the nomination lists and the page text says so.
+export const journeyMatrix = {
+  weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  rows: {
+    "gullu": ["na", "na", "na", "na", "na", "na", "nominated", "nominated", "safe", "nominated"],
+    "qazi-touqeer": ["na", "na", "na", "na", "na", "na", "safe", "safe", "safe", "nominated"],
+    "scout": ["na", "na", "na", "na", "na", "na", "captain", "nominated", "nominated", "nominated"],
+    "mary-kom": ["na", "na", "na", "na", "na", "nominated", "evicted", "na", "na", "na"],
+    "yung-dsa": ["captain", "na", "na", "na", "na", "na", "safe", "safe", "safe", "nominated"],
+    "kanika-mann": ["na", "na", "na", "na", "na", "na", "safe", "nominated", "safe", "nominated"],
+    "amrapali-dubey": ["na", "na", "na", "na", "na", "na", "nominated", "nominated", "nominated", "nominated"],
+    "aasif-khan": ["na", "na", "na", "na", "captain", "na", "safe", "evicted", "na", "na"],
+    "mahhi-vij": ["na", "na", "na", "na", "na", "na", "safe", "safe", "nominated", "nominated"],
+    "arishfa-khan": ["na", "na", "na", "na", "na", "na", "nominated", "safe", "nominated", "captain"],
+    "aman-gandhi": ["na", "na", "na", "na", "nominated", "evicted", "na", "na", "na", "na"],
+    "rohed-khan": ["na", "evicted", "na", "na", "na", "na", "na", "na", "na", "na"],
+    "isha-rikhi": ["na", "na", "evicted", "na", "na", "na", "na", "na", "na", "na"],
+    "love-gill": ["na", "na", "na", "na", "na", "na", "nominated", "nominated", "safe", "nominated"],
+    "rhiti-tiwari": ["na", "na", "na", "evicted", "na", "na", "na", "na", "na", "na"],
+    "uditi-singh": ["nominated", "na", "na", "na", "na", "nominated", "nominated", "safe", "nominated", "nominated"],
+    "manish-goel": ["na", "na", "na", "na", "na", "na", "nominated", "safe", "nominated", "nominated"],
+    "nakul-dhull": ["na", "na", "na", "na", "na", "removed", "na", "na", "na", "na"],
+  },
+};
+
+const JOURNEY_CELL_LABELS = {
+  safe: "🟢 Safe",
+  nominated: "🔴 Nominated",
+  captain: "👑 Captain",
+  evicted: "❌ Evicted",
+  removed: "⛔ Removed",
+  na: "—",
+};
+
+function journeyCurrentStatus(c) {
+  if (c.removed) return "Removed — Week 6";
+  if (c.evicted) return `Evicted — Week ${c.evictedWeek}`;
+  if (c.captain) return "In house · Captain (Week 10)";
+  if (c.exCaptain) return "In house · Ex-captain (removed Ep 67, 11 Nov)";
+  if (c.nominated) return "In house · Nominated (Week 10)";
+  return "In house";
+}
+
+export function renderBiggBossJourneyPage(poll) {
+  return `
+  <div class="container bb-page">
+    <div class="bb-breadcrumbs">
+      <a href="/">Home</a> / <a href="/bigg-boss-20-guide/">Bigg Boss 20</a> / <span>${poll.h1}</span>
+    </div>
+
+    ${renderPollPills(poll.slug)}
+
+    <header class="bb-hero-section">
+      <div class="bb-hero-badge">${poll.heroBadge}</div>
+      <h1 class="bb-hero-title">${poll.h1}</h1>
+      <p class="bb-hero-lead">${poll.lead}</p>
+    </header>
+
+    ${bbCoverFigure(poll.image, poll.h1)}
+
+    <section class="bb-leaderboard-section bb-journey">
+      <div class="bb-section-head">
+        <div>
+          <p class="eyebrow">Journey Matrix · Weeks 1–10</p>
+          <h2>Safe, Nominated, Captain, Evicted — Every Housemate, Every Week</h2>
+          <p>How to read this matrix: <strong>🟢 Safe</strong> = in the house and not nominated that week · <strong>🔴 Nominated</strong> = on that week's nomination list · <strong>👑 Captain</strong> = captained the house that week · <strong>❌ Evicted</strong> / <strong>⛔ Removed</strong> = left the house that week · <strong>—</strong> = VisitBest's season records do not establish that week for that housemate, so nothing is claimed.</p>
+          <p>Two honest notes. First, the full nomination lists for Weeks 1–6 were not published consistently while the season's lives format was running (the same reason the hub's nomination archive starts at Week 7), so early-season cells are filled only where a record establishes them — an eviction, a captaincy, or a documented bottom-three. Second, Captain cells are marked only where our records tie a captaincy to one specific week: Yung DSA (Week 1), Aasif Khan (Week 5), Scout (Week 7) and Arishfa Khan (Week 10). Mahhi Vij (captain after Scout, until 28 October) and Kanika Mann (captain from 28 October) also served as captains; because their captaincies are not pinned to a single week in our records, their rows follow the nomination lists instead.</p>
+          <p>Manish Goel and Nakul Dhull entered as wild cards in Week 5, so their earlier weeks are blank by definition. The Week 10 eviction, due at Weekend Ka Vaar (14–15 November), will be added only after it is confirmed on air. This page is updated weekly.</p>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table class="bb-leaderboard-table">
+          <thead>
+            <tr><th>Contestant</th>${journeyMatrix.weeks.map((w) => `<th>Week ${w}</th>`).join("")}<th>Status Now</th></tr>
+          </thead>
+          <tbody>
+            ${contestants
+              .map((c) => {
+                const cells = journeyMatrix.rows[c.id] || [];
+                return `<tr>
+                <td class="bb-table-contestant">${c.image ? `<img src="${c.image}" alt="${c.name}" class="bb-table-avatar" loading="lazy">` : ""}<strong>${c.name}</strong></td>
+                ${journeyMatrix.weeks.map((w, i) => `<td>${JOURNEY_CELL_LABELS[cells[i]] || "—"}</td>`).join("")}
+                <td>${journeyCurrentStatus(c)}</td>
+              </tr>`;
+              })
+              .join("")}
+          </tbody>
+        </table>
+      </div>
+      <p>Sources: VisitBest's own <a href="/bigg-boss-20-voting/">Weekly Voting Hub</a> (nomination and elimination archives) and the <a href="/bigg-boss-20-contestants/">contestant records</a> on this site. Reported-but-unaired developments are never entered in this matrix — cells change only after events are confirmed on air. For this week's Open Polls, see the <a href="/bigg-boss-20-voting/">voting hub</a>.</p>
+    </section>
+  </div>
+  `;
+}
+
+
+// ---------- Scout vs Kaashvi page + Scout–Love photos (queue entry 284, 12 Nov 2026) ----------
+
+// In-page story photo: natural size, never upscaled (image container
+// standard), caption in its own line below — never text over the photo.
+function renderStoryPhoto(src, alt, caption) {
+  return `<figure class="bb-story-photo" style="margin:1.1rem auto;text-align:center;">
+    <img src="${src}" alt="${alt}" loading="lazy" decoding="async" style="max-width:100%;height:auto;display:block;margin:0 auto;border-radius:12px;">
+    ${caption ? `<figcaption style="font-size:0.85rem;color:#5b6b7a;margin-top:0.45rem;">${caption}</figcaption>` : ""}
+  </figure>`;
+}
+
+function renderScoutKaashviSections() {
+  return (
+    storySection(
+      "The Couple",
+      "Scout and Kaashvi: a couple outside the house",
+      `${renderStoryPhoto("/assets/bb20-new/photos/scout-kaashvi-couple.webp", "Scout and Kaashvi Hiranandani together outside the Bigg Boss house", "Scout and Kaashvi Hiranandani — gaming's love birds — outside the house.")}
+    <p>Confirmed, and not in dispute: Scout (Tanmay 'Scout' Singh — ScoutOP) and Kaashvi Hiranandani are a couple outside the Bigg Boss house, and both are gaming creators — that is how most fans first knew them, as gaming's love birds.</p>
+    <p>This season Scout is inside the house and Kaashvi is outside it. Everything on this page flows from that distance — and from what happened when the two worlds met on Weekend Ka Vaar.</p>
+    ${renderStoryPhoto("/assets/bb20-new/photos/scout-gaming-chair.webp", "Scout (ScoutOP) at his gaming setup", "Scout — ScoutOP — at his gaming setup, where his public life with Kaashvi plays out.")}`
+    ) +
+    storySection(
+      "The Weekend Ka Vaar Appearance",
+      "Kaashvi's appearance — and the questions she asked",
+      `<p>Kaashvi appeared during the Rohit Shetty-hosted Weekend Ka Vaar and questioned Scout about his growing closeness with Love Gill inside the house — including the incident in which Scout massaged Love's feet, hands and neck.</p>
+    ${renderStoryPhoto("/assets/bb20-new/photos/kaashvi-gaming.webp", "Kaashvi Hiranandani at her gaming setup", "Kaashvi Hiranandani at her gaming setup.")}
+    <p>Kaashvi also said she would keep supporting Scout "like a friend". It is that one phrase — "like a friend" — that lit the fuse on everything that followed.</p>`
+    ) +
+    storySection(
+      "After the Episode",
+      "Salman's question, and Kaashvi's apology",
+      `<p>Salman Khan later questioned Scout as well, in a Weekend Ka Vaar promo: why had he not defended Love when Kaashvi questioned her? So the same appearance put Scout under pressure from both directions — from his girlfriend outside, and from the host on the show.</p>
+    <p>For her part, Kaashvi apologised on social media on 26 October.</p>`
+    ) +
+    storySection(
+      "Confirmed vs Rumour",
+      "What is confirmed — and what is only rumour",
+      `<div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
+          <strong>✅ Confirmed (reported by multiple outlets):</strong>
+          <ul style="margin:0.4rem 0 0.6rem;">
+            <li>Scout and Kaashvi are a couple outside the house; both are gaming creators.</li>
+            <li>Kaashvi appeared on the Rohit Shetty-hosted Weekend Ka Vaar and questioned Scout's closeness with Love Gill, including the massage incident.</li>
+            <li>Kaashvi said she would keep supporting Scout "like a friend".</li>
+            <li>Salman Khan questioned Scout about it in a Weekend Ka Vaar promo.</li>
+            <li>Kaashvi apologised on social media on 26 October.</li>
+          </ul>
+          <strong>⚠️ Rumour — NOT confirmed:</strong>
+          <ul style="margin:0.4rem 0 0;">
+            <li>That the couple has broken up. The "like a friend" remark fuelled breakup speculation on social media and in entertainment coverage — but <strong>neither Scout nor Kaashvi has confirmed any breakup</strong>, and this page does not present one as having happened.</li>
+          </ul>
+        </div>
+    ${renderStoryPhoto("/assets/bb20-new/photos/scout-breakup-collage.webp", "A social-media graphic about the Scout breakup talk", "Breakup graphics like this one have filled social media since the remark — speculation, not confirmation.")}
+    <p>So where does that leave the couple? Genuinely unknown until one of them speaks, or until Scout leaves the house and the two can actually talk. That is exactly what the Open Poll below asks readers to judge.</p>`
+    ) +
+    storySection(
+      "Keep Reading",
+      "More on Scout, Love and the house",
+      `<ul>
+      <li><a href="/bigg-boss-20-scout-love-story/"><strong>Scout and Love Gill: the bond, the Kaashvi question and the fall-out</strong></a> — the other half of this story, with its own Open Poll.</li>
+      <li><a href="/bigg-boss-20-yung-vs-scout/"><strong>Yung DSA vs Scout: the captaincy-task clash (reported)</strong></a></li>
+      <li><a href="/bigg-boss-20-next-captain-poll/"><strong>Who should be the next captain? Open Poll</strong></a></li>
+      <li><a href="/bigg-boss-20-voting/"><strong>Bigg Boss 20 Weekly Voting Hub</strong></a> — this week's Open Poll, the archives and every poll on one page.</li>
+    </ul>`
+    )
+  );
+}
+
+
+// ---------- Captain page (queue entry 285, 12 Nov 2026) ----------
+
+// Captain history, derived ONLY from this file's records plus the
+// verified facts in the build brief: Yung DSA Week 1, Aasif Khan Week
+// 5, Scout Week 7, Arishfa Khan Week 10 (journeyMatrix + contestant
+// records); Kanika Mann — captain during the Week 9 nomination cycle
+// (used a captain's power to nominate Mahhi Vij directly in Episode
+// 58); Mahhi Vij — Qazi won the captaincy task round on 23 October
+// and declared Mahhi the new captain, succeeding Scout (her longBio).
+// Mahhi's week number is NOT pinned in the site's records, so the
+// table gives her date and says so instead of claiming a week.
+export const captainHistory = [
+  { id: "yung-dsa", when: "Week 1", note: "First captain of the season (site records)." },
+  { id: "aasif-khan", when: "Week 5", note: "Captained in Week 5 (site records)." },
+  { id: "scout", when: "Week 7", note: "Captained in Week 7 (site records)." },
+  { id: "mahhi-vij", when: "23 Oct 2026", note: "Qazi won the captaincy task round on 23 October and declared Mahhi the new captain, succeeding Scout (her record). The week number is not pinned in the site's records." },
+  { id: "kanika-mann", when: "Week 9", note: "Captain during the Week 9 nomination cycle — used a captain's power to nominate Mahhi Vij directly in Episode 58." },
+  { id: "arishfa-khan", when: "Week 10 — removed in Episode 67 (11 Nov 2026)", note: "Confirmed by a unanimous housemate vote in Episode 61 (the earlier 2X Room vote was reported before that confirmation). Immune in Week 10 while all 10 other housemates were nominated. Removed as captain in Episode 67 (11 November 2026); a new-captain task is under way and no successor has been named." },
+];
+
+export function renderBiggBossCaptainPage(poll) {
+  const arishfa = contestantById.get("arishfa-khan");
+  return `
+  <div class="container bb-page">
+    <div class="bb-breadcrumbs">
+      <a href="/">Home</a> / <a href="/bigg-boss-20-guide/">Bigg Boss 20</a> / <span>${poll.h1}</span>
+    </div>
+
+    ${renderPollPills(poll.slug)}
+
+    <header class="bb-hero-section">
+      <div class="bb-hero-badge">${poll.heroBadge}</div>
+      <h1 class="bb-hero-title">${poll.h1}</h1>
+      <p class="bb-hero-lead">${poll.lead}</p>
+    </header>
+
+    ${bbCoverFigure(poll.image, poll.h1)}
+
+    ${storySection(
+      "Quick Answer",
+      "Arishfa Khan — the last confirmed captain",
+      `${renderStoryPhoto(arishfa.image, "Arishfa Khan, captain of Bigg Boss 20 in Week 10", "Arishfa Khan — the last confirmed captain of the house (Week 10).")}
+    <p><strong>Arishfa Khan is the last confirmed captain of Bigg Boss 20 (Week 10).</strong> She became captain after a unanimous housemate vote in Episode 61 — the earlier 2X Room captaincy vote had only been reported before that confirmation. As captain she was immune in Week 10 while all 10 other housemates were nominated.</p>
+    <p>Her captaincy ended in Episode 67 (aired 11 November 2026), when Bigg Boss removed her as captain after housemates broke several rules and announced a new captaincy task in the same episode. <strong>The next captain is yet to be decided</strong> — no successor has been named as of 12 November 2026. This page is a living page: it is refreshed when a new captain is confirmed on air.</p>`
+    )}
+
+    <section class="bb-leaderboard-section">
+      <div class="bb-section-head">
+        <div>
+          <p class="eyebrow">Captain History · This Season</p>
+          <h2>Every Captain of Bigg Boss 20 So Far</h2>
+          <p>Every captain the site's records establish, in order. One honest note: the table does not claim to be a complete week-by-week list — the captain for some early weeks is not recorded in the site's data, and Mahhi Vij's week number is not pinned in the records, so her row gives the date instead. Nothing here is guessed.</p>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table class="bb-leaderboard-table">
+          <thead>
+            <tr><th>Captain</th><th>When</th><th>How They Became Captain / Notes</th></tr>
+          </thead>
+          <tbody>
+            ${captainHistory
+              .map((row) => {
+                const c = contestantById.get(row.id);
+                return `<tr>
+                <td class="bb-table-contestant">${c && c.image ? `<img src="${c.image}" alt="${c.name}" class="bb-table-avatar" loading="lazy">` : ""}<strong>${c ? c.name : row.id}</strong></td>
+                <td><strong>${row.when}</strong></td>
+                <td>${row.note}</td>
+              </tr>`;
+              })
+              .join("")}
+          </tbody>
+        </table>
+      </div>
+      <p>Sources: VisitBest's own <a href="/bigg-boss-20-contestant-journey/">Contestant Journey Matrix</a> and the <a href="/bigg-boss-20-contestants/">contestant records</a> on this site, plus the verified facts in this page's build notes. Reported-but-unaired developments are never entered in this table.</p>
+    </section>
+
+    ${storySection(
+      "What the Captain Gets",
+      "What the captain actually gets",
+      `<p>The captain's biggest advantage is simple: <strong>immunity from that week's nominations</strong>. Arishfa Khan was immune in Week 10 while every other housemate was nominated — that is the protection the captaincy buys.</p>
+    <p>The captain also gets a direct say in nominations. Kanika Mann used a captain's power to nominate Mahhi Vij directly in Episode 58, and Arishfa Khan used her captain's power to nominate Scout directly in Episode 66. Beyond that, the exact powers and duties vary by task and are announced by Bigg Boss on the show each week — this page lists only what the season itself has shown.</p>`
+    )}
+
+    ${storySection(
+      "The New Captain",
+      "A new captain is coming — who will it be?",
+      `<p>Episode 67 (aired 11 November) removed Arishfa as captain and announced a new captaincy task, as covered in Times Now's episode highlights. No new captain has been named, and this page names none.</p>
+    <div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
+          ℹ️ <strong>One name to weigh carefully:</strong> Scout is <strong>reported</strong> to be barred from captaincy, as part of the punishments reported after the captaincy-task clash with Yung DSA (see <a href="/bigg-boss-20-yung-vs-scout/">Yung vs Scout</a>). That bar is reported, not confirmed on air.
+        </div>
+    <p>Want a say? Vote in the Open Poll below — <a href="/bigg-boss-20-next-captain-poll/"><strong>Who Should Be the Next Captain?</strong></a> — and see how the house's journey has run so far in the <a href="/bigg-boss-20-contestant-journey/"><strong>Contestant Journey Matrix</strong></a>.</p>`
+    )}
+
+    ${storySection(
+      "Keep Reading",
+      "More Bigg Boss 20 pages",
+      `<ul>
+      <li><a href="/bigg-boss-20-next-captain-poll/"><strong>Who should be the next captain? Open Poll</strong></a> — vote for the ten other housemates.</li>
+      <li><a href="/bigg-boss-20-contestant-journey/"><strong>Contestant Journey Matrix</strong></a> — every housemate's Safe / Nominated / Captain / Evicted status, week by week.</li>
+      <li><a href="/bigg-boss-20-voting/"><strong>Bigg Boss 20 Weekly Voting Hub</strong></a> — this week's Open Poll, the archives and every poll on one page.</li>
+    </ul>`
+    )}
+  </div>
+  `;
+}
+
 // Main Poll Page Renderer
 export function renderBiggBossPollPage(poll) {
+  if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
+  if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
   return `
   <div class="container bb-page">
     <div class="bb-breadcrumbs">
@@ -1360,11 +2061,16 @@ export function renderBiggBossPollPage(poll) {
       </div>
     </header>
 
-    ${bbCoverFigure(poll.image, poll.h1)}
+    ${poll.slug === "bigg-boss-20-scout-vs-kaashvi" ? "" : bbCoverFigure(poll.image, poll.h1)}
 
     ${renderOpenPollDisclaimer()}
 
     ${poll.slug === "bigg-boss-20-voting" ? renderNominationCallout() : ""}
+
+    ${poll.slug === "bigg-boss-20-scout-love-story" ? renderScoutLoveSections() : ""}
+    ${poll.slug === "bigg-boss-20-yung-vs-scout" ? renderYungScoutSections() : ""}
+    ${poll.slug === "bigg-boss-20-next-captain-poll" ? renderNextCaptainExplainer() : ""}
+    ${poll.slug === "bigg-boss-20-scout-vs-kaashvi" ? renderScoutKaashviSections() : ""}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
@@ -1382,6 +2088,8 @@ export function renderBiggBossPollPage(poll) {
     ${renderAdSenseUnit("after-voting", "Advertisement")}
 
     ${renderLeaderboard(poll)}
+
+    ${poll.slug === "bigg-boss-20-yung-vs-scout" ? renderYungScoutPunishments() : ""}
 
     ${renderAdSenseUnit("after-leaderboard", "Advertisement")}
 
