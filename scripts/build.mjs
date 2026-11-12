@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, renderUpscAgeCalculatorBody, renderIbpsAgeCalculatorBody, renderRrbAgeCalculatorBody, renderEmiCalculatorBody, renderSipCalculatorBody, renderBmiCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient, upscClient, ibpsClient, rrbClient, emiClient, sipClient, bmiClient } from "./calculators.mjs";
+import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, renderUpscAgeCalculatorBody, renderIbpsAgeCalculatorBody, renderRrbAgeCalculatorBody, renderEmiCalculatorBody, renderSipCalculatorBody, renderBmiCalculatorBody, renderPctCalculatorBody, renderGstCalculatorBody, renderPpfCalculatorBody, renderFdCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient, upscClient, ibpsClient, rrbClient, emiClient, sipClient, bmiClient, pctClient, gstClient, ppfClient, fdClient } from "./calculators.mjs";
 import {
   polls as bbPolls,
   contestants as bbContestants,
@@ -508,6 +508,10 @@ function renderFooter() {
         <li><a href="/emi-calculator/">EMI Calculator</a></li>
         <li><a href="/sip-calculator/">SIP Calculator</a></li>
         <li><a href="/bmi-calculator/">BMI Calculator</a></li>
+        <li><a href="/percentage-calculator/">Percentage Calculator</a></li>
+        <li><a href="/gst-calculator/">GST Calculator</a></li>
+        <li><a href="/ppf-calculator/">PPF Calculator</a></li>
+        <li><a href="/fd-calculator/">FD Calculator</a></li>
         <li><a href="/search/">Search All Guides</a></li>
         <li><a href="/assets/bb20-new/image-credits.html">Image Credits</a></li>
         <li><a href="mailto:visitbest10@gmail.com">visitbest10@gmail.com</a></li>
@@ -950,6 +954,14 @@ for (let i = 0; i < calculatorPages.length; i++) {
                 ? renderSipCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, sipClient.toString())
               : item.kind === "bmi"
                 ? renderBmiCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, bmiClient.toString())
+              : item.kind === "pct"
+                ? renderPctCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, pctClient.toString())
+              : item.kind === "gst"
+                ? renderGstCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, gstClient.toString())
+              : item.kind === "ppf"
+                ? renderPpfCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, ppfClient.toString())
+              : item.kind === "fd"
+                ? renderFdCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, fdClient.toString())
               : renderCalculatorBody(item, calculatorPages[1 - i], calculatorCss, calculatorClient.toString());
   const html = renderPage({
     title: `${item.title} - VisitBest`,
