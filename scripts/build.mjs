@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient } from "./calculators.mjs";
+import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, renderUpscAgeCalculatorBody, renderIbpsAgeCalculatorBody, renderRrbAgeCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient, upscClient, ibpsClient, rrbClient } from "./calculators.mjs";
 import {
   polls as bbPolls,
   contestants as bbContestants,
@@ -502,6 +502,9 @@ function renderFooter() {
         <li><a href="/ssc-age-calculator/">SSC Age Calculator</a></li>
         <li><a href="/cgpa-to-percentage-calculator/">CGPA to Percentage Calculator</a></li>
         <li><a href="/age-calculator/">Age Calculator</a></li>
+        <li><a href="/upsc-age-calculator/">UPSC Age Calculator</a></li>
+        <li><a href="/ibps-age-calculator/">IBPS Age Calculator</a></li>
+        <li><a href="/rrb-age-calculator/">RRB Age Calculator</a></li>
         <li><a href="/search/">Search All Guides</a></li>
         <li><a href="/assets/bb20-new/image-credits.html">Image Credits</a></li>
         <li><a href="mailto:visitbest10@gmail.com">visitbest10@gmail.com</a></li>
@@ -932,7 +935,13 @@ for (let i = 0; i < calculatorPages.length; i++) {
       ? renderCgpaCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, cgpaClient.toString())
       : item.kind === "general-age"
         ? renderGeneralAgeCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, generalAgeClient.toString())
-        : renderCalculatorBody(item, calculatorPages[1 - i], calculatorCss, calculatorClient.toString());
+        : item.kind === "upsc-age"
+          ? renderUpscAgeCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, upscClient.toString())
+          : item.kind === "ibps-age"
+            ? renderIbpsAgeCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, ibpsClient.toString())
+            : item.kind === "rrb-age"
+              ? renderRrbAgeCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, rrbClient.toString())
+              : renderCalculatorBody(item, calculatorPages[1 - i], calculatorCss, calculatorClient.toString());
   const html = renderPage({
     title: `${item.title} - VisitBest`,
     description: item.meta,
