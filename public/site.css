@@ -563,3 +563,23 @@ h1, h2, h3, h4 { color: var(--ink); font-family: Georgia, "Times New Roman", ser
   margin-right: auto;
 }
 .brand-block img { width: auto; }
+
+/* ============================================================
+   DESIGN IMPROVEMENTS (owner instruction, 12 Nov 2026 — pack 292)
+   Append-only: no rule above this section is changed.
+   1) Header Tools dropdown: grouped multi-column panel.
+   2) Brand-logo figures shrink-wrap the logo instead of a
+      full-width, mostly empty pale box. Images keep the
+      entry-175 standard (natural size, never upscaled).
+   3) Buy Now button wrapper under product figures in posts.
+   ============================================================ */
+.sub-menu.sub-menu--tools { display: grid; grid-template-columns: repeat(3, minmax(142px, auto)); gap: .15rem 1.3rem; min-width: 0; max-width: min(94vw, 660px); max-height: 84vh; overflow-y: auto; padding: .8rem .9rem; }
+.sub-menu--tools .tools-group ul { list-style: none; margin: 0; padding: 0; }
+.sub-menu--tools .tools-heading { display: block; font-size: .72rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: var(--accent); padding: .35rem .7rem .3rem; }
+.sub-menu--tools a { white-space: nowrap; }
+@media (max-width: 980px) {
+  .sub-menu.sub-menu--tools { display: block; max-width: none; max-height: none; overflow: visible; padding: 0 0 .25rem 1.1rem; }
+}
+.prose figure.vb-brand-figure { width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; }
+.prose figure.vb-brand-figure figcaption { width: 0; min-width: 100%; }
+.vb-buy-wrap { text-align: center; margin: .85rem 0 1.15rem; }
