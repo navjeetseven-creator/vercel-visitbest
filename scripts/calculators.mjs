@@ -2095,6 +2095,778 @@ export const pages = [
       ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
     ]
   },
+
+  {
+    key: "mis",
+    kind: "mis",
+    slug: "post-office-mis-calculator",
+    title: "Post Office MIS Calculator",
+    meta: "Work out your Post Office Monthly Income Scheme income: a one-time deposit from ₹1,000 to ₹9 lakh single or ₹15 lakh joint at the notified 7.4% rate, 5 years, simple interest paid every month, with a year-by-year table. Free, instant, and calculated in your browser.",
+    lead: "Enter your deposit, the account type and the interest rate — and get the income every month, the income for the year, the total interest over 5 years and what you keep after tax, with your deposit back in full at maturity.",
+    presets: [
+      { id: "mis9L", label: "₹9,00,000 single at 7.4%", deposit: 900000, rate: 7.4, accountType: "single" },
+      { id: "mis15L", label: "₹15,00,000 joint at 7.4%", deposit: 1500000, rate: 7.4, accountType: "joint" },
+      { id: "mis5L", label: "₹5,00,000 single at 7.4%", deposit: 500000, rate: 7.4, accountType: "single" },
+      { id: "mis1L", label: "₹1,00,000 single at 7.4%", deposit: 100000, rate: 7.4, accountType: "single" },
+      { id: "misMin", label: "₹1,000 single at 7.4%, the minimum", deposit: 1000, rate: 7.4, accountType: "single" }
+    ],
+    defaultPreset: "mis9L",
+    sampleDeposit: 900000,
+    sampleRate: 7.4,
+    sampleAccountType: "single",
+    sampleTaxSlab: 0,
+    notice: "This tool is an estimate for planning: the MIS rate is notified every quarter and can change for new accounts, so the projection holds today's 7.4% steady for the 5 years. It is not financial, tax or legal advice. Check the rules table below before you rely on it.",
+    overviewTitle: "What does a Post Office MIS calculator do?",
+    overview: "The Post Office Monthly Income Scheme is a 5-year government deposit that pays you every month, run through post offices. You make one deposit — at least ₹1,000, in multiples of ₹1,000, up to ₹9 lakh in a single account or ₹15 lakh in a joint account of up to three adults — and the scheme pays 7.4% a year for October to December 2026 as simple interest, every month. The interest never compounds: it is paid out to your savings account, and your deposit comes back in full at maturity. On ₹9,00,000 that is ₹5,550 every month, ₹66,600 a year and ₹3,33,000 over 5 years. This calculator works out the income from your own figures, shows what you keep after tax, and lists the income year by year.",
+    inputNote: "Enter your deposit first — the rate is already filled in with the current 7.4%. Pick single or joint before you type: a single account takes at most ₹9,00,000 and a joint account at most ₹15,00,000.",
+    modelNote: "Each month pays one twelfth of a year's interest on your original deposit, rounded to the nearest rupee — monthly income = deposit × rate ÷ 100 ÷ 12. The annual income is the monthly income × 12 and the total interest is the monthly income × 60. Nothing compounds: the interest is paid out, never added to the principal, and the deposit is returned in full at maturity. The rate is the notified rate for October to December 2026, 7.4%, and the projection holds it steady for the term — in reality it is reviewed every quarter, but the rate on the day you open the account is fixed for 5 years. The after-tax figures use the slab rate you pick plus 4% cess, applied to the monthly income.",
+    steps: [
+      ["Pick single or joint", "A single account takes up to ₹9,00,000; a joint account of up to three adults takes up to ₹15,00,000. The same limits apply to all of one person's MIS accounts together, and your share of a joint account counts as one half with two holders or one third with three."],
+      ["Enter your deposit", "From ₹1,000, in multiples of ₹1,000, up to the limit for the account type you picked — the example uses ₹9,00,000, the single-account maximum. It is a single lump sum, paid once when you open the account, and you cannot add to it later."],
+      ["Set the interest rate", "7.4% is the rate notified for October to December 2026. It has been 7.4% since 1 April 2023 and is reviewed every quarter — the rate on the day you open the account is fixed for 5 years."],
+      ["Pick your tax slab to see what you keep", "MIS interest is fully taxable at your slab rate and the deposit gets no 80C deduction, so the headline ₹5,550 a month is before tax. Pick your slab — the calculator applies it plus 4% cess and shows the monthly income you keep. Then read the monthly income, the annual income and the total interest over 5 years."]
+    ],
+    stories: [
+      {
+        deposit: 900000, rate: 7.4, accountType: "single", preset: "mis9L",
+        title: "₹9,00,000 at 7.4%: ₹5,550 a month",
+        body: "₹9,00,000 for 5 years at 7.4%, the single-account maximum. You receive ₹5,550 every month — ₹66,600 a year. Over 5 years the interest adds to ₹3,33,000, and your ₹9,00,000 comes back in full at maturity. At the 20% slab plus cess you keep about ₹4,396 a month; at 30% about ₹3,818 a month."
+      },
+      {
+        deposit: 1500000, rate: 7.4, accountType: "joint", preset: "mis15L",
+        title: "₹15,00,000 at 7.4%: ₹9,250 a month",
+        body: "The joint-account maximum, ₹15,00,000 for 5 years at 7.4%. You receive ₹9,250 every month — ₹1,11,000 a year. Over 5 years the interest adds to ₹5,55,000, and your ₹15,00,000 comes back in full at maturity. Two people who each open a single account can hold ₹9,00,000 each instead — ₹18,00,000 between them, paying ₹11,100 a month."
+      },
+      {
+        deposit: 500000, rate: 7.4, accountType: "single", preset: "mis5L",
+        title: "₹5,00,000 at 7.4%: ₹3,083 a month",
+        body: "₹5,00,000 for 5 years at 7.4%. The exact monthly interest is ₹3,083.33, which the scheme rounds to ₹3,083 a month, so the year works out at ₹36,996 and the 5-year total at ₹1,84,980 — not the unrounded ₹37,000 and ₹1,85,000 some calculators show. Your ₹5,00,000 comes back in full at maturity."
+      },
+      {
+        deposit: 100000, rate: 7.4, accountType: "single", preset: "mis1L",
+        title: "₹1,00,000 at 7.4%: ₹617 a month",
+        body: "₹1,00,000 for 5 years at 7.4%. The exact monthly interest is ₹616.67, which rounds to ₹617 a month, so the year works out at ₹7,404 and the 5-year total at ₹37,020. Your ₹1,00,000 comes back in full at maturity."
+      },
+      {
+        deposit: 1000, rate: 7.4, accountType: "single", preset: "misMin",
+        title: "₹1,000 at 7.4%, the minimum: ₹6 a month",
+        body: "The smallest deposit the scheme allows — ₹1,000 for 5 years at 7.4%. The exact monthly interest is ₹6.17, which rounds to ₹6 a month, so the year works out at ₹72 and the 5-year total at ₹360. A reminder that the calculator rounds each monthly payment to the nearest rupee."
+      }
+    ],
+    rateRows: [
+      { rate: "7.4% a year (Oct–Dec 2026)", applies: "Current notified rate", example: "The rate for 1 October to 31 December 2026, notified by the Ministry of Finance on 30 September 2026. It has been 7.4% since 1 April 2023 and is reviewed every quarter — the next review is due around 31 December 2026." },
+      { rate: "₹1,000 minimum, ₹9 lakh single / ₹15 lakh joint", applies: "Deposit limits", example: "At least ₹1,000 to open, in multiples of ₹1,000, and only one deposit per account — you cannot add to it later. A single account takes up to ₹9 lakh; a joint account of up to three adults takes up to ₹15 lakh. The limits were raised from ₹4.5 lakh and ₹9 lakh by the 2023 amendment, effective 1 April 2023. The same limits apply to all of one person's MIS accounts together." },
+      { rate: "5 years, no extension", applies: "Tenure and maturity", example: "The account runs for 5 years from the date of opening. Apply in Form-3 to close it and receive your deposit back. There is no extension — to keep the income going, open a new account at the rate then in force. Money left in the account after maturity earns only the Post Office Savings Account rate, 4% at present." },
+      { rate: "Simple interest, paid monthly", applies: "How interest works", example: "Interest is worked out on your original deposit and paid every month, on completion of a month from the date of deposit — never added to the principal, so it never compounds. Each monthly payment is rounded to the nearest rupee. Interest you do not collect earns no additional interest, so have it paid into a savings account each month. If the payment date is a Sunday or a holiday, you are paid on the business day before." },
+      { rate: "Rate locked at opening", applies: "Rate lock", example: "A quarterly review changes the rate only for accounts opened after it takes effect. An account you already hold keeps its opening rate for the full 5 years." },
+      { rate: "Any adult; minor 10+; guardian", applies: "Who can open", example: "A single adult; up to three adults jointly; a minor who has turned ten; or a guardian on behalf of a minor or a person of unsound mind. You open it at a post office, can move it from one post office to another, and can name a nominee. The interest can be credited to your post office savings account or a bank account." },
+      { rate: "Early closure costs 2%, then 1%", applies: "Premature closure", example: "You cannot close the account in the first year. After 1 year but before 3 years, 2% of the deposit is deducted — ₹18,000 on ₹9,00,000. After 3 years, 1% is deducted — ₹9,000 on ₹9,00,000. The interest already paid is yours to keep. On the holder's death the account is closed and the deposit refunded with interest up to the month before the refund." },
+      { rate: "Interest taxable; no 80C; TDS — ask", applies: "Tax", example: "The interest is fully taxable at your slab rate every year, in both tax regimes, and the deposit gets no deduction under Section 80C. Under the old regime a senior citizen can deduct up to ₹50,000 of deposit interest under 80TTB. Tax deducted at source on post-office interest applies only for notified schemes, above ₹50,000 of interest a year — ₹1 lakh for a senior citizen — from 1 April 2025; ask your post office whether it deducts TDS on your MIS account, because the tax is due either way." },
+      { rate: "Reviewed every quarter", applies: "Rate reviews", example: "Small savings rates are set by the Ministry of Finance every quarter. The rate for October to December 2026 was kept unchanged in the office memorandum of 30 September 2026; the next review is due around 31 December 2026 for January to March 2027." }
+    ],
+    rateTableTitle: "MIS rules at a glance",
+    rateTableNote: "The current rate, the deposit limits, the 5-year tenure, how the interest is paid, the rate lock, who can open an account, the early-closure deductions and the tax on the interest. Every rule here comes from the National Savings (Monthly Income Account) Scheme, 2019 as amended, the Department of Posts or the Ministry of Finance — never from a blog or a competitor.",
+    rateTableConclusion: "The rules are fixed — a 5-year term, simple interest paid out every month and the rate locked at opening. The two judgement calls are the rate you assume and the tax slab you pick, and this page states both plainly: 7.4% is today's notified rate, not a promise for the next account you open, and the after-tax figures use your marginal slab plus 4% cess.",
+    calloutTitle: "Why two calculators disagree on ₹5,00,000 — and which figure the scheme gives",
+    calloutNote: "On ₹5,00,000 at 7.4%, this calculator gives ₹3,083 a month, ₹36,996 a year and ₹1,84,980 over 5 years, and credocalc.com's table agrees. rupeescalc.com shows the same ₹3,083 a month but ₹37,000 a year and ₹1,85,000 over 5 years. The difference is rounding: the scheme's own Rule 5(4) rounds each monthly payment to the nearest rupee, so ₹3,083.33 becomes ₹3,083 — and the year is that rounded payment × 12, not the unrounded ₹37,000. The same rounding explains the ₹1,00,000 case, where ₹616.67 rounds to ₹617 a month and the year is ₹7,404. This page follows the scheme's rounding throughout, including the after-tax totals.",
+    faq: [
+      ["What is the Post Office Monthly Income Scheme (MIS)?", "The Post Office Monthly Income Scheme is a 5-year government deposit that pays you every month, run through post offices. You make one deposit — at least ₹1,000, in multiples of ₹1,000, up to ₹9 lakh in a single account or ₹15 lakh in a joint account of up to three adults — and the scheme pays 7.4% a year for October to December 2026 as simple interest, every month. The interest is paid out to your savings account and your deposit comes back in full at maturity. It suits anyone who wants a fixed monthly income from a lump sum, such as a retiree."],
+      ["What is the current Post Office MIS interest rate?", "7.4% a year, paid monthly, for 1 October to 31 December 2026 (the third quarter of FY 2026-27). The Ministry of Finance kept small-savings rates unchanged in its office memorandum of 30 September 2026, and MIS has paid 7.4% since 1 April 2023. The rate is reviewed every quarter, so the next review is due around 31 December 2026 — and the rate on the day you open the account is fixed for 5 years."],
+      ["How much monthly income will I get on ₹9,00,000 in MIS?", "₹5,550 every month at 7.4% — ₹66,600 a year. Over 5 years the interest adds to ₹3,33,000, and your ₹9,00,000 comes back in full at maturity. On the joint maximum of ₹15,00,000 it is ₹9,250 a month, ₹1,11,000 a year and ₹5,55,000 over 5 years. Those are before-tax figures — at the 20% slab plus cess you keep about ₹4,396 a month on ₹9,00,000, and at 30% about ₹3,818 a month."],
+      ["What is the maximum deposit in Post Office MIS — single or joint?", "₹9 lakh in a single account and ₹15 lakh in a joint account of up to three adults. The same limits apply to all of one person's MIS accounts together, and your share of a joint account counts as one half with two holders or one third with three. The limits were raised from ₹4.5 lakh and ₹9 lakh by the 2023 amendment, effective 1 April 2023. If you deposit more than the limit, the post office refunds the excess, which earns only the Post Office Savings Account rate until then."],
+      ["Can I add money to my MIS account later?", "No. Each account takes exactly one deposit when you open it, and you cannot add to it later. If you have more to invest, open another account — within your overall limit of ₹9 lakh single or ₹15 lakh joint across all your MIS accounts. Two people who each open a single account can hold ₹9,00,000 each, ₹18,00,000 between them, paying ₹11,100 a month at 7.4%."],
+      ["Can I close my MIS account before 5 years?", "Not in the first year. After 1 year but before 3 years, 2% of the deposit is deducted — ₹18,000 on ₹9,00,000, so you get ₹8,82,000 back. After 3 years, 1% is deducted — ₹9,000 on ₹9,00,000, so you get ₹8,91,000 back. The interest already paid is yours to keep. On the holder's death the account is closed and the deposit refunded with interest up to the month before the refund."],
+      ["Is Post Office MIS interest taxable, and is TDS deducted?", "Yes — the interest is fully taxable at your slab rate every year, in both tax regimes, and the deposit gets no deduction under Section 80C. Under the old regime a senior citizen can deduct up to ₹50,000 of deposit interest under 80TTB. Tax deducted at source on post-office interest applies only for notified schemes, above ₹50,000 of interest a year — ₹1 lakh for a senior citizen — from 1 April 2025. Whether your post office deducts TDS on MIS interest is something to ask at the post office; the tax itself is due either way, so this calculator shows the after-tax income from your slab rate plus 4% cess."],
+      ["Does MIS interest compound?", "No. MIS interest is simple: it is worked out on your original deposit and paid out every month, never added to the principal — so the payout stays ₹5,550 in every month of the 5 years on ₹9,00,000, and the 5-year total is ₹3,33,000, not a growing figure. Interest you do not collect earns no additional interest. If you do not need the income yet, have it paid into a savings account and set up a standing instruction to move it into a recurring deposit, where it can compound."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
+
+  {
+    key: "kvp",
+    kind: "kvp",
+    slug: "kvp-calculator",
+    title: "KVP Calculator",
+    meta: "Work out your Kisan Vikas Patra maturity value: a one-time deposit from ₹1,000 with no maximum at the notified 7.5% rate doubles in 115 months (9 years 7 months), with a year-by-year table and the official early-encashment values. Free, instant, and calculated in your browser.",
+    lead: "Enter your deposit and the interest rate — and get the maturity value, how many months your money takes to double, the interest earned and what you keep after tax, with the value listed year by year.",
+    presets: [
+      { id: "kvp1L", label: "₹1,00,000 at 7.5%", deposit: 100000, rate: 7.5 },
+      { id: "kvp50k", label: "₹50,000 at 7.5%", deposit: 50000, rate: 7.5 },
+      { id: "kvp10k", label: "₹10,000 at 7.5%", deposit: 10000, rate: 7.5 },
+      { id: "kvp5L", label: "₹5,00,000 at 7.5%", deposit: 500000, rate: 7.5 },
+      { id: "kvpMin", label: "₹1,000 at 7.5%, the minimum", deposit: 1000, rate: 7.5 }
+    ],
+    defaultPreset: "kvp1L",
+    sampleDeposit: 100000,
+    sampleRate: 7.5,
+    sampleTaxSlab: 0,
+    notice: "This tool is an estimate for planning: the KVP rate is notified every quarter and can change for new certificates, so the projection holds today's 7.5% steady until maturity. It is not financial, tax or legal advice. Check the rules table below before you rely on it.",
+    overviewTitle: "What does a KVP calculator do?",
+    overview: "Kisan Vikas Patra is a government savings certificate sold at post offices and authorised banks. You pay one lump sum — at least ₹1,000, in multiples of ₹100, with no maximum — and at maturity you get exactly double back. At the current 7.5% a year, compounded annually, that takes 115 months, or 9 years and 7 months. Nothing is paid out before maturity: the whole interest arrives at the end. On ₹1,00,000 that is ₹2,00,000 at maturity, ₹1,00,000 of it interest. This calculator works out the maturity value from your own figures, shows how long your money takes to double, lists the value year by year, and shows what you keep after tax.",
+    inputNote: "Enter your deposit first — the rate is already filled in with the current 7.5%. There is no maximum deposit, so any amount in multiples of ₹100 works.",
+    modelNote: "The maturity value is fixed by the scheme at exactly double your deposit — maturity value = 2 × deposit. The wait is the doubling period for your rate: 115 months at 7.5%, taken from the notified table for the rates the government has set (7.5% → 115 months, 7.2% → 120, 7.0% → 123, 6.9% → 124, 7.6% → 113, 7.7% → 112, 7.3% → 118); for any other rate the calculator works out the months with the formula months = ln 2 ÷ ln(1 + rate) × 12 and rounds to the nearest month, so treat that as an estimate. The year-by-year values compound once a year — value after n years = deposit × (1 + rate)^n, rounded to the nearest rupee — which is why the formula gives ₹1,99,985 at 115 months while the certificate pays exactly ₹2,00,000. The after-tax figures apply the slab rate you pick plus 4% cess to the interest earned.",
+    steps: [
+      ["Enter your deposit", "From ₹1,000, in multiples of ₹100, with no upper limit — the example uses ₹1,00,000. It is a single lump sum, paid once when you buy the certificate, and you cannot add to it later."],
+      ["Check the interest rate", "7.5% is the rate notified for October to December 2026. It has been 7.5% since 1 April 2023 and is reviewed every quarter — the rate and the doubling period on the day you buy are fixed until maturity."],
+      ["Read the doubling period", "At 7.5% your money doubles in 115 months — 9 years and 7 months. Try an older rate, such as 6.9%, to see the period stretch to 124 months; the maturity value stays exactly double, only the wait changes."],
+      ["Pick your tax slab to see what you keep", "KVP interest is fully taxable at your slab rate and the deposit gets no 80C deduction, so the headline ₹2,00,000 is before tax. Pick your slab — the calculator applies it plus 4% cess and shows the maturity value you keep. Then read the maturity value, the doubling period and the interest earned."]
+    ],
+    stories: [
+      {
+        deposit: 100000, rate: 7.5, preset: "kvp1L",
+        title: "₹1,00,000 at 7.5%: ₹2,00,000 in 115 months",
+        body: "₹1,00,000 at 7.5% doubles in 115 months — 9 years and 7 months — to ₹2,00,000, so you earn ₹1,00,000 of interest, all paid at maturity. On paper the certificate is worth ₹1,07,500 after 1 year and ₹1,43,563 after 5 years — but if you encash after 5 years the scheme's table pays only ₹1,37,000. At the 20% slab plus cess you keep about ₹1,79,200; at 30% about ₹1,68,800."
+      },
+      {
+        deposit: 50000, rate: 7.5, preset: "kvp50k",
+        title: "₹50,000 at 7.5%: ₹1,00,000 in 115 months",
+        body: "₹50,000 at 7.5% doubles in 115 months to ₹1,00,000, so you earn ₹50,000 of interest, all paid at maturity. On paper the certificate is worth ₹53,750 after 1 year and ₹71,781 after 5 years — but if you encash after 5 years the scheme's table pays only ₹68,500. At the 20% slab plus cess you keep about ₹89,600."
+      },
+      {
+        deposit: 10000, rate: 7.5, preset: "kvp10k",
+        title: "₹10,000 at 7.5%: ₹20,000 in 115 months",
+        body: "₹10,000 at 7.5% doubles in 115 months to ₹20,000, so you earn ₹10,000 of interest, all paid at maturity. On paper the certificate is worth ₹10,750 after 1 year and ₹14,356 after 5 years — but if you encash after 5 years the scheme's table pays only ₹13,700. At the 20% slab plus cess you keep about ₹17,920."
+      },
+      {
+        deposit: 500000, rate: 7.5, preset: "kvp5L",
+        title: "₹5,00,000 at 7.5%: ₹10,00,000 in 115 months",
+        body: "₹5,00,000 at 7.5% doubles in 115 months to ₹10,00,000, so you earn ₹5,00,000 of interest, all paid at maturity. On paper the certificate is worth ₹5,37,500 after 1 year and ₹7,17,815 after 5 years — but if you encash after 5 years the scheme's table pays only ₹6,85,000. At the 20% slab plus cess you keep about ₹8,96,000."
+      },
+      {
+        deposit: 1000, rate: 7.5, preset: "kvpMin",
+        title: "₹1,000 at 7.5%, the minimum: ₹2,000 in 115 months",
+        body: "The smallest deposit the scheme allows — ₹1,000 at 7.5% doubles in 115 months to ₹2,000, so you earn ₹1,000 of interest, all paid at maturity. On paper the certificate is worth ₹1,075 after 1 year and ₹1,436 after 5 years — but if you encash after 5 years the scheme's table pays only ₹1,370. A reminder that the encashment table, not the value on paper, decides what an early exit pays."
+      }
+    ],
+    rateRows: [
+      { rate: "7.5% a year (Oct–Dec 2026)", applies: "Current notified rate", example: "The rate for 1 October to 31 December 2026, notified by the Ministry of Finance on 30 September 2026. It has been 7.5% since 1 April 2023 and is reviewed every quarter — the next review is due around 31 December 2026." },
+      { rate: "₹1,000 minimum, no maximum", applies: "Deposit limits", example: "At least ₹1,000 to open, in multiples of ₹100. There is no maximum, and you can hold any number of certificates. The amount is a single lump sum, paid once when you buy — you cannot add to it later." },
+      { rate: "115 months (9 years 7 months)", applies: "Maturity — your money doubles", example: "At 7.5% a certificate matures after 115 months and pays exactly double the deposit. The period is fixed by the rate on the day you buy — it was 124 months at 6.9% and 120 months at 7.2% — and it never changes for a certificate you already hold." },
+      { rate: "7.5% compounded annually", applies: "How interest works", example: "Interest is added once a year, so the value grows by 7.5% of the previous year's value. Nothing is paid out before maturity — the whole ₹1,00,000 of interest on a ₹1,00,000 certificate arrives at the end. The formula gives ₹1,99,985 at 115 months; the post office rounds the certificate to exactly ₹2,00,000." },
+      { rate: "30 months (2 years 6 months)", applies: "Lock-in", example: "You cannot encash in the first 30 months, except on the death of a holder, forfeiture by a gazetted-officer pledgee, or a court order — then you get the deposit back plus simple interest at the Post Office Savings Account rate for the complete months held." },
+      { rate: "Encashment table (TABLE-5)", applies: "Leaving early", example: "After 30 months you can encash at the fixed table in the scheme — ₹1,171 per ₹1,000 at 2½ to 3 years, ₹1,370 at 5 to 5½ years, ₹1,819 at 9½ years to maturity. On ₹1,00,000 that is ₹1,17,100, ₹1,37,000 and ₹1,81,900. Leaving even a month before maturity costs ₹18,100 on ₹1,00,000." },
+      { rate: "Any adult; minor 10+; guardian; joint up to 3", applies: "Who can buy", example: "A single adult; up to three adults jointly; a minor who has turned ten; or a guardian on behalf of a minor or a person of unsound mind. You buy at a post office or an authorised bank, can move the certificate between post offices, can pledge it for a loan, and can name a nominee." },
+      { rate: "Interest taxable; no 80C; TDS — ask", applies: "Tax", example: "The interest is fully taxable at your slab rate and the deposit gets no deduction under Section 80C. All the interest arrives at maturity, so ask your tax adviser whether to report it each year as it builds up or in the year you receive it. Tax deducted at source on post-office interest applies only for notified schemes, above ₹50,000 of interest a year — ₹1 lakh for a senior citizen — from 1 April 2025; ask your post office whether it deducts TDS on KVP, because the tax is due either way." },
+      { rate: "Reviewed every quarter", applies: "Rate reviews", example: "Small savings rates are set by the Ministry of Finance every quarter. The rate for October to December 2026 was kept unchanged in the office memorandum of 30 September 2026; the next review is due around 31 December 2026 for January to March 2027." }
+    ],
+    rateTableTitle: "KVP rules at a glance",
+    rateTableNote: "The current rate, the deposit limits, the 115-month doubling period, how the interest compounds, the 30-month lock-in, the encashment table, who can buy and the tax on the interest. Every rule here comes from the Kisan Vikas Patra Scheme, 2019 as amended, the Department of Posts or the Ministry of Finance — never from a blog or a competitor.",
+    rateTableConclusion: "The rules are fixed — one deposit, annual compounding, the money doubles at maturity and the rate is locked at purchase. The two judgement calls are the rate you assume and the tax slab you pick, and this page states both plainly: 7.5% is today's notified rate, not a promise for the next certificate you buy, and the after-tax figures use your marginal slab plus 4% cess.",
+    calloutTitle: "Why two calculators disagree on the 5-year value — and which figure annual compounding gives",
+    calloutNote: "On ₹1,00,000 at 7.5%, this calculator gives ₹1,43,563 after 5 years, and credocalc.com shows ₹1,43,568. The ₹5 difference is the method: this page compounds once a year, as the scheme does — ₹1,00,000 × 1.075^5 = ₹1,43,562.93, rounded to ₹1,43,563 — while credocalc's table follows the smooth doubling curve, ₹1,00,000 × 2^(60/115) = ₹1,43,568. The same method explains the 1-year figure: ₹1,07,500 here against credocalc's ₹1,07,501. Neither changes the maturity value: the scheme fixes it at exactly double, ₹2,00,000. A second disagreement is bigger: cready.in compounds quarterly and shows ₹2,03,826 at maturity. KVP compounds annually, not quarterly, so that figure is wrong and is not used here. And the encashment value is lower still — after 5 years the scheme's own table pays ₹1,37,000, which is ₹6,563 less than the value on paper.",
+    faq: [
+      ["What is Kisan Vikas Patra (KVP)?", "Kisan Vikas Patra is a government savings certificate sold at post offices and authorised banks. You pay one lump sum — at least ₹1,000, in multiples of ₹100, with no maximum — and at maturity you get exactly double back. At the current 7.5% a year, compounded annually, that takes 115 months, or 9 years and 7 months. Nothing is paid out before maturity: the whole interest arrives at the end. It suits money you are certain you will not need for nearly a decade and want a government guarantee on."],
+      ["What is the current KVP interest rate?", "7.5% a year, compounded annually, for 1 October to 31 December 2026 (the third quarter of FY 2026-27). The Ministry of Finance kept small-savings rates unchanged in its office memorandum of 30 September 2026, and KVP has paid 7.5% since 1 April 2023. The rate is reviewed every quarter, so the next review is due around 31 December 2026 — and the rate and the doubling period on the day you buy are fixed until maturity."],
+      ["How long does KVP take to double my money?", "In 115 months — 9 years and 7 months — for certificates bought at the current 7.5%. The period depends on the rate when you buy: it was 124 months at 6.9%, 120 months at 7.2%, 113 months at 7.6% and 112 months at 7.7%. Once you buy, your period does not change. A quick check is the rule of 72: 72 ÷ 7.5 is about 9.6 years, close to the official 9 years and 7 months."],
+      ["What will ₹1 lakh in Kisan Vikas Patra be worth?", "₹2,00,000 after 115 months. Likewise ₹50,000 becomes ₹1,00,000, ₹10,000 becomes ₹20,000 and ₹5 lakh becomes ₹10,00,000. All the interest is paid at maturity. The formula gives ₹1,99,985 at 115 months — ₹1,00,000 × 1.075^(115/12) — and the post office rounds the certificate to exactly double, ₹2,00,000."],
+      ["Can I withdraw from KVP before maturity?", "Not in the first 30 months, except on the death of a holder, forfeiture by a gazetted-officer pledgee, or a court order — then you get the deposit back plus simple interest at the Post Office Savings Account rate for the complete months held. After 30 months you can encash at the scheme's fixed table: on ₹1,00,000 that is ₹1,17,100 at 2½ years, ₹1,37,000 at 5 years and ₹1,81,900 at 9½ years. Leaving even a month before maturity costs ₹18,100 on ₹1,00,000."],
+      ["What is the minimum and maximum investment in KVP?", "The minimum is ₹1,000, in multiples of ₹100. There is no maximum, and you can hold any number of certificates. You need KYC documents and a PAN, with extra identification for larger deposits."],
+      ["Is KVP interest taxable, and is TDS deducted?", "Yes — the interest is fully taxable at your slab rate, and the deposit gets no deduction under Section 80C. All the interest arrives at maturity, so ask your tax adviser whether to report it each year as it builds up or in the year you receive it, and use the same approach throughout. Tax deducted at source on post-office interest applies only for notified schemes, above ₹50,000 of interest a year — ₹1 lakh for a senior citizen — from 1 April 2025. Whether your post office deducts TDS on KVP interest is something to ask at the post office; the tax itself is due either way, so this calculator shows the after-tax maturity value from your slab rate plus 4% cess."],
+      ["Does KVP pay anything before maturity?", "No. KVP pays nothing until maturity — it is a growth certificate, not an income scheme. The interest builds up inside the certificate and the whole amount, deposit plus interest, is paid at the end. If you want a monthly income instead, the Post Office Monthly Income Scheme pays every month; if you want the money to compound and be available sooner, a National Savings Certificate matures in 5 years."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
+
+  {
+    key: "pl",
+    kind: "pl",
+    slug: "personal-loan-emi-calculator",
+    title: "Personal Loan EMI Calculator",
+    meta: "Work out your personal loan EMI: ₹5,00,000 at 12% for 5 years is ₹11,122 a month, ₹1,67,333 of interest and ₹6,67,333 in total — plus the processing fee with 18% GST, the amount actually credited to you and the APR, with a year-by-year schedule. Free, instant, and calculated in your browser.",
+    lead: "Enter the loan amount, interest rate and tenure — and get the monthly EMI, total interest, total repayment, the processing fee with 18% GST, the amount actually credited to you and the APR, with the balance listed year by year.",
+    presets: [
+      { id: "pl5L", label: "₹5,00,000 at 12% for 5 years", amount: 500000, rate: 12, months: 60, fee: 1.5 },
+      { id: "pl3L", label: "₹3,00,000 at 11% for 3 years", amount: 300000, rate: 11, months: 36, fee: 1.5 },
+      { id: "pl10L", label: "₹10,00,000 at 13% for 5 years", amount: 1000000, rate: 13, months: 60, fee: 1.5 },
+      { id: "pl2L", label: "₹2,00,000 at 15% for 2 years", amount: 200000, rate: 15, months: 24, fee: 1.5 },
+      { id: "pl1L", label: "₹1,00,000 at 10.5% for 1 year", amount: 100000, rate: 10.5, months: 12, fee: 1.5 }
+    ],
+    defaultPreset: "pl5L",
+    sampleAmount: 500000,
+    sampleRate: 12,
+    sampleMonths: 60,
+    sampleFee: 1.5,
+    notice: "This tool is an estimate for planning: the rate you enter is held steady for the whole tenure, and the figures are illustrative, not a loan offer. It is not financial, tax or legal advice. Your sanction letter and Key Facts Statement decide your actual EMI, charges and APR — check the rules table below before you rely on it.",
+    overviewTitle: "What does a personal loan EMI calculator do?",
+    overview: "A personal loan EMI is the fixed amount you repay every month until the loan is cleared. It bundles two things: the interest charged on what you still owe, and a chunk of principal that reduces the outstanding balance. The total stays the same each month, but the split shifts — early EMIs are mostly interest, while later EMIs are mostly principal. On ₹5,00,000 at 12% for 5 years the EMI is ₹11,122 a month: ₹1,67,333 of interest over the term and ₹6,67,333 repaid in total. This calculator works out the EMI from your own figures, shows the total interest and repayment, the processing fee with 18% GST, the amount actually credited to you, the APR — the true yearly cost — and the balance year by year.",
+    inputNote: "Enter your loan amount first — the rate and tenure are already filled in with the example figures. The fee is optional: leave it at 1.5% to see what a typical fee does to the amount you actually receive.",
+    modelNote: "The EMI uses the standard reducing-balance formula: EMI = P × r × (1+r)^n ÷ ((1+r)^n − 1), where P is the loan amount, r is the monthly interest rate (annual rate ÷ 12 ÷ 100) and n is the tenure in months. Interest is charged each month only on the balance still outstanding. The total repayment comes from the unrounded EMI — total = EMI × n, rounded to the nearest rupee — which is why the rounded EMI times the tenure can differ from the total by a few rupees. The processing fee is a percentage of the loan, rounded to the nearest rupee, with 18% GST on the fee; the net amount credited is the loan minus the fee and GST. The APR is the monthly internal rate of return of the EMIs against the net amount disbursed, times 12 — the method in the RBI's Key Facts Statement illustration — so it is higher than the interest rate whenever a fee is charged.",
+    steps: [
+      ["Enter your loan amount", "From ₹50,000 to ₹40,00,000 — the example uses ₹5,00,000. Borrow only what you actually need: every extra lakh raises both the EMI and the total interest."],
+      ["Set the interest rate", "12% is the example rate. Personal-loan rates in India are indicative at about 10.49% to 24% a year in November 2026, and the rate you are offered depends on your credit score, income and lender — try a higher rate to see what a weaker profile would cost."],
+      ["Set the tenure and the processing fee", "60 months (5 years) is the example, from 12 to 84 months. A longer tenure lowers the EMI but raises the total interest. The fee defaults to 1.5% — set it to 0% if your offer charges no fee, or to your lender's figure."],
+      ["Read the EMI, the total cost and the schedule", "The calculator shows the monthly EMI, the total interest, the total repayment, the fee with GST, the amount actually credited and the APR — then the balance year by year, so you can see how much of each year goes to interest and how much to principal."]
+    ],
+    stories: [
+      {
+        amount: 500000, rate: 12, months: 60, fee: 1.5, preset: "pl5L",
+        title: "₹5,00,000 at 12% for 5 years: ₹11,122 a month",
+        body: "₹5,00,000 at 12% for 60 months costs ₹11,122 a month, ₹1,67,333 of interest and ₹6,67,333 in total. With a 1.5% processing fee the lender deducts ₹7,500 plus ₹1,350 GST, so ₹4,91,150 actually reaches your account — and the APR is 12.79%, not 12%. In Year 1 you pay ₹55,822 of interest and ₹77,645 of principal, leaving ₹4,22,355 still owed; by Year 5 the split has flipped, with only ₹8,285 of interest."
+      },
+      {
+        amount: 300000, rate: 11, months: 36, fee: 1.5, preset: "pl3L",
+        title: "₹3,00,000 at 11% for 3 years: ₹9,822 a month",
+        body: "₹3,00,000 at 11% for 36 months costs ₹9,822 a month, ₹53,578 of interest and ₹3,53,578 in total. With a 1.5% processing fee the lender deducts ₹4,500 plus ₹810 GST, so ₹2,94,690 actually reaches your account — and the APR is 12.24%, not 11%. The shorter tenure keeps the interest low: the same ₹3,00,000 over 5 years would cost far more in total."
+      },
+      {
+        amount: 1000000, rate: 13, months: 60, fee: 1.5, preset: "pl10L",
+        title: "₹10,00,000 at 13% for 5 years: ₹22,753 a month",
+        body: "₹10,00,000 at 13% for 60 months costs ₹22,753 a month, ₹3,65,184 of interest and ₹13,65,184 in total. With a 1.5% processing fee the lender deducts ₹15,000 plus ₹2,700 GST, so ₹9,82,300 actually reaches your account — and the APR is 13.80%, not 13%. At this size the fee alone is ₹17,700, so comparing offers on the APR rather than the headline rate matters."
+      },
+      {
+        amount: 200000, rate: 15, months: 24, fee: 1.5, preset: "pl2L",
+        title: "₹2,00,000 at 15% for 2 years: ₹9,697 a month",
+        body: "₹2,00,000 at 15% for 24 months costs ₹9,697 a month, ₹32,736 of interest and ₹2,32,736 in total. With a 1.5% processing fee the lender deducts ₹3,000 plus ₹540 GST, so ₹1,96,460 actually reaches your account — and the APR is 16.83%, not 15%. A higher rate on a short tenure still costs less in total interest than a lower rate stretched over five years."
+      },
+      {
+        amount: 100000, rate: 10.5, months: 12, fee: 1.5, preset: "pl1L",
+        title: "₹1,00,000 at 10.5% for 1 year: ₹8,815 a month",
+        body: "₹1,00,000 at 10.5% for 12 months costs ₹8,815 a month, ₹5,778 of interest and ₹1,05,778 in total. With a 1.5% processing fee the lender deducts ₹1,500 plus ₹270 GST, so ₹98,230 actually reaches your account — and the APR is 13.89%, not 10.5%. On a one-year loan the fee is a large share of the cost, which is why the APR sits more than three points above the rate."
+      }
+    ],
+    rateRows: [
+      { rate: "10.49%–24% a year (Nov 2026)", applies: "Indicative personal-loan rates", example: "Banks advertise personal loans from about 10.49% a year for top profiles — SBI 10.00–15.00%, HDFC 10.50–21.00%, ICICI 10.65–19.00%, Axis 10.49–22.00%, PNB 10.50–17.05%, Kotak 10.99–24.00% — with NBFCs higher still. Every figure here is indicative for November 2026, not a quote: your sanction letter and Key Facts Statement decide." },
+      { rate: "₹50,000–₹40,00,000", applies: "Loan amount", example: "This calculator covers ₹50,000 to ₹40,00,000. Lenders decide the amount from your income, credit score and existing EMIs — most personal loans in India are far smaller than the ₹40 lakh ceiling, and borrowing only what you need is the cheapest choice." },
+      { rate: "12–84 months (1–7 years)", applies: "Tenure", example: "From 1 year to 7 years. A longer tenure lowers the EMI but raises the total interest sharply: ₹5,00,000 at 11% costs ₹30,290 of interest over 1 year and ₹1,52,273 over 5 years. Pick the shortest tenure whose EMI fits comfortably." },
+      { rate: "0–5% + 18% GST", applies: "Processing fee", example: "Lenders charge a one-time processing fee, usually up to 2% at banks and up to 5% at some NBFCs, with 18% GST on the fee. On ₹5,00,000 at 1.5% that is ₹7,500 + ₹1,350 GST = ₹8,850, so only ₹4,91,150 reaches your account — while the EMI is still charged on the full ₹5,00,000." },
+      { rate: "Reducing balance", applies: "How interest is charged", example: "Interest is charged each month only on the balance still outstanding, so early EMIs are mostly interest and later EMIs are mostly principal. A flat rate charges interest on the full amount for the whole term: 10% flat on ₹1,00,000 for 12 months costs ₹10,000 of interest, the same as about 17.97% reducing — always check which method a quote uses." },
+      { rate: "KFS since 1 October 2024", applies: "Key Facts Statement", example: "The RBI requires every regulated lender to give you a Key Facts Statement before you sign a retail term loan, in a standard format, showing the loan amount, tenure, rate type, every fee and charge, the repayment schedule and the APR — the all-in yearly cost. A charge not in the KFS cannot be levied without your explicit consent." },
+      { rate: "No charge — floating rate, from 1 January 2026", applies: "Prepayment", example: "Under the RBI (Pre-payment Charges on Loans) Directions, 2025, no pre-payment or foreclosure charge may be levied on a floating-rate loan to an individual for a non-business purpose, sanctioned or renewed on or after 1 January 2026, with no minimum lock-in. Most personal loans are fixed-rate, where the lender's own policy in your KFS applies — check it before you prepay." },
+      { rate: "FOIR 40–60% (typical lender practice)", applies: "Eligibility — affordability", example: "Lenders look at your fixed obligations to income ratio (FOIR): all your EMIs, including the new one, as a share of your monthly income. Most banks and NBFCs in India accept about 40% to 60%, depending on income and the loan. This is typical lender practice, not a rule visitbest sets — the lender's own assessment decides." },
+      { rate: "Credit score, income, stability", applies: "Eligibility — what lenders weigh", example: "The lowest rates go to borrowers with a strong credit score, stable income and a good relationship with the lender. A score of 750+ with steady employment is typically what earns the advertised starting rate; a weaker profile can be offered several points higher, or refused." }
+    ],
+    rateTableTitle: "Personal loan rules at a glance",
+    rateTableNote: "The indicative rates for November 2026, the loan limits, the tenure range, the processing fee with GST, how interest is charged, the Key Facts Statement, the prepayment rules and what lenders weigh when they decide. Every rule here comes from the RBI, the lenders' published pages as reported in November 2026 roundups, or the ranking calculators' published tables — never from a single blog.",
+    rateTableConclusion: "The rate is the headline, but the APR is the cost: the fee and GST push the true yearly cost above the rate, and a flat-rate quote can hide a much higher reducing rate. Compare every offer on the same amount and tenure, on the APR in the Key Facts Statement — and borrow for the shortest tenure whose EMI fits your budget.",
+    calloutTitle: "Flat rate vs reducing balance — the quote that looks cheaper and is not",
+    calloutNote: "On ₹1,00,000 for 12 months, 10% flat costs ₹10,000 of interest with an EMI of ₹9,167 — the same as about 17.97% on a reducing balance. The same loan at 10% reducing costs ₹5,499 of interest with an EMI of ₹8,792. A flat rate charges interest on the full amount for the whole term even as you repay it, so a flat quote always costs more than the same number quoted as a reducing rate. If a lender quotes a flat rate, ask for the reducing-balance equivalent and the APR in the Key Facts Statement before you compare it with anything else.",
+    faq: [
+      ["What is a personal loan EMI?", "A personal loan EMI — an Equated Monthly Instalment — is the fixed amount you repay every month until the loan is cleared. It bundles the interest charged on what you still owe with a chunk of principal that reduces the outstanding balance. The total stays the same each month, but the split shifts: early EMIs are mostly interest, later EMIs are mostly principal. Personal loans are unsecured, so no collateral is needed — which is why the rate depends largely on your credit profile and income stability."],
+      ["How is personal loan EMI calculated?", "With the standard reducing-balance formula: EMI = P × r × (1+r)^n ÷ ((1+r)^n − 1), where P is the loan amount, r is the monthly interest rate (annual rate ÷ 12 ÷ 100) and n is the tenure in months. For ₹5,00,000 at 12% for 60 months: r = 0.01, (1.01)^60 is about 1.8167, and the EMI works out to ₹11,122 a month. The total repayment comes from the unrounded EMI — ₹11,122.22 × 60 = ₹6,67,333 — and the total interest is ₹6,67,333 − ₹5,00,000 = ₹1,67,333."],
+      ["What is the EMI on a ₹5 lakh personal loan for 5 years?", "₹11,122 a month at 12%, with ₹1,67,333 of interest and ₹6,67,333 repaid in total. At 11% it is ₹10,871 a month with ₹1,52,273 of interest, and at 13% it is ₹11,377 a month with ₹1,82,592 of interest. The rate you are actually offered depends on your credit score, income and the lender's own underwriting — so use these figures to compare offers, not as a promise of what you will pay."],
+      ["What is the processing fee and GST, and how much do I actually receive?", "The processing fee is a one-time charge, usually up to 2% at banks, with 18% GST on the fee — it is not part of the EMI. On ₹5,00,000 at 1.5% the fee is ₹7,500 and the GST is ₹1,350, so ₹8,850 is deducted and ₹4,91,150 actually reaches your account. The EMI is still charged on the full ₹5,00,000, which is why the APR — 12.79% on the example loan — is higher than the 12% interest rate."],
+      ["What is APR, and why is it higher than the interest rate?", "The APR — Annual Percentage Rate — is the all-in yearly cost of the loan, including the interest rate and every other charge, worked out on the amount actually disbursed. The RBI requires lenders to show it in the Key Facts Statement. It is the monthly internal rate of return of the EMIs against the net amount credited, times 12. On ₹5,00,000 at 11% with a 1.5% fee, the 11% headline rate becomes an APR of 11.78% — and the RBI's own KFS illustration (₹20,000 for 24 months at 15%, ₹400 of fees) gives an APR of 17.07%. Two offers at the same rate can have very different APRs if one carries a higher fee, so compare loans on the APR."],
+      ["Can I prepay a personal loan without charges?", "It depends on the rate type and the date. Under the RBI (Pre-payment Charges on Loans) Directions, 2025, issued on 2 July 2025, no pre-payment or foreclosure charge may be levied on a floating-rate loan to an individual for a non-business purpose, sanctioned or renewed on or after 1 January 2026 — with no minimum lock-in, and regardless of where the money comes from. Most personal loans in India are fixed-rate, where the lender's own policy applies, so check the foreclosure terms in your Key Facts Statement before you prepay."],
+      ["What is a Key Facts Statement, and when must I get one?", "A Key Facts Statement (KFS) is a standard, one-to-two-page summary of a loan's cost and terms that every RBI-regulated lender must give you before you sign a retail or MSME term loan. It became mandatory for loans sanctioned on or after 1 October 2024 under the RBI circular of 15 April 2024. It shows the loan amount, tenure, interest rate type, every fee and charge, the repayment schedule, the APR and the grievance contacts, in a language you understand — and it must stay valid for at least three working days for loans of seven days or more, so you have time to compare."],
+      ["Flat rate vs reducing balance — which costs more?", "A flat rate always costs more than the same number quoted as a reducing rate, because it charges interest on the full loan amount for the whole term even as you repay it. On ₹1,00,000 for 12 months, 10% flat costs ₹10,000 of interest with an EMI of ₹9,167 — the same as about 17.97% on a reducing balance — while 10% reducing costs ₹5,499 of interest with an EMI of ₹8,792. Always confirm which method a quote uses before you compare it with another offer."],
+      ["How much personal loan can I afford?", "Lenders look at your FOIR — your fixed obligations to income ratio: all your EMIs, including the new one, as a share of your monthly income. Most banks and NBFCs in India accept a FOIR of about 40% to 60%, depending on your income and the loan. As a rule of thumb, keep your total EMIs below 30–40% of your monthly take-home pay and well below 50% once all loans are added together. That is typical lender practice, not a rule visitbest sets — and nothing you enter on this page is sent anywhere: every calculation runs entirely in your browser."]
+    ]
+  },
+
+  {
+    key: "td",
+    kind: "td",
+    slug: "post-office-time-deposit-calculator",
+    title: "Post Office Time Deposit Calculator",
+    meta: "Post Office Time Deposit Calculator: ₹1,00,000 for 5 years at 7.5% pays ₹7,714 a year, ₹38,568 in total and ₹1,38,568 back at maturity — with the October–December 2026 rates, the tax on the interest and what you keep if you close early. Free, instant, and calculated in your browser.",
+    lead: "Enter your deposit and tenure — and get the yearly interest, the total interest, the total you get back, the tax on the interest and what you would keep if you closed the deposit early.",
+    presets: [
+      { id: "td1L5y", label: "₹1,00,000 for 5 years", amount: 100000, years: 5, slab: 20, closeMonths: null },
+      { id: "td5L5y", label: "₹5,00,000 for 5 years", amount: 500000, years: 5, slab: 20, closeMonths: null },
+      { id: "td1L1y", label: "₹1,00,000 for 1 year", amount: 100000, years: 1, slab: 0, closeMonths: null },
+      { id: "td2L3y", label: "₹2,00,000 for 3 years", amount: 200000, years: 3, slab: 10, closeMonths: null },
+      { id: "tdEarly", label: "₹1,00,000 for 3 years, closed after 18 months", amount: 100000, years: 3, slab: 0, closeMonths: 18 }
+    ],
+    defaultPreset: "td1L5y",
+    sampleAmount: 100000,
+    sampleYears: 5,
+    sampleSlab: 20,
+    sampleCloseMonths: null,
+    notice: "This tool is an estimate for planning: the rates are the notified rates for October–December 2026, the rate on the day you open a deposit stays fixed for its whole term, and the figures are illustrative, not a deposit offer. It is not financial, tax or legal advice. The post office's own calculation on your deposit decides — check the rules table below before you rely on it.",
+    overviewTitle: "What does a Post Office Time Deposit calculator do?",
+    overview: "A Post Office Time Deposit — the official name for a post office FD — is a lump-sum deposit with the Government of India for a fixed term of 1, 2, 3 or 5 years. The interest is worked out every quarter but paid to you at the end of each year, and the deposit comes back at maturity. On ₹1,00,000 for 5 years at 7.5% you receive ₹7,714 every year: ₹38,568 of interest over the term and ₹1,38,568 back in total. This calculator works out the yearly interest, the total interest and the total you get back from your own figures, shows the tax on the interest at your slab, and tells you what you would keep if you closed the deposit early.",
+    inputNote: "Enter your deposit first — at least ₹1,000, in multiples of ₹100. The tenure picks the rate for you: 6.9% for 1 year, 7.0% for 2 years, 7.1% for 3 years and 7.5% for 5 years (October–December 2026).",
+    modelNote: "The yearly interest is P × ((1 + r ÷ 400)^4 − 1), where P is the deposit and r is the annual rate for your tenure — the interest is compounded quarterly inside each year, then paid out, so every year pays the same amount and the interest does not compound across years. The total interest is the yearly interest times the years, rounded to the nearest rupee from the exact figure. The tax is worked out on the exact total interest at your slab plus 4% cess, then rounded — which is why the after-tax interest and the tax can differ from the total interest by ₹1. The 5-year deposit also saves tax in the deposit year: the deposit qualifies for the old-regime Section 80C deduction, up to ₹1.5 lakh.",
+    steps: [
+      ["Enter your deposit", "From ₹1,000 to ₹1,00,00,000, in multiples of ₹100 — the example uses ₹1,00,000. The scheme itself sets no maximum; the ₹1 crore figure is this calculator's bound."],
+      ["Pick the tenure", "1, 2, 3 or 5 years. The rate follows the tenure: 6.9% for 1 year, 7.0% for 2 years, 7.1% for 3 years and 7.5% for 5 years (October–December 2026). Only the 5-year deposit qualifies for the Section 80C deduction."],
+      ["Pick your tax slab — and, if you like, a closure month", "Choose your income-tax slab to see the interest after tax. Leave the closure month blank for the full term, or enter a month to see what the deposit is worth if you close it early — from 6 months up to the month before maturity (48 months or later for a 5-year deposit)."],
+      ["Read the yearly interest, the total and the tax", "The calculator shows the interest you receive every year, the total interest, the total you get back, the tax and the after-tax interest, the Section 80C saving on a 5-year deposit — and, if you entered a closure month, what you keep and what you get back on closing early."]
+    ],
+    stories: [
+      {
+        amount: 100000, years: 5, slab: 20, closeMonths: null, preset: "td1L5y",
+        title: "₹1,00,000 for 5 years: ₹7,714 a year, ₹1,38,568 back",
+        body: "₹1,00,000 for 5 years at 7.5% pays ₹7,714 every year — ₹38,568 of interest over the term and ₹1,38,568 back in total. At the 20% slab with 4% cess the tax is ₹8,022, leaving ₹30,546 of interest after tax, and the deposit saves ₹20,800 of tax in the year you deposit it (Section 80C). If you reinvested every year's payout at 7.5%, you would have ₹1,44,995 instead — the post office does not reinvest it for you."
+      },
+      {
+        amount: 500000, years: 5, slab: 20, closeMonths: null, preset: "td5L5y",
+        title: "₹5,00,000 for 5 years: ₹38,568 a year, ₹6,92,840 back",
+        body: "₹5,00,000 for 5 years at 7.5% pays ₹38,568 every year — ₹1,92,840 of interest over the term and ₹6,92,840 back in total. At the 20% slab the tax is ₹40,111, leaving ₹1,52,729 of interest after tax, and the deposit saves ₹31,200 of tax in the deposit year (the 80C deduction is capped at ₹1.5 lakh). The yearly interest of ₹38,568 stays below the ₹50,000 TDS threshold, so no TDS is deducted on this deposit alone."
+      },
+      {
+        amount: 100000, years: 1, slab: 0, closeMonths: null, preset: "td1L1y",
+        title: "₹1,00,000 for 1 year: ₹7,081 of interest, ₹1,07,081 back",
+        body: "₹1,00,000 for 1 year at 6.9% pays ₹7,081 of interest and ₹1,07,081 back at maturity — an effective yield of 7.08% a year, because the interest is compounded quarterly inside the year. The 1-year deposit suits money you need soon, but it pays the lowest rate of the four tenures and carries no Section 80C deduction."
+      },
+      {
+        amount: 200000, years: 3, slab: 10, closeMonths: null, preset: "td2L3y",
+        title: "₹2,00,000 for 3 years: ₹14,583 a year, ₹2,43,748 back",
+        body: "₹2,00,000 for 3 years at 7.1% pays ₹14,583 every year — ₹43,748 of interest over the term and ₹2,43,748 back in total. At the 10% slab with 4% cess the tax is ₹4,550, leaving ₹39,198 of interest after tax. The 3-year deposit pays more than the 1 and 2-year deposits, but it does not qualify for the Section 80C deduction — only the 5-year deposit does."
+      },
+      {
+        amount: 100000, years: 3, slab: 0, closeMonths: 18, preset: "tdEarly",
+        title: "₹1,00,000 for 3 years, closed after 18 months: ₹99,700 back",
+        body: "₹1,00,000 for 3 years closed after 18 months keeps only ₹6,991 of interest: the completed year is recalculated at the 1-year rate less 2 points (4.9%), and the extra 6 months earn the 4% savings rate. You were already paid ₹7,291 for the first year, so ₹300 is recovered — and you get back ₹99,700, less than your deposit. Closing early is expensive: held to maturity the same deposit would have paid ₹21,874 of interest."
+      }
+    ],
+    rateRows: [
+      { rate: "6.9% / 7.0% / 7.1% / 7.5% a year (Oct–Dec 2026)", applies: "Interest rates by tenure", example: "1 year 6.9%, 2 years 7.0%, 3 years 7.1%, 5 years 7.5% — notified by the Ministry of Finance (Department of Economic Affairs Office Memorandum F.No.1/4/2019-NS, 30 September 2026) and unchanged since January 2024. The rate on the day you open the deposit stays fixed for the whole term." },
+      { rate: "₹1,000 minimum, multiples of ₹100", applies: "Deposit", example: "One lump-sum deposit per account, at least ₹1,000 and then in multiples of ₹100. There is no maximum deposit in the scheme, and you can open more than one account." },
+      { rate: "1, 2, 3 or 5 years", applies: "Tenures", example: "Four fixed tenures. The 1-year deposit suits money you need soon; the 5-year deposit pays the highest rate and is the only one that qualifies for the old-regime Section 80C deduction." },
+      { rate: "Compounded quarterly, paid yearly", applies: "How interest is paid", example: "Interest is worked out every quarter but paid to you at the end of each year — ₹7,714 a year on ₹1,00,000 at 7.5% — and the deposit comes back at maturity. Interest that is due but not withdrawn earns nothing extra." },
+      { rate: "Extendable, twice", applies: "Extension", example: "A 1, 2, 3 or 5-year deposit can be extended for the same tenure again, twice at most, if you apply within 6 months (1-year), 12 months (2-year) or 18 months (3 and 5-year) of the repayment date, at the rate in force on that date." },
+      { rate: "No withdrawal before 6 months", applies: "Premature closure", example: "After 6 months a 1, 2 or 3-year deposit closed before 1 year earns only the savings-account rate (4%). After 1 year a 2 or 3-year deposit earns the rate for the completed years less 2 points. A 5-year deposit can be closed only after 4 years, and then earns only the 4% savings rate. Interest already paid is recovered." },
+      { rate: "5-year only, up to ₹1.5 lakh", applies: "Section 80C deduction", example: "Only the 5-year Time Deposit qualifies for a deduction on the deposit, up to ₹1.5 lakh a year, under the old tax regime (Section 80C, now Section 123 of the Income-tax Act, 2025). The 1, 2 and 3-year deposits do not qualify." },
+      { rate: "Taxable at your slab", applies: "Tax on interest", example: "All Time Deposit interest is taxable at your income-tax slab, with 4% cess. On ₹1,00,000 for 5 years the ₹38,568 of interest costs ₹8,022 of tax at the 20% slab, leaving ₹30,546." },
+      { rate: "10% TDS above ₹50,000 a year", applies: "TDS", example: "The post office deducts 10% TDS when the interest from your post-office deposits crosses ₹50,000 in a year (₹1,00,000 for senior citizens). TDS is not the final tax — the interest is still taxed at your slab, and the TDS is adjusted against it." }
+    ],
+    rateTableTitle: "Post Office Time Deposit rules at a glance",
+    rateTableNote: "The October–December 2026 rates, the deposit limits, the tenures, how the interest is paid, the extension and premature-closure rules, the Section 80C deduction, the tax on the interest and TDS. Every rule here comes from the National Savings Time Deposit Scheme, 2019 (G.S.R. 922(E)) as amended in November 2023 (G.S.R. 830(E)) and the Ministry of Finance's quarterly rate notification — never from a single blog.",
+    rateTableConclusion: "The rate is only half the story: the interest is paid out every year rather than compounding to maturity, the 5-year deposit is the only one with a tax deduction, and closing early can cost you part of your deposit. Work out the yearly payout, the tax and the early-closure value before you choose a tenure.",
+    calloutTitle: "Why some calculators show ₹1,44,995 for the same deposit — and the post office pays ₹1,38,568",
+    calloutNote: "Some calculators work out the maturity as if the interest were added to the deposit every quarter for the whole term: ₹1,00,000 for 5 years at 7.5% then becomes ₹1,44,995. The scheme does not work that way — the interest is paid out to you every year, and paragraph 7(7) of the scheme says no extra interest is payable on interest that is due but not withdrawn. ₹1,44,995 is what you would have if you reinvested every year's ₹7,714 payout at 7.5% yourself; the post office pays ₹1,38,568. This calculator shows what the post office actually pays, and the reinvested figure beside it so you can compare.",
+    faq: [
+      ["How is Post Office Time Deposit interest calculated?", "Interest is compounded every quarter but paid once a year. Yearly interest = deposit × ((1 + rate ÷ 400)^4 − 1). For ₹1,00,000 in the 5-year Time Deposit at 7.5%, that is ₹7,714 a year, or ₹38,568 over 5 years, plus your ₹1,00,000 back at the end: ₹1,38,568 in all, before tax. The rate is the notified rate for your tenure — 6.9% for 1 year, 7.0% for 2 years, 7.1% for 3 years and 7.5% for 5 years in October–December 2026 — and it stays fixed for the whole term."],
+      ["How much will I get on ₹1 lakh in a Post Office FD for 5 years?", "₹7,714 every year, so ₹38,568 in total, plus your ₹1,00,000 back at the end: ₹1,38,568 in all, before tax. At the 20% slab with 4% cess the tax is ₹8,022, leaving ₹30,546 of interest after tax. The deposit also saves up to ₹20,800 of tax in the year you deposit it, because the 5-year Time Deposit qualifies for the Section 80C deduction under the old tax regime."],
+      ["Why do some calculators show a higher Post Office FD maturity?", "Some calculators add the interest to the deposit every quarter for the whole term, which gives ₹1,44,995 on ₹1,00,000 for 5 years. The Post Office Time Deposit pays the interest out every year, so it does not keep compounding across years — the scheme itself says no extra interest is payable on interest that is due but not withdrawn. This calculator shows what the post office actually pays (₹1,38,568). You could earn a little more by reinvesting each year's payout yourself, at the same rate."],
+      ["What are the current Post Office Time Deposit rates?", "For 1 October to 31 December 2026: 6.9% for 1 year, 7.0% for 2 years, 7.1% for 3 years and 7.5% for 5 years, notified by the Ministry of Finance (Department of Economic Affairs Office Memorandum F.No.1/4/2019-NS, 30 September 2026) and carried by the Department of Posts in SB Order 12/2026. The rates have not changed since January 2024 and are reviewed every quarter — the rate on the day you open a deposit stays fixed for its whole term, so a later change does not affect a deposit you already hold."],
+      ["What do I get if I close a Post Office Time Deposit early?", "Nothing can be withdrawn in the first 6 months. Between 6 and 12 months a 1, 2 or 3-year deposit earns only the 4% savings-account rate. A 2 or 3-year deposit closed after 1 year earns the rate for the completed years less 2 points, with the extra months at the 4% savings rate. A 5-year deposit can be closed only after 4 years, and then earns only the 4% savings rate. Interest already paid at the higher rate is taken back. For example, ₹1,00,000 in a 3-year deposit closed after 18 months keeps ₹6,991 of interest and you get back ₹99,700 — less than your deposit."],
+      ["Is Post Office Time Deposit interest taxable?", "Yes — all Time Deposit interest is taxable at your income-tax slab, with 4% cess, and there is no exemption on the interest. The post office deducts 10% TDS when the interest from your post-office deposits crosses ₹50,000 in a year (₹1,00,000 for senior citizens). The 5-year deposit is the only tenure that qualifies for a deduction on the deposit itself — up to ₹1.5 lakh a year under Section 80C in the old tax regime (now Section 123 of the Income-tax Act, 2025). If your tax is nil, submit the declaration form (Form 121, which replaced Forms 15G and 15H from April 2026) to avoid TDS."],
+      ["Can I extend a Post Office Time Deposit after maturity?", "Yes — a 1, 2, 3 or 5-year deposit can be extended for the same tenure again, twice at most. You must apply within 6 months of the repayment date for a 1-year deposit, 12 months for a 2-year deposit, or 18 months for a 3 or 5-year deposit, and the extended deposit earns the rate in force on the repayment date. You can also choose the extension option when you open the account, and revoke it any time before the repayment date."],
+      ["Who can open a Post Office Time Deposit?", "A single adult, up to three adults jointly, a minor who has turned 10, or a guardian on behalf of a minor or a person of unsound mind. The minimum deposit is ₹1,000, in multiples of ₹100, and there is no maximum — you can also open more than one account. There is no senior-citizen bonus on a Time Deposit: the rates are the same for every age group."],
+      ["Post Office Time Deposit vs bank FD — which is better?", "The post office deposit is backed directly by the Government of India, while a bank fixed deposit is covered by DICGC insurance up to ₹5 lakh per bank per depositor. On rates, the post office was ahead in October 2026: 7.5% for 5 years against about 6.05% at SBI and 6.40% at HDFC Bank for the same term. The post office also pays the interest out every year and offers the Section 80C deduction on the 5-year deposit; a bank FD can usually be broken any time after a week, while a post office deposit cannot be touched for 6 months and a 5-year deposit cannot be closed before 4 years. Nothing you enter on this page is sent anywhere: every calculation runs entirely in your browser."]
+    ]
+  },
+
+  {
+    key: "cl",
+    kind: "cl",
+    slug: "car-loan-emi-calculator",
+    title: "Car Loan EMI Calculator",
+    meta: "Work out your car loan EMI: a ₹10,00,000 car with a ₹2,00,000 down payment — an ₹8,00,000 loan at 9% for 5 years — is ₹16,607 a month, ₹1,96,401 of interest and ₹9,96,401 in total, with the processing fee and 18% GST, the amount paid to the dealer and the APR, plus a year-by-year schedule. Free, instant, and calculated in your browser.",
+    lead: "Enter the car's on-road price and your down payment — and get the loan amount, the monthly EMI, total interest, total repayment, the processing fee with 18% GST, the amount actually paid to the dealer and the APR, with the balance listed year by year.",
+    presets: [
+      { id: "cl8L", label: "₹10,00,000 car, ₹2,00,000 down, 9% for 5 years", price: 1000000, down: 200000, rate: 9, months: 60, fee: 1 },
+      { id: "cl5L", label: "₹6,00,000 car, ₹1,00,000 down, 9.5% for 4 years", price: 600000, down: 100000, rate: 9.5, months: 48, fee: 1 },
+      { id: "cl15L", label: "₹18,00,000 car, ₹3,00,000 down, 8.5% for 7 years", price: 1800000, down: 300000, rate: 8.5, months: 84, fee: 1 },
+      { id: "cl3L", label: "₹4,00,000 car, ₹1,00,000 down, 11% for 2 years", price: 400000, down: 100000, rate: 11, months: 24, fee: 1 },
+      { id: "cl25L", label: "₹30,00,000 car, ₹5,00,000 down, 8.75% for 5 years", price: 3000000, down: 500000, rate: 8.75, months: 60, fee: 1 }
+    ],
+    defaultPreset: "cl8L",
+    samplePrice: 1000000,
+    sampleDown: 200000,
+    sampleRate: 9,
+    sampleMonths: 60,
+    sampleFee: 1,
+    notice: "This tool is an estimate for planning: the rate you enter is held steady for the whole tenure, and the figures are illustrative, not a loan offer. It is not financial, tax or legal advice. Your sanction letter and Key Facts Statement decide your actual EMI, charges and APR — check the rules table below before you rely on it.",
+    overviewTitle: "What does a car loan EMI calculator do?",
+    overview: "A car loan EMI is the fixed amount you repay every month until the loan is cleared. It bundles two things: the interest charged on what you still owe, and a chunk of principal that reduces the outstanding balance. The total stays the same each month, but the split shifts — early EMIs are mostly interest, while later EMIs are mostly principal. The loan itself is the car's on-road price minus your down payment: on a ₹10,00,000 car with ₹2,00,000 down, you borrow ₹8,00,000, and at 9% for 5 years the EMI is ₹16,607 a month — ₹1,96,401 of interest over the term and ₹9,96,401 repaid in total. This calculator works out the loan from your price and down payment, shows the total interest and repayment, the processing fee with 18% GST, the amount actually paid to the dealer, the APR — the true yearly cost — the total cost of the car, and the balance year by year.",
+    inputNote: "Enter the car's on-road price first — the ex-showroom price plus RTO registration and insurance — then your down payment. The rate and tenure are already filled in with the example figures. The fee is optional: leave it at 1% to see what a typical fee does to the amount the dealer receives.",
+    modelNote: "The loan is the on-road price minus the down payment. The EMI uses the standard reducing-balance formula: EMI = P × r × (1+r)^n ÷ ((1+r)^n − 1), where P is the loan amount, r is the monthly interest rate (annual rate ÷ 12 ÷ 100) and n is the tenure in months. Interest is charged each month only on the balance still outstanding. The total repayment comes from the unrounded EMI — total = EMI × n, rounded to the nearest rupee — which is why the rounded EMI times the tenure can differ from the total by a few rupees. The processing fee is a percentage of the loan, rounded to the nearest rupee, with 18% GST on the fee; the net amount paid to the dealer is the loan minus the fee and GST. The APR is the monthly internal rate of return of the EMIs against the net amount disbursed, times 12 — the method in the RBI's Key Facts Statement illustration — so it is higher than the interest rate whenever a fee is charged. The total cost of the car is the on-road price plus the total interest plus the fee and GST.",
+    steps: [
+      ["Enter the on-road price", "From ₹1,00,000 to ₹1,00,00,000 — the example uses ₹10,00,000. The on-road price is the ex-showroom price plus RTO registration and insurance; the ex-showroom price already includes GST, so there is no extra tax to add."],
+      ["Set your down payment", "₹2,00,000 is the example — 20% of the price. Many buyers pay 10% to 20% upfront. A bigger down payment means a smaller loan, a lower EMI and less interest, and it protects you from owing more than the car is worth."],
+      ["Set the rate, tenure and processing fee", "9% for 60 months (5 years) is the example, from 12 to 84 months. New-car loans in India are indicative at about 7.85% to 11.55% a year in November 2026. The fee defaults to 1% — set it to 0% if your offer charges no fee, or to your lender's figure."],
+      ["Read the EMI, the total cost and the schedule", "The calculator shows the loan amount, the monthly EMI, the total interest, the total repayment, the fee with GST, the amount paid to the dealer, the APR and the total cost of the car — then the balance year by year, so you can see how much of each year goes to interest and how much to principal."]
+    ],
+    stories: [
+      {
+        price: 1000000, down: 200000, rate: 9, months: 60, fee: 1, preset: "cl8L",
+        title: "₹10,00,000 car, ₹2,00,000 down, 9% for 5 years: ₹16,607 a month",
+        body: "A ₹10,00,000 car with ₹2,00,000 down leaves an ₹8,00,000 loan. At 9% for 60 months it costs ₹16,607 a month, ₹1,96,401 of interest and ₹9,96,401 in total. With a 1% processing fee the lender deducts ₹8,000 plus ₹1,440 GST, so ₹7,90,560 is paid to the dealer — and the APR is 9.51%, not 9%. In Year 1 you pay ₹66,616 of interest and ₹1,32,664 of principal, leaving ₹6,67,336 still owed; by Year 5 the split has flipped, with only ₹9,385 of interest. All in, the car costs ₹12,05,841."
+      },
+      {
+        price: 600000, down: 100000, rate: 9.5, months: 48, fee: 1, preset: "cl5L",
+        title: "₹6,00,000 car, ₹1,00,000 down, 9.5% for 4 years: ₹12,562 a month",
+        body: "A ₹6,00,000 car with ₹1,00,000 down leaves a ₹5,00,000 loan. At 9.5% for 48 months it costs ₹12,562 a month, ₹1,02,955 of interest and ₹6,02,955 in total. With a 1% processing fee the lender deducts ₹5,000 plus ₹900 GST, so ₹4,94,100 is paid to the dealer — and the APR is 10.13%, not 9.5%. The four-year tenure keeps the interest well below a five-year loan on the same car. All in, the car costs ₹7,08,855."
+      },
+      {
+        price: 1800000, down: 300000, rate: 8.5, months: 84, fee: 1, preset: "cl15L",
+        title: "₹18,00,000 car, ₹3,00,000 down, 8.5% for 7 years: ₹23,755 a month",
+        body: "An ₹18,00,000 car with ₹3,00,000 down leaves a ₹15,00,000 loan. At 8.5% for 84 months it costs ₹23,755 a month, ₹4,95,397 of interest and ₹19,95,397 in total. With a 1% processing fee the lender deducts ₹15,000 plus ₹2,700 GST, so ₹14,82,300 is paid to the dealer — and the APR is 8.87%, not 8.5%. The seven-year tenure keeps the EMI manageable, but a third of what you repay is interest. All in, the car costs ₹23,13,097."
+      },
+      {
+        price: 400000, down: 100000, rate: 11, months: 24, fee: 1, preset: "cl3L",
+        title: "₹4,00,000 car, ₹1,00,000 down, 11% for 2 years: ₹13,982 a month",
+        body: "A ₹4,00,000 car with ₹1,00,000 down leaves a ₹3,00,000 loan — the shape of a typical used-car loan. At 11% for 24 months it costs ₹13,982 a month, ₹35,576 of interest and ₹3,35,576 in total. With a 1% processing fee the lender deducts ₹3,000 plus ₹540 GST, so ₹2,96,460 is paid to the dealer — and the APR is 12.19%, not 11%. Used-car loans run at higher rates than new-car loans, so the short tenure matters: it keeps the total interest low. All in, the car costs ₹4,39,116."
+      },
+      {
+        price: 3000000, down: 500000, rate: 8.75, months: 60, fee: 1, preset: "cl25L",
+        title: "₹30,00,000 car, ₹5,00,000 down, 8.75% for 5 years: ₹51,593 a month",
+        body: "A ₹30,00,000 car with ₹5,00,000 down leaves a ₹25,00,000 loan. At 8.75% for 60 months it costs ₹51,593 a month, ₹5,95,585 of interest and ₹30,95,585 in total. With a 1% processing fee the lender deducts ₹25,000 plus ₹4,500 GST, so ₹24,70,500 is paid to the dealer — and the APR is 9.26%, not 8.75%. At this size a quarter-point difference in the rate is worth tens of thousands, so comparing offers on the APR rather than the headline rate matters. All in, the car costs ₹36,25,085."
+      }
+    ],
+    rateRows: [
+      { rate: "7.85%–11.55% a year (Nov 2026)", applies: "Indicative new-car rates", example: "New-car loans start at about 7.50% a year for top profiles — Canara Bank from 7.50% (7.45% for electric cars), Union Bank from 7.50%, Punjab National Bank from 7.60% floating, Bank of Baroda 7.85%–11.55%, HDFC Bank from 8.15%, ICICI Bank from 8.35%, State Bank of India 8.45%–9.50%. Every figure here is indicative for November 2026, not a quote: your sanction letter and Key Facts Statement decide." },
+      { rate: "₹1,00,000–₹1,00,00,000", applies: "On-road price", example: "This calculator covers cars priced from ₹1 lakh to ₹1 crore on the road. The on-road price is the ex-showroom price plus RTO registration and insurance — the ex-showroom price already includes GST, so there is no extra tax to add. Most lenders fund 85% to 90% of the on-road price for a new car, so the loan is the price minus your down payment." },
+      { rate: "10–20% of the price (typical)", applies: "Down payment", example: "Many buyers pay 10% to 20% of the on-road price upfront. A bigger down payment means a smaller loan, a lower EMI and less interest — each ₹1 lakh less borrowed at 9% for 5 years cuts the EMI by about ₹2,076. Paying at least 20% also protects you from owing more than the car is worth, since a new car loses much of its value in the first year." },
+      { rate: "12–84 months (1–7 years)", applies: "Tenure", example: "From 1 year to 7 years for a new car. A longer tenure lowers the EMI but raises the total interest sharply: ₹8,00,000 at 9% costs ₹1,15,832 of interest over 3 years and ₹2,81,186 over 7 years. Pick the shortest tenure whose EMI fits comfortably — and note that used-car loans are usually capped at 5 years." },
+      { rate: "0–5% + 18% GST", applies: "Processing fee", example: "Lenders charge a one-time processing fee, usually up to 0.5% at banks, with 18% GST on the fee. On ₹8,00,000 at 1% that is ₹8,000 + ₹1,440 GST = ₹9,440, deducted from the disbursement — so the dealer is paid ₹7,90,560, while the EMI is still charged on the full ₹8,00,000. Canara Bank charges 0.25% (₹1,000–₹5,000) and waived it entirely from 1 October to 31 December 2026." },
+      { rate: "Reducing balance", applies: "How interest is charged", example: "Interest is charged each month only on the balance still outstanding, so early EMIs are mostly interest and later EMIs are mostly principal. A flat rate charges interest on the full amount for the whole term: 9% flat on ₹8,00,000 for 60 months costs ₹3,60,000 of interest with an EMI of ₹19,333 — ₹1,63,599 more than 9% reducing — always check which method a quote uses." },
+      { rate: "KFS since 1 October 2024", applies: "Key Facts Statement", example: "The RBI requires every regulated lender to give you a Key Facts Statement before you sign a retail term loan, in a standard format, showing the loan amount, tenure, rate type, every fee and charge, the repayment schedule and the APR — the all-in yearly cost. A charge not in the KFS cannot be levied without your explicit consent." },
+      { rate: "No charge — floating rate, from 1 January 2026", applies: "Prepayment", example: "Under the RBI (Pre-payment Charges on Loans) Directions, 2025, no pre-payment or foreclosure charge may be levied on a floating-rate loan to an individual for a non-business purpose, sanctioned or renewed on or after 1 January 2026, with no minimum lock-in. Most car loans are fixed-rate, where the lender's own policy in your KFS applies — check it before you prepay." },
+      { rate: "11.50%–16% a year (typical)", applies: "Used cars", example: "A loan on a used car costs more: about 11.50% to 16% a year (SBI 10.60%–15.75% for certified pre-owned cars, HDFC 12%–16%), with a shorter tenure — usually up to 5 years — and the car's age plus the tenure usually not exceeding about 10 years. Lenders also fund a smaller share of a used car's value, so expect a bigger down payment than on a new car." }
+    ],
+    rateTableTitle: "Car loan rules at a glance",
+    rateTableNote: "The indicative rates for November 2026, the on-road price and loan limits, the down payment, the tenure range, the processing fee with GST, how interest is charged, the Key Facts Statement, the prepayment rules and how used-car loans differ. Every rule here comes from the RBI, the lenders' published pages as reported in October–November 2026 roundups, or the ranking calculators' published tables — never from a single blog.",
+    rateTableConclusion: "The rate is the headline, but the APR is the cost: the fee and GST push the true yearly cost above the rate, and a flat-rate quote can hide a much higher reducing rate. Compare every offer on the same car price and down payment, on the APR in the Key Facts Statement — and borrow for the shortest tenure whose EMI fits your budget.",
+    calloutTitle: "Flat rate vs reducing balance — the dealer quote that looks cheaper and is not",
+    calloutNote: "On ₹8,00,000 for 60 months, 9% flat costs ₹3,60,000 of interest with an EMI of ₹19,333 — ₹1,63,599 more than 9% on a reducing balance, which costs ₹1,96,401 of interest with an EMI of ₹16,607. A flat rate charges interest on the full loan amount for the whole term even as you repay it, so a flat quote always costs more than the same number quoted as a reducing rate. If a dealer quotes a flat rate, ask for the reducing-balance equivalent and the APR in the Key Facts Statement before you compare it with anything else.",
+    faq: [
+      ["What is a car loan EMI?", "A car loan EMI — an Equated Monthly Instalment — is the fixed amount you repay every month until the loan is cleared. It bundles the interest charged on what you still owe with a chunk of principal that reduces the outstanding balance. The total stays the same each month, but the split shifts: early EMIs are mostly interest, later EMIs are mostly principal. A car loan is secured by the car itself (hypothecation), which is why it usually costs less than an unsecured personal loan."],
+      ["How is car loan EMI calculated?", "With the standard reducing-balance formula: EMI = P × r × (1+r)^n ÷ ((1+r)^n − 1), where P is the loan amount — the on-road price minus your down payment — r is the monthly interest rate (annual rate ÷ 12 ÷ 100) and n is the tenure in months. For a ₹10,00,000 car with ₹2,00,000 down, the loan is ₹8,00,000; at 9% for 60 months r = 0.0075, (1.0075)^60 is about 1.5657, and the EMI works out to ₹16,607 a month. The total repayment comes from the unrounded EMI — ₹16,606.68 × 60 = ₹9,96,401 — and the total interest is ₹9,96,401 − ₹8,00,000 = ₹1,96,401."],
+      ["What is the EMI on an ₹8 lakh car loan for 5 years?", "₹16,607 a month at 9%, with ₹1,96,401 of interest and ₹9,96,401 repaid in total — the loan on a ₹10,00,000 car with a ₹2,00,000 down payment. Over 7 years the same loan is ₹12,871 a month but costs ₹2,81,186 of interest, and over 3 years it is ₹25,440 a month with only ₹1,15,832 of interest. The rate you are actually offered depends on your credit score, income, the car and the lender — so use these figures to compare offers, not as a promise of what you will pay."],
+      ["Is the EMI worked out on the ex-showroom price or the on-road price?", "Your EMI depends on the amount you borrow, and the loan is the on-road price minus your down payment. The ex-showroom price already includes GST, so there is no tax to add on top of it. The on-road price adds RTO registration and insurance, which vary by state. You can pay those yourself or add them to the loan: financing an extra ₹1,00,000 of RTO and insurance on the example loan raises it to ₹9,00,000, the EMI to ₹18,683 a month and the interest to ₹2,20,951 — ₹24,550 more interest than if you paid them upfront."],
+      ["How much down payment do I need for a car loan?", "It depends on the lender and your profile, but many buyers pay 10% to 20% of the on-road price. A bigger down payment lowers both the EMI and the total interest — each ₹1 lakh less borrowed at 9% for 5 years cuts the EMI by about ₹2,076 — and paying at least 20% protects you from owing more than the car is worth after its first-year depreciation. Financial planners also use the 20/4/10 rule as a guide: at least 20% down, a tenure of no more than 4 years, and the EMI plus fuel below 10% of your gross income. That is guidance, not a lender rule."],
+      ["What is the processing fee and GST, and how much does the dealer receive?", "The processing fee is a one-time charge, usually up to 0.5% at banks, with 18% GST on the fee — it is not part of the EMI. On an ₹8,00,000 loan at 1% the fee is ₹8,000 and the GST is ₹1,440, so ₹9,440 is deducted and ₹7,90,560 is paid to the dealer. The EMI is still charged on the full ₹8,00,000, which is why the APR — 9.51% on the example loan — is higher than the 9% interest rate."],
+      ["What is APR, and why is it higher than the interest rate?", "The APR — Annual Percentage Rate — is the all-in yearly cost of the loan, including the interest rate and every other charge, worked out on the amount actually disbursed. The RBI requires lenders to show it in the Key Facts Statement. It is the monthly internal rate of return of the EMIs against the net amount disbursed, times 12. On an ₹8,00,000 loan at 9% with a 1% fee, the 9% headline rate becomes an APR of 9.51% — and the RBI's own KFS illustration (₹20,000 for 24 months at 15%, ₹400 of fees) gives an APR of 17.07%. Two offers at the same rate can have very different APRs if one carries a higher fee, so compare loans on the APR."],
+      ["Can I prepay a car loan without charges?", "It depends on the rate type and the date. Under the RBI (Pre-payment Charges on Loans) Directions, 2025, issued on 2 July 2025, no pre-payment or foreclosure charge may be levied on a floating-rate loan to an individual for a non-business purpose, sanctioned or renewed on or after 1 January 2026 — with no minimum lock-in, and regardless of where the money comes from. Most car loans in India are fixed-rate, where the lender's own policy applies, so check the foreclosure terms in your Key Facts Statement before you prepay."],
+      ["How is a used-car loan different from a new-car loan?", "Three ways: the rate is higher, the tenure is shorter, and the lender funds less of the car's value. Used-car loans run at about 11.50% to 16% a year — SBI charges 10.60% to 15.75% for certified pre-owned cars and HDFC 12% to 16% — against about 7.85% to 11.55% for a new car. Tenure is usually capped at 5 years, and the car's age plus the tenure usually must not exceed about 10 years, so an older car gets a shorter loan. The loan-to-value also falls with the car's age, so expect a bigger down payment than the 10% to 20% that is typical on a new car. This calculator works for a used car too: enter its price and your down payment, and set the higher rate and shorter tenure."]
+    ]
+  },
+
+  {
+    key: "apy",
+    kind: "apy",
+    slug: "apy-calculator",
+    title: "APY Calculator",
+    meta: "Work out your Atal Pension Yojana contribution: joining at 25 for a ₹5,000 pension costs ₹376 a month for 35 years — ₹1,57,920 in all — for ₹5,000 a month for life from 60, the same to your spouse, and ₹8,50,000 to your nominee. Free, instant, and calculated in your browser.",
+    lead: "Enter the age you join at and the pension you want from 60 — and get the contribution the government prescribes for you, the years you pay, the total you pay in, the pension for life, the same pension for your spouse, and the corpus your nominee receives.",
+    presets: [
+      { id: "apy25", label: "Joining at 25 for a ₹5,000 pension, monthly", age: 25, pension: 5000, frequency: "monthly" },
+      { id: "apy18", label: "Joining at 18 for a ₹5,000 pension, monthly", age: 18, pension: 5000, frequency: "monthly" },
+      { id: "apy30", label: "Joining at 30 for a ₹3,000 pension, monthly", age: 30, pension: 3000, frequency: "monthly" },
+      { id: "apy35", label: "Joining at 35 for a ₹5,000 pension, quarterly", age: 35, pension: 5000, frequency: "quarterly" },
+      { id: "apy40", label: "Joining at 40 for a ₹5,000 pension, monthly", age: 40, pension: 5000, frequency: "monthly" }
+    ],
+    defaultPreset: "apy25",
+    sampleAge: 25,
+    samplePension: 5000,
+    sampleFrequency: "monthly",
+    notice: "This tool reads the government's own contribution chart — the amounts are fixed by your age at joining and the pension you choose, not worked out from a formula. It is an estimate for planning, not financial, tax or legal advice. The bank or post office where you open the account applies the prescribed amount — check the rules table below before you rely on it.",
+    overviewTitle: "What does an APY calculator tell you?",
+    overview: "The Atal Pension Yojana is a government-backed pension scheme for workers without a formal pension, run by the Pension Fund Regulatory and Development Authority (PFRDA) under the National Pension System architecture, launched on 1 June 2015. You pick a guaranteed monthly pension of ₹1,000 to ₹5,000 from age 60, pay a fixed contribution until 60, and the government guarantees the pension even if investment returns fall short. Joining at 25 for a ₹5,000 pension costs ₹376 a month for 35 years — ₹1,57,920 in all; joining at 40 costs ₹1,454 a month for 20 years — ₹3,48,960 — for the same pension. After you, your spouse gets the same pension for life; after both of you, your nominee gets the corpus — ₹8,50,000 for the ₹5,000 slab.",
+    inputNote: "Enter the age you will be when you join — from 18 to 40 — then pick the pension you want from 60 and how often you want to pay. The example is filled in with a 25-year-old joining for a ₹5,000 pension, paying monthly.",
+    modelNote: "There is no formula to work out — the contribution is read from the government's prescribed chart (Annex-1 of the 16 October 2015 notification): one amount for each joining age, pension slab and payment frequency. The years you pay are 60 minus your joining age, and the total is the amount per payment times the number of payments — monthly means 12 payments a year, quarterly 4, half-yearly 2. The quarterly and half-yearly amounts are slightly less than three and six times the monthly amount, because money paid in advance earns an extra period of return — so paying half-yearly costs less in total than paying monthly for the same pension. The pension from 60 is the slab you chose, paid for life; your spouse gets the same amount for life after you; and after both of you, your nominee receives the corpus — ₹1,70,000 for a ₹1,000 pension, ₹3,40,000 for ₹2,000, ₹5,10,000 for ₹3,000, ₹6,80,000 for ₹4,000 and ₹8,50,000 for ₹5,000.",
+    steps: [
+      ["Enter your joining age", "From 18 to 40 — the scheme only takes members in that window, because it needs at least 20 years of contributions before 60. The example uses 25."],
+      ["Pick your pension from 60", "₹1,000, ₹2,000, ₹3,000, ₹4,000 or ₹5,000 a month, for life. The example uses ₹5,000 — the most the scheme pays. You can move to a higher or lower slab once a year, in April."],
+      ["Choose how often you pay", "Monthly, quarterly or half-yearly, by auto-debit from your savings account. The amount is prescribed separately for each frequency — quarterly and half-yearly are slightly less than three and six times the monthly figure, so they cost less in total."],
+      ["Read your contribution, total and family benefits", "The calculator shows what you pay each time, how many years you pay, the total you pay in, the pension from 60, the same pension for your spouse, and the corpus your nominee receives — plus what it costs to join later instead of now."]
+    ],
+    stories: [
+      {
+        age: 25, pension: 5000, frequency: "monthly", preset: "apy25",
+        title: "Joining at 25 for ₹5,000, monthly: ₹376 a month",
+        body: "Joining at 25 for a ₹5,000 pension costs ₹376 a month for 35 years — ₹1,57,920 in all. From 60 you get ₹5,000 a month for life; after you, your spouse gets the same ₹5,000 a month for life; and after both of you, your nominee gets ₹8,50,000. Join at 30 instead and the same pension costs ₹577 a month and ₹2,07,720 in all — ₹201 more a month and ₹49,800 more in total."
+      },
+      {
+        age: 18, pension: 5000, frequency: "monthly", preset: "apy18",
+        title: "Joining at 18 for ₹5,000, monthly: ₹210 a month",
+        body: "Joining at 18 for a ₹5,000 pension costs ₹210 a month for 42 years — ₹1,05,840 in all, the cheapest entry in the whole chart. From 60 you get ₹5,000 a month for life, your spouse gets the same after you, and your nominee gets ₹8,50,000. Waiting until 40 for the same pension costs ₹1,454 a month and ₹3,48,960 in all — ₹2,43,120 more for the same ₹5,000 a month."
+      },
+      {
+        age: 30, pension: 3000, frequency: "monthly", preset: "apy30",
+        title: "Joining at 30 for ₹3,000, monthly: ₹347 a month",
+        body: "Joining at 30 for a ₹3,000 pension costs ₹347 a month for 30 years — ₹1,24,920 in all. From 60 you get ₹3,000 a month for life, your spouse gets the same after you, and your nominee gets ₹5,10,000. The same slab at 25 costs ₹226 a month and ₹94,920 in all — ₹30,000 less for joining five years earlier."
+      },
+      {
+        age: 35, pension: 5000, frequency: "quarterly", preset: "apy35",
+        title: "Joining at 35 for ₹5,000, quarterly: ₹2,688 every three months",
+        body: "Joining at 35 for a ₹5,000 pension costs ₹2,688 every three months for 25 years — ₹2,68,800 in all. Paying monthly instead would cost ₹902 a month and ₹2,70,600 in all, so the quarterly route saves ₹1,800 over the term. From 60 you get ₹5,000 a month for life, your spouse gets the same after you, and your nominee gets ₹8,50,000."
+      },
+      {
+        age: 40, pension: 5000, frequency: "monthly", preset: "apy40",
+        title: "Joining at 40 for ₹5,000, monthly: ₹1,454 a month",
+        body: "Joining at 40 — the last age the scheme accepts — for a ₹5,000 pension costs ₹1,454 a month for 20 years — ₹3,48,960 in all. From 60 you get ₹5,000 a month for life, your spouse gets the same after you, and your nominee gets ₹8,50,000. It is the most expensive entry in the chart: the same pension costs ₹210 a month at 18, ₹1,244 a month less."
+      }
+    ],
+    rateRows: [
+      { rate: "18–40 years", applies: "Who can join", example: "Indian citizens aged 18 to 40 with a savings bank or post office savings account. You must join by your 40th birthday — the scheme needs at least 20 years of contributions before 60." },
+      { rate: "Not an income-tax payer (from 1 October 2022)", applies: "The tax-payer bar", example: "Since 1 October 2022, any citizen who is or has been an income-tax payer cannot open a new APY account. PFRDA states the rule on its APY page. If you pay income tax, the NPS calculator is the market-linked alternative." },
+      { rate: "₹1,000–₹5,000 a month", applies: "The guaranteed pension", example: "Five fixed slabs, paid monthly from age 60 for life, guaranteed by the Government of India even if investment returns fall short. The same amount then goes to your spouse for life, and the corpus — ₹1.7 lakh to ₹8.5 lakh — goes to your nominee." },
+      { rate: "Fixed by the chart", applies: "Your contribution", example: "One prescribed amount for each joining age, pension slab and payment frequency, from Annex-1 of the 16 October 2015 notification (F. No. 16/1/2015-PR). It stays the same until 60. At 25 for ₹5,000 it is ₹376 a month; at 40 it is ₹1,454." },
+      { rate: "Monthly, quarterly or half-yearly", applies: "How you pay", example: "Auto-debit from your linked savings account until 60. Quarterly and half-yearly amounts are prescribed separately and are slightly less than three and six times the monthly amount — at 25 for ₹3,000: ₹226 a month, ₹674 a quarter or ₹1,334 every six months." },
+      { rate: "₹1 a month per ₹100", applies: "Late payment", example: "A missed contribution attracts overdue interest of ₹1 a month for every ₹100 of contribution, or part of it — on ₹376 that is ₹4 a month of delay — and the interest stays in your account. The account is frozen after 6 months without payment, deactivated after 12 and closed after 24, but it can be revived by paying the dues. Older guides still quote a slab schedule (₹1/₹2/₹5/₹10) — confirm the current charge with your bank." },
+      { rate: "Once a year, in April", applies: "Changing your pension slab", example: "You can move to a higher or lower pension slab once a year, currently in April. Your contribution changes to the chart amount for the new slab at your joining age." },
+      { rate: "80CCD(1) + 80CCD(1B)", applies: "Tax benefits", example: "APY contributions get the same tax treatment as NPS under Notification No. 7/2016: deductible under Section 80CCD(1) within the ₹1,50,000 Section 80C limit, plus up to ₹50,000 more under Section 80CCD(1B). Both apply under the old regime only — the new regime does not allow them." },
+      { rate: "To FY 2030-31", applies: "Scheme continuation", example: "The Union Cabinet approved continuing APY through the 2030-31 financial year on 21 January 2026. The maximum pension stays ₹5,000 a month — reports about raising it to ₹10,000 have no notification behind them." }
+    ],
+    rateTableTitle: "APY rules at a glance",
+    rateTableNote: "Who can join, the tax-payer bar, the guaranteed pension, how the contribution is fixed, how you pay, late payment, changing your slab, tax benefits and how long the scheme runs. Every rule here comes from the government's own notification, PFRDA's APY page, or the PFRDA FAQs as checked in November 2026 — never from a single blog.",
+    rateTableConclusion: "The contribution is fixed by the chart, not by the market — so the only decision that changes what you pay is when you join and which slab you pick. Joining early is worth far more than picking a bigger slab late: at 18 the ₹5,000 pension costs ₹210 a month, and at 40 it costs ₹1,454.",
+    calloutTitle: "The quarterly and half-yearly figures are NOT three and six times the monthly figure",
+    calloutNote: "At 25 for a ₹3,000 pension, the prescribed amounts are ₹226 a month, ₹674 a quarter and ₹1,334 every six months — not ₹678 and ₹1,356. Money paid in advance earns an extra period of return, so the prescribed quarterly and half-yearly amounts are slightly lower, and paying half-yearly costs ₹1,540 less in total over 35 years than paying monthly. Some calculators and guides simply multiply the monthly figure by 3 or 6 — this page uses the prescribed Annex-1 amounts. Two guides checked in this run print different quarterly figures (blogbanking's ₹1,136 a quarter at 25 for ₹5,000; ClearTax's ₹1,119) — neither matches the notified chart's ₹1,121, so neither is used here.",
+    faq: [
+      ["How much do I pay in Atal Pension Yojana for a ₹5,000 pension?", "It depends on your age when you join: ₹210 a month at 18, ₹376 at 25, ₹577 at 30, ₹902 at 35 and ₹1,454 at 40. You pay until 60, and the amount stays the same throughout. The same pension costs ₹1,05,840 in total at 18 and ₹3,48,960 at 40."],
+      ["What does the nominee get in APY?", "After the subscriber and then the spouse have both died, the nominee gets the pension wealth built up until the subscriber turned 60. The chart shows ₹1,70,000 for a ₹1,000 pension, ₹3,40,000 for ₹2,000, ₹5,10,000 for ₹3,000, ₹6,80,000 for ₹4,000 and ₹8,50,000 for ₹5,000."],
+      ["Can I pay APY quarterly or half-yearly?", "Yes. The bank can auto-debit monthly, quarterly or half-yearly. Each has its own prescribed amount in the chart: for a ₹5,000 pension at 25 it is ₹376 a month, ₹1,121 a quarter or ₹2,219 every six months — slightly less than three and six times the monthly figure, because money paid in advance earns an extra period of return."],
+      ["Who cannot join APY?", "Anyone below 18 or above 40, anyone without a savings bank or post office savings account, and — since 1 October 2022 — anyone who is or has been an income-tax payer. If you pay income tax, use the NPS calculator instead: NPS has no ₹5,000 pension cap and no tax-payer bar, but its pension is market-linked, not guaranteed."],
+      ["What happens if I miss an APY payment?", "The bank collects the missed contribution later with overdue interest of ₹1 a month for every ₹100 of contribution, or part of it: on a ₹376 monthly contribution that is ₹4 for each month of delay. The interest stays in your pension account. If you miss six months in a row the account is frozen, after twelve it is deactivated and after twenty-four it is closed — but it can be revived by paying the dues with the overdue interest. Older guides still quote a slab schedule (₹1, ₹2, ₹5 or ₹10 a month) — confirm the current charge with your bank."],
+      ["Can I exit APY before 60?", "Voluntary exit before 60 is allowed, but you get back only your own contributions with the net income actually earned on them, after charges — not the guaranteed pension. If you received a government co-contribution, that and the interest on it are not returned. If the subscriber dies before 60, the spouse can keep contributing until the subscriber would have turned 60 and then draw the same pension, or take the accumulated corpus."],
+      ["Can I change my APY pension amount later?", "Yes. You can move to a higher or lower pension slab once a year, currently in April. Your contribution changes to the chart amount for the new slab at your joining age — so moving up at 25 costs far less than moving up at 40."],
+      ["Is APY better than NPS?", "They do different jobs. APY guarantees a fixed pension of ₹1,000 to ₹5,000 a month from 60, for life, with the same to your spouse and a fixed corpus to your nominee — but only if you are not an income-tax payer, and the pension never rises above ₹5,000. NPS has no pension cap and no tax-payer bar, but what you get depends on market returns and the annuity rate at retirement. Many people who can join APY use it as a guaranteed floor and NPS for the rest."],
+      ["How do I join APY?", "At any bank branch or post office where you hold a savings account, with your Aadhaar and mobile number — or online through eAPY on the NPSCRA portal. Your Permanent Retirement Account Number (PRAN) is your APY account identifier. Contributions are auto-debited from the linked account until you turn 60. The scheme runs through the 2030-31 financial year."]
+    ]
+  },
+
+  {
+    key: "swp",
+    kind: "swp",
+    slug: "swp-calculator",
+    title: "SWP Calculator",
+    meta: "Work out what a Systematic Withdrawal Plan pays you: ₹1 crore at 8% pays ₹50,000 a month for 20 years — ₹1,20,00,000 in all — and still leaves ₹1,98,17,007. Free, instant, and calculated in your browser.",
+    lead: "Enter your lump-sum corpus, the monthly withdrawal you want, the return you expect and how long the plan should run — and see what you draw in total, what the fund earns, what is left at the end, the balance year by year, and how long the money lasts.",
+    presets: [
+      { id: "swp-retiree", label: "₹1 crore, ₹50,000 a month, 8%, 20 years", corpus: 10000000, withdrawal: 50000, rate: 8, years: 20 },
+      { id: "swp-10lakh", label: "₹10 lakh, ₹10,000 a month, 10%, 10 years", corpus: 1000000, withdrawal: 10000, rate: 10, years: 10 },
+      { id: "swp-20lakh", label: "₹20 lakh, ₹15,000 a month, 8%, 20 years", corpus: 2000000, withdrawal: 15000, rate: 8, years: 20 },
+      { id: "swp-50lakh", label: "₹50 lakh, ₹40,000 a month, 9%, 15 years", corpus: 5000000, withdrawal: 40000, rate: 9, years: 15 },
+      { id: "swp-deplete", label: "₹10 lakh, ₹25,000 a month, 6%, 10 years", corpus: 1000000, withdrawal: 25000, rate: 6, years: 10 }
+    ],
+    defaultPreset: "swp-retiree",
+    sampleCorpus: 10000000,
+    sampleWithdrawal: 50000,
+    sampleRate: 8,
+    sampleYears: 20,
+    notice: "This tool simulates a fixed monthly withdrawal against a fixed expected return — it is a planning estimate, not investment advice and not a promise of returns. Mutual fund returns vary with the market, and the tax on each withdrawal depends on the fund and how long you held the units — check the rules table below before you rely on it.",
+    overviewTitle: "What does an SWP calculator tell you?",
+    overview: "A Systematic Withdrawal Plan (SWP) lets you draw a fixed monthly amount from a mutual fund investment while the rest stays invested and keeps earning. You invest a lump sum once, set a monthly withdrawal, and the fund pays it into your bank account each month — redeeming just enough units to cover it — while the remaining units keep growing. ₹1 crore at 8% a year pays ₹50,000 a month for 20 years — ₹1,20,00,000 in all — and still leaves ₹1,98,17,007, because the fund earns ₹2,18,17,007 over the same period. Withdraw more than the fund earns each month and the corpus shrinks; withdraw less and it grows while it pays you.",
+    inputNote: "Enter the lump sum you invest, the fixed amount you want each month, the annual return you expect and how many years the plan should run. The example is filled in with a ₹1 crore corpus paying ₹50,000 a month at 8% for 20 years.",
+    modelNote: "Each month the fund grows by one-twelfth of the annual return, then your withdrawal comes out at the end of the month: balance = balance × (1 + annual return ÷ 12) − monthly withdrawal. The total you draw is the monthly withdrawal times the number of months — with a smaller final payment if the corpus runs out mid-plan. The returns earned are the total drawn plus the final balance, minus the corpus you started with. The 'how long it lasts' figure keeps the same monthly simulation running — up to 600 months, or 50 years — and reports the month the balance reaches zero. If your withdrawal is no more than the monthly growth, the balance never falls: it stays flat or grows, and the money lasts beyond 50 years. The return is a single fixed assumption — real funds vary month to month, so treat the result as a planning estimate, not a promise.",
+    steps: [
+      ["Enter your lump-sum corpus", "The one-time amount invested in the fund. The example uses ₹1,00,00,000 — a retirement corpus built up over a working life."],
+      ["Set your monthly withdrawal", "The fixed amount the fund pays you each month. The example uses ₹50,000 — 6% of the corpus a year, below the 8% the fund is assumed to earn."],
+      ["Enter the expected annual return", "What the fund earns a year, before tax. The example uses 8% — an assumption for illustration, not a forecast. Actual returns vary with the market, and a bad early run depletes a corpus faster than a steady-rate projection."],
+      ["Read the total, the returns and how long it lasts", "The calculator shows what you draw in total, what the fund earns, what is left at the end, the balance year by year — and the month the money runs out, if withdrawals outpace growth."]
+    ],
+    stories: [
+      {
+        corpus: 10000000, withdrawal: 50000, rate: 8, years: 20, preset: "swp-retiree",
+        title: "₹1 crore, ₹50,000 a month, 8%, 20 years: ₹1,98,17,007 left",
+        body: "₹1 crore at 8% pays ₹50,000 a month for 20 years — ₹1,20,00,000 in all — and ₹1,98,17,007 is still left at the end. The fund earned ₹2,18,17,007 over the period, more than the ₹1,20,00,000 drawn, so the corpus nearly doubled while paying a monthly income. At this withdrawal the money lasts beyond 50 years — ₹50,000 a month is below the ₹66,667 the corpus earns in the first month, and the gap only widens."
+      },
+      {
+        corpus: 1000000, withdrawal: 10000, rate: 10, years: 10, preset: "swp-10lakh",
+        title: "₹10 lakh, ₹10,000 a month, 10%, 10 years: ₹6,58,592 left",
+        body: "₹10 lakh at 10% pays ₹10,000 a month for 10 years — ₹12,00,000 in all — and ₹6,58,592 is still left. The fund earned ₹8,58,592. After the first year the balance is ₹9,79,057, and the money lasts 18 years in all (month 216) at this rate. The same figures appear on onlycalculators.com's SWP calculator."
+      },
+      {
+        corpus: 2000000, withdrawal: 15000, rate: 8, years: 20, preset: "swp-20lakh",
+        title: "₹20 lakh, ₹15,000 a month, 8%, 20 years: ₹10,18,299 left",
+        body: "₹20 lakh at 8% pays ₹15,000 a month for 20 years — ₹36,00,000 in all — and ₹10,18,299 is still left. The fund earned ₹26,18,299. The money lasts 27 years 7 months (month 331) at this rate. Note the convention: this page divides the annual return by 12 and withdraws at month end; a calculator that compounds the monthly rate instead gives about ₹7,86,928 for the same inputs — see the note below the method."
+      },
+      {
+        corpus: 5000000, withdrawal: 40000, rate: 9, years: 15, preset: "swp-50lakh",
+        title: "₹50 lakh, ₹40,000 a month, 9%, 15 years: ₹40,53,986 left",
+        body: "₹50 lakh at 9% pays ₹40,000 a month for 15 years — ₹72,00,000 in all — and ₹40,53,986 is still left. The fund earned ₹62,53,986. The money lasts 31 years (month 372) at this rate — the withdrawal is 9.6% of the corpus a year, just above the 9% return, so the balance falls slowly and lasts well past the 15-year plan."
+      },
+      {
+        corpus: 1000000, withdrawal: 25000, rate: 6, years: 10, preset: "swp-deplete",
+        title: "₹10 lakh, ₹25,000 a month, 6%, 10 years: runs out in month 45",
+        body: "₹10 lakh at 6% cannot sustain ₹25,000 a month: the fund earns about ₹5,000 a month at first while you draw ₹25,000, so the balance falls by roughly ₹20,000 a month — and faster later, as the growth shrinks with the balance. The corpus runs out in month 45 — 3 years 9 months in — after paying ₹11,18,517 in all, the last payment a part-payment of ₹18,517. The fund earned only ₹1,18,517 in total."
+      }
+    ],
+    rateRows: [
+      { rate: "Monthly or quarterly", applies: "How often you can withdraw", example: "Most funds offer monthly and quarterly SWP; some offer weekly, half-yearly or annual. The dates and frequencies are set in each scheme's document — this calculator models monthly withdrawals, the most common choice." },
+      { rate: "Set by the scheme", applies: "Minimum withdrawal", example: "Each fund house sets its own minimum in the scheme document — SBI's schemes allow ₹500 a month, Axis ₹1,000. There is no single minimum for all funds; check the scheme you hold." },
+      { rate: "A partial redemption", applies: "What each withdrawal is", example: "Every SWP payment redeems just enough units at that day's NAV to cover the amount. The units left stay invested and keep growing — the fund does not pay you interest, it sells units." },
+      { rate: "12.5% above ₹1.25 lakh", applies: "Equity-fund gains over 12 months (LTCG)", example: "Gains on equity-fund units held more than 12 months are taxed at 12.5% on gains above ₹1.25 lakh a year (section 112A, Finance (No. 2) Act 2024, from 23 July 2024). Only the gains part of each withdrawal is taxed, not the whole payment." },
+      { rate: "20%", applies: "Equity-fund gains within 12 months (STCG)", example: "Gains on equity-fund units held 12 months or less are taxed at 20% (section 111A, Finance (No. 2) Act 2024, from 23 July 2024)." },
+      { rate: "Your slab rate", applies: "Debt-fund gains", example: "Gains on debt-oriented funds bought on or after 1 April 2023 are added to your income and taxed at your slab rate. Confirm the current rates with your tax adviser — they change with the Finance Act." },
+      { rate: "If the scheme charges one", applies: "Exit load", example: "Some schemes charge an exit load if you redeem within a set period after investing — SWP redemptions attract the same load as any other redemption. Check the scheme document before you start." },
+      { rate: "Not guaranteed", applies: "The return", example: "Mutual fund returns are market-linked and vary — the 8% in the example is an assumption for illustration. A bad early sequence of returns can deplete a corpus faster than a fixed-rate projection suggests. (AMFI: 'Mutual Fund investments are subject to market risks.')" }
+    ],
+    rateTableTitle: "SWP rules at a glance",
+    rateTableNote: "How often you can withdraw, the minimum, what a withdrawal is, the tax on equity and debt funds, exit loads and the fact that returns are not guaranteed. Every rule here comes from AMFI's investor-education material, scheme documents filed with AMFI, or the Finance (No. 2) Act 2024 — never from a single blog.",
+    rateTableConclusion: "The withdrawal rate decides everything: draw less than the fund earns each month and the corpus grows while it pays you; draw more and it shrinks a little faster every month, because each withdrawal leaves less to earn the next month's growth.",
+    calloutTitle: "The withdrawal comes out AFTER the month's growth — and the monthly rate is the annual rate divided by 12",
+    calloutNote: "This page takes the withdrawal at the end of each month, after that month's growth is added — the same order onlycalculators.com uses, and the order in its published formula. Some calculators take the withdrawal at the start of the month, or convert the annual return to a monthly rate by compounding ((1 + r)^(1/12) − 1) instead of dividing by 12. Those choices change the answer: on ₹20 lakh at 8% with ₹15,000 a month for 20 years, this page gives ₹10,18,299 left and 27 years 7 months; a calculator using the compounded monthly rate gives about ₹7,86,928 and 25 years 5 months. Neither is wrong — they are different conventions. Check which one a calculator uses before comparing figures.",
+    faq: [
+      ["How does an SWP calculator work?", "It simulates your corpus month by month: each month the balance grows by one-twelfth of the annual return you enter, then your monthly withdrawal comes out at the end of the month. After the period you chose, it reports the total drawn, the returns earned and the balance left — and it keeps the simulation running, up to 50 years, to say how long the money lasts. The formula is: balance = balance × (1 + annual return ÷ 12) − monthly withdrawal."],
+      ["How long will ₹1 crore last with ₹50,000 a month at 8%?", "Beyond 50 years. ₹50,000 a month is 6% of the corpus a year, below the 8% the fund earns, so the balance grows while it pays you: after 20 years you have drawn ₹1,20,00,000 and ₹1,98,17,007 is still left. The money only runs out if the withdrawal exceeds the monthly growth — the balance then shrinks, and shrinks faster as the growth falls with it."],
+      ["What happens if my withdrawal is more than the returns?", "The corpus shrinks, and it shrinks faster over time — each withdrawal leaves less to earn the next month's growth. ₹10 lakh at 6% with ₹25,000 a month runs out in month 45 (3 years 9 months), after paying ₹11,18,517 in all, the last payment a part-payment of ₹18,517. The calculator shows the exact month the money runs out, so check it before you fix a withdrawal."],
+      ["How is an SWP taxed?", "Each withdrawal is a partial redemption, so only the gains part is taxed — not the whole payment. Equity funds: 12.5% long-term capital gains on gains above ₹1.25 lakh a year (units held over 12 months), 20% short-term gains (12 months or less) — Finance (No. 2) Act 2024, from 23 July 2024. Debt-oriented funds bought on or after 1 April 2023: gains taxed at your slab rate. Confirm the current rates with your tax adviser."],
+      ["What is the difference between SWP and SIP?", "They are mirror images. A SIP invests a fixed amount every month into a fund; an SWP withdraws a fixed amount every month from a fund. A SIP builds a corpus, an SWP spends one down — usually the same corpus a SIP built, in retirement. The SIP calculator shows the building side; this page shows the spending side."],
+      ["Is SWP better than a fixed deposit for monthly income?", "They do different jobs. A fixed deposit pays fixed interest, fully taxable as income, and returns the principal at maturity. An SWP pays from a market-linked fund — the income can be higher and only the gains part is taxed — but the corpus can fall, and the income stops when it runs out. Many retirees split the corpus: part in an SWP for growth, part in safer instruments like the Senior Citizens Savings Scheme or Post Office MIS for guaranteed income."],
+      ["What is the minimum amount for an SWP?", "There is no single minimum — each fund house sets its own in the scheme document. SBI's schemes allow ₹500 a month; Axis ₹1,000. Check the scheme you hold. This calculator accepts any withdrawal from ₹100 a month."],
+      ["Can I change or stop my SWP?", "Yes. Most fund houses let you modify, pause or stop an SWP by instruction to the fund or registrar — scheme documents typically ask for the form at least 10 days before the change takes effect. Exit loads, if the scheme charges one, still apply to redemptions within the load period. Units held in demat form are being brought under the same facility: SEBI's circular of 17 July 2026 extends SWP standing instructions to demat units, unit-based by 31 January 2027 and amount-based by 30 April 2027."],
+      ["Is the return in an SWP guaranteed?", "No. Mutual fund returns are market-linked and vary — the rate you enter is an assumption for illustration, not a forecast. The calculator's figures are planning estimates; the actual balance depends on the fund's real returns. AMFI's own words: 'Mutual Fund investments are subject to market risks, read all scheme related documents carefully.' Check the exact figures with your fund house or adviser before you decide."]
+    ]
+  },
+
+  {
+    key: "wm",
+    kind: "wm",
+    slug: "washing-machine-capacity-calculator",
+    title: "Washing Machine Capacity Calculator",
+    meta: "What size washing machine do you need? A family of 4 washing 3 times a week needs an 8 kg machine — about 650 litres of water and 7.28 units of electricity a month with a front loader. Free, instant, and calculated in your browser.",
+    lead: "Enter how many people are in your household, how many loads you wash a week and the machine type — and get the capacity you need, the load size to aim for, and what it costs to run each month in water and electricity.",
+    presets: [
+      { id: "wm-family4", label: "Family of 4, 3 loads a week, front load", people: 4, loads: 3, type: "front", bulky: false, tariff: 8 },
+      { id: "wm-couple", label: "Couple, 5 loads a week, top load", people: 2, loads: 5, type: "top", bulky: false, tariff: 8 },
+      { id: "wm-joint6", label: "Family of 6, 2 loads a week, bulky items, semi-automatic", people: 6, loads: 2, type: "semi", bulky: true, tariff: 8 },
+      { id: "wm-single", label: "Single person, 2 loads a week, bulky items, front load", people: 1, loads: 2, type: "front", bulky: true, tariff: 8 },
+      { id: "wm-large8", label: "Family of 8, 4 loads a week, top load", people: 8, loads: 4, type: "top", bulky: false, tariff: 8 }
+    ],
+    defaultPreset: "wm-family4",
+    samplePeople: 4,
+    sampleLoads: 3,
+    sampleType: "front",
+    sampleBulky: false,
+    sampleTariff: 8,
+    notice: "Planning estimates, not meter readings. The water figures are midpoints of the published BEE Schedule 12 ranges and the electricity figures are BEE label figures per kg per cycle, scaled by the recommended capacity. Check the label on the exact model you buy — and use your own electricity tariff.",
+    overviewTitle: "What does a washing machine capacity calculator tell you?",
+    overview: "It answers the question every buyer asks first — what size machine do I need? — and then shows what that machine costs to run. Enter how many people are in your household, how many loads you wash a week and the machine type, and you get the capacity in kg, the load size to aim for, and the water and electricity the machine uses each month at your tariff. A family of four washing three times a week needs an 8 kg machine: 13 loads a month, about 650 litres of water and 7.28 units of electricity with a front loader — about ₹58 a month at ₹8 a unit. The same loads in a top loader use about 1,820 litres of water a month.",
+    inputNote: "Enter how many people are in your household, how many loads you wash a week, the machine type and whether you wash bulky items every week. The example is filled in with a family of four washing three times a week in a front-load machine.",
+    modelNote: "The capacity follows the bands the India buying guides agree on — 6 kg for 1–2 people, 7 kg for 3, 8 kg for 4, 9 kg for 5, 10 kg for 6, 11 kg for 7–8 and 12 kg for 9 or more — adjusted by 1 kg up if you wash once or twice a week, 1 kg down if you wash every day, and 1 kg up for weekly bulky items, clamped to 6–12 kg. Water a month is loads a month times the litres a wash (50 front load, 140 top load, 60 semi-automatic). Electricity a month is loads a month times the units a wash, where the units a wash are the BEE label figure per kg per cycle (0.07 front load, 0.01 top load, 0.0107 semi-automatic) times the recommended capacity. Loads a month are loads a week times 52 divided by 12. The cost is the electricity times your tariff. Aim for about 80% of the rated capacity per load.",
+    steps: [
+      ["Enter your household size", "How many people the machine washes for. The example uses 4 — the most common Indian family size searching for a washing machine."],
+      ["Enter how many loads a week", "How many wash cycles you run in a typical week. The example uses 3. Washing once or twice a week means bigger loads; washing every day means smaller ones."],
+      ["Pick the machine type — and tick bulky items", "Front load, top load or semi-automatic: the type decides the water and electricity per wash. Tick the bulky-items box if blankets, curtains or duvets go in every week."],
+      ["Read the capacity and the monthly running cost", "The calculator shows the machine size in kg, the load size to aim for, and the water, electricity and cost each month — plus what the same loads would use in the other two machine types."]
+    ],
+    stories: [
+      {
+        people: 4, loads: 3, type: "front", bulky: false, tariff: 8, preset: "wm-family4",
+        title: "Family of 4, 3 loads a week, front load: 8 kg machine",
+        body: "A family of four washing three times a week needs an 8 kg machine. That is 13 loads a month — 650 litres of water and 7.28 units of electricity a month, about ₹58 at ₹8 a unit. Aim for about 6.4 kg a load, 80% of the 8 kg drum. The same 13 loads in a top-load machine would use about 1,820 litres of water a month."
+      },
+      {
+        people: 2, loads: 5, type: "top", bulky: false, tariff: 8, preset: "wm-couple",
+        title: "Couple, 5 loads a week, top load: 6 kg machine",
+        body: "A couple washing five times a week needs a 6 kg machine. That is about 21.7 loads a month — 3,033 litres of water and 1.30 units of electricity a month, about ₹10 at ₹8 a unit. A front loader doing the same loads would use about 1,083 litres of water a month. Aim for about 4.8 kg a load."
+      },
+      {
+        people: 6, loads: 2, type: "semi", bulky: true, tariff: 8, preset: "wm-joint6",
+        title: "Family of 6, 2 loads a week, bulky items, semi-automatic: 12 kg machine",
+        body: "Six people washing twice a week, with blankets and curtains in the weekly wash, need a 12 kg machine — 10 kg for six people, plus 1 kg because two loads a week piles more into each load, plus 1 kg for the bulky items. That is about 8.7 loads a month — 520 litres of water and 1.11 units of electricity a month, about ₹9 at ₹8 a unit. Aim for about 9.6 kg a load."
+      },
+      {
+        people: 1, loads: 2, type: "front", bulky: true, tariff: 8, preset: "wm-single",
+        title: "Single person, 2 loads a week, bulky items, front load: 8 kg machine",
+        body: "One person washing twice a week needs a 6 kg machine — but weekly bulky items and only two loads a week push it to 8 kg. That is about 8.7 loads a month — 433 litres of water and 4.85 units of electricity a month, about ₹39 at ₹8 a unit. Aim for about 6.4 kg a load."
+      },
+      {
+        people: 8, loads: 4, type: "top", bulky: false, tariff: 8, preset: "wm-large8",
+        title: "Family of 8, 4 loads a week, top load: 11 kg machine",
+        body: "Eight people washing four times a week need an 11 kg machine. That is about 17.3 loads a month — 2,427 litres of water and 1.91 units of electricity a month, about ₹15 at ₹8 a unit. A front loader doing the same loads would use about 867 litres of water a month. Aim for about 8.8 kg a load."
+      }
+    ],
+    rateRows: [
+      { rate: "6–7 kg", applies: "1–3 people", example: "A couple or a small family of three. Bajaj Finserv's India guide puts 6–7 kg machines at 1–3 members; naatural.in agrees at 6–7 kg for a couple." },
+      { rate: "7–8 kg", applies: "3–5 people", example: "The standard Indian family size. Bajaj Finserv puts 7–8 kg at 3–5 members; thedailyjagran and herzindagi agree that 7–8 kg suits a family of four." },
+      { rate: "9–12 kg", applies: "5 or more people", example: "Large and joint families, or anyone washing blankets and curtains every week. Bajaj Finserv puts 9–12 kg at 5 or more members; herzindagi says 9 kg and above for more than five people. (naatural.in recommends 10–12 kg for 5+ — this page uses 9 kg for five people at three loads a week, and 10 kg at two loads a week or with bulky items.)" },
+      { rate: "+1 kg / −1 kg", applies: "Wash frequency and bulky items", example: "Washing once or twice a week piles more into each load, so add 1 kg. Washing every day (7 or more loads a week) means smaller loads, so take 1 kg off. Weekly bulky items — blankets, curtains, duvets — add 1 kg. The result is clamped to the 6–12 kg range sold in India." },
+      { rate: "50 / 140 / 60 litres", applies: "Water a wash, by machine type", example: "Planning figures for a typical 7–8 kg machine — front load 50 litres, top load 140, semi-automatic 60. The published ranges are 45–60 litres (front), 120–150 (top) and 50–70 (semi) a cycle; the figures here sit inside them. Check the BEE label on the exact model." },
+      { rate: "0.07 / 0.01 / 0.0107 units per kg", applies: "Electricity a wash, by machine type", example: "BEE label figures per kg per cycle. A 7 kg front loader works out to 0.49 units a wash and a 7 kg top loader to 0.07 — but the two labels are rated on different washes (front load on a 60 C cotton wash, top load on 30 C), so they are not like-for-like. A cold front-load wash uses far less than the label figure." },
+      { rate: "80% of the drum", applies: "How full to load it", example: "Aim for about 80% of the rated capacity per load — 6.4 kg in an 8 kg machine. A full drum cleans badly and strains the machine; a half-empty drum wastes water and electricity on every wash." },
+      { rate: "52 ÷ 12", applies: "Loads a week to loads a month", example: "There are 52 weeks in a year and 12 months, so loads a month = loads a week × 52 ÷ 12 — 3 loads a week is 13 loads a month. Monthly and yearly costs are each rounded on their own, so a yearly figure can differ by a few rupees from the monthly figure times 12." }
+    ],
+    rateTableTitle: "Capacity and running-cost rules at a glance",
+    rateTableNote: "The capacity bands the India buying guides agree on, the frequency and bulky-item adjustments, the water and electricity planning figures by machine type, the 80% fill rule and the weeks-to-months conversion. Every figure is traced to its source in the methodology section.",
+    rateTableConclusion: "The household decides the capacity and the machine type decides the bill: a top loader doing the same loads uses nearly three times the water of a front loader, while the front loader's label electricity figure is higher only because its rated wash heats the water.",
+    calloutTitle: "The water figures are planning midpoints — and the front-load electricity figure is a 60°C rated wash",
+    calloutNote: "This page uses 50 litres a wash for a front loader, 140 for a top loader and 60 for a semi-automatic — figures inside the published BEE Schedule 12 ranges (45–60, 120–150 and 50–70 litres). The electricity figures are BEE label figures per kg per cycle: 0.07 units for a front loader, 0.01 for a top loader, 0.0107 for a semi-automatic. The front-load label is rated on a 60 C cotton wash and the top-load label on a 30 C wash, so the two are not like-for-like — a cold front-load wash uses far less than 0.49 units. onlygizmos.com worked the same two 7 kg IFB labels out at 0.49 units a wash for the front loader (₹1,019 a year at five washes a week and ₹8 a unit) and 0.07 for the top loader; this page's yearly figure for the front loader is ₹1,020, a ₹1 difference because the month is rounded first, and ₹144 a year for the top loader against their ₹154 — their figure implies about 0.074 units a wash, while this page uses the 0.07 label figure. Neither is wrong; the assumptions differ, and they are stated here.",
+    faq: [
+      ["What size washing machine do I need for a family of 4?", "An 8 kg machine at three loads a week — the figure every India guide agrees on for a family of four (Bajaj Finserv 7–8 kg for 3–5 members, naatural.in 8–10 kg, toq.in 7–7.5 kg). Wash four or more times a week and 7 kg is enough; wash once or twice a week, or wash blankets every week, and 9–10 kg is the better pick. This calculator applies those rules to your household."],
+      ["How many kg of washing machine is enough for 2 people?", "A 6 kg machine. A couple washing three times a week needs 6 kg; washing once or twice a week pushes it to 7 kg, and weekly bulky items push it to 7–8 kg. Below 6 kg you are into compact machines, which suit a single person in a small flat."],
+      ["Is a 7 kg washing machine enough for a family of 4?", "It depends on how often you wash. At four or more loads a week, 7 kg handles a family of four — the loads stay small. At three loads a week the guides put a family of four at 8 kg, and at one or two loads a week you want 9 kg, because each load carries more. Check the frequency, not just the family size."],
+      ["How much water does a washing machine use per wash?", "About 50 litres for a front loader, 140 litres for a top loader and 60 litres for a semi-automatic — planning figures for a typical 7–8 kg machine, inside the published BEE Schedule 12 ranges of 45–60, 120–150 and 50–70 litres a cycle. A family washing three times a week in a front loader uses about 650 litres a month; the same loads in a top loader use about 1,820 litres."],
+      ["How much electricity does a washing machine use per wash?", "On the BEE label figures, a 7 kg front loader uses 0.49 units a wash and a 7 kg top loader 0.07 — but the two labels are rated on different washes (front load on a 60 C cotton wash, top load on 30 C), so the front-load figure is not the cold-wash figure. A cold front-load wash uses far less; a hot 60 C wash uses far more. This calculator uses the label figures and says so."],
+      ["What does 8 kg mean on a washing machine?", "It is the maximum weight of dry laundry the drum is rated to wash in one cycle — not wet laundry, and not the machine's own weight. Aim for about 80% of it per load, 6.4 kg in an 8 kg machine, so the clothes have room to tumble. Manufacturers measure it with standard cotton loads in lab conditions, so treat the rating as a ceiling, not a target to hit every wash."],
+      ["Front load or top load — which uses less water?", "A front loader, by a wide margin: about 50 litres a wash against about 140 for a top loader, because the drum does not fill with water — it tumbles the clothes through a small pool. At three loads a week that is 650 litres a month against 1,820. Front loaders cost more upfront and take longer per cycle; top loaders are cheaper, faster and easier to load."],
+      ["How many loads a week should I wash?", "There is no right number — it is your household's habit, and the calculator adjusts for it. Washing once or twice a week means bigger loads and a bigger drum; washing every day means smaller loads and a smaller drum. The running cost follows the load count either way: more loads a week means more water and electricity a month, whatever the capacity."],
+      ["Are these running-cost figures exact?", "No — they are planning estimates, and the page says so on every figure. The water figures are midpoints of the published BEE Schedule 12 ranges, and the electricity figures are BEE label figures per kg per cycle scaled by the recommended capacity. The exact model you buy carries its own label figures; check them before you decide, and use your own electricity tariff — ₹8 a unit is the example, not a quote."]
+    ]
+  },
+
+  {
+    key: "ms",
+    kind: "ms",
+    slug: "mattress-size-finder",
+    title: "Mattress Size Finder",
+    meta: "What size mattress do you need? A couple with the tallest sleeper at 5 ft 8 in needs a Queen, 78 × 60 inches — 30 inches each, fitting comfortably in a 10 × 12 ft room. Free, instant, and calculated in your browser.",
+    lead: "Enter how many people will sleep on it, the tallest sleeper's height and your bedroom size — and get the mattress size you need, the width each sleeper gets, and whether it fits your room with space to walk around it.",
+    presets: [
+      { id: "ms-couple", label: "Couple, tallest 5 ft 8 in, room 10 × 12 ft", sleepers: 2, feet: 5, inches: 8, extra: false, roomW: 10, roomL: 12 },
+      { id: "ms-single-tall", label: "Single sleeper, 6 ft, room 9 × 11 ft", sleepers: 1, feet: 6, inches: 0, extra: false, roomW: 9, roomL: 11 },
+      { id: "ms-family3", label: "Two adults + child, tallest 5 ft 6 in, room 12 × 14 ft", sleepers: 3, feet: 5, inches: 6, extra: false, roomW: 12, roomL: 14 },
+      { id: "ms-single-small", label: "Single sleeper, 5 ft 2 in, room 8 × 10 ft", sleepers: 1, feet: 5, inches: 2, extra: false, roomW: 8, roomL: 10 },
+      { id: "ms-couple-king", label: "Couple wanting extra room, tallest 6 ft 2 in, room 12 × 14 ft", sleepers: 2, feet: 6, inches: 2, extra: true, roomW: 12, roomL: 14 }
+    ],
+    defaultPreset: "ms-couple",
+    sampleSleepers: 2,
+    sampleFeet: 5,
+    sampleInches: 8,
+    sampleExtra: false,
+    sampleRoomW: 10,
+    sampleRoomL: 12,
+    notice: "Guidance, not a guarantee. Brands vary by about half an inch around these sizes, and the 84-inch length is stocked by fewer brands. Measure your bed frame before ordering.",
+    overviewTitle: "What does a mattress size finder tell you?",
+    overview: "It answers the question every buyer asks first — what size mattress do I need? — and then checks it against your bedroom. Enter how many people will sleep on it, the tallest sleeper's height and the room size, and you get the mattress size in inches, feet and cm, the width each sleeper gets, and whether it fits with walking space. A couple with the tallest sleeper at 5 ft 8 in needs a Queen, 78 × 60 inches: 30 inches each, fitting comfortably in a 10 × 12 ft room with 30 inches of walking space each side.",
+    inputNote: "Enter how many people will sleep on the mattress, the tallest sleeper's height in feet and inches, and your bedroom's width and length in feet. The example is filled in with a couple, tallest 5 ft 8 in, in a 10 × 12 ft room.",
+    modelNote: "The length follows the tallest sleeper: the mattress should be about 8 inches longer than you are tall, rounded up to the next standard Indian length — 72, 75, 78 or 84 inches. The width follows the sleepers: one sleeper gets a Single (36 inches), two get a Queen (60 inches, 30 each), two who want extra room get a King (72 inches, 36 each), and three get a King (72 inches, 24 each — tight, and the page says so). The room is checked with the bed centred: the walking space each side is (room width − mattress width) ÷ 2, and the space at the foot is room length − mattress length. 'Fits comfortably' needs 24 inches each side and 24 inches at the foot; 'fits, but tight' needs 6 inches; anything less is too big, and the finder steps down a width until one fits, keeping the length the tallest sleeper needs. The smallest comfortable room is the mattress width plus 48 inches by its length plus 24 inches.",
+    steps: [
+      ["Enter how many sleepers", "One, two or three. Two adults sharing with a small child count as three — the width each person gets is part of the answer."],
+      ["Enter the tallest sleeper's height", "Feet and inches. The mattress length follows the tallest person in the bed, not the average — the example uses 5 ft 8 in."],
+      ["Tick extra room if you want it, and enter the bedroom", "Extra room steps a couple up to a King. The bedroom width and length decide whether the size fits with walking space around it."],
+      ["Read the size and the room verdict", "The finder gives the mattress size in inches, feet and cm, the width each sleeper gets, how much longer it is than the tallest sleeper, and whether it fits your room comfortably."]
+    ],
+    stories: [
+      {
+        sleepers: 2, feet: 5, inches: 8, extra: false, roomW: 10, roomL: 12, preset: "ms-couple",
+        title: "Couple, tallest 5 ft 8 in, room 10 × 12 ft: Queen",
+        body: "A couple with the tallest sleeper at 5 ft 8 in needs a Queen mattress, 78 × 60 inches (6.5 × 5 ft; 198 × 152 cm). Each sleeper gets 30 inches — exactly the comfort line. In a 10 × 12 ft room it fits comfortably, with 30 inches of walking space each side and 66 inches at the foot. Smallest comfortable room: 9 × 8.5 ft."
+      },
+      {
+        sleepers: 1, feet: 6, inches: 0, extra: false, roomW: 9, roomL: 11, preset: "ms-single-tall",
+        title: "Single sleeper, 6 ft, room 9 × 11 ft: Single, 84 inches long",
+        body: "A single sleeper at 6 ft needs a Single mattress, 84 × 36 inches (7 × 3 ft; 213 × 91 cm). The mattress is 12 inches longer than the sleeper. In a 9 × 11 ft room it fits comfortably, with 36 inches each side and 48 inches at the foot. Note the 84-inch length: fewer brands stock it, so ask before ordering."
+      },
+      {
+        sleepers: 3, feet: 5, inches: 6, extra: false, roomW: 12, roomL: 14, preset: "ms-family3",
+        title: "Two adults + child, tallest 5 ft 6 in, room 12 × 14 ft: King",
+        body: "Two adults and a small child, tallest 5 ft 6 in, need a King mattress, 75 × 72 inches (6.25 × 6 ft; 191 × 183 cm). Each sleeper gets 24 inches — below the 30-inch comfort line, so this is a tight fit for three. In a 12 × 14 ft room it fits comfortably, with 36 inches each side and 93 inches at the foot."
+      },
+      {
+        sleepers: 1, feet: 5, inches: 2, extra: false, roomW: 8, roomL: 10, preset: "ms-single-small",
+        title: "Single sleeper, 5 ft 2 in, room 8 × 10 ft: Single, 72 inches long",
+        body: "A single sleeper at 5 ft 2 in needs a Single mattress, 72 × 36 inches (6 × 3 ft; 183 × 91 cm). The mattress is 10 inches longer than the sleeper. In an 8 × 10 ft room it fits comfortably, with 30 inches each side and 48 inches at the foot."
+      },
+      {
+        sleepers: 2, feet: 6, inches: 2, extra: true, roomW: 12, roomL: 14, preset: "ms-couple-king",
+        title: "Couple wanting extra room, tallest 6 ft 2 in, room 12 × 14 ft: King",
+        body: "A couple who want extra room, tallest 6 ft 2 in, need a King mattress, 84 × 72 inches (7 × 6 ft; 213 × 183 cm). Each sleeper gets 36 inches. In a 12 × 14 ft room it fits comfortably, with 36 inches each side and 84 inches at the foot. The 84-inch length is stocked by fewer brands."
+      }
+    ],
+    rateRows: [
+      { rate: "8 inches longer than you", applies: "Mattress length", example: "Sunday Rest's rule from mattress makers: the mattress should be about 8 inches longer than the tallest sleeper — 5 ft 4 in → 72 in, 5 ft 7 in → 75 in, 5 ft 10 in → 78 in, 6 ft 4 in → 84 in." },
+      { rate: "30 inches each", applies: "Width per sleeper", example: "Neobest's comfort line: 30 inches of personal width per adult. A Queen gives two adults exactly 30 inches each; a King gives 36; a Double shared by two gives 24 — below the line." },
+      { rate: "24 inches each side", applies: "Walking space", example: "Neobest's guideline is 24–30 inches of walking space on at least two sides of the bed. This page calls a fit comfortable at 24 inches each side and 24 inches at the foot." },
+      { rate: "9 × 8.5 ft", applies: "Smallest room for a Queen", example: "A Queen 60 × 78 inches needs 9 ft wide (60 + 48) by 8.5 ft long (78 + 24) for comfortable walking space. SleepyHug's practical figure is 10 × 10 ft — the extra foot leaves room for a wardrobe and door swing." },
+      { rate: "78 inches", applies: "The common length", example: "Sunday Rest: 78 inches is the length of most beds today. 72 and 75 inches suit shorter sleepers; 84 inches is stocked by fewer brands — ask before you order." },
+      { rate: "Measure the frame", applies: "Bed size vs mattress size", example: "Neobest: a mattress is made about half an inch to an inch smaller than the bed frame's inner rails, so it sits snug. Measure the inside of the frame, length first, and match the standard size within an inch." },
+      { rate: "2.4 m (7 ft 10 in)", applies: "Smallest habitable room", example: "The National Building Code sets the smallest habitable room at 2.4 m wide. A Queen fits there with one side on the wall — this page's centred-bed maths would call that tight, so treat the verdict as guidance, not a rule." }
+    ],
+    rateTableTitle: "Mattress size rules at a glance",
+    rateTableNote: "The length rule, the width each sleeper gets, the walking space a bed needs, the smallest comfortable room, the common length, and why the frame — not the label — decides the size. Every figure is traced to its source in the methodology section.",
+    rateTableConclusion: "The tallest sleeper decides the length, the sleepers decide the width, and the room gets the final vote: a size that fits the people but not the room is the wrong size.",
+    calloutTitle: "84 inches is a special-order length — and SleepyHug's room sizes are practical, not minimums",
+    calloutNote: "A 6-footer needs an 84-inch mattress by the 8-inch rule (72 + 8 = 80, rounded up to 84), but fewer brands stock that length — Sunday Rest and SleepyHug both list 78 inches as the standard length, with 84 as a variant at some brands. This page still recommends 84 for tall sleepers and says so, rather than quietly shortening the mattress. SleepyHug's room figures — Queen 10 × 10 ft, King 12 × 12 ft — are practical rooms with furniture in them; this page's minimums — Queen 9 × 8.5 ft, King 10 × 8.5 ft at 78 inches — are the walking-space minimums only (24 inches each side, 24 at the foot). Neither is wrong; the assumptions differ, and they are stated here.",
+    faq: [
+      ["What size mattress do I need for a couple?", "A Queen, 78 × 60 inches — 30 inches each, exactly the comfort line. Step up to a King (72 inches wide, 36 each) if either of you is a restless sleeper, or if a small child or pet shares the bed. A Double (48 inches, 24 each) is below the comfort line for two adults every night."],
+      ["What size bed for a 6 feet tall person?", "An 84-inch mattress by the 8-inch rule — 6 ft is 72 inches, plus 8 is 80, rounded up to the next standard length, 84. Most 6-footers actually sleep on 78-inch mattresses, but their feet reach the end. Ask for 84 inches: fewer brands stock it, and this page says so rather than quietly recommending a mattress that is too short."],
+      ["Is a queen size bed enough for two people?", "Yes, for most couples: 30 inches each is the minimum comfortable width for an adult, and a Queen gives exactly that. It feels tight if either sleeper moves a lot in their sleep, or if a child joins you — that is when a King, at 36 inches each, is worth the extra width and the bigger room it needs."],
+      ["What is the difference between a queen and a king size mattress?", "The width: a Queen is 60 inches wide and a King is 72, while both come in the same lengths (72, 75, 78 or 84 inches). Two adults get 30 inches each on a Queen and 36 on a King. A King also needs a bigger room — a 10 × 10 ft room leaves exactly 24 inches each side, with no space for a wardrobe; SleepyHug's practical figure for a King is 12 × 12 ft."],
+      ["How much room do I need around a bed?", "At least 24 inches of walking space on each side and 24 inches at the foot — Neobest's guideline is 24–30 inches on at least two sides. That makes the smallest comfortable room for a Queen 9 × 8.5 ft and for a King at 78 inches 10 × 8.5 ft. A wardrobe, a side table or a door swing needs more."],
+      ["What is the standard mattress size in India?", "Single 36 × 72 inches, Double 48 × 72, Queen 60 × 78 and King 72 × 78, with lengths of 72, 75 or 78 inches and 84 inches at some brands. Brands vary by about half an inch around these sizes, so measure your bed frame and check the exact size on the product page before ordering."],
+      ["Single vs double mattress — which one should I buy?", "A Single (36 inches) for one sleeper — a child's room, a guest room or a compact bedroom. A Double (48 inches) for one adult who likes extra space, or for two in a guest room for a night or two. Two adults sleeping on a Double every night get 24 inches each, below the 30-inch comfort line."],
+      ["Can a king size bed fit in a 10 × 10 ft room?", "Yes, by the walking-space rule — a King is 72 inches wide, so a 10 ft (120-inch) room leaves exactly 24 inches each side, and a 78-inch King leaves 42 inches at the foot. It fits, but only just: there is no room left for a wardrobe or side tables. SleepyHug's practical figure for a King is 12 × 12 ft, and for a room that size this page recommends the King without reservation."],
+      ["Are these sizes exact?", "No — they are guidance, and the page says so. Indian brands vary by about half an inch around the standard sizes, and the 84-inch length is stocked by fewer brands. Measure the inside of your bed frame, length first, and match the standard size within an inch before ordering."]
+    ]
+  },
 ];
 
 export const css = `
@@ -24969,6 +25741,1277 @@ export const scssCss = `
 }
 `;
 
+export const MIS_MIN_DEPOSIT = 1000;
+export const MIS_MAX_SINGLE = 900000;
+export const MIS_MAX_JOINT = 1500000;
+export const MIS_TENURE_YEARS = 5;
+export const MIS_PAYOUTS = 60;
+
+export function misYearly(deposit, rate) {
+  const monthly = roundRupee(deposit * rate / 100 / 12);
+  const annual = monthly * 12;
+  const rows = [];
+  let cumulative = 0;
+  for (let y = 1; y <= MIS_TENURE_YEARS; y++) {
+    cumulative += annual;
+    const deduction = y <= 3 ? 2 : (y === 4 ? 1 : 0);
+    rows.push({
+      year: y,
+      label: "Year " + y,
+      interest: annual,
+      cumulative,
+      deduction,
+      back: y === MIS_TENURE_YEARS ? deposit : Math.round(deposit * (100 - deduction) / 100)
+    });
+  }
+  return rows;
+}
+
+export function misCompute(deposit, rate, accountType, taxSlab) {
+  const p = Number(deposit);
+  const r = Number(rate);
+  const s = Number(taxSlab);
+  const t = accountType === "joint" ? "joint" : (accountType === "single" ? "single" : null);
+  if (!Number.isFinite(p) || !Number.isFinite(r) || !Number.isFinite(s)) return null;
+  if (t === null) return null;
+  const max = t === "joint" ? MIS_MAX_JOINT : MIS_MAX_SINGLE;
+  if (p < MIS_MIN_DEPOSIT || p > max || p % 1000 !== 0) return null;
+  if (r < 0 || r > 15) return null;
+  if (s !== 0 && s !== 5 && s !== 10 && s !== 20 && s !== 30) return null;
+  const monthly = roundRupee(p * r / 100 / 12);
+  const annual = monthly * 12;
+  const afterTaxMonthly = roundRupee(monthly * (1 - s / 100 * 1.04));
+  const afterTaxAnnual = afterTaxMonthly * 12;
+  const yearlyRows = misYearly(p, r);
+  return {
+    deposit: p,
+    rate: r,
+    accountType: t,
+    taxSlab: s,
+    monthly,
+    annual,
+    afterTaxMonthly,
+    afterTaxAnnual,
+    totalInterest: annual * MIS_TENURE_YEARS,
+    afterTaxTotal: afterTaxMonthly * MIS_PAYOUTS,
+    payouts: MIS_PAYOUTS,
+    maturityYear: new Date().getFullYear() + MIS_TENURE_YEARS,
+    principal: p,
+    yearlyRows
+  };
+}
+
+export const misCss = `
+.calc-page 
+
+@media(max-width: 760px) {
+  .calc-page 
+}
+`;
+
+export const KVP_MIN_DEPOSIT = 1000;
+export const KVP_DEPOSIT_STEP = 100;
+export const KVP_DEFAULT_RATE = 7.5;
+export const KVP_OFFICIAL_MONTHS = { "7.5": 115, "7.2": 120, "7": 123, "6.9": 124, "7.6": 113, "7.7": 112, "7.3": 118 };
+export const KVP_ENCASH_PER_1000 = { "3": 1208, "4": 1286, "5": 1370, "6": 1459, "7": 1554, "8": 1655, "9": 1763 };
+
+export function kvpDoublingMonths(rate) {
+  const r = Number(rate);
+  if (!Number.isFinite(r) || r <= 0 || r > 15) return null;
+  const official = KVP_OFFICIAL_MONTHS[String(r)];
+  if (official !== undefined) return official;
+  return Math.round(12 * Math.log(2) / Math.log(1 + r / 100));
+}
+
+export function kvpDoublingOfficial(rate) {
+  const r = Number(rate);
+  if (!Number.isFinite(r) || r <= 0 || r > 15) return false;
+  return KVP_OFFICIAL_MONTHS[String(r)] !== undefined;
+}
+
+export function kvpEncash(deposit, rate, year) {
+  const p = Number(deposit);
+  const r = Number(rate);
+  const y = Number(year);
+  if (!Number.isFinite(p) || !Number.isFinite(r) || !Number.isFinite(y)) return null;
+  if (r !== 7.5 || y < 3) return null;
+  const per1000 = KVP_ENCASH_PER_1000[String(y)];
+  if (per1000 === undefined) return null;
+  return roundRupee(p / 1000 * per1000);
+}
+
+export function kvpYearly(deposit, rate) {
+  const p = Number(deposit);
+  const r = Number(rate);
+  if (!Number.isFinite(p) || !Number.isFinite(r)) return null;
+  if (p < KVP_MIN_DEPOSIT || p % KVP_DEPOSIT_STEP !== 0) return null;
+  if (r < 0 || r > 15) return null;
+  const rows = [];
+  if (r === 0) {
+    for (let y = 1; y <= 10; y++) {
+      rows.push({ year: y, label: "Year " + y, value: p, interest: 0, encash: null, maturity: false });
+    }
+    return rows;
+  }
+  const months = kvpDoublingMonths(r);
+  const fullYears = Math.floor(months / 12);
+  const rem = months % 12;
+  for (let y = 1; y <= fullYears; y++) {
+    const isMaturity = rem === 0 && y === fullYears;
+    const value = isMaturity ? 2 * p : roundRupee(p * Math.pow(1 + r / 100, y));
+    rows.push({
+      year: y,
+      label: isMaturity ? "Year " + y + " — at maturity" : "Year " + y,
+      value,
+      interest: value - p,
+      encash: isMaturity ? 2 * p : kvpEncash(p, r, y),
+      maturity: isMaturity
+    });
+  }
+  if (rem !== 0) {
+    const years = Math.floor(months / 12);
+    const label = "At maturity (" + years + " years " + rem + " months)";
+    rows.push({ year: fullYears + 1, label, value: 2 * p, interest: p, encash: 2 * p, maturity: true });
+  }
+  return rows;
+}
+
+export function kvpCompute(deposit, rate, taxSlab) {
+  const p = Number(deposit);
+  const r = Number(rate);
+  const s = Number(taxSlab);
+  if (!Number.isFinite(p) || !Number.isFinite(r) || !Number.isFinite(s)) return null;
+  if (p < KVP_MIN_DEPOSIT || p % KVP_DEPOSIT_STEP !== 0) return null;
+  if (r < 0 || r > 15) return null;
+  if (s !== 0 && s !== 5 && s !== 10 && s !== 20 && s !== 30) return null;
+  const months = kvpDoublingMonths(r);
+  const maturityValue = r === 0 ? p : 2 * p;
+  const interestEarned = maturityValue - p;
+  const afterTaxInterest = roundRupee(interestEarned * (1 - s / 100 * 1.04));
+  const afterTaxMaturity = p + afterTaxInterest;
+  const yearlyRows = kvpYearly(p, r);
+  return {
+    deposit: p,
+    rate: r,
+    taxSlab: s,
+    maturityValue,
+    interestEarned,
+    afterTaxInterest,
+    afterTaxMaturity,
+    doublingMonths: months,
+    doublingYears: months === null ? null : Math.floor(months / 12),
+    doublingRemMonths: months === null ? null : months % 12,
+    officialMonths: months === null ? null : kvpDoublingOfficial(r),
+    yearlyRows
+  };
+}
+
+export const kvpCss = `
+.calc-page 
+
+@media(max-width: 760px) {
+  .calc-page 
+}
+`;
+
+export const PL_MIN_AMOUNT = 50000;
+export const PL_MAX_AMOUNT = 4000000;
+export const PL_DEFAULT_RATE = 12;
+export const PL_DEFAULT_FEE = 1.5;
+export const PL_GST_RATE = 0.18;
+
+export function plEmi(principal, annualRatePct, months) {
+  const P = Number(principal);
+  const pct = Number(annualRatePct);
+  const n = Math.round(Number(months));
+  if (!Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(n)) return null;
+  if (!(P > 0) || !(n > 0) || !(pct >= 0)) return null;
+  const r = pct / 1200;
+  if (r === 0) return P / n;
+  return P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+}
+
+export function plApr(emiExact, months, net) {
+  const n = Math.round(Number(months));
+  const emi = Number(emiExact);
+  const target = Number(net);
+  if (!Number.isFinite(emi) || !Number.isFinite(target) || !Number.isFinite(n)) return null;
+  if (!(n > 0) || !(target > 0)) return null;
+  const pv = i => {
+    if (i === 0) return emi * n;
+    return emi * (1 - Math.pow(1 + i, -n)) / i;
+  };
+  if (pv(0) <= target) return 0;
+  let lo = 0;
+  let hi = 1;
+  for (let k = 0; k < 200; k++) {
+    const mid = (lo + hi) / 2;
+    if (pv(mid) > target) lo = mid;
+    else hi = mid;
+  }
+  return Math.round(((lo + hi) / 2) * 1200 * 100) / 100;
+}
+
+export function plSchedule(principal, annualRatePct, months, emiExact, totalInterest) {
+  const P = Math.trunc(Number(principal));
+  const pct = Number(annualRatePct);
+  const n = Math.round(Number(months));
+  const emi = Number(emiExact);
+  if (!Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(n) || !Number.isFinite(emi)) return null;
+  if (!(P > 0) || !(n > 0) || !(pct >= 0)) return null;
+  const r = pct / 1200;
+  const totalYears = Math.ceil(n / 12);
+  let balance = P;
+  let done = 0;
+  let year = 1;
+  let prevPrincipal = 0;
+  let prevInterest = 0;
+  const rows = [];
+  while (done < n) {
+    const mInYear = Math.min(12, n - done);
+    const openingExact = balance;
+    let yInt = 0;
+    let yPrin = 0;
+    for (let m = 0; m < mInYear; m++) {
+      done++;
+      const interest = balance * r;
+      let principal = emi - interest;
+      if (done === n) principal = balance;
+      balance -= principal;
+      if (balance > 0 && balance <= 0.01) balance = 0;
+      yInt += interest;
+      yPrin += principal;
+    }
+    if (year < totalYears) {
+      const row = {
+        year,
+        label: mInYear === 12 ? "Year " + year : "Year " + year + " (" + mInYear + " months)",
+        opening: roundRupee(openingExact),
+        interest: roundRupee(yInt),
+        principal: roundRupee(yPrin),
+        closing: roundRupee(balance),
+        payments: roundRupee(yInt + yPrin)
+      };
+      rows.push(row);
+      prevPrincipal += row.principal;
+      prevInterest += row.interest;
+    } else {
+      const interestR = totalInterest - prevInterest;
+      const principalR = P - prevPrincipal;
+      rows.push({
+        year,
+        label: mInYear === 12 ? "Year " + year : "Year " + year + " (" + mInYear + " months)",
+        opening: roundRupee(openingExact),
+        interest: interestR,
+        principal: principalR,
+        closing: 0,
+        payments: interestR + principalR
+      });
+    }
+    year++;
+  }
+  return rows;
+}
+
+export function plCompute(amount, rate, months, feePct) {
+  const amt = Number(amount);
+  const rt = Number(rate);
+  const mo = Number(months);
+  const fee = Number(feePct);
+  if (!Number.isFinite(amt) || !Number.isFinite(rt) || !Number.isFinite(mo) || !Number.isFinite(fee)) return null;
+  if (amt < PL_MIN_AMOUNT || amt > PL_MAX_AMOUNT) return null;
+  if (rt < 0 || rt > 36) return null;
+  if (mo !== Math.trunc(mo) || mo < 12 || mo > 84) return null;
+  if (fee < 0 || fee > 5) return null;
+  const P = Math.trunc(amt);
+  const n = Math.trunc(mo);
+  const emiExact = plEmi(P, rt, n);
+  if (emiExact === null) return null;
+  const emi = roundRupee(emiExact);
+  const totalPayment = roundRupee(emiExact * n);
+  const totalInterest = totalPayment - P;
+  const feeAmt = roundRupee(P * fee / 100);
+  const gst = roundRupee(feeAmt * PL_GST_RATE);
+  const totalFee = feeAmt + gst;
+  const net = P - totalFee;
+  const totalCost = totalInterest + totalFee;
+  const apr = plApr(emiExact, n, net);
+  const schedule = plSchedule(P, rt, n, emiExact, totalInterest);
+  if (schedule === null) return null;
+  return {
+    amount: P,
+    rate: rt,
+    months: n,
+    feePct: fee,
+    emiExact,
+    emi,
+    totalPayment,
+    totalInterest,
+    fee: feeAmt,
+    gst,
+    totalFee,
+    netDisbursed: net,
+    totalCost,
+    aprPct: apr,
+    yearlyRows: schedule
+  };
+}
+
+export const plCss = `
+.calc-page 
+
+@media(max-width: 760px) {
+  .calc-page 
+}
+`;
+
+export const TD_RATES = { 1: 6.9, 2: 7.0, 3: 7.1, 5: 7.5 };
+export const TD_MIN_AMOUNT = 1000;
+export const TD_MAX_AMOUNT = 10000000;
+export const TD_SAVINGS_RATE = 4.0;
+export const TD_TDS_THRESHOLD = 50000;
+export const TD_TDS_THRESHOLD_SENIOR = 100000;
+export const TD_CESS_RATE = 0.04;
+export const TD_80C_LIMIT = 150000;
+
+export function tdYearlyInterestExact(principal, annualRatePct) {
+  const P = Number(principal);
+  const pct = Number(annualRatePct);
+  if (!Number.isFinite(P) || !Number.isFinite(pct)) return null;
+  if (!(P > 0) || !(pct >= 0)) return null;
+  return P * (Math.pow(1 + pct / 400, 4) - 1);
+}
+
+export function tdEffectiveYield(annualRatePct) {
+  const pct = Number(annualRatePct);
+  if (!Number.isFinite(pct) || !(pct >= 0)) return null;
+  return Math.round((Math.pow(1 + pct / 400, 4) - 1) * 10000) / 100;
+}
+
+export function tdPremature(principal, years, closeMonths) {
+  const P = Math.trunc(Number(principal));
+  const y = Math.round(Number(years));
+  const m = Number(closeMonths);
+  if (!Number.isFinite(P) || !Number.isFinite(y) || !Number.isFinite(m)) return null;
+  if (!(P > 0) || !(y === 1 || y === 2 || y === 3 || y === 5)) return null;
+  if (m !== Math.trunc(m) || m < 6 || m >= 12 * y) return null;
+  if (y === 5 && m < 48) return null;
+  const rate = TD_RATES[y];
+  const yearly = roundRupee(tdYearlyInterestExact(P, rate));
+  const completedYears = Math.floor(m / 12);
+  let interestKept;
+  if (y === 5) {
+    interestKept = roundRupee(P * TD_SAVINGS_RATE / 100 * m / 12);
+  } else if (m < 12) {
+    interestKept = roundRupee(P * TD_SAVINGS_RATE / 100 * m / 12);
+  } else {
+    const refRate = TD_RATES[completedYears] - 2;
+    const remMonths = m - 12 * completedYears;
+    interestKept = roundRupee(completedYears * tdYearlyInterestExact(P, refRate)
+      + P * TD_SAVINGS_RATE / 100 * remMonths / 12);
+  }
+  const interestAlreadyPaid = completedYears * yearly;
+  const recovered = Math.max(0, interestAlreadyPaid - interestKept);
+  const amountPayable = P + interestKept - interestAlreadyPaid;
+  return {
+    closeMonths: m,
+    interestKept,
+    interestAlreadyPaid,
+    recovered,
+    amountPayable
+  };
+}
+
+export function tdYearlyRows(principal, annualRatePct, years, yearlyInterest, totalInterest) {
+  const P = Math.trunc(Number(principal));
+  const pct = Number(annualRatePct);
+  const n = Math.round(Number(years));
+  const yInt = Number(yearlyInterest);
+  const tot = Number(totalInterest);
+  if (!Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(n) || !Number.isFinite(yInt) || !Number.isFinite(tot)) return null;
+  if (!(P > 0) || !(n === 1 || n === 2 || n === 3 || n === 5)) return null;
+  if (!(pct >= 0)) return null;
+  const rows = [];
+  let cum = 0;
+  for (let y = 1; y <= n; y++) {
+    const interest = y < n ? yInt : tot - yInt * (n - 1);
+    cum += interest;
+    rows.push({
+      year: y,
+      label: "Year " + y,
+      interest,
+      cumulative: cum,
+      depositReturned: y === n ? P : 0,
+      totalReceived: cum + (y === n ? P : 0)
+    });
+  }
+  return rows;
+}
+
+export function tdCompute(amount, years, slabPct, closeMonths) {
+  const amt = Number(amount);
+  const y = Number(years);
+  const slab = Number(slabPct);
+  if (!Number.isFinite(amt) || !Number.isFinite(y) || !Number.isFinite(slab)) return null;
+  if (amt < TD_MIN_AMOUNT || amt > TD_MAX_AMOUNT) return null;
+  if (!(y === 1 || y === 2 || y === 3 || y === 5)) return null;
+  if (slab !== 0 && slab !== 5 && slab !== 10 && slab !== 20 && slab !== 30) return null;
+  const P = Math.trunc(amt);
+  if (P % 100 !== 0) return null;
+  const rate = TD_RATES[y];
+  const yearlyExact = tdYearlyInterestExact(P, rate);
+  if (yearlyExact === null) return null;
+  const yearlyInterest = roundRupee(yearlyExact);
+  const totalInterestExact = y * yearlyExact;
+  const totalInterest = roundRupee(totalInterestExact);
+  const totalReceived = P + totalInterest;
+  const effectiveYield = tdEffectiveYield(rate);
+  let tax = 0;
+  let afterTaxInterest = totalInterest;
+  let afterTaxTotal = totalReceived;
+  if (slab > 0) {
+    const taxExact = totalInterestExact * slab * (1 + TD_CESS_RATE) / 100;
+    tax = roundRupee(taxExact);
+    afterTaxInterest = roundRupee(totalInterestExact - taxExact);
+    afterTaxTotal = P + afterTaxInterest;
+  }
+  const taxSaved80C = (y === 5 && slab > 0)
+    ? roundRupee(Math.min(P, TD_80C_LIMIT) * slab * (1 + TD_CESS_RATE) / 100)
+    : 0;
+  const tdsApplies = yearlyInterest > TD_TDS_THRESHOLD;
+  const reinvested = roundRupee(P * Math.pow(1 + rate / 400, 4 * y));
+  const rows = tdYearlyRows(P, rate, y, yearlyInterest, totalInterest);
+  if (rows === null) return null;
+  let premature = null;
+  if (closeMonths !== null && closeMonths !== undefined && closeMonths !== "") {
+    premature = tdPremature(P, y, closeMonths);
+    if (premature === null) return null;
+  }
+  return {
+    amount: P,
+    years: y,
+    rate,
+    slabPct: slab,
+    yearlyExact,
+    yearlyInterest,
+    totalInterestExact,
+    totalInterest,
+    totalReceived,
+    effectiveYield,
+    tax,
+    afterTaxInterest,
+    afterTaxTotal,
+    taxSaved80C,
+    tdsApplies,
+    reinvested,
+    yearlyRows: rows,
+    premature
+  };
+}
+
+export const tdCss = `
+.calc-page 
+
+@media(max-width: 760px) {
+  .calc-page 
+}
+`;
+
+export const CL_MIN_PRICE = 100000;
+export const CL_MAX_PRICE = 10000000;
+export const CL_MIN_LOAN = 50000;
+export const CL_DEFAULT_RATE = 9;
+export const CL_DEFAULT_FEE = 1;
+export const CL_GST_RATE = 0.18;
+
+export function clEmi(principal, annualRatePct, months) {
+  const P = Number(principal);
+  const pct = Number(annualRatePct);
+  const n = Math.round(Number(months));
+  if (!Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(n)) return null;
+  if (!(P > 0) || !(n > 0) || !(pct >= 0)) return null;
+  const r = pct / 1200;
+  if (r === 0) return P / n;
+  return P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+}
+
+export function clApr(emiExact, months, net) {
+  const n = Math.round(Number(months));
+  const emi = Number(emiExact);
+  const target = Number(net);
+  if (!Number.isFinite(emi) || !Number.isFinite(target) || !Number.isFinite(n)) return null;
+  if (!(n > 0) || !(target > 0)) return null;
+  const pv = i => {
+    if (i === 0) return emi * n;
+    return emi * (1 - Math.pow(1 + i, -n)) / i;
+  };
+  if (pv(0) <= target) return 0;
+  let lo = 0;
+  let hi = 1;
+  for (let k = 0; k < 200; k++) {
+    const mid = (lo + hi) / 2;
+    if (pv(mid) > target) lo = mid;
+    else hi = mid;
+  }
+  return Math.round(((lo + hi) / 2) * 1200 * 100) / 100;
+}
+
+export function clSchedule(principal, annualRatePct, months, emiExact, totalInterest) {
+  const P = Math.trunc(Number(principal));
+  const pct = Number(annualRatePct);
+  const n = Math.round(Number(months));
+  const emi = Number(emiExact);
+  if (!Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(n) || !Number.isFinite(emi)) return null;
+  if (!(P > 0) || !(n > 0) || !(pct >= 0)) return null;
+  const r = pct / 1200;
+  const totalYears = Math.ceil(n / 12);
+  let balance = P;
+  let done = 0;
+  let year = 1;
+  let prevPrincipal = 0;
+  let prevInterest = 0;
+  const rows = [];
+  while (done < n) {
+    const mInYear = Math.min(12, n - done);
+    const openingExact = balance;
+    let yInt = 0;
+    let yPrin = 0;
+    for (let m = 0; m < mInYear; m++) {
+      done++;
+      const interest = balance * r;
+      let principal = emi - interest;
+      if (done === n) principal = balance;
+      balance -= principal;
+      if (balance > 0 && balance <= 0.01) balance = 0;
+      yInt += interest;
+      yPrin += principal;
+    }
+    if (year < totalYears) {
+      const row = {
+        year,
+        label: mInYear === 12 ? "Year " + year : "Year " + year + " (" + mInYear + " months)",
+        opening: roundRupee(openingExact),
+        interest: roundRupee(yInt),
+        principal: roundRupee(yPrin),
+        closing: roundRupee(balance),
+        payments: roundRupee(yInt + yPrin)
+      };
+      rows.push(row);
+      prevPrincipal += row.principal;
+      prevInterest += row.interest;
+    } else {
+      const interestR = totalInterest - prevInterest;
+      const principalR = P - prevPrincipal;
+      rows.push({
+        year,
+        label: mInYear === 12 ? "Year " + year : "Year " + year + " (" + mInYear + " months)",
+        opening: roundRupee(openingExact),
+        interest: interestR,
+        principal: principalR,
+        closing: 0,
+        payments: interestR + principalR
+      });
+    }
+    year++;
+  }
+  return rows;
+}
+
+export function clCompute(price, down, rate, months, feePct) {
+  const prc = Number(price);
+  const dwn = Number(down);
+  const rt = Number(rate);
+  const mo = Number(months);
+  const fee = Number(feePct);
+  if (!Number.isFinite(prc) || !Number.isFinite(dwn) || !Number.isFinite(rt) || !Number.isFinite(mo) || !Number.isFinite(fee)) return null;
+  if (prc < CL_MIN_PRICE || prc > CL_MAX_PRICE) return null;
+  if (dwn < 0 || dwn > prc - CL_MIN_LOAN) return null;
+  if (rt < 0 || rt > 20) return null;
+  if (mo !== Math.trunc(mo) || mo < 12 || mo > 84) return null;
+  if (fee < 0 || fee > 5) return null;
+  const priceInt = Math.trunc(prc);
+  const downInt = Math.trunc(dwn);
+  const P = priceInt - downInt;
+  const n = Math.trunc(mo);
+  const emiExact = clEmi(P, rt, n);
+  if (emiExact === null) return null;
+  const emi = roundRupee(emiExact);
+  const totalPayment = roundRupee(emiExact * n);
+  const totalInterest = totalPayment - P;
+  const feeAmt = roundRupee(P * fee / 100);
+  const gst = roundRupee(feeAmt * CL_GST_RATE);
+  const totalFee = feeAmt + gst;
+  const net = P - totalFee;
+  const totalCost = totalInterest + totalFee;
+  const totalCostOfCar = priceInt + totalInterest + totalFee;
+  const apr = clApr(emiExact, n, net);
+  const schedule = clSchedule(P, rt, n, emiExact, totalInterest);
+  if (schedule === null) return null;
+  return {
+    price: priceInt,
+    down: downInt,
+    amount: P,
+    rate: rt,
+    months: n,
+    feePct: fee,
+    emiExact,
+    emi,
+    totalPayment,
+    totalInterest,
+    fee: feeAmt,
+    gst,
+    totalFee,
+    netDisbursed: net,
+    totalCost,
+    totalCostOfCar,
+    aprPct: apr,
+    yearlyRows: schedule
+  };
+}
+
+export const clCss = `
+.calc-page 
+
+@media(max-width: 760px) {
+  .calc-page 
+}
+`;
+
+// APY contribution chart: Annex-1 of the Ministry of Finance (Department of
+// Financial Services) notification F. No. 16/1/2015-PR, 16 October 2015
+// (The Gazette of India, Extraordinary, Part I, Section 1). Rows are entry
+// ages 18-40; columns are the guaranteed monthly pension slabs
+// Rs 1,000 / 2,000 / 3,000 / 4,000 / 5,000. Quarterly and half-yearly
+// amounts are the prescribed figures from the same Annex-1 table —
+// slightly less than 3x / 6x the monthly figure, because money paid in
+// advance earns an extra period of return. They are NOT computed here.
+export const APY_PENSIONS = [1000, 2000, 3000, 4000, 5000];
+export const APY_CORPUS = [170000, 340000, 510000, 680000, 850000];
+export const APY_MIN_AGE = 18;
+export const APY_MAX_AGE = 40;
+export const APY_MONTHLY = [
+  [42, 84, 126, 168, 210],
+  [46, 92, 138, 183, 228],
+  [50, 100, 150, 198, 248],
+  [54, 108, 162, 215, 269],
+  [59, 117, 177, 234, 292],
+  [64, 127, 192, 254, 318],
+  [70, 139, 208, 277, 346],
+  [76, 151, 226, 301, 376],
+  [82, 164, 246, 327, 409],
+  [90, 178, 268, 356, 446],
+  [97, 194, 292, 388, 485],
+  [106, 212, 318, 423, 529],
+  [116, 231, 347, 462, 577],
+  [126, 252, 379, 504, 630],
+  [138, 276, 414, 551, 689],
+  [151, 302, 453, 602, 752],
+  [165, 330, 495, 659, 824],
+  [181, 362, 543, 722, 902],
+  [198, 396, 594, 792, 990],
+  [218, 436, 654, 870, 1087],
+  [240, 480, 720, 957, 1196],
+  [264, 528, 792, 1054, 1318],
+  [291, 582, 873, 1164, 1454],
+];
+export const APY_QUARTERLY = [
+  [125, 250, 376, 501, 626],
+  [137, 274, 411, 545, 679],
+  [149, 298, 447, 590, 739],
+  [161, 322, 483, 641, 802],
+  [176, 349, 527, 697, 870],
+  [191, 378, 572, 757, 948],
+  [209, 414, 620, 826, 1031],
+  [226, 450, 674, 897, 1121],
+  [244, 489, 733, 975, 1219],
+  [268, 530, 799, 1061, 1329],
+  [289, 578, 870, 1156, 1445],
+  [316, 632, 948, 1261, 1577],
+  [346, 688, 1034, 1377, 1720],
+  [376, 751, 1129, 1502, 1878],
+  [411, 823, 1234, 1642, 2053],
+  [450, 900, 1350, 1794, 2241],
+  [492, 983, 1475, 1964, 2456],
+  [539, 1079, 1618, 2152, 2688],
+  [590, 1180, 1770, 2360, 2950],
+  [650, 1299, 1949, 2593, 3239],
+  [715, 1430, 2146, 2852, 3564],
+  [787, 1574, 2360, 3141, 3928],
+  [867, 1734, 2602, 3469, 4333],
+];
+export const APY_HALFYEARLY = [
+  [248, 496, 744, 991, 1239],
+  [271, 543, 814, 1080, 1346],
+  [295, 590, 885, 1169, 1464],
+  [319, 637, 956, 1269, 1588],
+  [348, 690, 1045, 1381, 1723],
+  [378, 749, 1133, 1499, 1877],
+  [413, 820, 1228, 1635, 2042],
+  [449, 891, 1334, 1776, 2219],
+  [484, 968, 1452, 1930, 2414],
+  [531, 1050, 1582, 2101, 2632],
+  [572, 1145, 1723, 2290, 2862],
+  [626, 1251, 1877, 2496, 3122],
+  [685, 1363, 2048, 2727, 3405],
+  [744, 1487, 2237, 2974, 3718],
+  [814, 1629, 2443, 3252, 4066],
+  [891, 1782, 2673, 3553, 4438],
+  [974, 1948, 2921, 3889, 4863],
+  [1068, 2136, 3205, 4261, 5323],
+  [1169, 2337, 3506, 4674, 5843],
+  [1287, 2573, 3860, 5134, 6415],
+  [1416, 2833, 4249, 5648, 7058],
+  [1558, 3116, 4674, 6220, 7778],
+  [1717, 3435, 5152, 6869, 8581],
+];
+
+export function apyContribution(age, pension, frequency) {
+  const a = Math.trunc(Number(age));
+  const p = Number(pension);
+  if (!Number.isFinite(a) || !Number.isFinite(p)) return null;
+  if (a !== Number(age)) return null;
+  if (a < APY_MIN_AGE || a > APY_MAX_AGE) return null;
+  const col = APY_PENSIONS.indexOf(p);
+  if (col < 0) return null;
+  const row = a - APY_MIN_AGE;
+  if (frequency === "monthly") return APY_MONTHLY[row][col];
+  if (frequency === "quarterly") return APY_QUARTERLY[row][col];
+  if (frequency === "half-yearly") return APY_HALFYEARLY[row][col];
+  return null;
+}
+
+export function apyCompute(age, pension, frequency) {
+  const a = Math.trunc(Number(age));
+  const p = Number(pension);
+  if (!Number.isFinite(a) || !Number.isFinite(p)) return null;
+  if (a !== Number(age)) return null;
+  if (a < APY_MIN_AGE || a > APY_MAX_AGE) return null;
+  const col = APY_PENSIONS.indexOf(p);
+  if (col < 0) return null;
+  if (frequency !== "monthly" && frequency !== "quarterly" && frequency !== "half-yearly") return null;
+  const perPeriod = apyContribution(a, p, frequency);
+  if (perPeriod === null) return null;
+  const years = 60 - a;
+  const paymentsPerYear = frequency === "monthly" ? 12 : frequency === "quarterly" ? 4 : 2;
+  const payments = paymentsPerYear * years;
+  const total = perPeriod * payments;
+  const monthly = apyContribution(a, p, "monthly");
+  const monthlyTotal = monthly * 12 * years;
+  const quarterly = apyContribution(a, p, "quarterly");
+  const quarterlyTotal = quarterly * 4 * years;
+  const halfYearly = apyContribution(a, p, "half-yearly");
+  const halfYearlyTotal = halfYearly * 2 * years;
+  return {
+    age: a,
+    pension: p,
+    frequency,
+    perPeriod,
+    paymentsPerYear,
+    years,
+    payments,
+    total,
+    corpus: APY_CORPUS[col],
+    monthly,
+    monthlyTotal,
+    quarterly,
+    quarterlyTotal,
+    halfYearly,
+    halfYearlyTotal,
+    savedVsMonthly: monthlyTotal - total
+  };
+}
+
+export function apyDelayRows(pension) {
+  const p = Number(pension);
+  const col = APY_PENSIONS.indexOf(p);
+  if (col < 0) return null;
+  const rows = [];
+  for (let a = APY_MIN_AGE; a <= APY_MAX_AGE; a++) {
+    const monthly = APY_MONTHLY[a - APY_MIN_AGE][col];
+    const years = 60 - a;
+    rows.push({ age: a, years, monthly, total: monthly * 12 * years });
+  }
+  return rows;
+}
+
+export const apyCss = `
+.calc-page 
+
+.calc-page .data-table tr.highlight-row th,
+.calc-page .data-table tr.highlight-row td {
+  background: #fff7d6;
+  font-weight: 700;
+}
+
+@media(max-width: 760px) {
+  .calc-page 
+}
+`;
+
+// SWP (Systematic Withdrawal Plan) calculator.
+// Monthly iteration, withdrawal at month end: each month the balance
+// grows by one-twelfth of the annual return, then the monthly
+// withdrawal comes out — balance = balance * (1 + r/12) - W.
+// This is the same order onlycalculators.com uses in its published
+// SWP formula (FV = P(1+r)^n - W[((1+r)^n - 1)/r], r = annual/12),
+// and the anchor case below reproduces its published figures
+// exactly. A withdrawal larger than the balance takes what is left
+// (a part-payment) and the corpus is then zero. The "lasts" figure
+// keeps the same simulation running to a 600-month (50-year) cap.
+// Figures are rounded to whole rupees only at the end, with
+// Math.round behaviour (roundRupee); totals are rounded first, then
+// totalReturns = totalWithdrawn + finalBalance - corpus, so the
+// displayed figures always satisfy the identity exactly. Year rows:
+// opening/closing are the rounded balances, withdrawn is the rounded
+// sum of that year's withdrawals, growth is derived as
+// closing - opening + withdrawn so each row telescopes exactly.
+export const SWP_MIN_CORPUS = 10000;
+export const SWP_MAX_CORPUS = 100000000;
+export const SWP_MIN_WITHDRAWAL = 100;
+export const SWP_MAX_WITHDRAWAL = 10000000;
+export const SWP_MIN_RATE = 0;
+export const SWP_MAX_RATE = 30;
+export const SWP_MIN_YEARS = 1;
+export const SWP_MAX_YEARS = 30;
+export const SWP_MAX_MONTHS = 600;
+
+export function swpSimulate(corpus, withdrawal, monthlyRate, maxMonths) {
+  let balance = corpus;
+  let totalWithdrawn = 0;
+  const months = [];
+  let depleted = false;
+  let depletionMonth = null;
+  for (let m = 1; m <= maxMonths; m++) {
+    const growth = balance * monthlyRate;
+    balance = balance + growth;
+    const w = balance < withdrawal ? balance : withdrawal;
+    balance = balance - w;
+    totalWithdrawn += w;
+    months.push({ growth, withdrawal: w, closing: balance });
+    if (balance <= 0) {
+      depleted = true;
+      depletionMonth = m;
+      break;
+    }
+  }
+  return { months, totalWithdrawn, finalBalance: balance, depleted, depletionMonth };
+}
+
+export function swpCompute(corpus, withdrawal, annualRatePct, years) {
+  const c = Number(corpus);
+  const w = Number(withdrawal);
+  const r = Number(annualRatePct);
+  const y = Number(years);
+  if (!Number.isFinite(c) || !Number.isFinite(w) || !Number.isFinite(r) || !Number.isFinite(y)) return null;
+  if (c < SWP_MIN_CORPUS || c > SWP_MAX_CORPUS) return null;
+  if (w < SWP_MIN_WITHDRAWAL || w > SWP_MAX_WITHDRAWAL) return null;
+  if (r < SWP_MIN_RATE || r > SWP_MAX_RATE) return null;
+  if (y !== Math.trunc(y) || y < SWP_MIN_YEARS || y > SWP_MAX_YEARS) return null;
+  const monthlyRate = r / 100 / 12;
+  const months = y * 12;
+  const sim = swpSimulate(c, w, monthlyRate, months);
+  const totalWithdrawn = roundRupee(sim.totalWithdrawn);
+  const finalBalance = roundRupee(sim.finalBalance);
+  const totalReturns = totalWithdrawn + finalBalance - c;
+  const yearRows = [];
+  const nYears = Math.ceil(sim.months.length / 12);
+  for (let yr = 1; yr <= nYears; yr++) {
+    const start = (yr - 1) * 12;
+    const end = Math.min(yr * 12, sim.months.length) - 1;
+    const opening = roundRupee(start === 0 ? c : sim.months[start - 1].closing);
+    const closing = roundRupee(sim.months[end].closing);
+    let withdrawn = 0;
+    for (let i = start; i <= end; i++) withdrawn += sim.months[i].withdrawal;
+    withdrawn = roundRupee(withdrawn);
+    yearRows.push({ year: yr, opening, withdrawn, growth: closing - opening + withdrawn, closing });
+  }
+  let monthsToDeplete = null;
+  if (sim.depleted) {
+    monthsToDeplete = sim.depletionMonth;
+  } else {
+    const long = swpSimulate(c, w, monthlyRate, SWP_MAX_MONTHS);
+    if (long.depleted) monthsToDeplete = long.depletionMonth;
+  }
+  return {
+    corpus: c,
+    withdrawal: w,
+    annualRatePct: r,
+    years: y,
+    months,
+    monthlyRate,
+    totalWithdrawn,
+    totalReturns,
+    finalBalance,
+    depleted: sim.depleted,
+    depletionMonth: sim.depletionMonth,
+    monthsToDeplete,
+    yearRows
+  };
+}
+
+export function swpLastsText(monthsToDeplete) {
+  if (monthsToDeplete === null || monthsToDeplete === undefined) return "beyond 50 years";
+  const y = Math.floor(monthsToDeplete / 12);
+  const m = monthsToDeplete % 12;
+  if (m === 0) return y + (y === 1 ? " year" : " years") + " (month " + monthsToDeplete + ")";
+  return y + (y === 1 ? " year " : " years ") + m + (m === 1 ? " month" : " months") + " (month " + monthsToDeplete + ")";
+}
+
+export const swpCss = `
+.calc-page 
+
+.calc-page .data-table tr.highlight-row th,
+.calc-page .data-table tr.highlight-row td {
+  background: #fff7d6;
+  font-weight: 700;
+}
+
+@media(max-width: 760px) {
+  .calc-page 
+}
+`;
+
+// Washing machine capacity + running-cost estimator.
+// Capacity follows the consensus of the India buying guides
+// (Bajaj Finserv, naatural.in, toq.in, herzindagi.com — see
+// sources.md): 6 kg for 1-2 people, 7 kg for 3, 8 kg for 4,
+// 9 kg for 5, 10 kg for 6, 11 kg for 7-8, 12 kg for 9+.
+// Washing once or twice a week piles more into each load, so
+// +1 kg; washing every day (7+ loads a week) means smaller
+// loads, so -1 kg; weekly bulky items (blankets, curtains)
+// need +1 kg. The result is clamped to the 6-12 kg range sold
+// in India. Water and electricity are PLANNING ESTIMATES for a
+// typical 7-8 kg machine, not meter readings: water is the
+// midpoint of the published BEE Schedule 12 ranges (front load
+// 45-60 litres a wash, top load 120-150, semi-automatic 50-70),
+// and electricity is the BEE label figure per kg per cycle
+// (front load 0.07 units/kg — the IFB 7 kg front-loader label
+// works out to 0.49 units a wash on its 60 C rated wash;
+// top load 0.01 units/kg — the IFB 7 kg top-loader label is
+// 0.07 units a wash on its 30 C rated wash; semi-automatic
+// 0.0107 units/kg — the Voltas Beko 8 kg label). The two
+// front-load/top-load electricity figures are therefore NOT
+// like-for-like: the front-load label wash heats the water to
+// 60 C, the top-load one to 30 C. A cold front-load wash uses
+// far less than the label figure. Loads a month = loads a week
+// x 52 / 12. Aim for about 80% of the rated capacity per load.
+// Monthly and yearly costs are each rounded on their own, so a
+// yearly figure can differ by a few rupees from the monthly
+// figure times 12; yearly water and electricity are the monthly
+// figures times 12 exactly.
+export const WM_MIN_PEOPLE = 1;
+export const WM_MAX_PEOPLE = 12;
+export const WM_MIN_LOADS = 1;
+export const WM_MAX_LOADS = 14;
+export const WM_MIN_TARIFF = 1;
+export const WM_MAX_TARIFF = 30;
+export const WM_WEEKS_PER_MONTH = 52 / 12;
+export const WM_FILL_FRACTION = 0.8;
+export const WM_WATER_LITRES_PER_CYCLE = { front: 50, top: 140, semi: 60 };
+export const WM_KWH_PER_KG_PER_CYCLE = { front: 0.07, top: 0.01, semi: 0.0107 };
+export const WM_TYPES = ["front", "top", "semi"];
+export const WM_TYPE_LABELS = { front: "front load", top: "top load", semi: "semi-automatic" };
+
+export function wmBaseCapacity(people) {
+  if (people <= 2) return 6;
+  if (people === 3) return 7;
+  if (people === 4) return 8;
+  if (people === 5) return 9;
+  if (people === 6) return 10;
+  if (people <= 8) return 11;
+  return 12;
+}
+
+export function wmCapacity(people, loadsPerWeek, bulky) {
+  let cap = wmBaseCapacity(people);
+  if (loadsPerWeek <= 2) cap += 1;
+  if (loadsPerWeek >= 7) cap -= 1;
+  if (bulky) cap += 1;
+  if (cap < 6) cap = 6;
+  if (cap > 12) cap = 12;
+  return cap;
+}
+
+export function wmRound2(n) {
+  return Math.round(n * 100) / 100;
+}
+
+export function wmRound1(n) {
+  return Math.round(n * 10) / 10;
+}
+
+export function wmTypeFigures(type, capacity, loadsPerWeek, tariff) {
+  const loadsPerMonth = loadsPerWeek * WM_WEEKS_PER_MONTH;
+  const waterMonth = Math.round(loadsPerMonth * WM_WATER_LITRES_PER_CYCLE[type]);
+  const kwhPerCycle = wmRound2(WM_KWH_PER_KG_PER_CYCLE[type] * capacity);
+  const kwhMonth = wmRound2(WM_KWH_PER_KG_PER_CYCLE[type] * capacity * loadsPerMonth);
+  const costMonth = Math.round(kwhMonth * tariff);
+  return {
+    type,
+    waterPerCycle: WM_WATER_LITRES_PER_CYCLE[type],
+    kwhPerKgPerCycle: WM_KWH_PER_KG_PER_CYCLE[type],
+    loadsPerMonth: wmRound1(loadsPerMonth),
+    waterMonth,
+    waterYear: waterMonth * 12,
+    kwhPerCycle,
+    kwhMonth,
+    kwhYear: wmRound2(kwhMonth * 12),
+    costMonth,
+    costYear: costMonth * 12
+  };
+}
+
+export function wmCompute(people, loadsPerWeek, type, bulky, tariff) {
+  const p = Number(people);
+  const l = Number(loadsPerWeek);
+  const t = Number(tariff);
+  if (!Number.isFinite(p) || !Number.isFinite(l) || !Number.isFinite(t)) return null;
+  if (p !== Math.trunc(p) || p < WM_MIN_PEOPLE || p > WM_MAX_PEOPLE) return null;
+  if (l !== Math.trunc(l) || l < WM_MIN_LOADS || l > WM_MAX_LOADS) return null;
+  if (WM_TYPES.indexOf(type) === -1) return null;
+  if (typeof bulky !== "boolean") return null;
+  if (t < WM_MIN_TARIFF || t > WM_MAX_TARIFF) return null;
+  const capacity = wmCapacity(p, l, bulky);
+  const main = wmTypeFigures(type, capacity, l, t);
+  const compare = {};
+  for (const other of WM_TYPES) {
+    if (other !== type) compare[other] = wmTypeFigures(other, capacity, l, t);
+  }
+  return {
+    people: p,
+    loadsPerWeek: l,
+    type,
+    bulky,
+    tariff: t,
+    capacity,
+    perLoadKg: wmRound1(capacity * WM_FILL_FRACTION),
+    waterPerCycle: main.waterPerCycle,
+    kwhPerKgPerCycle: main.kwhPerKgPerCycle,
+    loadsPerMonth: main.loadsPerMonth,
+    waterMonth: main.waterMonth,
+    waterYear: main.waterYear,
+    kwhPerCycle: main.kwhPerCycle,
+    kwhMonth: main.kwhMonth,
+    kwhYear: main.kwhYear,
+    costMonth: main.costMonth,
+    costYear: main.costYear,
+    compare
+  };
+}
+
+export const wmCss = `
+.calc-page 
+
+.calc-page .data-table tr.highlight-row th,
+.calc-page .data-table tr.highlight-row td {
+  background: #fff7d6;
+  font-weight: 700;
+}
+
+.calc-page .check-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 14px 0 4px;
+  font-weight: 600;
+}
+
+.calc-page .check-field input {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+@media(max-width: 760px) {
+  .calc-page 
+}
+`;
+
+// Mattress size finder.
+// Length: the mattress should be about 8 inches longer than the
+// tallest sleeper (Sunday Rest, from mattress makers) — rounded up
+// to the next standard Indian length: 72, 75, 78 or 84 inches.
+// Width: by sleepers — one sleeper a Single (36 in), two a Queen
+// (60 in, 30 in each — the minimum comfortable width for an adult,
+// Neobest), two who want extra room a King (72 in, 36 in each),
+// three a King (72 in, 24 in each — tight, and the page says so).
+// One sleeper who wants extra room gets a Double (48 in).
+// Room fit: the bed is centred, so the walking space each side is
+// (room width - mattress width) / 2 and the space at the foot is
+// room length - mattress length. "Fits comfortably" needs 24 in
+// each side and 24 in at the foot (Neobest's 24-30 in guideline,
+// lower bound); "fits, but tight" needs 6 in; anything less is
+// too big, and the finder steps down a width (King -> XL Queen ->
+// Queen -> Double -> Single) until one fits comfortably, then
+// tightly, and says so. The length never steps down: it follows
+// the tallest sleeper. Minimum room = mattress width + 48 in
+// (24 in each side) by mattress length + 24 in (at the foot).
+export const MS_MIN_SLEEPERS = 1;
+export const MS_MAX_SLEEPERS = 3;
+export const MS_MIN_FEET = 4;
+export const MS_MAX_FEET = 7;
+export const MS_MIN_INCHES = 0;
+export const MS_MAX_INCHES = 11;
+export const MS_MIN_ROOM_W = 6;
+export const MS_MAX_ROOM_W = 20;
+export const MS_MIN_ROOM_L = 6;
+export const MS_MAX_ROOM_L = 25;
+export const MS_LENGTHS = [72, 75, 78, 84];
+export const MS_LENGTH_ALLOWANCE_IN = 8;
+export const MS_COMFORT_SIDE_IN = 24;
+export const MS_MIN_FIT_IN = 6;
+export const MS_COMFORT_WIDTH_PER_SLEEPER = 30;
+export const MS_SIZES = [
+  { key: "diwan", name: "Diwan", width: 30, bestFor: "Diwans and daybeds" },
+  { key: "single", name: "Single", width: 36, bestFor: "One sleeper, a child's room or a guest room" },
+  { key: "double", name: "Double", width: 48, bestFor: "One adult who wants extra space, or two in a tight guest room" },
+  { key: "queen", name: "Queen", width: 60, bestFor: "Two adults comfortably" },
+  { key: "xl-queen", name: "XL Queen", width: 66, bestFor: "Two adults who want more room than a Queen" },
+  { key: "king", name: "King", width: 72, bestFor: "Couples, families, large bedrooms" }
+];
+export const MS_STEP_DOWN = ["king", "xl-queen", "queen", "double", "single"];
+export const MS_LADDER = ["diwan", "single", "double", "queen", "xl-queen", "king"];
+
+export function msRound1(n) {
+  return Math.round(n * 10) / 10;
+}
+
+export function msCm(inches) {
+  return Math.round(inches * 2.54);
+}
+
+export function msSizeByKey(key) {
+  for (const s of MS_SIZES) if (s.key === key) return s;
+  return null;
+}
+
+export function msLengthForHeight(heightIn) {
+  const need = heightIn + MS_LENGTH_ALLOWANCE_IN;
+  for (const l of MS_LENGTHS) if (l >= need) return l;
+  return 84;
+}
+
+export function msBaseSizeKey(sleepers, extraRoom) {
+  if (sleepers <= 1) return extraRoom ? "double" : "single";
+  if (sleepers === 2) return extraRoom ? "king" : "queen";
+  return "king";
+}
+
+export function msRoomCheck(widthIn, lengthIn, roomWft, roomLft) {
+  const side = msRound1((roomWft * 12 - widthIn) / 2);
+  const foot = msRound1(roomLft * 12 - lengthIn);
+  const fit = side >= MS_COMFORT_SIDE_IN && foot >= MS_COMFORT_SIDE_IN ? "comfortable"
+    : side >= MS_MIN_FIT_IN && foot >= MS_MIN_FIT_IN ? "tight" : "too-big";
+  const cause = fit === "too-big"
+    ? (side < MS_MIN_FIT_IN && foot < MS_MIN_FIT_IN ? "both" : side < MS_MIN_FIT_IN ? "width" : "length")
+    : null;
+  return { side, foot, fit, cause };
+}
+
+export function msCompute(sleepers, feet, inches, extraRoom, roomWft, roomLft) {
+  const s = Number(sleepers);
+  const f = Number(feet);
+  const inch = Number(inches);
+  const rw = Number(roomWft);
+  const rl = Number(roomLft);
+  if (!Number.isFinite(s) || !Number.isFinite(f) || !Number.isFinite(inch)
+    || !Number.isFinite(rw) || !Number.isFinite(rl)) return null;
+  if (s !== Math.trunc(s) || s < MS_MIN_SLEEPERS || s > MS_MAX_SLEEPERS) return null;
+  if (f !== Math.trunc(f) || f < MS_MIN_FEET || f > MS_MAX_FEET) return null;
+  if (inch !== Math.trunc(inch) || inch < MS_MIN_INCHES || inch > MS_MAX_INCHES) return null;
+  if (typeof extraRoom !== "boolean") return null;
+  if (rw < MS_MIN_ROOM_W || rw > MS_MAX_ROOM_W) return null;
+  if (rl < MS_MIN_ROOM_L || rl > MS_MAX_ROOM_L) return null;
+  const heightIn = f * 12 + inch;
+  const lengthIn = msLengthForHeight(heightIn);
+  const baseKey = msBaseSizeKey(s, extraRoom);
+  let chosenKey = baseKey;
+  let check = msRoomCheck(msSizeByKey(baseKey).width, lengthIn, rw, rl);
+  let steppedDown = false;
+  if (check.fit === "too-big") {
+    const ladder = MS_STEP_DOWN;
+    const start = ladder.indexOf(baseKey);
+    let tightKey = null;
+    for (let i = start + 1; i < ladder.length; i++) {
+      const c = msRoomCheck(msSizeByKey(ladder[i]).width, lengthIn, rw, rl);
+      if (c.fit === "comfortable") { chosenKey = ladder[i]; check = c; steppedDown = true; break; }
+      if (c.fit === "tight" && tightKey === null) tightKey = ladder[i];
+    }
+    if (!steppedDown && tightKey !== null) {
+      chosenKey = tightKey;
+      check = msRoomCheck(msSizeByKey(tightKey).width, lengthIn, rw, rl);
+      steppedDown = true;
+    }
+  }
+  const size = msSizeByKey(chosenKey);
+  const baseSize = msSizeByKey(baseKey);
+  const perSleeper = msRound1(size.width / s);
+  const widthComfort = perSleeper >= MS_COMFORT_WIDTH_PER_SLEEPER ? "comfortable"
+    : perSleeper >= 24 ? "tight" : "very-tight";
+  return {
+    sleepers: s,
+    feet: f,
+    inches: inch,
+    heightIn,
+    extraRoom,
+    roomWft: rw,
+    roomLft: rl,
+    baseKey,
+    baseName: baseSize.name,
+    baseWidth: baseSize.width,
+    sizeKey: chosenKey,
+    sizeName: size.name,
+    widthIn: size.width,
+    lengthIn,
+    perSleeper,
+    widthComfort,
+    headroom: lengthIn - heightIn,
+    side: check.side,
+    foot: check.foot,
+    fit: check.fit,
+    fitCause: check.cause,
+    steppedDown,
+    minRoomWft: msRound1((size.width + 2 * MS_COMFORT_SIDE_IN) / 12),
+    minRoomLft: msRound1((lengthIn + MS_COMFORT_SIDE_IN) / 12)
+  };
+}
+
+export const msCss = `
+.calc-page 
+
+.calc-page .data-table tr.highlight-row th,
+.calc-page .data-table tr.highlight-row td {
+  background: #fff7d6;
+  font-weight: 700;
+}
+
+.calc-page .check-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 14px 0 4px;
+  font-weight: 600;
+}
+
+.calc-page .check-field input {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.calc-page .field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media(max-width: 760px) {
+  .calc-page 
+}
+`;
+
 export function ciClient(c) {
   const $ = id => document.getElementById(id);
 
@@ -31234,6 +33277,10010 @@ export function renderScssCalculatorBody(p, others, css, clientSource) {
           <p>
             Try different numbers — or run the same check with the
             related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function misClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  const MIS_MIN_DEPOSIT = 1000;
+
+  const MIS_MAX_SINGLE = 900000;
+
+  const MIS_MAX_JOINT = 1500000;
+
+  const MIS_TENURE_YEARS = 5;
+
+  const MIS_PAYOUTS = 60;
+
+  function misYearly(deposit, rate) {
+    const monthly = roundRupee(deposit * rate / 100 / 12);
+    const annual = monthly * 12;
+    const rows = [];
+    let cumulative = 0;
+    for (let y = 1; y <= MIS_TENURE_YEARS; y++) {
+      cumulative += annual;
+      const deduction = y <= 3 ? 2 : (y === 4 ? 1 : 0);
+      rows.push({
+        year: y,
+        label: "Year " + y,
+        interest: annual,
+        cumulative,
+        deduction,
+        back: y === MIS_TENURE_YEARS ? deposit : Math.round(deposit * (100 - deduction) / 100)
+      });
+    }
+    return rows;
+  }
+
+  function misCompute(deposit, rate, accountType, taxSlab) {
+    const p = Number(deposit);
+    const r = Number(rate);
+    const s = Number(taxSlab);
+    const t = accountType === "joint" ? "joint" : (accountType === "single" ? "single" : null);
+    if (!Number.isFinite(p) || !Number.isFinite(r) || !Number.isFinite(s)) return null;
+    if (t === null) return null;
+    const max = t === "joint" ? MIS_MAX_JOINT : MIS_MAX_SINGLE;
+    if (p < MIS_MIN_DEPOSIT || p > max || p % 1000 !== 0) return null;
+    if (r < 0 || r > 15) return null;
+    if (s !== 0 && s !== 5 && s !== 10 && s !== 20 && s !== 30) return null;
+    const monthly = roundRupee(p * r / 100 / 12);
+    const annual = monthly * 12;
+    const afterTaxMonthly = roundRupee(monthly * (1 - s / 100 * 1.04));
+    const afterTaxAnnual = afterTaxMonthly * 12;
+    const yearlyRows = misYearly(p, r);
+    return {
+      deposit: p,
+      rate: r,
+      accountType: t,
+      taxSlab: s,
+      monthly,
+      annual,
+      afterTaxMonthly,
+      afterTaxAnnual,
+      totalInterest: annual * MIS_TENURE_YEARS,
+      afterTaxTotal: afterTaxMonthly * MIS_PAYOUTS,
+      payouts: MIS_PAYOUTS,
+      maturityYear: new Date().getFullYear() + MIS_TENURE_YEARS,
+      principal: p,
+      yearlyRows
+    };
+  }
+
+  const presetSelect = $("preset");
+  const misPill = $("mis-pill");
+  const inputDeposit = $("input-deposit");
+  const inputDepositError = $("input-deposit-error");
+  const inputRate = $("input-rate");
+  const inputRateError = $("input-rate-error");
+  const inputAccount = $("input-account");
+  const inputTax = $("input-tax");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const yearlyBody = $("yearly-body");
+  const yearlyNote = $("yearly-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+  const backText = row => row.year === 5
+    ? inr(row.back) + " at maturity"
+    : inr(row.back) + " (" + row.deduction + "% deducted)";
+
+  function renderYearly(r) {
+    yearlyBody.replaceChildren();
+    if (!r) {
+      yearlyNote.textContent = "Enter your figures to see the interest arrive year by year.";
+      return;
+    }
+    r.yearlyRows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row.label;
+      tr.appendChild(th);
+      [row.interest, row.cumulative].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      const backTd = document.createElement("td");
+      backTd.textContent = backText(row);
+      tr.appendChild(backTd);
+      yearlyBody.appendChild(tr);
+    });
+    yearlyNote.textContent = "The same interest every year — simple interest on your original deposit, paid out each month, never added to the principal. Close early and part of the deposit is deducted.";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your deposit, the account type and the rate to see the monthly income.";
+    working.textContent = "Enter your deposit, the account type and the rate to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    yearlyBody.replaceChildren();
+    yearlyNote.textContent = "Enter your figures to see the interest arrive year by year.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(deposit, rate, accountType, taxSlab, r) {
+    output.textContent = inr(r.monthly);
+    box1Val.textContent = inr(r.monthly);
+    box1Label.textContent = "MONTHLY INCOME";
+    box2Val.textContent = inr(r.annual);
+    box2Label.textContent = "ANNUAL INCOME";
+    box3Val.textContent = inr(r.totalInterest);
+    box3Label.textContent = "TOTAL INTEREST (5 YEARS)";
+    working.textContent = inr(deposit) + " at " + rate + "% for 5 years: you receive " + inr(r.monthly)
+      + " every month — " + inr(r.annual) + " a year, " + inr(r.totalInterest) + " over 5 years.";
+    working2.textContent = "Matures in " + r.maturityYear + " · " + r.payouts + " monthly payouts · " + inr(r.principal) + " returned in full at maturity.";
+    workingNote.textContent = "Simple interest, paid monthly · rate held steady at " + rate + "% for the full term."
+      + (taxSlab > 0 ? " After tax at " + taxSlab + "% + 4% cess: " + inr(r.afterTaxMonthly) + " a month." : "");
+    glanceText.textContent = inr(deposit) + " · " + rate + "% · " + accountType + " → " + inr(r.monthly) + " a month"
+      + " (" + inr(r.annual) + " a year; " + inr(r.totalInterest) + " over 5 years; " + inr(r.principal) + " back at maturity)"
+      + (taxSlab > 0 ? " · after tax at " + taxSlab + "% + 4% cess: " + inr(r.afterTaxMonthly) + " a month (" + inr(r.afterTaxAnnual) + " a year; " + inr(r.afterTaxTotal) + " over 5 years)." : ".");
+    renderYearly(r);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | Post Office MIS Calculator"
+      + "\nQuestion: " + inr(deposit) + " at " + rate + "% for 5 years (" + accountType + " account)"
+      + "\nAnswer: monthly income " + inr(r.monthly) + "; annual income " + inr(r.annual)
+      + "; total interest " + inr(r.totalInterest)
+      + "; " + r.payouts + " monthly payouts; matures in " + r.maturityYear
+      + "; principal " + inr(r.principal) + " returned in full"
+      + (taxSlab > 0 ? "\nAfter tax at " + taxSlab + "% + 4% cess: " + inr(r.afterTaxMonthly) + " a month; " + inr(r.afterTaxAnnual) + " a year; " + inr(r.afterTaxTotal) + " over 5 years" : "")
+      + "\nWorking: simple interest, monthly income = deposit × rate ÷ 100 ÷ 12, principal returned at maturity";
+  }
+
+  function paint(showEmptyError = false) {
+    misPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const depositRaw = inputDeposit.value;
+    const rateRaw = inputRate.value;
+    const accountType = inputAccount.value;
+    const taxSlab = Number(inputTax.value);
+    const depositNum = depositRaw === "" ? NaN : Number(depositRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    const maxDeposit = accountType === "joint" ? 1500000 : 900000;
+    let depositMsg = "";
+    let rateMsg = "";
+    if (depositRaw === "") {
+      if (showEmptyError) depositMsg = "Enter your deposit.";
+    } else if (!Number.isFinite(depositNum) || depositNum < 1000 || depositNum > maxDeposit || depositNum % 1000 !== 0) {
+      depositMsg = "Enter a deposit of ₹1,000 to " + inr(maxDeposit) + ", in multiples of ₹1,000.";
+    }
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the interest rate.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 15) {
+      rateMsg = "Enter the interest rate from 0% to 15%.";
+    }
+    inputDepositError.textContent = depositMsg;
+    inputRateError.textContent = rateMsg;
+    inputDeposit.setAttribute("aria-invalid", String(depositMsg !== ""));
+    inputRate.setAttribute("aria-invalid", String(rateMsg !== ""));
+
+    const valid = depositMsg === "" && rateMsg === ""
+      && depositRaw !== "" && rateRaw !== ""
+      && (accountType === "single" || accountType === "joint")
+      && [0, 5, 10, 20, 30].includes(taxSlab);
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = misCompute(depositNum, rateNum, accountType, taxSlab);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(depositNum, rateNum, accountType, taxSlab, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = misCompute(item.deposit, item.rate, item.accountType, item.taxSlab);
+    if (!r) return "";
+    return inr(item.deposit) + " · " + item.rate + "% · " + item.accountType + " → " + inr(r.monthly) + " a month";
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputDeposit.value, inputRate.value, inputAccount.value, inputTax.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputDeposit.value = String(item.deposit);
+        inputRate.value = String(item.rate);
+        inputAccount.value = item.accountType;
+        inputTax.value = String(item.taxSlab);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      deposit: Number(inputDeposit.value),
+      rate: Number(inputRate.value),
+      accountType: inputAccount.value,
+      taxSlab: Number(inputTax.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputDeposit.value = button.dataset.deposit || "";
+      inputRate.value = button.dataset.rate || "";
+      if (button.dataset.account) inputAccount.value = button.dataset.account;
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputDeposit.value = String(rec.deposit);
+    inputRate.value = String(rec.rate);
+    inputAccount.value = rec.accountType;
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputDeposit.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputAccount.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputTax.addEventListener(evt, () => { paint(); });
+  });
+
+  $("mis-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    inputTax.value = String(c.sampleTaxSlab);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderMisCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleDeposit: p.sampleDeposit, sampleRate: p.sampleRate, sampleAccountType: p.sampleAccountType, sampleTaxSlab: p.sampleTaxSlab };
+  const sample = misCompute(p.sampleDeposit, p.sampleRate, p.sampleAccountType, p.sampleTaxSlab);
+  const jointSample = misCompute(1500000, 7.4, "joint", 0);
+  const fiveSample = misCompute(500000, 7.4, "single", 0);
+  const rate7Sample = misCompute(900000, 7, "single", 0);
+  const tax20Sample = misCompute(900000, 7.4, "single", 20);
+  const tax30Sample = misCompute(900000, 7.4, "single", 30);
+
+  const presetSummary = pr => {
+    const r = misCompute(pr.deposit, pr.rate, pr.accountType, 0);
+    return `${inr2(pr.deposit)} ${pr.accountType} at ${pr.rate}% → ${inr2(r.monthly)} a month`;
+  };
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = misCompute(st.deposit, st.rate, st.accountType, 0);
+    return `${inr2(st.deposit)} at ${st.rate}% → ${inr2(r.monthly)} a month`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const backText = row => row.year === 5
+    ? inr2(row.back) + " at maturity"
+    : inr2(row.back) + " (" + row.deduction + "% deducted)";
+  const yearlyRows = sample.yearlyRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.label)}</th>
+        <td>${inr2(row.interest)}</td>
+        <td>${inr2(row.cumulative)}</td>
+        <td>${backText(row)}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}${hraCss}${ciCss}${epfCss}${npsCss}${ssyCss}${nscCss}${scssCss}${misCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free Post Office MIS calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate your MIS income →
+              </a>
+              <a href="#method" class="calc-link">How MIS is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.monthly)} every month</strong>
+                <small>On ₹9,00,000 at 7.4% for 5 years</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.annual)} a year</strong>
+                <small>About ${inr2(tax20Sample.afterTaxMonthly)} a month after tax at 20% + cess</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.totalInterest)} over 5 years</strong>
+                <small>Your ₹9,00,000 comes back in full at maturity</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>An estimate for planning — not financial, tax or legal advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate your MIS income</h2>
+              <span class="calc-pill" id="mis-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="mis-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-account">
+                Account type
+                <span>Single takes up to ₹9,00,000; joint, of up to three adults, takes up to ₹15,00,000</span>
+              </label>
+
+              <select class="select-input" id="input-account">
+                <option value="single" selected>Single — up to ₹9,00,000</option>
+                <option value="joint">Joint — up to ₹15,00,000</option>
+              </select>
+
+              <label class="field-label" for="input-deposit">
+                Deposit amount (₹)
+                <span>What you pay once when you open the account — from ₹1,000, in multiples of ₹1,000, up to the limit for the account type you picked</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-deposit"
+                type="number"
+                value="${p.sampleDeposit}"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-deposit-error"
+              >
+              <p class="calc-error" id="input-deposit-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-rate">
+                Interest rate (% a year)
+                <span>The notified MIS rate, from 0% to 15% — 7.4% is the rate for October to December 2026. The rate is reviewed every quarter, so try a lower one too</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-rate"
+                type="number"
+                value="${p.sampleRate}"
+                step="0.1"
+                inputmode="decimal"
+                aria-describedby="input-rate-error"
+              >
+              <p class="calc-error" id="input-rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-tax">
+                Your tax slab
+                <span>MIS interest is fully taxable and the deposit gets no 80C deduction — pick your slab to see the income you keep, plus 4% cess</span>
+              </label>
+
+              <select class="select-input" id="input-tax">
+                <option value="0" selected>No tax — show the full income</option>
+                <option value="5">5% slab</option>
+                <option value="10">10% slab</option>
+                <option value="20">20% slab</option>
+                <option value="30">30% slab</option>
+              </select>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-deposit">${inr2(sample.monthly)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.monthly)}</strong>
+                  <small id="box1-label">MONTHLY INCOME</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.annual)}</strong>
+                  <small id="box2-label">ANNUAL INCOME</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.totalInterest)}</strong>
+                  <small id="box3-label">TOTAL INTEREST (5 YEARS)</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">₹9,00,000 · 7.4% · single → ${inr2(sample.monthly)} a month (${inr2(sample.annual)} a year; ${inr2(sample.totalInterest)} over 5 years; ${inr2(sample.principal)} back at maturity).</span>
+              </div>
+
+              <p class="working" id="working">
+                ₹9,00,000 at 7.4% for 5 years: you receive ${inr2(sample.monthly)} every month — ${inr2(sample.annual)} a year, ${inr2(sample.totalInterest)} over 5 years.
+              </p>
+              <p class="working" id="working-2">Matures in ${sample.maturityYear} · ${sample.payouts} monthly payouts · ${inr2(sample.principal)} returned in full at maturity.</p>
+              <p class="working" id="working-note">Simple interest, paid monthly · rate held steady at 7.4% for the full term.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The figure is an estimate at the rate you
+                enter, held steady for the term. The MIS rate is
+                notified every quarter and can change for new
+                accounts, and the interest is taxable in the
+                year it is paid.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="yearly">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Year by year</p>
+          <h2>How the interest arrives</h2>
+          <p id="yearly-note">The same interest every year — simple interest on your original deposit, paid out each month, never added to the principal. Close early and part of the deposit is deducted.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="yearly-note">
+            <caption>Year-by-year interest on the sample figures: ₹9,00,000 at 7.4% for 5 years, and the deposit you would get back if you closed the account at the end of that year.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Interest paid that year</th>
+                <th scope="col">Cumulative interest</th>
+                <th scope="col">Deposit back if closed then</th>
+              </tr>
+            </thead>
+            <tbody id="yearly-body">
+              ${yearlyRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#yearly">Year by year</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / MONTHLY INCOME, EVERY MONTH</span>
+            <h3>The same payout, every month</h3>
+            <p>Interest is simple, so every month pays the same amount. On ₹9,00,000 the payout is ₹5,550 in the first month and ₹5,550 in the sixtieth — ₹66,600 a year, ₹3,33,000 over 5 years, and your deposit back in full.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / 7.4% LOCKED AT OPENING</span>
+            <h3>The rate you open at is the rate you keep</h3>
+            <p>A quarterly review changes the rate only for new accounts. At 7% instead of 7.4%, ₹9,00,000 would pay ₹63,000 a year instead of ₹66,600 — ₹3,600 less a year. Try a different rate to see what a change would do.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / TAXED, AND NO 80C</span>
+            <h3>The headline figure is before tax</h3>
+            <p>The interest is taxable every year and the deposit gets no 80C deduction. At the 20% slab plus 4% cess you keep about ₹4,396 a month on ₹9,00,000, not ₹5,550 — and at 30% about ₹3,818 a month. Pick your slab in the calculator to see what you keep.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your deposit to a monthly income</h2>
+          <p>
+            Pick single or joint first — the deposit limit
+            depends on it — then enter your deposit, check the
+            rate, pick your tax slab and read the income every
+            month, the income for the year and the total
+            interest over 5 years.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How MIS is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The MIS formula</small>
+          Monthly income = deposit × rate ÷ 100 ÷ 12 · simple interest, paid monthly · principal returned in full at maturity
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. ₹9,00,000 at 7.4%, 5 years
+            <strong>${fmt2(sample.monthly)} a month · ${fmt2(sample.totalInterest)} interest</strong>
+            <span>Each month pays ₹5,550, so the year brings ₹66,600. After 60 monthly payouts the interest adds to ₹3,33,000, and the ₹9,00,000 deposit comes back in full.</span>
+          </div>
+
+          <div class="math-step">
+            2. ₹15,00,000 at 7.4%, 5 years
+            <strong>${fmt2(jointSample.monthly)} a month · ${fmt2(jointSample.totalInterest)} interest</strong>
+            <span>The joint-account maximum, ₹15,00,000 for 5 years at 7.4%. You receive ₹9,250 every month — ₹1,11,000 a year — and ₹5,55,000 over 5 years, with the deposit back in full.</span>
+          </div>
+
+          <div class="math-step">
+            3. ₹5,00,000 at 7.4%, 5 years
+            <strong>${fmt2(fiveSample.monthly)} a month · ${fmt2(fiveSample.totalInterest)} interest</strong>
+            <span>Each month pays ₹3,083 — the exact ₹3,083.33 rounded to the nearest rupee, as the scheme's own rule requires. The year is ₹36,996 and the 5-year total ₹1,84,980, not the unrounded ₹37,000 and ₹1,85,000.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five cases, five monthly incomes</h2>
+          <p>
+            One example for each everyday case, including one
+            at the joint maximum and one at the minimum. Select
+            any example to load it into the calculator and check
+            the working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.deposit)} AT ${story.rate}%</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-deposit="${story.deposit}" data-rate="${story.rate}" data-account="${e(story.accountType)}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>MIS rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>The current MIS rate, the deposit limits, the 5-year tenure, how the interest is paid, the rate lock, who can open an account, the early-closure deductions and the tax on the interest.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get MIS wrong</h2>
+          <p>
+            MIS is simple on the surface — one deposit, the
+            same payout every month — but the account-type
+            limit, the early-closure deduction and the tax
+            catch people out.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / EXPECTING THE DEPOSIT TO GROW</span>
+            <h3>The deposit stays flat for 5 years</h3>
+            <p>MIS interest is paid out every month, never added to the principal. On ₹9,00,000 the sixtieth payout is ₹5,550, exactly like the first — and the deposit comes back unchanged at maturity. If you do not need the income yet, a National Savings Certificate compounds instead.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / DEPOSITING MORE THAN YOUR LIMIT</span>
+            <h3>Single and joint have different ceilings</h3>
+            <p>A single account takes at most ₹9,00,000 — ₹15,00,000 needs a joint account of up to three adults. The limits apply to all of one person's MIS accounts together, and the excess over the limit is refunded, earning only the Post Office Savings Account rate until then.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / CLOSING EARLY WITHOUT COUNTING THE DEDUCTION</span>
+            <h3>2% before 3 years, 1% after</h3>
+            <p>You cannot close in the first year at all. Close after 1 year but before 3 years and 2% of the deposit is deducted — ₹18,000 on ₹9,00,000. After 3 years it is 1% — ₹9,000. The interest already paid is yours to keep, but the deduction comes out of the deposit itself.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / FORGETTING THE TAX ON THE INTEREST</span>
+            <h3>No 80C, and the tax is due every year</h3>
+            <p>MIS interest is taxable at your slab rate in the year it is paid, and the deposit gets no 80C deduction. At the 30% slab plus cess, ₹5,550 a month becomes about ₹3,818 a month. Whether your post office deducts TDS on MIS interest is something to ask at the post office — the tax itself is due either way.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>Post Office MIS calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the standard MIS-calculator method:
+            each month pays one twelfth of a year's interest
+            on your original deposit, rounded to the nearest
+            rupee, and the interest is paid out, never added
+            to the principal. The annual income is the monthly
+            income × 12, the total interest is the monthly
+            income × 60, and the deposit is returned in full
+            at maturity. The after-tax figures apply the slab
+            rate you pick plus 4% cess to the monthly income.
+            The rate is user-entered and treated as a steady
+            assumption — never as a live quote or a promise
+            for an account opened later.
+          </p>
+          <p>
+            Figures checked 12 November 2026: the 7.4% rate
+            for 1 October to 31 December 2026 is in the
+            Ministry of Finance (Department of Economic
+            Affairs) Office Memorandum F.No.1/4/2019-NS,
+            dated 30 September 2026, keeping small savings
+            rates unchanged for the third quarter of FY
+            2026-27, as carried by the Department of Posts
+            in SB Order 12/2026 of the same date — see the
+            <a href="https://www.nsiindia.gov.in/" rel="nofollow noopener" target="_blank">National Savings Institute</a>.
+            The deposit limits, the 5-year tenure, the monthly
+            payment and the early-closure deductions are in
+            the National Savings (Monthly Income Account)
+            Scheme, 2019, G.S.R. 917(E) of 12 December 2019,
+            as amended by the 2023 amendment, G.S.R. 239(E)
+            of 31 March 2023, which raised the limits to ₹9
+            lakh single and ₹15 lakh joint (Department of
+            Posts SB Order 16/2023), and the scheme rules
+            are on
+            <a href="https://www.indiapost.gov.in/" rel="nofollow noopener" target="_blank">India Post</a>'s
+            savings schemes page — its FAQ confirms the
+            ₹1,000 minimum, that MIS can be closed after
+            1 year, and that MIS interest is credited to a
+            savings account. The tax treatment — the
+            interest taxable as it is paid, no 80C deduction
+            for the deposit, and the TDS thresholds for
+            post-office interest — is in the Income-tax Act;
+            the Income-tax Act, 2025, in force from 1 April
+            2026, renumbered the Act's provisions — see
+            <a href="https://www.incometax.gov.in/" rel="nofollow noopener" target="_blank">the Income Tax Department</a>.
+            The worked examples reproduce the ranking MIS
+            calculators' published figures: ₹9,00,000 at
+            7.4% gives ₹5,550 a month on
+            <a href="https://www.credocalc.com/in/post-office-mis-calculator/" rel="nofollow noopener" target="_blank">credocalc.com</a>
+            and on
+            <a href="https://rupeescalc.com/calculators/investment-savings-calculators/post-office-mis-calculator/" rel="nofollow noopener" target="_blank">rupeescalc.com</a>,
+            ₹15,00,000 gives ₹9,250 a month and ₹1,00,000
+            gives ₹617 a month on both. One claim is
+            deliberately NOT used as printed: rupeescalc.com
+            shows ₹37,000 a year and ₹1,85,000 over 5 years
+            on ₹5,00,000, but the scheme's Rule 5(4) rounds
+            each monthly payment to the nearest rupee, so
+            the year is ₹3,083 × 12 = ₹36,996 and the
+            5-year total ₹1,84,980 — the figures this page
+            uses, which credocalc.com's table also shows.
+            One honest limit: whether a post office deducts
+            TDS on MIS interest depends on whether MIS is a
+            notified scheme for that purpose, and sources
+            disagree — so this page states the Section 194A
+            thresholds and tells you to ask at the post
+            office, instead of printing a TDS figure as
+            fact. For a quarterly payout instead, use the
+            SCSS calculator; for a lump sum that compounds,
+            the NSC calculator; for the tax on your
+            deposits, the income-tax calculator.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function kvpClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  const KVP_MIN_DEPOSIT = 1000;
+
+  const KVP_DEPOSIT_STEP = 100;
+
+  const KVP_DEFAULT_RATE = 7.5;
+
+  const KVP_OFFICIAL_MONTHS = { "7.5": 115, "7.2": 120, "7": 123, "6.9": 124, "7.6": 113, "7.7": 112, "7.3": 118 };
+
+  const KVP_ENCASH_PER_1000 = { "3": 1208, "4": 1286, "5": 1370, "6": 1459, "7": 1554, "8": 1655, "9": 1763 };
+
+  function kvpDoublingMonths(rate) {
+    const r = Number(rate);
+    if (!Number.isFinite(r) || r <= 0 || r > 15) return null;
+    const official = KVP_OFFICIAL_MONTHS[String(r)];
+    if (official !== undefined) return official;
+    return Math.round(12 * Math.log(2) / Math.log(1 + r / 100));
+  }
+
+  function kvpDoublingOfficial(rate) {
+    const r = Number(rate);
+    if (!Number.isFinite(r) || r <= 0 || r > 15) return false;
+    return KVP_OFFICIAL_MONTHS[String(r)] !== undefined;
+  }
+
+  function kvpEncash(deposit, rate, year) {
+    const p = Number(deposit);
+    const r = Number(rate);
+    const y = Number(year);
+    if (!Number.isFinite(p) || !Number.isFinite(r) || !Number.isFinite(y)) return null;
+    if (r !== 7.5 || y < 3) return null;
+    const per1000 = KVP_ENCASH_PER_1000[String(y)];
+    if (per1000 === undefined) return null;
+    return roundRupee(p / 1000 * per1000);
+  }
+
+  function kvpYearly(deposit, rate) {
+    const p = Number(deposit);
+    const r = Number(rate);
+    if (!Number.isFinite(p) || !Number.isFinite(r)) return null;
+    if (p < KVP_MIN_DEPOSIT || p % KVP_DEPOSIT_STEP !== 0) return null;
+    if (r < 0 || r > 15) return null;
+    const rows = [];
+    if (r === 0) {
+      for (let y = 1; y <= 10; y++) {
+        rows.push({ year: y, label: "Year " + y, value: p, interest: 0, encash: null, maturity: false });
+      }
+      return rows;
+    }
+    const months = kvpDoublingMonths(r);
+    const fullYears = Math.floor(months / 12);
+    const rem = months % 12;
+    for (let y = 1; y <= fullYears; y++) {
+      const isMaturity = rem === 0 && y === fullYears;
+      const value = isMaturity ? 2 * p : roundRupee(p * Math.pow(1 + r / 100, y));
+      rows.push({
+        year: y,
+        label: isMaturity ? "Year " + y + " — at maturity" : "Year " + y,
+        value,
+        interest: value - p,
+        encash: isMaturity ? 2 * p : kvpEncash(p, r, y),
+        maturity: isMaturity
+      });
+    }
+    if (rem !== 0) {
+      const years = Math.floor(months / 12);
+      const label = "At maturity (" + years + " years " + rem + " months)";
+      rows.push({ year: fullYears + 1, label, value: 2 * p, interest: p, encash: 2 * p, maturity: true });
+    }
+    return rows;
+  }
+
+  function kvpCompute(deposit, rate, taxSlab) {
+    const p = Number(deposit);
+    const r = Number(rate);
+    const s = Number(taxSlab);
+    if (!Number.isFinite(p) || !Number.isFinite(r) || !Number.isFinite(s)) return null;
+    if (p < KVP_MIN_DEPOSIT || p % KVP_DEPOSIT_STEP !== 0) return null;
+    if (r < 0 || r > 15) return null;
+    if (s !== 0 && s !== 5 && s !== 10 && s !== 20 && s !== 30) return null;
+    const months = kvpDoublingMonths(r);
+    const maturityValue = r === 0 ? p : 2 * p;
+    const interestEarned = maturityValue - p;
+    const afterTaxInterest = roundRupee(interestEarned * (1 - s / 100 * 1.04));
+    const afterTaxMaturity = p + afterTaxInterest;
+    const yearlyRows = kvpYearly(p, r);
+    return {
+      deposit: p,
+      rate: r,
+      taxSlab: s,
+      maturityValue,
+      interestEarned,
+      afterTaxInterest,
+      afterTaxMaturity,
+      doublingMonths: months,
+      doublingYears: months === null ? null : Math.floor(months / 12),
+      doublingRemMonths: months === null ? null : months % 12,
+      officialMonths: months === null ? null : kvpDoublingOfficial(r),
+      yearlyRows
+    };
+  }
+
+  const presetSelect = $("preset");
+  const kvpPill = $("kvp-pill");
+  const inputDeposit = $("input-deposit");
+  const inputDepositError = $("input-deposit-error");
+  const inputRate = $("input-rate");
+  const inputRateError = $("input-rate-error");
+  const inputTax = $("input-tax");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const yearlyBody = $("yearly-body");
+  const yearlyNote = $("yearly-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+  const encashText = (row, rate) => {
+    if (row.maturity) return inr(row.encash);
+    if (rate === 0) return "—";
+    if (row.encash !== null && row.encash !== undefined) return inr(row.encash);
+    if (row.year < 3) return "Only in special cases";
+    return "Ask at the post office";
+  };
+
+  function renderYearly(r) {
+    yearlyBody.replaceChildren();
+    if (!r) {
+      yearlyNote.textContent = "Enter your figures to see the value grow year by year.";
+      return;
+    }
+    r.yearlyRows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row.label;
+      tr.appendChild(th);
+      [row.value, row.interest].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      const encashTd = document.createElement("td");
+      encashTd.textContent = encashText(row, r.rate);
+      tr.appendChild(encashTd);
+      yearlyBody.appendChild(tr);
+    });
+    yearlyNote.textContent = r.rate === 0
+      ? "At 0% your money never doubles — the value stays at your deposit. Enter a rate above 0% to see it grow."
+      : "The value on paper at each year — what the certificate is worth if held. What you actually receive if you encash early comes from the scheme's fixed table and is lower; before 30 months you can close only in special cases.";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your deposit and the rate to see when your money doubles.";
+    working.textContent = "Enter your deposit and the rate to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    yearlyBody.replaceChildren();
+    yearlyNote.textContent = "Enter your figures to see the value grow year by year.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function doublingText(r) {
+    if (r.doublingMonths === null) return "Never doubles at 0%";
+    return r.doublingMonths + " months";
+  }
+  function doublingLong(r) {
+    if (r.doublingMonths === null) return "never doubles at 0%";
+    return r.doublingMonths + " months (" + r.doublingYears + " years " + r.doublingRemMonths + " months)";
+  }
+
+  function paintResult(deposit, rate, taxSlab, r) {
+    output.textContent = inr(r.maturityValue);
+    box1Val.textContent = inr(r.maturityValue);
+    box1Label.textContent = "MATURITY VALUE";
+    box2Val.textContent = doublingText(r);
+    box2Label.textContent = "DOUBLING PERIOD";
+    box3Val.textContent = inr(r.interestEarned);
+    box3Label.textContent = "INTEREST EARNED";
+    working.textContent = r.doublingMonths === null
+      ? inr(deposit) + " at 0% never doubles — the maturity value stays " + inr(r.maturityValue) + "."
+      : inr(deposit) + " at " + rate + "% doubles in " + doublingLong(r) + " — " + inr(r.maturityValue) + " at maturity, " + inr(r.interestEarned) + " of it interest.";
+    working2.textContent = "All interest is paid at maturity — nothing is paid out before then."
+      + (r.officialMonths ? "" : " The doubling period for this rate is worked out from the formula, so treat it as an estimate.");
+    workingNote.textContent = "Annual compounding · maturity fixed at exactly double the deposit"
+      + (taxSlab > 0 ? " · After tax at " + taxSlab + "% + 4% cess: " + inr(r.afterTaxMaturity) + " at maturity." : "");
+    glanceText.textContent = inr(deposit) + " · " + rate + "% → " + inr(r.maturityValue)
+      + (r.doublingMonths === null ? " (never doubles at 0%)" : " in " + doublingLong(r))
+      + " · " + inr(r.interestEarned) + " interest"
+      + (taxSlab > 0 ? " · after tax at " + taxSlab + "% + 4% cess: " + inr(r.afterTaxMaturity) + " at maturity (" + inr(r.afterTaxInterest) + " interest kept)." : ".");
+    renderYearly(r);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | KVP Calculator"
+      + "\nQuestion: " + inr(deposit) + " at " + rate + "%"
+      + "\nAnswer: maturity value " + inr(r.maturityValue)
+      + (r.doublingMonths === null ? "; never doubles at 0%" : "; doubles in " + doublingLong(r))
+      + "; interest earned " + inr(r.interestEarned)
+      + (taxSlab > 0 ? "\nAfter tax at " + taxSlab + "% + 4% cess: " + inr(r.afterTaxMaturity) + " at maturity; interest kept " + inr(r.afterTaxInterest) : "")
+      + "\nWorking: annual compounding, maturity fixed at exactly double the deposit";
+  }
+
+  function paint(showEmptyError = false) {
+    kvpPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const depositRaw = inputDeposit.value;
+    const rateRaw = inputRate.value;
+    const taxSlab = Number(inputTax.value);
+    const depositNum = depositRaw === "" ? NaN : Number(depositRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    let depositMsg = "";
+    let rateMsg = "";
+    if (depositRaw === "") {
+      if (showEmptyError) depositMsg = "Enter your deposit.";
+    } else if (!Number.isFinite(depositNum) || depositNum < 1000 || depositNum % 100 !== 0) {
+      depositMsg = "Enter a deposit of ₹1,000 or more, in multiples of ₹100.";
+    }
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the interest rate.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 15) {
+      rateMsg = "Enter the interest rate from 0% to 15%.";
+    }
+    inputDepositError.textContent = depositMsg;
+    inputRateError.textContent = rateMsg;
+    inputDeposit.setAttribute("aria-invalid", String(depositMsg !== ""));
+    inputRate.setAttribute("aria-invalid", String(rateMsg !== ""));
+
+    const valid = depositMsg === "" && rateMsg === ""
+      && depositRaw !== "" && rateRaw !== ""
+      && [0, 5, 10, 20, 30].includes(taxSlab);
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = kvpCompute(depositNum, rateNum, taxSlab);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(depositNum, rateNum, taxSlab, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = kvpCompute(item.deposit, item.rate, item.taxSlab);
+    if (!r) return "";
+    return inr(item.deposit) + " · " + item.rate + "% → " + inr(r.maturityValue)
+      + (r.doublingMonths === null ? " (never doubles)" : " in " + r.doublingMonths + " months");
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputDeposit.value, inputRate.value, inputTax.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputDeposit.value = String(item.deposit);
+        inputRate.value = String(item.rate);
+        inputTax.value = String(item.taxSlab);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      deposit: Number(inputDeposit.value),
+      rate: Number(inputRate.value),
+      taxSlab: Number(inputTax.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputDeposit.value = button.dataset.deposit || "";
+      inputRate.value = button.dataset.rate || "";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputDeposit.value = String(rec.deposit);
+    inputRate.value = String(rec.rate);
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputDeposit.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputTax.addEventListener(evt, () => { paint(); });
+  });
+
+  $("kvp-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    inputTax.value = String(c.sampleTaxSlab);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderKvpCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleDeposit: p.sampleDeposit, sampleRate: p.sampleRate, sampleTaxSlab: p.sampleTaxSlab };
+  const sample = kvpCompute(p.sampleDeposit, p.sampleRate, p.sampleTaxSlab);
+  const fiftySample = kvpCompute(50000, 7.5, 0);
+  const rate69Sample = kvpCompute(100000, 6.9, 0);
+  const tax20Sample = kvpCompute(100000, 7.5, 20);
+
+  const presetSummary = pr => {
+    const r = kvpCompute(pr.deposit, pr.rate, 0);
+    return `${inr2(pr.deposit)} at ${pr.rate}% → ${inr2(r.maturityValue)} in ${r.doublingMonths} months`;
+  };
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = kvpCompute(st.deposit, st.rate, 0);
+    return `${inr2(st.deposit)} at ${st.rate}% → ${inr2(r.maturityValue)} in ${r.doublingMonths} months`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const encashText = row => {
+    if (row.maturity) return inr2(row.encash);
+    if (p.sampleRate === 0) return "—";
+    if (row.encash !== null && row.encash !== undefined) return inr2(row.encash);
+    if (row.year < 3) return "Only in special cases";
+    return "Ask at the post office";
+  };
+  const yearlyRows = sample.yearlyRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.label)}</th>
+        <td>${inr2(row.value)}</td>
+        <td>${inr2(row.interest)}</td>
+        <td>${encashText(row)}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}${hraCss}${ciCss}${epfCss}${npsCss}${ssyCss}${nscCss}${scssCss}${misCss}${kvpCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free KVP calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate your KVP maturity →
+              </a>
+              <a href="#method" class="calc-link">How KVP is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.maturityValue)} at maturity</strong>
+                <small>On ₹1,00,000 at 7.5% for 115 months</small>
+              </div>
+              <div>
+                <strong>${sample.doublingMonths} months to double</strong>
+                <small>9 years 7 months at the current rate</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.interestEarned)} interest earned</strong>
+                <small>All paid at maturity — about ${inr2(tax20Sample.afterTaxMaturity)} after tax at 20% + cess</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>An estimate for planning — not financial, tax or legal advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate your KVP maturity</h2>
+              <span class="calc-pill" id="kvp-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="kvp-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-deposit">
+                Deposit amount (₹)
+                <span>What you pay once when you buy the certificate — from ₹1,000, in multiples of ₹100, with no upper limit</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-deposit"
+                type="number"
+                value="${p.sampleDeposit}"
+                step="100"
+                inputmode="numeric"
+                aria-describedby="input-deposit-error"
+              >
+              <p class="calc-error" id="input-deposit-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-rate">
+                Interest rate (% a year)
+                <span>The notified KVP rate, from 0% to 15% — 7.5% is the rate for October to December 2026. The rate is reviewed every quarter, so try an older one too</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-rate"
+                type="number"
+                value="${p.sampleRate}"
+                step="0.1"
+                inputmode="decimal"
+                aria-describedby="input-rate-error"
+              >
+              <p class="calc-error" id="input-rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-tax">
+                Your tax slab
+                <span>KVP interest is fully taxable and the deposit gets no 80C deduction — pick your slab to see the maturity value you keep, plus 4% cess</span>
+              </label>
+
+              <select class="select-input" id="input-tax">
+                <option value="0" selected>No tax — show the full maturity value</option>
+                <option value="5">5% slab</option>
+                <option value="10">10% slab</option>
+                <option value="20">20% slab</option>
+                <option value="30">30% slab</option>
+              </select>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-deposit">${inr2(sample.maturityValue)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.maturityValue)}</strong>
+                  <small id="box1-label">MATURITY VALUE</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${sample.doublingMonths} months</strong>
+                  <small id="box2-label">DOUBLING PERIOD</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.interestEarned)}</strong>
+                  <small id="box3-label">INTEREST EARNED</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">₹1,00,000 · 7.5% → ${inr2(sample.maturityValue)} in ${sample.doublingMonths} months (9 years 7 months) · ${inr2(sample.interestEarned)} interest.</span>
+              </div>
+
+              <p class="working" id="working">
+                ₹1,00,000 at 7.5% doubles in 115 months (9 years 7 months) — ${inr2(sample.maturityValue)} at maturity, ${inr2(sample.interestEarned)} of it interest.
+              </p>
+              <p class="working" id="working-2">All interest is paid at maturity — nothing is paid out before then.</p>
+              <p class="working" id="working-note">Annual compounding · maturity fixed at exactly double the deposit.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The figure is an estimate at the rate you
+                enter, held steady for the term. The KVP rate is
+                notified every quarter and can change for new
+                certificates, and the interest is taxable — ask
+                your tax adviser whether to report it each year
+                as it builds up or in the year you receive it.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="yearly">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Year by year</p>
+          <h2>How your money grows to double</h2>
+          <p id="yearly-note">The value on paper at each year — what the certificate is worth if held. What you actually receive if you encash early comes from the scheme's fixed table and is lower; before 30 months you can close only in special cases.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="yearly-note">
+            <caption>Year-by-year value on the sample figures: ₹1,00,000 at 7.5% for 115 months, and what the scheme pays if you encash the certificate at the end of that year.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Value on paper</th>
+                <th scope="col">Interest so far</th>
+                <th scope="col">If you encash then</th>
+              </tr>
+            </thead>
+            <tbody id="yearly-body">
+              ${yearlyRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#yearly">Year by year</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / YOUR MONEY DOUBLES</span>
+            <h3>Exactly double, at a fixed date</h3>
+            <p>The scheme fixes the maturity value at twice the deposit — ₹1,00,000 becomes ₹2,00,000, ₹50,000 becomes ₹1,00,000. The only question is how long the wait is: 115 months at today's 7.5%.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / 7.5% LOCKED AT PURCHASE</span>
+            <h3>The rate you buy at is the rate you keep</h3>
+            <p>A quarterly review changes the rate only for new certificates. At 6.9% instead of 7.5%, ₹1,00,000 still doubles — but it takes 124 months instead of 115. Try a different rate to see what a change would do.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / NOTHING PAID UNTIL MATURITY</span>
+            <h3>All the interest arrives at the end</h3>
+            <p>KVP pays nothing before maturity — it is a growth certificate, not an income scheme. The interest is taxable too, and the deposit gets no 80C deduction. At the 20% slab plus 4% cess you keep about ₹1,79,200 of the ₹2,00,000, not the full amount — and at 30% about ₹1,68,800.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your deposit to double your money</h2>
+          <p>
+            Enter your deposit, check the rate, read the
+            doubling period, pick your tax slab and read the
+            maturity value, the interest earned and the value
+            year by year.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How KVP is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The KVP formula</small>
+          Maturity value = 2 × deposit · doubles in 115 months at 7.5% · compounded annually
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. ₹1,00,000 at 7.5%, 115 months
+            <strong>${fmt2(sample.maturityValue)} at maturity · ${fmt2(sample.interestEarned)} interest</strong>
+            <span>The deposit doubles in 9 years and 7 months. The formula gives ₹1,99,985 at 115 months — ₹1,00,000 × 1.075^(115/12) — and the post office rounds the certificate to exactly ₹2,00,000.</span>
+          </div>
+
+          <div class="math-step">
+            2. ₹50,000 at 7.5%, 115 months
+            <strong>${fmt2(fiftySample.maturityValue)} at maturity · ${fmt2(fiftySample.interestEarned)} interest</strong>
+            <span>Half the deposit, half the wait — the same 115 months. You receive ₹1,00,000 at maturity, ₹50,000 of it interest, and on paper the certificate is worth ₹71,781 after 5 years.</span>
+          </div>
+
+          <div class="math-step">
+            3. ₹1,00,000 at 6.9%, 124 months
+            <strong>${fmt2(rate69Sample.maturityValue)} at maturity · ${fmt2(rate69Sample.interestEarned)} interest</strong>
+            <span>An older rate, 6.9% from April 2020 to September 2022. The money still doubles to ₹2,00,000 — but it takes 124 months, 9 months longer than at 7.5%.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+
+        <div class="section-head" style="margin-top:28px">
+          <p class="eyebrow">Rate history</p>
+          <h2>How the months have changed with the rate</h2>
+          <p>Your rate and doubling period are fixed the day you buy, so an older certificate keeps its own period. These are the notified rates since 2018, from the National Savings Institute.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>KVP interest rates and doubling periods since 2018, as published by the National Savings Institute.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Bought between</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Money doubles in</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Since 1 April 2023</th><td>7.5%</td><td>115 months (9 yrs 7 mos)</td></tr>
+              <tr><th scope="row">January to March 2023</th><td>7.2%</td><td>120 months (10 yrs)</td></tr>
+              <tr><th scope="row">October to December 2022</th><td>7.0%</td><td>123 months (10 yrs 3 mos)</td></tr>
+              <tr><th scope="row">April 2020 to September 2022</th><td>6.9%</td><td>124 months (10 yrs 4 mos)</td></tr>
+              <tr><th scope="row">July 2019 to March 2020</th><td>7.6%</td><td>113 months (9 yrs 5 mos)</td></tr>
+              <tr><th scope="row">October 2018 to June 2019</th><td>7.7%</td><td>112 months (9 yrs 4 mos)</td></tr>
+              <tr><th scope="row">January to September 2018</th><td>7.3%</td><td>118 months (9 yrs 10 mos)</td></tr>
+            </tbody>
+          </table>
+          <p class="calc-small">The calculator uses these official months when you enter one of these rates. For any other rate it works out the months with the formula above, so treat that as an estimate.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five deposits, five doubled amounts</h2>
+          <p>
+            One example for each everyday case, including one
+            at the minimum. Select any example to load it into
+            the calculator and check the working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.deposit)} AT ${story.rate}%</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-deposit="${story.deposit}" data-rate="${story.rate}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>KVP rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>The current KVP rate, the deposit limits, the 115-month doubling period, how the interest compounds, the 30-month lock-in, the encashment table, who can buy and the tax on the interest.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get KVP wrong</h2>
+          <p>
+            KVP is simple on the surface — one deposit, double
+            your money — but the wait, the early-encashment
+            table and the tax catch people out.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / EXPECTING A MONTHLY INCOME</span>
+            <h3>KVP pays nothing until maturity</h3>
+            <p>KVP is a growth certificate: the interest builds up inside it and the whole amount is paid at the end. On ₹1,00,000 you receive nothing for 115 months, then ₹2,00,000 at once. If you want a monthly income, the Post Office Monthly Income Scheme pays every month instead.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / COMPOUNDING QUARTERLY</span>
+            <h3>KVP compounds once a year, not four times</h3>
+            <p>Some calculators compound quarterly and show ₹2,03,826 on ₹1,00,000 at maturity. KVP compounds annually, so the formula gives ₹1,99,985 at 115 months and the certificate pays exactly ₹2,00,000. A quarterly figure overstates the return by ₹3,826.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / CASHING EARLY AT THE PAPER VALUE</span>
+            <h3>The encashment table pays less than the value on paper</h3>
+            <p>After 5 years your ₹1,00,000 certificate is worth ₹1,43,563 on paper, but the scheme's table pays only ₹1,37,000 — ₹6,563 less. And in the first 30 months you cannot encash at all, except on death, forfeiture or a court order.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / FORGETTING THE TAX ON THE INTEREST</span>
+            <h3>No 80C, and the tax is due on ₹1,00,000 of interest</h3>
+            <p>KVP interest is taxable at your slab rate in full, and the deposit gets no 80C deduction. At the 30% slab plus cess, ₹2,00,000 at maturity becomes about ₹1,68,800 after tax. Whether your post office deducts TDS on KVP interest is something to ask at the post office — the tax itself is due either way.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>KVP calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the standard KVP-calculator method:
+            the maturity value is fixed by the scheme at exactly
+            double the deposit, and the wait is the doubling
+            period for the rate — 115 months at 7.5%, taken
+            from the notified table for the rates the
+            government has set, or worked out with the formula
+            months = ln 2 ÷ ln(1 + rate) × 12 for any other
+            rate. The year-by-year values compound once a year:
+            value after n years = deposit × (1 + rate)^n,
+            rounded to the nearest rupee. The after-tax figures
+            apply the slab rate you pick plus 4% cess to the
+            interest earned. The rate is user-entered and
+            treated as a steady assumption — never as a live
+            quote or a promise for a certificate bought later.
+          </p>
+          <p>
+            Figures checked 12 November 2026: the 7.5% rate
+            for 1 October to 31 December 2026 is in the
+            Ministry of Finance (Department of Economic
+            Affairs) Office Memorandum F.No.1/4/2019-NS,
+            dated 30 September 2026, keeping small savings
+            rates unchanged for the third quarter of FY
+            2026-27, as carried by the Department of Posts
+            in SB Order 12/2026 of the same date — see the
+            <a href="https://www.nsiindia.gov.in/" rel="nofollow noopener" target="_blank">National Savings Institute</a>.
+            The deposit limits, who can buy, the doubling on
+            maturity and the premature-closure rules are in
+            the Kisan Vikas Patra Scheme, 2019, G.S.R. 920(E)
+            of 12 December 2019, as amended by the Kisan
+            Vikas Patra (Second Amendment) Scheme, 2023,
+            G.S.R. 324(E) of 27 April 2023, which fixed the
+            maturity period at nine years and seven months
+            for certificates opened on or after 1 April 2023
+            and set out the premature-closure table (TABLE-5)
+            used on this page, and the scheme rules are on
+            <a href="https://www.indiapost.gov.in/" rel="nofollow noopener" target="_blank">India Post</a>'s
+            savings schemes page — its FAQ confirms the
+            ₹1,000 minimum and that KVP can be encashed
+            after 2 years 6 months. The tax treatment — the
+            interest taxable as it is received, no 80C
+            deduction for the deposit, and the TDS thresholds
+            for post-office interest — is in the Income-tax Act;
+            the Income-tax Act, 2025, in force from 1 April
+            2026, renumbered the Act's provisions — see
+            <a href="https://www.incometax.gov.in/" rel="nofollow noopener" target="_blank">the Income Tax Department</a>.
+            The worked examples reproduce the ranking KVP
+            calculators' published figures: ₹1,00,000 at
+            7.5% doubles to ₹2,00,000 in 115 months on
+            <a href="https://www.credocalc.com/in/kvp-calculator/" rel="nofollow noopener" target="_blank">credocalc.com</a>,
+            on
+            <a href="https://fincalculator.in/kvp-calculator" rel="nofollow noopener" target="_blank">fincalculator.in</a>
+            and on
+            <a href="https://www.calculatorpark.com/finance/kvp-calculator/" rel="nofollow noopener" target="_blank">calculatorpark.com</a>,
+            which also states the formula gives ₹1,99,985 at
+            115 months and the post office rounds the
+            certificate to exactly ₹2,00,000. Two claims are
+            deliberately NOT used as printed: credocalc.com
+            shows ₹1,43,568 after 5 years, but annual
+            compounding gives ₹1,00,000 × 1.075^5 =
+            ₹1,43,563 — credocalc follows the smooth doubling
+            curve instead — and cready.in compounds quarterly
+            and shows ₹2,03,826 at maturity, which is wrong
+            because KVP compounds annually. One honest limit:
+            whether a post office deducts TDS on KVP interest
+            depends on whether KVP is a notified scheme for
+            that purpose, and sources disagree — so this page
+            states the Section 194A thresholds and tells you
+            to ask at the post office, instead of printing a
+            TDS figure as fact. For a monthly income instead,
+            use the MIS calculator; for a lump sum that
+            compounds over 5 years with a tax deduction, the
+            NSC calculator; for the tax on your deposits, the
+            income-tax calculator.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function plClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  const PL_MIN_AMOUNT = 50000;
+
+  const PL_MAX_AMOUNT = 4000000;
+
+  const PL_DEFAULT_RATE = 12;
+
+  const PL_DEFAULT_FEE = 1.5;
+
+  const PL_GST_RATE = 0.18;
+
+  function plEmi(principal, annualRatePct, months) {
+    const P = Number(principal);
+    const pct = Number(annualRatePct);
+    const n = Math.round(Number(months));
+    if (!Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(n)) return null;
+    if (!(P > 0) || !(n > 0) || !(pct >= 0)) return null;
+    const r = pct / 1200;
+    if (r === 0) return P / n;
+    return P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+  }
+
+  function plApr(emiExact, months, net) {
+    const n = Math.round(Number(months));
+    const emi = Number(emiExact);
+    const target = Number(net);
+    if (!Number.isFinite(emi) || !Number.isFinite(target) || !Number.isFinite(n)) return null;
+    if (!(n > 0) || !(target > 0)) return null;
+    const pv = i => {
+      if (i === 0) return emi * n;
+      return emi * (1 - Math.pow(1 + i, -n)) / i;
+    };
+    if (pv(0) <= target) return 0;
+    let lo = 0;
+    let hi = 1;
+    for (let k = 0; k < 200; k++) {
+      const mid = (lo + hi) / 2;
+      if (pv(mid) > target) lo = mid;
+      else hi = mid;
+    }
+    return Math.round(((lo + hi) / 2) * 1200 * 100) / 100;
+  }
+
+  function plSchedule(principal, annualRatePct, months, emiExact, totalInterest) {
+    const P = Math.trunc(Number(principal));
+    const pct = Number(annualRatePct);
+    const n = Math.round(Number(months));
+    const emi = Number(emiExact);
+    if (!Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(n) || !Number.isFinite(emi)) return null;
+    if (!(P > 0) || !(n > 0) || !(pct >= 0)) return null;
+    const r = pct / 1200;
+    const totalYears = Math.ceil(n / 12);
+    let balance = P;
+    let done = 0;
+    let year = 1;
+    let prevPrincipal = 0;
+    let prevInterest = 0;
+    const rows = [];
+    while (done < n) {
+      const mInYear = Math.min(12, n - done);
+      const openingExact = balance;
+      let yInt = 0;
+      let yPrin = 0;
+      for (let m = 0; m < mInYear; m++) {
+        done++;
+        const interest = balance * r;
+        let principal = emi - interest;
+        if (done === n) principal = balance;
+        balance -= principal;
+        if (balance > 0 && balance <= 0.01) balance = 0;
+        yInt += interest;
+        yPrin += principal;
+      }
+      if (year < totalYears) {
+        const row = {
+          year,
+          label: mInYear === 12 ? "Year " + year : "Year " + year + " (" + mInYear + " months)",
+          opening: roundRupee(openingExact),
+          interest: roundRupee(yInt),
+          principal: roundRupee(yPrin),
+          closing: roundRupee(balance),
+          payments: roundRupee(yInt + yPrin)
+        };
+        rows.push(row);
+        prevPrincipal += row.principal;
+        prevInterest += row.interest;
+      } else {
+        const interestR = totalInterest - prevInterest;
+        const principalR = P - prevPrincipal;
+        rows.push({
+          year,
+          label: mInYear === 12 ? "Year " + year : "Year " + year + " (" + mInYear + " months)",
+          opening: roundRupee(openingExact),
+          interest: interestR,
+          principal: principalR,
+          closing: 0,
+          payments: interestR + principalR
+        });
+      }
+      year++;
+    }
+    return rows;
+  }
+
+  function plCompute(amount, rate, months, feePct) {
+    const amt = Number(amount);
+    const rt = Number(rate);
+    const mo = Number(months);
+    const fee = Number(feePct);
+    if (!Number.isFinite(amt) || !Number.isFinite(rt) || !Number.isFinite(mo) || !Number.isFinite(fee)) return null;
+    if (amt < PL_MIN_AMOUNT || amt > PL_MAX_AMOUNT) return null;
+    if (rt < 0 || rt > 36) return null;
+    if (mo !== Math.trunc(mo) || mo < 12 || mo > 84) return null;
+    if (fee < 0 || fee > 5) return null;
+    const P = Math.trunc(amt);
+    const n = Math.trunc(mo);
+    const emiExact = plEmi(P, rt, n);
+    if (emiExact === null) return null;
+    const emi = roundRupee(emiExact);
+    const totalPayment = roundRupee(emiExact * n);
+    const totalInterest = totalPayment - P;
+    const feeAmt = roundRupee(P * fee / 100);
+    const gst = roundRupee(feeAmt * PL_GST_RATE);
+    const totalFee = feeAmt + gst;
+    const net = P - totalFee;
+    const totalCost = totalInterest + totalFee;
+    const apr = plApr(emiExact, n, net);
+    const schedule = plSchedule(P, rt, n, emiExact, totalInterest);
+    if (schedule === null) return null;
+    return {
+      amount: P,
+      rate: rt,
+      months: n,
+      feePct: fee,
+      emiExact,
+      emi,
+      totalPayment,
+      totalInterest,
+      fee: feeAmt,
+      gst,
+      totalFee,
+      netDisbursed: net,
+      totalCost,
+      aprPct: apr,
+      yearlyRows: schedule
+    };
+  }
+
+  const presetSelect = $("preset");
+  const plPill = $("pl-pill");
+  const inputAmount = $("input-amount");
+  const inputAmountError = $("input-amount-error");
+  const inputRate = $("input-rate");
+  const inputRateError = $("input-rate-error");
+  const inputMonths = $("input-months");
+  const inputMonthsError = $("input-months-error");
+  const inputFee = $("input-fee");
+  const inputFeeError = $("input-fee-error");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const yearlyBody = $("yearly-body");
+  const yearlyNote = $("yearly-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+
+  function renderYearly(r) {
+    yearlyBody.replaceChildren();
+    if (!r) {
+      yearlyNote.textContent = "Enter your figures to see the balance fall year by year.";
+      return;
+    }
+    r.yearlyRows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row.label;
+      tr.appendChild(th);
+      [row.interest, row.principal, row.closing].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      yearlyBody.appendChild(tr);
+    });
+    yearlyNote.textContent = "Interest and principal paid in each year of the loan, and the balance still owed at the end of the year. Early years are mostly interest; later years are mostly principal.";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your loan amount, rate and tenure to see your EMI.";
+    working.textContent = "Enter your loan amount, rate and tenure to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    yearlyBody.replaceChildren();
+    yearlyNote.textContent = "Enter your figures to see the balance fall year by year.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(amount, rate, months, feePct, r) {
+    output.textContent = inr(r.emi);
+    box1Val.textContent = inr(r.emi);
+    box1Label.textContent = "MONTHLY EMI";
+    box2Val.textContent = inr(r.totalInterest);
+    box2Label.textContent = "TOTAL INTEREST";
+    box3Val.textContent = inr(r.totalPayment);
+    box3Label.textContent = "TOTAL REPAYMENT";
+    working.textContent = inr(amount) + " at " + rate + "% for " + months + " months — "
+      + inr(r.emi) + " a month, " + inr(r.totalInterest) + " of interest, " + inr(r.totalPayment) + " repaid in total.";
+    working2.textContent = "Processing fee " + feePct + "%: " + inr(r.fee) + " + 18% GST " + inr(r.gst)
+      + " = " + inr(r.totalFee) + " deducted, so " + inr(r.netDisbursed) + " actually reaches your account."
+      + " Total cost of the loan: " + inr(r.totalCost) + ".";
+    workingNote.textContent = "Reducing balance · APR " + r.aprPct.toFixed(2) + "% (the true yearly cost on the amount actually received)"
+      + (r.rate === 0 ? " · At 0% the EMI is simply the loan divided by the tenure." : "");
+    glanceText.textContent = inr(amount) + " · " + rate + "% · " + months + " months → " + inr(r.emi)
+      + " a month · " + inr(r.totalInterest) + " interest · " + inr(r.totalPayment) + " in total · "
+      + inr(r.netDisbursed) + " credited after the fee and GST · APR " + r.aprPct.toFixed(2) + "%.";
+    renderYearly(r);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | Personal Loan EMI Calculator"
+      + "\nQuestion: " + inr(amount) + " at " + rate + "% for " + months + " months, fee " + feePct + "%"
+      + "\nAnswer: EMI " + inr(r.emi) + " a month; total interest " + inr(r.totalInterest)
+      + "; total repayment " + inr(r.totalPayment)
+      + "\nFee: " + inr(r.fee) + " + GST " + inr(r.gst) + " = " + inr(r.totalFee)
+      + "; amount credited " + inr(r.netDisbursed) + "; APR " + r.aprPct.toFixed(2) + "%"
+      + "\nWorking: reducing balance, EMI = P x r x (1+r)^n / ((1+r)^n - 1)";
+  }
+
+  function paint(showEmptyError = false) {
+    plPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const amountRaw = inputAmount.value;
+    const rateRaw = inputRate.value;
+    const monthsRaw = inputMonths.value;
+    const feeRaw = inputFee.value;
+    const amountNum = amountRaw === "" ? NaN : Number(amountRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    const monthsNum = monthsRaw === "" ? NaN : Number(monthsRaw);
+    const feeNum = feeRaw === "" ? NaN : Number(feeRaw);
+    let amountMsg = "";
+    let rateMsg = "";
+    let monthsMsg = "";
+    let feeMsg = "";
+    if (amountRaw === "") {
+      if (showEmptyError) amountMsg = "Enter your loan amount.";
+    } else if (!Number.isFinite(amountNum) || amountNum < 50000 || amountNum > 4000000) {
+      amountMsg = "Enter a loan amount from ₹50,000 to ₹40,00,000.";
+    }
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the interest rate.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 36) {
+      rateMsg = "Enter the interest rate from 0% to 36%.";
+    }
+    if (monthsRaw === "") {
+      if (showEmptyError) monthsMsg = "Enter the tenure in months.";
+    } else if (!Number.isFinite(monthsNum) || monthsNum !== Math.trunc(monthsNum) || monthsNum < 12 || monthsNum > 84) {
+      monthsMsg = "Enter the tenure in whole months, from 12 to 84 months.";
+    }
+    if (feeRaw === "") {
+      if (showEmptyError) feeMsg = "Enter the processing fee.";
+    } else if (!Number.isFinite(feeNum) || feeNum < 0 || feeNum > 5) {
+      feeMsg = "Enter the processing fee from 0% to 5%.";
+    }
+    inputAmountError.textContent = amountMsg;
+    inputRateError.textContent = rateMsg;
+    inputMonthsError.textContent = monthsMsg;
+    inputFeeError.textContent = feeMsg;
+    inputAmount.setAttribute("aria-invalid", String(amountMsg !== ""));
+    inputRate.setAttribute("aria-invalid", String(rateMsg !== ""));
+    inputMonths.setAttribute("aria-invalid", String(monthsMsg !== ""));
+    inputFee.setAttribute("aria-invalid", String(feeMsg !== ""));
+
+    const valid = amountMsg === "" && rateMsg === "" && monthsMsg === "" && feeMsg === ""
+      && amountRaw !== "" && rateRaw !== "" && monthsRaw !== "" && feeRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = plCompute(amountNum, rateNum, monthsNum, feeNum);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(amountNum, rateNum, monthsNum, feeNum, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = plCompute(item.amount, item.rate, item.months, item.fee);
+    if (!r) return "";
+    return inr(item.amount) + " · " + item.rate + "% · " + item.months + " mo → " + inr(r.emi) + " a month";
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputAmount.value, inputRate.value, inputMonths.value, inputFee.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputAmount.value = String(item.amount);
+        inputRate.value = String(item.rate);
+        inputMonths.value = String(item.months);
+        inputFee.value = String(item.fee);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      amount: Number(inputAmount.value),
+      rate: Number(inputRate.value),
+      months: Number(inputMonths.value),
+      fee: Number(inputFee.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputAmount.value = button.dataset.amount || "";
+      inputRate.value = button.dataset.rate || "";
+      inputMonths.value = button.dataset.months || "";
+      inputFee.value = button.dataset.fee || "";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputAmount.value = String(rec.amount);
+    inputRate.value = String(rec.rate);
+    inputMonths.value = String(rec.months);
+    inputFee.value = String(rec.fee);
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputAmount.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputMonths.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputFee.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("pl-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderPlCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleAmount: p.sampleAmount, sampleRate: p.sampleRate, sampleMonths: p.sampleMonths, sampleFee: p.sampleFee };
+  const sample = plCompute(p.sampleAmount, p.sampleRate, p.sampleMonths, p.sampleFee);
+  const threeLakh = plCompute(300000, 11, 36, 1.5);
+  const tenLakh = plCompute(1000000, 13, 60, 1.5);
+
+  const presetSummary = pr => {
+    const r = plCompute(pr.amount, pr.rate, pr.months, pr.fee);
+    return `${inr2(pr.amount)} at ${pr.rate}% for ${pr.months} months → ${inr2(r.emi)} a month`;
+  };
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = plCompute(st.amount, st.rate, st.months, st.fee);
+    return `${inr2(st.amount)} at ${st.rate}% for ${st.months} months → ${inr2(r.emi)} a month`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const yearlyRows = sample.yearlyRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.label)}</th>
+        <td>${inr2(row.interest)}</td>
+        <td>${inr2(row.principal)}</td>
+        <td>${inr2(row.closing)}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}${hraCss}${ciCss}${epfCss}${npsCss}${ssyCss}${nscCss}${scssCss}${misCss}${kvpCss}${plCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free personal loan EMI calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate your personal loan EMI →
+              </a>
+              <a href="#method" class="calc-link">How EMI is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.emi)} a month</strong>
+                <small>On ₹5,00,000 at 12% for 5 years</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.totalInterest)} interest</strong>
+                <small>${inr2(sample.totalPayment)} repaid in total over 60 months</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.netDisbursed)} actually credited</strong>
+                <small>After a 1.5% fee of ${inr2(sample.fee)} + 18% GST of ${inr2(sample.gst)} — APR ${sample.aprPct.toFixed(2)}%</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>An estimate for planning — not financial, tax or legal advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate your personal loan EMI</h2>
+              <span class="calc-pill" id="pl-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="pl-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-amount">
+                Loan amount (₹)
+                <span>What you borrow — from ₹50,000 to ₹40,00,000. Borrow only what you actually need</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-amount"
+                type="number"
+                value="${p.sampleAmount}"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-amount-error"
+              >
+              <p class="calc-error" id="input-amount-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-rate">
+                Interest rate (% a year)
+                <span>The rate your lender quotes, from 0% to 36% — 12% is the example. Personal-loan rates in India are indicative at about 10.49% to 24% a year in November 2026</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-rate"
+                type="number"
+                value="${p.sampleRate}"
+                step="0.1"
+                inputmode="decimal"
+                aria-describedby="input-rate-error"
+              >
+              <p class="calc-error" id="input-rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-months">
+                Tenure (months)
+                <span>How long you repay over — from 12 to 84 months (1 to 7 years). 60 months is the example</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-months"
+                type="number"
+                value="${p.sampleMonths}"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="input-months-error"
+              >
+              <p class="calc-error" id="input-months-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-fee">
+                Processing fee (% of the loan)
+                <span>The one-time fee your lender charges, from 0% to 5% — 1.5% is the example. 18% GST is added to the fee automatically</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-fee"
+                type="number"
+                value="${p.sampleFee}"
+                step="0.1"
+                inputmode="decimal"
+                aria-describedby="input-fee-error"
+              >
+              <p class="calc-error" id="input-fee-error" aria-live="polite"></p>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-amount">${inr2(sample.emi)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.emi)}</strong>
+                  <small id="box1-label">MONTHLY EMI</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.totalInterest)}</strong>
+                  <small id="box2-label">TOTAL INTEREST</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.totalPayment)}</strong>
+                  <small id="box3-label">TOTAL REPAYMENT</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">₹5,00,000 · 12% · 60 months → ${inr2(sample.emi)} a month · ${inr2(sample.totalInterest)} interest · ${inr2(sample.totalPayment)} in total · ${inr2(sample.netDisbursed)} credited after the fee and GST · APR ${sample.aprPct.toFixed(2)}%.</span>
+              </div>
+
+              <p class="working" id="working">
+                ₹5,00,000 at 12% for 60 months — ${inr2(sample.emi)} a month, ${inr2(sample.totalInterest)} of interest, ${inr2(sample.totalPayment)} repaid in total.
+              </p>
+              <p class="working" id="working-2">Processing fee 1.5%: ${inr2(sample.fee)} + 18% GST ${inr2(sample.gst)} = ${inr2(sample.totalFee)} deducted, so ${inr2(sample.netDisbursed)} actually reaches your account. Total cost of the loan: ${inr2(sample.totalCost)}.</p>
+              <p class="working" id="working-note">Reducing balance · APR ${sample.aprPct.toFixed(2)}% (the true yearly cost on the amount actually received)</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The figures are estimates at the rate you
+                enter, held steady for the term. The EMI covers
+                principal and interest only — the fee and GST
+                are deducted before the money reaches you, and
+                any insurance premium, penal charge or
+                foreclosure charge is extra. Your sanction
+                letter and Key Facts Statement decide the
+                actual figures.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="yearly">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Year by year</p>
+          <h2>How your balance falls, year by year</h2>
+          <p id="yearly-note">Interest and principal paid in each year of the loan, and the balance still owed at the end of the year. Early years are mostly interest; later years are mostly principal.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="yearly-note">
+            <caption>Year-by-year split on the sample figures: ₹5,00,000 at 12% for 60 months — the interest and principal paid each year, and the balance left.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Interest paid</th>
+                <th scope="col">Principal repaid</th>
+                <th scope="col">Balance left</th>
+              </tr>
+            </thead>
+            <tbody id="yearly-body">
+              ${yearlyRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#yearly">Year by year</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / THE EMI IS FIXED</span>
+            <h3>The same amount every month</h3>
+            <p>On ₹5,00,000 at 12% for 5 years you pay ₹11,122 every month for 60 months. What changes is the split: in Year 1, ₹55,822 of your ₹1,33,467 goes to interest and ₹77,645 to principal; by Year 5 only ₹8,285 is interest and ₹1,25,182 clears the loan.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE FEE COMES OFF FIRST</span>
+            <h3>You receive less than you borrow</h3>
+            <p>The EMI is charged on the full sanctioned amount, but the fee and GST are deducted before the money reaches you. On ₹5,00,000 at 1.5%, ₹7,500 + ₹1,350 GST = ₹8,850 is deducted, so ₹4,91,150 is credited. That is why the APR — 12.79% here — is higher than the 12% rate.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / THE RATE IS NOT THE COST</span>
+            <h3>Compare offers on the APR</h3>
+            <p>Two offers at the same rate can cost very different amounts if one carries a higher fee, and a flat-rate quote can hide a much higher reducing rate. The Key Facts Statement your lender must give you before you sign shows the APR — the all-in yearly cost — so compare that, not the headline rate.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your loan amount to your EMI</h2>
+          <p>
+            Enter your loan amount, set the rate, set the
+            tenure and the processing fee, then read the EMI,
+            the total interest, the total repayment, the fee
+            with GST, the amount actually credited and the APR.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How personal loan EMI is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The personal loan EMI formula</small>
+          EMI = P × r × (1+r)^n ÷ ((1+r)^n − 1) · r = annual rate ÷ 12 ÷ 100 · reducing balance
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. ₹5,00,000 at 12%, 60 months
+            <strong>${fmt2(sample.emi)} a month · ${fmt2(sample.totalInterest)} interest · ${fmt2(sample.totalPayment)} in total</strong>
+            <span>The monthly rate is 0.01, so (1.01)^60 is about 1.8167 and the EMI is ₹11,122.22, shown as ₹11,122. The fee is ₹7,500 + ₹1,350 GST, so ₹4,91,150 is credited and the APR is 12.79%.</span>
+          </div>
+
+          <div class="math-step">
+            2. ₹3,00,000 at 11%, 36 months
+            <strong>${fmt2(threeLakh.emi)} a month · ${fmt2(threeLakh.totalInterest)} interest · ${fmt2(threeLakh.totalPayment)} in total</strong>
+            <span>A shorter tenure at a lower rate: ₹9,822 a month and only ₹53,578 of interest. The fee is ₹4,500 + ₹810 GST, so ₹2,94,690 is credited and the APR is 12.24%.</span>
+          </div>
+
+          <div class="math-step">
+            3. ₹10,00,000 at 13%, 60 months
+            <strong>${fmt2(tenLakh.emi)} a month · ${fmt2(tenLakh.totalInterest)} interest · ${fmt2(tenLakh.totalPayment)} in total</strong>
+            <span>A bigger loan at a higher rate: ₹22,753 a month and ₹3,65,184 of interest. The fee is ₹15,000 + ₹2,700 GST, so ₹9,82,300 is credited and the APR is 13.80%.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+
+        <div class="section-head" style="margin-top:28px">
+          <p class="eyebrow">Indicative rates</p>
+          <h2>What lenders are charging in November 2026</h2>
+          <p>Indicative personal-loan rates from the lenders' published pages, as reported in October–November 2026 roundups. These are starting points for top profiles, not quotes — the rate you are offered depends on your credit score, income and the lender. Confirm the rate, fees and APR in the lender's Key Facts Statement before you accept.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>Indicative personal loan interest rates and processing fees, November 2026. Rates are indicative only and change often.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Lender</th>
+                <th scope="col">Indicative rate (a year)</th>
+                <th scope="col">Processing fee (indicative)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">SBI</th><td>10.00%–15.00%</td><td>Up to 1.50% + GST</td></tr>
+              <tr><th scope="row">HDFC Bank</th><td>10.50%–21.00%</td><td>Up to ₹6,500 + GST</td></tr>
+              <tr><th scope="row">ICICI Bank</th><td>10.65%–19.00%</td><td>Up to 2.00% + GST</td></tr>
+              <tr><th scope="row">Axis Bank</th><td>10.49%–22.00%</td><td>Up to 2.00% + GST</td></tr>
+              <tr><th scope="row">Punjab National Bank</th><td>10.50%–17.05%</td><td>Up to 1.00% + GST</td></tr>
+              <tr><th scope="row">Kotak Mahindra Bank</th><td>10.99%–24.00%</td><td>Up to 5.00% + GST</td></tr>
+            </tbody>
+          </table>
+          <p class="calc-small">Some roundups also advertise starting rates from 9.99% a year at HDFC, ICICI, Axis and IDFC FIRST for top profiles, and NBFC rates run higher — Bajaj Finance is listed at 10.00% to 30.50%. The overall indicative range for banks is about 10.49% to 24% a year; some aggregators quote up to 36% a year once NBFCs are included.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five loans, five EMIs</h2>
+          <p>
+            One example for each everyday case, from a
+            one-year ₹1 lakh loan to a five-year ₹10 lakh
+            loan. Select any example to load it into the
+            calculator and check the working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.amount)} AT ${story.rate}% · ${story.months} MONTHS</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-amount="${story.amount}" data-rate="${story.rate}" data-months="${story.months}" data-fee="${story.fee}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>Personal loan rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>The indicative rates for November 2026, the loan limits, the tenure range, the processing fee with GST, how interest is charged, the Key Facts Statement, the prepayment rules and what lenders weigh when they decide.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get a personal loan wrong</h2>
+          <p>
+            A personal loan is simple on the surface — one
+            amount, one EMI — but the tenure, the fee, the
+            flat-rate quote and your existing EMIs catch
+            people out.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / CHOOSING THE TENURE BY EMI ALONE</span>
+            <h3>A longer tenure looks cheap and costs more</h3>
+            <p>Stretching ₹5,00,000 at 11% from 1 year to 5 years cuts the EMI from ₹44,191 to ₹10,871 — but the interest jumps from ₹30,290 to ₹1,52,273, five times as much. Compare the total repayment column, not just the EMI, before deciding.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / FORGETTING THE FEE AND GST</span>
+            <h3>The EMI is not your full cost</h3>
+            <p>The EMI covers principal and interest only. On ₹5,00,000 at 1.5%, ₹8,850 of fee and GST is deducted before the money reaches you, so you repay EMIs on ₹5,00,000 but receive only ₹4,91,150. The APR — 12.79% at 12% — is the figure that counts the fee.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / TAKING A FLAT RATE AT FACE VALUE</span>
+            <h3>10% flat is really about 17.97% reducing</h3>
+            <p>A flat rate charges interest on the full amount for the whole term. On ₹1,00,000 for 12 months, 10% flat costs ₹10,000 of interest — the same as about 17.97% on a reducing balance, which costs ₹5,499. Always ask for the reducing-balance equivalent and the APR.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / IGNORING YOUR EXISTING EMIs</span>
+            <h3>Lenders count every obligation you already have</h3>
+            <p>Lenders look at all your monthly obligations together, not just the new loan. Existing EMIs reduce both the amount you may be offered and the room in your monthly budget — and most lenders accept a FOIR of only about 40% to 60% of your income. Work out your real take-home pay first, then check the EMI against it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>Personal loan EMI calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the standard personal-loan EMI
+            method: the reducing-balance formula, EMI = P × r
+            × (1+r)^n ÷ ((1+r)^n − 1), with the monthly rate r
+            = annual rate ÷ 12 ÷ 100 and the tenure in months.
+            The total repayment comes from the unrounded EMI —
+            total = EMI × n, rounded to the nearest rupee — so
+            the rounded EMI times the tenure can differ from
+            the total by a few rupees. The processing fee is a
+            percentage of the loan with 18% GST on the fee,
+            and the net amount credited is the loan minus the
+            fee and GST. The APR is the monthly internal rate
+            of return of the EMIs against the net amount
+            disbursed, times 12 — the method in the RBI's Key
+            Facts Statement illustration. The rate is
+            user-entered and treated as a steady assumption —
+            never as a live quote or a promise of what a
+            lender will offer. Nothing you enter leaves your
+            browser: every calculation runs entirely on this
+            page.
+          </p>
+          <p>
+            Figures checked 12 November 2026: the worked
+            examples reproduce the ranking personal-loan
+            calculators' published figures — ₹5,00,000 at 12%
+            for 60 months is ₹11,122 a month, ₹1,67,333 of
+            interest and ₹6,67,333 in total on
+            <a href="https://www.credivitt.com/calculators/personal-loan-emi-calculator" rel="nofollow noopener" target="_blank">credivitt.com</a>,
+            ₹5,00,000 at 11% for 36 months is ₹16,369 a month,
+            ₹89,297 of interest and ₹5,89,297 in total on
+            <a href="https://www.itoolverse.com/calculator/personal-loan-emi-calculator" rel="nofollow noopener" target="_blank">itoolverse.com</a>,
+            and ₹5,00,000 at 11% for 60 months with a 1.5% fee
+            is ₹10,871 a month, ₹1,52,273 of interest,
+            ₹7,500 of fee plus ₹1,350 of GST, ₹4,91,150
+            credited and an APR of 11.78% on
+            <a href="https://www.hrcalcy.in/p/personal-loan-calculator.html" rel="nofollow noopener" target="_blank">hrcalcy.in</a>,
+            which also states the flat-rate equivalent (10%
+            flat on ₹1,00,000 for 12 months is about 17.97%
+            reducing) and the RBI's KFS worked example
+            (₹20,000 for 24 months at 15% with ₹400 of fees
+            gives an EMI of ₹970 and an APR of 17.07%). The
+            indicative lender rates are from the lenders'
+            published pages as reported by
+            <a href="https://moneykarma.com/personal-loan/" rel="nofollow noopener" target="_blank">moneykarma.com</a>
+            (updated 11 November 2026) and the October 2026
+            Paisabazaar table carried by hrcalcy.in. The
+            Key Facts Statement rule is the RBI circular
+            “Key Facts Statement (KFS) for Loans and
+            Advances” of 15 April 2024, mandatory for retail
+            and MSME term loans sanctioned on or after 1
+            October 2024 — see
+            <a href="https://www.rbi.org.in/" rel="nofollow noopener" target="_blank">rbi.org.in</a>.
+            The prepayment rule is the RBI (Pre-payment
+            Charges on Loans) Directions, 2025, issued on
+            2 July 2025 (notification RBI/2025-26/64), which
+            bar pre-payment charges on floating-rate loans to
+            individuals for non-business purposes sanctioned
+            or renewed on or after 1 January 2026. The RBI
+            directions page itself could not be read directly
+            in this run, so the wording is taken from three
+            independent faithful reproductions that quote the
+            directions' paragraphs — see sources.md. One
+            honest limit: the indicative rates are a
+            November 2026 snapshot from roundups, not live
+            quotes, and they move often — your sanction
+            letter and Key Facts Statement decide. For a
+            secured loan over a longer term, use the home
+            loan EMI calculator; for a quick EMI on any
+            loan, the EMI calculator; for the tax on your
+            income, the income-tax calculator.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function tdClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  const TD_RATES = { 1: 6.9, 2: 7.0, 3: 7.1, 5: 7.5 };
+
+  const TD_MIN_AMOUNT = 1000;
+
+  const TD_MAX_AMOUNT = 10000000;
+
+  const TD_SAVINGS_RATE = 4.0;
+
+  const TD_TDS_THRESHOLD = 50000;
+
+  const TD_TDS_THRESHOLD_SENIOR = 100000;
+
+  const TD_CESS_RATE = 0.04;
+
+  const TD_80C_LIMIT = 150000;
+
+  function tdYearlyInterestExact(principal, annualRatePct) {
+    const P = Number(principal);
+    const pct = Number(annualRatePct);
+    if (!Number.isFinite(P) || !Number.isFinite(pct)) return null;
+    if (!(P > 0) || !(pct >= 0)) return null;
+    return P * (Math.pow(1 + pct / 400, 4) - 1);
+  }
+
+  function tdEffectiveYield(annualRatePct) {
+    const pct = Number(annualRatePct);
+    if (!Number.isFinite(pct) || !(pct >= 0)) return null;
+    return Math.round((Math.pow(1 + pct / 400, 4) - 1) * 10000) / 100;
+  }
+
+  function tdPremature(principal, years, closeMonths) {
+    const P = Math.trunc(Number(principal));
+    const y = Math.round(Number(years));
+    const m = Number(closeMonths);
+    if (!Number.isFinite(P) || !Number.isFinite(y) || !Number.isFinite(m)) return null;
+    if (!(P > 0) || !(y === 1 || y === 2 || y === 3 || y === 5)) return null;
+    if (m !== Math.trunc(m) || m < 6 || m >= 12 * y) return null;
+    if (y === 5 && m < 48) return null;
+    const rate = TD_RATES[y];
+    const yearly = roundRupee(tdYearlyInterestExact(P, rate));
+    const completedYears = Math.floor(m / 12);
+    let interestKept;
+    if (y === 5) {
+      interestKept = roundRupee(P * TD_SAVINGS_RATE / 100 * m / 12);
+    } else if (m < 12) {
+      interestKept = roundRupee(P * TD_SAVINGS_RATE / 100 * m / 12);
+    } else {
+      const refRate = TD_RATES[completedYears] - 2;
+      const remMonths = m - 12 * completedYears;
+      interestKept = roundRupee(completedYears * tdYearlyInterestExact(P, refRate)
+        + P * TD_SAVINGS_RATE / 100 * remMonths / 12);
+    }
+    const interestAlreadyPaid = completedYears * yearly;
+    const recovered = Math.max(0, interestAlreadyPaid - interestKept);
+    const amountPayable = P + interestKept - interestAlreadyPaid;
+    return {
+      closeMonths: m,
+      interestKept,
+      interestAlreadyPaid,
+      recovered,
+      amountPayable
+    };
+  }
+
+  function tdYearlyRows(principal, annualRatePct, years, yearlyInterest, totalInterest) {
+    const P = Math.trunc(Number(principal));
+    const pct = Number(annualRatePct);
+    const n = Math.round(Number(years));
+    const yInt = Number(yearlyInterest);
+    const tot = Number(totalInterest);
+    if (!Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(n) || !Number.isFinite(yInt) || !Number.isFinite(tot)) return null;
+    if (!(P > 0) || !(n === 1 || n === 2 || n === 3 || n === 5)) return null;
+    if (!(pct >= 0)) return null;
+    const rows = [];
+    let cum = 0;
+    for (let y = 1; y <= n; y++) {
+      const interest = y < n ? yInt : tot - yInt * (n - 1);
+      cum += interest;
+      rows.push({
+        year: y,
+        label: "Year " + y,
+        interest,
+        cumulative: cum,
+        depositReturned: y === n ? P : 0,
+        totalReceived: cum + (y === n ? P : 0)
+      });
+    }
+    return rows;
+  }
+
+  function tdCompute(amount, years, slabPct, closeMonths) {
+    const amt = Number(amount);
+    const y = Number(years);
+    const slab = Number(slabPct);
+    if (!Number.isFinite(amt) || !Number.isFinite(y) || !Number.isFinite(slab)) return null;
+    if (amt < TD_MIN_AMOUNT || amt > TD_MAX_AMOUNT) return null;
+    if (!(y === 1 || y === 2 || y === 3 || y === 5)) return null;
+    if (slab !== 0 && slab !== 5 && slab !== 10 && slab !== 20 && slab !== 30) return null;
+    const P = Math.trunc(amt);
+    if (P % 100 !== 0) return null;
+    const rate = TD_RATES[y];
+    const yearlyExact = tdYearlyInterestExact(P, rate);
+    if (yearlyExact === null) return null;
+    const yearlyInterest = roundRupee(yearlyExact);
+    const totalInterestExact = y * yearlyExact;
+    const totalInterest = roundRupee(totalInterestExact);
+    const totalReceived = P + totalInterest;
+    const effectiveYield = tdEffectiveYield(rate);
+    let tax = 0;
+    let afterTaxInterest = totalInterest;
+    let afterTaxTotal = totalReceived;
+    if (slab > 0) {
+      const taxExact = totalInterestExact * slab * (1 + TD_CESS_RATE) / 100;
+      tax = roundRupee(taxExact);
+      afterTaxInterest = roundRupee(totalInterestExact - taxExact);
+      afterTaxTotal = P + afterTaxInterest;
+    }
+    const taxSaved80C = (y === 5 && slab > 0)
+      ? roundRupee(Math.min(P, TD_80C_LIMIT) * slab * (1 + TD_CESS_RATE) / 100)
+      : 0;
+    const tdsApplies = yearlyInterest > TD_TDS_THRESHOLD;
+    const reinvested = roundRupee(P * Math.pow(1 + rate / 400, 4 * y));
+    const rows = tdYearlyRows(P, rate, y, yearlyInterest, totalInterest);
+    if (rows === null) return null;
+    let premature = null;
+    if (closeMonths !== null && closeMonths !== undefined && closeMonths !== "") {
+      premature = tdPremature(P, y, closeMonths);
+      if (premature === null) return null;
+    }
+    return {
+      amount: P,
+      years: y,
+      rate,
+      slabPct: slab,
+      yearlyExact,
+      yearlyInterest,
+      totalInterestExact,
+      totalInterest,
+      totalReceived,
+      effectiveYield,
+      tax,
+      afterTaxInterest,
+      afterTaxTotal,
+      taxSaved80C,
+      tdsApplies,
+      reinvested,
+      yearlyRows: rows,
+      premature
+    };
+  }
+
+  const presetSelect = $("preset");
+  const tdPill = $("td-pill");
+  const inputAmount = $("input-amount");
+  const inputAmountError = $("input-amount-error");
+  const inputYears = $("input-years");
+  const inputYearsError = $("input-years-error");
+  const inputSlab = $("input-slab");
+  const inputSlabError = $("input-slab-error");
+  const inputClose = $("input-close");
+  const inputCloseError = $("input-close-error");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const working3 = $("working-3");
+  const workingNote = $("working-note");
+  const yearlyBody = $("yearly-body");
+  const yearlyNote = $("yearly-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+
+  function renderYearly(r) {
+    yearlyBody.replaceChildren();
+    if (!r) {
+      yearlyNote.textContent = "Enter your figures to see the interest arrive year by year.";
+      return;
+    }
+    r.yearlyRows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row.label;
+      tr.appendChild(th);
+      [row.interest, row.cumulative, row.depositReturned, row.totalReceived].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      yearlyBody.appendChild(tr);
+    });
+    yearlyNote.textContent = "Interest paid in each year, the total interest so far, the deposit returned in the final year, and the total received so far. Every year pays the same interest — it does not compound across years.";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your deposit and tenure to see your Time Deposit return.";
+    working.textContent = "Enter your deposit and tenure to see the working.";
+    working2.textContent = "";
+    working3.textContent = "";
+    workingNote.textContent = "";
+    yearlyBody.replaceChildren();
+    yearlyNote.textContent = "Enter your figures to see the interest arrive year by year.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(amount, years, slab, closeMonths, r) {
+    output.textContent = inr(r.totalReceived);
+    box1Val.textContent = inr(r.yearlyInterest);
+    box1Label.textContent = "INTEREST EVERY YEAR";
+    box2Val.textContent = inr(r.totalInterest);
+    box2Label.textContent = "TOTAL INTEREST";
+    box3Val.textContent = inr(r.totalReceived);
+    box3Label.textContent = "TOTAL YOU GET BACK";
+    working.textContent = inr(amount) + " for " + years + " years at " + r.rate + "% — "
+      + inr(r.yearlyInterest) + " a year (" + r.effectiveYield.toFixed(2) + "% effective yield), "
+      + inr(r.totalInterest) + " of interest, " + inr(r.totalReceived) + " back in total.";
+    const parts2 = [];
+    if (slab > 0) {
+      parts2.push("Tax at the " + slab + "% slab (+ 4% cess): " + inr(r.tax)
+        + ", so " + inr(r.afterTaxInterest) + " of interest after tax.");
+      if (years === 5) {
+        parts2.push("The 5-year deposit also saves " + inr(r.taxSaved80C)
+          + " of tax in the deposit year (Section 80C).");
+      }
+    } else {
+      parts2.push("No tax slab chosen — pick one above to see the interest after tax. Interest is taxable at your slab rate.");
+    }
+    if (r.tdsApplies) {
+      parts2.push("Yearly interest of " + inr(r.yearlyInterest)
+        + " crosses the ₹50,000 TDS threshold (₹1,00,000 for senior citizens), so 10% TDS may be deducted.");
+    }
+    working2.textContent = parts2.join(" ");
+    if (r.premature) {
+      const p = r.premature;
+      working3.textContent = "Closing after " + p.closeMonths + " months: " + inr(p.interestKept)
+        + " of interest is kept (" + inr(p.interestAlreadyPaid) + " was already paid, so "
+        + inr(p.recovered) + " is recovered) — you get back " + inr(p.amountPayable) + ".";
+    } else {
+      working3.textContent = "";
+    }
+    workingNote.textContent = "Interest compounded quarterly, paid yearly · The rate stays fixed for the whole term · Deposit back at maturity"
+      + (r.premature ? " · Closed early — see the closure line above" : "");
+    let glance = inr(amount) + " · " + years + " years · " + r.rate + "% → " + inr(r.yearlyInterest)
+      + " a year · " + inr(r.totalInterest) + " interest · " + inr(r.totalReceived) + " back";
+    if (slab > 0) glance += " · " + inr(r.afterTaxInterest) + " after tax at " + slab + "%";
+    if (r.premature) glance += " · closed after " + r.premature.closeMonths + " months: " + inr(r.premature.amountPayable) + " back";
+    glance += ".";
+    glanceText.textContent = glance;
+    renderYearly(r);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | Post Office Time Deposit Calculator"
+      + "\nQuestion: " + inr(amount) + " for " + years + " years at " + r.rate + "%"
+      + (slab > 0 ? ", tax slab " + slab + "%" : "")
+      + (closeMonths !== null ? ", closed after " + closeMonths + " months" : "")
+      + "\nAnswer: " + inr(r.yearlyInterest) + " a year; total interest " + inr(r.totalInterest)
+      + "; total received " + inr(r.totalReceived)
+      + (slab > 0 ? "\nTax: " + inr(r.tax) + "; interest after tax " + inr(r.afterTaxInterest) : "")
+      + (r.premature ? "\nClosed early: interest kept " + inr(r.premature.interestKept)
+        + "; amount payable " + inr(r.premature.amountPayable) : "")
+      + "\nWorking: yearly interest = P x ((1 + r / 400)^4 - 1), paid yearly, deposit back at maturity";
+  }
+
+  function paint(showEmptyError = false) {
+    tdPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const amountRaw = inputAmount.value;
+    const yearsNum = Number(inputYears.value);
+    const slabNum = Number(inputSlab.value);
+    const closeRaw = inputClose.value;
+    const amountNum = amountRaw === "" ? NaN : Number(amountRaw);
+    const closeNum = closeRaw === "" ? null : Number(closeRaw);
+    let amountMsg = "";
+    let yearsMsg = "";
+    let slabMsg = "";
+    let closeMsg = "";
+    if (amountRaw === "") {
+      if (showEmptyError) amountMsg = "Enter your deposit amount.";
+    } else if (!Number.isFinite(amountNum) || amountNum < 1000 || amountNum > 10000000 || Math.trunc(amountNum) % 100 !== 0) {
+      amountMsg = "Enter a deposit from ₹1,000 to ₹1,00,00,000, in a multiple of ₹100.";
+    }
+    if (!Number.isFinite(yearsNum) || !(yearsNum === 1 || yearsNum === 2 || yearsNum === 3 || yearsNum === 5)) {
+      yearsMsg = "Pick a tenure of 1, 2, 3 or 5 years.";
+    }
+    if (!Number.isFinite(slabNum) || !(slabNum === 0 || slabNum === 5 || slabNum === 10 || slabNum === 20 || slabNum === 30)) {
+      slabMsg = "Pick a tax slab.";
+    }
+    if (closeRaw !== "") {
+      const minClose = yearsNum === 5 ? 48 : 6;
+      const maxClose = 12 * yearsNum - 1;
+      if (!Number.isFinite(closeNum) || closeNum !== Math.trunc(closeNum) || closeNum < minClose || closeNum > maxClose) {
+        closeMsg = yearsNum === 5
+          ? "For a 5-year deposit, enter a closure month from 48 to 59."
+          : "Enter a whole number of months from 6 to " + maxClose + " (before maturity).";
+      }
+    }
+    inputAmountError.textContent = amountMsg;
+    inputYearsError.textContent = yearsMsg;
+    inputSlabError.textContent = slabMsg;
+    inputCloseError.textContent = closeMsg;
+    inputAmount.setAttribute("aria-invalid", String(amountMsg !== ""));
+    inputYears.setAttribute("aria-invalid", String(yearsMsg !== ""));
+    inputSlab.setAttribute("aria-invalid", String(slabMsg !== ""));
+    inputClose.setAttribute("aria-invalid", String(closeMsg !== ""));
+
+    const valid = amountMsg === "" && yearsMsg === "" && slabMsg === "" && closeMsg === ""
+      && amountRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = tdCompute(amountNum, yearsNum, slabNum, closeNum);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(amountNum, yearsNum, slabNum, closeNum, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = tdCompute(item.amount, item.years, item.slab, item.closeMonths);
+    if (!r) return "";
+    return inr(item.amount) + " · " + item.years + " yr → " + inr(r.totalReceived) + " back"
+      + (item.closeMonths !== null ? " (closed after " + item.closeMonths + " mo)" : "");
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputAmount.value, inputYears.value, inputSlab.value, inputClose.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputAmount.value = String(item.amount);
+        inputYears.value = String(item.years);
+        inputSlab.value = String(item.slab);
+        inputClose.value = item.closeMonths === null ? "" : String(item.closeMonths);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      amount: Number(inputAmount.value),
+      years: Number(inputYears.value),
+      slab: Number(inputSlab.value),
+      closeMonths: inputClose.value === "" ? null : Number(inputClose.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputAmount.value = button.dataset.amount || "";
+      inputYears.value = button.dataset.years || "5";
+      inputSlab.value = button.dataset.slab || "0";
+      inputClose.value = button.dataset.close || "";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputAmount.value = String(rec.amount);
+    inputYears.value = String(rec.years);
+    inputSlab.value = String(rec.slab);
+    inputClose.value = rec.closeMonths === null || rec.closeMonths === undefined ? "" : String(rec.closeMonths);
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputAmount.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputYears.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputSlab.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputClose.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("td-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderTdCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleAmount: p.sampleAmount, sampleYears: p.sampleYears, sampleSlab: p.sampleSlab, sampleCloseMonths: p.sampleCloseMonths };
+  const sample = tdCompute(p.sampleAmount, p.sampleYears, p.sampleSlab, p.sampleCloseMonths);
+  const oneYear = tdCompute(100000, 1, 0, null);
+  const fiveLakh = tdCompute(500000, 5, 20, null);
+  const compareRows = [1, 2, 3, 5].map(y => tdCompute(100000, y, 0, null));
+
+  const presetSummary = pr => {
+    const r = tdCompute(pr.amount, pr.years, pr.slab, pr.closeMonths);
+    if (pr.closeMonths !== null && pr.closeMonths !== undefined) {
+      return `${inr2(pr.amount)} for ${pr.years} year${pr.years > 1 ? "s" : ""}, closed after ${pr.closeMonths} months → ${inr2(r.premature.amountPayable)} back`;
+    }
+    return `${inr2(pr.amount)} for ${pr.years} year${pr.years > 1 ? "s" : ""} → ${inr2(r.totalReceived)} back`;
+  };
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = tdCompute(st.amount, st.years, st.slab, st.closeMonths);
+    if (st.closeMonths !== null && st.closeMonths !== undefined) {
+      return `${inr2(st.amount)} for ${st.years} year${st.years > 1 ? "s" : ""}, closed after ${st.closeMonths} months → ${inr2(r.premature.amountPayable)} back`;
+    }
+    return `${inr2(st.amount)} for ${st.years} year${st.years > 1 ? "s" : ""} → ${inr2(r.totalReceived)} back`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const yearlyRows = sample.yearlyRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.label)}</th>
+        <td>${inr2(row.interest)}</td>
+        <td>${inr2(row.cumulative)}</td>
+        <td>${inr2(row.depositReturned)}</td>
+        <td>${inr2(row.totalReceived)}</td>
+      </tr>`).join("");
+
+  const compareTableRows = compareRows.map(r => `
+      <tr>
+        <th scope="row">${r.years} year${r.years > 1 ? "s" : ""}${r.years === 5 ? " (tax saving)" : ""}</th>
+        <td>${r.rate.toFixed(1)}%</td>
+        <td>${r.effectiveYield.toFixed(2)}%</td>
+        <td>${inr2(r.yearlyInterest)}</td>
+        <td>${inr2(r.totalInterest)}</td>
+        <td>${inr2(r.totalReceived)}</td>
+      </tr>`).join("");
+
+  const slabOptions = [0, 5, 10, 20, 30].map(s => `
+    <option value="${s}"${s === p.sampleSlab ? " selected" : ""}>${s === 0 ? "No tax shown" : s + "% slab"}</option>
+  `).join("");
+  const yearOptions = [1, 2, 3, 5].map(y => `
+    <option value="${y}"${y === p.sampleYears ? " selected" : ""}>${y} year${y > 1 ? "s" : ""} — ${TD_RATES[y].toFixed(1)}% a year</option>
+  `).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}${hraCss}${ciCss}${epfCss}${npsCss}${ssyCss}${nscCss}${scssCss}${misCss}${kvpCss}${plCss}${tdCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free Post Office Time Deposit calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate your Time Deposit return →
+              </a>
+              <a href="#method" class="calc-link">How TD interest is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.yearlyInterest)} a year</strong>
+                <small>On ₹1,00,000 for 5 years at 7.5%</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.totalInterest)} interest</strong>
+                <small>${inr2(sample.totalReceived)} back in total over 5 years</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.afterTaxInterest)} after tax</strong>
+                <small>At the 20% slab: ${inr2(sample.tax)} of tax — and ${inr2(sample.taxSaved80C)} saved under Section 80C</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>An estimate for planning — not financial, tax or legal advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate your Post Office Time Deposit return</h2>
+              <span class="calc-pill" id="td-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="td-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-amount">
+                Deposit amount (₹)
+                <span>One lump sum — from ₹1,000 to ₹1,00,00,000, in multiples of ₹100. The scheme itself sets no maximum</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-amount"
+                type="number"
+                value="${p.sampleAmount}"
+                step="100"
+                inputmode="numeric"
+                aria-describedby="input-amount-error"
+              >
+              <p class="calc-error" id="input-amount-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-years">
+                Tenure
+                <span>The rate follows the tenure — 6.9% for 1 year, 7.0% for 2 years, 7.1% for 3 years, 7.5% for 5 years (October–December 2026)</span>
+              </label>
+
+              <select
+                class="select-input"
+                id="input-years"
+                aria-describedby="input-years-error"
+              >
+                ${yearOptions}
+              </select>
+              <p class="calc-error" id="input-years-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-slab">
+                Income-tax slab
+                <span>To see the interest after tax. 4% cess is added automatically; pick “No tax shown” to hide the tax figures</span>
+              </label>
+
+              <select
+                class="select-input"
+                id="input-slab"
+                aria-describedby="input-slab-error"
+              >
+                ${slabOptions}
+              </select>
+              <p class="calc-error" id="input-slab-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-close">
+                Close the deposit early? (optional, months)
+                <span>Leave blank for the full term. From 6 months up to the month before maturity — 48 months or later for a 5-year deposit</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-close"
+                type="number"
+                value=""
+                step="1"
+                inputmode="numeric"
+                placeholder="Leave blank for the full term"
+                aria-describedby="input-close-error"
+              >
+              <p class="calc-error" id="input-close-error" aria-live="polite"></p>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-amount">${inr2(sample.totalReceived)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.yearlyInterest)}</strong>
+                  <small id="box1-label">INTEREST EVERY YEAR</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.totalInterest)}</strong>
+                  <small id="box2-label">TOTAL INTEREST</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.totalReceived)}</strong>
+                  <small id="box3-label">TOTAL YOU GET BACK</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">₹1,00,000 · 5 years · 7.5% → ${inr2(sample.yearlyInterest)} a year · ${inr2(sample.totalInterest)} interest · ${inr2(sample.totalReceived)} back · ${inr2(sample.afterTaxInterest)} after tax at 20%.</span>
+              </div>
+
+              <p class="working" id="working">
+                ₹1,00,000 for 5 years at 7.5% — ${inr2(sample.yearlyInterest)} a year (${sample.effectiveYield.toFixed(2)}% effective yield), ${inr2(sample.totalInterest)} of interest, ${inr2(sample.totalReceived)} back in total.
+              </p>
+              <p class="working" id="working-2">Tax at the 20% slab (+ 4% cess): ${inr2(sample.tax)}, so ${inr2(sample.afterTaxInterest)} of interest after tax. The 5-year deposit also saves ${inr2(sample.taxSaved80C)} of tax in the deposit year (Section 80C).</p>
+              <p class="working" id="working-3"></p>
+              <p class="working" id="working-note">Interest compounded quarterly, paid yearly · The rate stays fixed for the whole term · Deposit back at maturity</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The figures are estimates at the notified
+                October–December 2026 rates, held steady for
+                the term. The interest is paid out every year —
+                it is not added to the deposit — and the tax
+                figures assume the slab you picked, with 4%
+                cess. The post office's own calculation on your
+                deposit decides the actual figures.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="yearly">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Year by year</p>
+          <h2>How the interest arrives, year by year</h2>
+          <p id="yearly-note">Interest paid in each year, the total interest so far, the deposit returned in the final year, and the total received so far. Every year pays the same interest — it does not compound across years.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="yearly-note">
+            <caption>Year-by-year split on the sample figures: ₹1,00,000 at 7.5% for 5 years — the interest paid each year, the total interest so far, the deposit returned and the total received so far.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Interest paid</th>
+                <th scope="col">Total interest so far</th>
+                <th scope="col">Deposit returned</th>
+                <th scope="col">Total received so far</th>
+              </tr>
+            </thead>
+            <tbody id="yearly-body">
+              ${yearlyRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#compare">Compare tenures</a>
+        <a href="#examples">Examples</a>
+        <a href="#yearly">Year by year</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / THE INTEREST IS PAID EVERY YEAR</span>
+            <h3>The same amount, every year</h3>
+            <p>On ₹1,00,000 at 7.5% you receive ₹7,714 at the end of each year — ₹38,568 over 5 years — and the ₹1,00,000 comes back at maturity. The interest does not compound across years, so the yearly payout never grows.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE RATE IS FIXED AT OPENING</span>
+            <h3>Quarterly reviews do not touch your deposit</h3>
+            <p>The government reviews the rates every quarter, but the rate on the day you open the deposit stays fixed for its whole term. A deposit opened at 7.5% keeps paying 7.5% even if the next quarter's notification is lower.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / THE 5-YEAR DEPOSIT IS THE TAX-SAVER</span>
+            <h3>The highest rate and the only deduction</h3>
+            <p>The 5-year deposit pays 7.5% — the highest of the four tenures — and it is the only one that qualifies for the Section 80C deduction, up to ₹1.5 lakh a year under the old regime. On ₹1,00,000 at the 20% slab that saves ₹20,800 in the deposit year.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your deposit to your return</h2>
+          <p>
+            Enter your deposit, pick the tenure, pick your tax
+            slab and — if you like — a closure month, then read
+            the yearly interest, the total interest, the total
+            you get back, the tax and the early-closure value.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How Post Office Time Deposit interest is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The Post Office Time Deposit interest formula</small>
+          Yearly interest = P × ((1 + r ÷ 400)^4 − 1) · interest paid yearly, deposit back at maturity
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. ₹1,00,000 at 7.5%, 5 years
+            <strong>${fmt2(sample.yearlyInterest)} a year · ${fmt2(sample.totalInterest)} interest · ${fmt2(sample.totalReceived)} back</strong>
+            <span>The yearly interest is ₹1,00,000 × ((1 + 7.5 ÷ 400)^4 − 1) = ₹7,714. Over 5 years that is ₹38,568, plus the ₹1,00,000 deposit back. Tax at 20% is ₹8,022, leaving ₹30,546; the deposit saves ₹20,800 under Section 80C.</span>
+          </div>
+
+          <div class="math-step">
+            2. ₹1,00,000 at 6.9%, 1 year
+            <strong>${fmt2(oneYear.yearlyInterest)} a year · ${fmt2(oneYear.totalInterest)} interest · ${fmt2(oneYear.totalReceived)} back</strong>
+            <span>One year at 6.9%: the yearly interest is ₹7,081, an effective yield of 7.08%. The deposit comes back after a year — the shortest tenure, and the lowest rate.</span>
+          </div>
+
+          <div class="math-step">
+            3. ₹5,00,000 at 7.5%, 5 years
+            <strong>${fmt2(fiveLakh.yearlyInterest)} a year · ${fmt2(fiveLakh.totalInterest)} interest · ${fmt2(fiveLakh.totalReceived)} back</strong>
+            <span>Five times the deposit, five times the interest: ₹38,568 a year and ₹1,92,840 over 5 years. Tax at 20% is ₹40,111, leaving ₹1,52,729; the 80C saving is capped at ₹31,200.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+
+        <div class="section-head" style="margin-top:28px" id="compare">
+          <p class="eyebrow">Compare the tenures</p>
+          <h2>All four Time Deposit terms on ₹1,00,000</h2>
+          <p>The same ₹1,00,000 at the October–December 2026 rates. Interest is paid out every year and not added to the deposit, so the total is the yearly interest times the years.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>Post Office Time Deposit returns on ₹1,00,000 at the October–December 2026 rates: the rate, the effective yield, the interest every year, the total interest and the total received for each tenure.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Term</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Effective yield</th>
+                <th scope="col">Interest a year</th>
+                <th scope="col">Total interest</th>
+                <th scope="col">Total you get back</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${compareTableRows}
+            </tbody>
+          </table>
+          <p class="calc-small">The 5-year deposit pays the most and is the only tenure that qualifies for the Section 80C deduction (up to ₹1.5 lakh, old tax regime only). The 1-year deposit pays the least but frees your money soonest.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five deposits, five returns</h2>
+          <p>
+            One example for each everyday case, from a one-year
+            ₹1 lakh deposit to a five-year ₹5 lakh deposit —
+            including one closed early, so you can see what an
+            early exit costs. Select any example to load it into
+            the calculator and check the working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.amount)} · ${story.years} YEAR${story.years > 1 ? "S" : ""}${story.closeMonths !== null && story.closeMonths !== undefined ? " · CLOSED AFTER " + story.closeMonths + " MONTHS" : ""}</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-amount="${story.amount}" data-years="${story.years}" data-slab="${story.slab}"${story.closeMonths !== null && story.closeMonths !== undefined ? ` data-close="${story.closeMonths}"` : ""}>Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>Post Office Time Deposit rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>The October–December 2026 rates, the deposit limits, the tenures, how the interest is paid, the extension and premature-closure rules, the Section 80C deduction, the tax on the interest and TDS.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get a Time Deposit wrong</h2>
+          <p>
+            A Time Deposit looks simple — one deposit, one rate —
+            but the yearly payout, the tax, the early-closure
+            rules and the 80C deduction catch people out.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / READING THE COMPOUND FIGURE AS THE PAYOUT</span>
+            <h3>₹1,44,995 is not what the post office pays</h3>
+            <p>Some calculators show ₹1,44,995 for ₹1,00,000 over 5 years. That is the figure if every year's interest were reinvested at 7.5% — the post office pays the interest out each year, so you get ₹1,38,568. Compare calculators on the same cash flow.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / FORGETTING THE TAX</span>
+            <h3>₹38,568 becomes ₹30,546 at 20%</h3>
+            <p>Time Deposit interest is fully taxable at your slab, with 4% cess. On ₹1,00,000 for 5 years the ₹38,568 of interest costs ₹8,022 of tax at the 20% slab. Judge the return after tax, not before — and remember the 5-year deposit's ₹20,800 Section 80C saving in the deposit year.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / CLOSING A 5-YEAR DEPOSIT EARLY</span>
+            <h3>No closure before 4 years, and only the 4% rate then</h3>
+            <p>A 5-year deposit opened after November 2023 cannot be closed before 4 years at all, and then earns only the 4% savings rate — ₹16,000 on ₹1,00,000 against ₹30,854 at the full rate for the same 4 years. Keep emergency money somewhere you can reach it.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / EXPECTING THE 80C DEDUCTION ON ANY TENURE</span>
+            <h3>Only the 5-year deposit qualifies</h3>
+            <p>The 1, 2 and 3-year deposits carry no deduction, and the 5-year deduction works only under the old tax regime. If you are on the new regime, there is no deduction at all — the rate alone has to justify the deposit.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>Post Office Time Deposit calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the scheme's own method: the yearly
+            interest is P × ((1 + r ÷ 400)^4 − 1), where P is the
+            deposit and r is the annual rate for the tenure —
+            the interest is compounded quarterly inside each
+            year and paid out at the end of the year, so every
+            year pays the same amount and the interest does not
+            compound across years. The total interest is the
+            yearly interest times the years, rounded to the
+            nearest rupee from the exact figure. The tax is
+            worked out on the exact total interest at your slab
+            plus 4% cess, then rounded — which is why the
+            after-tax interest and the tax can differ from the
+            total interest by ₹1. Each year's interest in the
+            year-by-year table is rounded to the nearest rupee,
+            and the final year's figure is adjusted by ₹2 so
+            the years add up exactly to the total interest. The
+            5-year deposit also saves tax in the deposit year:
+            the deposit qualifies for the old-regime Section
+            80C deduction, up to ₹1.5 lakh. Nothing you enter
+            leaves your browser: every calculation runs
+            entirely on this page.
+          </p>
+          <p>
+            Figures checked 12 November 2026: the worked
+            examples reproduce the ranking Post Office Time
+            Deposit calculators' published figures — ₹1,00,000
+            for 5 years at 7.5% pays ₹7,714 a year, ₹38,568 of
+            interest and ₹1,38,568 in total on
+            <a href="https://www.blogbanking.com/post-office-td-calculator" rel="nofollow noopener" target="_blank">blogbanking.com</a>,
+            which also publishes the full amount table this
+            page reproduces (₹5,00,000 for 5 years: ₹1,92,840
+            of interest), the premature-closure figures
+            (₹1,00,000 in a 3-year deposit closed after 18
+            months keeps ₹6,991) and the after-tax figures
+            (₹30,546 at the 20% slab). The annual interest of
+            ₹708, ₹719 and ₹729 on ₹10,000 for 1, 2 and 3 years
+            matches the Times of India report of 30 September
+            2026. The reinvested figure — ₹1,44,995 on
+            ₹1,00,000 for 5 years — is what
+            <a href="https://www.commerceinsights.co.in/calculators/post-office-time-deposit-calculator.html" rel="nofollow noopener" target="_blank">commerceinsights.co.in</a>
+            and
+            <a href="https://rupeescalc.com/calculators/investment-savings-calculators/post-office-time-deposit-calculator/" rel="nofollow noopener" target="_blank">rupeescalc.com</a>
+            publish as the maturity value; this page shows it
+            only as the labelled reinvestment illustration,
+            because the scheme pays the interest out yearly.
+            <a href="https://financialcalculator.io/post-office/fd-calculator" rel="nofollow noopener" target="_blank">financialcalculator.io</a>
+            agrees on the 1 and 2-year totals but is ₹1 low on
+            the 3-year total and ₹2 high on the 5-year total,
+            because it rounds the yearly interest first and
+            then multiplies — this page rounds the total from
+            the exact yearly figure instead. The rates are the
+            Ministry of Finance's notification for 1 October
+            to 31 December 2026 (Department of Economic
+            Affairs Office Memorandum F.No.1/4/2019-NS, 30
+            September 2026), as carried by the Department of
+            Posts in SB Order 12/2026 — see
+            <a href="https://taxguru.in/finance/small-savings-interest-rates-unchanged-october-december-2026.html" rel="nofollow noopener" target="_blank">taxguru.in</a>.
+            The scheme rules are the National Savings Time
+            Deposit Scheme, 2019 (G.S.R. 922(E) of 12 December
+            2019) as amended by the National Savings Time
+            Deposit (Fourth Amendment) Scheme, 2023 (G.S.R.
+            830(E) of 7 November 2023). One honest limit:
+            deposits opened before 9 November 2023 may follow
+            the original 2019 premature-closure rules rather
+            than the amended ones — the Department of Posts is
+            reported to have clarified this in July 2026, but
+            the clarification circular was not seen in this
+            run, so confirm with your post office if your
+            5-year deposit predates that change. The TDS
+            thresholds are ₹50,000 a year (₹1,00,000 for
+            senior citizens); confirm with your post office
+            whether TDS is deducted on your deposit. For a
+            monthly income instead of a lump sum, use the Post
+            Office MIS calculator; for a bank-style fixed
+            deposit, the FD calculator; for the tax on your
+            income, the income-tax calculator.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function clClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  const CL_MIN_PRICE = 100000;
+
+  const CL_MAX_PRICE = 10000000;
+
+  const CL_MIN_LOAN = 50000;
+
+  const CL_DEFAULT_RATE = 9;
+
+  const CL_DEFAULT_FEE = 1;
+
+  const CL_GST_RATE = 0.18;
+
+  function clEmi(principal, annualRatePct, months) {
+    const P = Number(principal);
+    const pct = Number(annualRatePct);
+    const n = Math.round(Number(months));
+    if (!Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(n)) return null;
+    if (!(P > 0) || !(n > 0) || !(pct >= 0)) return null;
+    const r = pct / 1200;
+    if (r === 0) return P / n;
+    return P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+  }
+
+  function clApr(emiExact, months, net) {
+    const n = Math.round(Number(months));
+    const emi = Number(emiExact);
+    const target = Number(net);
+    if (!Number.isFinite(emi) || !Number.isFinite(target) || !Number.isFinite(n)) return null;
+    if (!(n > 0) || !(target > 0)) return null;
+    const pv = i => {
+      if (i === 0) return emi * n;
+      return emi * (1 - Math.pow(1 + i, -n)) / i;
+    };
+    if (pv(0) <= target) return 0;
+    let lo = 0;
+    let hi = 1;
+    for (let k = 0; k < 200; k++) {
+      const mid = (lo + hi) / 2;
+      if (pv(mid) > target) lo = mid;
+      else hi = mid;
+    }
+    return Math.round(((lo + hi) / 2) * 1200 * 100) / 100;
+  }
+
+  function clSchedule(principal, annualRatePct, months, emiExact, totalInterest) {
+    const P = Math.trunc(Number(principal));
+    const pct = Number(annualRatePct);
+    const n = Math.round(Number(months));
+    const emi = Number(emiExact);
+    if (!Number.isFinite(P) || !Number.isFinite(pct) || !Number.isFinite(n) || !Number.isFinite(emi)) return null;
+    if (!(P > 0) || !(n > 0) || !(pct >= 0)) return null;
+    const r = pct / 1200;
+    const totalYears = Math.ceil(n / 12);
+    let balance = P;
+    let done = 0;
+    let year = 1;
+    let prevPrincipal = 0;
+    let prevInterest = 0;
+    const rows = [];
+    while (done < n) {
+      const mInYear = Math.min(12, n - done);
+      const openingExact = balance;
+      let yInt = 0;
+      let yPrin = 0;
+      for (let m = 0; m < mInYear; m++) {
+        done++;
+        const interest = balance * r;
+        let principal = emi - interest;
+        if (done === n) principal = balance;
+        balance -= principal;
+        if (balance > 0 && balance <= 0.01) balance = 0;
+        yInt += interest;
+        yPrin += principal;
+      }
+      if (year < totalYears) {
+        const row = {
+          year,
+          label: mInYear === 12 ? "Year " + year : "Year " + year + " (" + mInYear + " months)",
+          opening: roundRupee(openingExact),
+          interest: roundRupee(yInt),
+          principal: roundRupee(yPrin),
+          closing: roundRupee(balance),
+          payments: roundRupee(yInt + yPrin)
+        };
+        rows.push(row);
+        prevPrincipal += row.principal;
+        prevInterest += row.interest;
+      } else {
+        const interestR = totalInterest - prevInterest;
+        const principalR = P - prevPrincipal;
+        rows.push({
+          year,
+          label: mInYear === 12 ? "Year " + year : "Year " + year + " (" + mInYear + " months)",
+          opening: roundRupee(openingExact),
+          interest: interestR,
+          principal: principalR,
+          closing: 0,
+          payments: interestR + principalR
+        });
+      }
+      year++;
+    }
+    return rows;
+  }
+
+  function clCompute(price, down, rate, months, feePct) {
+    const prc = Number(price);
+    const dwn = Number(down);
+    const rt = Number(rate);
+    const mo = Number(months);
+    const fee = Number(feePct);
+    if (!Number.isFinite(prc) || !Number.isFinite(dwn) || !Number.isFinite(rt) || !Number.isFinite(mo) || !Number.isFinite(fee)) return null;
+    if (prc < CL_MIN_PRICE || prc > CL_MAX_PRICE) return null;
+    if (dwn < 0 || dwn > prc - CL_MIN_LOAN) return null;
+    if (rt < 0 || rt > 20) return null;
+    if (mo !== Math.trunc(mo) || mo < 12 || mo > 84) return null;
+    if (fee < 0 || fee > 5) return null;
+    const priceInt = Math.trunc(prc);
+    const downInt = Math.trunc(dwn);
+    const P = priceInt - downInt;
+    const n = Math.trunc(mo);
+    const emiExact = clEmi(P, rt, n);
+    if (emiExact === null) return null;
+    const emi = roundRupee(emiExact);
+    const totalPayment = roundRupee(emiExact * n);
+    const totalInterest = totalPayment - P;
+    const feeAmt = roundRupee(P * fee / 100);
+    const gst = roundRupee(feeAmt * CL_GST_RATE);
+    const totalFee = feeAmt + gst;
+    const net = P - totalFee;
+    const totalCost = totalInterest + totalFee;
+    const totalCostOfCar = priceInt + totalInterest + totalFee;
+    const apr = clApr(emiExact, n, net);
+    const schedule = clSchedule(P, rt, n, emiExact, totalInterest);
+    if (schedule === null) return null;
+    return {
+      price: priceInt,
+      down: downInt,
+      amount: P,
+      rate: rt,
+      months: n,
+      feePct: fee,
+      emiExact,
+      emi,
+      totalPayment,
+      totalInterest,
+      fee: feeAmt,
+      gst,
+      totalFee,
+      netDisbursed: net,
+      totalCost,
+      totalCostOfCar,
+      aprPct: apr,
+      yearlyRows: schedule
+    };
+  }
+
+  const presetSelect = $("preset");
+  const clPill = $("cl-pill");
+  const inputPrice = $("input-price");
+  const inputPriceError = $("input-price-error");
+  const inputDown = $("input-down");
+  const inputDownError = $("input-down-error");
+  const loanPreview = $("loan-preview");
+  const inputRate = $("input-rate");
+  const inputRateError = $("input-rate-error");
+  const inputMonths = $("input-months");
+  const inputMonthsError = $("input-months-error");
+  const inputFee = $("input-fee");
+  const inputFeeError = $("input-fee-error");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const yearlyBody = $("yearly-body");
+  const yearlyNote = $("yearly-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+
+  function renderYearly(r) {
+    yearlyBody.replaceChildren();
+    if (!r) {
+      yearlyNote.textContent = "Enter your figures to see the balance fall year by year.";
+      return;
+    }
+    r.yearlyRows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row.label;
+      tr.appendChild(th);
+      [row.interest, row.principal, row.closing].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      yearlyBody.appendChild(tr);
+    });
+    yearlyNote.textContent = "Interest and principal paid in each year of the loan, and the balance still owed at the end of the year. Early years are mostly interest; later years are mostly principal.";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    loanPreview.textContent = "Loan amount: — (on-road price minus down payment)";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter the car's on-road price, your down payment, the rate and the tenure to see your EMI.";
+    working.textContent = "Enter the car's on-road price, your down payment, the rate and the tenure to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    yearlyBody.replaceChildren();
+    yearlyNote.textContent = "Enter your figures to see the balance fall year by year.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(price, down, rate, months, feePct, r) {
+    output.textContent = inr(r.emi);
+    box1Val.textContent = inr(r.emi);
+    box1Label.textContent = "MONTHLY EMI";
+    box2Val.textContent = inr(r.totalInterest);
+    box2Label.textContent = "TOTAL INTEREST";
+    box3Val.textContent = inr(r.totalPayment);
+    box3Label.textContent = "TOTAL REPAYMENT";
+    loanPreview.textContent = "Loan amount: " + inr(r.amount) + " (on-road price minus down payment)";
+    working.textContent = inr(price) + " on-road, " + inr(down) + " down → " + inr(r.amount) + " loan at " + rate + "% for " + months + " months — "
+      + inr(r.emi) + " a month, " + inr(r.totalInterest) + " of interest, " + inr(r.totalPayment) + " repaid in total.";
+    working2.textContent = "Processing fee " + feePct + "%: " + inr(r.fee) + " + 18% GST " + inr(r.gst)
+      + " = " + inr(r.totalFee) + " deducted, so " + inr(r.netDisbursed) + " is paid to the dealer."
+      + " Total cost of the loan: " + inr(r.totalCost) + ". All in, the car costs " + inr(r.totalCostOfCar) + ".";
+    workingNote.textContent = "Reducing balance · APR " + r.aprPct.toFixed(2) + "% (the true yearly cost on the amount actually disbursed)"
+      + (r.rate === 0 ? " · At 0% the EMI is simply the loan divided by the tenure." : "");
+    glanceText.textContent = inr(price) + " on-road · " + inr(down) + " down · " + inr(r.amount) + " loan · " + rate + "% · " + months + " months → " + inr(r.emi)
+      + " a month · " + inr(r.totalInterest) + " interest · " + inr(r.totalPayment) + " in total · "
+      + inr(r.netDisbursed) + " paid to the dealer after the fee and GST · APR " + r.aprPct.toFixed(2) + "% · car costs " + inr(r.totalCostOfCar) + " all in.";
+    renderYearly(r);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | Car Loan EMI Calculator"
+      + "\nQuestion: " + inr(price) + " on-road, " + inr(down) + " down (" + inr(r.amount) + " loan) at " + rate + "% for " + months + " months, fee " + feePct + "%"
+      + "\nAnswer: EMI " + inr(r.emi) + " a month; total interest " + inr(r.totalInterest)
+      + "; total repayment " + inr(r.totalPayment)
+      + "\nFee: " + inr(r.fee) + " + GST " + inr(r.gst) + " = " + inr(r.totalFee)
+      + "; amount paid to the dealer " + inr(r.netDisbursed) + "; APR " + r.aprPct.toFixed(2) + "%"
+      + "; total cost of the car " + inr(r.totalCostOfCar)
+      + "\nWorking: loan = on-road price - down payment; reducing balance, EMI = P x r x (1+r)^n / ((1+r)^n - 1)";
+  }
+
+  function paint(showEmptyError = false) {
+    clPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const priceRaw = inputPrice.value;
+    const downRaw = inputDown.value;
+    const rateRaw = inputRate.value;
+    const monthsRaw = inputMonths.value;
+    const feeRaw = inputFee.value;
+    const priceNum = priceRaw === "" ? NaN : Number(priceRaw);
+    const downNum = downRaw === "" ? NaN : Number(downRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    const monthsNum = monthsRaw === "" ? NaN : Number(monthsRaw);
+    const feeNum = feeRaw === "" ? NaN : Number(feeRaw);
+    let priceMsg = "";
+    let downMsg = "";
+    let rateMsg = "";
+    let monthsMsg = "";
+    let feeMsg = "";
+    if (priceRaw === "") {
+      if (showEmptyError) priceMsg = "Enter the car's on-road price.";
+    } else if (!Number.isFinite(priceNum) || priceNum < 100000 || priceNum > 10000000) {
+      priceMsg = "Enter the on-road price from ₹1,00,000 to ₹1,00,00,000.";
+    }
+    if (downRaw === "") {
+      if (showEmptyError) downMsg = "Enter your down payment.";
+    } else if (!Number.isFinite(downNum) || downNum < 0) {
+      downMsg = "Enter a down payment of ₹0 or more.";
+    } else if (Number.isFinite(priceNum) && downNum > priceNum - 50000) {
+      downMsg = "The down payment must leave a loan of at least ₹50,000.";
+    }
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the interest rate.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 20) {
+      rateMsg = "Enter the interest rate from 0% to 20%.";
+    }
+    if (monthsRaw === "") {
+      if (showEmptyError) monthsMsg = "Enter the tenure in months.";
+    } else if (!Number.isFinite(monthsNum) || monthsNum !== Math.trunc(monthsNum) || monthsNum < 12 || monthsNum > 84) {
+      monthsMsg = "Enter the tenure in whole months, from 12 to 84 months.";
+    }
+    if (feeRaw === "") {
+      if (showEmptyError) feeMsg = "Enter the processing fee.";
+    } else if (!Number.isFinite(feeNum) || feeNum < 0 || feeNum > 5) {
+      feeMsg = "Enter the processing fee from 0% to 5%.";
+    }
+    inputPriceError.textContent = priceMsg;
+    inputDownError.textContent = downMsg;
+    inputRateError.textContent = rateMsg;
+    inputMonthsError.textContent = monthsMsg;
+    inputFeeError.textContent = feeMsg;
+    inputPrice.setAttribute("aria-invalid", String(priceMsg !== ""));
+    inputDown.setAttribute("aria-invalid", String(downMsg !== ""));
+    inputRate.setAttribute("aria-invalid", String(rateMsg !== ""));
+    inputMonths.setAttribute("aria-invalid", String(monthsMsg !== ""));
+    inputFee.setAttribute("aria-invalid", String(feeMsg !== ""));
+
+    const valid = priceMsg === "" && downMsg === "" && rateMsg === "" && monthsMsg === "" && feeMsg === ""
+      && priceRaw !== "" && downRaw !== "" && rateRaw !== "" && monthsRaw !== "" && feeRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = clCompute(priceNum, downNum, rateNum, monthsNum, feeNum);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(priceNum, downNum, rateNum, monthsNum, feeNum, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = clCompute(item.price, item.down, item.rate, item.months, item.fee);
+    if (!r) return "";
+    return inr(item.price) + " − " + inr(item.down) + " · " + item.rate + "% · " + item.months + " mo → " + inr(r.emi) + " a month";
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputPrice.value, inputDown.value, inputRate.value, inputMonths.value, inputFee.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputPrice.value = String(item.price);
+        inputDown.value = String(item.down);
+        inputRate.value = String(item.rate);
+        inputMonths.value = String(item.months);
+        inputFee.value = String(item.fee);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      price: Number(inputPrice.value),
+      down: Number(inputDown.value),
+      rate: Number(inputRate.value),
+      months: Number(inputMonths.value),
+      fee: Number(inputFee.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputPrice.value = button.dataset.price || "";
+      inputDown.value = button.dataset.down || "";
+      inputRate.value = button.dataset.rate || "";
+      inputMonths.value = button.dataset.months || "";
+      inputFee.value = button.dataset.fee || "";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputPrice.value = String(rec.price);
+    inputDown.value = String(rec.down);
+    inputRate.value = String(rec.rate);
+    inputMonths.value = String(rec.months);
+    inputFee.value = String(rec.fee);
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputPrice.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputDown.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputMonths.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputFee.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("cl-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderClCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, samplePrice: p.samplePrice, sampleDown: p.sampleDown, sampleRate: p.sampleRate, sampleMonths: p.sampleMonths, sampleFee: p.sampleFee };
+  const sample = clCompute(p.samplePrice, p.sampleDown, p.sampleRate, p.sampleMonths, p.sampleFee);
+  const fiveLakh = clCompute(600000, 100000, 9.5, 48, 1);
+  const fifteenLakh = clCompute(1800000, 300000, 8.5, 84, 1);
+
+  const presetSummary = pr => {
+    const r = clCompute(pr.price, pr.down, pr.rate, pr.months, pr.fee);
+    return `${inr2(pr.price)} − ${inr2(pr.down)} down → ${inr2(r.amount)} loan at ${pr.rate}% for ${pr.months} months → ${inr2(r.emi)} a month`;
+  };
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = clCompute(st.price, st.down, st.rate, st.months, st.fee);
+    return `${inr2(st.price)} − ${inr2(st.down)} down → ${inr2(r.amount)} loan at ${st.rate}% for ${st.months} months → ${inr2(r.emi)} a month`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const yearlyRows = sample.yearlyRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.label)}</th>
+        <td>${inr2(row.interest)}</td>
+        <td>${inr2(row.principal)}</td>
+        <td>${inr2(row.closing)}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}${hraCss}${ciCss}${epfCss}${npsCss}${ssyCss}${nscCss}${scssCss}${misCss}${kvpCss}${plCss}${tdCss}${clCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free car loan EMI calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate your car loan EMI →
+              </a>
+              <a href="#method" class="calc-link">How EMI is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.emi)} a month</strong>
+                <small>On an ₹8,00,000 loan at 9% for 5 years</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.totalInterest)} interest</strong>
+                <small>${inr2(sample.totalPayment)} repaid in total over 60 months</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.netDisbursed)} paid to the dealer</strong>
+                <small>After a 1% fee of ${inr2(sample.fee)} + 18% GST of ${inr2(sample.gst)} — APR ${sample.aprPct.toFixed(2)}% — the car costs ${inr2(sample.totalCostOfCar)} all in</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>An estimate for planning — not financial, tax or legal advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate your car loan EMI</h2>
+              <span class="calc-pill" id="cl-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="cl-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-price">
+                On-road price of the car (₹)
+                <span>Ex-showroom price plus RTO registration and insurance — from ₹1,00,000 to ₹1,00,00,000. The ex-showroom price already includes GST</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-price"
+                type="number"
+                value="${p.samplePrice}"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-price-error"
+              >
+              <p class="calc-error" id="input-price-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-down">
+                Down payment (₹)
+                <span>What you pay yourself upfront — ₹2,00,000 is the example, 20% of the price. Many buyers pay 10% to 20%</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-down"
+                type="number"
+                value="${p.sampleDown}"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-down-error"
+              >
+              <p class="calc-error" id="input-down-error" aria-live="polite"></p>
+
+              <p class="calc-small" id="loan-preview">Loan amount: ${inr2(sample.amount)} (on-road price minus down payment)</p>
+
+              <label class="field-label" for="input-rate">
+                Interest rate (% a year)
+                <span>The rate your lender quotes, from 0% to 20% — 9% is the example. New-car loan rates in India are indicative at about 7.85% to 11.55% a year in November 2026</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-rate"
+                type="number"
+                value="${p.sampleRate}"
+                step="0.1"
+                inputmode="decimal"
+                aria-describedby="input-rate-error"
+              >
+              <p class="calc-error" id="input-rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-months">
+                Tenure (months)
+                <span>How long you repay over — from 12 to 84 months (1 to 7 years). 60 months is the example</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-months"
+                type="number"
+                value="${p.sampleMonths}"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="input-months-error"
+              >
+              <p class="calc-error" id="input-months-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-fee">
+                Processing fee (% of the loan)
+                <span>The one-time fee your lender charges, from 0% to 5% — 1% is the example. 18% GST is added to the fee automatically</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-fee"
+                type="number"
+                value="${p.sampleFee}"
+                step="0.1"
+                inputmode="decimal"
+                aria-describedby="input-fee-error"
+              >
+              <p class="calc-error" id="input-fee-error" aria-live="polite"></p>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-price">${inr2(sample.emi)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.emi)}</strong>
+                  <small id="box1-label">MONTHLY EMI</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.totalInterest)}</strong>
+                  <small id="box2-label">TOTAL INTEREST</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.totalPayment)}</strong>
+                  <small id="box3-label">TOTAL REPAYMENT</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">₹10,00,000 on-road · ₹2,00,000 down · ₹8,00,000 loan · 9% · 60 months → ${inr2(sample.emi)} a month · ${inr2(sample.totalInterest)} interest · ${inr2(sample.totalPayment)} in total · ${inr2(sample.netDisbursed)} paid to the dealer after the fee and GST · APR ${sample.aprPct.toFixed(2)}% · car costs ${inr2(sample.totalCostOfCar)} all in.</span>
+              </div>
+
+              <p class="working" id="working">
+                ₹10,00,000 on-road, ₹2,00,000 down → ₹8,00,000 loan at 9% for 60 months — ${inr2(sample.emi)} a month, ${inr2(sample.totalInterest)} of interest, ${inr2(sample.totalPayment)} repaid in total.
+              </p>
+              <p class="working" id="working-2">Processing fee 1%: ${inr2(sample.fee)} + 18% GST ${inr2(sample.gst)} = ${inr2(sample.totalFee)} deducted, so ${inr2(sample.netDisbursed)} is paid to the dealer. Total cost of the loan: ${inr2(sample.totalCost)}. All in, the car costs ${inr2(sample.totalCostOfCar)}.</p>
+              <p class="working" id="working-note">Reducing balance · APR ${sample.aprPct.toFixed(2)}% (the true yearly cost on the amount actually disbursed)</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The figures are estimates at the rate you
+                enter, held steady for the term. The EMI covers
+                principal and interest only — the fee and GST
+                are deducted from the disbursement before the
+                dealer is paid, and any insurance premium,
+                penal charge or foreclosure charge is extra.
+                Your sanction letter and Key Facts Statement
+                decide the actual figures.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="yearly">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Year by year</p>
+          <h2>How your balance falls, year by year</h2>
+          <p id="yearly-note">Interest and principal paid in each year of the loan, and the balance still owed at the end of the year. Early years are mostly interest; later years are mostly principal.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="yearly-note">
+            <caption>Year-by-year split on the sample figures: a ₹10,00,000 car with ₹2,00,000 down — an ₹8,00,000 loan at 9% for 60 months — the interest and principal paid each year, and the balance left.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Interest paid</th>
+                <th scope="col">Principal repaid</th>
+                <th scope="col">Balance left</th>
+              </tr>
+            </thead>
+            <tbody id="yearly-body">
+              ${yearlyRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#yearly">Year by year</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / THE EMI IS FIXED</span>
+            <h3>The same amount every month</h3>
+            <p>On an ₹8,00,000 loan at 9% for 5 years you pay ₹16,607 every month for 60 months. What changes is the split: in Year 1, ₹66,616 of your ₹1,99,280 goes to interest and ₹1,32,664 to principal; by Year 5 only ₹9,385 is interest and ₹1,89,896 clears the loan.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE FEE COMES OFF FIRST</span>
+            <h3>The dealer is paid less than you borrow</h3>
+            <p>The EMI is charged on the full sanctioned amount, but the fee and GST are deducted from the disbursement before the dealer is paid. On ₹8,00,000 at 1%, ₹8,000 + ₹1,440 GST = ₹9,440 is deducted, so ₹7,90,560 reaches the dealer. That is why the APR — 9.51% here — is higher than the 9% rate.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / THE RATE IS NOT THE COST</span>
+            <h3>Compare offers on the APR</h3>
+            <p>Two offers at the same rate can cost very different amounts if one carries a higher fee, and a flat-rate dealer quote can hide a much higher reducing rate. The Key Facts Statement your lender must give you before you sign shows the APR — the all-in yearly cost — so compare that, not the headline rate.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From the car's price to your EMI</h2>
+          <p>
+            Enter the car's on-road price, set your down
+            payment, set the rate, set the tenure and the
+            processing fee, then read the loan amount, the
+            EMI, the total interest, the total repayment, the
+            fee with GST, the amount paid to the dealer, the
+            APR and the total cost of the car.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How car loan EMI is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The car loan EMI formula</small>
+          Loan = on-road price − down payment · EMI = P × r × (1+r)^n ÷ ((1+r)^n − 1) · r = annual rate ÷ 12 ÷ 100 · reducing balance
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. ₹10,00,000 car, ₹2,00,000 down, 9%, 60 months
+            <strong>${fmt2(sample.emi)} a month · ${fmt2(sample.totalInterest)} interest · ${fmt2(sample.totalPayment)} in total</strong>
+            <span>The loan is ₹8,00,000. The monthly rate is 0.0075, so (1.0075)^60 is about 1.5657 and the EMI is ₹16,606.68, shown as ₹16,607. The fee is ₹8,000 + ₹1,440 GST, so ₹7,90,560 is paid to the dealer and the APR is 9.51%. All in, the car costs ${fmt2(sample.totalCostOfCar)}.</span>
+          </div>
+
+          <div class="math-step">
+            2. ₹6,00,000 car, ₹1,00,000 down, 9.5%, 48 months
+            <strong>${fmt2(fiveLakh.emi)} a month · ${fmt2(fiveLakh.totalInterest)} interest · ${fmt2(fiveLakh.totalPayment)} in total</strong>
+            <span>The loan is ₹5,00,000. A shorter tenure at a slightly higher rate: ₹12,562 a month and only ₹1,02,955 of interest. The fee is ₹5,000 + ₹900 GST, so ₹4,94,100 is paid to the dealer and the APR is 10.13%. All in, the car costs ${fmt2(fiveLakh.totalCostOfCar)}.</span>
+          </div>
+
+          <div class="math-step">
+            3. ₹18,00,000 car, ₹3,00,000 down, 8.5%, 84 months
+            <strong>${fmt2(fifteenLakh.emi)} a month · ${fmt2(fifteenLakh.totalInterest)} interest · ${fmt2(fifteenLakh.totalPayment)} in total</strong>
+            <span>The loan is ₹15,00,000. The seven-year tenure keeps the EMI at ₹23,755 a month, but the interest is ₹4,95,397. The fee is ₹15,000 + ₹2,700 GST, so ₹14,82,300 is paid to the dealer and the APR is 8.87%. All in, the car costs ${fmt2(fifteenLakh.totalCostOfCar)}.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+
+        <div class="section-head" style="margin-top:28px">
+          <p class="eyebrow">Indicative rates</p>
+          <h2>What lenders are charging in November 2026</h2>
+          <p>Indicative car-loan rates from the lenders' published pages, as reported in October–November 2026 roundups. These are starting points for top profiles, not quotes — the rate you are offered depends on your credit score, income, the car and the lender. Confirm the rate, fees and APR in the lender's Key Facts Statement before you accept.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>Indicative car loan interest rates and processing fees, November 2026. Rates are indicative only and change often.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Lender</th>
+                <th scope="col">Indicative rate (a year)</th>
+                <th scope="col">Processing fee (indicative)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">SBI</th><td>8.45%–9.50%</td><td>₹500–₹2,000 + GST</td></tr>
+              <tr><th scope="row">HDFC Bank</th><td>From 8.15%</td><td>Up to 0.50% (₹3,500–₹8,000) + GST</td></tr>
+              <tr><th scope="row">ICICI Bank</th><td>From 8.35%</td><td>₹3,500–₹8,500 + GST</td></tr>
+              <tr><th scope="row">Punjab National Bank</th><td>From 7.60% (floating)</td><td>0.25% of the loan + GST</td></tr>
+              <tr><th scope="row">Bank of Baroda</th><td>7.85%–11.55%</td><td>Up to ₹2,000 + GST</td></tr>
+              <tr><th scope="row">Canara Bank</th><td>From 7.50% (7.45% EV)</td><td>0.25% (₹1,000–₹5,000) + GST</td></tr>
+            </tbody>
+          </table>
+          <p class="calc-small">Used-car loans run higher — SBI charges 10.60% to 15.75% for certified pre-owned cars and HDFC 12% to 16% — and electric cars can be cheaper still, with Canara Bank from 7.45%. Canara Bank waived its processing fee entirely from 1 October to 31 December 2026 under its Retail Loan Festival. The overall indicative range for new cars is about 7.85% to 11.55% a year; the lowest starting rates (7.50% and below) are for top profiles and, in Canara Bank's case, for electric cars.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five cars, five EMIs</h2>
+          <p>
+            One example for each everyday case, from a
+            two-year ₹3 lakh used-car loan to a seven-year
+            ₹15 lakh loan on a bigger car. Select any example
+            to load it into the calculator and check the
+            working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.price)} − ${fmt2(story.down)} DOWN · ${story.rate}% · ${story.months} MONTHS</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-price="${story.price}" data-down="${story.down}" data-rate="${story.rate}" data-months="${story.months}" data-fee="${story.fee}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>Car loan rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>The indicative rates for November 2026, the on-road price and loan limits, the down payment, the tenure range, the processing fee with GST, how interest is charged, the Key Facts Statement, the prepayment rules and how used-car loans differ.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get a car loan wrong</h2>
+          <p>
+            A car loan is simple on the surface — one price,
+            one down payment, one EMI — but the down payment,
+            the tenure, the fee and a flat-rate dealer quote
+            catch people out.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / BORROWING THE FULL PRICE</span>
+            <h3>No down payment means negative equity</h3>
+            <p>Borrowing the whole on-road price leaves you owing more than the car is worth the moment you drive it out — a new car loses much of its value in the first year. Paying at least 20% down keeps the loan below the car's value, and each ₹1 lakh less borrowed at 9% for 5 years cuts the EMI by about ₹2,076.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / CHOOSING THE TENURE BY EMI ALONE</span>
+            <h3>A longer tenure looks cheap and costs more</h3>
+            <p>Stretching ₹8,00,000 at 9% from 3 years to 7 years cuts the EMI from ₹25,440 to ₹12,871 — but the interest jumps from ₹1,15,832 to ₹2,81,186, nearly two and a half times as much. Compare the total repayment column, not just the EMI, before deciding.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / FORGETTING THE FEE, GST AND RTO</span>
+            <h3>The EMI is not your full cost</h3>
+            <p>The EMI covers principal and interest only. On ₹8,00,000 at 1%, ₹9,440 of fee and GST is deducted before the dealer is paid, so the dealer receives ₹7,90,560 while you repay EMIs on ₹8,00,000. And if you finance the RTO and insurance instead of paying them yourself, the loan — and the interest — grows with them.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / TAKING A FLAT RATE AT FACE VALUE</span>
+            <h3>9% flat is really about 15.71% reducing</h3>
+            <p>A flat rate charges interest on the full amount for the whole term. On ₹8,00,000 for 60 months, 9% flat costs ₹3,60,000 of interest with an EMI of ₹19,333 — ₹1,63,599 more than 9% on a reducing balance, which costs ₹1,96,401. Always ask for the reducing-balance equivalent and the APR.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>Car loan EMI calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the standard car-loan EMI
+            method: the loan is the on-road price minus the
+            down payment, and the EMI follows the
+            reducing-balance formula, EMI = P × r × (1+r)^n
+            ÷ ((1+r)^n − 1), with the monthly rate r =
+            annual rate ÷ 12 ÷ 100 and the tenure in months.
+            The total repayment comes from the unrounded EMI —
+            total = EMI × n, rounded to the nearest rupee — so
+            the rounded EMI times the tenure can differ from
+            the total by a few rupees. The processing fee is a
+            percentage of the loan with 18% GST on the fee,
+            and the net amount paid to the dealer is the loan
+            minus the fee and GST. The APR is the monthly
+            internal rate of return of the EMIs against the
+            net amount disbursed, times 12 — the method in
+            the RBI's Key Facts Statement illustration. The
+            total cost of the car is the on-road price plus
+            the total interest plus the fee and GST. The rate
+            is user-entered and treated as a steady assumption
+            — never as a live quote or a promise of what a
+            lender will offer. Nothing you enter leaves your
+            browser: every calculation runs entirely on this
+            page.
+          </p>
+          <p>
+            Figures checked 12 November 2026: the worked
+            examples reproduce the ranking car-loan
+            calculators' published figures — ₹8,00,000 at 9%
+            for 60 months is ₹16,607 a month (₹16,606.68
+            exact), ₹1,96,401 of interest and ₹9,96,401 in
+            total on
+            <a href="https://www.credocalc.com/in/car-loan-emi-calculator/" rel="nofollow noopener" target="_blank">credocalc.com</a>
+            and on
+            <a href="https://www.hrcalcy.in/p/car-loan-calculator.html" rel="nofollow noopener" target="_blank">hrcalcy.in</a>,
+            which also states the 1% fee case (₹8,000 of fee
+            plus ₹1,440 of GST, ₹7,90,560 paid to the dealer)
+            and the first EMI's split (₹6,000 of interest and
+            ₹10,607 of principal); ₹10,00,000 at 9% for 60
+            months is ₹20,758 a month, ₹2,45,501 of interest
+            and ₹12,45,501 in total on
+            <a href="https://www.credivitt.com/calculators/car-loan-emi-calculator" rel="nofollow noopener" target="_blank">credivitt.com</a>;
+            ₹9,50,000 at 9.25% for 60 months is ₹19,836 a
+            month on
+            <a href="https://rupeescalc.com/calculators/loan-emi-calculators/car-loan-emi-calculator-india/" rel="nofollow noopener" target="_blank">rupeescalc.com</a>.
+            Two small differences are stated honestly: this
+            page's Year 5 interest on the main case is ₹9,385
+            while credocalc shows ₹9,384, because this page
+            rounds each year's exact sums and sets the final
+            year so the rows add up exactly to the total
+            interest, while credocalc rounds each month's
+            split; and
+            <a href="https://www.vaddicalculator.in/car-loan-calculator/" rel="nofollow noopener" target="_blank">vaddicalculator.in</a>'s
+            worked example shows
+            ₹1,57,124 of interest on a ₹6,40,000 loan at 9%
+            for 60 months, ₹3 more than the exact ₹1,57,121
+            that credocalc publishes — the exact figure is
+            used here. The flat-rate warning (9% flat on
+            ₹8,00,000 for 60 months is ₹19,333 a month and
+            ₹1,63,599 more interest) is from credocalc, and
+            the RBI's KFS worked example (₹20,000 for 24
+            months at 15% with ₹400 of fees gives an EMI of
+            ₹970 and an APR of 17.07%) is quoted by hrcalcy.
+            The indicative lender rates are from the lenders'
+            published pages as reported by BankBazaar in
+            October–November 2026 (via hrcalcy and Times Now),
+            Moneycontrol (2 November 2026) and Canara Bank's
+            own vehicle-loan page. The Key Facts Statement
+            rule is the RBI circular “Key Facts Statement
+            (KFS) for Loans and Advances” (RBI/2024-25/18) of
+            15 April 2024,
+            mandatory for retail and MSME term loans
+            sanctioned on or after 1 October 2024 — see
+            <a href="https://www.rbi.org.in/" rel="nofollow noopener" target="_blank">rbi.org.in</a>.
+            The prepayment rule is the RBI (Pre-payment
+            Charges on Loans) Directions, 2025, issued on
+            2 July 2025 (notification RBI/2025-26/64), which
+            bar pre-payment charges on floating-rate loans to
+            individuals for non-business purposes sanctioned
+            or renewed on or after 1 January 2026. The RBI
+            directions page itself could not be read directly
+            in this run, so the wording is taken from three
+            independent faithful reproductions that quote the
+            directions' paragraphs — see sources.md. One
+            honest limit: the indicative rates are a
+            November 2026 snapshot from roundups, not live
+            quotes, and they move often — your sanction
+            letter and Key Facts Statement decide. For a loan
+            on anything else, use the EMI calculator; for an
+            unsecured loan, the personal loan EMI calculator;
+            for a secured loan over a longer term, the home
+            loan EMI calculator.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function apyClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  const APY_PENSIONS = [1000, 2000, 3000, 4000, 5000];
+
+  const APY_CORPUS = [170000, 340000, 510000, 680000, 850000];
+
+  const APY_MIN_AGE = 18;
+
+  const APY_MAX_AGE = 40;
+
+  const APY_MONTHLY = [
+    [42, 84, 126, 168, 210],
+    [46, 92, 138, 183, 228],
+    [50, 100, 150, 198, 248],
+    [54, 108, 162, 215, 269],
+    [59, 117, 177, 234, 292],
+    [64, 127, 192, 254, 318],
+    [70, 139, 208, 277, 346],
+    [76, 151, 226, 301, 376],
+    [82, 164, 246, 327, 409],
+    [90, 178, 268, 356, 446],
+    [97, 194, 292, 388, 485],
+    [106, 212, 318, 423, 529],
+    [116, 231, 347, 462, 577],
+    [126, 252, 379, 504, 630],
+    [138, 276, 414, 551, 689],
+    [151, 302, 453, 602, 752],
+    [165, 330, 495, 659, 824],
+    [181, 362, 543, 722, 902],
+    [198, 396, 594, 792, 990],
+    [218, 436, 654, 870, 1087],
+    [240, 480, 720, 957, 1196],
+    [264, 528, 792, 1054, 1318],
+    [291, 582, 873, 1164, 1454],
+  ];
+
+  const APY_QUARTERLY = [
+    [125, 250, 376, 501, 626],
+    [137, 274, 411, 545, 679],
+    [149, 298, 447, 590, 739],
+    [161, 322, 483, 641, 802],
+    [176, 349, 527, 697, 870],
+    [191, 378, 572, 757, 948],
+    [209, 414, 620, 826, 1031],
+    [226, 450, 674, 897, 1121],
+    [244, 489, 733, 975, 1219],
+    [268, 530, 799, 1061, 1329],
+    [289, 578, 870, 1156, 1445],
+    [316, 632, 948, 1261, 1577],
+    [346, 688, 1034, 1377, 1720],
+    [376, 751, 1129, 1502, 1878],
+    [411, 823, 1234, 1642, 2053],
+    [450, 900, 1350, 1794, 2241],
+    [492, 983, 1475, 1964, 2456],
+    [539, 1079, 1618, 2152, 2688],
+    [590, 1180, 1770, 2360, 2950],
+    [650, 1299, 1949, 2593, 3239],
+    [715, 1430, 2146, 2852, 3564],
+    [787, 1574, 2360, 3141, 3928],
+    [867, 1734, 2602, 3469, 4333],
+  ];
+
+  const APY_HALFYEARLY = [
+    [248, 496, 744, 991, 1239],
+    [271, 543, 814, 1080, 1346],
+    [295, 590, 885, 1169, 1464],
+    [319, 637, 956, 1269, 1588],
+    [348, 690, 1045, 1381, 1723],
+    [378, 749, 1133, 1499, 1877],
+    [413, 820, 1228, 1635, 2042],
+    [449, 891, 1334, 1776, 2219],
+    [484, 968, 1452, 1930, 2414],
+    [531, 1050, 1582, 2101, 2632],
+    [572, 1145, 1723, 2290, 2862],
+    [626, 1251, 1877, 2496, 3122],
+    [685, 1363, 2048, 2727, 3405],
+    [744, 1487, 2237, 2974, 3718],
+    [814, 1629, 2443, 3252, 4066],
+    [891, 1782, 2673, 3553, 4438],
+    [974, 1948, 2921, 3889, 4863],
+    [1068, 2136, 3205, 4261, 5323],
+    [1169, 2337, 3506, 4674, 5843],
+    [1287, 2573, 3860, 5134, 6415],
+    [1416, 2833, 4249, 5648, 7058],
+    [1558, 3116, 4674, 6220, 7778],
+    [1717, 3435, 5152, 6869, 8581],
+  ];
+
+  function apyContribution(age, pension, frequency) {
+    const a = Math.trunc(Number(age));
+    const p = Number(pension);
+    if (!Number.isFinite(a) || !Number.isFinite(p)) return null;
+    if (a !== Number(age)) return null;
+    if (a < APY_MIN_AGE || a > APY_MAX_AGE) return null;
+    const col = APY_PENSIONS.indexOf(p);
+    if (col < 0) return null;
+    const row = a - APY_MIN_AGE;
+    if (frequency === "monthly") return APY_MONTHLY[row][col];
+    if (frequency === "quarterly") return APY_QUARTERLY[row][col];
+    if (frequency === "half-yearly") return APY_HALFYEARLY[row][col];
+    return null;
+  }
+
+  function apyCompute(age, pension, frequency) {
+    const a = Math.trunc(Number(age));
+    const p = Number(pension);
+    if (!Number.isFinite(a) || !Number.isFinite(p)) return null;
+    if (a !== Number(age)) return null;
+    if (a < APY_MIN_AGE || a > APY_MAX_AGE) return null;
+    const col = APY_PENSIONS.indexOf(p);
+    if (col < 0) return null;
+    if (frequency !== "monthly" && frequency !== "quarterly" && frequency !== "half-yearly") return null;
+    const perPeriod = apyContribution(a, p, frequency);
+    if (perPeriod === null) return null;
+    const years = 60 - a;
+    const paymentsPerYear = frequency === "monthly" ? 12 : frequency === "quarterly" ? 4 : 2;
+    const payments = paymentsPerYear * years;
+    const total = perPeriod * payments;
+    const monthly = apyContribution(a, p, "monthly");
+    const monthlyTotal = monthly * 12 * years;
+    const quarterly = apyContribution(a, p, "quarterly");
+    const quarterlyTotal = quarterly * 4 * years;
+    const halfYearly = apyContribution(a, p, "half-yearly");
+    const halfYearlyTotal = halfYearly * 2 * years;
+    return {
+      age: a,
+      pension: p,
+      frequency,
+      perPeriod,
+      paymentsPerYear,
+      years,
+      payments,
+      total,
+      corpus: APY_CORPUS[col],
+      monthly,
+      monthlyTotal,
+      quarterly,
+      quarterlyTotal,
+      halfYearly,
+      halfYearlyTotal,
+      savedVsMonthly: monthlyTotal - total
+    };
+  }
+
+  function apyDelayRows(pension) {
+    const p = Number(pension);
+    const col = APY_PENSIONS.indexOf(p);
+    if (col < 0) return null;
+    const rows = [];
+    for (let a = APY_MIN_AGE; a <= APY_MAX_AGE; a++) {
+      const monthly = APY_MONTHLY[a - APY_MIN_AGE][col];
+      const years = 60 - a;
+      rows.push({ age: a, years, monthly, total: monthly * 12 * years });
+    }
+    return rows;
+  }
+
+  const presetSelect = $("preset");
+  const apyPill = $("apy-pill");
+  const inputAge = $("input-age");
+  const inputAgeError = $("input-age-error");
+  const inputPension = $("input-pension");
+  const inputPensionError = $("input-pension-error");
+  const inputFrequency = $("input-frequency");
+  const inputFrequencyError = $("input-frequency-error");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const freqBody = $("freq-body");
+  const freqNote = $("freq-note");
+  const waitingBody = $("waiting-body");
+  const waitingNote = $("waiting-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+  const freqLabel = f => f === "monthly" ? "a month" : f === "quarterly" ? "a quarter" : "every six months";
+
+  function renderFreq(r) {
+    freqBody.replaceChildren();
+    if (!r) {
+      freqNote.textContent = "Enter your joining age, pension and payment frequency to compare the three ways of paying.";
+      return;
+    }
+    const freqs = ["monthly", "quarterly", "half-yearly"];
+    const labels = { monthly: "Monthly", quarterly: "Quarterly", "half-yearly": "Half-yearly" };
+    freqs.forEach(f => {
+      const row = apyCompute(r.age, r.pension, f);
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = labels[f] + (f === r.frequency ? " — your choice" : "");
+      tr.appendChild(th);
+      [inr(row.perPeriod), String(row.payments), inr(row.total),
+        row.savedVsMonthly > 0 ? "Saves " + inr(row.savedVsMonthly) : "—"].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = v;
+        tr.appendChild(td);
+      });
+      freqBody.appendChild(tr);
+    });
+    freqNote.textContent = "The quarterly and half-yearly amounts are prescribed separately in the chart — slightly less than three and six times the monthly amount — so paying less often costs less in total for the same pension.";
+  }
+
+  function renderWaiting(r) {
+    waitingBody.replaceChildren();
+    if (!r) {
+      waitingNote.textContent = "Enter your joining age and pension to see what waiting costs.";
+      return;
+    }
+    apyDelayRows(r.pension).forEach(row => {
+      const tr = document.createElement("tr");
+      if (row.age === r.age) tr.className = "highlight-row";
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row.age === r.age ? row.age + " — you" : String(row.age);
+      tr.appendChild(th);
+      [inr(row.monthly), String(row.years), inr(row.total),
+        row.age === r.age ? "—" : (row.total > apyCompute(r.age, r.pension, "monthly").total ? "+" + inr(row.total - apyCompute(r.age, r.pension, "monthly").total) : "−" + inr(apyCompute(r.age, r.pension, "monthly").total - row.total))].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = v;
+        tr.appendChild(td);
+      });
+      waitingBody.appendChild(tr);
+    });
+    waitingNote.textContent = "The same pension and the same corpus to your nominee at every age — only the contribution and the years change. The highlighted row is your age.";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your joining age, the pension you want and how often you want to pay to see your contribution.";
+    working.textContent = "Enter your joining age, the pension you want and how often you want to pay to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    freqBody.replaceChildren();
+    freqNote.textContent = "Enter your joining age, pension and payment frequency to compare the three ways of paying.";
+    waitingBody.replaceChildren();
+    waitingNote.textContent = "Enter your joining age and pension to see what waiting costs.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(age, pension, frequency, r) {
+    output.textContent = inr(r.perPeriod) + " " + freqLabel(frequency);
+    box1Val.textContent = inr(r.perPeriod);
+    box1Label.textContent = frequency === "monthly" ? "A MONTH" : frequency === "quarterly" ? "A QUARTER" : "EVERY SIX MONTHS";
+    box2Val.textContent = inr(r.total);
+    box2Label.textContent = "TOTAL YOU PAY IN";
+    box3Val.textContent = inr(r.pension);
+    box3Label.textContent = "PENSION A MONTH FROM 60";
+    working.textContent = "Joining at " + age + " for a " + inr(pension) + " pension, paying " + frequency + ": "
+      + inr(r.perPeriod) + " " + freqLabel(frequency) + " for " + r.years + " years — " + r.payments + " payments, " + inr(r.total) + " in all.";
+    working2.textContent = "From 60 you get " + inr(pension) + " a month for life; after you, your spouse gets the same "
+      + inr(pension) + " a month for life; and after both of you, your nominee gets " + inr(r.corpus) + "."
+      + (frequency === "monthly"
+        ? " Paying quarterly instead would cost " + inr(r.quarterly) + " a quarter, " + inr(r.quarterlyTotal) + " in all — saving " + inr(r.monthlyTotal - r.quarterlyTotal) + "."
+        : frequency === "quarterly"
+          ? " Paying monthly instead would cost " + inr(r.monthly) + " a month, " + inr(r.monthlyTotal) + " in all — " + inr(r.monthlyTotal - r.total) + " more."
+          : " Paying monthly instead would cost " + inr(r.monthly) + " a month, " + inr(r.monthlyTotal) + " in all — " + inr(r.monthlyTotal - r.total) + " more.");
+    workingNote.textContent = "Prescribed chart amount · " + r.years + " years of contributions · pension guaranteed by the Government of India";
+    glanceText.textContent = "Joining at " + age + " · " + inr(pension) + " pension · " + frequency + " → " + inr(r.perPeriod) + " " + freqLabel(frequency)
+      + " · " + inr(r.total) + " in all over " + r.years + " years · " + inr(pension) + " a month for life from 60 · same to your spouse · " + inr(r.corpus) + " to your nominee.";
+    renderFreq(r);
+    renderWaiting(r);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | APY Calculator"
+      + "\nQuestion: joining at " + age + " for a " + inr(pension) + " monthly pension, paying " + frequency
+      + "\nAnswer: " + inr(r.perPeriod) + " " + freqLabel(frequency) + "; " + inr(r.total) + " in all over " + r.years + " years (" + r.payments + " payments)"
+      + "\nFrom 60: " + inr(pension) + " a month for life; same to your spouse; " + inr(r.corpus) + " to your nominee"
+      + "\nWorking: contribution read from the prescribed APY chart (Annex-1, 16 Oct 2015 notification); total = amount per payment x number of payments";
+  }
+
+  function paint(showEmptyError = false) {
+    apyPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const ageRaw = inputAge.value;
+    const pensionRaw = inputPension.value;
+    const frequencyRaw = inputFrequency.value;
+    const ageNum = ageRaw === "" ? NaN : Number(ageRaw);
+    const pensionNum = pensionRaw === "" ? NaN : Number(pensionRaw);
+    let ageMsg = "";
+    let pensionMsg = "";
+    let frequencyMsg = "";
+    if (ageRaw === "") {
+      if (showEmptyError) ageMsg = "Enter the age you will be when you join.";
+    } else if (!Number.isFinite(ageNum) || ageNum !== Math.trunc(ageNum) || ageNum < 18 || ageNum > 40) {
+      ageMsg = "Enter your joining age in whole years, from 18 to 40.";
+    }
+    if (pensionRaw === "") {
+      if (showEmptyError) pensionMsg = "Pick the pension you want from 60.";
+    } else if (!APY_PENSIONS.includes(pensionNum)) {
+      pensionMsg = "Pick one of the five pension slabs: ₹1,000 to ₹5,000.";
+    }
+    if (frequencyRaw === "") {
+      if (showEmptyError) frequencyMsg = "Pick how often you want to pay.";
+    } else if (frequencyRaw !== "monthly" && frequencyRaw !== "quarterly" && frequencyRaw !== "half-yearly") {
+      frequencyMsg = "Pick monthly, quarterly or half-yearly.";
+    }
+    inputAgeError.textContent = ageMsg;
+    inputPensionError.textContent = pensionMsg;
+    inputFrequencyError.textContent = frequencyMsg;
+    inputAge.setAttribute("aria-invalid", String(ageMsg !== ""));
+    inputPension.setAttribute("aria-invalid", String(pensionMsg !== ""));
+    inputFrequency.setAttribute("aria-invalid", String(frequencyMsg !== ""));
+
+    const valid = ageMsg === "" && pensionMsg === "" && frequencyMsg === ""
+      && ageRaw !== "" && pensionRaw !== "" && frequencyRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = apyCompute(ageNum, pensionNum, frequencyRaw);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(ageNum, pensionNum, frequencyRaw, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = apyCompute(item.age, item.pension, item.frequency);
+    if (!r) return "";
+    return "Age " + item.age + " · " + inr(item.pension) + " · " + item.frequency + " → " + inr(r.perPeriod) + " " + freqLabel(item.frequency);
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputAge.value, inputPension.value, inputFrequency.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputAge.value = String(item.age);
+        inputPension.value = String(item.pension);
+        inputFrequency.value = item.frequency;
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      age: Number(inputAge.value),
+      pension: Number(inputPension.value),
+      frequency: inputFrequency.value
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputAge.value = button.dataset.age || "";
+      inputPension.value = button.dataset.pension || "";
+      inputFrequency.value = button.dataset.frequency || "";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputAge.value = String(rec.age);
+    inputPension.value = String(rec.pension);
+    inputFrequency.value = rec.frequency;
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputAge.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputPension.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputFrequency.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("apy-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderApyCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleAge: p.sampleAge, samplePension: p.samplePension, sampleFrequency: p.sampleFrequency };
+  const sample = apyCompute(p.sampleAge, p.samplePension, p.sampleFrequency);
+  const sampleMonthly = apyCompute(p.sampleAge, p.samplePension, "monthly");
+  const sampleQuarterly = apyCompute(p.sampleAge, p.samplePension, "quarterly");
+  const sampleHalfYearly = apyCompute(p.sampleAge, p.samplePension, "half-yearly");
+  const waitingRows = apyDelayRows(p.samplePension);
+
+  const presetSummary = pr => {
+    const r = apyCompute(pr.age, pr.pension, pr.frequency);
+    return `Age ${pr.age} · ${inr2(pr.pension)} pension · ${pr.frequency} → ${inr2(r.perPeriod)} ${pr.frequency === "monthly" ? "a month" : pr.frequency === "quarterly" ? "a quarter" : "every six months"}`;
+  };
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = apyCompute(st.age, st.pension, st.frequency);
+    return `Age ${st.age} · ${inr2(st.pension)} pension · ${st.frequency} → ${inr2(r.perPeriod)} ${st.frequency === "monthly" ? "a month" : st.frequency === "quarterly" ? "a quarter" : "every six months"} · ${inr2(r.total)} in all`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const freqRows = [sampleMonthly, sampleQuarterly, sampleHalfYearly].map(r => `
+      <tr>
+        <th scope="row">${r.frequency === "monthly" ? "Monthly" : r.frequency === "quarterly" ? "Quarterly" : "Half-yearly"}${r.frequency === p.sampleFrequency ? " — your choice" : ""}</th>
+        <td>${inr2(r.perPeriod)}</td>
+        <td>${r.payments}</td>
+        <td>${inr2(r.total)}</td>
+        <td>${r.savedVsMonthly > 0 ? "Saves " + inr2(r.savedVsMonthly) : "—"}</td>
+      </tr>`).join("");
+
+  const waitingRowsHtml = waitingRows.map(row => `
+      <tr${row.age === p.sampleAge ? ' class="highlight-row"' : ""}>
+        <th scope="row">${row.age === p.sampleAge ? row.age + " — you" : row.age}</th>
+        <td>${inr2(row.monthly)}</td>
+        <td>${row.years}</td>
+        <td>${inr2(row.total)}</td>
+        <td>${row.age === p.sampleAge ? "—" : row.total > sampleMonthly.total ? "+" + inr2(row.total - sampleMonthly.total) : "−" + inr2(sampleMonthly.total - row.total)}</td>
+      </tr>`).join("");
+
+  const chartRowsHtml = APY_MONTHLY.map((row, i) => `
+      <tr>
+        <th scope="row">${18 + i}</th>
+        <td>${inr2(row[0])}</td>
+        <td>${inr2(row[1])}</td>
+        <td>${inr2(row[2])}</td>
+        <td>${inr2(row[3])}</td>
+        <td>${inr2(row[4])}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}${hraCss}${ciCss}${epfCss}${npsCss}${ssyCss}${nscCss}${scssCss}${misCss}${kvpCss}${plCss}${tdCss}${clCss}${apyCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free APY calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate your APY contribution →
+              </a>
+              <a href="#method" class="calc-link">How the contribution is fixed ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.perPeriod)} a month</strong>
+                <small>Joining at 25 for a ₹5,000 pension</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.total)} in all</strong>
+                <small>Paid over 35 years — 420 monthly payments</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.pension)} a month for life</strong>
+                <small>From 60, the same to your spouse, then ${inr2(sample.corpus)} to your nominee</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>An estimate for planning — not financial, tax or legal advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate your APY contribution</h2>
+              <span class="calc-pill" id="apy-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="apy-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-age">
+                Your age when you join (years)
+                <span>From 18 to 40 — the scheme only takes members in that window. 25 is the example</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-age"
+                type="number"
+                value="${p.sampleAge}"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="input-age-error"
+              >
+              <p class="calc-error" id="input-age-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-pension">
+                Monthly pension you want from 60 (₹)
+                <span>₹1,000, ₹2,000, ₹3,000, ₹4,000 or ₹5,000 a month, for life — ₹5,000 is the example, the most the scheme pays</span>
+              </label>
+
+              <select
+                class="select-input"
+                id="input-pension"
+                aria-describedby="input-pension-error"
+              >
+                <option value="1000">₹1,000 a month</option>
+                <option value="2000">₹2,000 a month</option>
+                <option value="3000">₹3,000 a month</option>
+                <option value="4000">₹4,000 a month</option>
+                <option value="5000" selected>₹5,000 a month</option>
+              </select>
+              <p class="calc-error" id="input-pension-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-frequency">
+                How often you pay
+                <span>Monthly, quarterly or half-yearly by auto-debit — monthly is the example. Quarterly and half-yearly are slightly less than three and six times the monthly amount</span>
+              </label>
+
+              <select
+                class="select-input"
+                id="input-frequency"
+                aria-describedby="input-frequency-error"
+              >
+                <option value="monthly" selected>Monthly</option>
+                <option value="quarterly">Quarterly</option>
+                <option value="half-yearly">Half-yearly</option>
+              </select>
+              <p class="calc-error" id="input-frequency-error" aria-live="polite"></p>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-age">${inr2(sample.perPeriod)} a month</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.perPeriod)}</strong>
+                  <small id="box1-label">A MONTH</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.total)}</strong>
+                  <small id="box2-label">TOTAL YOU PAY IN</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.pension)}</strong>
+                  <small id="box3-label">PENSION A MONTH FROM 60</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">Joining at 25 · ₹5,000 pension · monthly → ₹376 a month · ₹1,57,920 in all over 35 years · ₹5,000 a month for life from 60 · same to your spouse · ₹8,50,000 to your nominee.</span>
+              </div>
+
+              <p class="working" id="working">
+                Joining at 25 for a ₹5,000 pension, paying monthly: ₹376 a month for 35 years — 420 payments, ₹1,57,920 in all.
+              </p>
+              <p class="working" id="working-2">From 60 you get ₹5,000 a month for life; after you, your spouse gets the same ₹5,000 a month for life; and after both of you, your nominee gets ₹8,50,000. Paying quarterly instead would cost ₹1,121 a quarter, ₹1,56,940 in all — saving ₹980.</p>
+              <p class="working" id="working-note">Prescribed chart amount · 35 years of contributions · pension guaranteed by the Government of India</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The figures are the prescribed amounts for your
+                joining age and pension slab, fixed by the
+                government's chart — they never change while you
+                pay. The pension is guaranteed by the Government
+                of India, but the tax treatment, the exit rules
+                and the account charges are set by PFRDA and the
+                scheme rules — check the rules table below
+                before you rely on them.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="frequency">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Three ways to pay</p>
+          <h2>Monthly, quarterly or half-yearly — what each costs</h2>
+          <p id="freq-note">The quarterly and half-yearly amounts are prescribed separately in the chart — slightly less than three and six times the monthly amount — so paying less often costs less in total for the same pension.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="freq-note">
+            <caption>What a 25-year-old joining for a ₹5,000 pension pays under each frequency: the amount per payment, the number of payments, the total paid in, and the saving against paying monthly.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Frequency</th>
+                <th scope="col">Each payment</th>
+                <th scope="col">Payments</th>
+                <th scope="col">Total paid in</th>
+                <th scope="col">Against monthly</th>
+              </tr>
+            </thead>
+            <tbody id="freq-body">
+              ${freqRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="waiting">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The cost of waiting</p>
+          <h2>What the same ₹5,000 pension costs at every joining age</h2>
+          <p id="waiting-note">The same pension and the same corpus to your nominee at every age — only the contribution and the years change. The highlighted row is your age.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="waiting-note">
+            <caption>Monthly contribution, years of payment and total paid in for a ₹5,000 monthly pension at every joining age from 18 to 40, with the extra cost against joining at 25.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Joining age</th>
+                <th scope="col">A month</th>
+                <th scope="col">Years</th>
+                <th scope="col">Total paid in</th>
+                <th scope="col">Against age 25</th>
+              </tr>
+            </thead>
+            <tbody id="waiting-body">
+              ${waitingRowsHtml}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#waiting">Cost of waiting</a>
+        <a href="#chart">Full chart</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / THE PENSION IS GUARANTEED</span>
+            <h3>₹1,000 to ₹5,000 a month, for life</h3>
+            <p>The Government of India guarantees the minimum pension even if investment returns fall short. From 60 you get the slab you chose every month for life; after you, your spouse gets the same amount for life.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE CONTRIBUTION IS FIXED</span>
+            <h3>One amount, set by the chart</h3>
+            <p>Your contribution is read from the government's prescribed chart for your joining age and pension slab — ₹376 a month at 25 for ₹5,000 — and it stays the same until 60. It never rises with inflation or with the market.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / THE FAMILY IS COVERED</span>
+            <h3>Spouse, then nominee</h3>
+            <p>After you, your spouse gets the same pension for life. After both of you, your nominee receives the corpus — ₹8,50,000 for the ₹5,000 slab — so the money your family paid in comes back to them.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your joining age to your pension</h2>
+          <p>
+            Enter the age you join at, pick the pension you
+            want from 60, choose how often you pay, then read
+            the contribution, the years you pay, the total,
+            the pension for life, the same pension for your
+            spouse, and the corpus your nominee receives.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How the APY contribution is fixed</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The APY contribution rule</small>
+          Contribution = the prescribed chart amount for your joining age, pension slab and frequency · Years paying = 60 − joining age · Total = amount per payment × number of payments
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. Joining at 25 for ₹5,000, monthly
+            <strong>${fmt2(sample.perPeriod)} a month · ${fmt2(sample.total)} in all · ${fmt2(sample.pension)} a month for life</strong>
+            <span>The chart prescribes ₹376 a month at 25 for the ₹5,000 slab. You pay for 35 years — 420 monthly payments — so the total is ₹376 × 420 = ₹1,57,920. From 60 you get ₹5,000 a month for life, your spouse gets the same after you, and your nominee gets ₹8,50,000.</span>
+          </div>
+
+          <div class="math-step">
+            2. Joining at 18 for ₹5,000, monthly
+            <strong>${fmt2(apyCompute(18, 5000, "monthly").perPeriod)} a month · ${fmt2(apyCompute(18, 5000, "monthly").total)} in all · ${fmt2(apyCompute(18, 5000, "monthly").pension)} a month for life</strong>
+            <span>The chart prescribes ₹210 a month at 18 — the lowest figure in the whole chart. You pay for 42 years — 504 payments — so the total is ₹210 × 504 = ₹1,05,840, which is ₹52,080 less than joining at 25 for the same pension.</span>
+          </div>
+
+          <div class="math-step">
+            3. Joining at 35 for ₹5,000, quarterly
+            <strong>${fmt2(apyCompute(35, 5000, "quarterly").perPeriod)} a quarter · ${fmt2(apyCompute(35, 5000, "quarterly").total)} in all · ${fmt2(apyCompute(35, 5000, "quarterly").pension)} a month for life</strong>
+            <span>The chart prescribes ₹2,688 a quarter at 35 for the ₹5,000 slab — not ₹2,706, which is three times the ₹902 monthly figure. You pay for 25 years — 100 quarterly payments — so the total is ₹2,688 × 100 = ₹2,68,800, which is ₹1,800 less than paying monthly (₹902 × 300 = ₹2,70,600).</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five joiners, five contributions</h2>
+          <p>
+            One example for each everyday case, from an
+            18-year-old joining for the cheapest entry in
+            the chart to a 40-year-old joining at the last
+            age the scheme accepts. Select any example to
+            load it into the calculator and check the
+            working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">AGE ${story.age} · ${fmt2(story.pension)} PENSION · ${story.frequency.toUpperCase()}</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-age="${story.age}" data-pension="${story.pension}" data-frequency="${story.frequency}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="chart">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The official chart</p>
+          <h2>Monthly contribution by joining age and pension slab</h2>
+          <p>The prescribed monthly contribution for every joining age and pension slab, from Annex-1 of the 16 October 2015 notification (F. No. 16/1/2015-PR). The bottom row is the corpus your nominee receives. Quarterly and half-yearly amounts are prescribed separately in the same table — use the calculator above to see them for your age and slab.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>Official APY monthly contribution chart: the amount you pay each month for each pension slab, depending on the age at which you join, and the corpus returned to your nominee.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Joining age</th>
+                <th scope="col">₹1,000 pension</th>
+                <th scope="col">₹2,000 pension</th>
+                <th scope="col">₹3,000 pension</th>
+                <th scope="col">₹4,000 pension</th>
+                <th scope="col">₹5,000 pension</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${chartRowsHtml}
+              <tr>
+                <th scope="row">Corpus to nominee</th>
+                <td>₹1,70,000</td>
+                <td>₹3,40,000</td>
+                <td>₹5,10,000</td>
+                <td>₹6,80,000</td>
+                <td>₹8,50,000</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="calc-small">Source: Annex-1 of the Ministry of Finance notification F. No. 16/1/2015-PR, 16 October 2015 (The Gazette of India, Extraordinary, Part I, Section 1). The chart has not changed since 2015 — every figure on this page is read from it, not computed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>APY rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>Who can join, the tax-payer bar, the guaranteed pension, how the contribution is fixed, how you pay, late payment, changing your slab, tax benefits and how long the scheme runs.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get APY wrong</h2>
+          <p>
+            APY looks simple — one age, one pension, one
+            amount a month — but the joining age, the
+            quarterly figures, the tax-payer bar and the
+            nominee's corpus catch people out.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / JOINING LATE</span>
+            <h3>Waiting costs more than any other choice</h3>
+            <p>Joining at 40 for ₹5,000 costs ₹1,454 a month and ₹3,48,960 in all; joining at 18 costs ₹210 a month and ₹1,05,840. The pension and the nominee's corpus are identical either way — the only difference is ₹2,43,120 of extra contributions.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / MULTIPLYING THE MONTHLY FIGURE</span>
+            <h3>Quarterly is not three times monthly</h3>
+            <p>The prescribed quarterly and half-yearly amounts are slightly less than 3× and 6× the monthly figure. At 25 for ₹3,000 they are ₹674 and ₹1,334, not ₹678 and ₹1,356. A calculator that multiplies will overstate what you pay — and understate the saving from paying half-yearly, which is ₹1,540 over 35 years.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / ASSUMING TAXPAYERS CAN JOIN</span>
+            <h3>The 2022 bar catches people out</h3>
+            <p>Since 1 October 2022, anyone who is or has been an income-tax payer cannot open a new APY account. If you file returns, APY is closed to you — the NPS calculator is the alternative, with no cap and no bar, but a market-linked pension.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / TREATING THE CORPUS AS A MATURITY PAYOUT</span>
+            <h3>The nominee gets it — you do not</h3>
+            <p>The ₹1.7 lakh to ₹8.5 lakh is the pension wealth returned to your nominee after you and your spouse have both died. You never receive it yourself: what you receive is the monthly pension from 60 for life. Do not count the corpus as money back.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>APY calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page reads the contribution from the
+            government's prescribed chart — Annex-1 of the
+            Ministry of Finance (Department of Financial
+            Services) notification F. No. 16/1/2015-PR, 16
+            October 2015 (The Gazette of India,
+            Extraordinary, Part I, Section 1) — one amount
+            for each joining age from 18 to 40, each pension
+            slab of ₹1,000 to ₹5,000, and each payment
+            frequency (monthly, quarterly, half-yearly). The
+            years you pay are 60 minus your joining age, and
+            the total is the amount per payment times the
+            number of payments: 12 a year for monthly, 4 for
+            quarterly, 2 for half-yearly. The quarterly and
+            half-yearly amounts are the prescribed figures
+            from the same Annex-1 table, slightly less than
+            three and six times the monthly amount. The
+            pension from 60 is the slab you chose, paid for
+            life; your spouse gets the same amount for life
+            after you; and after both of you, your nominee
+            receives the corpus — ₹1,70,000 for ₹1,000,
+            ₹3,40,000 for ₹2,000, ₹5,10,000 for ₹3,000,
+            ₹6,80,000 for ₹4,000 and ₹8,50,000 for ₹5,000.
+            Nothing you enter leaves your browser: every
+            calculation runs entirely on this page.
+          </p>
+          <p>
+            Figures checked 12 November 2026: the worked
+            examples reproduce the ranking APY calculators'
+            published figures — joining at 25 for ₹5,000 is
+            ₹376 a month, ₹1,57,920 in all, on
+            <a href="https://www.blogbanking.com/atal-pension-yojana-calculator" rel="nofollow noopener" target="_blank">blogbanking.com</a>,
+            <a href="https://www.thedailytoolbox.com/calculators/atal-pension-yojana-calculator/" rel="nofollow noopener" target="_blank">thedailytoolbox.com</a>
+            and
+            <a href="https://arthzo.com/atal-pension-yojana-2026/" rel="nofollow noopener" target="_blank">arthzo.com</a>;
+            joining at 25 for ₹3,000 is ₹226 a month, ₹674 a
+            quarter, ₹1,334 every six months and ₹94,920 in
+            all on
+            <a href="https://www.onlycalculators.com/finance/indian-finance/atal-pension-yojana-calculator/" rel="nofollow noopener" target="_blank">onlycalculators.com</a>;
+            joining at 30 for ₹5,000 is ₹577 a month and
+            ₹2,07,720 in all on
+            <a href="https://www.1dollars.org/p/atal-pension-yojana-calculator.html" rel="nofollow noopener" target="_blank">1dollars.org</a>
+            and blogbanking.com. Two differences are stated
+            honestly: this page's quarterly and half-yearly
+            figures are the notified Annex-1 amounts, while
+            blogbanking prints ₹1,136 a quarter at 25 for
+            ₹5,000 and ClearTax prints ₹1,119 — neither
+            matches the notified ₹1,121, so neither is used
+            here; and some calculators print simple multiples
+            of the monthly figure (₹630 a quarter at 18 for
+            ₹5,000) instead of the prescribed ₹626. The
+            eligibility rules are from PFRDA's own APY page
+            (see
+            <a href="https://www.pfrda.org.in/schemes/atal-pension-yojana-apy" rel="nofollow noopener" target="_blank">pfrda.org.in</a>),
+            which states the 18–40 age window and, verbatim,
+            that from 1 October 2022 any citizen who is or
+            has been an income-tax payer is not eligible to
+            join APY. The overdue-interest rule (₹1 a month
+            for every ₹100 of contribution, or part of it)
+            is the PFRDA FAQ position as reported by
+            <a href="https://www.finfod.com/guides/atal-pension-yojana-2026" rel="nofollow noopener" target="_blank">finfod.com</a>
+            (checked 6 November 2026 against PFRDA's scheme
+            page and FAQs) and blogbanking — an older slab
+            schedule (₹1/₹2/₹5/₹10 a month) still appears in
+            some guides, so confirm the current charge with
+            your bank. The scheme's continuation through the
+            2030-31 financial year follows the Union
+            Cabinet's approval of 21 January 2026, as
+            reported by arthzo and ClearTax — PFRDA's own
+            scheme page does not mention it. For a
+            market-linked pension without the ₹5,000 cap, use
+            the NPS calculator; for the tax on your salary,
+            the income tax calculator.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function swpClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  const SWP_MIN_CORPUS = 10000;
+
+  const SWP_MAX_CORPUS = 100000000;
+
+  const SWP_MIN_WITHDRAWAL = 100;
+
+  const SWP_MAX_WITHDRAWAL = 10000000;
+
+  const SWP_MIN_RATE = 0;
+
+  const SWP_MAX_RATE = 30;
+
+  const SWP_MIN_YEARS = 1;
+
+  const SWP_MAX_YEARS = 30;
+
+  const SWP_MAX_MONTHS = 600;
+
+  function swpSimulate(corpus, withdrawal, monthlyRate, maxMonths) {
+    let balance = corpus;
+    let totalWithdrawn = 0;
+    const months = [];
+    let depleted = false;
+    let depletionMonth = null;
+    for (let m = 1; m <= maxMonths; m++) {
+      const growth = balance * monthlyRate;
+      balance = balance + growth;
+      const w = balance < withdrawal ? balance : withdrawal;
+      balance = balance - w;
+      totalWithdrawn += w;
+      months.push({ growth, withdrawal: w, closing: balance });
+      if (balance <= 0) {
+        depleted = true;
+        depletionMonth = m;
+        break;
+      }
+    }
+    return { months, totalWithdrawn, finalBalance: balance, depleted, depletionMonth };
+  }
+
+  function swpCompute(corpus, withdrawal, annualRatePct, years) {
+    const c = Number(corpus);
+    const w = Number(withdrawal);
+    const r = Number(annualRatePct);
+    const y = Number(years);
+    if (!Number.isFinite(c) || !Number.isFinite(w) || !Number.isFinite(r) || !Number.isFinite(y)) return null;
+    if (c < SWP_MIN_CORPUS || c > SWP_MAX_CORPUS) return null;
+    if (w < SWP_MIN_WITHDRAWAL || w > SWP_MAX_WITHDRAWAL) return null;
+    if (r < SWP_MIN_RATE || r > SWP_MAX_RATE) return null;
+    if (y !== Math.trunc(y) || y < SWP_MIN_YEARS || y > SWP_MAX_YEARS) return null;
+    const monthlyRate = r / 100 / 12;
+    const months = y * 12;
+    const sim = swpSimulate(c, w, monthlyRate, months);
+    const totalWithdrawn = roundRupee(sim.totalWithdrawn);
+    const finalBalance = roundRupee(sim.finalBalance);
+    const totalReturns = totalWithdrawn + finalBalance - c;
+    const yearRows = [];
+    const nYears = Math.ceil(sim.months.length / 12);
+    for (let yr = 1; yr <= nYears; yr++) {
+      const start = (yr - 1) * 12;
+      const end = Math.min(yr * 12, sim.months.length) - 1;
+      const opening = roundRupee(start === 0 ? c : sim.months[start - 1].closing);
+      const closing = roundRupee(sim.months[end].closing);
+      let withdrawn = 0;
+      for (let i = start; i <= end; i++) withdrawn += sim.months[i].withdrawal;
+      withdrawn = roundRupee(withdrawn);
+      yearRows.push({ year: yr, opening, withdrawn, growth: closing - opening + withdrawn, closing });
+    }
+    let monthsToDeplete = null;
+    if (sim.depleted) {
+      monthsToDeplete = sim.depletionMonth;
+    } else {
+      const long = swpSimulate(c, w, monthlyRate, SWP_MAX_MONTHS);
+      if (long.depleted) monthsToDeplete = long.depletionMonth;
+    }
+    return {
+      corpus: c,
+      withdrawal: w,
+      annualRatePct: r,
+      years: y,
+      months,
+      monthlyRate,
+      totalWithdrawn,
+      totalReturns,
+      finalBalance,
+      depleted: sim.depleted,
+      depletionMonth: sim.depletionMonth,
+      monthsToDeplete,
+      yearRows
+    };
+  }
+
+  function swpLastsText(monthsToDeplete) {
+    if (monthsToDeplete === null || monthsToDeplete === undefined) return "beyond 50 years";
+    const y = Math.floor(monthsToDeplete / 12);
+    const m = monthsToDeplete % 12;
+    if (m === 0) return y + (y === 1 ? " year" : " years") + " (month " + monthsToDeplete + ")";
+    return y + (y === 1 ? " year " : " years ") + m + (m === 1 ? " month" : " months") + " (month " + monthsToDeplete + ")";
+  }
+
+  const presetSelect = $("preset");
+  const swpPill = $("swp-pill");
+  const inputCorpus = $("input-corpus");
+  const inputCorpusError = $("input-corpus-error");
+  const inputWithdrawal = $("input-withdrawal");
+  const inputWithdrawalError = $("input-withdrawal-error");
+  const inputRate = $("input-rate");
+  const inputRateError = $("input-rate-error");
+  const inputYears = $("input-years");
+  const inputYearsError = $("input-years-error");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const yearBody = $("year-body");
+  const yearNote = $("year-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+  const resultHeadline = r => r.depleted
+    ? "Runs out in month " + r.depletionMonth
+    : inr(r.finalBalance) + " left after " + r.years + " years";
+
+  function renderYears(r) {
+    yearBody.replaceChildren();
+    if (!r) {
+      yearNote.textContent = "Enter your corpus, monthly withdrawal, expected return and years to see the balance year by year.";
+      return;
+    }
+    r.yearRows.forEach(row => {
+      const tr = document.createElement("tr");
+      if (row.closing === 0) tr.className = "highlight-row";
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = "Year " + row.year;
+      tr.appendChild(th);
+      [inr(row.opening), inr(row.withdrawn), inr(row.growth), inr(row.closing)].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = v;
+        tr.appendChild(td);
+      });
+      yearBody.appendChild(tr);
+    });
+    yearNote.textContent = r.depleted
+      ? "The corpus ran out in month " + r.depletionMonth + " (year " + r.yearRows.length + "), so the table ends there — the last row shows the part-payment year."
+      : "The balance at the end of each year, with what you drew and what the fund earned that year. Figures are rounded to whole rupees, so a row may differ by ₹1.";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your corpus, monthly withdrawal, expected return and years to see what an SWP pays you.";
+    working.textContent = "Enter your corpus, monthly withdrawal, expected return and years to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    yearBody.replaceChildren();
+    yearNote.textContent = "Enter your corpus, monthly withdrawal, expected return and years to see the balance year by year.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(corpus, withdrawal, rate, years, r) {
+    output.textContent = resultHeadline(r);
+    box1Val.textContent = inr(r.totalWithdrawn);
+    box1Label.textContent = "TOTAL WITHDRAWN";
+    box2Val.textContent = inr(r.totalReturns);
+    box2Label.textContent = "RETURNS EARNED";
+    box3Val.textContent = inr(r.finalBalance);
+    box3Label.textContent = "BALANCE LEFT";
+    working.textContent = inr(corpus) + " at " + rate + "%, withdrawing " + inr(withdrawal) + " a month for " + years + " years (" + r.months + " months): "
+      + inr(r.totalWithdrawn) + " drawn in all, " + inr(r.totalReturns) + " earned, "
+      + (r.depleted ? "nothing left — the money ran out in month " + r.depletionMonth + "." : inr(r.finalBalance) + " left.");
+    const firstYear = r.yearRows[0];
+    const firstYearMove = firstYear.growth >= firstYear.withdrawn
+      ? "grows by " + inr(firstYear.growth - firstYear.withdrawn)
+      : "falls by " + inr(firstYear.withdrawn - firstYear.growth);
+    working2.textContent = (r.monthsToDeplete === null
+      ? "The money lasts beyond 50 years at this withdrawal rate."
+      : "Your money lasts " + swpLastsText(r.monthsToDeplete) + " at this withdrawal rate.")
+      + " In the first year the balance " + firstYearMove + " — " + inr(firstYear.growth) + " earned, " + inr(firstYear.withdrawn) + " drawn.";
+    workingNote.textContent = "Monthly iteration · withdrawal at month end · " + rate + "% a year, fixed assumption · pre-tax figures";
+    glanceText.textContent = inr(corpus) + " corpus · " + inr(withdrawal) + " a month · " + rate + "% · " + years + " years → "
+      + inr(r.totalWithdrawn) + " drawn · " + inr(r.totalReturns) + " earned · "
+      + (r.depleted ? "runs out in month " + r.depletionMonth : inr(r.finalBalance) + " left")
+      + " · lasts " + swpLastsText(r.monthsToDeplete) + ".";
+    renderYears(r);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | SWP Calculator"
+      + "\nQuestion: " + inr(corpus) + " corpus, " + inr(withdrawal) + " a month, " + rate + "% a year, " + years + " years"
+      + "\nAnswer: " + resultHeadline(r) + "; " + inr(r.totalWithdrawn) + " drawn in all; " + inr(r.totalReturns) + " earned; lasts " + swpLastsText(r.monthsToDeplete)
+      + "\nWorking: balance = balance x (1 + " + rate + "% / 12) - " + inr(withdrawal) + " each month, withdrawal at month end";
+  }
+
+  function paint(showEmptyError = false) {
+    swpPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const corpusRaw = inputCorpus.value;
+    const withdrawalRaw = inputWithdrawal.value;
+    const rateRaw = inputRate.value;
+    const yearsRaw = inputYears.value;
+    const corpusNum = corpusRaw === "" ? NaN : Number(corpusRaw);
+    const withdrawalNum = withdrawalRaw === "" ? NaN : Number(withdrawalRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    const yearsNum = yearsRaw === "" ? NaN : Number(yearsRaw);
+    let corpusMsg = "";
+    let withdrawalMsg = "";
+    let rateMsg = "";
+    let yearsMsg = "";
+    if (corpusRaw === "") {
+      if (showEmptyError) corpusMsg = "Enter the lump sum you invest.";
+    } else if (!Number.isFinite(corpusNum) || corpusNum < 10000 || corpusNum > 100000000) {
+      corpusMsg = "Enter your corpus in rupees, from ₹10,000 to ₹10,00,00,000.";
+    }
+    if (withdrawalRaw === "") {
+      if (showEmptyError) withdrawalMsg = "Enter the amount you want each month.";
+    } else if (!Number.isFinite(withdrawalNum) || withdrawalNum < 100 || withdrawalNum > 10000000) {
+      withdrawalMsg = "Enter your monthly withdrawal in rupees, from ₹100 to ₹1,00,00,000.";
+    }
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the annual return you expect.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 30) {
+      rateMsg = "Enter the expected annual return, from 0% to 30%.";
+    }
+    if (yearsRaw === "") {
+      if (showEmptyError) yearsMsg = "Enter how many years the plan should run.";
+    } else if (!Number.isFinite(yearsNum) || yearsNum !== Math.trunc(yearsNum) || yearsNum < 1 || yearsNum > 30) {
+      yearsMsg = "Enter the plan length in whole years, from 1 to 30.";
+    }
+    inputCorpusError.textContent = corpusMsg;
+    inputWithdrawalError.textContent = withdrawalMsg;
+    inputRateError.textContent = rateMsg;
+    inputYearsError.textContent = yearsMsg;
+    inputCorpus.setAttribute("aria-invalid", String(corpusMsg !== ""));
+    inputWithdrawal.setAttribute("aria-invalid", String(withdrawalMsg !== ""));
+    inputRate.setAttribute("aria-invalid", String(rateMsg !== ""));
+    inputYears.setAttribute("aria-invalid", String(yearsMsg !== ""));
+
+    const valid = corpusMsg === "" && withdrawalMsg === "" && rateMsg === "" && yearsMsg === ""
+      && corpusRaw !== "" && withdrawalRaw !== "" && rateRaw !== "" && yearsRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = swpCompute(corpusNum, withdrawalNum, rateNum, yearsNum);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(corpusNum, withdrawalNum, rateNum, yearsNum, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = swpCompute(item.corpus, item.withdrawal, item.rate, item.years);
+    if (!r) return "";
+    return inr(item.corpus) + " · " + inr(item.withdrawal) + "/mo · " + item.rate + "% · " + item.years + "y → " + resultHeadline(r);
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputCorpus.value, inputWithdrawal.value, inputRate.value, inputYears.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputCorpus.value = String(item.corpus);
+        inputWithdrawal.value = String(item.withdrawal);
+        inputRate.value = String(item.rate);
+        inputYears.value = String(item.years);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      corpus: Number(inputCorpus.value),
+      withdrawal: Number(inputWithdrawal.value),
+      rate: Number(inputRate.value),
+      years: Number(inputYears.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputCorpus.value = button.dataset.corpus || "";
+      inputWithdrawal.value = button.dataset.withdrawal || "";
+      inputRate.value = button.dataset.rate || "";
+      inputYears.value = button.dataset.years || "";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputCorpus.value = String(rec.corpus);
+    inputWithdrawal.value = String(rec.withdrawal);
+    inputRate.value = String(rec.rate);
+    inputYears.value = String(rec.years);
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputCorpus.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputWithdrawal.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputYears.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("swp-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderSwpCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleCorpus: p.sampleCorpus, sampleWithdrawal: p.sampleWithdrawal, sampleRate: p.sampleRate, sampleYears: p.sampleYears };
+  const sample = swpCompute(p.sampleCorpus, p.sampleWithdrawal, p.sampleRate, p.sampleYears);
+  const anchor = swpCompute(1000000, 10000, 10, 10);
+  const deplete = swpCompute(1000000, 25000, 6, 10);
+  const sampleFirstYear = sample.yearRows[0];
+  const sampleFirstMonthGrowth = roundRupee(sample.corpus * sample.monthlyRate);
+  const depleteLastPartial = deplete.totalWithdrawn - (deplete.depletionMonth - 1) * deplete.withdrawal;
+
+  const headline = r => r.depleted
+    ? "Runs out in month " + r.depletionMonth
+    : inr2(r.finalBalance) + " left after " + r.years + " years";
+  const glanceText = r => inr2(r.corpus) + " corpus · " + inr2(r.withdrawal) + " a month · " + r.annualRatePct + "% · " + r.years + " years → "
+    + inr2(r.totalWithdrawn) + " drawn · " + inr2(r.totalReturns) + " earned · "
+    + (r.depleted ? "runs out in month " + r.depletionMonth : inr2(r.finalBalance) + " left")
+    + " · lasts " + swpLastsText(r.monthsToDeplete) + ".";
+  const workingText = r => inr2(r.corpus) + " at " + r.annualRatePct + "%, withdrawing " + inr2(r.withdrawal) + " a month for " + r.years + " years (" + r.months + " months): "
+    + inr2(r.totalWithdrawn) + " drawn in all, " + inr2(r.totalReturns) + " earned, "
+    + (r.depleted ? "nothing left — the money ran out in month " + r.depletionMonth + "." : inr2(r.finalBalance) + " left.");
+  const working2Text = r => {
+    const fy = r.yearRows[0];
+    const move = fy.growth >= fy.withdrawn
+      ? "grows by " + inr2(fy.growth - fy.withdrawn)
+      : "falls by " + inr2(fy.withdrawn - fy.growth);
+    return (r.monthsToDeplete === null
+      ? "The money lasts beyond 50 years at this withdrawal rate."
+      : "Your money lasts " + swpLastsText(r.monthsToDeplete) + " at this withdrawal rate.")
+      + " In the first year the balance " + move + " — " + inr2(fy.growth) + " earned, " + inr2(fy.withdrawn) + " drawn.";
+  };
+
+  const presetSummary = pr => {
+    const r = swpCompute(pr.corpus, pr.withdrawal, pr.rate, pr.years);
+    return `${inr2(pr.corpus)} corpus · ${inr2(pr.withdrawal)} a month · ${pr.rate}% · ${pr.years} years → ${r.depleted ? "runs out in month " + r.depletionMonth : inr2(r.finalBalance) + " left"}`;
+  };
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = swpCompute(st.corpus, st.withdrawal, st.rate, st.years);
+    return `${inr2(st.corpus)} corpus · ${inr2(st.withdrawal)} a month · ${st.rate}% · ${st.years} years → ${inr2(r.totalWithdrawn)} drawn · ${r.depleted ? "runs out in month " + r.depletionMonth : inr2(r.finalBalance) + " left"}`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const yearRowsHtml = sample.yearRows.map(row => `
+      <tr${row.closing === 0 ? ' class="highlight-row"' : ""}>
+        <th scope="row">Year ${row.year}</th>
+        <td>${inr2(row.opening)}</td>
+        <td>${inr2(row.withdrawn)}</td>
+        <td>${inr2(row.growth)}</td>
+        <td>${inr2(row.closing)}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}${hraCss}${ciCss}${epfCss}${npsCss}${ssyCss}${nscCss}${scssCss}${misCss}${kvpCss}${plCss}${tdCss}${clCss}${apyCss}${swpCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free SWP calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate your SWP →
+              </a>
+              <a href="#method" class="calc-link">How the withdrawal is worked out ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.finalBalance)} left</strong>
+                <small>After 20 years of ₹50,000 a month</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.totalWithdrawn)} drawn in all</strong>
+                <small>₹50,000 a month for 20 years — 240 payments</small>
+              </div>
+              <div>
+                <strong>Lasts ${e(swpLastsText(sample.monthsToDeplete))}</strong>
+                <small>How long the money lasts at this rate</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>An estimate for planning — not investment advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate your SWP</h2>
+              <span class="calc-pill" id="swp-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="swp-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-corpus">
+                Your lump-sum corpus (₹)
+                <span>The one-time amount invested in the fund — ₹1,00,00,000 is the example. From ₹10,000 to ₹10,00,00,000</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-corpus"
+                type="number"
+                value="${p.sampleCorpus}"
+                min="10000"
+                max="100000000"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-corpus-error"
+              >
+              <p class="calc-error" id="input-corpus-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-withdrawal">
+                Monthly withdrawal (₹)
+                <span>The fixed amount the fund pays you each month — ₹50,000 is the example. From ₹100 to ₹1,00,00,000 a month</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-withdrawal"
+                type="number"
+                value="${p.sampleWithdrawal}"
+                min="100"
+                max="10000000"
+                step="500"
+                inputmode="numeric"
+                aria-describedby="input-withdrawal-error"
+              >
+              <p class="calc-error" id="input-withdrawal-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-rate">
+                Expected annual return (%)
+                <span>What the fund earns a year, before tax — 8% is the example, an assumption for illustration, not a forecast. From 0% to 30%</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-rate"
+                type="number"
+                value="${p.sampleRate}"
+                min="0"
+                max="30"
+                step="0.1"
+                inputmode="decimal"
+                aria-describedby="input-rate-error"
+              >
+              <p class="calc-error" id="input-rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-years">
+                Withdrawal period (years)
+                <span>How long the plan should run — 20 years is the example. From 1 to 30 years</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-years"
+                type="number"
+                value="${p.sampleYears}"
+                min="1"
+                max="30"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="input-years-error"
+              >
+              <p class="calc-error" id="input-years-error" aria-live="polite"></p>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-corpus">${headline(sample)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.totalWithdrawn)}</strong>
+                  <small id="box1-label">TOTAL WITHDRAWN</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.totalReturns)}</strong>
+                  <small id="box2-label">RETURNS EARNED</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.finalBalance)}</strong>
+                  <small id="box3-label">BALANCE LEFT</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">${glanceText(sample)}</span>
+              </div>
+
+              <p class="working" id="working">
+                ${workingText(sample)}
+              </p>
+              <p class="working" id="working-2">${working2Text(sample)}</p>
+              <p class="working" id="working-note">Monthly iteration · withdrawal at month end · ${sample.annualRatePct}% a year, fixed assumption · pre-tax figures</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The figures assume one fixed return every month —
+                real funds vary, so the balance will differ in
+                practice. The tax on each withdrawal depends on
+                the fund and how long you held the units — check
+                the rules table below before you rely on them.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="years">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Year by year</p>
+          <h2>Your balance, year by year</h2>
+          <p id="year-note">The balance at the end of each year, with what you drew and what the fund earned that year. Figures are rounded to whole rupees, so a row may differ by ₹1.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="year-note">
+            <caption>Year-by-year balance for a ₹1 crore corpus paying ₹50,000 a month at 8% for 20 years: the opening balance, what you draw, what the fund earns, and the closing balance.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Opening balance</th>
+                <th scope="col">Withdrawn</th>
+                <th scope="col">Growth earned</th>
+                <th scope="col">Closing balance</th>
+              </tr>
+            </thead>
+            <tbody id="year-body">
+              ${yearRowsHtml}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#years">Year by year</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / THE CORPUS KEEPS WORKING</span>
+            <h3>Your money earns while you draw</h3>
+            <p>Each withdrawal redeems just enough units to cover it. The units left stay invested and keep growing — at 8%, ₹1 crore earns ${inr2(sampleFirstMonthGrowth)} in the first month alone.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE WITHDRAWAL DECIDES</span>
+            <h3>Draw less than the growth</h3>
+            <p>₹50,000 a month from ₹1 crore at 8% leaves ₹1,98,17,007 after 20 years. ₹25,000 a month from ₹10 lakh at 6% runs out in month 45. The withdrawal rate, not the return, decides how long the money lasts.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / ONLY THE GAINS ARE TAXED</span>
+            <h3>Each payment is a part-redemption</h3>
+            <p>Only the gains part of each withdrawal is taxed — 12.5% long-term gains above ₹1.25 lakh a year, 20% short-term, slab rates on debt funds. The calculator shows pre-tax figures.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your corpus to your monthly income</h2>
+          <p>
+            Enter the lump sum you invest, the fixed amount
+            you want each month, the annual return you
+            expect and how many years the plan should run,
+            then read what you draw in total, what the fund
+            earns, what is left at the end, and how long the
+            money lasts.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How an SWP is worked out</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The SWP rule</small>
+          Balance each month = balance × (1 + annual return ÷ 12) − monthly withdrawal · Total drawn = monthly withdrawal × months · Returns earned = total drawn + final balance − corpus
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. ₹1 crore, ₹50,000 a month, 8%, 20 years
+            <strong>${fmt2(sample.finalBalance)} left · ${fmt2(sample.totalWithdrawn)} drawn · ${fmt2(sample.totalReturns)} earned</strong>
+            <span>The fund earns 0.6667% a month (8% ÷ 12). Each month the balance grows, then ₹50,000 comes out. After 240 months you have drawn ₹1,20,00,000 and the balance is ₹1,98,17,007 — the fund earned ₹2,18,17,007, more than you drew, so the corpus nearly doubled while paying you. In the first year the balance grows by ${inr2(sampleFirstYear.growth - sampleFirstYear.withdrawn)} while you draw ${inr2(sampleFirstYear.withdrawn)}, ending the year at ${inr2(sampleFirstYear.closing)}.</span>
+          </div>
+
+          <div class="math-step">
+            2. ₹10 lakh, ₹10,000 a month, 10%, 10 years
+            <strong>${fmt2(anchor.finalBalance)} left · ${fmt2(anchor.totalWithdrawn)} drawn · ${fmt2(anchor.totalReturns)} earned</strong>
+            <span>The fund earns 0.8333% a month (10% ÷ 12). After 120 months you have drawn ₹12,00,000 and ₹6,58,592 is left. After the first year the balance is ${inr2(anchor.yearRows[0].closing)} — the same figure onlycalculators.com's published monthly schedule shows. The money lasts 18 years in all (month 216) at this rate.</span>
+          </div>
+
+          <div class="math-step">
+            3. ₹10 lakh, ₹25,000 a month, 6%, 10 years — the money runs out
+            <strong>Runs out in month ${deplete.depletionMonth} · ${fmt2(deplete.totalWithdrawn)} drawn · ${fmt2(deplete.totalReturns)} earned</strong>
+            <span>The fund earns 0.5% a month — about ₹5,000 on ₹10 lakh — but you draw ₹25,000, so the balance falls by roughly ₹20,000 a month at first. It runs out in month 45, after 44 full payments of ₹25,000 and a final part-payment of ${inr2(depleteLastPartial)}.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five savers, five withdrawals</h2>
+          <p>
+            One example for each everyday case, from a
+            ₹1 crore retirement corpus paying ₹50,000 a
+            month to a ₹10 lakh corpus drawn too fast. Select
+            any example to load it into the calculator and
+            check the working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.corpus)} CORPUS · ${fmt2(story.withdrawal)}/MONTH · ${story.rate}% · ${story.years} YEARS</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-corpus="${story.corpus}" data-withdrawal="${story.withdrawal}" data-rate="${story.rate}" data-years="${story.years}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>SWP rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>How often you can withdraw, the minimum, what a withdrawal is, the tax on equity and debt funds, exit loads and the fact that returns are not guaranteed.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get an SWP wrong</h2>
+          <p>
+            An SWP looks simple — one corpus, one monthly
+            amount, one return — but the withdrawal rate, the
+            return assumption, the tax and inflation catch
+            people out.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / DRAWING MORE THAN THE FUND EARNS</span>
+            <h3>The corpus runs out</h3>
+            <p>₹25,000 a month from ₹10 lakh at 6% runs out in month 45. Check the 'how long it lasts' figure before you fix a withdrawal — if it is shorter than you need, lower the withdrawal or the plan fails.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / TREATING THE RETURN AS GUARANTEED</span>
+            <h3>8% is an assumption, not a promise</h3>
+            <p>Real funds vary month to month, and a bad early run depletes the corpus faster than the steady-rate projection. Many planners suggest keeping 6–12 months of withdrawals in a liquid or debt fund so you are not redeeming equity units in a downturn.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / FORGETTING THE TAX ON THE GAINS</span>
+            <h3>Only the gains are taxed — but they are taxed</h3>
+            <p>Each withdrawal is a part-redemption: 12.5% above ₹1.25 lakh a year on equity-fund long-term gains, 20% on short-term gains, slab rates on debt funds. The calculator shows pre-tax figures; set the tax aside.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / FIXING THE WITHDRAWAL AND FORGETTING INFLATION</span>
+            <h3>₹50,000 buys less in 20 years</h3>
+            <p>A flat withdrawal holds its rupee amount but not its purchasing power — ₹50,000 a month buys noticeably less after a decade. Review the amount each year and step it up if you need the same standard of living.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>SWP calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page simulates your corpus month by month:
+            each month the balance grows by one-twelfth of
+            the annual return you enter, then your monthly
+            withdrawal comes out at the end of the month —
+            balance = balance × (1 + annual return ÷ 12) −
+            monthly withdrawal. The total drawn is the
+            monthly withdrawal times the number of months,
+            with a smaller final payment if the corpus runs
+            out mid-plan. The returns earned are the total
+            drawn plus the final balance, minus the corpus
+            you started with. The 'how long it lasts' figure
+            keeps the same monthly simulation running — up
+            to 600 months, or 50 years — and reports the
+            month the balance reaches zero; if your
+            withdrawal is no more than the monthly growth,
+            the balance never falls and the money lasts
+            beyond 50 years. Nothing you enter leaves your
+            browser: every calculation runs entirely on this
+            page.
+          </p>
+          <p>
+            Figures checked 12 November 2026: the worked
+            examples reproduce the ranking SWP calculators'
+            published figures — ₹10 lakh at 10% with ₹10,000
+            a month for 10 years leaves ₹6,58,592, with
+            ₹12,00,000 drawn and ₹8,58,592 earned, on
+            <a href="https://www.onlycalculators.com/finance/indian-finance/swp-calculator-systematic-withdrawal-plan/" rel="nofollow noopener" target="_blank">onlycalculators.com</a>,
+            whose published monthly schedule also shows the
+            first-year closing balance of ₹9,79,057 used on
+            this page. The definition of an SWP — a fixed
+            amount at regular intervals, the remaining corpus
+            staying invested, each withdrawal a partial
+            redemption — is AMFI's own, from its investor
+            education booklet
+            (<a href="https://www.amfiindia.com/uploads/AMFI_Understanding_Mutual_Funds_IAP_Booklet_Final_Website_version_860a5b77aa.pdf" rel="nofollow noopener" target="_blank">amfiindia.com</a>),
+            which illustrates it with ₹10 lakh and ₹20,000 a
+            month and warns that the corpus may increase or
+            decrease depending on performance and
+            withdrawals. The tax rates — 12.5% long-term
+            gains above ₹1.25 lakh, 20% short-term, both
+            from the Finance (No. 2) Act 2024 for transfers
+            on or after 23 July 2024, and debt-fund gains at
+            slab rates — are stated by onlycalculators and
+            <a href="https://emicalcs.com/swp-calculator/" rel="nofollow noopener" target="_blank">emicalcs.com</a>,
+            which agree; the minimum-withdrawal figures
+            (SBI ₹500 a month, Axis ₹1,000) are from scheme
+            documents filed with AMFI. One difference is
+            stated honestly: this page divides the annual
+            return by 12 and withdraws at month end, while
+            <a href="https://www.ap7am.com/calculators/swp-calculator" rel="nofollow noopener" target="_blank">ap7am.com</a>
+            compounds the monthly rate and withdraws at the
+            start of the month — so for ₹20 lakh at 8% with
+            ₹15,000 a month for 20 years it gives about
+            ₹7,86,928 and 25 years 5 months, against this
+            page's ₹10,18,299 and 27 years 7 months. Neither
+            is wrong; they are different conventions. Units
+            held in demat form are being brought under the
+            same facility: SEBI's circular of 17 July 2026
+            extends SWP standing instructions to demat
+            units, unit-based by 31 January 2027 and
+            amount-based by 30 April 2027, as reported by
+            <a href="http://metainvestment.in/2026/07/18/sebi-swp-stp-demat-mutual-funds/" rel="nofollow noopener" target="_blank">metainvestment.in</a>.
+            For the building side of the same plan, use the
+            SIP calculator; for a guaranteed monthly income,
+            the Senior Citizens Savings Scheme and Post
+            Office MIS calculators.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function wmClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function wmBaseCapacity(people) {
+    if (people <= 2) return 6;
+    if (people === 3) return 7;
+    if (people === 4) return 8;
+    if (people === 5) return 9;
+    if (people === 6) return 10;
+    if (people <= 8) return 11;
+    return 12;
+  }
+
+  function wmCapacity(people, loadsPerWeek, bulky) {
+    let cap = wmBaseCapacity(people);
+    if (loadsPerWeek <= 2) cap += 1;
+    if (loadsPerWeek >= 7) cap -= 1;
+    if (bulky) cap += 1;
+    if (cap < 6) cap = 6;
+    if (cap > 12) cap = 12;
+    return cap;
+  }
+
+  function wmRound2(n) {
+    return Math.round(n * 100) / 100;
+  }
+
+  function wmRound1(n) {
+    return Math.round(n * 10) / 10;
+  }
+
+  function wmTypeFigures(type, capacity, loadsPerWeek, tariff) {
+    const loadsPerMonth = loadsPerWeek * WM_WEEKS_PER_MONTH;
+    const waterMonth = Math.round(loadsPerMonth * WM_WATER_LITRES_PER_CYCLE[type]);
+    const kwhPerCycle = wmRound2(WM_KWH_PER_KG_PER_CYCLE[type] * capacity);
+    const kwhMonth = wmRound2(WM_KWH_PER_KG_PER_CYCLE[type] * capacity * loadsPerMonth);
+    const costMonth = Math.round(kwhMonth * tariff);
+    return {
+      type,
+      waterPerCycle: WM_WATER_LITRES_PER_CYCLE[type],
+      kwhPerKgPerCycle: WM_KWH_PER_KG_PER_CYCLE[type],
+      loadsPerMonth: wmRound1(loadsPerMonth),
+      waterMonth,
+      waterYear: waterMonth * 12,
+      kwhPerCycle,
+      kwhMonth,
+      kwhYear: wmRound2(kwhMonth * 12),
+      costMonth,
+      costYear: costMonth * 12
+    };
+  }
+
+  function wmCompute(people, loadsPerWeek, type, bulky, tariff) {
+    const p = Number(people);
+    const l = Number(loadsPerWeek);
+    const t = Number(tariff);
+    if (!Number.isFinite(p) || !Number.isFinite(l) || !Number.isFinite(t)) return null;
+    if (p !== Math.trunc(p) || p < WM_MIN_PEOPLE || p > WM_MAX_PEOPLE) return null;
+    if (l !== Math.trunc(l) || l < WM_MIN_LOADS || l > WM_MAX_LOADS) return null;
+    if (WM_TYPES.indexOf(type) === -1) return null;
+    if (typeof bulky !== "boolean") return null;
+    if (t < WM_MIN_TARIFF || t > WM_MAX_TARIFF) return null;
+    const capacity = wmCapacity(p, l, bulky);
+    const main = wmTypeFigures(type, capacity, l, t);
+    const compare = {};
+    for (const other of WM_TYPES) {
+      if (other !== type) compare[other] = wmTypeFigures(other, capacity, l, t);
+    }
+    return {
+      people: p,
+      loadsPerWeek: l,
+      type,
+      bulky,
+      tariff: t,
+      capacity,
+      perLoadKg: wmRound1(capacity * WM_FILL_FRACTION),
+      waterPerCycle: main.waterPerCycle,
+      kwhPerKgPerCycle: main.kwhPerKgPerCycle,
+      loadsPerMonth: main.loadsPerMonth,
+      waterMonth: main.waterMonth,
+      waterYear: main.waterYear,
+      kwhPerCycle: main.kwhPerCycle,
+      kwhMonth: main.kwhMonth,
+      kwhYear: main.kwhYear,
+      costMonth: main.costMonth,
+      costYear: main.costYear,
+      compare
+    };
+  }
+
+  const WM_MIN_PEOPLE = 1;
+
+  const WM_MAX_PEOPLE = 12;
+
+  const WM_MIN_LOADS = 1;
+
+  const WM_MAX_LOADS = 14;
+
+  const WM_MIN_TARIFF = 1;
+
+  const WM_MAX_TARIFF = 30;
+
+  const WM_WEEKS_PER_MONTH = 52 / 12;
+
+  const WM_FILL_FRACTION = 0.8;
+
+  const WM_WATER_LITRES_PER_CYCLE = { front: 50, top: 140, semi: 60 };
+
+  const WM_KWH_PER_KG_PER_CYCLE = { front: 0.07, top: 0.01, semi: 0.0107 };
+
+  const WM_TYPES = ["front", "top", "semi"];
+
+  const WM_TYPE_LABELS = { front: "front load", top: "top load", semi: "semi-automatic" };
+
+  const presetSelect = $("preset");
+  const wmPill = $("wm-pill");
+  const inputPeople = $("input-people");
+  const inputPeopleError = $("input-people-error");
+  const inputLoads = $("input-loads");
+  const inputLoadsError = $("input-loads-error");
+  const inputType = $("input-type");
+  const inputBulky = $("input-bulky");
+  const inputTariff = $("input-tariff");
+  const inputTariffError = $("input-tariff-error");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const compareEl = $("compare");
+  const workingNote = $("working-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+  const typeLabel = t => WM_TYPE_LABELS[t] || t;
+  const resultHeadline = r => r.capacity + " kg washing machine";
+  const litres = n => fmt(n) + (n === 1 ? " litre" : " litres");
+  const units = n => fmt(n) + (n === 1 ? " unit" : " units");
+
+  function compareText(r) {
+    const others = Object.keys(r.compare).map(t => {
+      const o = r.compare[t];
+      return "a " + typeLabel(t) + " machine would use about " + litres(o.waterMonth)
+        + " of water and " + units(o.kwhMonth) + " (" + inr(o.costMonth) + ")";
+    });
+    return "The same " + fmt(r.loadsPerMonth) + " loads a month in " + others.join("; in ") + ".";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your household size, loads a week, machine type and tariff to see the capacity you need and what it costs to run.";
+    working.textContent = "Enter your household size, loads a week, machine type and tariff to see the working.";
+    working2.textContent = "";
+    compareEl.textContent = "";
+    workingNote.textContent = "";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(people, loads, type, bulky, tariff, r) {
+    output.textContent = resultHeadline(r);
+    box1Val.textContent = litres(r.waterMonth);
+    box1Label.textContent = "WATER A MONTH";
+    box2Val.textContent = units(r.kwhMonth);
+    box2Label.textContent = "ELECTRICITY A MONTH";
+    box3Val.textContent = inr(r.costMonth);
+    box3Label.textContent = "COST A MONTH";
+    working.textContent = people + (people === 1 ? " person" : " people") + " washing " + loads
+      + (loads === 1 ? " load" : " loads") + " a week in a " + typeLabel(type) + " machine: "
+      + fmt(r.loadsPerMonth) + " loads a month (loads a week × 52 ÷ 12), "
+      + litres(r.waterPerCycle) + " a wash, " + fmt(r.kwhPerCycle) + " units a wash — "
+      + litres(r.waterMonth) + " of water and " + units(r.kwhMonth)
+      + " of electricity a month, about " + inr(r.costMonth) + " at " + inr(tariff) + " a unit."
+      + " Aim for about " + fmt(r.perLoadKg) + " kg a load (80% of the " + r.capacity + " kg drum).";
+    working2.textContent = "Over a year that is " + litres(r.waterYear) + " of water, "
+      + units(r.kwhYear) + " of electricity and about " + inr(r.costYear) + " at " + inr(tariff) + " a unit.";
+    compareEl.textContent = compareText(r);
+    workingNote.textContent = "Planning estimates · water " + litres(WM_WATER_LITRES_PER_CYCLE.front)
+      + " / " + litres(WM_WATER_LITRES_PER_CYCLE.top) + " / " + litres(WM_WATER_LITRES_PER_CYCLE.semi)
+      + " a wash · electricity " + WM_KWH_PER_KG_PER_CYCLE.front + " / " + WM_KWH_PER_KG_PER_CYCLE.top
+      + " / " + WM_KWH_PER_KG_PER_CYCLE.semi + " units per kg a wash · tariff " + inr(tariff) + " a unit";
+    glanceText.textContent = people + (people === 1 ? " person" : " people") + " · " + loads
+      + (loads === 1 ? " load" : " loads") + " a week · " + typeLabel(type) + " → "
+      + r.capacity + " kg machine · " + litres(r.waterMonth) + " a month · "
+      + units(r.kwhMonth) + " · " + inr(r.costMonth) + " a month · aim for "
+      + fmt(r.perLoadKg) + " kg a load.";
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | Washing Machine Capacity Calculator"
+      + "\nQuestion: " + people + (people === 1 ? " person" : " people") + ", " + loads
+      + (loads === 1 ? " load" : " loads") + " a week, " + typeLabel(type)
+      + (bulky ? ", bulky items every week" : "") + ", tariff " + inr(tariff) + " a unit"
+      + "\nAnswer: " + resultHeadline(r) + "; " + litres(r.waterMonth) + " of water a month; "
+      + units(r.kwhMonth) + " of electricity a month; " + inr(r.costMonth) + " a month"
+      + "\nWorking: capacity " + r.capacity + " kg (bands 6/7/8/9/10/11/12 kg by household size, +/-1 kg for frequency and bulky items); water = loads a month x "
+      + litres(r.waterPerCycle) + " a wash; electricity = loads a month x " + fmt(r.kwhPerCycle) + " units a wash";
+  }
+
+  function paint(showEmptyError = false) {
+    wmPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const peopleRaw = inputPeople.value;
+    const loadsRaw = inputLoads.value;
+    const tariffRaw = inputTariff.value;
+    const peopleNum = peopleRaw === "" ? NaN : Number(peopleRaw);
+    const loadsNum = loadsRaw === "" ? NaN : Number(loadsRaw);
+    const tariffNum = tariffRaw === "" ? NaN : Number(tariffRaw);
+    let peopleMsg = "";
+    let loadsMsg = "";
+    let tariffMsg = "";
+    if (peopleRaw === "") {
+      if (showEmptyError) peopleMsg = "Enter how many people are in your household.";
+    } else if (!Number.isFinite(peopleNum) || peopleNum !== Math.trunc(peopleNum) || peopleNum < 1 || peopleNum > 12) {
+      peopleMsg = "Enter the number of people, from 1 to 12.";
+    }
+    if (loadsRaw === "") {
+      if (showEmptyError) loadsMsg = "Enter how many loads you wash a week.";
+    } else if (!Number.isFinite(loadsNum) || loadsNum !== Math.trunc(loadsNum) || loadsNum < 1 || loadsNum > 14) {
+      loadsMsg = "Enter the loads a week, from 1 to 14.";
+    }
+    if (tariffRaw === "") {
+      if (showEmptyError) tariffMsg = "Enter your electricity tariff.";
+    } else if (!Number.isFinite(tariffNum) || tariffNum < 1 || tariffNum > 30) {
+      tariffMsg = "Enter your electricity tariff in rupees a unit, from ₹1 to ₹30.";
+    }
+    inputPeopleError.textContent = peopleMsg;
+    inputLoadsError.textContent = loadsMsg;
+    inputTariffError.textContent = tariffMsg;
+    inputPeople.setAttribute("aria-invalid", String(peopleMsg !== ""));
+    inputLoads.setAttribute("aria-invalid", String(loadsMsg !== ""));
+    inputTariff.setAttribute("aria-invalid", String(tariffMsg !== ""));
+
+    const valid = peopleMsg === "" && loadsMsg === "" && tariffMsg === ""
+      && peopleRaw !== "" && loadsRaw !== "" && tariffRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = wmCompute(peopleNum, loadsNum, inputType.value, inputBulky.checked, tariffNum);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(peopleNum, loadsNum, inputType.value, inputBulky.checked, tariffNum, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = wmCompute(item.people, item.loads, item.type, item.bulky, item.tariff);
+    if (!r) return "";
+    return item.people + (item.people === 1 ? " person" : " people") + " · " + item.loads
+      + (item.loads === 1 ? " load" : " loads") + " a week · " + typeLabel(item.type)
+      + " → " + r.capacity + " kg machine · " + litres(r.waterMonth) + "/mo · " + inr(r.costMonth) + "/mo";
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputPeople.value, inputLoads.value, inputType.value, inputBulky.checked, inputTariff.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputPeople.value = String(item.people);
+        inputLoads.value = String(item.loads);
+        inputType.value = item.type;
+        inputBulky.checked = item.bulky;
+        inputTariff.value = String(item.tariff);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      people: Number(inputPeople.value),
+      loads: Number(inputLoads.value),
+      type: inputType.value,
+      bulky: inputBulky.checked,
+      tariff: Number(inputTariff.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputPeople.value = button.dataset.people || "";
+      inputLoads.value = button.dataset.loads || "";
+      inputType.value = button.dataset.type || "front";
+      inputBulky.checked = button.dataset.bulky === "true";
+      inputTariff.value = button.dataset.tariff || "";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputPeople.value = String(rec.people);
+    inputLoads.value = String(rec.loads);
+    inputType.value = rec.type;
+    inputBulky.checked = rec.bulky;
+    inputTariff.value = String(rec.tariff);
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputPeople.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputLoads.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputType.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputBulky.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputTariff.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("wm-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderWmCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+  const litres = n => fmt2(n) + (n === 1 ? " litre" : " litres");
+  const units = n => fmt2(n) + (n === 1 ? " unit" : " units");
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, samplePeople: p.samplePeople, sampleLoads: p.sampleLoads, sampleType: p.sampleType, sampleBulky: p.sampleBulky, sampleTariff: p.sampleTariff };
+  const sample = wmCompute(p.samplePeople, p.sampleLoads, p.sampleType, p.sampleBulky, p.sampleTariff);
+  const couple = wmCompute(2, 5, "top", false, 8);
+  const joint6 = wmCompute(6, 2, "semi", true, 8);
+
+  const headline = r => r.capacity + " kg washing machine";
+  const glanceText = r => r.people + (r.people === 1 ? " person" : " people") + " · " + r.loadsPerWeek
+    + (r.loadsPerWeek === 1 ? " load" : " loads") + " a week · " + WM_TYPE_LABELS[r.type] + " → "
+    + r.capacity + " kg machine · " + litres(r.waterMonth) + " a month · "
+    + units(r.kwhMonth) + " · " + inr2(r.costMonth) + " a month · aim for "
+    + fmt2(r.perLoadKg) + " kg a load.";
+  const workingText = r => r.people + (r.people === 1 ? " person" : " people") + " washing " + r.loadsPerWeek
+    + (r.loadsPerWeek === 1 ? " load" : " loads") + " a week in a " + WM_TYPE_LABELS[r.type] + " machine: "
+    + fmt2(r.loadsPerMonth) + " loads a month (loads a week × 52 ÷ 12), "
+    + litres(r.waterPerCycle) + " a wash, " + fmt2(r.kwhPerCycle) + " units a wash — "
+    + litres(r.waterMonth) + " of water and " + units(r.kwhMonth)
+    + " of electricity a month, about " + inr2(r.costMonth) + " at " + inr2(r.tariff) + " a unit."
+    + " Aim for about " + fmt2(r.perLoadKg) + " kg a load (80% of the " + r.capacity + " kg drum).";
+  const working2Text = r => "Over a year that is " + litres(r.waterYear) + " of water, "
+    + units(r.kwhYear) + " of electricity and about " + inr2(r.costYear) + " at " + inr2(r.tariff) + " a unit.";
+  const compareText = r => {
+    const others = Object.keys(r.compare).map(t => {
+      const o = r.compare[t];
+      return "a " + WM_TYPE_LABELS[t] + " machine would use about " + litres(o.waterMonth)
+        + " of water and " + units(o.kwhMonth) + " (" + inr2(o.costMonth) + ")";
+    });
+    return "The same " + fmt2(r.loadsPerMonth) + " loads a month in " + others.join("; in ") + ".";
+  };
+
+  const presetSummary = pr => {
+    const r = wmCompute(pr.people, pr.loads, pr.type, pr.bulky, pr.tariff);
+    return `${pr.people} ${pr.people === 1 ? "person" : "people"} · ${pr.loads} ${pr.loads === 1 ? "load" : "loads"} a week · ${WM_TYPE_LABELS[pr.type]} → ${r.capacity} kg machine · ${litres(r.waterMonth)} a month · ${inr2(r.costMonth)} a month`;
+  };
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = wmCompute(st.people, st.loads, st.type, st.bulky, st.tariff);
+    return `${st.people} ${st.people === 1 ? "person" : "people"} · ${st.loads} ${st.loads === 1 ? "load" : "loads"} a week · ${WM_TYPE_LABELS[st.type]} → ${r.capacity} kg machine · ${litres(r.waterMonth)} a month · ${inr2(r.costMonth)} a month`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const capacityRowsHtml = Array.from({ length: 12 }, (_, i) => i + 1).map(people => {
+    const cap = wmCapacity(people, 3, false);
+    const perLoad = wmRound1(cap * WM_FILL_FRACTION);
+    return `
+      <tr${people === p.samplePeople ? ' class="highlight-row"' : ""}>
+        <th scope="row">${people === 1 ? "1 person" : people + " people"}</th>
+        <td>${cap} kg</td>
+        <td>${fmt2(perLoad)} kg</td>
+      </tr>`;
+  }).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}${hraCss}${ciCss}${epfCss}${npsCss}${ssyCss}${nscCss}${scssCss}${misCss}${kvpCss}${plCss}${tdCss}${clCss}${apyCss}${swpCss}${wmCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free washing machine capacity calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Find your size →
+              </a>
+              <a href="#method" class="calc-link">How the size is worked out ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${sample.capacity} kg recommended</strong>
+                <small>For a family of 4, 3 loads a week</small>
+              </div>
+              <div>
+                <strong>${litres(sample.waterMonth)} a month</strong>
+                <small>Water, front load at 3 loads a week</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.costMonth)} a month</strong>
+                <small>Electricity at ₹8 a unit</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>Planning estimates, not meter readings.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <div class="tool-title">
+              <h2 id="tool-heading">Find your washing machine size</h2>
+              <span class="calc-pill" id="wm-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="wm-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-people">
+                People in your household
+                <span>How many people the machine washes for — 4 is the example. From 1 to 12</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-people"
+                type="number"
+                value="${p.samplePeople}"
+                min="1"
+                max="12"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="input-people-error"
+              >
+              <p class="calc-error" id="input-people-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-loads">
+                Loads a week
+                <span>How many wash cycles you run in a typical week — 3 is the example. From 1 to 14</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-loads"
+                type="number"
+                value="${p.sampleLoads}"
+                min="1"
+                max="14"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="input-loads-error"
+              >
+              <p class="calc-error" id="input-loads-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-type">
+                Machine type
+                <span>The type decides the water and electricity per wash — front load uses the least water</span>
+              </label>
+
+              <select class="select-input" id="input-type">
+                <option value="front"${p.sampleType === "front" ? " selected" : ""}>Front load — about 50 litres a wash</option>
+                <option value="top"${p.sampleType === "top" ? " selected" : ""}>Top load — about 140 litres a wash</option>
+                <option value="semi"${p.sampleType === "semi" ? " selected" : ""}>Semi-automatic — about 60 litres a wash</option>
+              </select>
+
+              <label class="check-field" for="input-bulky">
+                <input type="checkbox" id="input-bulky"${p.sampleBulky ? " checked" : ""}>
+                <span>We wash bulky items every week (blankets, curtains, duvets) — adds 1 kg</span>
+              </label>
+
+              <label class="field-label" for="input-tariff">
+                Electricity tariff (₹ a unit)
+                <span>What you pay per unit of electricity — ₹8 is the example. From ₹1 to ₹30 a unit</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-tariff"
+                type="number"
+                value="${p.sampleTariff}"
+                min="1"
+                max="30"
+                step="0.5"
+                inputmode="decimal"
+                aria-describedby="input-tariff-error"
+              >
+              <p class="calc-error" id="input-tariff-error" aria-live="polite"></p>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-people">${headline(sample)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${litres(sample.waterMonth)}</strong>
+                  <small id="box1-label">WATER A MONTH</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${units(sample.kwhMonth)}</strong>
+                  <small id="box2-label">ELECTRICITY A MONTH</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.costMonth)}</strong>
+                  <small id="box3-label">COST A MONTH</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">${glanceText(sample)}</span>
+              </div>
+
+              <p class="working" id="working">
+                ${workingText(sample)}
+              </p>
+              <p class="working" id="working-2">${working2Text(sample)}</p>
+              <p class="working" id="compare">${compareText(sample)}</p>
+              <p class="working" id="working-note">Planning estimates · water ${litres(WM_WATER_LITRES_PER_CYCLE.front)} / ${litres(WM_WATER_LITRES_PER_CYCLE.top)} / ${litres(WM_WATER_LITRES_PER_CYCLE.semi)} a wash · electricity ${WM_KWH_PER_KG_PER_CYCLE.front} / ${WM_KWH_PER_KG_PER_CYCLE.top} / ${WM_KWH_PER_KG_PER_CYCLE.semi} units per kg a wash · tariff ${inr2(sample.tariff)} a unit</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The water figures are midpoints of the published
+                BEE Schedule 12 ranges and the electricity figures
+                are BEE label figures per kg per cycle — planning
+                estimates, not meter readings. Check the label on
+                the exact model you buy, and use your own tariff.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="capacity">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Capacity quick reference</p>
+          <h2>What size machine for your household?</h2>
+          <p id="capacity-note">The recommended capacity at three loads a week with no weekly bulky items — the highlighted row is the example household of four. Wash once or twice a week, or wash blankets every week, and the figure rises by 1 kg each; wash every day and it falls by 1 kg.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="capacity-note">
+            <caption>Recommended washing machine capacity by household size, at three loads a week with no weekly bulky items, with the load size to aim for at 80% of the drum.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Household size</th>
+                <th scope="col">Recommended capacity</th>
+                <th scope="col">Aim for per load (80%)</th>
+              </tr>
+            </thead>
+            <tbody id="capacity-body">
+              ${capacityRowsHtml}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#capacity">Capacity table</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / THE HOUSEHOLD DECIDES</span>
+            <h3>Capacity follows people and frequency</h3>
+            <p>A family of four washing three times a week needs an 8 kg machine; the same family washing every day manages with 7 kg, and washing once a week wants 9 kg. The guides agree on the bands — this calculator applies them to your household.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE TYPE DECIDES THE BILL</span>
+            <h3>Front load uses a third of the water</h3>
+            <p>About 50 litres a wash for a front loader against about 140 for a top loader. At 13 loads a month that is 650 litres against 1,820 — the machine type matters more than the size for the water bill.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / LOAD IT TO 80%</span>
+            <h3>The drum is a ceiling, not a target</h3>
+            <p>Aim for about 6.4 kg a load in an 8 kg machine. A full drum cleans badly and strains the machine; a half-empty drum wastes water and electricity on every wash.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your household to your machine size</h2>
+          <p>
+            Enter how many people are in your household, how
+            many loads you wash a week, the machine type and
+            whether you wash bulky items every week, then read
+            the capacity you need, the load size to aim for,
+            and what it costs to run each month.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How the size and the running cost are worked out</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The washing machine rule</small>
+          Capacity by household size (6/7/8/9/10/11/12 kg), +1 kg for 1–2 loads a week, −1 kg for 7+ loads a week, +1 kg for weekly bulky items · Loads a month = loads a week × 52 ÷ 12 · Water a month = loads a month × litres a wash · Electricity a month = loads a month × units a wash
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. Family of 4, 3 loads a week, front load
+            <strong>${sample.capacity} kg · ${fmt2(sample.waterMonth)} litres a month · ${fmt2(sample.kwhMonth)} units · ${inr2(sample.costMonth)} a month</strong>
+            <span>Four people need 8 kg at three loads a week. Thirteen loads a month (3 × 52 ÷ 12) at 50 litres a wash is 650 litres. The label figure is 0.07 units per kg a wash, so an 8 kg machine uses 0.56 units a wash — 7.28 units a month, about ₹58 at ₹8 a unit. Aim for 6.4 kg a load.</span>
+          </div>
+
+          <div class="math-step">
+            2. Couple, 5 loads a week, top load
+            <strong>${couple.capacity} kg · ${fmt2(couple.waterMonth)} litres a month · ${fmt2(couple.kwhMonth)} units · ${inr2(couple.costMonth)} a month</strong>
+            <span>Two people need 6 kg. About 21.7 loads a month (5 × 52 ÷ 12) at 140 litres a wash is 3,033 litres. The label figure is 0.01 units per kg a wash, so a 6 kg machine uses 0.06 units a wash — 1.30 units a month, about ₹10 at ₹8 a unit. The same loads in a front loader would use about 1,083 litres.</span>
+          </div>
+
+          <div class="math-step">
+            3. Family of 6, 2 loads a week, bulky items, semi-automatic
+            <strong>${joint6.capacity} kg · ${fmt2(joint6.waterMonth)} litres a month · ${fmt2(joint6.kwhMonth)} units · ${inr2(joint6.costMonth)} a month</strong>
+            <span>Six people need 10 kg, plus 1 kg for two loads a week and 1 kg for the bulky items — 12 kg. About 8.7 loads a month (2 × 52 ÷ 12) at 60 litres a wash is 520 litres. The label figure is 0.0107 units per kg a wash, so a 12 kg machine uses 0.13 units a wash — 1.11 units a month, about ₹9 at ₹8 a unit. Aim for 9.6 kg a load.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five households, five machines</h2>
+          <p>
+            One example for each everyday case, from a family
+            of four in a front loader to a joint family of six
+            in a semi-automatic. Select any example to load it
+            into the calculator and check the working for
+            yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${story.people} ${story.people === 1 ? "PERSON" : "PEOPLE"} · ${story.loads} ${story.loads === 1 ? "LOAD" : "LOADS"} A WEEK · ${WM_TYPE_LABELS[story.type].toUpperCase()}</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-people="${story.people}" data-loads="${story.loads}" data-type="${story.type}" data-bulky="${story.bulky}" data-tariff="${story.tariff}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>Capacity and running-cost rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>The capacity bands the India buying guides agree on, the frequency and bulky-item adjustments, the water and electricity planning figures by machine type, the 80% fill rule and the weeks-to-months conversion.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to pick the wrong washing machine</h2>
+          <p>
+            The size looks like the whole decision, but the
+            load size, the label figures and the running cost
+            catch people out.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / BUYING MORE DRUM THAN YOU NEED</span>
+            <h3>A half-empty drum wastes water</h3>
+            <p>A 12 kg machine for a couple washing twice a week runs half-empty every cycle — 140 litres a wash in a top loader for a 3 kg load. Match the drum to the household, not the biggest size on the shelf.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / STUFFING THE DRUM FULL</span>
+            <h3>Rated capacity is a ceiling</h3>
+            <p>Packing 9 kg into an 8 kg machine leaves no room for the clothes to tumble, so they come out less clean and more creased — and the machine strains. Aim for 80% of the rating.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / COMPARING THE TWO LABEL FIGURES AS IF THEY MATCH</span>
+            <h3>Front-load and top-load labels are rated differently</h3>
+            <p>The front-load label is a 60 C cotton wash and the top-load label a 30 C one. A front loader looks power-hungry on the label and a top loader looks cheap — on a cold wash the gap mostly disappears, and the front loader still uses a third of the water.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / TREATING THE ESTIMATES AS METER READINGS</span>
+            <h3>Check the label on the model you buy</h3>
+            <p>The water figures are midpoints of published ranges and the electricity figures are label figures per kg. The exact model carries its own numbers, and your tariff decides the cost — ₹8 a unit is the example, not a quote.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>Washing machine capacity FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page recommends a capacity from your household
+            size and wash frequency, then works out the running
+            cost: capacity follows the bands the India buying
+            guides agree on — 6 kg for 1–2 people, 7 kg for 3,
+            8 kg for 4, 9 kg for 5, 10 kg for 6, 11 kg for 7–8
+            and 12 kg for 9 or more — adjusted by 1 kg up if
+            you wash once or twice a week, 1 kg down if you
+            wash every day, and 1 kg up for weekly bulky
+            items, clamped to 6–12 kg. Water a month is loads
+            a month times the litres a wash (50 front load,
+            140 top load, 60 semi-automatic). Electricity a
+            month is loads a month times the units a wash,
+            where the units a wash are the BEE label figure
+            per kg per cycle (0.07 front load, 0.01 top load,
+            0.0107 semi-automatic) times the recommended
+            capacity. Loads a month are loads a week times 52
+            divided by 12. The cost is the electricity times
+            your tariff. Aim for about 80% of the rated
+            capacity per load. Nothing you enter leaves your
+            browser: every calculation runs entirely on this
+            page.
+          </p>
+          <p>
+            Figures checked 12 November 2026: the capacity
+            bands come from the India buying guides —
+            <a href="https://www.bajajfinserv.in/what-size-washer-do-i-need" rel="nofollow noopener" target="_blank">Bajaj Finserv</a>
+            puts 6–7 kg at 1–3 members, 7–8 kg at 3–5 and
+            9–12 kg at 5 or more;
+            <a href="https://naatural.in/size-first-guide-smart-washing-machine-picks-indian-family/" rel="nofollow noopener" target="_blank">naatural.in</a>
+            puts a couple at 6–7 kg, a family of three at
+            7–8 kg, a family of four at 8–10 kg and five or
+            more at 10–12 kg, and
+            <a href="https://www.herzindagi.com/your-picks/home-solutions-electronics/how-to-decide-kg-of-washing-machine-best-laundry-solutions-that-fit-your-space-and-budget-4164" rel="nofollow noopener" target="_blank">herzindagi.com</a>
+            puts 6–8 kg at 2–4 people and 9 kg and above at
+            more than five — this page uses 9 kg for five
+            people at three loads a week, and 10 kg at two
+            loads a week or with bulky items. The water
+            planning figures sit inside the published BEE
+            Schedule 12 ranges — 45–60 litres a wash for a
+            front loader, 120–150 for a top loader, 50–70
+            for a semi-automatic — as reported by
+            <a href="https://thegrandeur.in/front-load-vs-top-load-washing-machine-in-india/" rel="nofollow noopener" target="_blank">thegrandeur.in</a>
+            and
+            <a href="https://www.haier.com/in/blogs/how-to-save-water-with-front-load-washing-machines.shtml" rel="nofollow noopener" target="_blank">Haier India</a>;
+            thegrandeur's own worked example — 20 washes a
+            month at 50 litres — gives 1,000 litres a month,
+            the same figure this page's 50-litre planning
+            figure gives. The electricity figures are BEE
+            label figures: the IFB 7 kg front loader works
+            out to 0.49 units a wash and the IFB 7 kg top
+            loader to 0.07 units a wash, as worked out by
+            <a href="https://onlygizmos.com/front-load-vs-top-load-washing-machine/2026/11/" rel="nofollow noopener" target="_blank">onlygizmos.com</a>,
+            which also states that the front-load label is a
+            60 C wash and the top-load label a 30 C wash; the
+            semi-automatic figure, 0.0107 units per kg per
+            cycle, is the Voltas Beko 8 kg BEE label figure.
+            The differences are stated honestly: this page's
+            yearly figure for the front loader is ₹1,020
+            against onlygizmos' ₹1,019, a ₹1 difference
+            because the month is rounded first, and ₹144 a
+            year for the top loader against their ₹154 — their
+            figure implies about 0.074 units a wash, while
+            this page uses the 0.07 label figure. The
+            top-load water figure differs by 2 litres a month
+            from onlygizmos' 3,031 litres (they use 4.33
+            weeks a month; this page uses 52 ÷ 12). A
+            different size calculator,
+            <a href="https://homefitcalc.com/appliances/washing-machine-size-calculator.html" rel="nofollow noopener" target="_blank">homefitcalc.com</a>,
+            uses (people × 1.5) + 2 — 8 kg for a family of
+            four, the same as this page, but 11 kg for six
+            people where this page gives 10 kg at three loads
+            a week (11 kg at two loads a week or with bulky
+            items). For the brands and models behind the
+            sizes, see the
+            <a href="/best-washing-machine-brands-in-india/">washing machine brands guide</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another tool before you buy</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your home.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function msClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function msRound1(n) {
+    return Math.round(n * 10) / 10;
+  }
+
+  function msCm(inches) {
+    return Math.round(inches * 2.54);
+  }
+
+  function msSizeByKey(key) {
+    for (const s of MS_SIZES) if (s.key === key) return s;
+    return null;
+  }
+
+  function msLengthForHeight(heightIn) {
+    const need = heightIn + MS_LENGTH_ALLOWANCE_IN;
+    for (const l of MS_LENGTHS) if (l >= need) return l;
+    return 84;
+  }
+
+  function msBaseSizeKey(sleepers, extraRoom) {
+    if (sleepers <= 1) return extraRoom ? "double" : "single";
+    if (sleepers === 2) return extraRoom ? "king" : "queen";
+    return "king";
+  }
+
+  function msRoomCheck(widthIn, lengthIn, roomWft, roomLft) {
+    const side = msRound1((roomWft * 12 - widthIn) / 2);
+    const foot = msRound1(roomLft * 12 - lengthIn);
+    const fit = side >= MS_COMFORT_SIDE_IN && foot >= MS_COMFORT_SIDE_IN ? "comfortable"
+      : side >= MS_MIN_FIT_IN && foot >= MS_MIN_FIT_IN ? "tight" : "too-big";
+    const cause = fit === "too-big"
+      ? (side < MS_MIN_FIT_IN && foot < MS_MIN_FIT_IN ? "both" : side < MS_MIN_FIT_IN ? "width" : "length")
+      : null;
+    return { side, foot, fit, cause };
+  }
+
+  function msCompute(sleepers, feet, inches, extraRoom, roomWft, roomLft) {
+    const s = Number(sleepers);
+    const f = Number(feet);
+    const inch = Number(inches);
+    const rw = Number(roomWft);
+    const rl = Number(roomLft);
+    if (!Number.isFinite(s) || !Number.isFinite(f) || !Number.isFinite(inch)
+      || !Number.isFinite(rw) || !Number.isFinite(rl)) return null;
+    if (s !== Math.trunc(s) || s < MS_MIN_SLEEPERS || s > MS_MAX_SLEEPERS) return null;
+    if (f !== Math.trunc(f) || f < MS_MIN_FEET || f > MS_MAX_FEET) return null;
+    if (inch !== Math.trunc(inch) || inch < MS_MIN_INCHES || inch > MS_MAX_INCHES) return null;
+    if (typeof extraRoom !== "boolean") return null;
+    if (rw < MS_MIN_ROOM_W || rw > MS_MAX_ROOM_W) return null;
+    if (rl < MS_MIN_ROOM_L || rl > MS_MAX_ROOM_L) return null;
+    const heightIn = f * 12 + inch;
+    const lengthIn = msLengthForHeight(heightIn);
+    const baseKey = msBaseSizeKey(s, extraRoom);
+    let chosenKey = baseKey;
+    let check = msRoomCheck(msSizeByKey(baseKey).width, lengthIn, rw, rl);
+    let steppedDown = false;
+    if (check.fit === "too-big") {
+      const ladder = MS_STEP_DOWN;
+      const start = ladder.indexOf(baseKey);
+      let tightKey = null;
+      for (let i = start + 1; i < ladder.length; i++) {
+        const c = msRoomCheck(msSizeByKey(ladder[i]).width, lengthIn, rw, rl);
+        if (c.fit === "comfortable") { chosenKey = ladder[i]; check = c; steppedDown = true; break; }
+        if (c.fit === "tight" && tightKey === null) tightKey = ladder[i];
+      }
+      if (!steppedDown && tightKey !== null) {
+        chosenKey = tightKey;
+        check = msRoomCheck(msSizeByKey(tightKey).width, lengthIn, rw, rl);
+        steppedDown = true;
+      }
+    }
+    const size = msSizeByKey(chosenKey);
+    const baseSize = msSizeByKey(baseKey);
+    const perSleeper = msRound1(size.width / s);
+    const widthComfort = perSleeper >= MS_COMFORT_WIDTH_PER_SLEEPER ? "comfortable"
+      : perSleeper >= 24 ? "tight" : "very-tight";
+    return {
+      sleepers: s,
+      feet: f,
+      inches: inch,
+      heightIn,
+      extraRoom,
+      roomWft: rw,
+      roomLft: rl,
+      baseKey,
+      baseName: baseSize.name,
+      baseWidth: baseSize.width,
+      sizeKey: chosenKey,
+      sizeName: size.name,
+      widthIn: size.width,
+      lengthIn,
+      perSleeper,
+      widthComfort,
+      headroom: lengthIn - heightIn,
+      side: check.side,
+      foot: check.foot,
+      fit: check.fit,
+      fitCause: check.cause,
+      steppedDown,
+      minRoomWft: msRound1((size.width + 2 * MS_COMFORT_SIDE_IN) / 12),
+      minRoomLft: msRound1((lengthIn + MS_COMFORT_SIDE_IN) / 12)
+    };
+  }
+
+  const MS_MIN_SLEEPERS = 1;
+
+  const MS_MAX_SLEEPERS = 3;
+
+  const MS_MIN_FEET = 4;
+
+  const MS_MAX_FEET = 7;
+
+  const MS_MIN_INCHES = 0;
+
+  const MS_MAX_INCHES = 11;
+
+  const MS_MIN_ROOM_W = 6;
+
+  const MS_MAX_ROOM_W = 20;
+
+  const MS_MIN_ROOM_L = 6;
+
+  const MS_MAX_ROOM_L = 25;
+
+  const MS_LENGTHS = [72, 75, 78, 84];
+
+  const MS_LENGTH_ALLOWANCE_IN = 8;
+
+  const MS_COMFORT_SIDE_IN = 24;
+
+  const MS_MIN_FIT_IN = 6;
+
+  const MS_COMFORT_WIDTH_PER_SLEEPER = 30;
+
+  const MS_SIZES = [
+    { key: "diwan", name: "Diwan", width: 30, bestFor: "Diwans and daybeds" },
+    { key: "single", name: "Single", width: 36, bestFor: "One sleeper, a child's room or a guest room" },
+    { key: "double", name: "Double", width: 48, bestFor: "One adult who wants extra space, or two in a tight guest room" },
+    { key: "queen", name: "Queen", width: 60, bestFor: "Two adults comfortably" },
+    { key: "xl-queen", name: "XL Queen", width: 66, bestFor: "Two adults who want more room than a Queen" },
+    { key: "king", name: "King", width: 72, bestFor: "Couples, families, large bedrooms" }
+  ];
+
+  const MS_STEP_DOWN = ["king", "xl-queen", "queen", "double", "single"];
+
+  const MS_LADDER = ["diwan", "single", "double", "queen", "xl-queen", "king"];
+
+  const presetSelect = $("preset");
+  const msPill = $("ms-pill");
+  const inputSleepers = $("input-sleepers");
+  const inputSleepersError = $("input-sleepers-error");
+  const inputFeet = $("input-feet");
+  const inputFeetError = $("input-feet-error");
+  const inputInches = $("input-inches");
+  const inputInchesError = $("input-inches-error");
+  const inputExtra = $("input-extra");
+  const inputRoomW = $("input-room-w");
+  const inputRoomWError = $("input-room-w-error");
+  const inputRoomL = $("input-room-l");
+  const inputRoomLError = $("input-room-l-error");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const compareEl = $("compare");
+  const workingNote = $("working-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+  const dims = r => r.lengthIn + " × " + r.widthIn + " inches (" + fmt(r.lengthIn / 12) + " × " + fmt(r.widthIn / 12) + " ft; " + msCm(r.lengthIn) + " × " + msCm(r.widthIn) + " cm)";
+  const resultHeadline = r => r.sizeName + " mattress · " + r.lengthIn + " × " + r.widthIn + " inches";
+  const fitWord = r => r.fit === "comfortable" ? "fits comfortably" : r.fit === "tight" ? "fits, but tight" : "too big for this room";
+  const widthComfortText = r => r.widthComfort === "comfortable" ? "at or above the 30-inch comfort line"
+    : r.widthComfort === "tight" ? "below the 30-inch comfort line" : "well below the 30-inch comfort line";
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter the sleepers, the tallest sleeper's height and your bedroom size to see the mattress size you need and whether it fits your room.";
+    working.textContent = "Enter the sleepers, the tallest sleeper's height and your bedroom size to see the working.";
+    working2.textContent = "";
+    compareEl.textContent = "";
+    workingNote.textContent = "";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(sleepers, feet, inches, extra, roomW, roomL, r) {
+    output.textContent = resultHeadline(r);
+    box1Val.textContent = fmt(r.perSleeper) + " inches each";
+    box1Label.textContent = "WIDTH EACH SLEEPER";
+    box2Val.textContent = fmt(r.side) + " inches each side";
+    box2Label.textContent = "WALKING SPACE";
+    box3Val.textContent = fmt(r.minRoomWft) + " × " + fmt(r.minRoomLft) + " ft";
+    box3Label.textContent = "SMALLEST COMFORTABLE ROOM";
+    working.textContent = sleepers + (sleepers === 1 ? " sleeper" : " sleepers") + ", tallest " + feet + " ft " + inches + " in: a " + r.sizeName + " mattress, " + dims(r) + ". Each sleeper gets " + fmt(r.perSleeper) + " inches — " + widthComfortText(r) + ". The mattress is " + r.headroom + " inches longer than the tallest sleeper.";
+    const causeText = r.fitCause === "length" ? " — the room is too short for a " + r.lengthIn + "-inch mattress"
+      : r.fitCause === "width" ? " — the room is too narrow for a " + r.widthIn + "-inch mattress"
+      : r.fitCause === "both" ? " — the room is too small all round" : "";
+    const roomSentence = r.fit === "too-big"
+      ? "It is too big for this room: " + fmt(r.side) + " inches of walking space each side and " + fmt(r.foot) + " inches at the foot" + causeText + "."
+      : "In a " + fmt(r.roomWft) + " × " + fmt(r.roomLft) + " ft room it fits " + (r.fit === "comfortable" ? "comfortably" : "but tight") + ": " + fmt(r.side) + " inches of walking space each side and " + fmt(r.foot) + " inches at the foot. Smallest comfortable room: " + fmt(r.minRoomWft) + " × " + fmt(r.minRoomLft) + " ft.";
+    working2.textContent = (r.steppedDown ? "A " + r.baseName + " is too big for this room, so the finder stepped down to a " + r.sizeName + ". " : "") + roomSentence;
+    const idx = MS_LADDER.indexOf(r.sizeKey);
+    const up = idx < MS_LADDER.length - 1 ? msSizeByKey(MS_LADDER[idx + 1]) : null;
+    const down = idx > 1 ? msSizeByKey(MS_LADDER[idx - 1]) : null;
+    const altParts = [];
+    if (up) altParts.push("One size up: " + up.name + ", " + r.lengthIn + " × " + up.width + " inches (" + fmt(msRound1(up.width / r.sleepers)) + " inches each)");
+    if (down) altParts.push("One size down: " + down.name + ", " + r.lengthIn + " × " + down.width + " inches (" + fmt(msRound1(down.width / r.sleepers)) + " inches each)");
+    compareEl.textContent = altParts.join(". ") + (altParts.length ? "." : "");
+    workingNote.textContent = "Guidance, not a guarantee · sizes vary by about half an inch between brands · the 84-inch length is stocked by fewer brands · measure your frame before ordering";
+    glanceText.textContent = sleepers + (sleepers === 1 ? " sleeper" : " sleepers") + " · tallest " + feet + " ft " + inches + " in · room " + fmt(roomW) + " × " + fmt(roomL) + " ft → " + r.sizeName + " " + r.lengthIn + " × " + r.widthIn + " in · " + fmt(r.perSleeper) + " in each · " + fitWord(r) + ".";
+    glanceBox.className = "verdict " + (r.fit === "comfortable" ? "verdict-ok" : r.fit === "tight" ? "verdict-warn" : "verdict-bad");
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | Mattress Size Finder"
+      + "\nQuestion: " + sleepers + (sleepers === 1 ? " sleeper" : " sleepers") + ", tallest " + feet + " ft " + inches + " in"
+      + (extra ? ", extra room wanted" : "") + ", room " + fmt(roomW) + " × " + fmt(roomL) + " ft"
+      + "\nAnswer: " + resultHeadline(r) + "; " + fmt(r.perSleeper) + " inches each; " + fitWord(r)
+      + "\nWorking: length = tallest sleeper + 8 in, rounded up to 72/75/78/84; width by sleepers; walking space each side = (room width - mattress width) / 2; space at the foot = room length - mattress length";
+  }
+
+  function paint(showEmptyError = false) {
+    msPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const sleepersRaw = inputSleepers.value;
+    const feetRaw = inputFeet.value;
+    const inchesRaw = inputInches.value;
+    const roomWRaw = inputRoomW.value;
+    const roomLRaw = inputRoomL.value;
+    const sleepersNum = sleepersRaw === "" ? NaN : Number(sleepersRaw);
+    const feetNum = feetRaw === "" ? NaN : Number(feetRaw);
+    const inchesNum = inchesRaw === "" ? NaN : Number(inchesRaw);
+    const roomWNum = roomWRaw === "" ? NaN : Number(roomWRaw);
+    const roomLNum = roomLRaw === "" ? NaN : Number(roomLRaw);
+    let sleepersMsg = "";
+    let feetMsg = "";
+    let inchesMsg = "";
+    let roomWMsg = "";
+    let roomLMsg = "";
+    if (sleepersRaw === "") {
+      if (showEmptyError) sleepersMsg = "Enter how many people will sleep on the mattress.";
+    } else if (!Number.isFinite(sleepersNum) || sleepersNum !== Math.trunc(sleepersNum) || sleepersNum < 1 || sleepersNum > 3) {
+      sleepersMsg = "Enter the number of sleepers, from 1 to 3.";
+    }
+    if (feetRaw === "") {
+      if (showEmptyError) feetMsg = "Enter the tallest sleeper's height in feet.";
+    } else if (!Number.isFinite(feetNum) || feetNum !== Math.trunc(feetNum) || feetNum < 4 || feetNum > 7) {
+      feetMsg = "Enter the feet, from 4 to 7.";
+    }
+    if (inchesRaw === "") {
+      if (showEmptyError) inchesMsg = "Enter the remaining inches.";
+    } else if (!Number.isFinite(inchesNum) || inchesNum !== Math.trunc(inchesNum) || inchesNum < 0 || inchesNum > 11) {
+      inchesMsg = "Enter the inches, from 0 to 11.";
+    }
+    if (roomWRaw === "") {
+      if (showEmptyError) roomWMsg = "Enter your bedroom's width in feet.";
+    } else if (!Number.isFinite(roomWNum) || roomWNum < 6 || roomWNum > 20) {
+      roomWMsg = "Enter the bedroom width in feet, from 6 to 20.";
+    }
+    if (roomLRaw === "") {
+      if (showEmptyError) roomLMsg = "Enter your bedroom's length in feet.";
+    } else if (!Number.isFinite(roomLNum) || roomLNum < 6 || roomLNum > 25) {
+      roomLMsg = "Enter the bedroom length in feet, from 6 to 25.";
+    }
+    inputSleepersError.textContent = sleepersMsg;
+    inputFeetError.textContent = feetMsg;
+    inputInchesError.textContent = inchesMsg;
+    inputRoomWError.textContent = roomWMsg;
+    inputRoomLError.textContent = roomLMsg;
+    inputSleepers.setAttribute("aria-invalid", String(sleepersMsg !== ""));
+    inputFeet.setAttribute("aria-invalid", String(feetMsg !== ""));
+    inputInches.setAttribute("aria-invalid", String(inchesMsg !== ""));
+    inputRoomW.setAttribute("aria-invalid", String(roomWMsg !== ""));
+    inputRoomL.setAttribute("aria-invalid", String(roomLMsg !== ""));
+
+    const valid = sleepersMsg === "" && feetMsg === "" && inchesMsg === "" && roomWMsg === "" && roomLMsg === ""
+      && sleepersRaw !== "" && feetRaw !== "" && inchesRaw !== "" && roomWRaw !== "" && roomLRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = msCompute(sleepersNum, feetNum, inchesNum, inputExtra.checked, roomWNum, roomLNum);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(sleepersNum, feetNum, inchesNum, inputExtra.checked, roomWNum, roomLNum, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = msCompute(item.sleepers, item.feet, item.inches, item.extra, item.roomW, item.roomL);
+    if (!r) return "";
+    return item.sleepers + (item.sleepers === 1 ? " sleeper" : " sleepers") + " · tallest " + item.feet + " ft " + item.inches + " in · room " + fmt(item.roomW) + " × " + fmt(item.roomL) + " ft → " + r.sizeName + " " + r.lengthIn + " × " + r.widthIn + " in · " + fmt(r.perSleeper) + " in each";
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputSleepers.value, inputFeet.value, inputInches.value, inputExtra.checked, inputRoomW.value, inputRoomL.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputSleepers.value = String(item.sleepers);
+        inputFeet.value = String(item.feet);
+        inputInches.value = String(item.inches);
+        inputExtra.checked = item.extra;
+        inputRoomW.value = String(item.roomW);
+        inputRoomL.value = String(item.roomL);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      sleepers: Number(inputSleepers.value),
+      feet: Number(inputFeet.value),
+      inches: Number(inputInches.value),
+      extra: inputExtra.checked,
+      roomW: Number(inputRoomW.value),
+      roomL: Number(inputRoomL.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputSleepers.value = button.dataset.sleepers || "";
+      inputFeet.value = button.dataset.feet || "";
+      inputInches.value = button.dataset.inches || "";
+      inputExtra.checked = button.dataset.extra === "true";
+      inputRoomW.value = button.dataset.roomW || "";
+      inputRoomL.value = button.dataset.roomL || "";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputSleepers.value = String(rec.sleepers);
+    inputFeet.value = String(rec.feet);
+    inputInches.value = String(rec.inches);
+    inputExtra.checked = rec.extra;
+    inputRoomW.value = String(rec.roomW);
+    inputRoomL.value = String(rec.roomL);
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputSleepers.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputFeet.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputInches.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputExtra.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRoomW.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRoomL.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("ms-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderMsCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleSleepers: p.sampleSleepers, sampleFeet: p.sampleFeet, sampleInches: p.sampleInches, sampleExtra: p.sampleExtra, sampleRoomW: p.sampleRoomW, sampleRoomL: p.sampleRoomL };
+  const sample = msCompute(p.sampleSleepers, p.sampleFeet, p.sampleInches, p.sampleExtra, p.sampleRoomW, p.sampleRoomL);
+  const tall = msCompute(1, 6, 0, false, 9, 11);
+  const family = msCompute(3, 5, 6, false, 12, 14);
+
+  const dims = r => r.lengthIn + " × " + r.widthIn + " inches (" + fmt2(r.lengthIn / 12) + " × " + fmt2(r.widthIn / 12) + " ft; " + msCm(r.lengthIn) + " × " + msCm(r.widthIn) + " cm)";
+  const headline = r => r.sizeName + " mattress · " + r.lengthIn + " × " + r.widthIn + " inches";
+  const fitWord = r => r.fit === "comfortable" ? "fits comfortably" : r.fit === "tight" ? "fits, but tight" : "too big for this room";
+  const widthComfortText = r => r.widthComfort === "comfortable" ? "at or above the 30-inch comfort line"
+    : r.widthComfort === "tight" ? "below the 30-inch comfort line" : "well below the 30-inch comfort line";
+  const glanceText = r => r.sleepers + (r.sleepers === 1 ? " sleeper" : " sleepers") + " · tallest " + r.feet + " ft " + r.inches + " in · room " + fmt2(r.roomWft) + " × " + fmt2(r.roomLft) + " ft → " + r.sizeName + " " + r.lengthIn + " × " + r.widthIn + " in · " + fmt2(r.perSleeper) + " in each · " + fitWord(r) + ".";
+  const workingText = r => r.sleepers + (r.sleepers === 1 ? " sleeper" : " sleepers") + ", tallest " + r.feet + " ft " + r.inches + " in: a " + r.sizeName + " mattress, " + dims(r) + ". Each sleeper gets " + fmt2(r.perSleeper) + " inches — " + widthComfortText(r) + ". The mattress is " + r.headroom + " inches longer than the tallest sleeper.";
+  const working2Text = r => {
+    const causeText = r.fitCause === "length" ? " — the room is too short for a " + r.lengthIn + "-inch mattress"
+      : r.fitCause === "width" ? " — the room is too narrow for a " + r.widthIn + "-inch mattress"
+      : r.fitCause === "both" ? " — the room is too small all round" : "";
+    const roomSentence = r.fit === "too-big"
+      ? "It is too big for this room: " + fmt2(r.side) + " inches of walking space each side and " + fmt2(r.foot) + " inches at the foot" + causeText + "."
+      : "In a " + fmt2(r.roomWft) + " × " + fmt2(r.roomLft) + " ft room it fits " + (r.fit === "comfortable" ? "comfortably" : "but tight") + ": " + fmt2(r.side) + " inches of walking space each side and " + fmt2(r.foot) + " inches at the foot. Smallest comfortable room: " + fmt2(r.minRoomWft) + " × " + fmt2(r.minRoomLft) + " ft.";
+    return (r.steppedDown ? "A " + r.baseName + " is too big for this room, so the finder stepped down to a " + r.sizeName + ". " : "") + roomSentence;
+  };
+  const compareText = r => {
+    const idx = MS_LADDER.indexOf(r.sizeKey);
+    const up = idx < MS_LADDER.length - 1 ? msSizeByKey(MS_LADDER[idx + 1]) : null;
+    const down = idx > 1 ? msSizeByKey(MS_LADDER[idx - 1]) : null;
+    const altParts = [];
+    if (up) altParts.push("One size up: " + up.name + ", " + r.lengthIn + " × " + up.width + " inches (" + fmt2(msRound1(up.width / r.sleepers)) + " inches each)");
+    if (down) altParts.push("One size down: " + down.name + ", " + r.lengthIn + " × " + down.width + " inches (" + fmt2(msRound1(down.width / r.sleepers)) + " inches each)");
+    return altParts.join(". ") + (altParts.length ? "." : "");
+  };
+
+  const presetSummary = pr => {
+    const r = msCompute(pr.sleepers, pr.feet, pr.inches, pr.extra, pr.roomW, pr.roomL);
+    return `${pr.sleepers} ${pr.sleepers === 1 ? "sleeper" : "sleepers"} · tallest ${pr.feet} ft ${pr.inches} in · room ${pr.roomW} × ${pr.roomL} ft → ${r.sizeName} ${r.lengthIn} × ${r.widthIn} in · ${fmt2(r.perSleeper)} in each · ${fitWord(r)}`;
+  };
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = msCompute(st.sleepers, st.feet, st.inches, st.extra, st.roomW, st.roomL);
+    return `${st.sleepers} ${st.sleepers === 1 ? "sleeper" : "sleepers"} · tallest ${st.feet} ft ${st.inches} in · room ${st.roomW} × ${st.roomL} ft → ${r.sizeName} ${r.lengthIn} × ${r.widthIn} in · ${fmt2(r.perSleeper)} in each · ${fitWord(r)}`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const sizeRowsHtml = MS_SIZES.map(size => {
+    const length = 78;
+    return `
+      <tr${size.key === "queen" ? ' class="highlight-row"' : ""}>
+        <th scope="row">${e(size.name)}</th>
+        <td>${length} × ${size.width} inches</td>
+        <td>${msCm(length)} × ${msCm(size.width)} cm</td>
+        <td>${fmt2(length * size.width / 144)} sq ft</td>
+        <td>${e(size.bestFor)}</td>
+      </tr>`;
+  }).join("");
+
+  const defaultPresetLabel = p.presets.find(pr => pr.id === p.defaultPreset).label;
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}${hraCss}${ciCss}${epfCss}${npsCss}${ssyCss}${nscCss}${scssCss}${misCss}${kvpCss}${plCss}${tdCss}${clCss}${apyCss}${swpCss}${wmCss}${msCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free mattress size finder</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Find your size →
+              </a>
+              <a href="#method" class="calc-link">How the size is worked out ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${sample.sizeName} ${sample.lengthIn} × ${sample.widthIn} inches recommended</strong>
+                <small>For a couple, tallest 5 ft 8 in</small>
+              </div>
+              <div>
+                <strong>${fmt2(sample.perSleeper)} inches each</strong>
+                <small>Width each sleeper gets</small>
+              </div>
+              <div>
+                <strong>Fits comfortably</strong>
+                <small>In a 10 × 12 ft room</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>Guidance, not a guarantee.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <div class="tool-title">
+              <h2 id="tool-heading">Find your mattress size</h2>
+              <span class="calc-pill" id="ms-pill">${e(defaultPresetLabel)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="ms-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-sleepers">
+                People sleeping on the mattress
+                <span>How many people will sleep on it — 2 is the example. From 1 to 3</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-sleepers"
+                type="number"
+                value="${p.sampleSleepers}"
+                min="1"
+                max="3"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="input-sleepers-error"
+              >
+              <p class="calc-error" id="input-sleepers-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-feet">
+                Tallest sleeper's height
+                <span>Feet and inches — the length follows the tallest person in the bed. The example is 5 ft 8 in</span>
+              </label>
+
+              <div class="field-row">
+                <div>
+                  <input
+                    class="number-input"
+                    id="input-feet"
+                    type="number"
+                    value="${p.sampleFeet}"
+                    min="4"
+                    max="7"
+                    step="1"
+                    inputmode="numeric"
+                    aria-describedby="input-feet-error"
+                    aria-label="Tallest sleeper's height, feet"
+                  >
+                  <p class="calc-error" id="input-feet-error" aria-live="polite"></p>
+                </div>
+                <div>
+                  <input
+                    class="number-input"
+                    id="input-inches"
+                    type="number"
+                    value="${p.sampleInches}"
+                    min="0"
+                    max="11"
+                    step="1"
+                    inputmode="numeric"
+                    aria-describedby="input-inches-error"
+                    aria-label="Tallest sleeper's height, inches"
+                  >
+                  <p class="calc-error" id="input-inches-error" aria-live="polite"></p>
+                </div>
+              </div>
+
+              <label class="check-field" for="input-extra">
+                <input type="checkbox" id="input-extra"${p.sampleExtra ? " checked" : ""}>
+                <span>We want extra room (a small child or pet shares the bed, or we just like space) — a couple steps up to a King</span>
+              </label>
+
+              <label class="field-label" for="input-room-w">
+                Bedroom size (feet)
+                <span>Width and length of the room the bed goes in — the example is 10 × 12 ft. Width from 6 to 20 ft, length from 6 to 25 ft</span>
+              </label>
+
+              <div class="field-row">
+                <div>
+                  <input
+                    class="number-input"
+                    id="input-room-w"
+                    type="number"
+                    value="${p.sampleRoomW}"
+                    min="6"
+                    max="20"
+                    step="0.5"
+                    inputmode="decimal"
+                    aria-describedby="input-room-w-error"
+                    aria-label="Bedroom width in feet"
+                  >
+                  <p class="calc-error" id="input-room-w-error" aria-live="polite"></p>
+                </div>
+                <div>
+                  <input
+                    class="number-input"
+                    id="input-room-l"
+                    type="number"
+                    value="${p.sampleRoomL}"
+                    min="6"
+                    max="25"
+                    step="0.5"
+                    inputmode="decimal"
+                    aria-describedby="input-room-l-error"
+                    aria-label="Bedroom length in feet"
+                  >
+                  <p class="calc-error" id="input-room-l-error" aria-live="polite"></p>
+                </div>
+              </div>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-sleepers">${headline(sample)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${fmt2(sample.perSleeper)} inches each</strong>
+                  <small id="box1-label">WIDTH EACH SLEEPER</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${fmt2(sample.side)} inches each side</strong>
+                  <small id="box2-label">WALKING SPACE</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${fmt2(sample.minRoomWft)} × ${fmt2(sample.minRoomLft)} ft</strong>
+                  <small id="box3-label">SMALLEST COMFORTABLE ROOM</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">${glanceText(sample)}</span>
+              </div>
+
+              <p class="working" id="working">
+                ${workingText(sample)}
+              </p>
+              <p class="working" id="working-2">${working2Text(sample)}</p>
+              <p class="working" id="compare">${compareText(sample)}</p>
+              <p class="working" id="working-note">Guidance, not a guarantee · sizes vary by about half an inch between brands · the 84-inch length is stocked by fewer brands · measure your frame before ordering</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The sizes are guidance from the published Indian
+                size charts — brands vary by about half an inch,
+                and the 84-inch length is stocked by fewer
+                brands. Measure the inside of your bed frame
+                before ordering.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="capacity">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Mattress sizes at a glance</p>
+          <h2>What size mattress for your household?</h2>
+          <p id="capacity-note">The six standard Indian sizes at the common 78-inch length, with the floor area each one takes up — the highlighted row is the example household's Queen. Shorter sleepers take the same widths at 72 or 75 inches; taller sleepers at 84.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="capacity-note">
+            <caption>Standard Indian mattress sizes at the common 78-inch length, with dimensions in inches and cm, floor area, and who each size suits best.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Size</th>
+                <th scope="col">Dimensions (inches)</th>
+                <th scope="col">Dimensions (cm)</th>
+                <th scope="col">Floor area</th>
+                <th scope="col">Best for</th>
+              </tr>
+            </thead>
+            <tbody id="capacity-body">
+              ${sizeRowsHtml}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#capacity">Size chart</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / LENGTH FOLLOWS THE TALLEST SLEEPER</span>
+            <h3>The mattress is 8 inches longer than you</h3>
+            <p>A 5 ft 8 in sleeper needs a 78-inch mattress; a 6-footer needs 84. The mattress should be about 8 inches longer than the tallest person in the bed.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / WIDTH FOLLOWS THE SLEEPERS</span>
+            <h3>30 inches each is the comfort line</h3>
+            <p>One sleeper gets a Single, two get a Queen at 30 inches each, three get a King at 24 — tight, and the page says so. A couple who want room get a King at 36 inches each.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / THE ROOM GETS A VOTE</span>
+            <h3>A size that does not fit the room is the wrong size</h3>
+            <p>A Queen needs a 9 × 8.5 ft room for comfortable walking space; a King in a 10 × 10 ft room fits with exactly 24 inches each side and no room for a wardrobe.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your household to your mattress size</h2>
+          <p>
+            Enter how many people will sleep on the mattress,
+            the tallest sleeper's height and your bedroom size,
+            then read the size you need, the width each sleeper
+            gets, and whether it fits your room comfortably.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How the size and the room fit are worked out</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The mattress size rule</small>
+          Length = tallest sleeper + 8 inches, rounded up to 72 / 75 / 78 / 84 · Width by sleepers: 1 → Single 36 in, 2 → Queen 60 in (King 72 in for extra room), 3 → King 72 in · Walking space each side = (room width − mattress width) ÷ 2 · Space at the foot = room length − mattress length
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. Couple, tallest 5 ft 8 in, room 10 × 12 ft
+            <strong>${sample.sizeName} · ${sample.lengthIn} × ${sample.widthIn} inches · ${fmt2(sample.perSleeper)} inches each · fits comfortably</strong>
+            <span>5 ft 8 in is 68 inches; plus 8 is 76, rounded up to the 78-inch length. Two sleepers get a Queen, 60 inches wide — 30 inches each, exactly the comfort line. In a 10 × 12 ft room the walking space is (120 − 60) ÷ 2 = 30 inches each side and 144 − 78 = 66 inches at the foot, so it fits comfortably. Smallest comfortable room: 9 × 8.5 ft.</span>
+          </div>
+
+          <div class="math-step">
+            2. Single sleeper, 6 ft, room 9 × 11 ft
+            <strong>${tall.sizeName} · ${tall.lengthIn} × ${tall.widthIn} inches · ${fmt2(tall.perSleeper)} inches · fits comfortably</strong>
+            <span>6 ft is 72 inches; plus 8 is 80, rounded up to the 84-inch length — the longest standard size, stocked by fewer brands. One sleeper gets a Single, 36 inches wide. In a 9 × 11 ft room the walking space is (108 − 36) ÷ 2 = 36 inches each side and 132 − 84 = 48 inches at the foot, so it fits comfortably.</span>
+          </div>
+
+          <div class="math-step">
+            3. Two adults + child, tallest 5 ft 6 in, room 12 × 14 ft
+            <strong>${family.sizeName} · ${family.lengthIn} × ${family.widthIn} inches · ${fmt2(family.perSleeper)} inches each · fits comfortably</strong>
+            <span>5 ft 6 in is 66 inches; plus 8 is 74, rounded up to the 75-inch length. Three sleepers get a King, 72 inches wide — 24 inches each, below the 30-inch comfort line. In a 12 × 14 ft room the walking space is (144 − 72) ÷ 2 = 36 inches each side and 168 − 75 = 93 inches at the foot, so it fits comfortably.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five households, five mattresses</h2>
+          <p>
+            One example for each everyday case, from a couple in
+            a 10 × 12 ft room to a 6-footer who needs the
+            84-inch length. Select any example to load it into
+            the calculator and check the working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${story.sleepers} ${story.sleepers === 1 ? "SLEEPER" : "SLEEPERS"} · TALLEST ${story.feet} FT ${story.inches} IN · ROOM ${story.roomW} × ${story.roomL} FT</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-sleepers="${story.sleepers}" data-feet="${story.feet}" data-inches="${story.inches}" data-extra="${story.extra}" data-room-w="${story.roomW}" data-room-l="${story.roomL}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>Mattress size rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>The length rule, the width each sleeper gets, the walking space a bed needs, the smallest comfortable room, the common length, and why the frame — not the label — decides the size.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to pick the wrong mattress size</h2>
+          <p>
+            The size looks like the whole decision, but the
+            tallest sleeper, the frame and the room catch people
+            out.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / BUYING BY THE LABEL, NOT THE FRAME</span>
+            <h3>Measure the inside of the frame</h3>
+            <p>A mattress is made about half an inch to an inch smaller than the frame's inner rails. Measure the inside of the frame, length first — a 72-inch mattress on a 78-inch frame leaves a 6-inch gap at the foot.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / FORGETTING THE TALLEST SLEEPER</span>
+            <h3>The length follows the tallest person</h3>
+            <p>A 5 ft 11 in sleeper on a 72-inch mattress has their feet at the very end. The length follows the tallest person in the bed — plus 8 inches, rounded up to the next standard length.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / SQUEEZING A KING INTO A SMALL ROOM</span>
+            <h3>Check the room before the size</h3>
+            <p>A King in a 10 × 10 ft room leaves exactly 24 inches each side and no space for a wardrobe or side tables. Check the room before the size, not after — the finder steps down a width when the room says so.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / TWO ADULTS ON A DOUBLE</span>
+            <h3>24 inches each is below the comfort line</h3>
+            <p>A Double shared by two gives 24 inches each — below the 30-inch comfort line. Fine for a guest room for a night or two, not for every night. Two adults who sleep together every night want a Queen at least.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>Mattress size FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page recommends a mattress size from the
+            sleepers and the tallest sleeper's height, then
+            checks it against your bedroom: the length is the
+            tallest sleeper's height plus 8 inches, rounded up
+            to the next standard Indian length (72, 75, 78 or
+            84 inches); the width follows the sleepers —
+            Single 36 inches for one, Queen 60 for two (King
+            72 for two who want extra room), King 72 for
+            three; the room is checked with the bed centred,
+            the walking space each side being (room width −
+            mattress width) ÷ 2 and the space at the foot
+            being room length − mattress length, comfortable
+            at 24 inches and tight at 6. If the size is too
+            big for the room, the finder steps down a width
+            and says so. Nothing you enter leaves your
+            browser: every calculation runs entirely on this
+            page.
+          </p>
+          <p>
+            Figures checked 12 November 2026: the length rule
+            comes from
+            <a href="https://www.sundayrest.com/blogs/sunday/mattress-sizes-and-bed-dimensions-guide" rel="nofollow noopener" target="_blank">Sunday Rest</a>
+            — the mattress should be about 8 inches longer
+            than you are tall, with 5 ft 4 in → 72 inches,
+            and 78 inches the length of most beds today; the
+            width rule from
+            <a href="https://neobest.in/blogs/news/bed-size-vs-mattress-size-whats-the-difference" rel="nofollow noopener" target="_blank">Neobest</a>
+            — personal width is the mattress width divided by
+            the sleepers, 30 inches is the minimum comfortable
+            width for an adult, and the room should allow
+            24–30 inches of walking space on at least two
+            sides, giving a Queen a 108–120 inch (9–10 ft)
+            room width; the room figures from
+            <a href="https://www.sleepyhug.in/blogs/mattress-size-chart" rel="nofollow noopener" target="_blank">SleepyHug</a>
+            — Queen 10 × 10 ft, King 12 × 12 ft as practical
+            rooms; the size chart from
+            <a href="https://www.duroflexworld.com/pages/mattress-size-guide" rel="nofollow noopener" target="_blank">Duroflex</a>
+            and
+            <a href="https://kurlon.com/blogs/in-mattresses/mattress-dimensions-in-india-a-simple-guide-to-choosing-the-right-mattress-for-your-bed-size" rel="nofollow noopener" target="_blank">Kurlon</a>
+            — Single 36 × 72, Double 48 × 72, Queen 60 × 78,
+            King 72 × 78 inches, lengths 72/75/78 — and
+            <a href="https://www.royaloakindia.com/mattress-size-guide" rel="nofollow noopener" target="_blank">Royaloak</a>
+            agrees. The differences are stated honestly: this
+            page's smallest comfortable room for a Queen is
+            9 × 8.5 ft against SleepyHug's 10 × 10 ft —
+            theirs is a practical room with furniture, this
+            page's is the walking-space minimum — and the
+            84-inch length is stocked by fewer brands, so
+            tall sleepers should ask before ordering. For the
+            brands and models behind the sizes, see the
+            <a href="/best-mattress-brands-in-india/">mattress brands guide</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another tool before you buy</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your home.
           </p>
         </div>
 

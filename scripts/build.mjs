@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, renderUpscAgeCalculatorBody, renderIbpsAgeCalculatorBody, renderRrbAgeCalculatorBody, renderEmiCalculatorBody, renderSipCalculatorBody, renderBmiCalculatorBody, renderPctCalculatorBody, renderGstCalculatorBody, renderPpfCalculatorBody, renderFdCalculatorBody, renderTaxCalculatorBody, renderRdCalculatorBody, renderHlCalculatorBody, renderGrCalculatorBody, renderHraCalculatorBody, renderCiCalculatorBody, renderEpfCalculatorBody, renderNpsCalculatorBody, renderSsyCalculatorBody, renderNscCalculatorBody, renderScssCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient, upscClient, ibpsClient, rrbClient, emiClient, sipClient, bmiClient, pctClient, gstClient, ppfClient, fdClient, taxClient, rdClient, hlClient, grClient, hraClient, ciClient, epfClient, npsClient, ssyClient, nscClient, scssClient } from "./calculators.mjs";
+import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, renderUpscAgeCalculatorBody, renderIbpsAgeCalculatorBody, renderRrbAgeCalculatorBody, renderEmiCalculatorBody, renderSipCalculatorBody, renderBmiCalculatorBody, renderPctCalculatorBody, renderGstCalculatorBody, renderPpfCalculatorBody, renderFdCalculatorBody, renderTaxCalculatorBody, renderRdCalculatorBody, renderHlCalculatorBody, renderGrCalculatorBody, renderHraCalculatorBody, renderCiCalculatorBody, renderEpfCalculatorBody, renderNpsCalculatorBody, renderSsyCalculatorBody, renderNscCalculatorBody, renderScssCalculatorBody, renderMisCalculatorBody, renderKvpCalculatorBody, renderPlCalculatorBody, renderTdCalculatorBody, renderClCalculatorBody, renderApyCalculatorBody, renderSwpCalculatorBody, renderWmCalculatorBody, renderMsCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient, upscClient, ibpsClient, rrbClient, emiClient, sipClient, bmiClient, pctClient, gstClient, ppfClient, fdClient, taxClient, rdClient, hlClient, grClient, hraClient, ciClient, epfClient, npsClient, ssyClient, nscClient, scssClient, misClient, kvpClient, plClient, tdClient, clClient, apyClient, swpClient, wmClient, msClient } from "./calculators.mjs";
 import {
   polls as bbPolls,
   contestants as bbContestants,
@@ -440,8 +440,9 @@ function renderHeader(currentPath = "") {
   // soon as its own pack adds it to the registry — no header edit needed.
   const toolMenu = [
     ["Exam & Age", [["ssc-age-calculator", "SSC Age"], ["upsc-age-calculator", "UPSC Age"], ["ibps-age-calculator", "IBPS Age"], ["rrb-age-calculator", "RRB Age"], ["age-calculator", "Age Calculator"]]],
-    ["Money & Tax", [["emi-calculator", "EMI"], ["home-loan-emi-calculator", "Home Loan EMI"], ["sip-calculator", "SIP"], ["rd-calculator", "RD"], ["fd-calculator", "FD"], ["ppf-calculator", "PPF"], ["epf-calculator", "EPF"], ["nps-calculator", "NPS"], ["ssy-calculator", "SSY"], ["nsc-calculator", "NSC"], ["scss-calculator", "SCSS"], ["gratuity-calculator", "Gratuity"], ["hra-calculator", "HRA"], ["income-tax-calculator", "Income Tax"], ["gst-calculator", "GST"], ["compound-interest-calculator", "Compound Interest"], ["percentage-calculator", "Percentage"]]],
+    ["Money & Tax", [["emi-calculator", "EMI"], ["home-loan-emi-calculator", "Home Loan EMI"], ["sip-calculator", "SIP"], ["rd-calculator", "RD"], ["fd-calculator", "FD"], ["ppf-calculator", "PPF"], ["epf-calculator", "EPF"], ["nps-calculator", "NPS"], ["ssy-calculator", "SSY"], ["nsc-calculator", "NSC"], ["scss-calculator", "SCSS"], ["post-office-mis-calculator", "MIS"], ["kvp-calculator", "KVP"], ["personal-loan-emi-calculator", "Personal Loan EMI"], ["post-office-time-deposit-calculator", "Post Office TD"], ["car-loan-emi-calculator", "Car Loan EMI"], ["apy-calculator", "APY"], ["swp-calculator", "SWP"], ["gratuity-calculator", "Gratuity"], ["hra-calculator", "HRA"], ["income-tax-calculator", "Income Tax"], ["gst-calculator", "GST"], ["compound-interest-calculator", "Compound Interest"], ["percentage-calculator", "Percentage"]]],
     ["Health & Study", [["bmi-calculator", "BMI"], ["cgpa-to-percentage-calculator", "CGPA to Percentage"]]],
+    ["Home & Living", [["washing-machine-capacity-calculator", "Washing Machine Capacity"], ["mattress-size-finder", "Mattress Size Finder"]]],
   ];
   const liveToolSlugs = new Set(calculatorPages.map((page) => page.slug));
   const toolGroups = toolMenu
@@ -543,6 +544,15 @@ function renderFooter() {
         <li><a href="/ssy-calculator/">SSY Calculator</a></li>
         <li><a href="/nsc-calculator/">NSC Calculator</a></li>
         <li><a href="/scss-calculator/">SCSS Calculator</a></li>
+        <li><a href="/post-office-mis-calculator/">Post Office MIS Calculator</a></li>
+        <li><a href="/kvp-calculator/">KVP Calculator</a></li>
+        <li><a href="/personal-loan-emi-calculator/">Personal Loan EMI Calculator</a></li>
+        <li><a href="/post-office-time-deposit-calculator/">Post Office Time Deposit Calculator</a></li>
+        <li><a href="/car-loan-emi-calculator/">Car Loan EMI Calculator</a></li>
+        <li><a href="/apy-calculator/">APY Calculator</a></li>
+        <li><a href="/swp-calculator/">SWP Calculator</a></li>
+        <li><a href="/washing-machine-capacity-calculator/">Washing Machine Capacity Calculator</a></li>
+        <li><a href="/mattress-size-finder/">Mattress Size Finder</a></li>
         <li><a href="/search/">Search All Guides</a></li>
         <li><a href="/assets/bb20-new/image-credits.html">Image Credits</a></li>
         <li><a href="mailto:visitbest10@gmail.com">visitbest10@gmail.com</a></li>
@@ -1015,6 +1025,24 @@ for (let i = 0; i < calculatorPages.length; i++) {
                 ? renderNscCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, nscClient.toString())
               : item.kind === "scss"
                 ? renderScssCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, scssClient.toString())
+              : item.kind === "mis"
+                ? renderMisCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, misClient.toString())
+              : item.kind === "kvp"
+                ? renderKvpCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, kvpClient.toString())
+              : item.kind === "pl"
+                ? renderPlCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, plClient.toString())
+              : item.kind === "td"
+                ? renderTdCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, tdClient.toString())
+              : item.kind === "cl"
+                ? renderClCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, clClient.toString())
+              : item.kind === "apy"
+                ? renderApyCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, apyClient.toString())
+              : item.kind === "swp"
+                ? renderSwpCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, swpClient.toString())
+              : item.kind === "wm"
+                ? renderWmCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, wmClient.toString())
+              : item.kind === "ms"
+                ? renderMsCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, msClient.toString())
               : renderCalculatorBody(item, calculatorPages[1 - i], calculatorCss, calculatorClient.toString());
   const html = renderPage({
     title: `${item.title} - VisitBest`,
