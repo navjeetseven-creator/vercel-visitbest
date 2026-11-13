@@ -1926,6 +1926,175 @@ export const pages = [
       ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
     ]
   },
+
+  {
+    key: "nsc",
+    kind: "nsc",
+    slug: "nsc-calculator",
+    title: "NSC Calculator",
+    meta: "Work out your National Savings Certificate maturity: a lump sum from ₹1,000 at the notified 7.7% rate, 5 years, interest compounded annually and paid at maturity, with a year-by-year table. Free, instant, and calculated in your browser.",
+    lead: "Enter your deposit and the interest rate — and get the maturity value at 5 years, what you invested, the interest earned and which years' interest counts towards the 80C limit.",
+    presets: [
+      { id: "nsc100k", label: "₹1,00,000 at 7.7%", deposit: 100000, rate: 7.7 },
+      { id: "nsc50k", label: "₹50,000 at 7.7%", deposit: 50000, rate: 7.7 },
+      { id: "nsc150k", label: "₹1,50,000 at 7.7%", deposit: 150000, rate: 7.7 },
+      { id: "nsc10k", label: "₹10,000 at 7.7%", deposit: 10000, rate: 7.7 },
+      { id: "nscMin", label: "₹1,000 at 7.7%, the minimum", deposit: 1000, rate: 7.7 }
+    ],
+    defaultPreset: "nsc100k",
+    sampleDeposit: 100000,
+    sampleRate: 7.7,
+    notice: "This tool is an estimate for planning: the NSC rate is notified every quarter and can change for new certificates, so the projection holds today's 7.7% steady for 5 years. It is not financial, tax or legal advice. Check the rules table below before you rely on it.",
+    overviewTitle: "What does an NSC calculator do?",
+    overview: "The National Savings Certificate (VIII Issue) is a 5-year government savings certificate sold at post offices. You deposit a lump sum — at least ₹1,000, in multiples of ₹100, with no maximum — and the balance earns the notified rate, 7.7% a year for October to December 2026, compounded annually. You receive nothing along the way: the interest is added each year and paid with your deposit at maturity. On ₹1,00,000 that builds ₹1,44,903 from ₹1,00,000 paid in. This calculator works out the maturity value from your own figures and lists the interest year by year.",
+    inputNote: "Enter your deposit first — the rate is already filled in with the current 7.7%. Your deposit is a single lump sum; the minimum is ₹1,000, in multiples of ₹100, with no maximum.",
+    modelNote: "Each year the opening balance earns one year of interest at the rate you enter, rounded to the nearest rupee, and the interest is added to the balance. The maturity value is the deposit × (1 + rate ÷ 100)^5, rounded to the nearest rupee, and the fifth year's interest is the difference between that maturity value and the year-5 opening balance — so the table always ends exactly on the formula figure. The rate is the notified rate for October to December 2026, 7.7%, and the projection holds it steady for all 5 years — in reality it is reviewed every quarter, but the rate on the day you buy is fixed for your certificate.",
+    steps: [
+      ["Enter your deposit", "From ₹1,000, in multiples of ₹100, with no maximum — the example uses ₹1,00,000. It is a single lump sum, paid once when you buy the certificate."],
+      ["Set the interest rate", "7.7% is the rate notified for October to December 2026. It has been 7.7% since 1 April 2023 and is reviewed every quarter — the rate on the day you buy is fixed for your certificate for all 5 years."],
+      ["Read the maturity value and the split", "The answer appears as you type — the maturity value at 5 years, what you invested, the total interest, and how much of that interest counts as reinvested in years 1 to 4 against how much arrives only in the last year."],
+      ["Check the year-by-year table", "Opening balance, interest and closing balance for each of the 5 years. The first four years' interest is treated as reinvested; the fifth year's interest is paid to you at maturity."]
+    ],
+    stories: [
+      {
+        deposit: 100000, rate: 7.7, preset: "nsc100k",
+        title: "₹1,00,000 at 7.7%: ₹1,44,903",
+        body: "₹1,00,000 for 5 years at 7.7%. You invest ₹1,00,000 and interest adds ₹44,903. Of that, ₹34,543 accrues in years 1 to 4 and is treated as reinvested, and the last year's ₹10,360 is paid to you at maturity."
+      },
+      {
+        deposit: 50000, rate: 7.7, preset: "nsc50k",
+        title: "₹50,000 at 7.7%: ₹72,452",
+        body: "₹50,000 for 5 years at 7.7%. You invest ₹50,000 and interest adds ₹22,452 — half the deposit, half the interest. The first four years' interest, ₹17,272, counts as reinvested under the old regime."
+      },
+      {
+        deposit: 150000, rate: 7.7, preset: "nsc150k",
+        title: "₹1,50,000 at 7.7%: ₹2,17,355",
+        body: "₹1,50,000 for 5 years at 7.7%. You invest ₹1,50,000 and interest adds ₹67,355. The deposit uses the whole ₹1.5 lakh 80C limit in the year you buy, and the reinvested interest of ₹51,815 can count in the following years if you have room."
+      },
+      {
+        deposit: 10000, rate: 7.7, preset: "nsc10k",
+        title: "₹10,000 at 7.7%: ₹14,490",
+        body: "₹10,000 for 5 years at 7.7%. You invest ₹10,000 and interest adds ₹4,490. The first four years' interest, ₹3,454, counts as reinvested, and the last year's ₹1,036 is paid at maturity."
+      },
+      {
+        deposit: 1000, rate: 7.7, preset: "nscMin",
+        title: "₹1,000 at 7.7%, the minimum: ₹1,449",
+        body: "The smallest deposit the scheme allows — ₹1,000 for 5 years at 7.7%. You invest ₹1,000 and the certificate matures at ₹1,449. The scheme fixes ₹1,449.03 for every ₹1,000 at this rate."
+      }
+    ],
+    rateRows: [
+      { rate: "7.7% a year (Oct–Dec 2026)", applies: "Current notified rate", example: "The rate for 1 October to 31 December 2026, notified by the Ministry of Finance on 30 September 2026. It has been 7.7% since 1 April 2023 and is reviewed every quarter — the next review is due around 31 December 2026." },
+      { rate: "₹1,000 minimum, multiples of ₹100", applies: "Deposit limits", example: "At least ₹1,000 to buy a certificate, in multiples of ₹100, with no maximum and any number of certificates. Only ₹1.5 lakh a year can count for the 80C deduction under the old regime, and that limit is shared with EPF, PPF, life insurance premiums and the rest." },
+      { rate: "5 years, fixed", applies: "Tenure", example: "The certificate matures exactly 5 years from the date of deposit. It cannot be extended, and the rate on the day you buy is fixed for all 5 years, whatever happens to the rate for new certificates." },
+      { rate: "Compounded annually, paid at maturity", applies: "How interest works", example: "Interest is added to the certificate each year and earns interest itself, but you receive nothing along the way — the whole amount, deposit plus five years of interest, arrives as one payment at maturity." },
+      { rate: "Rate locked at purchase", applies: "Rate lock", example: "A quarterly review changes the rate only for certificates bought after it takes effect. A certificate you already hold keeps its original rate for the full five years." },
+      { rate: "Years 1–4 interest deemed reinvested", applies: "80C (old regime)", example: "The scheme treats the interest of each of the first four years as reinvested, so under the old regime it can count towards the ₹1.5 lakh 80C limit for that year, if you have room. On ₹1,00,000 that is ₹7,700, ₹8,293, ₹8,931 and ₹9,619 — ₹34,543 in all." },
+      { rate: "Last year's interest not reinvested", applies: "Tax", example: "The fifth year's interest — ₹10,360 on ₹1,00,000 — is paid out at maturity, not reinvested, so it cannot count towards 80C. All NSC interest is taxable at your slab rate, in the year it accrues, in both tax regimes." },
+      { rate: "Premature encashment not allowed", applies: "Early exit", example: "You cannot cash in an NSC early simply because you need the money. It can be closed before maturity only on the death of a holder, on forfeiture by a pledgee who is a gazetted officer, or by court order." },
+      { rate: "Reviewed every quarter", applies: "Rate reviews", example: "Small savings rates are set by the Ministry of Finance every quarter. The rate for October to December 2026 was kept unchanged in the office memorandum of 30 September 2026; the next review is due around 31 December 2026 for January to March 2027." }
+    ],
+    rateTableTitle: "NSC rules at a glance",
+    rateTableNote: "The current rate, the deposit limits, the fixed 5-year tenure, how the interest is paid, the rate lock, the 80C treatment of the reinvested interest, the tax on the interest and the early-exit rule. Every rule here comes from the Department of Posts or the Ministry of Finance — never from a blog or a competitor.",
+    rateTableConclusion: "The rules are fixed — a 5-year term, interest paid only at maturity and the rate locked at purchase. The only judgement call is the rate you assume, and this page states it plainly: 7.7% is today's notified rate, not a promise for the next certificate you buy.",
+    calloutTitle: "Why one calculator shows ₹1,45,060 — and why it is wrong",
+    calloutNote: "On ₹1,00,000 at 7.7%, this calculator gives ₹1,44,903 and fincado.com's worked example gives ₹1,45,060 — ₹157 more. The difference is the growth factor: fincado's example uses 1.4506, but (1.077)^5 is 1.4490338, so ₹1,00,000 × 1.4490338 = ₹1,44,903.38, which rounds to ₹1,44,903. Fincado's own calculator widget shows ₹1,44,903, so its worked example contradicts its own tool. This page uses the exact formula, and the scheme itself fixes ₹1,449.03 for every ₹1,000 at 7.7%.",
+    faq: [
+      ["What is the National Savings Certificate (NSC)?", "The National Savings Certificate (VIII Issue) is a 5-year government savings certificate sold at post offices. You deposit a lump sum — at least ₹1,000, in multiples of ₹100, with no maximum — and the certificate earns the notified rate, compounded annually. You receive nothing along the way: the interest is added each year and paid with your deposit at maturity, 5 years after you buy. You can pledge the certificate to a bank as security for a loan."],
+      ["What is the current NSC interest rate?", "7.7% a year, compounded annually and paid at maturity, for 1 October to 31 December 2026 (the third quarter of FY 2026-27). The Ministry of Finance kept small-savings rates unchanged in its office memorandum of 30 September 2026, and NSC has paid 7.7% since 1 April 2023. The rate is reviewed every quarter, so the next review is due around 31 December 2026 — and the rate on the day you buy is fixed for your certificate for all 5 years."],
+      ["How is NSC maturity calculated?", "Maturity = deposit × (1 + rate ÷ 100)^5. At 7.7%, ₹1,00,000 × 1.077^5 = ₹1,44,903.38, which rounds to ₹1,44,903. Each year's interest is worked out on the opening balance and rounded to the nearest rupee — ₹7,700 in year 1, ₹8,293 in year 2, ₹8,931 in year 3, ₹9,619 in year 4 and ₹10,360 in year 5 — and the five years of interest add to ₹44,903."],
+      ["What is the maturity value of ₹1,00,000 in NSC after 5 years?", "₹1,44,903 at 7.7% — your deposit plus ₹44,903 of interest. The scheme fixes ₹1,449.03 for every ₹1,000, so ₹1,000 becomes ₹1,449, ₹10,000 becomes ₹14,490 and ₹50,000 becomes ₹72,452. At 8% instead of 7.7%, ₹1,00,000 would mature at ₹1,46,933 — ₹2,030 more."],
+      ["What is the minimum deposit for NSC?", "₹1,000, in multiples of ₹100, with no maximum and any number of certificates. An adult, a guardian for a minor or a person of unsound mind, a minor aged 10 or over, or up to three adults jointly can buy. Only ₹1.5 lakh a year can count for the 80C deduction under the old regime, and that limit is shared with EPF, PPF, life insurance premiums and the rest."],
+      ["Is NSC interest taxable?", "Yes, at your slab rate, in the year it accrues, in both tax regimes — even though the cash arrives only at maturity. Under the old regime, the deposit and the interest of years 1 to 4 can count towards the ₹1.5 lakh limit, which can offset the tax on that interest: on ₹1,00,000 that is the ₹1,00,000 deposit plus ₹34,543 of reinvested interest, ₹1,34,543 claimed over the years, if you have room. The fifth year's ₹10,360 cannot count. The new regime gives no such deduction. The Income-tax Act, 2025, in force from 1 April 2026, renumbered the Act's provisions — the old-regime deduction this page calls Section 80C is carried in Schedule XV of the new Act, and the ₹1.5 lakh limit is unchanged."],
+      ["Can I withdraw from NSC before 5 years?", "Only in limited cases: the death of a holder, forfeiture by a pledgee who is a gazetted officer, or a court order. You cannot close it early just because you need the money. What you then receive depends on how long you held it — under 1 year you get the deposit back with no interest, and from 3 years the payout rises from ₹1,21,477 to ₹1,33,887 on ₹1,00,000 as you approach 5 years."],
+      ["Is the NSC rate fixed for 5 years?", "Yes — for the certificate you already hold. The rate on the day you buy applies for all 5 years, whatever happens to the rate for new certificates. A quarterly review changes the rate only for certificates bought after it takes effect, so a certificate bought after a cut earns the lower rate, and one bought before a rise keeps the higher one."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
+
+  {
+    key: "scss",
+    kind: "scss",
+    slug: "scss-calculator",
+    title: "SCSS Calculator",
+    meta: "Work out your Senior Citizens Savings Scheme quarterly income: a lump sum from ₹1,000 to ₹30 lakh at the notified 8.2% rate, 5 years or 5 plus a 3-year extension, simple interest paid every quarter, with a year-by-year table. Free, instant, and calculated in your browser.",
+    lead: "Enter your deposit, the interest rate and the tenure — and get the payout every quarter, the income for the year, the monthly average and the total interest, with your deposit back in full at maturity.",
+    presets: [
+      { id: "scss15L", label: "₹15,00,000 at 8.2%", deposit: 1500000, rate: 8.2 },
+      { id: "scss30L", label: "₹30,00,000 at 8.2%, the maximum", deposit: 3000000, rate: 8.2 },
+      { id: "scss10L", label: "₹10,00,000 at 8.2%", deposit: 1000000, rate: 8.2 },
+      { id: "scss5L", label: "₹5,00,000 at 8.2%", deposit: 500000, rate: 8.2 },
+      { id: "scssMin", label: "₹1,000 at 8.2%, the minimum", deposit: 1000, rate: 8.2 }
+    ],
+    defaultPreset: "scss15L",
+    sampleDeposit: 1500000,
+    sampleRate: 8.2,
+    sampleYears: 5,
+    notice: "This tool is an estimate for planning: the SCSS rate is notified every quarter and can change for new accounts, so the projection holds today's 8.2% steady for the term you pick. It is not financial, tax or legal advice. Check the rules table below before you rely on it.",
+    overviewTitle: "What does an SCSS calculator do?",
+    overview: "The Senior Citizens Savings Scheme is a 5-year government deposit for senior citizens, run through post offices and authorised banks. You deposit a lump sum — at least ₹1,000, in multiples of ₹1,000, up to ₹30 lakh per person across all your SCSS accounts — and the scheme pays 8.2% a year for October to December 2026 as simple interest, every quarter. The interest never compounds: it is paid out to your savings account, and your deposit comes back in full at maturity. On ₹15,00,000 that is ₹30,750 every quarter, ₹1,23,000 a year and ₹6,15,000 over 5 years. This calculator works out the payout from your own figures and lists the income year by year.",
+    inputNote: "Enter your deposit first — the rate is already filled in with the current 8.2%. Your deposit is a single lump sum; the minimum is ₹1,000, in multiples of ₹1,000, up to ₹30 lakh per person.",
+    modelNote: "Each quarter pays one quarter of a year's interest on your original deposit, rounded to the nearest rupee — quarterly payout = deposit × rate ÷ 100 ÷ 4. The annual income is the quarterly payout × 4, the monthly average is the annual income ÷ 12 rounded to the nearest rupee, and the total interest is the annual income × the number of years. Nothing compounds: the interest is paid out, never added to the principal, and the deposit is returned in full at maturity. The rate is the notified rate for October to December 2026, 8.2%, and the projection holds it steady for the term — in reality it is reviewed every quarter, but the rate on the day you open the account is fixed for 5 years.",
+    steps: [
+      ["Enter your deposit", "From ₹1,000, in multiples of ₹1,000, up to ₹30 lakh per person across all SCSS accounts — the example uses ₹15,00,000, the old ceiling and a common retirement corpus. It is a single lump sum, paid once when you open the account."],
+      ["Set the interest rate", "8.2% is the rate notified for October to December 2026. It has been 8.2% since 1 April 2023 and is reviewed every quarter — the rate on the day you open the account is fixed for 5 years."],
+      ["Pick the tenure", "5 years, or 8 years — 5 years plus one 3-year extension. An extended block earns the rate in force on the maturity date, which may be higher or lower than 8.2%, so treat the 8-year total as a projection at today's rate."],
+      ["Read the quarterly payout and the totals", "The answer appears as you type — the payout every quarter, the income for the year, the monthly average, the total interest over the term, how many quarterly payouts that is, and the year your deposit comes back."]
+    ],
+    stories: [
+      {
+        deposit: 1500000, rate: 8.2, preset: "scss15L",
+        title: "₹15,00,000 at 8.2%: ₹30,750 a quarter",
+        body: "₹15,00,000 for 5 years at 8.2%. You receive ₹30,750 every quarter — ₹1,23,000 a year, about ₹10,250 a month on average. Over 5 years the interest adds to ₹6,15,000, and your ₹15,00,000 comes back in full at maturity."
+      },
+      {
+        deposit: 3000000, rate: 8.2, preset: "scss30L",
+        title: "₹30,00,000 at 8.2%: ₹61,500 a quarter",
+        body: "The maximum deposit, ₹30,00,000 for 5 years at 8.2%. You receive ₹61,500 every quarter — ₹2,46,000 a year, about ₹20,500 a month on average. Over 5 years the interest adds to ₹12,30,000, and your ₹30,00,000 comes back in full at maturity."
+      },
+      {
+        deposit: 1000000, rate: 8.2, preset: "scss10L",
+        title: "₹10,00,000 at 8.2%: ₹20,500 a quarter",
+        body: "₹10,00,000 for 5 years at 8.2%. You receive ₹20,500 every quarter — ₹82,000 a year. Over 5 years the interest adds to ₹4,10,000, and your ₹10,00,000 comes back in full at maturity. The year's interest stays under the ₹1 lakh TDS threshold."
+      },
+      {
+        deposit: 500000, rate: 8.2, preset: "scss5L",
+        title: "₹5,00,000 at 8.2%: ₹10,250 a quarter",
+        body: "₹5,00,000 for 5 years at 8.2%. You receive ₹10,250 every quarter — ₹41,000 a year. Over 5 years the interest adds to ₹2,05,000, and your ₹5,00,000 comes back in full at maturity."
+      },
+      {
+        deposit: 1000, rate: 8.2, preset: "scssMin",
+        title: "₹1,000 at 8.2%, the minimum: ₹21 a quarter",
+        body: "The smallest deposit the scheme allows — ₹1,000 for 5 years at 8.2%. The exact quarterly interest is ₹20.50, which rounds to ₹21 a quarter, so the year works out at ₹84 and the 5-year total at ₹420. A reminder that the calculator rounds each quarterly payout to the nearest rupee."
+      }
+    ],
+    rateRows: [
+      { rate: "8.2% a year (Oct–Dec 2026)", applies: "Current notified rate", example: "The rate for 1 October to 31 December 2026, notified by the Ministry of Finance on 30 September 2026. It has been 8.2% since 1 April 2023 and is reviewed every quarter — the next review is due around 31 December 2026." },
+      { rate: "₹1,000 minimum, ₹30 lakh maximum", applies: "Deposit limits", example: "At least ₹1,000 to open, in multiples of ₹1,000, up to ₹30 lakh per person across all SCSS accounts. The ₹30 lakh ceiling was raised from ₹15 lakh by Budget 2023. A retired couple can each hold ₹30 lakh, so ₹60 lakh between them." },
+      { rate: "5 years, then 3-year blocks", applies: "Tenure and extension", example: "The account runs for 5 years. On maturity you can extend it in blocks of 3 years, as many times as you like — the 2023 amendment removed the old once-only limit. Apply in Form-4 within one year of maturity or of the end of each block; the extended block earns the rate in force on the maturity date." },
+      { rate: "Simple interest, paid quarterly", applies: "How interest works", example: "Interest is worked out on your original deposit and paid out every quarter — on the first working day of April, July, October and January — never added to the principal, so it never compounds. The first payment covers only the days from your deposit to the end of that quarter." },
+      { rate: "Rate locked at opening", applies: "Rate lock", example: "A quarterly review changes the rate only for accounts opened after it takes effect. An account you already hold keeps its opening rate for the full 5 years. An extended account earns the rate in force on the maturity date, which may be higher or lower." },
+      { rate: "60 years, or 55–60 retired, or 50+ defence", applies: "Who can open", example: "Anyone 60 or over; anyone 55 to 60 who has retired on superannuation or otherwise, if the account is opened within three months of receiving the retirement benefits and the deposit is no more than those benefits; retired defence personnel (not civilian defence staff) from 50. NRIs and HUFs cannot open an account." },
+      { rate: "Early closure costs 1–1.5%", applies: "Premature closure", example: "Before 1 year, no interest is payable and any interest already paid is recovered from the deposit. After 1 year but before 2 years, 1.5% of the deposit is deducted; after 2 years, 1%. An extended account closed within 1 year of the extension loses 1%; after that year it can be closed with no deduction. On the holder's death there is no penalty." },
+      { rate: "Interest taxable; TDS above ₹1 lakh", applies: "Tax", example: "The interest is fully taxable at your slab rate every year, in both tax regimes. TDS of 10% (with PAN) applies once the year's interest crosses ₹1 lakh for a senior citizen — the threshold rose from ₹50,000 on 1 April 2025. Under the old regime the deposit counts towards the ₹1.5 lakh 80C limit and a senior citizen can deduct up to ₹50,000 of deposit interest under 80TTB." },
+      { rate: "Reviewed every quarter", applies: "Rate reviews", example: "Small savings rates are set by the Ministry of Finance every quarter. The rate for October to December 2026 was kept unchanged in the office memorandum of 30 September 2026; the next review is due around 31 December 2026 for January to March 2027." }
+    ],
+    rateTableTitle: "SCSS rules at a glance",
+    rateTableNote: "The current rate, the deposit limits, the 5-year tenure and the repeatable 3-year extension, how the interest is paid, the rate lock, who can open an account, the early-closure penalties and the tax on the interest. Every rule here comes from the Senior Citizens' Savings Scheme, 2019 as amended, the Department of Posts or the Ministry of Finance — never from a blog or a competitor.",
+    rateTableConclusion: "The rules are fixed — a 5-year term, simple interest paid out every quarter and the rate locked at opening. The two judgement calls are the rate you assume and whether you extend, and this page states both plainly: 8.2% is today's notified rate, not a promise for the next account you open, and an extended block earns the rate in force on the maturity date.",
+    calloutTitle: "Why one guide says SCSS compounds — and why it does not",
+    calloutNote: "On ₹30,00,000 at 8.2%, this calculator gives ₹61,500 a quarter and fintra.co.in's guide says the rate is compounded quarterly and paid. SCSS interest is simple, not compounded: it is worked out on your original deposit and paid out every quarter, never added to the principal — so the payout stays ₹61,500 in every quarter of the 5 years, and the 5-year total is ₹12,30,000, not a growing figure. The scheme's own rules and every ranking calculator agree on this; the compounded wording is a mistake, and this page does not use it.",
+    faq: [
+      ["What is the Senior Citizens Savings Scheme (SCSS)?", "The Senior Citizens Savings Scheme is a 5-year government deposit for senior citizens, run through post offices and authorised banks. You deposit a lump sum — at least ₹1,000, in multiples of ₹1,000, up to ₹30 lakh per person — and the scheme pays 8.2% a year for October to December 2026 as simple interest, every quarter. The interest is paid out to your savings account and your deposit comes back in full at maturity. It is the highest rate among the small savings schemes, shared only with Sukanya Samriddhi."],
+      ["What is the current SCSS interest rate?", "8.2% a year, paid quarterly, for 1 October to 31 December 2026 (the third quarter of FY 2026-27). The Ministry of Finance kept small-savings rates unchanged in its office memorandum of 30 September 2026, and SCSS has paid 8.2% since 1 April 2023. The rate is reviewed every quarter, so the next review is due around 31 December 2026 — and the rate on the day you open the account is fixed for 5 years."],
+      ["How is SCSS quarterly interest calculated?", "Quarterly payout = deposit × rate ÷ 100 ÷ 4. At 8.2%, ₹15,00,000 × 8.2% ÷ 4 = ₹30,750 every quarter, and ₹30,00,000 × 8.2% ÷ 4 = ₹61,500. The interest is simple: it is always worked out on your original deposit, so every quarter pays the same amount, and the total over 5 years is the quarterly payout × 20."],
+      ["How much will I get every quarter on ₹15,00,000 in SCSS?", "₹30,750 every quarter at 8.2% — ₹1,23,000 a year, about ₹10,250 a month on average. Over 5 years the interest adds to ₹6,15,000, and your ₹15,00,000 comes back in full at maturity. On the maximum ₹30,00,000 it is ₹61,500 a quarter, ₹2,46,000 a year and ₹12,30,000 over 5 years."],
+      ["Who can open an SCSS account?", "Anyone 60 or over; anyone 55 to 60 who has retired on superannuation or otherwise, if the account is opened within three months of receiving the retirement benefits and the deposit is no more than those benefits; and retired defence personnel (not civilian defence staff) from 50. The spouse of a government employee who died in harness can also open one, under the same conditions. You open it at a post office or an authorised bank, jointly only with your spouse, and you can nominate someone. NRIs and HUFs cannot open an account."],
+      ["Can I extend my SCSS account after 5 years?", "Yes — in blocks of 3 years, as many times as you like. The 2023 amendment removed the old once-only limit, so a 5-year account can run for 8 years, then 11, then 14, and so on. Apply in Form-4 within one year of maturity or of the end of each block. The extended block earns the rate in force on the maturity date, not the rate you opened at — so at today's 8.2%, ₹15,00,000 extended for 3 more years would earn another ₹3,69,000, taking the 8-year total to ₹9,84,000. If you do not extend, the balance earns only the Post Office Savings Account rate, 4% at present."],
+      ["Can I close my SCSS account before 5 years?", "Yes, but it costs you. Before 1 year, no interest is payable and any interest already paid is recovered from your deposit. After 1 year but before 2 years, 1.5% of the deposit is deducted — ₹22,500 on ₹15,00,000. After 2 years, 1% is deducted — ₹15,000 on ₹15,00,000. An extended account closed within 1 year of the extension loses 1%; after that year it can be closed with no deduction. On the holder's death there is no penalty, and a surviving spouse who is a joint holder or sole nominee can continue the account. You cannot take out part of the money — closure is all or nothing."],
+      ["Is SCSS interest taxable, and when is TDS deducted?", "Yes — the interest is fully taxable at your slab rate every year, in both tax regimes, even though it arrives quarterly. TDS of 10% (with PAN; 20% without) is deducted once the year's interest crosses ₹1 lakh for a senior citizen — the threshold rose from ₹50,000 on 1 April 2025. At 8.2%, a deposit of ₹12,19,000 or less stays under it (₹99,960 a year); on ₹30,00,000 about ₹24,600 a year is deducted. If your total tax for the year will be nil, give the bank or post office the nil-tax declaration (Form 121 from 1 April 2026, which replaced Forms 15G and 15H) so no TDS is deducted. Under the old regime the deposit counts towards the ₹1.5 lakh 80C limit and a senior citizen can deduct up to ₹50,000 of deposit interest under 80TTB. The Income-tax Act, 2025, in force from 1 April 2026, renumbered the Act's provisions — the old-regime deduction this page calls Section 80C is carried in Schedule XV of the new Act, and the ₹1.5 lakh limit is unchanged."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
 ];
 
 export const css = `
@@ -1972,6 +2141,17 @@ export const css = `
   grid-template-columns: 0.92fr 1.08fr;
   gap: 48px;
   align-items: start;
+}
+
+/* Sticky intro column (design pack 292): the hero copy is the shorter of the
+   two hero columns, so on wide screens it stays pinned while the calculator
+   card scrolls — no white gap beside the card. Single-column layouts
+   (<= 760px) are unaffected. */
+@media (min-width: 761px) {
+  .hero-copy {
+    position: sticky;
+    top: 88px;
+  }
 }
 
 .hero-copy {
@@ -2047,31 +2227,6 @@ export const css = `
   scroll-margin-top: 85px;
 }
 
-.tool-switch {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5px;
-  padding: 5px;
-  background: var(--calc-paper);
-  border-radius: 11px;
-  margin-bottom: 20px;
-}
-
-.tool-switch a {
-  padding: 9px 5px;
-  text-decoration: none;
-  text-align: center;
-  border-radius: 7px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--calc-muted);
-}
-
-.tool-switch a[aria-current] {
-  background: white;
-  color: var(--calc-ink);
-  box-shadow: 0 2px 6px rgba(23, 45, 60, 0.08), inset 0 -2px var(--calc-brand);
-}
 
 .tool-title {
   display: flex;
@@ -3022,9 +3177,7 @@ export const ageCss = `
   margin-top: 8px;
 }
 
-.calc-page .tool-switch {
-  grid-template-columns: repeat(3, 1fr);
-}
+.calc-page 
 `;
 
 export function sscAgeParts(dobISO, cutISO) {
@@ -3784,12 +3937,6 @@ export function renderAgeCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/" aria-current="page">SSC Age</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Check your SSC age eligibility</h2>
               <span class="calc-pill">4 SSC EXAMS</span>
@@ -4453,14 +4600,10 @@ export const cgpaCss = `
   margin-top: 6px;
 }
 
-.calc-page .tool-switch {
-  grid-template-columns: repeat(4, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 `;
 
@@ -4855,13 +4998,6 @@ export function renderCgpaCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/" aria-current="page">CGPA → %</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Convert your CGPA to a percentage</h2>
               <span class="calc-pill">10-POINT CGPA</span>
@@ -5498,26 +5634,18 @@ export function renderCgpaCalculatorBody(p, others, css, clientSource) {
 }
 
 export const generalAgeCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(5, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 `;
 
 export const upscAgeCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(6, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 
 .number-input {
@@ -5563,14 +5691,10 @@ export const upscAgeCss = `
 `;
 
 export const ibpsAgeCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(7, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 
 .number-input {
@@ -5616,14 +5740,10 @@ export const ibpsAgeCss = `
 `;
 
 export const rrbAgeCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(8, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 
 .number-input {
@@ -5669,14 +5789,10 @@ export const rrbAgeCss = `
 `;
 
 export const emiCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(9, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 
 .number-input {
@@ -5743,14 +5859,10 @@ export const emiCss = `
 `;
 
 export const sipCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(10, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 
 .number-input {
@@ -5817,14 +5929,10 @@ export const sipCss = `
 `;
 
 export const bmiCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(11, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 
 .number-input {
@@ -5917,14 +6025,10 @@ export const bmiCss = `
 `;
 
 export const pctCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(12, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 
 .verdict-warn {
@@ -5935,62 +6039,42 @@ export const pctCss = `
 `;
 
 export const gstCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(13, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 `;
 
 export const ppfCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(14, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 `;
 
 export const fdCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(15, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 `;
 
 export const taxCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(16, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 `;
 
 export const rdCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(16, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 `;
 
@@ -7665,14 +7749,6 @@ export function renderGeneralAgeCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/" aria-current="page">Age</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate your exact age</h2>
               <span class="calc-pill">DATE OF BIRTH</span>
@@ -8282,15 +8358,6 @@ export function renderUpscAgeCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/" aria-current="page">UPSC Age</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Check your UPSC age eligibility</h2>
               <span class="calc-pill">CSE ${p.defaultYear}</span>
@@ -9034,16 +9101,6 @@ export function renderIbpsAgeCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/" aria-current="page">IBPS Age</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Check your IBPS age eligibility</h2>
               <span class="calc-pill" id="exam-pill">CRP PO/MT-XVI</span>
@@ -9835,17 +9892,6 @@ export function renderRrbAgeCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/" aria-current="page">RRB Age</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Check your RRB age eligibility</h2>
               <span class="calc-pill" id="exam-pill">CEN 06/2026</span>
@@ -10497,15 +10543,6 @@ export function renderCalculatorBody(p, other, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose conversion direction">
-              <a href="/wam-to-gpa-calculator/"${forward ? ' aria-current="page"' : ""}>
-                WAM → GPA
-              </a>
-              <a href="/gpa-to-wam-calculator/"${!forward ? ' aria-current="page"' : ""}>
-                GPA → WAM
-              </a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate your ${e(p.output)} estimate</h2>
               <span class="calc-pill">7-POINT GPA</span>
@@ -11597,18 +11634,6 @@ export function renderEmiCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/">RRB Age</a>
-              <a href="/emi-calculator/" aria-current="page">EMI</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate your EMI</h2>
               <span class="calc-pill" id="loan-pill">Home loan</span>
@@ -12631,19 +12656,6 @@ export function renderSipCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/">RRB Age</a>
-              <a href="/emi-calculator/">EMI</a>
-              <a href="/sip-calculator/" aria-current="page">SIP</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate your SIP</h2>
               <span class="calc-pill" id="sip-pill">₹10,000 a month</span>
@@ -13667,20 +13679,6 @@ export function renderBmiCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/">RRB Age</a>
-              <a href="/emi-calculator/">EMI</a>
-              <a href="/sip-calculator/">SIP</a>
-              <a href="/bmi-calculator/" aria-current="page">BMI</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate your BMI</h2>
               <span class="calc-pill" id="bmi-pill">${p.sampleHeightCm} cm · ${p.sampleWeightKg} kg</span>
@@ -15150,21 +15148,6 @@ export function renderPctCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/">RRB Age</a>
-              <a href="/emi-calculator/">EMI</a>
-              <a href="/sip-calculator/">SIP</a>
-              <a href="/bmi-calculator/">BMI</a>
-              <a href="/percentage-calculator/" aria-current="page">Percentage</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate a percentage</h2>
               <span class="calc-pill" id="pct-pill">${p.samplePct}% of ${p.sampleValue}</span>
@@ -16077,22 +16060,6 @@ export function renderGstCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/">RRB Age</a>
-              <a href="/emi-calculator/">EMI</a>
-              <a href="/sip-calculator/">SIP</a>
-              <a href="/bmi-calculator/">BMI</a>
-              <a href="/percentage-calculator/">Percentage</a>
-              <a href="/gst-calculator/" aria-current="page">GST</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate GST</h2>
               <span class="calc-pill" id="gst-pill">${e(p.presets[0].label)}</span>
@@ -16976,23 +16943,6 @@ export function renderPpfCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/">RRB Age</a>
-              <a href="/emi-calculator/">EMI</a>
-              <a href="/sip-calculator/">SIP</a>
-              <a href="/bmi-calculator/">BMI</a>
-              <a href="/percentage-calculator/">Percentage</a>
-              <a href="/gst-calculator/">GST</a>
-              <a href="/ppf-calculator/" aria-current="page">PPF</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate PPF maturity</h2>
               <span class="calc-pill" id="ppf-pill">${e(p.presets[0].label)}</span>
@@ -17963,24 +17913,6 @@ export function renderFdCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/">RRB Age</a>
-              <a href="/emi-calculator/">EMI</a>
-              <a href="/sip-calculator/">SIP</a>
-              <a href="/bmi-calculator/">BMI</a>
-              <a href="/percentage-calculator/">Percentage</a>
-              <a href="/gst-calculator/">GST</a>
-              <a href="/ppf-calculator/">PPF</a>
-              <a href="/fd-calculator/" aria-current="page">FD</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate FD maturity</h2>
               <span class="calc-pill" id="fd-pill">${e(p.presets[0].label)}</span>
@@ -19111,25 +19043,6 @@ export function renderTaxCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/">RRB Age</a>
-              <a href="/emi-calculator/">EMI</a>
-              <a href="/sip-calculator/">SIP</a>
-              <a href="/bmi-calculator/">BMI</a>
-              <a href="/percentage-calculator/">Percentage</a>
-              <a href="/gst-calculator/">GST</a>
-              <a href="/ppf-calculator/">PPF</a>
-              <a href="/fd-calculator/">FD</a>
-              <a href="/income-tax-calculator/" aria-current="page">Income Tax</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate your income tax</h2>
               <span class="calc-pill" id="tax-pill">${e(p.presets[0].label)}</span>
@@ -19905,14 +19818,10 @@ export function hlTenureCompare(amount, annualRatePct) {
 }
 
 export const hlCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(18, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 `;
 
@@ -20402,25 +20311,6 @@ export function renderRdCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/">RRB Age</a>
-              <a href="/emi-calculator/">EMI</a>
-              <a href="/sip-calculator/">SIP</a>
-              <a href="/bmi-calculator/">BMI</a>
-              <a href="/percentage-calculator/">Percentage</a>
-              <a href="/gst-calculator/">GST</a>
-              <a href="/ppf-calculator/">PPF</a>
-              <a href="/fd-calculator/">FD</a>
-              <a href="/rd-calculator/" aria-current="page">RD</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate RD maturity</h2>
               <span class="calc-pill" id="rd-pill">${e(p.presets[0].label)}</span>
@@ -21041,14 +20931,10 @@ export function grGrowth(wageBase, covered) {
 }
 
 export const grCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(19, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 `;
 
@@ -21681,27 +21567,6 @@ export function renderHlCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/">RRB Age</a>
-              <a href="/emi-calculator/">EMI</a>
-              <a href="/sip-calculator/">SIP</a>
-              <a href="/bmi-calculator/">BMI</a>
-              <a href="/percentage-calculator/">Percentage</a>
-              <a href="/gst-calculator/">GST</a>
-              <a href="/ppf-calculator/">PPF</a>
-              <a href="/fd-calculator/">FD</a>
-              <a href="/income-tax-calculator/">Income Tax</a>
-              <a href="/rd-calculator/">RD</a>
-              <a href="/home-loan-emi-calculator/" aria-current="page">Home Loan EMI</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate home loan EMI</h2>
               <span class="calc-pill" id="hl-pill">${e(p.presets[0].label)}</span>
@@ -22366,14 +22231,10 @@ export function hraCompute(basic, hra, rent, city, fy, regime) {
 }
 
 export const hraCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(20, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 `;
 
@@ -22975,28 +22836,6 @@ export function renderGrCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/">RRB Age</a>
-              <a href="/emi-calculator/">EMI</a>
-              <a href="/sip-calculator/">SIP</a>
-              <a href="/bmi-calculator/">BMI</a>
-              <a href="/percentage-calculator/">Percentage</a>
-              <a href="/gst-calculator/">GST</a>
-              <a href="/ppf-calculator/">PPF</a>
-              <a href="/fd-calculator/">FD</a>
-              <a href="/income-tax-calculator/">Income Tax</a>
-              <a href="/rd-calculator/">RD</a>
-              <a href="/home-loan-emi-calculator/">Home Loan EMI</a>
-              <a href="/gratuity-calculator/" aria-current="page">Gratuity</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate gratuity</h2>
               <span class="calc-pill" id="gr-pill">${e(p.presets[0].label)}</span>
@@ -23678,14 +23517,10 @@ export function ciCompute(principal, monthly, rate, years, months, freq) {
 }
 
 export const ciCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(21, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 `;
 
@@ -24224,29 +24059,6 @@ export function renderHraCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/">RRB Age</a>
-              <a href="/emi-calculator/">EMI</a>
-              <a href="/sip-calculator/">SIP</a>
-              <a href="/bmi-calculator/">BMI</a>
-              <a href="/percentage-calculator/">Percentage</a>
-              <a href="/gst-calculator/">GST</a>
-              <a href="/ppf-calculator/">PPF</a>
-              <a href="/fd-calculator/">FD</a>
-              <a href="/income-tax-calculator/">Income Tax</a>
-              <a href="/rd-calculator/">RD</a>
-              <a href="/home-loan-emi-calculator/">Home Loan EMI</a>
-              <a href="/gratuity-calculator/">Gratuity</a>
-              <a href="/hra-calculator/" aria-current="page">HRA</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate HRA exemption</h2>
               <span class="calc-pill" id="hra-pill">${e(p.presets[0].label)}</span>
@@ -24871,14 +24683,10 @@ export function epfCompute(age, retireAge, basic, growth, rate, balance, empRate
 }
 
 export const epfCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(22, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 `;
 
@@ -24973,14 +24781,10 @@ export function npsCompute(age, retireAge, monthly, stepUp, rate, type, annuityS
 }
 
 export const npsCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(23, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
-  }
+  .calc-page 
 }
 `;
 
@@ -25041,14 +24845,127 @@ export function ssyCompute(deposit, age, rate, depYears) {
 }
 
 export const ssyCss = `
-.calc-page .tool-switch {
-  grid-template-columns: repeat(24, 1fr);
-}
+.calc-page 
 
 @media(max-width: 760px) {
-  .calc-page .tool-switch {
-    grid-template-columns: 1fr 1fr;
+  .calc-page 
+}
+`;
+
+export const NSC_TENURE_YEARS = 5;
+export const NSC_MIN_DEPOSIT = 1000;
+
+export function nscGrowth(deposit, rate) {
+  const rows = [];
+  let opening = deposit;
+  for (let y = 1; y <= NSC_TENURE_YEARS; y++) {
+    let interest;
+    let closing;
+    if (y < NSC_TENURE_YEARS) {
+      interest = roundRupee(opening * rate / 100);
+      closing = opening + interest;
+    } else {
+      closing = roundRupee(deposit * Math.pow(1 + rate / 100, NSC_TENURE_YEARS));
+      interest = closing - opening;
+    }
+    rows.push({
+      year: y,
+      label: "Year " + y,
+      opening,
+      interest,
+      closing,
+      reinvested: y < NSC_TENURE_YEARS
+    });
+    opening = closing;
   }
+  return rows;
+}
+
+export function nscCompute(deposit, rate) {
+  const p = Number(deposit);
+  const r = Number(rate);
+  if (!Number.isFinite(p) || !Number.isFinite(r)) return null;
+  if (p < NSC_MIN_DEPOSIT || p % 100 !== 0) return null;
+  if (r < 0 || r > 15) return null;
+  const growthRows = nscGrowth(p, r);
+  const maturity = growthRows[growthRows.length - 1].closing;
+  const reinvested = growthRows.slice(0, NSC_TENURE_YEARS - 1).reduce((s, row) => s + row.interest, 0);
+  return {
+    deposit: p,
+    rate: r,
+    years: NSC_TENURE_YEARS,
+    maturity,
+    invested: p,
+    interest: maturity - p,
+    reinvested,
+    lastYearInterest: growthRows[NSC_TENURE_YEARS - 1].interest,
+    maturityYear: new Date().getFullYear() + NSC_TENURE_YEARS,
+    growthRows
+  };
+}
+
+export const nscCss = `
+.calc-page 
+
+@media(max-width: 760px) {
+  .calc-page 
+}
+`;
+
+export const SCSS_MIN_DEPOSIT = 1000;
+export const SCSS_MAX_DEPOSIT = 3000000;
+export const SCSS_TENURE_YEARS = 5;
+export const SCSS_EXTENDED_YEARS = 8;
+
+export function scssYearly(deposit, rate, years) {
+  const quarterly = roundRupee(deposit * rate / 100 / 4);
+  const annual = quarterly * 4;
+  const rows = [];
+  let cumulative = 0;
+  for (let y = 1; y <= years; y++) {
+    cumulative += annual;
+    rows.push({
+      year: y,
+      label: "Year " + y,
+      interest: annual,
+      cumulative
+    });
+  }
+  return rows;
+}
+
+export function scssCompute(deposit, rate, years) {
+  const p = Number(deposit);
+  const r = Number(rate);
+  const y = Number(years);
+  if (!Number.isFinite(p) || !Number.isFinite(r) || !Number.isFinite(y)) return null;
+  if (p < SCSS_MIN_DEPOSIT || p > SCSS_MAX_DEPOSIT || p % 1000 !== 0) return null;
+  if (r < 0 || r > 15) return null;
+  if (y !== SCSS_TENURE_YEARS && y !== SCSS_EXTENDED_YEARS) return null;
+  const quarterly = roundRupee(p * r / 100 / 4);
+  const annual = quarterly * 4;
+  const monthly = roundRupee(annual / 12);
+  const yearlyRows = scssYearly(p, r, y);
+  return {
+    deposit: p,
+    rate: r,
+    years: y,
+    quarterly,
+    annual,
+    monthly,
+    totalInterest: annual * y,
+    payouts: y * 4,
+    maturityYear: new Date().getFullYear() + y,
+    principal: p,
+    yearlyRows
+  };
+}
+
+export const scssCss = `
+.calc-page 
+
+@media(max-width: 760px) {
+  .calc-page 
 }
 `;
 
@@ -25623,30 +25540,6 @@ export function renderCiCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/">RRB Age</a>
-              <a href="/emi-calculator/">EMI</a>
-              <a href="/sip-calculator/">SIP</a>
-              <a href="/bmi-calculator/">BMI</a>
-              <a href="/percentage-calculator/">Percentage</a>
-              <a href="/gst-calculator/">GST</a>
-              <a href="/ppf-calculator/">PPF</a>
-              <a href="/fd-calculator/">FD</a>
-              <a href="/income-tax-calculator/">Income Tax</a>
-              <a href="/rd-calculator/">RD</a>
-              <a href="/home-loan-emi-calculator/">Home Loan EMI</a>
-              <a href="/gratuity-calculator/">Gratuity</a>
-              <a href="/hra-calculator/">HRA</a>
-              <a href="/compound-interest-calculator/" aria-current="page">Compound Interest</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate compound interest</h2>
               <span class="calc-pill" id="ci-pill">${e(p.presets[0].label)}</span>
@@ -26771,31 +26664,6 @@ export function renderEpfCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/">RRB Age</a>
-              <a href="/emi-calculator/">EMI</a>
-              <a href="/sip-calculator/">SIP</a>
-              <a href="/bmi-calculator/">BMI</a>
-              <a href="/percentage-calculator/">Percentage</a>
-              <a href="/gst-calculator/">GST</a>
-              <a href="/ppf-calculator/">PPF</a>
-              <a href="/fd-calculator/">FD</a>
-              <a href="/income-tax-calculator/">Income Tax</a>
-              <a href="/rd-calculator/">RD</a>
-              <a href="/home-loan-emi-calculator/">Home Loan EMI</a>
-              <a href="/gratuity-calculator/">Gratuity</a>
-              <a href="/hra-calculator/">HRA</a>
-              <a href="/compound-interest-calculator/">Compound Interest</a>
-              <a href="/epf-calculator/" aria-current="page">EPF</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate your EPF</h2>
               <span class="calc-pill" id="epf-pill">${e(p.presets[0].label)}</span>
@@ -27958,32 +27826,6 @@ export function renderNpsCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/">RRB Age</a>
-              <a href="/emi-calculator/">EMI</a>
-              <a href="/sip-calculator/">SIP</a>
-              <a href="/bmi-calculator/">BMI</a>
-              <a href="/percentage-calculator/">Percentage</a>
-              <a href="/gst-calculator/">GST</a>
-              <a href="/ppf-calculator/">PPF</a>
-              <a href="/fd-calculator/">FD</a>
-              <a href="/income-tax-calculator/">Income Tax</a>
-              <a href="/rd-calculator/">RD</a>
-              <a href="/home-loan-emi-calculator/">Home Loan EMI</a>
-              <a href="/gratuity-calculator/">Gratuity</a>
-              <a href="/hra-calculator/">HRA</a>
-              <a href="/compound-interest-calculator/">Compound Interest</a>
-              <a href="/epf-calculator/">EPF</a>
-              <a href="/nps-calculator/" aria-current="page">NPS</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate your NPS</h2>
               <span class="calc-pill" id="nps-pill">${e(p.presets[0].label)}</span>
@@ -29034,33 +28876,6 @@ export function renderSsyCalculatorBody(p, others, css, clientSource) {
           </div>
 
           <section class="calculator" id="calculator" aria-labelledby="tool-heading">
-            <nav class="tool-switch" aria-label="Choose a calculator">
-              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
-              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
-              <a href="/ssc-age-calculator/">SSC Age</a>
-              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
-              <a href="/age-calculator/">Age</a>
-              <a href="/upsc-age-calculator/">UPSC Age</a>
-              <a href="/ibps-age-calculator/">IBPS Age</a>
-              <a href="/rrb-age-calculator/">RRB Age</a>
-              <a href="/emi-calculator/">EMI</a>
-              <a href="/sip-calculator/">SIP</a>
-              <a href="/bmi-calculator/">BMI</a>
-              <a href="/percentage-calculator/">Percentage</a>
-              <a href="/gst-calculator/">GST</a>
-              <a href="/ppf-calculator/">PPF</a>
-              <a href="/fd-calculator/">FD</a>
-              <a href="/income-tax-calculator/">Income Tax</a>
-              <a href="/rd-calculator/">RD</a>
-              <a href="/home-loan-emi-calculator/">Home Loan EMI</a>
-              <a href="/gratuity-calculator/">Gratuity</a>
-              <a href="/hra-calculator/">HRA</a>
-              <a href="/compound-interest-calculator/">Compound Interest</a>
-              <a href="/epf-calculator/">EPF</a>
-              <a href="/nps-calculator/">NPS</a>
-              <a href="/ssy-calculator/" aria-current="page">SSY</a>
-            </nav>
-
             <div class="tool-title">
               <h2 id="tool-heading">Calculate your SSY</h2>
               <span class="calc-pill" id="ssy-pill">${e(p.presets[0].label)}</span>
@@ -29555,6 +29370,1858 @@ export function renderSsyCalculatorBody(p, others, css, clientSource) {
             calculator; for the tax on your deposits, the
             income-tax calculator; for a market-linked
             retirement corpus, the NPS calculator.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function nscClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  const NSC_TENURE_YEARS = 5;
+
+  const NSC_MIN_DEPOSIT = 1000;
+
+  function nscGrowth(deposit, rate) {
+    const rows = [];
+    let opening = deposit;
+    for (let y = 1; y <= NSC_TENURE_YEARS; y++) {
+      let interest;
+      let closing;
+      if (y < NSC_TENURE_YEARS) {
+        interest = roundRupee(opening * rate / 100);
+        closing = opening + interest;
+      } else {
+        closing = roundRupee(deposit * Math.pow(1 + rate / 100, NSC_TENURE_YEARS));
+        interest = closing - opening;
+      }
+      rows.push({
+        year: y,
+        label: "Year " + y,
+        opening,
+        interest,
+        closing,
+        reinvested: y < NSC_TENURE_YEARS
+      });
+      opening = closing;
+    }
+    return rows;
+  }
+
+  function nscCompute(deposit, rate) {
+    const p = Number(deposit);
+    const r = Number(rate);
+    if (!Number.isFinite(p) || !Number.isFinite(r)) return null;
+    if (p < NSC_MIN_DEPOSIT || p % 100 !== 0) return null;
+    if (r < 0 || r > 15) return null;
+    const growthRows = nscGrowth(p, r);
+    const maturity = growthRows[growthRows.length - 1].closing;
+    const reinvested = growthRows.slice(0, NSC_TENURE_YEARS - 1).reduce((s, row) => s + row.interest, 0);
+    return {
+      deposit: p,
+      rate: r,
+      years: NSC_TENURE_YEARS,
+      maturity,
+      invested: p,
+      interest: maturity - p,
+      reinvested,
+      lastYearInterest: growthRows[NSC_TENURE_YEARS - 1].interest,
+      maturityYear: new Date().getFullYear() + NSC_TENURE_YEARS,
+      growthRows
+    };
+  } 
+
+  const presetSelect = $("preset");
+  const nscPill = $("nsc-pill");
+  const inputDeposit = $("input-deposit");
+  const inputDepositError = $("input-deposit-error");
+  const inputRate = $("input-rate");
+  const inputRateError = $("input-rate-error");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const growthBody = $("growth-body");
+  const growthNote = $("growth-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+
+  function renderGrowth(r) {
+    growthBody.replaceChildren();
+    if (!r) {
+      growthNote.textContent = "Enter your figures to see the interest build up year by year.";
+      return;
+    }
+    r.growthRows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row.label;
+      tr.appendChild(th);
+      [row.opening, row.interest, row.closing].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      const taxTd = document.createElement("td");
+      taxTd.textContent = row.reinvested ? "Yes — reinvested" : "No — paid at maturity";
+      tr.appendChild(taxTd);
+      growthBody.appendChild(tr);
+    });
+    growthNote.textContent = "The balance grows year by year — interest is added each year but paid only at maturity, and the first four years' interest counts as reinvested.";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your deposit and the rate to see the maturity value.";
+    working.textContent = "Enter your deposit and the rate to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    growthBody.replaceChildren();
+    growthNote.textContent = "Enter your figures to see the interest build up year by year.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(deposit, rate, r) {
+    output.textContent = inr(r.maturity);
+    box1Val.textContent = inr(r.maturity);
+    box1Label.textContent = "MATURITY VALUE";
+    box2Val.textContent = inr(r.invested);
+    box2Label.textContent = "TOTAL INVESTED";
+    box3Val.textContent = inr(r.interest);
+    box3Label.textContent = "TOTAL INTEREST";
+    working.textContent = inr(deposit) + " at " + rate + "% for 5 years: your NSC matures at " + inr(r.maturity)
+      + " — " + inr(r.interest) + " of interest on " + inr(r.invested) + " invested.";
+    working2.textContent = "Matures in " + r.maturityYear + " · " + inr(r.reinvested)
+      + " of interest in years 1–4 counts as reinvested · " + inr(r.lastYearInterest) + " in the last year does not.";
+    workingNote.textContent = "Interest compounded annually · rate held steady at " + rate + "% for all 5 years.";
+    glanceText.textContent = inr(deposit) + " · " + rate + "% → maturity " + inr(r.maturity)
+      + " (invested " + inr(r.invested) + "; interest " + inr(r.interest) + "; "
+      + inr(r.reinvested) + " reinvested, " + inr(r.lastYearInterest) + " in the last year).";
+    renderGrowth(r);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | NSC Calculator"
+      + "\nQuestion: " + inr(deposit) + " at " + rate + "% for 5 years"
+      + "\nAnswer: maturity value " + inr(r.maturity) + "; total invested " + inr(r.invested)
+      + "; total interest " + inr(r.interest) + "; reinvested interest (years 1–4) " + inr(r.reinvested)
+      + "; last-year interest " + inr(r.lastYearInterest) + "; matures in " + r.maturityYear
+      + "\nWorking: interest compounded annually, maturity = deposit × (1 + rate ÷ 100)^5, years 1–4 interest deemed reinvested";
+  }
+
+  function paint(showEmptyError = false) {
+    nscPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const depositRaw = inputDeposit.value;
+    const rateRaw = inputRate.value;
+    const depositNum = depositRaw === "" ? NaN : Number(depositRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    let depositMsg = "";
+    let rateMsg = "";
+    if (depositRaw === "") {
+      if (showEmptyError) depositMsg = "Enter your deposit.";
+    } else if (!Number.isFinite(depositNum) || depositNum < 1000 || depositNum % 100 !== 0) {
+      depositMsg = "Enter a deposit of ₹1,000 or more, in multiples of ₹100.";
+    }
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the interest rate.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 15) {
+      rateMsg = "Enter the interest rate from 0% to 15%.";
+    }
+    inputDepositError.textContent = depositMsg;
+    inputRateError.textContent = rateMsg;
+    inputDeposit.setAttribute("aria-invalid", String(depositMsg !== ""));
+    inputRate.setAttribute("aria-invalid", String(rateMsg !== ""));
+
+    const valid = depositMsg === "" && rateMsg === ""
+      && depositRaw !== "" && rateRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = nscCompute(depositNum, rateNum);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(depositNum, rateNum, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = nscCompute(item.deposit, item.rate);
+    if (!r) return "";
+    return inr(item.deposit) + " · " + item.rate + "% → " + inr(r.maturity);
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputDeposit.value, inputRate.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputDeposit.value = String(item.deposit);
+        inputRate.value = String(item.rate);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      deposit: Number(inputDeposit.value),
+      rate: Number(inputRate.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputDeposit.value = button.dataset.deposit || "";
+      inputRate.value = button.dataset.rate || "";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputDeposit.value = String(rec.deposit);
+    inputRate.value = String(rec.rate);
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputDeposit.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("nsc-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderNscCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleDeposit: p.sampleDeposit, sampleRate: p.sampleRate };
+  const sample = nscCompute(p.sampleDeposit, p.sampleRate);
+  const fiftySample = nscCompute(50000, 7.7);
+  const rate8Sample = nscCompute(100000, 8);
+  const rate7Sample = nscCompute(100000, 7);
+
+  const presetSummary = pr => {
+    const r = nscCompute(pr.deposit, pr.rate);
+    return `${inr2(pr.deposit)} at ${pr.rate}% → ${inr2(r.maturity)}`;
+  };
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = nscCompute(st.deposit, st.rate);
+    return `${inr2(st.deposit)} at ${st.rate}% → maturity ${inr2(r.maturity)}`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const growthRows = sample.growthRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.label)}</th>
+        <td>${inr2(row.opening)}</td>
+        <td>${inr2(row.interest)}</td>
+        <td>${inr2(row.closing)}</td>
+        <td>${row.reinvested ? "Yes — reinvested" : "No — paid at maturity"}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}${hraCss}${ciCss}${epfCss}${npsCss}${ssyCss}${nscCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free NSC calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate your NSC →
+              </a>
+              <a href="#method" class="calc-link">How NSC is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.maturity)} maturity value</strong>
+                <small>On ₹1,00,000 at 7.7% for 5 years</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.invested)} total invested</strong>
+                <small>A single lump-sum deposit</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.interest)} interest earned</strong>
+                <small>31% of the maturity value, all paid at maturity</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>An estimate for planning — not financial, tax or legal advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate your NSC</h2>
+              <span class="calc-pill" id="nsc-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="nsc-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-deposit">
+                Deposit amount (₹)
+                <span>What you pay once when you buy the certificate — from ₹1,000, in multiples of ₹100, with no maximum</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-deposit"
+                type="number"
+                value="${p.sampleDeposit}"
+                step="100"
+                inputmode="numeric"
+                aria-describedby="input-deposit-error"
+              >
+              <p class="calc-error" id="input-deposit-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-rate">
+                Interest rate (% a year)
+                <span>The notified NSC rate, from 0% to 15% — 7.7% is the rate for October to December 2026. The rate is reviewed every quarter, so try a lower one too</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-rate"
+                type="number"
+                value="${p.sampleRate}"
+                step="0.1"
+                inputmode="decimal"
+                aria-describedby="input-rate-error"
+              >
+              <p class="calc-error" id="input-rate-error" aria-live="polite"></p>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-deposit">${inr2(sample.maturity)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.maturity)}</strong>
+                  <small id="box1-label">MATURITY VALUE</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.invested)}</strong>
+                  <small id="box2-label">TOTAL INVESTED</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.interest)}</strong>
+                  <small id="box3-label">TOTAL INTEREST</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">₹1,00,000 · 7.7% → maturity ${inr2(sample.maturity)} (invested ${inr2(sample.invested)}; interest ${inr2(sample.interest)}; ${inr2(sample.reinvested)} reinvested, ${inr2(sample.lastYearInterest)} in the last year).</span>
+              </div>
+
+              <p class="working" id="working">
+                ₹1,00,000 at 7.7% for 5 years: your NSC matures at ${inr2(sample.maturity)} — ${inr2(sample.interest)} of interest on ${inr2(sample.invested)} invested.
+              </p>
+              <p class="working" id="working-2">Matures in ${sample.maturityYear} · ${inr2(sample.reinvested)} of interest in years 1–4 counts as reinvested · ${inr2(sample.lastYearInterest)} in the last year does not.</p>
+              <p class="working" id="working-note">Interest compounded annually · rate held steady at 7.7% for all 5 years.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The figure is an estimate at the rate you
+                enter, held steady for 5 years. The NSC rate is
+                notified every quarter and can change for new
+                certificates, and the interest is taxable in the
+                year it accrues.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="growth">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Year by year</p>
+          <h2>How the interest builds up</h2>
+          <p id="growth-note">The balance grows year by year — interest is added each year but paid only at maturity, and the first four years' interest counts as reinvested.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="growth-note">
+            <caption>Year-by-year interest on the sample figures: ₹1,00,000 at 7.7% for 5 years.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Opening balance</th>
+                <th scope="col">Interest</th>
+                <th scope="col">Closing balance</th>
+                <th scope="col">80C (old regime)</th>
+              </tr>
+            </thead>
+            <tbody id="growth-body">
+              ${growthRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#growth">Growth</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / FIVE YEARS, ONE PAYMENT</span>
+            <h3>Deposit once, nothing until maturity</h3>
+            <p>Interest is added to the certificate each year and earns interest itself, but you receive nothing along the way. On ₹1,00,000 the interest is ₹44,903 — 31% of the maturity value — and all of it arrives in one payment at 5 years.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / 7.7% LOCKED AT PURCHASE</span>
+            <h3>The rate you buy at is the rate you keep</h3>
+            <p>A quarterly review changes the rate only for new certificates. At 8% instead of 7.7%, ₹1,00,000 would mature at ₹1,46,933 — ₹2,030 more; at 7% it would mature at ₹1,40,255 — ₹4,648 less. Try a different rate to see what a change would do.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / TAXED, BUT 80C HELPS</span>
+            <h3>Deposit plus reinvested interest</h3>
+            <p>The interest is taxable in the year it accrues, but under the old regime the deposit and the first four years' interest can count towards the ₹1.5 lakh limit. On ₹1,00,000 that is ₹1,34,543 claimed over the years, if you have room — only the last year's ₹10,360 gets no deduction.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your deposit to a maturity value</h2>
+          <p>
+            Enter your deposit first — the
+            rate is already filled in with the current 7.7% —
+            then read the maturity value, the interest and
+            which years' interest counts as reinvested.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How NSC is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The NSC formula</small>
+          Maturity = deposit × (1 + rate ÷ 100)^5 · interest compounded annually, paid at maturity · years 1–4 interest deemed reinvested
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. ₹1,00,000 at 7.7%, 5 years
+            <strong>${fmt2(sample.maturity)} maturity · ${fmt2(sample.interest)} interest</strong>
+            <span>In the first year ₹7,700 of interest accrues, taking the value to ₹1,07,700. In the second year that larger amount earns ₹8,293. After 5 years the certificate matures at ₹1,44,903, of which ₹34,543 accrued in years 1 to 4 and is treated as reinvested.</span>
+          </div>
+
+          <div class="math-step">
+            2. ₹50,000 at 7.7%, 5 years
+            <strong>${fmt2(fiftySample.maturity)} maturity · ${fmt2(fiftySample.interest)} interest</strong>
+            <span>₹50,000 for 5 years at 7.7%. You invest ₹50,000 and the certificate matures at ₹72,452 — half the deposit, half the interest. The first four years' interest, ₹17,272, counts as reinvested under the old regime.</span>
+          </div>
+
+          <div class="math-step">
+            3. ₹1,00,000 at 8%, 5 years
+            <strong>${fmt2(rate8Sample.maturity)} maturity · ${fmt2(rate8Sample.interest)} interest</strong>
+            <span>If the rate rises to 8% for new certificates, ₹1,00,000 matures at ₹1,46,933 — ₹2,030 more than at 7.7%. A certificate you already hold keeps its original rate, so only a new purchase would earn the higher one.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five cases, five maturity values</h2>
+          <p>
+            One example for each everyday case, including one
+            at the minimum deposit and one at ₹1,50,000. Select
+            any example to load it into the calculator and check
+            the working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.deposit)} AT ${story.rate}%</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-deposit="${story.deposit}" data-rate="${story.rate}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>NSC rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>The current NSC rate, the deposit limits, the fixed 5-year tenure, how the interest is paid, the rate lock, the 80C treatment of the reinvested interest, the tax on the interest and the early-exit rule.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get NSC wrong</h2>
+          <p>
+            NSC is simple on the surface — one deposit, one
+            payment at 5 years — but the tax timing and the
+            rate lock catch people out.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / EXPECTING THE INTEREST EVERY YEAR</span>
+            <h3>NSC pays nothing until maturity</h3>
+            <p>Interest is added to the certificate each year and earns interest itself, but you receive nothing along the way. On ₹1,00,000 the ₹7,700 of year 1 stays in the certificate — if you need regular income, the Post Office Monthly Income Scheme pays every month instead.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / COUNTING THE LAST YEAR'S INTEREST FOR 80C</span>
+            <h3>Only years 1 to 4 count</h3>
+            <p>The scheme treats the interest of the first four years as reinvested, so it can count towards the ₹1.5 lakh limit under the old regime — ₹34,543 on ₹1,00,000. The last year's ₹10,360 is paid out at maturity, not reinvested, so it cannot count.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / ASSUMING THE RATE WILL STAY 7.7%</span>
+            <h3>The rate is locked at purchase</h3>
+            <p>The rate is reviewed every quarter and a later review changes the rate only for new certificates. At 7% instead of 7.7%, ₹1,00,000 builds ₹1,40,255 instead of ₹1,44,903 — ₹4,648 less. Try a lower rate to see a safer estimate.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / FORGETTING THE TAX ON ACCRUED INTEREST</span>
+            <h3>Tax is due every year, cash only at maturity</h3>
+            <p>NSC interest is taxable at your slab rate in the year it accrues, even though you receive nothing until year 5 — the post office can give you a certificate of each year's interest for your return. And do not plan on encashing early: premature encashment is generally not allowed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>NSC calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the standard NSC-calculator method:
+            each year the opening balance earns one year of
+            interest at the rate you enter, rounded to the
+            nearest rupee, and the interest is added to the
+            balance. The maturity value is the deposit ×
+            (1 + rate ÷ 100)^5, rounded to the nearest rupee,
+            and the fifth year's interest is the difference
+            between that maturity value and the year-5 opening
+            balance, so the table always ends exactly on the
+            formula figure. The rate is user-entered and
+            treated as a steady assumption — never as a live
+            quote or a promise for a certificate bought later.
+          </p>
+          <p>
+            Figures checked 12 November 2026: the 7.7% rate
+            for 1 October to 31 December 2026 is in the
+            Ministry of Finance (Department of Economic
+            Affairs) Office Memorandum F.No.1/4/2019-NS,
+            dated 30 September 2026, keeping small savings
+            rates unchanged for the third quarter of FY
+            2026-27, as carried by the Department of Posts
+            in SB Order 12/2026 of the same date — see the
+            <a href="https://www.nsiindia.gov.in/" rel="nofollow noopener" target="_blank">National Savings Institute</a>.
+            The deposit limits, the 5-year tenure and the
+            premature-encashment rule are on
+            <a href="https://www.indiapost.gov.in/" rel="nofollow noopener" target="_blank">India Post</a>'s
+            savings schemes page. The tax treatment — the
+            deposit and the first four years' interest
+            counting towards the old-regime ₹1.5 lakh limit,
+            the interest taxable as it accrues — is in the
+            Income-tax Act; the Income-tax Act, 2025, in
+            force from 1 April 2026, renumbered the Act's
+            provisions, and the old-regime deduction this
+            page calls Section 80C is carried in Schedule XV
+            of the new Act — see
+            <a href="https://www.incometax.gov.in/" rel="nofollow noopener" target="_blank">the Income Tax Department</a>.
+            The worked examples reproduce the ranking NSC
+            calculators' published figures: ₹1,00,000 at
+            7.7% gives ₹1,44,903 on
+            <a href="https://www.credocalc.com/in/nsc-calculator/" rel="nofollow noopener" target="_blank">credocalc.com</a>,
+            and the same figure is published by the other
+            ranking calculators. One figure is deliberately
+            NOT used: fincado.com's worked example gives
+            ₹1,45,060 for ₹1,00,000, from a growth factor of
+            1.4506 — but (1.077)^5 is 1.4490338, so the
+            correct maturity is ₹1,44,903, and fincado's own
+            calculator widget shows ₹1,44,903. One honest
+            limit: some calculators carry balances at full
+            precision, so their year-4 closing rounds to
+            ₹1,34,544 and their year-5 interest to
+            ₹10,359.85; this page rounds each year's interest
+            to the nearest rupee, as the scheme's published
+            year-by-year table does, so every row adds up in
+            whole rupees and the maturity is still ₹1,44,903.
+            For a tax-free comparison, use the PPF calculator;
+            for a monthly deposit without a maturity lock-in,
+            the RD calculator; for a daughter's future, the
+            SSY calculator; for the tax on your deposits, the
+            income-tax calculator; for a market-linked
+            retirement corpus, the NPS calculator.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function scssClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  const SCSS_MIN_DEPOSIT = 1000;
+
+  const SCSS_MAX_DEPOSIT = 3000000;
+
+  const SCSS_TENURE_YEARS = 5;
+
+  const SCSS_EXTENDED_YEARS = 8;
+
+  function scssYearly(deposit, rate, years) {
+    const quarterly = roundRupee(deposit * rate / 100 / 4);
+    const annual = quarterly * 4;
+    const rows = [];
+    let cumulative = 0;
+    for (let y = 1; y <= years; y++) {
+      cumulative += annual;
+      rows.push({
+        year: y,
+        label: "Year " + y,
+        interest: annual,
+        cumulative
+      });
+    }
+    return rows;
+  }
+
+  function scssCompute(deposit, rate, years) {
+    const p = Number(deposit);
+    const r = Number(rate);
+    const y = Number(years);
+    if (!Number.isFinite(p) || !Number.isFinite(r) || !Number.isFinite(y)) return null;
+    if (p < SCSS_MIN_DEPOSIT || p > SCSS_MAX_DEPOSIT || p % 1000 !== 0) return null;
+    if (r < 0 || r > 15) return null;
+    if (y !== SCSS_TENURE_YEARS && y !== SCSS_EXTENDED_YEARS) return null;
+    const quarterly = roundRupee(p * r / 100 / 4);
+    const annual = quarterly * 4;
+    const monthly = roundRupee(annual / 12);
+    const yearlyRows = scssYearly(p, r, y);
+    return {
+      deposit: p,
+      rate: r,
+      years: y,
+      quarterly,
+      annual,
+      monthly,
+      totalInterest: annual * y,
+      payouts: y * 4,
+      maturityYear: new Date().getFullYear() + y,
+      principal: p,
+      yearlyRows
+    };
+  }
+
+  const presetSelect = $("preset");
+  const scssPill = $("scss-pill");
+  const inputDeposit = $("input-deposit");
+  const inputDepositError = $("input-deposit-error");
+  const inputRate = $("input-rate");
+  const inputRateError = $("input-rate-error");
+  const inputTenure = $("input-tenure");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const yearlyBody = $("yearly-body");
+  const yearlyNote = $("yearly-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+
+  function renderYearly(r) {
+    yearlyBody.replaceChildren();
+    if (!r) {
+      yearlyNote.textContent = "Enter your figures to see the interest arrive year by year.";
+      return;
+    }
+    r.yearlyRows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row.label;
+      tr.appendChild(th);
+      [row.interest, row.cumulative].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      yearlyBody.appendChild(tr);
+    });
+    yearlyNote.textContent = "The same interest every year — simple interest on your original deposit, paid out each quarter, never added to the principal.";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your deposit, the rate and the tenure to see the quarterly payout.";
+    working.textContent = "Enter your deposit, the rate and the tenure to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    yearlyBody.replaceChildren();
+    yearlyNote.textContent = "Enter your figures to see the interest arrive year by year.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(deposit, rate, years, r) {
+    output.textContent = inr(r.quarterly);
+    box1Val.textContent = inr(r.quarterly);
+    box1Label.textContent = "QUARTERLY PAYOUT";
+    box2Val.textContent = inr(r.annual);
+    box2Label.textContent = "ANNUAL INCOME";
+    box3Val.textContent = inr(r.totalInterest);
+    box3Label.textContent = "TOTAL INTEREST (" + r.years + " YEARS)";
+    working.textContent = inr(deposit) + " at " + rate + "% for " + years + " years: you receive " + inr(r.quarterly)
+      + " every quarter — " + inr(r.annual) + " a year, " + inr(r.totalInterest) + " over " + years + " years.";
+    working2.textContent = "Matures in " + r.maturityYear + " · " + r.payouts + " quarterly payouts · " + inr(r.principal) + " returned in full at maturity.";
+    workingNote.textContent = "Simple interest, paid quarterly · rate held steady at " + rate + "% for the full term.";
+    glanceText.textContent = inr(deposit) + " · " + rate + "% → " + inr(r.quarterly) + " a quarter"
+      + " (" + inr(r.annual) + " a year; " + inr(r.monthly) + " a month on average; "
+      + inr(r.totalInterest) + " over " + r.years + " years; " + inr(r.principal) + " back at maturity).";
+    renderYearly(r);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | SCSS Calculator"
+      + "\nQuestion: " + inr(deposit) + " at " + rate + "% for " + years + " years"
+      + "\nAnswer: quarterly payout " + inr(r.quarterly) + "; annual income " + inr(r.annual)
+      + "; monthly average " + inr(r.monthly) + "; total interest " + inr(r.totalInterest)
+      + "; " + r.payouts + " quarterly payouts; matures in " + r.maturityYear
+      + "; principal " + inr(r.principal) + " returned in full"
+      + "\nWorking: simple interest, quarterly payout = deposit × rate ÷ 100 ÷ 4, principal returned at maturity";
+  }
+
+  function paint(showEmptyError = false) {
+    scssPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const depositRaw = inputDeposit.value;
+    const rateRaw = inputRate.value;
+    const tenureNum = Number(inputTenure.value);
+    const depositNum = depositRaw === "" ? NaN : Number(depositRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    let depositMsg = "";
+    let rateMsg = "";
+    if (depositRaw === "") {
+      if (showEmptyError) depositMsg = "Enter your deposit.";
+    } else if (!Number.isFinite(depositNum) || depositNum < 1000 || depositNum > 3000000 || depositNum % 1000 !== 0) {
+      depositMsg = "Enter a deposit of ₹1,000 to ₹30,00,000, in multiples of ₹1,000.";
+    }
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the interest rate.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 15) {
+      rateMsg = "Enter the interest rate from 0% to 15%.";
+    }
+    inputDepositError.textContent = depositMsg;
+    inputRateError.textContent = rateMsg;
+    inputDeposit.setAttribute("aria-invalid", String(depositMsg !== ""));
+    inputRate.setAttribute("aria-invalid", String(rateMsg !== ""));
+
+    const valid = depositMsg === "" && rateMsg === ""
+      && depositRaw !== "" && rateRaw !== ""
+      && (tenureNum === 5 || tenureNum === 8);
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = scssCompute(depositNum, rateNum, tenureNum);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(depositNum, rateNum, tenureNum, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = scssCompute(item.deposit, item.rate, item.years);
+    if (!r) return "";
+    return inr(item.deposit) + " · " + item.rate + "% · " + item.years + " years → " + inr(r.quarterly) + " a quarter";
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputDeposit.value, inputRate.value, inputTenure.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputDeposit.value = String(item.deposit);
+        inputRate.value = String(item.rate);
+        inputTenure.value = String(item.years);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      deposit: Number(inputDeposit.value),
+      rate: Number(inputRate.value),
+      years: Number(inputTenure.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputDeposit.value = button.dataset.deposit || "";
+      inputRate.value = button.dataset.rate || "";
+      if (button.dataset.tenure) inputTenure.value = button.dataset.tenure;
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputDeposit.value = String(rec.deposit);
+    inputRate.value = String(rec.rate);
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputDeposit.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputTenure.addEventListener(evt, () => { paint(); });
+  });
+
+  $("scss-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    inputTenure.value = String(c.sampleYears);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderScssCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleDeposit: p.sampleDeposit, sampleRate: p.sampleRate, sampleYears: p.sampleYears };
+  const sample = scssCompute(p.sampleDeposit, p.sampleRate, p.sampleYears);
+  const maxSample = scssCompute(3000000, 8.2, 5);
+  const extendedSample = scssCompute(1500000, 8.2, 8);
+  const rate7Sample = scssCompute(1500000, 7, 5);
+
+  const presetSummary = pr => {
+    const r = scssCompute(pr.deposit, pr.rate, 5);
+    return `${inr2(pr.deposit)} at ${pr.rate}% → ${inr2(r.quarterly)} a quarter`;
+  };
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = scssCompute(st.deposit, st.rate, 5);
+    return `${inr2(st.deposit)} at ${st.rate}% → ${inr2(r.quarterly)} a quarter`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const yearlyRows = sample.yearlyRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.label)}</th>
+        <td>${inr2(row.interest)}</td>
+        <td>${inr2(row.cumulative)}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}${hraCss}${ciCss}${epfCss}${npsCss}${ssyCss}${nscCss}${scssCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free SCSS calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate your SCSS →
+              </a>
+              <a href="#method" class="calc-link">How SCSS is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.quarterly)} every quarter</strong>
+                <small>On ₹15,00,000 at 8.2% for 5 years</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.annual)} a year</strong>
+                <small>About ${inr2(sample.monthly)} a month on average</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.totalInterest)} over 5 years</strong>
+                <small>Your ₹15,00,000 comes back in full at maturity</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>An estimate for planning — not financial, tax or legal advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate your SCSS</h2>
+              <span class="calc-pill" id="scss-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="scss-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-deposit">
+                Deposit amount (₹)
+                <span>What you pay once when you open the account — from ₹1,000, in multiples of ₹1,000, up to ₹30 lakh per person</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-deposit"
+                type="number"
+                value="${p.sampleDeposit}"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-deposit-error"
+              >
+              <p class="calc-error" id="input-deposit-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-rate">
+                Interest rate (% a year)
+                <span>The notified SCSS rate, from 0% to 15% — 8.2% is the rate for October to December 2026. The rate is reviewed every quarter, so try a lower one too</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-rate"
+                type="number"
+                value="${p.sampleRate}"
+                step="0.1"
+                inputmode="decimal"
+                aria-describedby="input-rate-error"
+              >
+              <p class="calc-error" id="input-rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-tenure">
+                Tenure
+                <span>5 years, or 8 years — 5 years plus one 3-year extension. An extended block earns the rate in force on the maturity date, not today's rate</span>
+              </label>
+
+              <select class="select-input" id="input-tenure">
+                <option value="5" selected>5 years</option>
+                <option value="8">8 years — 5 years + a 3-year extension</option>
+              </select>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-deposit">${inr2(sample.quarterly)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.quarterly)}</strong>
+                  <small id="box1-label">QUARTERLY PAYOUT</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.annual)}</strong>
+                  <small id="box2-label">ANNUAL INCOME</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.totalInterest)}</strong>
+                  <small id="box3-label">TOTAL INTEREST (5 YEARS)</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">₹15,00,000 · 8.2% → ${inr2(sample.quarterly)} a quarter (${inr2(sample.annual)} a year; ${inr2(sample.monthly)} a month on average; ${inr2(sample.totalInterest)} over 5 years; ${inr2(sample.principal)} back at maturity).</span>
+              </div>
+
+              <p class="working" id="working">
+                ₹15,00,000 at 8.2% for 5 years: you receive ${inr2(sample.quarterly)} every quarter — ${inr2(sample.annual)} a year, ${inr2(sample.totalInterest)} over 5 years.
+              </p>
+              <p class="working" id="working-2">Matures in ${sample.maturityYear} · ${sample.payouts} quarterly payouts · ${inr2(sample.principal)} returned in full at maturity.</p>
+              <p class="working" id="working-note">Simple interest, paid quarterly · rate held steady at 8.2% for the full term.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The figure is an estimate at the rate you
+                enter, held steady for the term. The SCSS rate is
+                notified every quarter and can change for new
+                accounts, and the interest is taxable in the
+                year it is paid.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="yearly">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Year by year</p>
+          <h2>How the interest arrives</h2>
+          <p id="yearly-note">The same interest every year — simple interest on your original deposit, paid out each quarter, never added to the principal.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="yearly-note">
+            <caption>Year-by-year interest on the sample figures: ₹15,00,000 at 8.2% for 5 years.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Interest paid that year</th>
+                <th scope="col">Cumulative interest</th>
+              </tr>
+            </thead>
+            <tbody id="yearly-body">
+              ${yearlyRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#yearly">Year by year</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / QUARTERLY INCOME, EVERY QUARTER</span>
+            <h3>The same payout, every quarter</h3>
+            <p>Interest is simple, so every quarter pays the same amount. On ₹15,00,000 the payout is ₹30,750 in the first quarter and ₹30,750 in the twentieth — ₹1,23,000 a year, ₹6,15,000 over 5 years, and your deposit back in full.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / 8.2% LOCKED AT OPENING</span>
+            <h3>The rate you open at is the rate you keep</h3>
+            <p>A quarterly review changes the rate only for new accounts. At 7% instead of 8.2%, ₹15,00,000 would pay ₹1,05,000 a year instead of ₹1,23,000 — ₹18,000 less a year. Try a different rate to see what a change would do.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / TAXED, BUT 80C AND 80TTB HELP</span>
+            <h3>Deposit plus interest deductions</h3>
+            <p>The interest is taxable every year, but under the old regime the deposit counts towards the ₹1.5 lakh 80C limit, and a senior citizen can deduct up to ₹50,000 of deposit interest under 80TTB. TDS of 10% applies only once the year's interest crosses ₹1 lakh.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your deposit to a quarterly payout</h2>
+          <p>
+            Enter your deposit first — the
+            rate is already filled in with the current 8.2% —
+            then pick the tenure and read the payout every
+            quarter, the income for the year and the total
+            interest over the term.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How SCSS is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The SCSS formula</small>
+          Quarterly payout = deposit × rate ÷ 100 ÷ 4 · simple interest, paid quarterly · principal returned in full at maturity
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. ₹15,00,000 at 8.2%, 5 years
+            <strong>${fmt2(sample.quarterly)} a quarter · ${fmt2(sample.totalInterest)} interest</strong>
+            <span>Each quarter pays ₹30,750, so the year brings ₹1,23,000. After 20 quarterly payouts the interest adds to ₹6,15,000, and the ₹15,00,000 deposit comes back in full.</span>
+          </div>
+
+          <div class="math-step">
+            2. ₹30,00,000 at 8.2%, 5 years
+            <strong>${fmt2(maxSample.quarterly)} a quarter · ${fmt2(maxSample.totalInterest)} interest</strong>
+            <span>The maximum deposit, ₹30,00,000 for 5 years at 8.2%. You receive ₹61,500 every quarter — ₹2,46,000 a year, about ₹20,500 a month on average — and ₹12,30,000 over 5 years, with the deposit back in full.</span>
+          </div>
+
+          <div class="math-step">
+            3. ₹15,00,000 at 8.2%, 8 years
+            <strong>${fmt2(extendedSample.quarterly)} a quarter · ${fmt2(extendedSample.totalInterest)} interest</strong>
+            <span>Extend for one 3-year block and the same ₹30,750 keeps arriving every quarter for 32 payouts. The 8-year total is ₹9,84,000 — but only if the rate in force on the maturity date is still 8.2%.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five cases, five quarterly payouts</h2>
+          <p>
+            One example for each everyday case, including one
+            at the maximum deposit and one at the minimum. Select
+            any example to load it into the calculator and check
+            the working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.deposit)} AT ${story.rate}%</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-deposit="${story.deposit}" data-rate="${story.rate}" data-tenure="5">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>SCSS rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>The current SCSS rate, the deposit limits, the 5-year tenure and the repeatable 3-year extension, how the interest is paid, the rate lock, who can open an account, the early-closure penalties and the tax on the interest.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get SCSS wrong</h2>
+          <p>
+            SCSS is simple on the surface — one deposit, the
+            same payout every quarter — but the payout timing,
+            the extension rate and the tax catch people out.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / EXPECTING THE MONEY EVERY MONTH</span>
+            <h3>SCSS pays quarterly, not monthly</h3>
+            <p>Interest is paid on the first working day of April, July, October and January. The ₹10,250 a month on ₹15,00,000 is an average, not a credit — the money arrives as ₹30,750 every three months. If you need money every month, the Post Office Monthly Income Scheme pays monthly instead.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THINKING THE INTEREST COMPOUNDS</span>
+            <h3>Every quarter pays the same</h3>
+            <p>SCSS interest is simple: it is always worked out on your original deposit and paid out, never added to the principal. On ₹15,00,000 the twentieth payout is ₹30,750, exactly like the first — anyone promising a growing payout is describing a different product.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / ASSUMING THE EXTENSION KEEPS 8.2%</span>
+            <h3>The extended block earns the rate then in force</h3>
+            <p>An extended account earns the rate in force on the maturity date, which may be higher or lower than 8.2%. The 8-year total of ₹9,84,000 on ₹15,00,000 assumes the rate holds — check the notified rate when the extension falls due.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / FORGETTING THE TAX ON THE INTEREST</span>
+            <h3>Tax is due every year, TDS above ₹1 lakh</h3>
+            <p>SCSS interest is taxable at your slab rate in the year it is paid, and TDS of 10% applies once the year's interest crosses ₹1 lakh for a senior citizen. On ₹30,00,000 about ₹24,600 a year is deducted — give the bank or post office the nil-tax declaration if your total tax for the year will be nil. And do not plan on closing early without counting the 1–1.5% penalty.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>SCSS calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the standard SCSS-calculator method:
+            each quarter pays one quarter of a year's interest
+            on your original deposit, rounded to the nearest
+            rupee, and the interest is paid out, never added
+            to the principal. The annual income is the quarterly
+            payout × 4, the monthly average is the annual
+            income ÷ 12 rounded to the nearest rupee, and the
+            total interest is the annual income × the number of
+            years. The rate is user-entered and treated as a
+            steady assumption — never as a live quote or a
+            promise for an account opened later.
+          </p>
+          <p>
+            Figures checked 12 November 2026: the 8.2% rate
+            for 1 October to 31 December 2026 is in the
+            Ministry of Finance (Department of Economic
+            Affairs) Office Memorandum F.No.1/4/2019-NS,
+            dated 30 September 2026, keeping small savings
+            rates unchanged for the third quarter of FY
+            2026-27, as carried by the Department of Posts
+            in SB Order 12/2026 of the same date — see the
+            <a href="https://www.nsiindia.gov.in/" rel="nofollow noopener" target="_blank">National Savings Institute</a>.
+            The deposit limits, the 5-year tenure, the
+            repeatable 3-year extension and the early-closure
+            penalties are in the Senior Citizens' Savings
+            Scheme, 2019, as amended by G.S.R. 829(E) of
+            7 November 2023 (Department of Posts SB Order
+            22/2023 of 14 November 2023), and the scheme
+            rules are on
+            <a href="https://www.indiapost.gov.in/" rel="nofollow noopener" target="_blank">India Post</a>'s
+            savings schemes page. The tax treatment — the
+            interest taxable as it is paid, TDS above the
+            senior-citizen threshold, the deposit counting
+            towards the old-regime ₹1.5 lakh limit and the
+            ₹50,000 senior-citizen interest deduction — is in
+            the Income-tax Act; the Income-tax Act, 2025, in
+            force from 1 April 2026, renumbered the Act's
+            provisions, and the old-regime deduction this
+            page calls Section 80C is carried in Schedule XV
+            of the new Act — see
+            <a href="https://www.incometax.gov.in/" rel="nofollow noopener" target="_blank">the Income Tax Department</a>.
+            The worked examples reproduce the ranking SCSS
+            calculators' published figures: ₹30,00,000 at
+            8.2% gives ₹61,500 a quarter on
+            <a href="https://www.credocalc.com/in/scss-calculator/" rel="nofollow noopener" target="_blank">credocalc.com</a>,
+            ₹15,00,000 gives ₹30,750 a quarter on
+            <a href="https://www.freecalculator.cloud/scss-calculator" rel="nofollow noopener" target="_blank">freecalculator.cloud</a>,
+            and the same 5-year and 8-year totals are published
+            by commerceinsights.co.in. Two claims are
+            deliberately NOT used: fintra.co.in's guide says
+            the SCSS rate is compounded quarterly, but SCSS
+            interest is simple — it never compounds; and
+            commerceinsights.co.in and globalcalqulate.com both
+            say the account is extendable once, but the 2023
+            amendment removed the once-only limit, so the
+            account can now be extended in 3-year blocks as
+            many times as the holder likes. One honest limit:
+            the first quarterly payment covers only the days
+            from your deposit to the end of that quarter, so
+            it is smaller than the full ₹30,750 on ₹15,00,000;
+            this calculator shows the full-quarter payout.
+            For a lump sum that compounds instead, use the FD
+            calculator; for a tax-free comparison, the PPF
+            calculator; for a daughter's future, the SSY
+            calculator; for the tax on your deposits, the
+            income-tax calculator; for a monthly payout, the
+            Post Office Monthly Income Scheme is the
+            comparison to make — there is no MIS calculator on
+            this site yet.
           </p>
         </div>
       </div>
