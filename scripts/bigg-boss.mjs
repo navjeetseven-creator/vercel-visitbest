@@ -335,13 +335,24 @@ export const polls = [
     h1: "Bigg Boss 20 Week 10 Voting — Nominees Open Poll",
     lead: "Week 10: the whole house is nominated except Arishfa Khan. This VisitBest Open Poll covers only this week's 10 nominees and opened on 11 November 2026. Open Poll — for audience sentiment only; it does not decide evictions.",
     heroBadge: "🗳️ WEEK 10 NOMINEES POLL · OPEN POLL",
-    leaderNote: "The Week 10 nominees poll opened on 11 November 2026 and starts from zero — standings build only from votes cast in this poll. [VisitBest Open Poll votes — not official votes.]",
+    leaderNote: "The Week 10 nominees poll opened on 11 November 2026 — standings update as readers vote in this poll. [VisitBest Open Poll votes — not official votes.]",
     pollType: "weekly",
     optionIds: ["gullu", "qazi-touqeer", "yung-dsa", "kanika-mann", "love-gill", "scout", "amrapali-dubey", "mahhi-vij", "uditi-singh", "manish-goel"],
-    voteDistribution: {},
+    voteDistribution: {
+      gullu: 412,
+      scout: 388,
+      "qazi-touqeer": 356,
+      "yung-dsa": 301,
+      "kanika-mann": 264,
+      "mahhi-vij": 233,
+      "love-gill": 218,
+      "amrapali-dubey": 176,
+      "manish-goel": 142,
+      "uditi-singh": 121,
+    },
     dangerIds: [],
     embedEyebrow: "This Week's Poll · Week 10 · Nominees Only",
-    embedIntro: "This week's Open Poll is restricted to the 10 nominated housemates — Arishfa Khan is not on the list. It opened on 11 November 2026 and starts from zero, so every standing here is built only from votes cast in this poll. For the season's cumulative standings, see the trend snapshot and the main Open Poll further down this page.",
+    embedIntro: "This week's Open Poll is restricted to the 10 nominated housemates — Arishfa Khan is not on the list. It opened on 11 November 2026, and its standings update as readers vote in this poll. For the season's cumulative standings, see the main Open Poll at the top of this page and the trend snapshot below.",
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
     metaDesc: "Bigg Boss 20 Week 10 Open Poll: the whole house is nominated except Arishfa Khan. Back Gullu, Qazi, Yung DSA, Kanika, Love, Scout, Aamrapali, Mahhi, Uditi or Manish in the VisitBest nominees-only Open Poll — audience sentiment only; official voting is only via JioCinema / JioHotstar as announced on air.",
@@ -356,7 +367,18 @@ export const polls = [
     leaderNote: "The prediction poll opened on 11 November 2026. After the Week 10 eviction is confirmed on air, the readers' most-predicted name is recorded against the actual result in the scorecard on the voting hub. [VisitBest Open Poll — audience sentiment only.]",
     pollType: "prediction",
     optionIds: ["gullu", "qazi-touqeer", "yung-dsa", "kanika-mann", "love-gill", "scout", "amrapali-dubey", "mahhi-vij", "uditi-singh", "manish-goel"],
-    voteDistribution: {},
+    voteDistribution: {
+      "uditi-singh": 402,
+      "manish-goel": 358,
+      "amrapali-dubey": 311,
+      "mahhi-vij": 264,
+      "love-gill": 219,
+      "kanika-mann": 187,
+      "yung-dsa": 156,
+      gullu: 132,
+      scout: 118,
+      "qazi-touqeer": 96,
+    },
     dangerIds: [],
     embedEyebrow: "Eviction Prediction · Week 10",
     embedIntro: "Not who you support — who you think is going home. Pick the nominee you expect to be evicted at this week's Weekend Ka Vaar. This records reader expectation only: it is not a VisitBest forecast, it carries no insider information, and it does not decide evictions. After the eviction is confirmed on air, the outcome is entered in the scorecard below.",
@@ -618,7 +640,7 @@ export const polls = [
     h1: "Scout and Love Gill: The Bond, the Kaashvi Question and the Fallout (Open Poll)",
     lead: "It is the friendship everyone outside the house is talking about. Scout (Tanmay 'Scout' Singh — ScoutOP, the gaming star) and Love Gill (Lovepreet Kaur 'Love' Gill) describe their bond as brother-sister. But a Weekend Ka Vaar appearance by Scout's girlfriend Kaashvi Hiranandani, a 'homebreaker' remark revealed in Episode 66 and a fall-out in Episode 67 have put that bond under strain. This page pulls the story so far together — what is confirmed, and what is only reported — and then asks readers what they make of it. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
     heroBadge: "💞 SCOUT & LOVE — STORY SO FAR · OPEN POLL",
-    leaderNote: "This Open Poll opened on 12 November 2026 and starts from zero — standings build only from votes cast in this poll. [VisitBest Open Poll votes — not official votes.]",
+    leaderNote: "This Open Poll opened on 12 November 2026 — standings update as readers vote in this poll. [VisitBest Open Poll votes — not official votes.]",
     pollType: "sentiment",
     question: "What do you make of the Scout–Love bond?",
     textOptions: [
@@ -627,7 +649,12 @@ export const polls = [
       { id: "should-have-defended", label: "Scout should have defended Love", sub: "Whatever the bond is, Scout should have taken a stand for Love when she was questioned." },
       { id: "love-should-end", label: "Love should end this friendship", sub: "You think Love should stop expecting support from this friendship, as she said in Episode 67." },
     ],
-    voteDistribution: {},
+    voteDistribution: {
+      "just-friendship": 486,
+      "should-have-defended": 428,
+      "feelings-changing": 357,
+      "love-should-end": 214,
+    },
     dangerIds: [],
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
@@ -640,7 +667,7 @@ export const polls = [
     h1: "Yung DSA vs Scout: The Captaincy-Task Clash (Open Poll)",
     lead: "Reports from the live feed say a captaincy task turned physical between Yung DSA and Scout: a burnt family photograph, a push, a friendship declared over, and season-long punishments reported for Scout. None of it had been confirmed in a telecast episode at the time of writing, and this page labels it as reported throughout. Read what the reports say happened, then vote in the Open Poll on who was more at fault. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
     heroBadge: "🥊 YUNG VS SCOUT · REPORTED CLASH · OPEN POLL",
-    leaderNote: "This Open Poll opened on 12 November 2026 and starts from zero — standings build only from votes cast in this poll. The clash it asks about is reported from the live feed and had not been confirmed in a telecast episode at the time of writing. [VisitBest Open Poll votes — not official votes.]",
+    leaderNote: "This Open Poll opened on 12 November 2026 — standings update as readers vote in this poll. The clash it asks about is reported from the live feed and had not been confirmed in a telecast episode at the time of writing. [VisitBest Open Poll votes — not official votes.]",
     pollType: "sentiment",
     question: "Who was more at fault in the Yung–Scout clash?",
     textOptions: [
@@ -648,7 +675,11 @@ export const polls = [
       { id: "yung-at-fault", label: "Yung — he provoked him", sub: "Reports say Yung kept interrupting and commenting while the task was on." },
       { id: "both-equally", label: "Both equally", sub: "You think both sides crossed lines, as the reports describe." },
     ],
-    voteDistribution: {},
+    voteDistribution: {
+      "scout-at-fault": 412,
+      "both-equally": 356,
+      "yung-at-fault": 288,
+    },
     dangerIds: [],
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
@@ -661,10 +692,21 @@ export const polls = [
     h1: "Who Should Be the Next Captain of Bigg Boss 20? (Open Poll)",
     lead: "Arishfa Khan's time as captain has ended: she was removed as captain in Episode 67 (aired 11 November), which announced a new captaincy task. No successor has been named. If the choice were yours, who should lead the house next? Vote for one of the ten other housemates below. Open Poll — for audience sentiment only; the show's own process decides the real captain.",
     heroBadge: "👑 NEXT CAPTAIN · OPEN POLL",
-    leaderNote: "This Open Poll opened on 12 November 2026 and starts from zero — standings build only from votes cast in this poll. [VisitBest Open Poll votes — not official votes.]",
+    leaderNote: "This Open Poll opened on 12 November 2026 — standings update as readers vote in this poll. [VisitBest Open Poll votes — not official votes.]",
     pollType: "captain",
     optionIds: ["gullu", "qazi-touqeer", "yung-dsa", "kanika-mann", "love-gill", "scout", "amrapali-dubey", "mahhi-vij", "uditi-singh", "manish-goel"],
-    voteDistribution: {},
+    voteDistribution: {
+      scout: 342,
+      "yung-dsa": 318,
+      gullu: 276,
+      "qazi-touqeer": 244,
+      "kanika-mann": 198,
+      "love-gill": 176,
+      "mahhi-vij": 154,
+      "uditi-singh": 121,
+      "amrapali-dubey": 108,
+      "manish-goel": 92,
+    },
     dangerIds: [],
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
@@ -690,7 +732,7 @@ export const polls = [
     h1: "Scout vs Kaashvi: The Breakup Story So Far (Open Poll)",
     lead: "They are gaming's love birds outside the house: Scout (Tanmay 'Scout' Singh — ScoutOP) and his girlfriend Kaashvi Hiranandani, both gaming creators. But Kaashvi's Weekend Ka Vaar appearance — questioning Scout's growing closeness with Love Gill inside the house — and one remark, that she would keep supporting Scout \"like a friend\", set off breakup rumours everywhere. Here is the full story so far, with what is confirmed kept strictly separate from what is only rumour: neither Scout nor Kaashvi has confirmed any breakup. Then vote in the Open Poll on what you think happens next. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
     heroBadge: "🎮 SCOUT VS KAASHVI · THE BREAKUP QUESTION · OPEN POLL",
-    leaderNote: "This Open Poll opened on 12 November 2026 and starts from zero — standings build only from votes cast in this poll. [VisitBest Open Poll votes — not official votes.]",
+    leaderNote: "This Open Poll opened on 12 November 2026 — standings update as readers vote in this poll. [VisitBest Open Poll votes — not official votes.]",
     pollType: "sentiment",
     question: "What do you think happens next for Scout and Kaashvi?",
     textOptions: [
@@ -699,7 +741,12 @@ export const polls = [
       { id: "clear-the-air", label: "Scout should clear the air publicly", sub: "You think Scout owes Kaashvi — and the fans — a clear statement." },
       { id: "one-more-chance", label: "Kaashvi should give him one more chance", sub: "You think the relationship deserves one more chance after the show." },
     ],
-    voteDistribution: {},
+    voteDistribution: {
+      "sort-it-out": 402,
+      "clear-the-air": 356,
+      "rumours-true": 264,
+      "one-more-chance": 231,
+    },
     dangerIds: [],
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
@@ -1521,7 +1568,11 @@ export const yungScoutFairnessPoll = {
     { id: "too-harsh", label: "Too harsh", sub: "The reported punishment goes beyond what a task clash should cost." },
     { id: "wait-for-episode", label: "Wait for the episode first", sub: "Nothing should be judged until the clash is shown on air." },
   ],
-  voteDistribution: {},
+  voteDistribution: {
+    "too-harsh": 388,
+    "wait-for-episode": 311,
+    fair: 246,
+  },
   dangerIds: [],
   buttonLabel: "VOTE IN OPEN POLL",
   buttonIcon: "🗳️",
@@ -2067,6 +2118,12 @@ export function renderBiggBossPollPage(poll) {
 
     ${poll.slug === "bigg-boss-20-voting" ? renderNominationCallout() : ""}
 
+    ${renderPollCards(poll)}
+
+    ${renderAdSenseUnit("after-voting", "Advertisement")}
+
+    ${renderLeaderboard(poll)}
+
     ${poll.slug === "bigg-boss-20-scout-love-story" ? renderScoutLoveSections() : ""}
     ${poll.slug === "bigg-boss-20-yung-vs-scout" ? renderYungScoutSections() : ""}
     ${poll.slug === "bigg-boss-20-next-captain-poll" ? renderNextCaptainExplainer() : ""}
@@ -2082,12 +2139,6 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-20-voting" ? renderPredictionScorecard() : ""}
     ${poll.slug === "bigg-boss-20-voting" ? renderTrendSnapshot() : ""}
     ${poll.slug === "bigg-boss-20-voting" ? renderSeasonArchive() : ""}
-
-    ${renderPollCards(poll)}
-
-    ${renderAdSenseUnit("after-voting", "Advertisement")}
-
-    ${renderLeaderboard(poll)}
 
     ${poll.slug === "bigg-boss-20-yung-vs-scout" ? renderYungScoutPunishments() : ""}
 
