@@ -1397,6 +1397,269 @@ export const pages = [
       ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
     ]
   },
+
+  {
+    key: "gr",
+    kind: "gr",
+    slug: "gratuity-calculator",
+    title: "Gratuity Calculator",
+    meta: "Work out your gratuity in seconds — the amount payable under the Code on Social Security, the 5-year rule, the ₹20 lakh ceiling, the 50% wage rule and the tax-exempt split. Free, instant, and calculated in your browser.",
+    lead: "Enter your last drawn wages and your joining and leaving dates — and get the gratuity payable, the amount before the ₹20 lakh ceiling, the exact service counted and the tax-exempt split, with the working shown.",
+    presets: [
+      { id: "gr50", label: "₹50,000 a month for 10 years", wages: 50000, totalPay: 0, join: "2016-01-01", leave: "2026-01-01", type: "permanent", covered: true, reason: "resignation", govt: false },
+      { id: "gr60", label: "₹60,000 a month for 10 years", wages: 60000, totalPay: 0, join: "2016-01-01", leave: "2026-01-01", type: "permanent", covered: true, reason: "resignation", govt: false },
+      { id: "gr100", label: "₹1,00,000 a month for 20 years", wages: 100000, totalPay: 0, join: "2006-01-01", leave: "2026-01-01", type: "permanent", covered: true, reason: "resignation", govt: false },
+      { id: "grCap", label: "₹1,50,000 a month for 25 years — hits the ceiling", wages: 150000, totalPay: 0, join: "2001-01-01", leave: "2026-01-01", type: "permanent", covered: true, reason: "resignation", govt: false },
+      { id: "grFixed", label: "Fixed-term: ₹40,000 a month for 1½ years", wages: 40000, totalPay: 0, join: "2024-07-01", leave: "2026-01-01", type: "fixed-term", covered: true, reason: "resignation", govt: false }
+    ],
+    defaultPreset: "gr50",
+    sampleWages: 50000,
+    sampleTotalPay: 0,
+    sampleJoin: "2016-01-01",
+    sampleLeave: "2026-01-01",
+    sampleType: "permanent",
+    sampleCovered: true,
+    sampleReason: "resignation",
+    sampleGovt: false,
+    notice: "This tool applies the Code on Social Security, 2020 (in force 21 November 2025) — it is not legal advice. The figure is the statutory amount; your settlement letter decides what is actually paid. Check the rules table below before you rely on it.",
+    overviewTitle: "What does a gratuity calculator do?",
+    overview: "Gratuity is a lump sum your employer pays for long service — fifteen days' wages for every year you worked there. This calculator works out the amount from your last drawn monthly wages (basic + dearness allowance) and your exact service, applies the 5-year eligibility rule, the part-year rounding, the ₹20 lakh ceiling and the 50% wage rule, and splits the figure into the tax-exempt and taxable parts.",
+    inputNote: "Enter your last drawn monthly wages — basic + dearness allowance only, not your gross salary or CTC. Wages run from ₹1,000 to ₹10,00,000 a month. The optional total monthly pay is your full monthly pay before deductions; if your basic + DA is below half of it, the calculator raises the wage base to half of it, under the 50% rule.",
+    modelNote: "Gratuity = last drawn monthly wages × 15 × years of service ÷ 26, for employers covered by the Code (10 or more employees). A part-year over 6 months counts as a full year for permanent staff; fixed-term staff are paid pro rata on exact service. Employers outside the Code who pay voluntarily commonly use ÷ 30 on completed years. The most an employer must pay is ₹20,00,000.",
+    steps: [
+      ["Enter your last drawn wages", "Basic + dearness allowance only — from ₹1,000 to ₹10,00,000 a month. Not your gross salary or CTC; entering those inflates the figure. Add your total monthly pay below it if you want the 50% rule checked."],
+      ["Enter your joining and leaving dates", "The dates on your appointment letter and your relieving letter. The calculator counts the exact service — years, months and days — between them."],
+      ["Choose the employment type and coverage", "Permanent or fixed-term, and whether your employer is covered (10 or more employees). Fixed-term staff qualify after 1 year, paid pro rata; employers outside the Code commonly use the ÷ 30 formula."],
+      ["Read the gratuity, the cap and the tax split", "The answer appears as you type — gratuity payable, the amount before the ₹20 lakh ceiling, the exact service counted and the tax-exempt split — with the step-by-step working and the growth table underneath."]
+    ],
+    stories: [
+      {
+        wages: 50000, totalPay: 0, join: "2016-01-01", leave: "2026-01-01", type: "permanent", covered: true, reason: "resignation", govt: false, preset: "gr50",
+        title: "₹50,000 a month for 10 years pays ₹2,88,462",
+        body: "₹50,000 of basic + DA over 10 years of service; the whole ₹2,88,462 is tax-exempt, well below the ₹20 lakh ceiling — and it is the same figure the ranking gratuity calculators give."
+      },
+      {
+        wages: 60000, totalPay: 0, join: "2016-01-01", leave: "2026-01-01", type: "permanent", covered: true, reason: "resignation", govt: false, preset: "gr60",
+        title: "₹60,000 a month for 10 years pays ₹3,46,154",
+        body: "₹60,000 of basic + DA over 10 years; ₹3,46,154 in full, all of it tax-exempt. The same figure the live calculator on PaisaCalc gives for ₹60,000 over 10 years."
+      },
+      {
+        wages: 100000, totalPay: 0, join: "2006-01-01", leave: "2026-01-01", type: "permanent", covered: true, reason: "resignation", govt: false, preset: "gr100",
+        title: "₹1,00,000 a month for 20 years pays ₹11,53,846",
+        body: "₹1,00,000 of basic + DA over 20 years; ₹11,53,846, all of it tax-exempt. Twenty years pays exactly twice the ten-year figure at the same wage."
+      },
+      {
+        wages: 150000, totalPay: 0, join: "2001-01-01", leave: "2026-01-01", type: "permanent", covered: true, reason: "resignation", govt: false, preset: "grCap",
+        title: "₹1,50,000 a month for 25 years hits the ₹20 lakh ceiling",
+        body: "The formula gives ₹21,63,462 before the ceiling — so the employer must pay ₹20,00,000, and the ₹1,63,462 above the ceiling is taxable if the employer pays it."
+      },
+      {
+        wages: 40000, totalPay: 0, join: "2024-07-01", leave: "2026-01-01", type: "fixed-term", covered: true, reason: "resignation", govt: false, preset: "grFixed",
+        title: "Fixed-term: ₹40,000 a month for 1½ years pays ₹34,615",
+        body: "A fixed-term employee qualifies after 1 year, paid pro rata on exact service: 1 year 6 months is 1.5 years, so ₹40,000 × 15 × 1.5 ÷ 26 = ₹34,615 — no 5-year wait."
+      }
+    ],
+    rateRows: [
+      { rate: "15 ÷ 26", applies: "The formula — covered employers", example: "Gratuity = (last drawn monthly wages × 15 × years of service) ÷ 26. Monthly-rated staff: monthly wages ÷ 26 × 15. The 15 is fifteen days' wages for every year of service; the 26 is the working days in a month." },
+      { rate: "15 ÷ 30", applies: "Not covered — the commonly used formula", example: "Employers outside the Act who pay gratuity voluntarily commonly use the average of the last 10 months' wages × 15 ÷ 30. Only completed years count, and the ₹20 lakh ceiling is not a statutory cap for them." },
+      { rate: "5 years", applies: "Eligibility — permanent employees", example: "Gratuity is payable after 5 years of continuous service with the same employer (Code on Social Security, 2020, s.53(1)). A part-year over 6 months counts as a full year." },
+      { rate: "1 year", applies: "Eligibility — fixed-term employees", example: "The 5-year rule is waived where employment ends on expiry of the fixed-term contract. Ministry FAQs say a fixed-term employee is eligible after 1 year of service under the contract, paid pro rata on exact service." },
+      { rate: "₹20,00,000", applies: "The ceiling", example: "The most an employer must pay is ₹20 lakh (s.53(3), as notified; the Labour Ministry confirmed in December 2025 it remains ₹20 lakh). The calculator shows the before-cap figure when the cap bites." },
+      { rate: "50% rule", applies: "Wages — basic + DA, topped up", example: "Wages are basic + dearness allowance (plus retaining allowance where applicable). If basic + DA is below 50% of total monthly pay, 50% of total pay is the wage base (s.2(88))." },
+      { rate: "30 days", applies: "Payment deadline", example: "Gratuity must be paid within 30 days of becoming payable (s.56). If payment is delayed, interest is payable." },
+      { rate: "₹20 lakh, lifetime", applies: "Tax — exempt up to ₹20 lakh", example: "Gratuity up to ₹20 lakh is exempt for private-sector employees — a lifetime limit across all employers (CBDT Notification S.O. 1213(E), 8 March 2018). Government employees' gratuity is fully exempt." }
+    ],
+    rateTableTitle: "Gratuity rules at a glance",
+    rateTableNote: "The rules that decide what your gratuity actually is: the formula, who qualifies, the ceiling, what counts as wages, the payment deadline and the tax treatment. Every rule here is from the Code on Social Security, 2020, the Ministry of Labour & Employment FAQs or the CBDT notification — never from a blog or a competitor.",
+    rateTableConclusion: "The formula is arithmetic — the wage base, the years counted and the divisor decide it. The ceiling and the lifetime tax exemption are what most people get wrong.",
+    calloutTitle: "The 6-month rule is where most people lose money",
+    calloutNote: "On the ₹50,000 sample, 10 years 7 months counts as 11 years — ₹3,17,308 instead of ₹2,88,462, a difference of ₹28,846 for one extra month of service. But 10 years 6 months counts as 10 years exactly: the part-year must be over 6 months to round up. Check your leaving date against the 6-month line before you accept a settlement figure.",
+    faq: [
+      ["How is gratuity calculated in India?", "With the statutory formula: gratuity = (last drawn monthly wages × 15 × years of service) ÷ 26, for employers covered by the Code on Social Security, 2020. Monthly-rated staff: monthly wages ÷ 26 × 15. For ₹50,000 of basic + DA over 10 years: ₹50,000 × 15 × 10 ÷ 26 = ₹2,88,462. The 15 is fifteen days' wages for every year of service, and the 26 is the working days in a month. Employers outside the Code who pay voluntarily commonly use ÷ 30 instead."],
+      ["How many years of service do I need for gratuity?", "Five years of continuous service with the same employer, for permanent staff (Code on Social Security, 2020, s.53(1)). A part-year over 6 months counts as a full year, so 5 years 7 months counts as 6. Fixed-term staff qualify after 1 year of service under the contract, paid pro rata. The 5-year rule is waived entirely if the service ends through death or disablement."],
+      ["What salary counts as wages for gratuity?", "Basic pay + dearness allowance, plus retaining allowance where it applies. HRA, bonus, overtime and other allowances are excluded — unless the 50% rule bites: if your basic + DA is below half of your total monthly pay, 50% of your total pay becomes the wage base (s.2(88)). Enter your total monthly pay in the calculator and it applies the rule and shows the adjustment. Never enter your gross salary or CTC as wages — it inflates the figure."],
+      ["What is the maximum gratuity I can get?", "₹20,00,000 is the most an employer must pay (s.53(3), as notified; the Labour Ministry confirmed in December 2025 it remains ₹20 lakh). If the formula gives more, the payment is capped and the calculator shows the before-cap figure — on ₹1,50,000 a month for 25 years the formula gives ₹21,63,462, so ₹20,00,000 is payable. An employer can pay more than the ceiling voluntarily, but the excess is taxable."],
+      ["Is gratuity taxable?", "Up to ₹20 lakh is exempt for private-sector employees — and that is a lifetime limit across all employers, not per employer (CBDT Notification S.O. 1213(E), 8 March 2018). Government employees' gratuity is fully exempt. Anything above the ₹20 lakh exemption is taxed as salary. This calculator shows the split on the before-cap figure, because that is what the exemption limit bites on."],
+      ["How is gratuity calculated for fixed-term employees?", "A fixed-term employee is eligible after 1 year of service under the contract, paid pro rata — the 5-year rule does not apply (Code on Social Security, 2020; Ministry of Labour & Employment FAQs). This calculator works it out on exact service: years + months ÷ 12 + days ÷ 365. For ₹40,000 a month over 1 year 6 months: ₹40,000 × 15 × 1.5 ÷ 26 = ₹34,615. One honest limit: the FAQs do not spell out how a part-year is treated for fixed-term staff, so this calculator uses exact pro-rata and says so — check your contract if it states a different treatment."],
+      ["My employer has fewer than 10 employees. Do I get gratuity?", "The Code covers establishments with 10 or more employees, so a smaller employer is not legally bound to pay. Many still pay gratuity voluntarily, and the formula commonly used is the average of the last 10 months' wages × 15 ÷ 30, on completed years only. Switch the covered toggle off and the calculator uses that formula — it is labelled as the commonly used formula, not a statutory one."],
+      ["When must my employer pay my gratuity?", "Within 30 days of it becoming payable (s.56). Claim it with Form I within 30 days of leaving; if the employer delays without a valid reason, interest is payable. If the employer refuses or underpays, you can appeal to the Controlling Authority (the Labour Commissioner) with Form N."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
+
+  {
+    key: "hra",
+    kind: "hra",
+    slug: "hra-calculator",
+    title: "HRA Calculator",
+    meta: "Work out how much of your house rent allowance is tax-free — the least of HRA received, rent minus 10% of salary, and 50% or 40% of salary — for FY 2025-26 and FY 2026-27, old regime only. Free, instant, and calculated in your browser.",
+    lead: "Enter your basic salary, the HRA you receive and the rent you pay — and get the tax-free HRA per month and per year, the taxable part, and the three limbs with the binding one highlighted.",
+    presets: [
+      { id: "hraIndiaFirst", label: "₹40,000 basic · Mumbai — the worked example", basic: 40000, hra: 25000, rent: 20000, city: "mumbai", fy: "2026-27", regime: "old" },
+      { id: "hraMera", label: "₹50,000 basic · non-metro — rent limb binds", basic: 50000, hra: 20000, rent: 18000, city: "other", fy: "2026-27", regime: "old" },
+      { id: "hraBindsHra", label: "₹60,000 basic · Delhi — HRA received binds", basic: 60000, hra: 10000, rent: 30000, city: "delhi", fy: "2026-27", regime: "old" },
+      { id: "hraBengaluru", label: "₹80,000 basic · Bengaluru 2026-27 — 50% city", basic: 80000, hra: 50000, rent: 45000, city: "bengaluru", fy: "2026-27", regime: "old" },
+      { id: "hraNewRegime", label: "Same figures, new regime — ₹0 exempt", basic: 40000, hra: 25000, rent: 20000, city: "mumbai", fy: "2026-27", regime: "new" }
+    ],
+    defaultPreset: "hraIndiaFirst",
+    sampleBasic: 40000,
+    sampleHra: 25000,
+    sampleRent: 20000,
+    sampleCity: "mumbai",
+    sampleFy: "2026-27",
+    sampleRegime: "old",
+    notice: "This tool applies the HRA exemption under the Income-tax Act — it is not tax advice. The figure is the statutory exemption on the numbers you enter; your Form 16 and your return decide what is actually exempt. Check the rules table below before you rely on it.",
+    overviewTitle: "What does an HRA calculator do?",
+    overview: "House rent allowance is the part of your salary your employer pays towards rent. If you pay rent and live in the house, part of that HRA is exempt from income tax — the smallest of three figures: the HRA you actually receive, the rent you pay minus 10% of your salary, and 50% of your salary if you live in a metro city, else 40%. This calculator works out all three limbs, picks the smallest, and splits your HRA into the tax-free and taxable parts, per month and per year.",
+    inputNote: "Enter monthly figures — basic salary + dearness allowance only, not your gross salary or CTC. Basic runs from ₹1,000 to ₹10,00,000 a month. HRA and rent can be zero. Pick the financial year carefully: the 50% city list grew from four cities to eight from FY 2026-27.",
+    modelNote: "Exempt HRA = least of (a) HRA actually received, (b) rent paid minus 10% of salary, (c) 50% of salary if the rented house is in a metro city, else 40% of salary. Salary is basic pay + dearness allowance forming part of retirement benefits. The exemption is available only under the old tax regime — under the new regime the whole HRA is taxable.",
+    steps: [
+      ["Enter your basic salary + DA", "Basic pay + dearness allowance only, per month — from ₹1,000 to ₹10,00,000. Not your gross salary or CTC; entering those inflates the exemption."],
+      ["Enter the HRA you receive and the rent you pay", "Both per month. The HRA is the allowance on your payslip; the rent is what you actually pay your landlord. Either can be zero."],
+      ["Pick your city, financial year and tax regime", "The city decides whether limb (c) is 50% or 40% — and the 50% list depends on the year: four cities in FY 2025-26, eight from FY 2026-27. The new regime gives no exemption at all."],
+      ["Read the exempt and taxable HRA", "The answer appears as you type — exempt HRA per month and per year, taxable HRA per month and per year, and the three limbs with the binding one highlighted."]
+    ],
+    stories: [
+      {
+        basic: 40000, hra: 25000, rent: 20000, city: "mumbai", fy: "2026-27", regime: "old", preset: "hraIndiaFirst",
+        title: "₹40,000 basic in Mumbai: ₹1,92,000 a year tax-free",
+        body: "₹40,000 of basic, ₹25,000 of HRA and ₹20,000 of rent in Mumbai. The three limbs are ₹3,00,000, ₹1,92,000 and ₹2,40,000 a year — the rent limb is the smallest, so ₹1,92,000 is exempt and ₹1,08,000 is taxable."
+      },
+      {
+        basic: 50000, hra: 20000, rent: 18000, city: "other", fy: "2026-27", regime: "old", preset: "hraMera",
+        title: "₹50,000 basic outside a metro: ₹1,56,000 a year tax-free",
+        body: "₹50,000 of basic, ₹20,000 of HRA and ₹18,000 of rent in a non-metro city. The limbs are ₹2,40,000, ₹1,56,000 and ₹2,40,000 a year — again the rent limb binds, so ₹1,56,000 is exempt and ₹84,000 is taxable."
+      },
+      {
+        basic: 60000, hra: 10000, rent: 30000, city: "delhi", fy: "2026-27", regime: "old", preset: "hraBindsHra",
+        title: "₹60,000 basic in Delhi: the HRA itself is the limit",
+        body: "Only ₹10,000 of HRA a month on a ₹60,000 basic — the HRA received is the smallest limb at ₹1,20,000 a year, so the whole HRA is exempt and nothing is taxable, even though the rent is high."
+      },
+      {
+        basic: 80000, hra: 50000, rent: 45000, city: "bengaluru", fy: "2026-27", regime: "old", preset: "hraBengaluru",
+        title: "₹80,000 basic in Bengaluru: ₹4,44,000 a year tax-free in FY 2026-27",
+        body: "Bengaluru joined the 50% list from FY 2026-27. The limbs are ₹6,00,000, ₹4,44,000 and ₹4,80,000 a year — the rent limb binds at ₹4,44,000. In FY 2025-26 the same figures gave only ₹3,84,000, because Bengaluru was a 40% city then."
+      },
+      {
+        basic: 40000, hra: 25000, rent: 20000, city: "mumbai", fy: "2026-27", regime: "new", preset: "hraNewRegime",
+        title: "Same Mumbai figures, new regime: ₹0 exempt",
+        body: "The new tax regime gives no HRA exemption at all. The same ₹40,000 basic, ₹25,000 HRA and ₹20,000 rent that exempt ₹1,92,000 a year under the old regime leaves the full ₹3,00,000 of HRA taxable under the new regime."
+      }
+    ],
+    rateRows: [
+      { rate: "Least of three", applies: "The formula", example: "Exempt HRA = least of (a) HRA actually received, (b) rent paid minus 10% of salary, (c) 50% of salary in a metro city, else 40%. Salary is basic pay + dearness allowance forming part of retirement benefits (plus commission as a percentage of turnover)." },
+      { rate: "50% — 8 cities", applies: "FY 2026-27 metro list", example: "Delhi, Mumbai, Kolkata, Chennai, Bengaluru, Hyderabad, Pune, Ahmedabad — Income-tax Act, 2025, Schedule III, Table Sl. No. 11, read with Rule 279 of the Income-tax Rules, 2026 (CBDT Notification No. 22/2026, in force 1 April 2026)." },
+      { rate: "50% — 4 cities", applies: "FY 2025-26 metro list", example: "Delhi, Mumbai, Kolkata, Chennai only — Income-tax Act, 1961, s.10(13A) read with Rule 2A of the Income-tax Rules, 1962." },
+      { rate: "40%", applies: "Every other place", example: "Any other city or town gets 40% of salary as limb (c), in both years." },
+      { rate: "Old regime only", applies: "The new regime gives no exemption", example: "The HRA exemption is available only under the old tax regime. Under the new regime there is no HRA exemption (s.202 of the Income-tax Act, 2025; s.115BAC of the 1961 Act)." },
+      { rate: "₹1,00,000", applies: "Landlord PAN — Form 12BB", example: "If the rent you pay in a year is more than ₹1,00,000, your landlord PAN must be reported on Form 12BB. The calculator flags it when your annual rent crosses the line." },
+      { rate: "10% of salary", applies: "Limb (b) — rent minus 10%", example: "Rent paid minus 10% of salary (basic + DA). If the rent is below 10% of salary, this limb is ₹0 — it can never be negative, so the exemption is ₹0." },
+      { rate: "₹60,000 — s.80GG", applies: "No HRA at all? A separate claim", example: "If you receive no HRA, s.80GG allows a deduction of up to ₹60,000 a year for rent paid. It is a separate claim in your return — this calculator does not model it." }
+    ],
+    rateTableTitle: "HRA rules at a glance",
+    rateTableNote: "The rules that decide how much of your HRA is tax-free: the least-of-three formula, which cities count as metro in each year, the old-regime-only limit, the landlord PAN line and the s.80GG alternative. Every rule here is from the Income-tax Act, the Income-tax Rules or the CBDT notification — never from a blog or a competitor.",
+    rateTableConclusion: "The formula is arithmetic — the three limbs decide it. The year and the city decide which percentage limb (c) uses, and the regime decides whether there is any exemption at all.",
+    calloutTitle: "The Bengaluru trap: the 50% list grew in FY 2026-27",
+    calloutNote: "Bengaluru, Hyderabad, Pune and Ahmedabad were 40% cities in FY 2025-26 and became 50% cities from FY 2026-27. On ₹80,000 basic, ₹50,000 HRA and ₹45,000 rent, the exemption is ₹3,84,000 a year for FY 2025-26 and ₹4,44,000 for FY 2026-27 — a ₹60,000 difference for picking the wrong year. Check the year selector before you file.",
+    faq: [
+      ["How is HRA exemption calculated in India?", "With the least-of-three formula: exempt HRA is the smallest of (a) the HRA you actually receive, (b) the rent you pay minus 10% of your salary, and (c) 50% of your salary if you live in a metro city, else 40%. For ₹40,000 basic, ₹25,000 HRA and ₹20,000 rent in Mumbai: (a) ₹3,00,000 a year, (b) ₹2,40,000 minus ₹48,000 = ₹1,92,000, (c) 50% of ₹4,80,000 = ₹2,40,000 — the smallest is ₹1,92,000, so that much is tax-free and ₹1,08,000 is taxable."],
+      ["Which cities get the 50% HRA exemption?", "From FY 2026-27, eight cities: Delhi, Mumbai, Kolkata, Chennai, Bengaluru, Hyderabad, Pune and Ahmedabad (Income-tax Act, 2025, Schedule III, Table Sl. No. 11, read with Rule 279 of the Income-tax Rules, 2026). In FY 2025-26 only four cities counted: Delhi, Mumbai, Kolkata and Chennai. Every other place gets 40% in both years."],
+      ["Can I claim HRA under the new tax regime?", "No. The HRA exemption is available only under the old tax regime. Under the new regime there is no HRA exemption (s.202 of the Income-tax Act, 2025; s.115BAC of the 1961 Act), so the whole HRA is added to your taxable salary. Switch the regime selector to New and the calculator shows ₹0 exempt with the full HRA taxable."],
+      ["What salary counts for the HRA calculation?", "Basic pay + dearness allowance forming part of retirement benefits, plus commission as a percentage of turnover where it applies. HRA itself, bonus and other allowances are not part of salary for this calculation. Never enter your gross salary or CTC as the basic — it inflates the 10% and 50% limbs and the exemption."],
+      ["Do I need my landlord PAN?", "If the rent you pay in a year is more than ₹1,00,000, your landlord PAN must be reported on Form 12BB. The calculator flags it the moment your annual rent crosses ₹1,00,000 — at ₹8,334 of rent a month the annual rent is ₹1,00,008, so the PAN is needed; at ₹8,333 a month it is ₹99,996, so it is not. Keep the rent agreement and rent receipts or bank proof either way."],
+      ["What if my rent is less than 10% of my salary?", "Then limb (b) — rent minus 10% of salary — is negative, and the calculator floors it at ₹0, so the exemption is ₹0. The least of the three limbs can never be negative. If your rent is low relative to your salary, very little or none of your HRA is exempt, even in a metro city."],
+      ["Can I claim HRA if I pay rent to my parents?", "Yes, if the arrangement is genuine: a written rent agreement, rent paid through the bank, and your parent showing the rent as income in their own return. The same three-limb formula applies — the calculator does not care who the landlord is."],
+      ["What is Section 80GG?", "Section 80GG is the deduction for rent paid by people who receive no HRA at all — up to ₹60,000 a year, subject to conditions (least of rent minus 10% of income, 25% of income, and ₹5,000 a month). It is a separate claim in your return, not part of the HRA exemption, so this calculator does not model it — it is noted here so you do not miss it."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
+
+  {
+    key: "ci",
+    kind: "ci",
+    slug: "compound-interest-calculator",
+    title: "Compound Interest Calculator",
+    meta: "Work out how a lump sum — with an optional monthly deposit — grows with compound interest: yearly, half-yearly, quarterly, monthly or daily compounding, effective annual rate and a year-by-year growth table. Free, instant, and calculated in your browser.",
+    lead: "Enter your lump sum, an optional monthly deposit, the rate and the tenure — and get the maturity value, the interest earned, the effective annual rate and a year-by-year growth table.",
+    presets: [
+      { id: "ciBlogbanking", label: "₹1,00,000 at 8% for 10 years, quarterly", principal: 100000, monthly: 0, rate: 8, years: 10, months: 0, freq: "quarterly" },
+      { id: "ciMonthly", label: "₹10,000 a month at 12% for 10 years", principal: 0, monthly: 10000, rate: 12, years: 10, months: 0, freq: "monthly" },
+      { id: "ciSrutved", label: "₹1,00,000 at 8% for 10 years, yearly", principal: 100000, monthly: 0, rate: 8, years: 10, months: 0, freq: "yearly" },
+      { id: "ciCredocalc", label: "₹1,00,000 + ₹10,000 a month at 7% for 15 years", principal: 100000, monthly: 10000, rate: 7, years: 15, months: 0, freq: "quarterly" },
+      { id: "ciSmall", label: "₹5,000 a month at 6% for 1 year", principal: 0, monthly: 5000, rate: 6, years: 1, months: 0, freq: "monthly" }
+    ],
+    defaultPreset: "ciBlogbanking",
+    samplePrincipal: 100000,
+    sampleMonthly: 0,
+    sampleRate: 8,
+    sampleYears: 10,
+    sampleMonths: 0,
+    sampleFreq: "quarterly",
+    notice: "This tool shows growth before tax at a steady rate you enter — it is not investment advice. Real returns vary, and interest on most savings in India is taxable. Check the rules table below before you rely on it.",
+    overviewTitle: "What does a compound interest calculator do?",
+    overview: "Compound interest is interest earned on interest: the interest your money earns is added to the balance, and the next round of interest is calculated on the bigger balance. Over ten years at 8%, ₹1,00,000 grows to ₹2,20,804 compounded quarterly — ₹40,804 more than simple interest would pay. This calculator works out the maturity value for a lump sum, with an optional monthly deposit, at any compounding frequency, and shows the year-by-year growth so you can see the compounding take over.",
+    inputNote: "Enter the lump sum first — the other figures are already filled in with the usual example. The lump sum runs from ₹0 to ₹1,00,00,000 and the monthly deposit from ₹0 to ₹10,00,000; at least one of them must be more than zero. The rate is a yearly rate, from 0% to 20%; the tenure is up to 30 years, in years plus extra months.",
+    modelNote: "Maturity value A = P × (1 + r/n)^(n×t), where P is the lump sum, r the yearly rate as a decimal, n the number of times a year interest compounds and t the tenure in years. Each monthly deposit is added at the end of its month and compounds from then on, so the maturity value is the compounded lump sum plus the compounded value of every deposit. The effective annual rate is (1 + r/n)^n − 1.",
+    steps: [
+      ["Enter your lump sum", "The amount you start with — from ₹0 to ₹1,00,00,000. Enter 0 if you are starting from scratch with monthly deposits."],
+      ["Add a monthly deposit if you have one", "From ₹0 to ₹10,00,000 a month, added at the end of each month. Leave it at 0 for a plain lump-sum calculation."],
+      ["Set the rate, tenure and compounding frequency", "Rate from 0% to 20% a year; tenure up to 30 years, in years and extra months; compounding yearly, half-yearly, quarterly, monthly or daily — quarterly is the Indian FD default."],
+      ["Read the maturity value and the growth table", "The answer appears as you type — maturity value, total invested, interest earned, the effective annual rate and a year-by-year table of how the balance builds."]
+    ],
+    stories: [
+      {
+        principal: 100000, monthly: 0, rate: 8, years: 10, months: 0, freq: "quarterly", preset: "ciBlogbanking",
+        title: "₹1,00,000 at 8% for 10 years: ₹2,20,804",
+        body: "₹1,00,000 at 8% a year, compounded quarterly for 10 years. The maturity value is ₹2,20,804 — ₹1,20,804 of interest on ₹1,00,000 invested. Simple interest at the same rate would pay only ₹80,000."
+      },
+      {
+        principal: 0, monthly: 10000, rate: 12, years: 10, months: 0, freq: "monthly", preset: "ciMonthly",
+        title: "₹10,000 a month at 12% for 10 years: ₹23,00,387",
+        body: "No lump sum — ₹10,000 a month for 10 years at 12%, compounded monthly. You put in ₹12,00,000 and the maturity value is ₹23,00,387, so the interest is ₹11,00,387 — nearly as much as you deposited."
+      },
+      {
+        principal: 100000, monthly: 0, rate: 8, years: 10, months: 0, freq: "yearly", preset: "ciSrutved",
+        title: "Same ₹1,00,000 at 8%, yearly compounding: ₹2,15,892",
+        body: "The same ₹1,00,000 at the same 8% for the same 10 years, but compounded once a year instead of quarterly. The maturity value is ₹2,15,892 — ₹4,912 less — because the interest joins the balance only once a year."
+      },
+      {
+        principal: 100000, monthly: 10000, rate: 7, years: 15, months: 0, freq: "quarterly", preset: "ciCredocalc",
+        title: "₹1,00,000 plus ₹10,000 a month at 7% for 15 years: ₹34,41,686",
+        body: "₹1,00,000 to start and ₹10,000 a month for 15 years at 7%, compounded quarterly. You put in ₹19,00,000 and the maturity value is ₹34,41,686 — ₹15,41,686 of interest, and the interest overtakes the deposits in year 10."
+      },
+      {
+        principal: 0, monthly: 5000, rate: 6, years: 1, months: 0, freq: "monthly", preset: "ciSmall",
+        title: "₹5,000 a month at 6% for 1 year: ₹61,678",
+        body: "₹5,000 a month for one year at 6%, compounded monthly. You put in ₹60,000 and get back ₹61,678 — ₹1,678 of interest. In the first year the deposits do almost all the work; compounding takes over later."
+      }
+    ],
+    rateRows: [
+      { rate: "A = P × (1 + r/n)^(n×t)", applies: "The formula", example: "Maturity value A from principal P, annual rate r as a decimal, n compounding periods a year and t years. Compound interest is A minus what you put in." },
+      { rate: "Quarterly — 4 times a year", applies: "The Indian FD default", example: "Most Indian bank fixed deposits compound quarterly, so the calculator starts on Quarterly. RDs compound quarterly too; PPF interest is credited yearly." },
+      { rate: "Effective annual rate", applies: "What the rate really earns", example: "At 10% a year the effective rate is 10.47% monthly, 10.38% quarterly, 10.25% half-yearly and exactly 10.00% yearly — the same nominal rate earns more the more often it compounds." },
+      { rate: "Monthly additions", applies: "End of each month", example: "Each monthly deposit is added at the end of its month and compounds from then on. A deposit made at the start of the month would earn one extra month — that is why two calculators can disagree." },
+      { rate: "Rule of 72", applies: "Years to double your money", example: "Divide 72 by the yearly rate: at 8% money doubles in about 9 years. Quarterly compounding at 8% doubles it in about 8.8 years; yearly compounding takes about 9.0 years." },
+      { rate: "Simple vs compound", applies: "The comparison", example: "At 8% for 10 years, ₹1,00,000 earns ₹80,000 of simple interest but ₹1,20,804 compounded quarterly — ₹40,804 more, because interest earns interest." },
+      { rate: "Tax on interest", applies: "Before tax, not after", example: "Interest on most savings in India is added to your income and taxed at your slab rate. This calculator shows growth before tax — use the FD calculator for the TDS flag and the income-tax calculator for the slab." },
+      { rate: "Inflation", applies: "What the money will buy", example: "A 4% inflation rate halves purchasing power in about 18 years. This calculator shows the nominal maturity value; it does not adjust for inflation." }
+    ],
+    rateTableTitle: "Compound interest rules at a glance",
+    rateTableNote: "The formula, the compounding frequencies, the effective annual rate, the monthly-deposit convention, the rule of 72, the simple-interest comparison, the tax position and inflation. Every figure here is arithmetic from the formula — never a quoted rate or a forecast.",
+    rateTableConclusion: "The formula is fixed — the rate, the frequency and the tenure decide everything. The only judgement call is the deposit timing, and this page states it plainly: end of each month.",
+    calloutTitle: "The end-of-month convention: why two calculators can disagree",
+    calloutNote: "On ₹10,000 a month at 12% for 10 years with monthly compounding, deposits at the end of each month give ₹23,00,387. The same deposits at the start of each month give ₹23,23,391 — ₹23,004 more — because every deposit earns one extra month of growth. Both answers are right under their own convention, so check which one a calculator uses before comparing figures. This calculator adds each monthly deposit at the end of its month, the convention the ranking compound-interest calculators use: credocalc's published example — ₹1,00,000 plus ₹10,000 a month at 7% for 15 years — reproduces exactly at ₹34,41,686.",
+    faq: [
+      ["What is compound interest?", "Compound interest is interest calculated on the initial principal as well as on the interest that has already accumulated. ₹1,00,000 at 8% a year, compounded quarterly for 10 years, grows to ₹2,20,804 — ₹1,20,804 of interest. Simple interest at the same rate would pay only ₹80,000, so compounding adds ₹40,804."],
+      ["What is the compound interest formula?", "A = P × (1 + r/n)^(n×t). P is the lump sum, r the yearly rate as a decimal, n how many times a year interest compounds and t the tenure in years. A is the maturity value, and the compound interest is A minus what you put in. For ₹1,00,000 at 8% compounded quarterly for 10 years: ₹1,00,000 × (1 + 0.08 ÷ 4)^(4 × 10) = ₹2,20,804."],
+      ["How often do Indian bank FDs compound interest?", "Most Indian bank fixed deposits compound quarterly — that is why this calculator starts on Quarterly. Recurring deposits compound quarterly too, and PPF interest is credited yearly. If your deposit compounds differently, pick its frequency from the list; the same rate earns more the more often it compounds."],
+      ["How do monthly additions work in this calculator?", "Each monthly deposit is added at the end of its month and then compounds at the same rate and frequency as the rest of the balance. ₹10,000 a month at 12% compounded monthly for 10 years gives ₹23,00,387 on ₹12,00,000 deposited. Deposits at the start of the month would give ₹23,23,391 — ₹23,004 more — so the timing matters."],
+      ["Why do two compound interest calculators disagree?", "Usually the deposit timing: end-of-month deposits earn one month less than start-of-month deposits on every instalment. Rounding is the other cause — this calculator compounds on the exact balance and rounds only the final maturity value, while a calculator that rounds every period can drift by a few rupees. Check the frequency too: quarterly and monthly compounding at the same rate give different answers."],
+      ["How long does money take to double?", "Divide 72 by the yearly rate — the rule of 72. At 8% money doubles in about 9 years. Exactly: quarterly compounding at 8% doubles it in about 8.8 years, yearly compounding in about 9.0 years. At 6% it takes about 12 years; at 12%, about 6 years."],
+      ["Is the interest taxable in India?", "Yes. Interest on most savings, such as FDs, is added to your income and taxed at your slab rate, and banks may deduct TDS once yearly interest crosses a threshold. This calculator shows growth before tax — it does not estimate what you keep. Use the FD calculator for the TDS flag and the income-tax calculator for the slab."],
+      ["Does this calculator adjust for inflation?", "No — it shows the nominal maturity value, what the balance will be in rupees. At 4% inflation, what ₹1,00,000 buys today costs about ₹1,48,000 in ten years, so the real growth is smaller than the nominal figure. Treat the result as growth before tax at a steady rate, not as a forecast."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
 ];
 
 export const css = `
@@ -20389,6 +20652,140 @@ export function renderRdCalculatorBody(p, others, css, clientSource) {
   <script>(${clientSource})(${safeJSON(config)});</script>`;
 }
 
+export function grService(joinISO, leaveISO) {
+  const j = new Date(joinISO + "T00:00:00Z");
+  const l = new Date(leaveISO + "T00:00:00Z");
+  if (Number.isNaN(j.getTime()) || Number.isNaN(l.getTime()) || l < j) return null;
+  let y = l.getUTCFullYear() - j.getUTCFullYear();
+  let m = l.getUTCMonth() - j.getUTCMonth();
+  let d = l.getUTCDate() - j.getUTCDate();
+  if (d < 0) {
+    m -= 1;
+    const prev = new Date(Date.UTC(l.getUTCFullYear(), l.getUTCMonth(), 0));
+    d += prev.getUTCDate();
+  }
+  if (m < 0) {
+    y -= 1;
+    m += 12;
+  }
+  return { y, m, d };
+}
+
+export function grCountedYears(service, covered) {
+  if (!service) return null;
+  if (!covered) return service.y;
+  const overSix = service.m > 6 || (service.m === 6 && service.d > 0);
+  return service.y + (overSix ? 1 : 0);
+}
+
+export function grWageBase(wages, totalPay) {
+  const w = Number(wages);
+  const t = Number(totalPay) || 0;
+  if (!Number.isFinite(w) || w <= 0) return null;
+  if (t > 0 && w < 0.5 * t) {
+    return { base: roundRupee(0.5 * t), adjusted: true, adjustment: roundRupee(0.5 * t) - w };
+  }
+  return { base: w, adjusted: false, adjustment: 0 };
+}
+
+export function grAmount(wageBase, years, covered) {
+  const base = Number(wageBase);
+  const yrs = Number(years);
+  if (!Number.isFinite(base) || !Number.isFinite(yrs)) return null;
+  if (!(base > 0) || !(yrs >= 0)) return null;
+  if (yrs === 0) return 0;
+  return roundRupee(base * 15 * yrs / (covered ? 26 : 30));
+}
+
+export function grCompute(wages, totalPay, joinISO, leaveISO, empType, covered, reason, govt) {
+  const w = Number(wages);
+  const t = Number(totalPay) || 0;
+  if (!Number.isFinite(w) || w < 1000 || w > 1000000) return null;
+  if (!Number.isFinite(t) || t < 0 || t > 5000000) return null;
+  if (empType !== "permanent" && empType !== "fixed-term") return null;
+  if (reason !== "resignation" && reason !== "retirement" && reason !== "death" && reason !== "disablement") return null;
+  const service = grService(joinISO, leaveISO);
+  if (!service) return null;
+  const wb = grWageBase(w, t);
+  if (!wb) return null;
+  const waived = reason === "death" || reason === "disablement";
+  let countedYears = null;
+  let exactYears = null;
+  let yearsUsed;
+  let eligible;
+  if (empType === "fixed-term") {
+    exactYears = service.y + service.m / 12 + service.d / 365;
+    yearsUsed = exactYears;
+    eligible = waived || exactYears >= 1;
+  } else {
+    countedYears = grCountedYears(service, covered);
+    yearsUsed = countedYears;
+    eligible = waived || countedYears >= 5;
+  }
+  const divisor = covered ? 26 : 30;
+  const beforeCap = grAmount(wb.base, yearsUsed, covered);
+  if (beforeCap === null) return null;
+  const payable = eligible ? Math.min(beforeCap, 2000000) : 0;
+  const capped = beforeCap > 2000000;
+  let exempt = 0;
+  let taxable = 0;
+  if (eligible) {
+    exempt = govt ? beforeCap : Math.min(beforeCap, 2000000);
+    taxable = beforeCap - exempt;
+  }
+  const thresholdYears = empType === "fixed-term" ? 1 : 5;
+  const thresholdAmount = grAmount(wb.base, thresholdYears, covered);
+  return {
+    wages: w,
+    totalPay: t,
+    join: joinISO,
+    leave: leaveISO,
+    type: empType,
+    covered,
+    reason,
+    govt: !!govt,
+    service,
+    countedYears,
+    exactYears,
+    wageBase: wb.base,
+    adjusted: wb.adjusted,
+    adjustment: wb.adjustment,
+    divisor,
+    eligible,
+    beforeCap,
+    payable,
+    capped,
+    exempt,
+    taxable,
+    thresholdAmount,
+    growth: grGrowth(wb.base, covered)
+  };
+}
+
+export function grGrowth(wageBase, covered) {
+  const base = Number(wageBase);
+  if (!Number.isFinite(base) || !(base > 0)) return null;
+  const out = [];
+  for (const years of [5, 10, 15, 20, 25]) {
+    const beforeCap = grAmount(base, years, covered);
+    if (beforeCap === null) return null;
+    out.push({ years, beforeCap, payable: Math.min(beforeCap, 2000000), capped: beforeCap > 2000000 });
+  }
+  return out;
+}
+
+export const grCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(19, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+`;
+
 export function hlClient(c) {
   const $ = id => document.getElementById(id);
 
@@ -21571,6 +21968,3652 @@ export function renderHlCalculatorBody(p, others, css, clientSource) {
             figure from the scheme appears on this page — the
             calculator counts no subsidy, and the page points readers
             to the official portal to check the current rules.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export const HRA_CITIES = ["delhi", "mumbai", "kolkata", "chennai", "bengaluru", "hyderabad", "pune", "ahmedabad", "other"];
+export const HRA_CITY_LABELS = {
+  delhi: "Delhi",
+  mumbai: "Mumbai",
+  kolkata: "Kolkata",
+  chennai: "Chennai",
+  bengaluru: "Bengaluru",
+  hyderabad: "Hyderabad",
+  pune: "Pune",
+  ahmedabad: "Ahmedabad",
+  other: "Other city / town"
+};
+
+export function hraMetroCities(fy) {
+  if (fy === "2026-27") return ["delhi", "mumbai", "kolkata", "chennai", "bengaluru", "hyderabad", "pune", "ahmedabad"];
+  if (fy === "2025-26") return ["delhi", "mumbai", "kolkata", "chennai"];
+  return null;
+}
+
+export function hraCityPct(city, fy) {
+  const metros = hraMetroCities(fy);
+  if (!metros || HRA_CITIES.indexOf(city) < 0) return null;
+  return metros.indexOf(city) >= 0 ? 50 : 40;
+}
+
+export function hraLimbs(basic, hra, rent, city, fy) {
+  const salary = Number(basic);
+  const h = Number(hra);
+  const r = Number(rent);
+  if (!Number.isFinite(salary) || !Number.isFinite(h) || !Number.isFinite(r)) return null;
+  if (!(salary > 0) || h < 0 || r < 0) return null;
+  const pct = hraCityPct(city, fy);
+  if (pct === null) return null;
+  const limbA = h;
+  const limbB = Math.max(0, roundRupee(r - 0.1 * salary));
+  const limbC = roundRupee(pct / 100 * salary);
+  const minLimb = Math.min(limbA, limbB, limbC);
+  const binding = minLimb === limbA ? "a" : minLimb === limbB ? "b" : "c";
+  return {
+    salary,
+    pct,
+    metro: pct === 50,
+    limbA,
+    limbB,
+    limbC,
+    limbAAnnual: limbA * 12,
+    limbBAnnual: limbB * 12,
+    limbCAnnual: limbC * 12,
+    binding
+  };
+}
+
+export function hraCompute(basic, hra, rent, city, fy, regime) {
+  const salary = Number(basic);
+  const h = Number(hra);
+  const r = Number(rent);
+  if (!Number.isFinite(salary) || !Number.isFinite(h) || !Number.isFinite(r)) return null;
+  if (salary < 1000 || salary > 1000000) return null;
+  if (h < 0 || h > 1000000) return null;
+  if (r < 0 || r > 1000000) return null;
+  if (fy !== "2025-26" && fy !== "2026-27") return null;
+  if (regime !== "old" && regime !== "new") return null;
+  const limbs = hraLimbs(salary, h, r, city, fy);
+  if (!limbs) return null;
+  const annualRent = r * 12;
+  const panRequired = annualRent > 100000;
+  const exemptMonthly = regime === "old" ? Math.min(limbs.limbA, limbs.limbB, limbs.limbC) : 0;
+  const exemptAnnual = exemptMonthly * 12;
+  const taxableMonthly = h - exemptMonthly;
+  const taxableAnnual = taxableMonthly * 12;
+  return {
+    basic: salary,
+    hra: h,
+    rent: r,
+    city,
+    cityLabel: HRA_CITY_LABELS[city],
+    fy,
+    regime,
+    salary,
+    pct: limbs.pct,
+    metro: limbs.metro,
+    limbA: limbs.limbA,
+    limbB: limbs.limbB,
+    limbC: limbs.limbC,
+    limbAAnnual: limbs.limbAAnnual,
+    limbBAnnual: limbs.limbBAnnual,
+    limbCAnnual: limbs.limbCAnnual,
+    binding: limbs.binding,
+    exemptMonthly,
+    exemptAnnual,
+    taxableMonthly,
+    taxableAnnual,
+    annualRent,
+    panRequired
+  };
+}
+
+export const hraCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(20, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+`;
+
+export function grClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  function grService(joinISO, leaveISO) {
+    const j = new Date(joinISO + "T00:00:00Z");
+    const l = new Date(leaveISO + "T00:00:00Z");
+    if (Number.isNaN(j.getTime()) || Number.isNaN(l.getTime()) || l < j) return null;
+    let y = l.getUTCFullYear() - j.getUTCFullYear();
+    let m = l.getUTCMonth() - j.getUTCMonth();
+    let d = l.getUTCDate() - j.getUTCDate();
+    if (d < 0) {
+      m -= 1;
+      const prev = new Date(Date.UTC(l.getUTCFullYear(), l.getUTCMonth(), 0));
+      d += prev.getUTCDate();
+    }
+    if (m < 0) {
+      y -= 1;
+      m += 12;
+    }
+    return { y, m, d };
+  }
+
+  function grCountedYears(service, covered) {
+    if (!service) return null;
+    if (!covered) return service.y;
+    const overSix = service.m > 6 || (service.m === 6 && service.d > 0);
+    return service.y + (overSix ? 1 : 0);
+  }
+
+  function grWageBase(wages, totalPay) {
+    const w = Number(wages);
+    const t = Number(totalPay) || 0;
+    if (!Number.isFinite(w) || w <= 0) return null;
+    if (t > 0 && w < 0.5 * t) {
+      return { base: roundRupee(0.5 * t), adjusted: true, adjustment: roundRupee(0.5 * t) - w };
+    }
+    return { base: w, adjusted: false, adjustment: 0 };
+  }
+
+  function grAmount(wageBase, years, covered) {
+    const base = Number(wageBase);
+    const yrs = Number(years);
+    if (!Number.isFinite(base) || !Number.isFinite(yrs)) return null;
+    if (!(base > 0) || !(yrs >= 0)) return null;
+    if (yrs === 0) return 0;
+    return roundRupee(base * 15 * yrs / (covered ? 26 : 30));
+  }
+
+  function grCompute(wages, totalPay, joinISO, leaveISO, empType, covered, reason, govt) {
+    const w = Number(wages);
+    const t = Number(totalPay) || 0;
+    if (!Number.isFinite(w) || w < 1000 || w > 1000000) return null;
+    if (!Number.isFinite(t) || t < 0 || t > 5000000) return null;
+    if (empType !== "permanent" && empType !== "fixed-term") return null;
+    if (reason !== "resignation" && reason !== "retirement" && reason !== "death" && reason !== "disablement") return null;
+    const service = grService(joinISO, leaveISO);
+    if (!service) return null;
+    const wb = grWageBase(w, t);
+    if (!wb) return null;
+    const waived = reason === "death" || reason === "disablement";
+    let countedYears = null;
+    let exactYears = null;
+    let yearsUsed;
+    let eligible;
+    if (empType === "fixed-term") {
+      exactYears = service.y + service.m / 12 + service.d / 365;
+      yearsUsed = exactYears;
+      eligible = waived || exactYears >= 1;
+    } else {
+      countedYears = grCountedYears(service, covered);
+      yearsUsed = countedYears;
+      eligible = waived || countedYears >= 5;
+    }
+    const divisor = covered ? 26 : 30;
+    const beforeCap = grAmount(wb.base, yearsUsed, covered);
+    if (beforeCap === null) return null;
+    const payable = eligible ? Math.min(beforeCap, 2000000) : 0;
+    const capped = beforeCap > 2000000;
+    let exempt = 0;
+    let taxable = 0;
+    if (eligible) {
+      exempt = govt ? beforeCap : Math.min(beforeCap, 2000000);
+      taxable = beforeCap - exempt;
+    }
+    const thresholdYears = empType === "fixed-term" ? 1 : 5;
+    const thresholdAmount = grAmount(wb.base, thresholdYears, covered);
+    return {
+      wages: w,
+      totalPay: t,
+      join: joinISO,
+      leave: leaveISO,
+      type: empType,
+      covered,
+      reason,
+      govt: !!govt,
+      service,
+      countedYears,
+      exactYears,
+      wageBase: wb.base,
+      adjusted: wb.adjusted,
+      adjustment: wb.adjustment,
+      divisor,
+      eligible,
+      beforeCap,
+      payable,
+      capped,
+      exempt,
+      taxable,
+      thresholdAmount,
+      growth: grGrowth(wb.base, covered)
+    };
+  }
+
+  function grGrowth(wageBase, covered) {
+    const base = Number(wageBase);
+    if (!Number.isFinite(base) || !(base > 0)) return null;
+    const out = [];
+    for (const years of [5, 10, 15, 20, 25]) {
+      const beforeCap = grAmount(base, years, covered);
+      if (beforeCap === null) return null;
+      out.push({ years, beforeCap, payable: Math.min(beforeCap, 2000000), capped: beforeCap > 2000000 });
+    }
+    return out;
+  }
+
+  const presetSelect = $("preset");
+  const grPill = $("gr-pill");
+  const inputWages = $("input-wages");
+  const inputWagesError = $("input-wages-error");
+  const inputTotal = $("input-total");
+  const inputTotalError = $("input-total-error");
+  const inputJoin = $("input-join");
+  const inputJoinError = $("input-join-error");
+  const inputLeave = $("input-leave");
+  const inputLeaveError = $("input-leave-error");
+  const inputType = $("input-type");
+  const inputCovered = $("input-covered");
+  const inputReason = $("input-reason");
+  const inputGovt = $("input-govt");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const capNote = $("cap-note");
+  const growthBody = $("growth-body");
+  const growthNote = $("growth-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const fmtDate = iso => {
+    const parts = String(iso).split("-");
+    if (parts.length !== 3) return iso;
+    return Number(parts[2]) + " " + MONTHS[Number(parts[1]) - 1] + " " + parts[0];
+  };
+  const plural = (n, one, many) => n + " " + (n === 1 ? one : many);
+  const fmtService = s => plural(s.y, "year", "years") + ", " + plural(s.m, "month", "months") + " and " + plural(s.d, "day", "days");
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+  const typeText = t => t === "fixed-term" ? "Fixed-term" : "Permanent";
+  const reasonText = r => r === "death" ? "death" : r === "disablement" ? "disablement" : r === "retirement" ? "retirement" : "resignation";
+  const yearsText = r => r.type === "fixed-term"
+    ? fmtService(r.service) + " (fixed-term)"
+    : plural(r.countedYears, "year", "years") + " counted";
+  const serviceValid = (join, leave) => {
+    if (!join || !leave) return false;
+    const j = new Date(join + "T00:00:00Z");
+    const l = new Date(leave + "T00:00:00Z");
+    if (Number.isNaN(j.getTime()) || Number.isNaN(l.getTime()) || l < j) return false;
+    return l.getUTCFullYear() - j.getUTCFullYear() <= 60;
+  };
+
+  function renderGrowth(rows, wageBase, covered) {
+    growthBody.replaceChildren();
+    if (!rows) {
+      growthNote.textContent = "Enter your wages to see the gratuity at 5, 10, 15, 20 and 25 years.";
+      return;
+    }
+    rows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = plural(row.years, "year", "years");
+      tr.appendChild(th);
+      [row.beforeCap, row.payable].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      const td = document.createElement("td");
+      td.textContent = row.capped ? "Yes — capped at ₹20,00,000" : "No";
+      tr.appendChild(td);
+      growthBody.appendChild(tr);
+    });
+    growthNote.textContent = "Gratuity at " + inr(wageBase) + " a month"
+      + (covered ? " (÷ 26, covered employer)" : " (÷ 30, not covered)")
+      + " — the same wage at 5, 10, 15, 20 and 25 years.";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your wages and your joining and leaving dates to see the gratuity with the working.";
+    working.textContent = "Enter your wages and your joining and leaving dates to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    capNote.textContent = "";
+    growthBody.replaceChildren();
+    growthNote.textContent = "Enter your wages to see the gratuity at 5, 10, 15, 20 and 25 years.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(wages, totalPay, join, leave, type, covered, reason, govt, r) {
+    output.textContent = inr(r.payable);
+    box1Val.textContent = inr(r.payable);
+    box1Label.textContent = "GRATUITY PAYABLE";
+    box2Val.textContent = inr(r.beforeCap);
+    box2Label.textContent = "BEFORE THE CEILING";
+    box3Val.textContent = inr(r.exempt);
+    box3Label.textContent = "TAX-EXEMPT";
+    const countedText = type === "fixed-term"
+      ? "Exact service " + fmtService(r.service) + " = " + (Math.round(r.exactYears * 100) / 100) + " years (fixed-term, pro rata)"
+      : "Counted years: " + r.countedYears
+        + (r.service.m > 0 || r.service.d > 0
+          ? " — part-year " + r.service.m + " months " + r.service.d + " days"
+            + (r.countedYears > r.service.y ? " rounds up (over 6 months)" : " does not round up")
+          : "");
+    working.textContent = "Service: " + fmtService(r.service) + " from " + fmtDate(join) + " to " + fmtDate(leave) + ". " + countedText + ".";
+    const yearsForFormula = type === "fixed-term" ? (Math.round(r.exactYears * 100) / 100) : r.countedYears;
+    working2.textContent = inr(r.wageBase) + " × 15 × " + yearsForFormula + " ÷ " + r.divisor + " = " + inr(r.beforeCap) + ".";
+    workingNote.textContent = "Wage base " + inr(r.wageBase)
+      + (r.adjusted ? " — the 50% rule raised it from " + inr(wages) + " (basic + DA below half of " + inr(totalPay) + " total pay)" : " (basic + DA)")
+      + ". Divisor " + r.divisor + " — " + (covered ? "covered employer" : "not covered, commonly used formula") + "."
+      + (type === "fixed-term" ? " Fixed-term: the part-year treatment is not spelled out in the Ministry FAQs, so this calculator uses exact pro-rata." : "");
+    if (!r.eligible) {
+      const need = type === "fixed-term" ? "1 year" : "5 years";
+      const have = type === "fixed-term" ? (Math.round(r.exactYears * 100) / 100) + " years" : r.countedYears + " years";
+      capNote.textContent = "Not eligible yet — " + have + " of service; " + need + " needed"
+        + (reason === "death" || reason === "disablement" ? "" : "")
+        + ". At " + need + " the gratuity would be " + inr(r.thresholdAmount) + ".";
+      glanceText.textContent = "Not eligible yet — " + fmtService(r.service) + " of service. At "
+        + need + " the gratuity would be " + inr(r.thresholdAmount) + ".";
+    } else {
+      const waived = reason === "death" || reason === "disablement";
+      capNote.textContent = (r.capped
+        ? "The formula gives " + inr(r.beforeCap) + ", above the ₹20 lakh ceiling — so " + inr(r.payable) + " is payable. Tax-exempt " + inr(r.exempt) + " · taxable " + inr(r.taxable) + " (only if your employer pays above the ceiling)."
+        : "Below the ₹20 lakh ceiling — the full " + inr(r.beforeCap) + " is payable. Tax-exempt " + inr(r.exempt) + " · taxable " + inr(r.taxable) + ".")
+        + (waived ? " Eligible — the 5-year rule is waived on " + reasonText(reason) + "." : "")
+        + (govt ? " Government employee: the whole amount is tax-exempt." : "");
+      glanceText.textContent = inr(wages) + " a month · " + yearsText(r) + " → gratuity " + inr(r.payable)
+        + (r.capped ? " (capped at ₹20,00,000; before cap " + inr(r.beforeCap) + ")" : "")
+        + ". Tax-exempt " + inr(r.exempt) + (r.taxable > 0 ? ", taxable " + inr(r.taxable) : "") + ".";
+    }
+    renderGrowth(r.growth, r.wageBase, covered);
+    glanceBox.className = "verdict " + (r.eligible ? "verdict-ok" : "verdict-warn");
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | Gratuity Calculator"
+      + "\nQuestion: " + inr(wages) + " a month, " + fmtService(r.service) + " (" + fmtDate(join) + " to " + fmtDate(leave) + "), " + typeText(type) + ", " + (covered ? "covered" : "not covered")
+      + "\nAnswer: gratuity " + inr(r.payable) + " (before cap " + inr(r.beforeCap) + "; tax-exempt " + inr(r.exempt) + ", taxable " + inr(r.taxable) + ")"
+      + "\nWorking: " + countedText + "; " + inr(r.wageBase) + " × 15 × " + yearsForFormula + " ÷ " + r.divisor + " = " + inr(r.beforeCap)
+      + (r.eligible ? "" : "\nEligibility: not eligible yet");
+  }
+
+  function paint(showEmptyError = false) {
+    grPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const wagesRaw = inputWages.value;
+    const totalRaw = inputTotal.value;
+    const joinRaw = inputJoin.value;
+    const leaveRaw = inputLeave.value;
+    const wagesNum = wagesRaw === "" ? NaN : Number(wagesRaw);
+    const totalNum = totalRaw === "" ? 0 : Number(totalRaw);
+    let wagesMsg = "";
+    let totalMsg = "";
+    let joinMsg = "";
+    let leaveMsg = "";
+    if (wagesRaw === "") {
+      if (showEmptyError) wagesMsg = "Enter your last drawn monthly wages.";
+    } else if (!Number.isFinite(wagesNum) || wagesNum < 1000 || wagesNum > 1000000) {
+      wagesMsg = "Enter wages from ₹1,000 to ₹10,00,000 a month.";
+    }
+    if (totalRaw !== "" && (!Number.isFinite(totalNum) || totalNum < 1000 || totalNum > 5000000)) {
+      totalMsg = "Enter total monthly pay from ₹1,000 to ₹50,00,000, or leave it blank.";
+    }
+    if (joinRaw === "") {
+      if (showEmptyError) joinMsg = "Enter your joining date.";
+    } else if (Number.isNaN(new Date(joinRaw + "T00:00:00Z").getTime()) || joinRaw < "1950-01-01") {
+      joinMsg = "Enter a joining date on or after 1 January 1950.";
+    }
+    if (leaveRaw === "") {
+      if (showEmptyError) leaveMsg = "Enter your leaving date.";
+    } else if (Number.isNaN(new Date(leaveRaw + "T00:00:00Z").getTime()) || leaveRaw > "2100-12-31") {
+      leaveMsg = "Enter a leaving date on or before 31 December 2100.";
+    } else if (joinRaw !== "" && leaveRaw < joinRaw) {
+      leaveMsg = "The leaving date cannot be before the joining date.";
+    } else if (joinRaw !== "" && !serviceValid(joinRaw, leaveRaw)) {
+      leaveMsg = "Service of more than 60 years is not accepted — check the dates.";
+    }
+    inputWagesError.textContent = wagesMsg;
+    inputTotalError.textContent = totalMsg;
+    inputJoinError.textContent = joinMsg;
+    inputLeaveError.textContent = leaveMsg;
+    inputWages.setAttribute("aria-invalid", String(wagesMsg !== ""));
+    inputTotal.setAttribute("aria-invalid", String(totalMsg !== ""));
+    inputJoin.setAttribute("aria-invalid", String(joinMsg !== ""));
+    inputLeave.setAttribute("aria-invalid", String(leaveMsg !== ""));
+
+    const valid = wagesMsg === "" && totalMsg === "" && joinMsg === "" && leaveMsg === ""
+      && wagesRaw !== "" && joinRaw !== "" && leaveRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = grCompute(wagesNum, totalNum, joinRaw, leaveRaw, inputType.value, inputCovered.value === "covered", inputReason.value, inputGovt.checked);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(wagesNum, totalNum, joinRaw, leaveRaw, inputType.value, inputCovered.value === "covered", inputReason.value, inputGovt.checked, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = grCompute(item.wages, item.totalPay, item.join, item.leave, item.type, item.covered, item.reason, item.govt);
+    if (!r) return "";
+    return inr(item.wages) + " · " + yearsText(r) + " → gratuity " + inr(r.payable);
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputWages.value, inputTotal.value, inputJoin.value,
+      inputLeave.value, inputType.value, inputCovered.value, inputReason.value, inputGovt.checked].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputWages.value = String(item.wages);
+        inputTotal.value = item.totalPay ? String(item.totalPay) : "";
+        inputJoin.value = item.join;
+        inputLeave.value = item.leave;
+        inputType.value = item.type;
+        inputCovered.value = item.covered ? "covered" : "not-covered";
+        inputReason.value = item.reason;
+        inputGovt.checked = item.govt;
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      wages: Number(inputWages.value),
+      totalPay: Number(inputTotal.value) || 0,
+      join: inputJoin.value,
+      leave: inputLeave.value,
+      type: inputType.value,
+      covered: inputCovered.value === "covered",
+      reason: inputReason.value,
+      govt: inputGovt.checked
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputWages.value = button.dataset.wages || "";
+      inputTotal.value = button.dataset.total || "";
+      inputJoin.value = button.dataset.join || "";
+      inputLeave.value = button.dataset.leave || "";
+      inputType.value = button.dataset.type || "permanent";
+      inputCovered.value = button.dataset.covered || "covered";
+      inputReason.value = button.dataset.reason || "resignation";
+      inputGovt.checked = button.dataset.govt === "true";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputWages.value = String(rec.wages);
+    inputTotal.value = rec.totalPay ? String(rec.totalPay) : "";
+    inputJoin.value = rec.join;
+    inputLeave.value = rec.leave;
+    inputType.value = rec.type;
+    inputCovered.value = rec.covered ? "covered" : "not-covered";
+    inputReason.value = rec.reason;
+    inputGovt.checked = !!rec.govt;
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputWages.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputTotal.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputJoin.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputLeave.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputType.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputCovered.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputReason.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputGovt.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("gr-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderGrCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+  const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const fmtDate = iso => {
+    const parts = String(iso).split("-");
+    if (parts.length !== 3) return iso;
+    return Number(parts[2]) + " " + MONTHS[Number(parts[1]) - 1] + " " + parts[0];
+  };
+  const plural = (n, one, many) => n + " " + (n === 1 ? one : many);
+  const fmtService = s => plural(s.y, "year", "years") + ", " + plural(s.m, "month", "months") + " and " + plural(s.d, "day", "days");
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleWages: p.sampleWages, sampleTotalPay: p.sampleTotalPay, sampleJoin: p.sampleJoin, sampleLeave: p.sampleLeave, sampleType: p.sampleType, sampleCovered: p.sampleCovered, sampleReason: p.sampleReason, sampleGovt: p.sampleGovt };
+  const sample = grCompute(p.sampleWages, p.sampleTotalPay, p.sampleJoin, p.sampleLeave, p.sampleType, p.sampleCovered, p.sampleReason, p.sampleGovt);
+  const capSample = grCompute(150000, 0, "2001-01-01", "2026-01-01", "permanent", true, "resignation", false);
+  const roundingSample = grCompute(50000, 0, "2015-06-01", "2026-01-01", "permanent", true, "resignation", false);
+  const fixedSample = grCompute(40000, 0, "2024-07-01", "2026-01-01", "fixed-term", true, "resignation", false);
+
+  const presetSummary = pr => {
+    const r = grCompute(pr.wages, pr.totalPay, pr.join, pr.leave, pr.type, pr.covered, pr.reason, pr.govt);
+    return `${inr2(pr.wages)} · ${fmtService(r.service)} → ${inr2(r.payable)}`;
+  };
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = grCompute(st.wages, st.totalPay, st.join, st.leave, st.type, st.covered, st.reason, st.govt);
+    const years = st.type === "fixed-term" ? fmtService(r.service) + " (fixed-term)" : plural(r.countedYears, "year", "years");
+    return `${inr2(st.wages)} · ${years} → gratuity ${inr2(r.payable)}${r.capped ? " (before cap " + inr2(r.beforeCap) + ")" : ""}`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const growthRows = sample.growth.map(row => `
+      <tr>
+        <th scope="row">${plural(row.years, "year", "years")}</th>
+        <td>${inr2(row.beforeCap)}</td>
+        <td>${inr2(row.payable)}</td>
+        <td>${row.capped ? "Yes — capped at ₹20,00,000" : "No"}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free gratuity calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate gratuity →
+              </a>
+              <a href="#method" class="calc-link">How gratuity is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.payable)} gratuity payable</strong>
+                <small>On ${inr2(p.sampleWages)} a month · ${fmtService(sample.service)} of service</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.beforeCap)} before the ceiling</strong>
+                <small>Below the ₹20 lakh ceiling — the full amount is payable</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.exempt)} tax-exempt</strong>
+                <small>Taxable ${inr2(sample.taxable)} — the whole amount is exempt</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>A statutory figure at the wages you enter, not legal advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/">RRB Age</a>
+              <a href="/emi-calculator/">EMI</a>
+              <a href="/sip-calculator/">SIP</a>
+              <a href="/bmi-calculator/">BMI</a>
+              <a href="/percentage-calculator/">Percentage</a>
+              <a href="/gst-calculator/">GST</a>
+              <a href="/ppf-calculator/">PPF</a>
+              <a href="/fd-calculator/">FD</a>
+              <a href="/income-tax-calculator/">Income Tax</a>
+              <a href="/rd-calculator/">RD</a>
+              <a href="/home-loan-emi-calculator/">Home Loan EMI</a>
+              <a href="/gratuity-calculator/" aria-current="page">Gratuity</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate gratuity</h2>
+              <span class="calc-pill" id="gr-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="gr-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-wages">
+                Last drawn monthly wages — basic + DA (₹)
+                <span>From ₹1,000 to ₹10,00,000 a month — not your gross salary or CTC</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-wages"
+                type="number"
+                value="${p.sampleWages}"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-wages-error"
+              >
+              <p class="calc-error" id="input-wages-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-total">
+                Total monthly pay (₹) — optional
+                <span>Your full monthly pay before deductions, for the 50% wage rule — leave blank if you do not know it</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-total"
+                type="number"
+                value=""
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-total-error"
+              >
+              <p class="calc-error" id="input-total-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-join">
+                Joining date
+                <span>The date on your appointment letter</span>
+              </label>
+
+              <input
+                class="date-input"
+                id="input-join"
+                type="date"
+                value="${p.sampleJoin}"
+                min="1950-01-01"
+                max="2100-12-31"
+                aria-describedby="input-join-error"
+              >
+              <p class="calc-error" id="input-join-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-leave">
+                Leaving date
+                <span>The date on your relieving letter — the last day of service</span>
+              </label>
+
+              <input
+                class="date-input"
+                id="input-leave"
+                type="date"
+                value="${p.sampleLeave}"
+                min="1950-01-01"
+                max="2100-12-31"
+                aria-describedby="input-leave-error"
+              >
+              <p class="calc-error" id="input-leave-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-type">
+                Employment type
+                <span>Fixed-term staff qualify after 1 year, paid pro rata</span>
+              </label>
+
+              <select class="select-input" id="input-type">
+                <option value="permanent"${p.sampleType === "permanent" ? " selected" : ""}>Permanent</option>
+                <option value="fixed-term"${p.sampleType === "fixed-term" ? " selected" : ""}>Fixed-term</option>
+              </select>
+
+              <label class="field-label" for="input-covered">
+                Employer covered?
+                <span>Covered means 10 or more employees — the Code applies and the divisor is 26</span>
+              </label>
+
+              <select class="select-input" id="input-covered">
+                <option value="covered"${p.sampleCovered ? " selected" : ""}>Covered — 10 or more employees (÷ 26)</option>
+                <option value="not-covered"${!p.sampleCovered ? " selected" : ""}>Not covered — fewer than 10 employees (÷ 30)</option>
+              </select>
+
+              <label class="field-label" for="input-reason">
+                Reason for leaving
+                <span>Death or disablement waives the 5-year rule</span>
+              </label>
+
+              <select class="select-input" id="input-reason">
+                <option value="resignation"${p.sampleReason === "resignation" ? " selected" : ""}>Resignation</option>
+                <option value="retirement"${p.sampleReason === "retirement" ? " selected" : ""}>Retirement / superannuation</option>
+                <option value="death"${p.sampleReason === "death" ? " selected" : ""}>Death</option>
+                <option value="disablement"${p.sampleReason === "disablement" ? " selected" : ""}>Disablement</option>
+              </select>
+
+              <label class="field-label" for="input-govt" style="display:flex;align-items:center;gap:10px">
+                <input type="checkbox" id="input-govt" style="width:auto"${p.sampleGovt ? " checked" : ""}>
+                Government employee — gratuity is fully exempt from tax
+              </label>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-wages">${inr2(sample.payable)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.payable)}</strong>
+                  <small id="box1-label">GRATUITY PAYABLE</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.beforeCap)}</strong>
+                  <small id="box2-label">BEFORE THE CEILING</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.exempt)}</strong>
+                  <small id="box3-label">TAX-EXEMPT</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">${inr2(p.sampleWages)} a month · ${plural(sample.countedYears, "year", "years")} counted → gratuity ${inr2(sample.payable)}. Tax-exempt ${inr2(sample.exempt)}.</span>
+              </div>
+
+              <p class="working" id="working">
+                Service: ${fmtService(sample.service)} from ${fmtDate(p.sampleJoin)} to ${fmtDate(p.sampleLeave)}. Counted years: ${sample.countedYears}.
+              </p>
+              <p class="working" id="working-2">${inr2(sample.wageBase)} × 15 × ${sample.countedYears} ÷ ${sample.divisor} = ${inr2(sample.beforeCap)}.</p>
+              <p class="working" id="working-note">Wage base ${inr2(sample.wageBase)} (basic + DA). Divisor ${sample.divisor} — covered employer.</p>
+              <p class="working" id="cap-note">Below the ₹20 lakh ceiling — the full ${inr2(sample.beforeCap)} is payable. Tax-exempt ${inr2(sample.exempt)} · taxable ${inr2(sample.taxable)}.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The figure is the statutory amount under the Code on
+                Social Security, 2020. Your settlement letter decides
+                what is actually paid — and the tax split is shown on
+                the before-cap figure, because that is what the ₹20
+                lakh exemption limit bites on.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="growth">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your gratuity as service grows</p>
+          <h2>Gratuity at 5, 10, 15, 20 and 25 years</h2>
+          <p id="growth-note">Gratuity at ${inr2(sample.wageBase)} a month (÷ 26, covered employer) — the same wage at 5, 10, 15, 20 and 25 years.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="growth-note">
+            <caption>Gratuity at ${inr2(sample.wageBase)} a month across five lengths of service.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Years of service</th>
+                <th scope="col">Before the ceiling</th>
+                <th scope="col">Payable</th>
+                <th scope="col">Ceiling bites?</th>
+              </tr>
+            </thead>
+            <tbody id="growth-body">
+              ${growthRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#growth">Growth</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / FIFTEEN DAYS' WAGES</span>
+            <h3>Gratuity is fifteen days' wages per year</h3>
+            <p>For every year of service the employer pays fifteen days' wages at the rate you last drew — monthly wages ÷ 26 × 15. Ten years at ₹50,000 a month is ₹2,88,462.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE 6-MONTH RULE</span>
+            <h3>A part-year over six months counts as a full year</h3>
+            <p>For permanent staff, a part-year over 6 months in the last year counts as a full year — 10 years 7 months counts as 11. Exactly 6 months does not round up. Fixed-term staff are paid pro rata on exact service instead.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / THE ₹20 LAKH CEILING</span>
+            <h3>The most an employer must pay</h3>
+            <p>The statutory ceiling is ₹20,00,000. If the formula gives more, the payment is capped — the calculator shows the before-cap figure so you can see what the ceiling cost you.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your wages and dates to a gratuity figure</h2>
+          <p>
+            Enter your last drawn wages first — the dates and the
+            employment type are already filled in with the usual
+            figures — then read the gratuity, the cap and the tax
+            split.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How gratuity is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The gratuity formula</small>
+          Gratuity = last drawn monthly wages × 15 × years ÷ 26 · ÷ 30 for employers outside the Code · ceiling ₹20,00,000
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. The 6-month rule adds a year
+            <strong>${fmt2(roundingSample.beforeCap)} at 11 years · ${fmt2(roundingSample.beforeCap - sample.beforeCap)} more than 10 years</strong>
+            <span>₹50,000 a month over 10 years 7 months counts as 11 years: ₹50,000 × 15 × 11 ÷ 26 = ₹3,17,308, against ₹2,88,462 for 10 years exactly.</span>
+          </div>
+
+          <div class="math-step">
+            2. The ceiling bites at high wages
+            <strong>${fmt2(capSample.beforeCap)} before the ceiling · ${fmt2(capSample.payable)} payable</strong>
+            <span>₹1,50,000 a month for 25 years gives ₹21,63,462 before the ceiling — ₹1,63,462 above it, taxable if the employer pays it.</span>
+          </div>
+
+          <div class="math-step">
+            3. Fixed-term: exact pro-rata
+            <strong>${fmt2(fixedSample.beforeCap)} for 1½ years</strong>
+            <span>₹40,000 × 15 × 1.5 ÷ 26 = ₹34,615. A fixed-term employee qualifies after 1 year — no 5-year wait, and no rounding of the part-year.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five cases, five gratuity figures</h2>
+          <p>
+            One example for each everyday case, including one that
+            hits the ceiling and one fixed-term case. Select any
+            example to load it into the calculator and check the
+            working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.wages)} A MONTH · ${story.type === "fixed-term" ? "FIXED-TERM" : "PERMANENT"}</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-wages="${story.wages}" data-total="${story.totalPay}" data-join="${story.join}" data-leave="${story.leave}" data-type="${story.type}" data-covered="${story.covered ? "covered" : "not-covered"}" data-reason="${story.reason}" data-govt="${story.govt}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>Gratuity rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>Gratuity formula, eligibility, ceiling, wages, payment deadline and tax treatment.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get gratuity wrong</h2>
+          <p>
+            The formula is short, but four readings trip people up.
+            Each one can cost tens of thousands on a settlement.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / ENTERING CTC OR GROSS SALARY</span>
+            <h3>Using the whole pay packet as wages</h3>
+            <p>Only basic + dearness allowance counts — not HRA, bonus or the rest of your CTC. Entering a ₹1,00,000 CTC as wages doubles the figure. If your basic + DA is below half of your total pay, the 50% rule tops the wage base up to half of it — enter your total pay and let the calculator apply it.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / COUNTING ONLY COMPLETED YEARS</span>
+            <h3>Forgetting the 6-month rounding</h3>
+            <p>For permanent staff a part-year over 6 months counts as a full year. On ₹50,000 a month, 10 years 7 months pays ₹3,17,308 — ₹28,846 more than 10 years exactly. Check your leaving date against the 6-month line before you accept a settlement figure.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / IGNORING THE 50% WAGE RULE</span>
+            <h3>Missing the top-up on a low basic</h3>
+            <p>If your basic + DA is below half of your total monthly pay, 50% of your total pay is the wage base. On ₹35,000 basic + DA with ₹1,00,000 total pay, the base is ₹50,000 — and the gratuity is ₹2,88,462, not ₹2,01,923.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / ASSUMING THE EXEMPTION RESETS</span>
+            <h3>Treating the ₹20 lakh exemption as per employer</h3>
+            <p>The ₹20 lakh tax exemption is a lifetime limit across all employers. If you already took ₹15 lakh tax-free gratuity from a previous employer, only ₹5 lakh of the next gratuity is exempt — keep the old settlement letters.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>Gratuity calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the statutory gratuity formula: gratuity =
+            last drawn monthly wages × 15 × years of service ÷ 26,
+            for employers covered by the Code on Social Security,
+            2020 (10 or more employees). Monthly-rated staff: monthly
+            wages ÷ 26 × 15. For permanent staff a part-year over 6
+            months counts as a full year (s.53(2)); fixed-term staff
+            are paid pro rata on exact service (years + months ÷ 12
+            + days ÷ 365). Employers outside the Code who pay
+            voluntarily commonly use the average of the last 10
+            months' wages × 15 ÷ 30 on completed years only. The
+            most an employer must pay is ₹20,00,000 (s.53(3), as
+            notified). The tax split is shown on the before-cap
+            figure: exempt up to ₹20 lakh, a lifetime limit across
+            all employers (CBDT Notification S.O. 1213(E), 8 March 2018);
+            government employees' gratuity is fully exempt.
+            Service is counted as a calendar difference — years,
+            months and days between the joining and leaving dates.
+          </p>
+          <p>
+            Rules checked 12 November 2026: the Code on Social
+            Security, 2020, s.53 (formula, 5-year rule, part-year
+            rule, ₹20 lakh ceiling), s.56 (30-day payment deadline)
+            and s.2(88) (the 50% wage rule), in force 21 November 2025,
+            replacing the Payment of Gratuity Act, 1972; the
+            Ministry of Labour &amp; Employment FAQs of 30 December 2025
+            and 16 March 2026 (fixed-term eligibility after 1
+            year, the ₹20 lakh ceiling, the 50% rule); CBDT
+            Notification S.O. 1213(E) of 8 March 2018 (the ₹20 lakh
+            exemption, raised from ₹10 lakh). Cross-checked against
+            the ranking gratuity calculators: ₹50,000 a month for 10
+            years gives ₹2,88,462 — and the growth table (5 years
+            ₹1,44,231; 15 years ₹4,32,692; 20 years ₹5,76,923; 25
+            years ₹7,21,154) and the 10 years 7 months figure of
+            ₹3,17,308 — on
+            <a href="https://www.cleartaxgratuitycalculator.com/" rel="nofollow noopener" target="_blank">cleartaxgratuitycalculator.com</a>;
+            ₹60,000 a month for 10 years gives ₹3,46,154, and
+            ₹1,50,000 a month for 25 years gives ₹21,63,462 before
+            the ceiling with ₹1,63,462 taxable, on
+            <a href="https://www.paisacalc.net.in/gratuity-calculator" rel="nofollow noopener" target="_blank">paisacalc.net.in</a>.
+            <a href="https://cleartax.in/s/gratuity-calculator" rel="nofollow noopener" target="_blank">ClearTax</a>
+            and
+            <a href="https://upstox.com/calculator/gratuity-calculator/" rel="nofollow noopener" target="_blank">Upstox</a>
+            state the same 15/26 formula, the 5-year rule, the
+            1-year fixed-term rule and the ₹20 lakh ceiling. Two
+            honest limits: the Ministry FAQs do not spell out how a
+            part-year is treated for fixed-term staff, so this
+            calculator uses exact pro-rata and says so; and the ÷ 30
+            formula for employers outside the Code is the formula
+            commonly used, not a statutory one. The 4-year-240-day
+            reading some guides cite was not verified from an
+            official source in this run, so it is not used on this
+            page.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export const CI_FREQUENCIES = ["yearly", "half-yearly", "quarterly", "monthly", "daily"];
+export const CI_FREQUENCY_LABELS = {
+  yearly: "Yearly",
+  "half-yearly": "Half-yearly",
+  quarterly: "Quarterly",
+  monthly: "Monthly",
+  daily: "Daily"
+};
+export const CI_FREQUENCY_N = {
+  yearly: 1,
+  "half-yearly": 2,
+  quarterly: 4,
+  monthly: 12,
+  daily: 365
+};
+
+export function ciPeriods(freq) {
+  const n = CI_FREQUENCY_N[freq];
+  return typeof n === "number" ? n : null;
+}
+
+export function ciEffectiveRate(rate, freq) {
+  const n = ciPeriods(freq);
+  if (n === null) return null;
+  const r = Number(rate);
+  if (!Number.isFinite(r) || r < 0 || r > 20) return null;
+  return Math.pow(1 + r / 100 / n, n) - 1;
+}
+
+export function ciBalanceAt(principal, monthly, rate, freq, months) {
+  const n = ciPeriods(freq);
+  if (n === null) return null;
+  const r = Number(rate) / 100;
+  const base = 1 + r / n;
+  const lump = Number(principal) * Math.pow(base, n * months / 12);
+  let dep = 0;
+  for (let j = 0; j < months; j++) dep += Number(monthly) * Math.pow(base, n * j / 12);
+  return lump + dep;
+}
+
+export function ciGrowth(principal, monthly, rate, freq, years, months) {
+  const totalMonths = years * 12 + months;
+  const rows = [];
+  let openingRaw = Number(principal);
+  for (let y = 1; y <= years; y++) {
+    const closingRaw = ciBalanceAt(principal, monthly, rate, freq, y * 12);
+    const closing = roundRupee(closingRaw);
+    const opening = roundRupee(openingRaw);
+    const deposits = Number(monthly) * 12;
+    rows.push({
+      year: y,
+      label: "Year " + y,
+      opening,
+      deposits,
+      interest: closing - opening - deposits,
+      closing
+    });
+    openingRaw = closingRaw;
+  }
+  if (months > 0) {
+    const closingRaw = ciBalanceAt(principal, monthly, rate, freq, totalMonths);
+    const closing = roundRupee(closingRaw);
+    const opening = roundRupee(openingRaw);
+    const deposits = Number(monthly) * months;
+    rows.push({
+      year: years + 1,
+      label: "Final " + months + (months === 1 ? " month" : " months"),
+      opening,
+      deposits,
+      interest: closing - opening - deposits,
+      closing
+    });
+  }
+  return rows;
+}
+
+export function ciCompute(principal, monthly, rate, years, months, freq) {
+  const p = Number(principal);
+  const m = Number(monthly);
+  const r = Number(rate);
+  const y = Number(years);
+  const mo = Number(months);
+  if (!Number.isFinite(p) || !Number.isFinite(m) || !Number.isFinite(r) || !Number.isFinite(y) || !Number.isFinite(mo)) return null;
+  if (p < 0 || p > 10000000) return null;
+  if (m < 0 || m > 1000000) return null;
+  if (p === 0 && m === 0) return null;
+  if (r < 0 || r > 20) return null;
+  if (!Number.isInteger(y) || y < 0 || y > 30) return null;
+  if (!Number.isInteger(mo) || mo < 0 || mo > 11) return null;
+  const totalMonths = y * 12 + mo;
+  if (totalMonths === 0 || totalMonths > 360) return null;
+  const n = ciPeriods(freq);
+  if (n === null) return null;
+  const maturityRaw = ciBalanceAt(p, m, r, freq, totalMonths);
+  const maturity = roundRupee(maturityRaw);
+  const invested = p + m * totalMonths;
+  const interest = maturity - invested;
+  const effectiveRate = ciEffectiveRate(r, freq);
+  const doubleYears = r === 0 ? null : Math.log(2) / (n * Math.log(1 + r / 100 / n));
+  return {
+    principal: p,
+    monthly: m,
+    rate: r,
+    years: y,
+    months: mo,
+    totalMonths,
+    freq,
+    freqLabel: CI_FREQUENCY_LABELS[freq],
+    periodsPerYear: n,
+    maturity,
+    invested,
+    interest,
+    effectiveRate,
+    doubleYears,
+    growth: ciGrowth(p, m, r, freq, y, mo)
+  };
+}
+
+export const ciCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(21, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+`;
+
+export function hraClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  const HRA_CITIES = ["delhi", "mumbai", "kolkata", "chennai", "bengaluru", "hyderabad", "pune", "ahmedabad", "other"];
+
+  const HRA_CITY_LABELS = {
+    delhi: "Delhi",
+    mumbai: "Mumbai",
+    kolkata: "Kolkata",
+    chennai: "Chennai",
+    bengaluru: "Bengaluru",
+    hyderabad: "Hyderabad",
+    pune: "Pune",
+    ahmedabad: "Ahmedabad",
+    other: "Other city / town"
+  };
+
+  function hraMetroCities(fy) {
+    if (fy === "2026-27") return ["delhi", "mumbai", "kolkata", "chennai", "bengaluru", "hyderabad", "pune", "ahmedabad"];
+    if (fy === "2025-26") return ["delhi", "mumbai", "kolkata", "chennai"];
+    return null;
+  }
+
+  function hraCityPct(city, fy) {
+    const metros = hraMetroCities(fy);
+    if (!metros || HRA_CITIES.indexOf(city) < 0) return null;
+    return metros.indexOf(city) >= 0 ? 50 : 40;
+  }
+
+  function hraLimbs(basic, hra, rent, city, fy) {
+    const salary = Number(basic);
+    const h = Number(hra);
+    const r = Number(rent);
+    if (!Number.isFinite(salary) || !Number.isFinite(h) || !Number.isFinite(r)) return null;
+    if (!(salary > 0) || h < 0 || r < 0) return null;
+    const pct = hraCityPct(city, fy);
+    if (pct === null) return null;
+    const limbA = h;
+    const limbB = Math.max(0, roundRupee(r - 0.1 * salary));
+    const limbC = roundRupee(pct / 100 * salary);
+    const minLimb = Math.min(limbA, limbB, limbC);
+    const binding = minLimb === limbA ? "a" : minLimb === limbB ? "b" : "c";
+    return {
+      salary,
+      pct,
+      metro: pct === 50,
+      limbA,
+      limbB,
+      limbC,
+      limbAAnnual: limbA * 12,
+      limbBAnnual: limbB * 12,
+      limbCAnnual: limbC * 12,
+      binding
+    };
+  }
+
+  function hraCompute(basic, hra, rent, city, fy, regime) {
+    const salary = Number(basic);
+    const h = Number(hra);
+    const r = Number(rent);
+    if (!Number.isFinite(salary) || !Number.isFinite(h) || !Number.isFinite(r)) return null;
+    if (salary < 1000 || salary > 1000000) return null;
+    if (h < 0 || h > 1000000) return null;
+    if (r < 0 || r > 1000000) return null;
+    if (fy !== "2025-26" && fy !== "2026-27") return null;
+    if (regime !== "old" && regime !== "new") return null;
+    const limbs = hraLimbs(salary, h, r, city, fy);
+    if (!limbs) return null;
+    const annualRent = r * 12;
+    const panRequired = annualRent > 100000;
+    const exemptMonthly = regime === "old" ? Math.min(limbs.limbA, limbs.limbB, limbs.limbC) : 0;
+    const exemptAnnual = exemptMonthly * 12;
+    const taxableMonthly = h - exemptMonthly;
+    const taxableAnnual = taxableMonthly * 12;
+    return {
+      basic: salary,
+      hra: h,
+      rent: r,
+      city,
+      cityLabel: HRA_CITY_LABELS[city],
+      fy,
+      regime,
+      salary,
+      pct: limbs.pct,
+      metro: limbs.metro,
+      limbA: limbs.limbA,
+      limbB: limbs.limbB,
+      limbC: limbs.limbC,
+      limbAAnnual: limbs.limbAAnnual,
+      limbBAnnual: limbs.limbBAnnual,
+      limbCAnnual: limbs.limbCAnnual,
+      binding: limbs.binding,
+      exemptMonthly,
+      exemptAnnual,
+      taxableMonthly,
+      taxableAnnual,
+      annualRent,
+      panRequired
+    };
+  }
+
+  const presetSelect = $("preset");
+  const hraPill = $("hra-pill");
+  const inputBasic = $("input-basic");
+  const inputBasicError = $("input-basic-error");
+  const inputHra = $("input-hra");
+  const inputHraError = $("input-hra-error");
+  const inputRent = $("input-rent");
+  const inputRentError = $("input-rent-error");
+  const inputCity = $("input-city");
+  const inputFy = $("input-fy");
+  const inputRegime = $("input-regime");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const panNote = $("pan-note");
+  const limbsBody = $("limbs-body");
+  const limbsNote = $("limbs-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+  const bindingText = b => b === "a" ? "HRA received" : b === "b" ? "rent minus 10% of salary" : "the city percentage";
+  const regimeText = r => r === "new" ? "New regime" : "Old regime";
+
+  function renderLimbs(r) {
+    limbsBody.replaceChildren();
+    if (!r) {
+      limbsNote.textContent = "Enter your figures to see the three limbs.";
+      return;
+    }
+    const rows = [
+      ["(a) HRA actually received", r.limbAAnnual, r.limbA, r.binding === "a"],
+      ["(b) Rent paid − 10% of salary", r.limbBAnnual, r.limbB, r.binding === "b"],
+      ["(c) " + r.pct + "% of salary (" + r.cityLabel + ", FY " + r.fy + ")", r.limbCAnnual, r.limbC, r.binding === "c"]
+    ];
+    rows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row[0];
+      tr.appendChild(th);
+      [row[1], row[2]].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      const td = document.createElement("td");
+      td.textContent = row[3] ? "Yes — the binding limb" : "No";
+      tr.appendChild(td);
+      limbsBody.appendChild(tr);
+    });
+    limbsNote.textContent = "The exempt HRA is the smallest of the three — "
+      + bindingText(r.binding) + " binds at " + inr(r.exemptMonthly) + " a month"
+      + (r.regime === "new" ? ". Under the new regime the exemption is ₹0, so the whole HRA is taxable." : ".");
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your basic salary, HRA and rent to see the exempt and taxable HRA.";
+    working.textContent = "Enter your basic salary, HRA and rent to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    panNote.textContent = "";
+    limbsBody.replaceChildren();
+    limbsNote.textContent = "Enter your figures to see the three limbs.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(basic, hra, rent, city, fy, regime, r) {
+    output.textContent = inr(r.exemptAnnual);
+    box1Val.textContent = inr(r.exemptAnnual);
+    box1Label.textContent = "EXEMPT HRA / YEAR";
+    box2Val.textContent = inr(r.taxableAnnual);
+    box2Label.textContent = "TAXABLE HRA / YEAR";
+    box3Val.textContent = inr(r.exemptMonthly);
+    box3Label.textContent = "EXEMPT HRA / MONTH";
+    working.textContent = "Limbs (per year): (a) HRA received " + inr(r.limbAAnnual)
+      + "; (b) rent minus 10% of salary " + inr(r.limbBAnnual)
+      + "; (c) " + r.pct + "% of salary " + inr(r.limbCAnnual)
+      + ". The smallest is " + bindingText(r.binding) + " at " + inr(r.exemptAnnual) + " a year.";
+    working2.textContent = "Least of " + inr(r.limbAAnnual) + ", " + inr(r.limbBAnnual) + " and " + inr(r.limbCAnnual)
+      + " = " + inr(r.exemptAnnual) + " a year exempt; " + inr(r.taxableAnnual) + " a year taxable.";
+    workingNote.textContent = r.cityLabel + " — " + r.pct + "% city for FY " + r.fy + ". " + regimeText(regime)
+      + (regime === "new" ? " — no HRA exemption under the new regime, so the whole HRA is taxable." : " — the exemption applies under the old regime.")
+      + " Salary is basic + DA: " + inr(r.salary) + " a month.";
+    if (r.panRequired) {
+      panNote.textContent = "Landlord PAN needed: your rent is " + inr(r.annualRent)
+        + " a year — above ₹1,00,000 — so your landlord PAN must be reported on Form 12BB.";
+    } else {
+      panNote.textContent = "Annual rent " + inr(r.annualRent)
+        + " — below the ₹1,00,000 line, so no landlord PAN is needed on Form 12BB.";
+    }
+    if (regime === "new") {
+      glanceText.textContent = inr(basic) + " a month · " + r.cityLabel + " · new regime → exempt ₹0. Taxable " + inr(r.taxableAnnual) + " a year.";
+    } else {
+      glanceText.textContent = inr(basic) + " a month · " + r.cityLabel + " (" + r.pct + "%, FY " + r.fy + ") → exempt " + inr(r.exemptAnnual)
+        + " a year (" + inr(r.exemptMonthly) + " a month). Taxable " + inr(r.taxableAnnual) + " a year.";
+    }
+    renderLimbs(r);
+    glanceBox.className = "verdict " + (regime === "new" ? "verdict-warn" : "verdict-ok");
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | HRA Calculator"
+      + "\nQuestion: basic " + inr(basic) + " a month, HRA " + inr(hra) + " a month, rent " + inr(rent) + " a month, " + r.cityLabel + ", FY " + r.fy + ", " + regimeText(regime)
+      + "\nAnswer: exempt HRA " + inr(r.exemptAnnual) + " a year (" + inr(r.exemptMonthly) + " a month); taxable HRA " + inr(r.taxableAnnual) + " a year"
+      + "\nWorking: limbs (a) " + inr(r.limbAAnnual) + " (b) " + inr(r.limbBAnnual) + " (c) " + inr(r.limbCAnnual) + " — " + bindingText(r.binding) + " binds"
+      + (r.panRequired ? "\nLandlord PAN: needed (annual rent " + inr(r.annualRent) + " above ₹1,00,000)" : "");
+  }
+
+  function paint(showEmptyError = false) {
+    hraPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const basicRaw = inputBasic.value;
+    const hraRaw = inputHra.value;
+    const rentRaw = inputRent.value;
+    const basicNum = basicRaw === "" ? NaN : Number(basicRaw);
+    const hraNum = hraRaw === "" ? NaN : Number(hraRaw);
+    const rentNum = rentRaw === "" ? NaN : Number(rentRaw);
+    let basicMsg = "";
+    let hraMsg = "";
+    let rentMsg = "";
+    if (basicRaw === "") {
+      if (showEmptyError) basicMsg = "Enter your basic salary + DA.";
+    } else if (!Number.isFinite(basicNum) || basicNum < 1000 || basicNum > 1000000) {
+      basicMsg = "Enter basic salary from ₹1,000 to ₹10,00,000 a month.";
+    }
+    if (hraRaw === "") {
+      if (showEmptyError) hraMsg = "Enter the HRA you receive — enter 0 if none.";
+    } else if (!Number.isFinite(hraNum) || hraNum < 0 || hraNum > 1000000) {
+      hraMsg = "Enter HRA from ₹0 to ₹10,00,000 a month.";
+    }
+    if (rentRaw === "") {
+      if (showEmptyError) rentMsg = "Enter the rent you pay — enter 0 if none.";
+    } else if (!Number.isFinite(rentNum) || rentNum < 0 || rentNum > 1000000) {
+      rentMsg = "Enter rent from ₹0 to ₹10,00,000 a month.";
+    }
+    inputBasicError.textContent = basicMsg;
+    inputHraError.textContent = hraMsg;
+    inputRentError.textContent = rentMsg;
+    inputBasic.setAttribute("aria-invalid", String(basicMsg !== ""));
+    inputHra.setAttribute("aria-invalid", String(hraMsg !== ""));
+    inputRent.setAttribute("aria-invalid", String(rentMsg !== ""));
+
+    const valid = basicMsg === "" && hraMsg === "" && rentMsg === ""
+      && basicRaw !== "" && hraRaw !== "" && rentRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = hraCompute(basicNum, hraNum, rentNum, inputCity.value, inputFy.value, inputRegime.value);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(basicNum, hraNum, rentNum, inputCity.value, inputFy.value, inputRegime.value, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = hraCompute(item.basic, item.hra, item.rent, item.city, item.fy, item.regime);
+    if (!r) return "";
+    return inr(item.basic) + " basic · " + r.cityLabel + " → exempt " + inr(r.exemptAnnual) + " a year";
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputBasic.value, inputHra.value, inputRent.value,
+      inputCity.value, inputFy.value, inputRegime.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputBasic.value = String(item.basic);
+        inputHra.value = String(item.hra);
+        inputRent.value = String(item.rent);
+        inputCity.value = item.city;
+        inputFy.value = item.fy;
+        inputRegime.value = item.regime;
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      basic: Number(inputBasic.value),
+      hra: Number(inputHra.value),
+      rent: Number(inputRent.value),
+      city: inputCity.value,
+      fy: inputFy.value,
+      regime: inputRegime.value
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputBasic.value = button.dataset.basic || "";
+      inputHra.value = button.dataset.hra || "";
+      inputRent.value = button.dataset.rent || "";
+      inputCity.value = button.dataset.city || "other";
+      inputFy.value = button.dataset.fy || "2026-27";
+      inputRegime.value = button.dataset.regime || "old";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputBasic.value = String(rec.basic);
+    inputHra.value = String(rec.hra);
+    inputRent.value = String(rec.rent);
+    inputCity.value = rec.city;
+    inputFy.value = rec.fy;
+    inputRegime.value = rec.regime;
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputBasic.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputHra.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRent.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputCity.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputFy.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRegime.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("hra-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderHraCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleBasic: p.sampleBasic, sampleHra: p.sampleHra, sampleRent: p.sampleRent, sampleCity: p.sampleCity, sampleFy: p.sampleFy, sampleRegime: p.sampleRegime };
+  const sample = hraCompute(p.sampleBasic, p.sampleHra, p.sampleRent, p.sampleCity, p.sampleFy, p.sampleRegime);
+  const bengaluru26 = hraCompute(80000, 50000, 45000, "bengaluru", "2026-27", "old");
+  const bengaluru25 = hraCompute(80000, 50000, 45000, "bengaluru", "2025-26", "old");
+  const newRegimeSample = hraCompute(40000, 25000, 20000, "mumbai", "2026-27", "new");
+
+  const presetSummary = pr => {
+    const r = hraCompute(pr.basic, pr.hra, pr.rent, pr.city, pr.fy, pr.regime);
+    return `${inr2(pr.basic)} basic · ${r.cityLabel} → exempt ${inr2(r.exemptAnnual)} a year`;
+  };
+  const cityOptions = [
+    ["delhi", "Delhi"],
+    ["mumbai", "Mumbai"],
+    ["kolkata", "Kolkata"],
+    ["chennai", "Chennai"],
+    ["bengaluru", "Bengaluru"],
+    ["hyderabad", "Hyderabad"],
+    ["pune", "Pune"],
+    ["ahmedabad", "Ahmedabad"],
+    ["other", "Other city / town"]
+  ].map(([v, label]) => `
+    <option value="${v}"${p.sampleCity === v ? " selected" : ""}>${label}</option>
+  `).join("");
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = hraCompute(st.basic, st.hra, st.rent, st.city, st.fy, st.regime);
+    return `${inr2(st.basic)} basic · ${r.cityLabel} → exempt ${inr2(r.exemptAnnual)} a year${r.regime === "new" ? " (new regime — ₹0 exempt)" : ""}`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const limbsRows = [
+    ["(a) HRA actually received", sample.limbAAnnual, sample.limbA, sample.binding === "a"],
+    ["(b) Rent paid − 10% of salary", sample.limbBAnnual, sample.limbB, sample.binding === "b"],
+    ["(c) " + sample.pct + "% of salary (" + sample.cityLabel + ", FY " + sample.fy + ")", sample.limbCAnnual, sample.limbC, sample.binding === "c"]
+  ].map(row => `
+      <tr>
+        <th scope="row">${e(row[0])}</th>
+        <td>${inr2(row[1])}</td>
+        <td>${inr2(row[2])}</td>
+        <td>${row[3] ? "Yes — the binding limb" : "No"}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}${hraCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free HRA calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate HRA →
+              </a>
+              <a href="#method" class="calc-link">How HRA exemption is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.exemptAnnual)} exempt a year</strong>
+                <small>On ${inr2(p.sampleBasic)} basic a month · Mumbai, FY 2026-27</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.taxableAnnual)} taxable a year</strong>
+                <small>The rest of the ${inr2(sample.limbAAnnual)} HRA is added to taxable salary</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.exemptMonthly)} exempt a month</strong>
+                <small>The rent limb binds — ₹1,92,000 of ₹3,00,000 HRA is tax-free</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>A statutory figure at the numbers you enter, not tax advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/">RRB Age</a>
+              <a href="/emi-calculator/">EMI</a>
+              <a href="/sip-calculator/">SIP</a>
+              <a href="/bmi-calculator/">BMI</a>
+              <a href="/percentage-calculator/">Percentage</a>
+              <a href="/gst-calculator/">GST</a>
+              <a href="/ppf-calculator/">PPF</a>
+              <a href="/fd-calculator/">FD</a>
+              <a href="/income-tax-calculator/">Income Tax</a>
+              <a href="/rd-calculator/">RD</a>
+              <a href="/home-loan-emi-calculator/">Home Loan EMI</a>
+              <a href="/gratuity-calculator/">Gratuity</a>
+              <a href="/hra-calculator/" aria-current="page">HRA</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate HRA exemption</h2>
+              <span class="calc-pill" id="hra-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="hra-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-basic">
+                Basic salary + DA per month (₹)
+                <span>From ₹1,000 to ₹10,00,000 a month — not your gross salary or CTC</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-basic"
+                type="number"
+                value="${p.sampleBasic}"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-basic-error"
+              >
+              <p class="calc-error" id="input-basic-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-hra">
+                HRA received per month (₹)
+                <span>The house rent allowance on your payslip — enter 0 if you get none</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-hra"
+                type="number"
+                value="${p.sampleHra}"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-hra-error"
+              >
+              <p class="calc-error" id="input-hra-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-rent">
+                Rent paid per month (₹)
+                <span>What you actually pay your landlord — enter 0 if you pay no rent</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-rent"
+                type="number"
+                value="${p.sampleRent}"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-rent-error"
+              >
+              <p class="calc-error" id="input-rent-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-city">
+                City where you rent
+                <span>The city decides whether limb (c) is 50% or 40% of salary</span>
+              </label>
+
+              <select class="select-input" id="input-city">
+                ${cityOptions}
+              </select>
+
+              <label class="field-label" for="input-fy">
+                Financial year
+                <span>The 50% city list grew from four cities to eight from FY 2026-27</span>
+              </label>
+
+              <select class="select-input" id="input-fy">
+                <option value="2026-27"${p.sampleFy === "2026-27" ? " selected" : ""}>2026-27 (current)</option>
+                <option value="2025-26"${p.sampleFy === "2025-26" ? " selected" : ""}>2025-26</option>
+              </select>
+
+              <label class="field-label" for="input-regime">
+                Tax regime
+                <span>The HRA exemption is available only under the old regime</span>
+              </label>
+
+              <select class="select-input" id="input-regime">
+                <option value="old"${p.sampleRegime === "old" ? " selected" : ""}>Old regime — HRA exemption applies</option>
+                <option value="new"${p.sampleRegime === "new" ? " selected" : ""}>New regime — no HRA exemption</option>
+              </select>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-basic">${inr2(sample.exemptAnnual)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.exemptAnnual)}</strong>
+                  <small id="box1-label">EXEMPT HRA / YEAR</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.taxableAnnual)}</strong>
+                  <small id="box2-label">TAXABLE HRA / YEAR</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.exemptMonthly)}</strong>
+                  <small id="box3-label">EXEMPT HRA / MONTH</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">${inr2(p.sampleBasic)} a month · ${sample.cityLabel} (${sample.pct}%, FY ${sample.fy}) → exempt ${inr2(sample.exemptAnnual)} a year (${inr2(sample.exemptMonthly)} a month). Taxable ${inr2(sample.taxableAnnual)} a year.</span>
+              </div>
+
+              <p class="working" id="working">
+                Limbs (per year): (a) HRA received ${inr2(sample.limbAAnnual)}; (b) rent minus 10% of salary ${inr2(sample.limbBAnnual)}; (c) ${sample.pct}% of salary ${inr2(sample.limbCAnnual)}. The smallest is rent minus 10% of salary at ${inr2(sample.exemptAnnual)} a year.
+              </p>
+              <p class="working" id="working-2">Least of ${inr2(sample.limbAAnnual)}, ${inr2(sample.limbBAnnual)} and ${inr2(sample.limbCAnnual)} = ${inr2(sample.exemptAnnual)} a year exempt; ${inr2(sample.taxableAnnual)} a year taxable.</p>
+              <p class="working" id="working-note">${sample.cityLabel} — ${sample.pct}% city for FY ${sample.fy}. Old regime — the exemption applies under the old regime. Salary is basic + DA: ${inr2(sample.salary)} a month.</p>
+              <p class="working" id="pan-note">Annual rent ${inr2(sample.annualRent)} — above the ₹1,00,000 line, so your landlord PAN must be reported on Form 12BB.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The figure is the statutory exemption under the
+                Income-tax Act on the numbers you enter. Your Form
+                16 and your return decide what is actually exempt —
+                and the exemption is available only under the old
+                tax regime.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="limbs">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The three limbs, side by side</p>
+          <h2>Which limb decides your exemption</h2>
+          <p id="limbs-note">The exempt HRA is the smallest of the three — rent minus 10% of salary binds at ${inr2(sample.exemptMonthly)} a month.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="limbs-note">
+            <caption>The three HRA limbs on the sample figures: HRA received, rent minus 10% of salary, and the city percentage of salary.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Limb</th>
+                <th scope="col">Per year</th>
+                <th scope="col">Per month</th>
+                <th scope="col">Binding?</th>
+              </tr>
+            </thead>
+            <tbody id="limbs-body">
+              ${limbsRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#limbs">Limbs</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / LEAST OF THREE</span>
+            <h3>Three limbs, one answer</h3>
+            <p>The exemption is the smallest of HRA received, rent minus 10% of salary, and the city percentage of salary. Whichever limb is lowest decides the whole exemption — the other two do not matter.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE CITY PERCENTAGE</span>
+            <h3>50% in eight cities from FY 2026-27</h3>
+            <p>Delhi, Mumbai, Kolkata, Chennai, Bengaluru, Hyderabad, Pune and Ahmedabad get 50% from FY 2026-27. In FY 2025-26 only the first four did. Every other place gets 40% in both years.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / OLD REGIME ONLY</span>
+            <h3>No exemption under the new regime</h3>
+            <p>The HRA exemption exists only under the old tax regime. Under the new regime the whole HRA is taxable salary — switch the regime selector to New and the calculator shows ₹0 exempt.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your salary and rent to an exempt HRA figure</h2>
+          <p>
+            Enter your basic salary first — the HRA, rent, city,
+            year and regime are already filled in with the usual
+            figures — then read the exempt and taxable HRA.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How HRA exemption is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The HRA exemption formula</small>
+          Exempt HRA = least of HRA received, rent − 10% of salary, 50% or 40% of salary · old regime only
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. The rent limb binds in Mumbai
+            <strong>${fmt2(sample.exemptAnnual)} a year exempt · ${fmt2(sample.taxableAnnual)} taxable</strong>
+            <span>₹40,000 basic, ₹25,000 HRA, ₹20,000 rent: limbs ₹3,00,000, ₹1,92,000 and ₹2,40,000 a year — the smallest is the rent limb.</span>
+          </div>
+
+          <div class="math-step">
+            2. Bengaluru: ₹60,000 more in FY 2026-27
+            <strong>${fmt2(bengaluru26.exemptAnnual)} in FY 2026-27 · ${fmt2(bengaluru25.exemptAnnual)} in FY 2025-26</strong>
+            <span>₹80,000 basic, ₹50,000 HRA, ₹45,000 rent in Bengaluru: the 50% limb is ₹4,80,000 from FY 2026-27 but only ₹3,84,000 in FY 2025-26 — and the rent limb binds at ₹4,44,000 in the new year.</span>
+          </div>
+
+          <div class="math-step">
+            3. New regime: the whole HRA is taxable
+            <strong>${fmt2(newRegimeSample.exemptAnnual)} exempt · ${fmt2(newRegimeSample.taxableAnnual)} taxable a year</strong>
+            <span>The same Mumbai figures under the new regime: no exemption at all, so the full ₹3,00,000 of HRA is added to taxable salary.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five cases, five HRA figures</h2>
+          <p>
+            One example for each everyday case, including one where
+            the HRA itself is the limit and one under the new
+            regime. Select any example to load it into the
+            calculator and check the working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.basic)} BASIC A MONTH · ${story.city.toUpperCase()}</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-basic="${story.basic}" data-hra="${story.hra}" data-rent="${story.rent}" data-city="${story.city}" data-fy="${story.fy}" data-regime="${story.regime}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>HRA rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>HRA exemption formula, metro city lists by year, regime limit, landlord PAN line and the s.80GG alternative.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get HRA wrong</h2>
+          <p>
+            The formula is short, but four readings trip people up.
+            Each one can cost thousands in tax.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / ENTERING CTC OR GROSS SALARY</span>
+            <h3>Using the whole pay packet as salary</h3>
+            <p>Only basic + dearness allowance counts — not HRA, bonus or the rest of your CTC. Entering a ₹1,00,000 CTC as basic inflates both the 10% limb and the 50% limb, and the exemption with them.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / CLAIMING 50% IN A NON-METRO CITY</span>
+            <h3>Forgetting the city list — and the year</h3>
+            <p>Only the listed cities get 50%, and the list depends on the year: Bengaluru, Hyderabad, Pune and Ahmedabad were 40% cities in FY 2025-26. On ₹80,000 basic the wrong year costs ₹60,000 of exemption. Check the year selector before you file.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / CLAIMING HRA UNDER THE NEW REGIME</span>
+            <h3>Assuming the exemption follows you</h3>
+            <p>The HRA exemption exists only under the old tax regime. If you opted for the new regime, the whole HRA is taxable — ₹3,00,000 a year on the Mumbai example — and no rent figure changes that.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / FORGETTING THE LANDLORD PAN</span>
+            <h3>Missing Form 12BB above ₹1 lakh of rent</h3>
+            <p>If your annual rent is more than ₹1,00,000, your landlord PAN must be reported on Form 12BB — the calculator flags it. And you cannot claim at all if you live in your own house or in rent-free housing from your employer: the exemption is for rent actually paid.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>HRA calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the statutory HRA exemption: exempt HRA =
+            the least of (a) HRA actually received, (b) rent paid
+            minus 10% of salary, (c) 50% of salary if the rented
+            accommodation is in a metro city, else 40% of salary.
+            Salary is basic pay + dearness allowance forming part
+            of retirement benefits (plus commission as a percentage
+            of turnover). Limb (b) is floored at ₹0 — it can never
+            be negative. For FY 2025-26 the 50% cities are Delhi,
+            Mumbai, Kolkata and Chennai (Income-tax Act, 1961,
+            s.10(13A) read with Rule 2A of the Income-tax Rules,
+            1962). From FY 2026-27 the 50% list is eight cities —
+            Delhi, Mumbai, Kolkata, Chennai, Bengaluru, Hyderabad,
+            Pune and Ahmedabad (Income-tax Act, 2025, Schedule III,
+            Table Sl. No. 11, read with Rule 279 of the Income-tax
+            Rules, 2026 — CBDT Notification No. 22/2026, G.S.R. 198(E), 20 March 2026, in force 1 April 2026). The
+            exemption is available only under the old tax regime;
+            under the new regime there is no HRA exemption (s.202
+            of the Income-tax Act, 2025; s.115BAC of the 1961 Act).
+            If the rent paid in a year is more than ₹1,00,000, the
+            landlord PAN must be reported on Form 12BB. All figures
+            are monthly inputs × 12 for the year, rounded to the
+            nearest rupee.
+          </p>
+          <p>
+            Rules checked 12 November 2026: the least-of-three
+            formula and the four-city list for FY 2025-26 under the
+            1961 Act; the eight-city list and the same formula for
+            FY 2026-27 under the 2025 Act and CBDT Notification
+            No. 22/2026; the new-regime bar; the ₹1,00,000 landlord
+            PAN line on Form 12BB; and s.80GG (a deduction of up to
+            ₹60,000 a year for rent paid by those who receive no
+            HRA — a separate claim, noted in the FAQ, not modelled
+            here). Cross-checked against the ranking HRA
+            calculators: the IndiaFirst Life worked example — ₹40,000
+            basic, ₹25,000 HRA, ₹20,000 rent in Mumbai gives
+            ₹1,92,000 exempt a year — on
+            <a href="https://www.indiafirstlife.com/financial-calculators/hra-calculator" rel="nofollow noopener" target="_blank">indiafirstlife.com</a>;
+            the MeraHRMS worked example — ₹50,000 basic, ₹20,000
+            HRA, ₹18,000 rent in a non-metro city gives ₹1,56,000
+            exempt and ₹84,000 taxable a year — on
+            <a href="https://www.merahrms.com/tools/hra-calculator" rel="nofollow noopener" target="_blank">merahrms.com</a>.
+            One honest limit: the calculator takes basic + DA as a
+            single figure, so it cannot split commission as a
+            percentage of turnover out of the salary — if a large
+            part of your pay is turnover commission, check the
+            salary figure with your employer.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function ciClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  const CI_FREQUENCIES = ["yearly", "half-yearly", "quarterly", "monthly", "daily"];
+
+  const CI_FREQUENCY_LABELS = {
+    yearly: "Yearly",
+    "half-yearly": "Half-yearly",
+    quarterly: "Quarterly",
+    monthly: "Monthly",
+    daily: "Daily"
+  };
+
+  const CI_FREQUENCY_N = {
+    yearly: 1,
+    "half-yearly": 2,
+    quarterly: 4,
+    monthly: 12,
+    daily: 365
+  };
+
+  function ciPeriods(freq) {
+    const n = CI_FREQUENCY_N[freq];
+    return typeof n === "number" ? n : null;
+  }
+
+  function ciEffectiveRate(rate, freq) {
+    const n = ciPeriods(freq);
+    if (n === null) return null;
+    const r = Number(rate);
+    if (!Number.isFinite(r) || r < 0 || r > 20) return null;
+    return Math.pow(1 + r / 100 / n, n) - 1;
+  }
+
+  function ciBalanceAt(principal, monthly, rate, freq, months) {
+    const n = ciPeriods(freq);
+    if (n === null) return null;
+    const r = Number(rate) / 100;
+    const base = 1 + r / n;
+    const lump = Number(principal) * Math.pow(base, n * months / 12);
+    let dep = 0;
+    for (let j = 0; j < months; j++) dep += Number(monthly) * Math.pow(base, n * j / 12);
+    return lump + dep;
+  }
+
+  function ciGrowth(principal, monthly, rate, freq, years, months) {
+    const totalMonths = years * 12 + months;
+    const rows = [];
+    let openingRaw = Number(principal);
+    for (let y = 1; y <= years; y++) {
+      const closingRaw = ciBalanceAt(principal, monthly, rate, freq, y * 12);
+      const closing = roundRupee(closingRaw);
+      const opening = roundRupee(openingRaw);
+      const deposits = Number(monthly) * 12;
+      rows.push({
+        year: y,
+        label: "Year " + y,
+        opening,
+        deposits,
+        interest: closing - opening - deposits,
+        closing
+      });
+      openingRaw = closingRaw;
+    }
+    if (months > 0) {
+      const closingRaw = ciBalanceAt(principal, monthly, rate, freq, totalMonths);
+      const closing = roundRupee(closingRaw);
+      const opening = roundRupee(openingRaw);
+      const deposits = Number(monthly) * months;
+      rows.push({
+        year: years + 1,
+        label: "Final " + months + (months === 1 ? " month" : " months"),
+        opening,
+        deposits,
+        interest: closing - opening - deposits,
+        closing
+      });
+    }
+    return rows;
+  }
+
+  function ciCompute(principal, monthly, rate, years, months, freq) {
+    const p = Number(principal);
+    const m = Number(monthly);
+    const r = Number(rate);
+    const y = Number(years);
+    const mo = Number(months);
+    if (!Number.isFinite(p) || !Number.isFinite(m) || !Number.isFinite(r) || !Number.isFinite(y) || !Number.isFinite(mo)) return null;
+    if (p < 0 || p > 10000000) return null;
+    if (m < 0 || m > 1000000) return null;
+    if (p === 0 && m === 0) return null;
+    if (r < 0 || r > 20) return null;
+    if (!Number.isInteger(y) || y < 0 || y > 30) return null;
+    if (!Number.isInteger(mo) || mo < 0 || mo > 11) return null;
+    const totalMonths = y * 12 + mo;
+    if (totalMonths === 0 || totalMonths > 360) return null;
+    const n = ciPeriods(freq);
+    if (n === null) return null;
+    const maturityRaw = ciBalanceAt(p, m, r, freq, totalMonths);
+    const maturity = roundRupee(maturityRaw);
+    const invested = p + m * totalMonths;
+    const interest = maturity - invested;
+    const effectiveRate = ciEffectiveRate(r, freq);
+    const doubleYears = r === 0 ? null : Math.log(2) / (n * Math.log(1 + r / 100 / n));
+    return {
+      principal: p,
+      monthly: m,
+      rate: r,
+      years: y,
+      months: mo,
+      totalMonths,
+      freq,
+      freqLabel: CI_FREQUENCY_LABELS[freq],
+      periodsPerYear: n,
+      maturity,
+      invested,
+      interest,
+      effectiveRate,
+      doubleYears,
+      growth: ciGrowth(p, m, r, freq, y, mo)
+    };
+  }
+
+  const presetSelect = $("preset");
+  const ciPill = $("ci-pill");
+  const inputPrincipal = $("input-principal");
+  const inputPrincipalError = $("input-principal-error");
+  const inputMonthly = $("input-monthly");
+  const inputMonthlyError = $("input-monthly-error");
+  const inputRate = $("input-rate");
+  const inputRateError = $("input-rate-error");
+  const inputYears = $("input-years");
+  const inputYearsError = $("input-years-error");
+  const inputMonths = $("input-months");
+  const inputMonthsError = $("input-months-error");
+  const inputFrequency = $("input-frequency");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const growthBody = $("growth-body");
+  const growthNote = $("growth-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const pct2 = x => (x * 100).toFixed(2) + "%";
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+  const tenureText = (y, mo) => {
+    const parts = [];
+    if (y > 0) parts.push(y + (y === 1 ? " year" : " years"));
+    if (mo > 0) parts.push(mo + (mo === 1 ? " month" : " months"));
+    return parts.join(" ") || "0 months";
+  };
+
+  function renderGrowth(r) {
+    growthBody.replaceChildren();
+    if (!r) {
+      growthNote.textContent = "Enter your figures to see the balance grow year by year.";
+      return;
+    }
+    r.growth.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row.label;
+      tr.appendChild(th);
+      [row.opening, row.deposits, row.interest, row.closing].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      growthBody.appendChild(tr);
+    });
+    growthNote.textContent = "The balance grows year by year — the interest column overtakes the deposits column as compounding takes over.";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your lump sum, rate and tenure to see the maturity value.";
+    working.textContent = "Enter your lump sum, rate and tenure to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    growthBody.replaceChildren();
+    growthNote.textContent = "Enter your figures to see the balance grow year by year.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(principal, monthly, rate, years, months, freq, r) {
+    output.textContent = inr(r.maturity);
+    box1Val.textContent = inr(r.maturity);
+    box1Label.textContent = "MATURITY VALUE";
+    box2Val.textContent = inr(r.interest);
+    box2Label.textContent = "INTEREST EARNED";
+    box3Val.textContent = inr(r.invested);
+    box3Label.textContent = "TOTAL INVESTED";
+    working.textContent = inr(principal) + " at " + rate + "% a year, compounded " + r.freqLabel.toLowerCase()
+      + " for " + tenureText(years, months) + ", grows to " + inr(r.maturity)
+      + " — " + inr(r.interest) + " of interest on " + inr(r.invested) + " invested.";
+    working2.textContent = "A = " + inr(principal) + " × (1 + " + rate + "% ÷ " + r.periodsPerYear + ")^("
+      + r.periodsPerYear + " × " + (years + months / 12) + ")"
+      + (monthly > 0 ? " + " + inr(monthly) + " a month, added at the end of each month" : "")
+      + " = " + inr(r.maturity) + ".";
+    workingNote.textContent = r.freqLabel + " compounding · effective annual rate " + pct2(r.effectiveRate)
+      + (r.doubleYears === null ? " · at 0% the money never grows" : " · money doubles in about " + r.doubleYears.toFixed(1) + " years")
+      + (monthly > 0 ? " · " + inr(monthly) + " a month for " + r.totalMonths + " months." : ".");
+    glanceText.textContent = inr(principal) + (monthly > 0 ? " + " + inr(monthly) + " a month" : "")
+      + " · " + rate + "% · " + tenureText(years, months) + " · " + r.freqLabel.toLowerCase()
+      + " → maturity " + inr(r.maturity) + " (interest " + inr(r.interest) + ").";
+    renderGrowth(r);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | Compound Interest Calculator"
+      + "\nQuestion: lump sum " + inr(principal) + ", monthly deposit " + inr(monthly) + ", rate " + rate + "% a year, "
+      + tenureText(years, months) + ", compounded " + r.freqLabel.toLowerCase()
+      + "\nAnswer: maturity value " + inr(r.maturity) + "; total invested " + inr(r.invested) + "; interest earned " + inr(r.interest)
+      + "\nWorking: effective annual rate " + pct2(r.effectiveRate)
+      + (r.doubleYears === null ? "" : "; money doubles in about " + r.doubleYears.toFixed(1) + " years");
+  }
+
+  function paint(showEmptyError = false) {
+    ciPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const principalRaw = inputPrincipal.value;
+    const monthlyRaw = inputMonthly.value;
+    const rateRaw = inputRate.value;
+    const yearsRaw = inputYears.value;
+    const monthsRaw = inputMonths.value;
+    const principalNum = principalRaw === "" ? NaN : Number(principalRaw);
+    const monthlyNum = monthlyRaw === "" ? NaN : Number(monthlyRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    const yearsNum = yearsRaw === "" ? NaN : Number(yearsRaw);
+    const monthsNum = monthsRaw === "" ? NaN : Number(monthsRaw);
+    let principalMsg = "";
+    let monthlyMsg = "";
+    let rateMsg = "";
+    let yearsMsg = "";
+    let monthsMsg = "";
+    if (principalRaw === "") {
+      if (showEmptyError) principalMsg = "Enter your lump sum — enter 0 if you have none.";
+    } else if (!Number.isFinite(principalNum) || principalNum < 0 || principalNum > 10000000) {
+      principalMsg = "Enter a lump sum from ₹0 to ₹1,00,00,000.";
+    }
+    if (monthlyRaw === "") {
+      if (showEmptyError) monthlyMsg = "Enter your monthly deposit — enter 0 if none.";
+    } else if (!Number.isFinite(monthlyNum) || monthlyNum < 0 || monthlyNum > 1000000) {
+      monthlyMsg = "Enter a monthly deposit from ₹0 to ₹10,00,000.";
+    }
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the yearly rate.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 20) {
+      rateMsg = "Enter a yearly rate from 0% to 20%.";
+    }
+    if (yearsRaw === "") {
+      if (showEmptyError) yearsMsg = "Enter the years — enter 0 if under a year.";
+    } else if (!Number.isFinite(yearsNum) || !Number.isInteger(yearsNum) || yearsNum < 0 || yearsNum > 30) {
+      yearsMsg = "Enter whole years from 0 to 30.";
+    }
+    if (monthsRaw === "") {
+      if (showEmptyError) monthsMsg = "Enter the extra months — enter 0 if none.";
+    } else if (!Number.isFinite(monthsNum) || !Number.isInteger(monthsNum) || monthsNum < 0 || monthsNum > 11) {
+      monthsMsg = "Enter extra months from 0 to 11.";
+    }
+    if (principalMsg === "" && monthlyMsg === "" && principalRaw !== "" && monthlyRaw !== ""
+      && principalNum === 0 && monthlyNum === 0) {
+      principalMsg = "Enter a lump sum or a monthly deposit — at least one must be more than zero.";
+    }
+    if (principalMsg === "" && monthlyMsg === "" && yearsMsg === "" && monthsMsg === ""
+      && yearsRaw !== "" && monthsRaw !== "" && yearsNum === 0 && monthsNum === 0) {
+      yearsMsg = "Enter a tenure longer than 0 months.";
+    }
+    if (yearsNum === 30 && monthsNum > 0 && yearsMsg === "" && monthsMsg === "") {
+      monthsMsg = "Tenure is at most 30 years — set the extra months to 0.";
+    }
+    inputPrincipalError.textContent = principalMsg;
+    inputMonthlyError.textContent = monthlyMsg;
+    inputRateError.textContent = rateMsg;
+    inputYearsError.textContent = yearsMsg;
+    inputMonthsError.textContent = monthsMsg;
+    inputPrincipal.setAttribute("aria-invalid", String(principalMsg !== ""));
+    inputMonthly.setAttribute("aria-invalid", String(monthlyMsg !== ""));
+    inputRate.setAttribute("aria-invalid", String(rateMsg !== ""));
+    inputYears.setAttribute("aria-invalid", String(yearsMsg !== ""));
+    inputMonths.setAttribute("aria-invalid", String(monthsMsg !== ""));
+
+    const valid = principalMsg === "" && monthlyMsg === "" && rateMsg === "" && yearsMsg === "" && monthsMsg === ""
+      && principalRaw !== "" && monthlyRaw !== "" && rateRaw !== "" && yearsRaw !== "" && monthsRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = ciCompute(principalNum, monthlyNum, rateNum, yearsNum, monthsNum, inputFrequency.value);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(principalNum, monthlyNum, rateNum, yearsNum, monthsNum, inputFrequency.value, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = ciCompute(item.principal, item.monthly, item.rate, item.years, item.months, item.freq);
+    if (!r) return "";
+    return inr(item.principal) + (item.monthly > 0 ? " + " + inr(item.monthly) + "/mo" : "")
+      + " · " + item.rate + "% · " + tenureText(item.years, item.months)
+      + " → " + inr(r.maturity);
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputPrincipal.value, inputMonthly.value, inputRate.value,
+      inputYears.value, inputMonths.value, inputFrequency.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputPrincipal.value = String(item.principal);
+        inputMonthly.value = String(item.monthly);
+        inputRate.value = String(item.rate);
+        inputYears.value = String(item.years);
+        inputMonths.value = String(item.months);
+        inputFrequency.value = item.freq;
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      principal: Number(inputPrincipal.value),
+      monthly: Number(inputMonthly.value),
+      rate: Number(inputRate.value),
+      years: Number(inputYears.value),
+      months: Number(inputMonths.value),
+      freq: inputFrequency.value
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputPrincipal.value = button.dataset.principal || "";
+      inputMonthly.value = button.dataset.monthly || "";
+      inputRate.value = button.dataset.rate || "";
+      inputYears.value = button.dataset.years || "";
+      inputMonths.value = button.dataset.months || "";
+      inputFrequency.value = button.dataset.frequency || "quarterly";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputPrincipal.value = String(rec.principal);
+    inputMonthly.value = String(rec.monthly);
+    inputRate.value = String(rec.rate);
+    inputYears.value = String(rec.years);
+    inputMonths.value = String(rec.months);
+    inputFrequency.value = rec.freq;
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputPrincipal.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputMonthly.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputYears.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputMonths.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputFrequency.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("ci-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderCiCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+  const pct2 = x => (x * 100).toFixed(2) + "%";
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, samplePrincipal: p.samplePrincipal, sampleMonthly: p.sampleMonthly, sampleRate: p.sampleRate, sampleYears: p.sampleYears, sampleMonths: p.sampleMonths, sampleFreq: p.sampleFreq };
+  const sample = ciCompute(p.samplePrincipal, p.sampleMonthly, p.sampleRate, p.sampleYears, p.sampleMonths, p.sampleFreq);
+  const yearlySample = ciCompute(100000, 0, 8, 10, 0, "yearly");
+  const monthlySample = ciCompute(0, 10000, 12, 10, 0, "monthly");
+  const startMonthSample = monthlySample.maturity + Math.round(monthlySample.maturity * 0.01);
+
+  const presetSummary = pr => {
+    const r = ciCompute(pr.principal, pr.monthly, pr.rate, pr.years, pr.months, pr.freq);
+    return `${inr2(pr.principal)}${pr.monthly > 0 ? " + " + inr2(pr.monthly) + " a month" : ""} → ${inr2(r.maturity)}`;
+  };
+  const freqOptions = [
+    ["yearly", "Yearly — interest joins once a year"],
+    ["half-yearly", "Half-yearly — interest joins twice a year"],
+    ["quarterly", "Quarterly — interest joins 4 times a year (FD default)"],
+    ["monthly", "Monthly — interest joins 12 times a year"],
+    ["daily", "Daily — interest joins 365 times a year"]
+  ].map(([v, label]) => `
+    <option value="${v}"${p.sampleFreq === v ? " selected" : ""}>${label}</option>
+  `).join("");
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = ciCompute(st.principal, st.monthly, st.rate, st.years, st.months, st.freq);
+    return `${inr2(st.principal)}${st.monthly > 0 ? " + " + inr2(st.monthly) + " a month" : ""} → maturity ${inr2(r.maturity)}`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const growthRows = sample.growth.map(row => `
+      <tr>
+        <th scope="row">${e(row.label)}</th>
+        <td>${inr2(row.opening)}</td>
+        <td>${inr2(row.deposits)}</td>
+        <td>${inr2(row.interest)}</td>
+        <td>${inr2(row.closing)}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}${hraCss}${ciCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free compound interest calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate compound interest →
+              </a>
+              <a href="#method" class="calc-link">How compound interest is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.maturity)} maturity value</strong>
+                <small>On ${inr2(p.samplePrincipal)} at 8% a year, compounded quarterly for 10 years</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.interest)} interest earned</strong>
+                <small>₹40,804 more than simple interest would pay at the same rate</small>
+              </div>
+              <div>
+                <strong>${pct2(sample.effectiveRate)} effective annual rate</strong>
+                <small>8% nominal, compounded quarterly, really earns 8.24% a year</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>Growth before tax at a steady rate — not investment advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/">RRB Age</a>
+              <a href="/emi-calculator/">EMI</a>
+              <a href="/sip-calculator/">SIP</a>
+              <a href="/bmi-calculator/">BMI</a>
+              <a href="/percentage-calculator/">Percentage</a>
+              <a href="/gst-calculator/">GST</a>
+              <a href="/ppf-calculator/">PPF</a>
+              <a href="/fd-calculator/">FD</a>
+              <a href="/income-tax-calculator/">Income Tax</a>
+              <a href="/rd-calculator/">RD</a>
+              <a href="/home-loan-emi-calculator/">Home Loan EMI</a>
+              <a href="/gratuity-calculator/">Gratuity</a>
+              <a href="/hra-calculator/">HRA</a>
+              <a href="/compound-interest-calculator/" aria-current="page">Compound Interest</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate compound interest</h2>
+              <span class="calc-pill" id="ci-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="ci-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-principal">
+                Lump sum (₹)
+                <span>The amount you start with — from ₹0 to ₹1,00,00,000; enter 0 if you start with monthly deposits only</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-principal"
+                type="number"
+                value="${p.samplePrincipal}"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-principal-error"
+              >
+              <p class="calc-error" id="input-principal-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-monthly">
+                Monthly deposit (₹)
+                <span>Added at the end of each month — from ₹0 to ₹10,00,000 a month; enter 0 for a plain lump-sum calculation</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-monthly"
+                type="number"
+                value="${p.sampleMonthly}"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-monthly-error"
+              >
+              <p class="calc-error" id="input-monthly-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-rate">
+                Annual interest rate (%)
+                <span>A yearly rate, from 0% to 20% — the rate your bank quotes, or a long-run average you consider realistic</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-rate"
+                type="number"
+                value="${p.sampleRate}"
+                step="0.1"
+                inputmode="decimal"
+                aria-describedby="input-rate-error"
+              >
+              <p class="calc-error" id="input-rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-years">
+                Tenure — years
+                <span>Whole years, from 0 to 30</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-years"
+                type="number"
+                value="${p.sampleYears}"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="input-years-error"
+              >
+              <p class="calc-error" id="input-years-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-months">
+                Tenure — extra months
+                <span>Extra months on top of the years, from 0 to 11</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-months"
+                type="number"
+                value="${p.sampleMonths}"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="input-months-error"
+              >
+              <p class="calc-error" id="input-months-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-frequency">
+                How often interest compounds
+                <span>Most Indian bank FDs compound quarterly, which is the default here</span>
+              </label>
+
+              <select class="select-input" id="input-frequency">
+                ${freqOptions}
+              </select>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-principal">${inr2(sample.maturity)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.maturity)}</strong>
+                  <small id="box1-label">MATURITY VALUE</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.interest)}</strong>
+                  <small id="box2-label">INTEREST EARNED</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.invested)}</strong>
+                  <small id="box3-label">TOTAL INVESTED</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">${inr2(p.samplePrincipal)} · ${p.sampleRate}% · 10 years · quarterly → maturity ${inr2(sample.maturity)} (interest ${inr2(sample.interest)}).</span>
+              </div>
+
+              <p class="working" id="working">
+                ${inr2(p.samplePrincipal)} at ${p.sampleRate}% a year, compounded quarterly for 10 years, grows to ${inr2(sample.maturity)} — ${inr2(sample.interest)} of interest on ${inr2(sample.invested)} invested.
+              </p>
+              <p class="working" id="working-2">A = ${inr2(p.samplePrincipal)} × (1 + 8% ÷ 4)^(4 × 10) = ${inr2(sample.maturity)}.</p>
+              <p class="working" id="working-note">Quarterly compounding · effective annual rate ${pct2(sample.effectiveRate)} · money doubles in about ${sample.doubleYears.toFixed(1)} years.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The figure is growth before tax at the steady rate
+                you enter. Real returns vary — mutual fund SIP
+                returns are market-linked and not guaranteed — and
+                interest on most savings in India is taxable.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="growth">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Year by year</p>
+          <h2>How the balance grows</h2>
+          <p id="growth-note">The balance grows year by year — the interest column overtakes the deposits column as compounding takes over.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="growth-note">
+            <caption>Year-by-year growth on the sample figures: ₹1,00,000 at 8% a year, compounded quarterly for 10 years.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Opening balance</th>
+                <th scope="col">Deposits</th>
+                <th scope="col">Interest</th>
+                <th scope="col">Closing balance</th>
+              </tr>
+            </thead>
+            <tbody id="growth-body">
+              ${growthRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#growth">Growth</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / INTEREST ON INTEREST</span>
+            <h3>Compounding does the heavy lifting late</h3>
+            <p>In year 1 the interest on ₹1,00,000 at 8% is ₹8,243. By year 10 the interest in a single year is ₹16,815 — more than double — because every earlier year's interest is now earning interest too.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE FREQUENCY</span>
+            <h3>More often is more</h3>
+            <p>The same ₹1,00,000 at 8% for 10 years gives ₹2,15,892 compounded yearly and ₹2,20,804 compounded quarterly — ₹4,912 more, just for joining the balance four times a year instead of once.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / MONTHLY ADDITIONS</span>
+            <h3>Small deposits, big finish</h3>
+            <p>₹10,000 a month at 12% for 10 years turns ₹12,00,000 of deposits into ₹23,00,387. The deposits do the early work; in the later years the interest each year is bigger than a whole year's deposits.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your lump sum and rate to a maturity value</h2>
+          <p>
+            Enter your lump sum first — the other figures are
+            already filled in with the usual example — then read
+            the maturity value and the growth table.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How compound interest is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The compound interest formula</small>
+          A = P × (1 + r/n)^(n×t) · each monthly deposit compounds from the end of its month
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. ₹1,00,000 at 8%, quarterly, 10 years
+            <strong>${fmt2(sample.maturity)} maturity · ${fmt2(sample.interest)} interest</strong>
+            <span>₹1,00,000 × (1 + 0.08 ÷ 4)^(4 × 10) = ₹2,20,804. Simple interest at the same rate would pay only ₹80,000 — compounding adds ₹40,804.</span>
+          </div>
+
+          <div class="math-step">
+            2. Same money, yearly compounding
+            <strong>${fmt2(yearlySample.maturity)} maturity · ${fmt2(yearlySample.interest)} interest</strong>
+            <span>₹1,00,000 × 1.08^10 = ₹2,15,892. The frequency alone costs ₹4,912 over ten years — the interest joins the balance once a year instead of four times.</span>
+          </div>
+
+          <div class="math-step">
+            3. ₹10,000 a month at 12%, monthly, 10 years
+            <strong>${fmt2(monthlySample.maturity)} maturity · ${fmt2(monthlySample.interest)} interest</strong>
+            <span>₹12,00,000 deposited over 120 months grows to ₹23,00,387. Start-of-month deposits would give ${fmt2(startMonthSample)} — ₹23,004 more — because every deposit earns one extra month.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five cases, five maturity values</h2>
+          <p>
+            One example for each everyday case, including one with
+            monthly deposits only and one where the frequency is
+            the whole story. Select any example to load it into the
+            calculator and check the working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.principal)} LUMP SUM${story.monthly > 0 ? " + " + fmt2(story.monthly) + " A MONTH" : ""} · ${story.freq.toUpperCase()}</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-principal="${story.principal}" data-monthly="${story.monthly}" data-rate="${story.rate}" data-years="${story.years}" data-months="${story.months}" data-frequency="${story.freq}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>Compound interest rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>Compound interest formula, compounding frequencies, effective annual rate, monthly-deposit convention, rule of 72, simple-interest comparison, tax and inflation.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get compound interest wrong</h2>
+          <p>
+            The formula is short, but four readings trip people up.
+            Each one can cost thousands.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / ENTERING A MONTHLY RATE</span>
+            <h3>Mixing up monthly and yearly rates</h3>
+            <p>The calculator always takes a yearly rate. Entering 1% a month as 1% a year understates the growth twelvefold; entering 12% a year as a monthly rate overstates it wildly. If your bank quotes a monthly rate, multiply it by 12 first.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / IGNORING THE DEPOSIT TIMING</span>
+            <h3>Comparing calculators on different conventions</h3>
+            <p>On ₹10,000 a month at 12% for 10 years, start-of-month deposits give ₹23,23,391 and end-of-month deposits give ₹23,00,387 — ₹23,004 apart, both right under their own convention. Check the timing before you call one calculator wrong.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / COMPARING NOMINAL RATES</span>
+            <h3>Forgetting the frequency</h3>
+            <p>10% a year is not one rate: it earns 10.47% effective monthly, 10.38% quarterly, 10.25% half-yearly and exactly 10.00% yearly. Two deposits at the same nominal rate can mature ₹4,912 apart on ₹1,00,000 over ten years — compare effective rates, not nominal ones.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / FORGETTING TAX AND INFLATION</span>
+            <h3>Treating the maturity value as what you keep</h3>
+            <p>The maturity value is growth before tax at a steady rate. Interest on most savings in India is taxed at your slab rate, and 4% inflation halves purchasing power in about 18 years. The figure is a plan, not a promise — and for mutual funds the rate itself is never guaranteed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>Compound interest calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the standard compound interest formula:
+            maturity value A = P × (1 + r/n)^(n×t), where P is the
+            lump sum, r the yearly rate as a decimal, n the number
+            of times a year interest compounds and t the tenure in
+            years. Each monthly deposit is added at the end of its
+            month and compounds from then on at the same rate and
+            frequency, so the maturity value is the compounded lump
+            sum plus the compounded value of every deposit. The
+            effective annual rate is (1 + r/n)^n − 1. The calculator
+            compounds on the exact balance and rounds only the
+            final maturity value to the nearest rupee; the
+            year-by-year table rounds each row to the nearest
+            rupee, so each row's interest is its closing balance
+            minus its opening balance minus that year's deposits.
+            Part years use the same formula with a fractional
+            power. The rate is user-entered and treated as a steady
+            assumption — never as a live quote or a forecast.
+          </p>
+          <p>
+            Figures checked 12 November 2026: the formula and the
+            worked examples against the ranking compound interest
+            calculators — the blogbanking.com example, ₹1,00,000 at
+            8% compounded quarterly for 10 years, gives ₹2,20,804
+            (interest ₹1,20,804) on
+            <a href="https://www.blogbanking.com/compound-interest-calculator" rel="nofollow noopener" target="_blank">blogbanking.com</a>;
+            the srutved.com example, ₹1,00,000 at 8% compounded
+            yearly for 10 years, gives ₹2,15,892 on
+            <a href="https://www.srutved.com/tools/compound-interest-calculator" rel="nofollow noopener" target="_blank">srutved.com</a>;
+            the credocalc.com example, ₹1,00,000 plus ₹10,000 a
+            month at 7% compounded quarterly for 15 years, gives
+            ₹34,41,686 (₹19,00,000 invested + ₹15,41,686 interest)
+            on
+            <a href="https://www.credocalc.com/in/compound-interest-calculator/" rel="nofollow noopener" target="_blank">credocalc.com</a>;
+            the effective annual rates at 10% a year — 10.47%
+            monthly, 10.38% quarterly, 10.25% half-yearly, 10.00%
+            yearly — match the BusinessToday calculator on
+            <a href="https://www.businesstoday.in/tools-and-calculators/compound-interest-calculator" rel="nofollow noopener" target="_blank">businesstoday.in</a>.
+            For a bank deposit with TDS and tax on interest, use
+            the FD calculator; for a recurring deposit, the RD
+            calculator; for a systematic monthly investment, the
+            SIP calculator — all three use the same compounding
+            maths with their own product rules. One honest limit:
+            this calculator takes a single steady rate, so it
+            cannot model returns that change year to year — for
+            market-linked investments, try a lower rate too.
           </p>
         </div>
       </div>
