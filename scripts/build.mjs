@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, renderUpscAgeCalculatorBody, renderIbpsAgeCalculatorBody, renderRrbAgeCalculatorBody, renderEmiCalculatorBody, renderSipCalculatorBody, renderBmiCalculatorBody, renderPctCalculatorBody, renderGstCalculatorBody, renderPpfCalculatorBody, renderFdCalculatorBody, renderTaxCalculatorBody, renderRdCalculatorBody, renderHlCalculatorBody, renderGrCalculatorBody, renderHraCalculatorBody, renderCiCalculatorBody, renderEpfCalculatorBody, renderNpsCalculatorBody, renderSsyCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient, upscClient, ibpsClient, rrbClient, emiClient, sipClient, bmiClient, pctClient, gstClient, ppfClient, fdClient, taxClient, rdClient, hlClient, grClient, hraClient, ciClient, epfClient, npsClient, ssyClient } from "./calculators.mjs";
+import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, renderUpscAgeCalculatorBody, renderIbpsAgeCalculatorBody, renderRrbAgeCalculatorBody, renderEmiCalculatorBody, renderSipCalculatorBody, renderBmiCalculatorBody, renderPctCalculatorBody, renderGstCalculatorBody, renderPpfCalculatorBody, renderFdCalculatorBody, renderTaxCalculatorBody, renderRdCalculatorBody, renderHlCalculatorBody, renderGrCalculatorBody, renderHraCalculatorBody, renderCiCalculatorBody, renderEpfCalculatorBody, renderNpsCalculatorBody, renderSsyCalculatorBody, renderNscCalculatorBody, renderScssCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient, upscClient, ibpsClient, rrbClient, emiClient, sipClient, bmiClient, pctClient, gstClient, ppfClient, fdClient, taxClient, rdClient, hlClient, grClient, hraClient, ciClient, epfClient, npsClient, ssyClient, nscClient, scssClient } from "./calculators.mjs";
 import {
   polls as bbPolls,
   contestants as bbContestants,
@@ -433,6 +433,25 @@ function renderHeader(currentPath = "") {
     `<li class="nav-item has-sub"><a href="${href}"${current === href ? ' aria-current="page"' : ""} aria-haspopup="true">${label}<span class="caret" aria-hidden="true"></span></a><ul class="sub-menu">${children
       .map(([childHref, childLabel]) => `<li><a href="${childHref}"${current === childHref ? ' aria-current="page"' : ""}>${childLabel}</a></li>`)
       .join("")}</ul></li>`;
+
+  // Tools dropdown (design pack 292): generated from this build's own
+  // calculator registry (calculatorPages), so it can only ever link to tool
+  // pages this build actually emits. A tool appears under its category as
+  // soon as its own pack adds it to the registry — no header edit needed.
+  const toolMenu = [
+    ["Exam & Age", [["ssc-age-calculator", "SSC Age"], ["upsc-age-calculator", "UPSC Age"], ["ibps-age-calculator", "IBPS Age"], ["rrb-age-calculator", "RRB Age"], ["age-calculator", "Age Calculator"]]],
+    ["Money & Tax", [["emi-calculator", "EMI"], ["home-loan-emi-calculator", "Home Loan EMI"], ["sip-calculator", "SIP"], ["rd-calculator", "RD"], ["fd-calculator", "FD"], ["ppf-calculator", "PPF"], ["epf-calculator", "EPF"], ["nps-calculator", "NPS"], ["ssy-calculator", "SSY"], ["nsc-calculator", "NSC"], ["scss-calculator", "SCSS"], ["gratuity-calculator", "Gratuity"], ["hra-calculator", "HRA"], ["income-tax-calculator", "Income Tax"], ["gst-calculator", "GST"], ["compound-interest-calculator", "Compound Interest"], ["percentage-calculator", "Percentage"]]],
+    ["Health & Study", [["bmi-calculator", "BMI"], ["cgpa-to-percentage-calculator", "CGPA to Percentage"]]],
+  ];
+  const liveToolSlugs = new Set(calculatorPages.map((page) => page.slug));
+  const toolGroups = toolMenu
+    .map(([heading, items]) => [heading, items.filter(([slug]) => liveToolSlugs.has(slug))])
+    .filter(([, items]) => items.length > 0);
+  const toolsItem = toolGroups.length
+    ? `<li class="nav-item has-sub"><a href="#" aria-haspopup="true">Tools<span class="caret" aria-hidden="true"></span></a><div class="sub-menu sub-menu--tools">${toolGroups
+        .map(([heading, items]) => `<div class="tools-group"><span class="tools-heading">${heading}</span><ul>${items.map(([slug, label]) => `<li><a href="/${slug}/"${current === `/${slug}/` ? ' aria-current="page"' : ""}>${label}</a></li>`).join("")}</ul></div>`)
+        .join("")}</div></li>`
+    : "";
   const links = [
     item("/", "Home"),
     group("/bigg-boss-20-guide/", "Bigg Boss 20", [
@@ -447,6 +466,7 @@ function renderHeader(currentPath = "") {
       ["/education/universities/", "Universities"],
       ["/education/medical-colleges/", "Medical Colleges"],
     ]),
+    ...(toolsItem ? [toolsItem] : []),
     item("/category/entertainment/", "Entertainment"),
     item("/category/technology/", "Technology"),
     item("/business/", "All Businesses"),
@@ -521,6 +541,8 @@ function renderFooter() {
         <li><a href="/epf-calculator/">EPF Calculator</a></li>
         <li><a href="/nps-calculator/">NPS Calculator</a></li>
         <li><a href="/ssy-calculator/">SSY Calculator</a></li>
+        <li><a href="/nsc-calculator/">NSC Calculator</a></li>
+        <li><a href="/scss-calculator/">SCSS Calculator</a></li>
         <li><a href="/search/">Search All Guides</a></li>
         <li><a href="/assets/bb20-new/image-credits.html">Image Credits</a></li>
         <li><a href="mailto:visitbest10@gmail.com">visitbest10@gmail.com</a></li>
@@ -989,6 +1011,10 @@ for (let i = 0; i < calculatorPages.length; i++) {
                 ? renderNpsCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, npsClient.toString())
               : item.kind === "ssy"
                 ? renderSsyCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, ssyClient.toString())
+              : item.kind === "nsc"
+                ? renderNscCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, nscClient.toString())
+              : item.kind === "scss"
+                ? renderScssCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, scssClient.toString())
               : renderCalculatorBody(item, calculatorPages[1 - i], calculatorCss, calculatorClient.toString());
   const html = renderPage({
     title: `${item.title} - VisitBest`,
