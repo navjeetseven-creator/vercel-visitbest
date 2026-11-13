@@ -1660,6 +1660,272 @@ export const pages = [
       ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
     ]
   },
+
+  {
+    key: "epf",
+    kind: "epf",
+    slug: "epf-calculator",
+    title: "EPF Calculator",
+    meta: "Work out your EPF balance at retirement: 12% + 12% contributions on basic + DA, the EPS pension split, the ₹25,000 wage ceiling and 8.25% interest, with a year-by-year table. Free, instant, and calculated in your browser.",
+    lead: "Enter your age, your monthly basic + DA, your yearly raise and the EPF rate — and get your EPF balance at retirement, your contributions, the employer's share, the EPS pension share and the interest earned, year by year.",
+    presets: [
+      { id: "epfMain", label: "₹30,000 basic, age 30 to 58", age: 30, retireAge: 58, basic: 30000, growth: 7, rate: 8.25, balance: 0, empRate: 12, erRate: 12, ceiling: "25000" },
+      { id: "epfNoRaise", label: "Same person, no yearly raises", age: 30, retireAge: 58, basic: 30000, growth: 0, rate: 8.25, balance: 0, empRate: 12, erRate: 12, ceiling: "25000" },
+      { id: "epfBalance", label: "Already have ₹5,00,000 in EPF", age: 30, retireAge: 58, basic: 30000, growth: 7, rate: 8.25, balance: 500000, empRate: 12, erRate: 12, ceiling: "25000" },
+      { id: "epfOldCeiling", label: "Under the old ₹15,000 ceiling", age: 30, retireAge: 58, basic: 30000, growth: 7, rate: 8.25, balance: 0, empRate: 12, erRate: 12, ceiling: "15000" },
+      { id: "epfHigh", label: "₹60,000 basic, age 35 to 58", age: 35, retireAge: 58, basic: 60000, growth: 8, rate: 8.25, balance: 0, empRate: 12, erRate: 12, ceiling: "25000" }
+    ],
+    defaultPreset: "epfMain",
+    sampleAge: 30,
+    sampleRetireAge: 58,
+    sampleBasic: 30000,
+    sampleGrowth: 7,
+    sampleRate: 8.25,
+    sampleBalance: 0,
+    sampleEmpRate: 12,
+    sampleErRate: 12,
+    sampleCeiling: "25000",
+    notice: "This tool is an estimate for planning: EPFO declares the interest rate every year, so no single rate holds for 28 years, and the wage ceiling can change again. It is not financial, tax or legal advice. Check the rules table below before you rely on it.",
+    overviewTitle: "What does an EPF calculator do?",
+    overview: "Your EPF (Employees' Provident Fund) grows from two deposits every month: 12% of your basic salary plus DA from you, and 12% from your employer. Part of the employer's 12% goes to the pension scheme (EPS) and the rest reaches your EPF. On a ₹30,000 basic salary that rises 7% a year, you would have about ₹1.59 crore at age 58, assuming 8.25% interest every year. This calculator works out that balance from your own figures, shows where each rupee goes, and lists the growth year by year.",
+    inputNote: "Enter your age now and the age you plan to retire at first — the other figures are already filled in with the usual example. Your basic + DA is the figure on your payslip, not your gross salary: EPF is worked out on basic + DA only, which is often 40–50% of the total.",
+    modelNote: "Every month you pay 12% of basic + DA and your employer pays 12% too. The employer's share is split: 8.33% of wages up to the wage ceiling goes to the pension scheme (EPS) and the rest reaches your EPF. Interest for the month is the balance after that month's deposits times the yearly rate divided by 1200. EPFO works interest out monthly on the running balance but adds it to your account only once a year, on 31 March, so there is no compounding inside a year. Your salary rises once a year, at the start of each year.",
+    steps: [
+      ["Enter your age now and retirement age", "Your age now (18 to 58) and the age you plan to retire at (50 to 60) — 58 is the usual EPF age, and the example uses 30 to 58."],
+      ["Enter your monthly basic + DA", "From your payslip — from ₹1,000 to ₹10,00,000 a month. Basic + DA is the figure EPF is worked out on, not your gross salary."],
+      ["Set the raise, the rate and the ceiling", "Your expected yearly raise (0% to 20%), the EPF interest rate (8.25% for FY 2025-26) and the wage ceiling — ₹25,000 from 17 September 2026, or ₹15,000 if your employer still applies the old one."],
+      ["Read the balance and the year-by-year table", "The answer appears as you type — your EPF balance at retirement, your contributions, the employer's EPF share, the EPS pension share and the interest earned, with a table of how the balance builds each year."]
+    ],
+    stories: [
+      {
+        age: 30, retireAge: 58, basic: 30000, growth: 7, rate: 8.25, balance: 0, empRate: 12, erRate: 12, ceiling: "25000", preset: "epfMain",
+        title: "Age 30 to 58 on ₹30,000: ₹1,58,54,492",
+        body: "₹30,000 basic + DA, 7% raises every year, 8.25% interest. You pay ₹34,86,144 and your employer adds ₹27,86,256 to your EPF; interest adds ₹95,82,092. Another ₹6,99,888 goes to your EPS pension — it is not part of this balance."
+      },
+      {
+        age: 30, retireAge: 58, basic: 30000, growth: 0, rate: 8.25, balance: 0, empRate: 12, erRate: 12, ceiling: "25000", preset: "epfNoRaise",
+        title: "Same person, no raises: ₹63,79,104",
+        body: "The same ₹30,000 basic for 28 years with no raises at all. You retire with ₹63,79,104 — the 7% yearly raises add ₹94,75,388, because every higher deposit also earns interest for the years that remain."
+      },
+      {
+        age: 30, retireAge: 58, basic: 30000, growth: 7, rate: 8.25, balance: 500000, empRate: 12, erRate: 12, ceiling: "25000", preset: "epfBalance",
+        title: "Already have ₹5,00,000: ₹2,04,56,551",
+        body: "The same person with ₹5,00,000 already in EPF today. The balance becomes ₹2,04,56,551 — ₹46,02,059 more — because the existing balance earns interest for all 28 years."
+      },
+      {
+        age: 30, retireAge: 58, basic: 30000, growth: 7, rate: 8.25, balance: 0, empRate: 12, erRate: 12, ceiling: "15000", preset: "epfOldCeiling",
+        title: "Under the old ₹15,000 ceiling: ₹1,68,92,968",
+        body: "The same person, but with the employer's pension share capped at the old ₹15,000 ceiling. More of each month's employer money reaches EPF, so the balance is ₹10,38,476 higher — the pension is smaller instead."
+      },
+      {
+        age: 35, retireAge: 58, basic: 60000, growth: 8, rate: 8.25, balance: 0, empRate: 12, erRate: 12, ceiling: "25000", preset: "epfHigh",
+        title: "₹60,000 basic from age 35: ₹2,15,13,383",
+        body: "₹60,000 basic + DA from age 35, 8% raises a year, 8.25% interest to 58. You pay ₹52,61,196 and your employer adds ₹46,86,288 to your EPF; interest adds ₹1,15,65,899. Another ₹5,74,908 goes to EPS."
+      }
+    ],
+    rateRows: [
+      { rate: "12% + 12% contributions", applies: "The rule", example: "You pay 12% of basic + DA; your employer pays 12% too. Both are worked out on basic + DA, not on your gross salary." },
+      { rate: "EPS: 8.33% up to the ceiling", applies: "The pension split", example: "Of the employer's 12%, 8.33% of wages up to the wage ceiling goes to the pension scheme (EPS) — at most ₹2,083 a month. The rest reaches your EPF." },
+      { rate: "Wage ceiling ₹25,000", applies: "From 17 September 2026", example: "The Cabinet raised the ceiling from ₹15,000 to ₹25,000 (S.O. 5109(E), 17 Sep 2026). Under the old ceiling the pension share was at most ₹1,250 a month." },
+      { rate: "Interest 8.25% a year", applies: "FY 2025-26", example: "EPFO's Central Board recommended 8.25% on 2 March 2026; the rate was ratified and credited by July 2026. EPFO declares a new rate every year, so a 28-year projection is an estimate." },
+      { rate: "Interest credited once a year", applies: "No compounding inside a year", example: "Interest is worked out monthly on the running balance but added on 31 March, so it starts earning its own interest only from the next financial year." },
+      { rate: "Retirement age 58", applies: "When you can claim it all", example: "You can claim the full balance when you retire at 58. Early withdrawals are allowed only for specific reasons, and they cut the interest you earn." },
+      { rate: "Tax: ₹2.5 lakh a year", applies: "The tax-free limit", example: "Interest is tax-free on your own contributions up to ₹2.5 lakh a year; interest on contributions above that is taxable." },
+      { rate: "VPF: pay more than 12%", applies: "Voluntary top-up", example: "You can pay above 12% of basic + DA into the same account at the same interest rate. Your employer does not match the extra." }
+    ],
+    rateTableTitle: "EPF rules at a glance",
+    rateTableNote: "The contribution rates, the EPS pension split, the wage ceiling, the interest rate and how it is credited, the retirement age, the tax limit and VPF. Every rule here comes from EPFO or the Government of India — never from a blog or a competitor.",
+    rateTableConclusion: "The rules are fixed — the contribution split, the ceiling and the once-a-year interest credit decide everything. The only judgement calls are the raise and the rate you assume, and this page states both plainly: 7% raises and 8.25% are the example, not a promise.",
+    calloutTitle: "The ₹25,000 wage ceiling: why two calculators can disagree",
+    calloutNote: "On a ₹30,000 basic, the new ₹25,000 ceiling gives ₹1,58,54,492 at age 58. Under the old ₹15,000 ceiling the same person gets ₹1,68,92,968 — ₹10,38,476 more in EPF — because the pension share is capped at ₹1,250 a month instead of ₹2,083, so more of each month's employer money reaches EPF. The money is not lost: it builds a bigger pension instead. If your employer still applies the old ceiling, pick ₹15,000 above; if you are not sure, check the EPS line on your payslip.",
+    faq: [
+      ["What is the EPF interest rate now?", "EPFO has notified 8.25% a year for FY 2025-26. The Central Board of Trustees recommended it on 2 March 2026 and the Government ratified it in June 2026; it was credited to members' accounts by July 2026. EPFO announces each year's rate near the end of that financial year, so this calculator uses the latest notified rate as an assumption. You can type any other rate to test it."],
+      ["How is EPF interest calculated?", "Interest is worked out every month on your running balance at one-twelfth of the yearly rate. The 12 months of interest are added to your account together on 31 March. It starts earning its own interest only from the next financial year, so there is no compounding inside a year."],
+      ["What changed with the EPF wage ceiling in September 2026?", "The Cabinet raised the wage ceiling for mandatory EPF coverage from ₹15,000 to ₹25,000 a month from 17 September 2026 (Gazette notification S.O. 5109(E)). More employees must now join EPF, and the pension (EPS) share, which is 8.33% of wages up to the ceiling, can now be up to ₹2,083 a month instead of ₹1,250. Your employer's total 12% does not change, but a bigger part of it can go to pension if your employer applies the new ceiling. That is why this calculator lets you choose the ceiling."],
+      ["What is EPS and why is it not in my balance?", "EPS is the Employees' Pension Scheme. Of your employer's 12%, 8.33% of wages up to the wage ceiling goes to EPS — at most ₹2,083 a month under the ₹25,000 ceiling. It pays you a monthly pension after retirement instead of a lump sum, so it is shown separately and never added to your EPF balance. On the ₹30,000 example it totals ₹6,99,888 over 28 years."],
+      ["What is VPF?", "VPF (Voluntary Provident Fund) lets you pay more than 12% of your basic + DA into the same EPF account, and it earns the same interest. Your employer does not add anything extra for it. Set your contribution above 12% above to see the effect — at 20% on the ₹30,000 example, the balance rises to ₹2,20,04,815. Just remember the tax rule: the interest on your own contributions above ₹2.5 lakh a year is taxable."],
+      ["When can I withdraw my EPF?", "You can claim the full balance when you retire at 58. EPFO has changed its rules for withdrawals and advances before retirement in recent years — the EPF Scheme, 2026, in force from 29 June 2026, merged 13 partial-withdrawal types into one framework — so check the current rules on the EPFO website before you plan one. Taking money out early also reduces the interest you earn."],
+      ["Is EPF interest taxable?", "Interest is tax-free on your own contributions up to ₹2.5 lakh a year. It is taxable on contributions above that. If your employer does not contribute at all, the limit is ₹5 lakh. At a 12% contribution you cross ₹2.5 lakh only if your basic + DA is above about ₹1,73,611 a month. Use the income-tax calculator to see the tax."],
+      ["EPF or PPF: which is better?", "You do not have to choose. EPF is tied to your job, comes with an employer contribution and has a rate set by EPFO. PPF is open to anyone, you deposit on your own, and the rate is set by the government every quarter — 7.1% for October–December 2026. See the PPF calculator to compare. Both are tax-free within limits, and neither rate is guaranteed for the future."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
+
+  {
+    key: "nps",
+    kind: "nps",
+    slug: "nps-calculator",
+    title: "NPS Calculator",
+    meta: "Work out your NPS corpus at retirement: monthly Tier I contributions, step-up, market-linked return, the December 2025 exit rules (80% lump sum, 20% annuity) and your monthly pension, with a year-by-year table. Free, instant, and calculated in your browser.",
+    lead: "Enter your monthly NPS contribution, your age now and the age you plan to retire at — and get your retirement corpus, the lump sum you can take, the amount that must buy an annuity and the monthly pension it pays, year by year.",
+    presets: [
+      { id: "npsMain", label: "₹10,000 a month, age 30 to 60", age: 30, retireAge: 60, monthly: 10000, stepUp: 0, rate: 10, type: "nongovt", annuity: 40, annuityRate: 6 },
+      { id: "npsStepUp", label: "₹5,000 a month, 5% step-up", age: 30, retireAge: 60, monthly: 5000, stepUp: 5, rate: 10, type: "nongovt", annuity: 40, annuityRate: 6 },
+      { id: "npsNewRule", label: "Same person, the new 20% annuity", age: 30, retireAge: 60, monthly: 10000, stepUp: 0, rate: 10, type: "nongovt", annuity: 20, annuityRate: 6 },
+      { id: "npsSmall", label: "₹1,000 a month from age 55", age: 55, retireAge: 60, monthly: 1000, stepUp: 0, rate: 10, type: "nongovt", annuity: 0, annuityRate: 6 },
+      { id: "npsGovt", label: "Government subscriber, ₹15,000 a month", age: 35, retireAge: 60, monthly: 15000, stepUp: 3, rate: 10, type: "govt", annuity: 40, annuityRate: 6 }
+    ],
+    defaultPreset: "npsMain",
+    sampleAge: 30,
+    sampleRetireAge: 60,
+    sampleMonthly: 10000,
+    sampleStepUp: 0,
+    sampleRate: 10,
+    sampleType: "nongovt",
+    sampleAnnuity: 40,
+    sampleAnnuityRate: 6,
+    notice: "This tool is an estimate for planning: NPS returns follow the market and are not guaranteed, the annuity rate is set by the insurer when you exit, and the exit rules can change again. It is not financial, tax or legal advice. Check the rules table below before you rely on it.",
+    overviewTitle: "What does an NPS calculator do?",
+    overview: "Your NPS (National Pension System) corpus grows from one deposit every month into your Tier I pension account, invested across equity, government bonds and corporate debt by a pension fund manager. On ₹10,000 a month from age 30, growing at 10% a year, you would have about ₹2.28 crore at age 60. At exit you take part as a lump sum and use the rest to buy an annuity that pays a monthly pension for life. This calculator works out that corpus from your own figures, splits it under the December 2025 exit rules, and lists the growth year by year.",
+    inputNote: "Enter your age now and the age you plan to retire at first — the other figures are already filled in with the usual example. Your monthly contribution is what you pay into Tier I; the minimum is ₹500 a contribution and ₹1,000 a year.",
+    modelNote: "Every month your contribution is paid at the start of the month and the whole balance earns one month of return at the yearly rate divided by 12. Your contribution rises once a year, at the start of each year, by the step-up you enter. At exit the corpus is split: the annuity share buys a pension from an insurer, and the rest is your lump sum. The annuity share cannot go below the legal minimum — 20% for non-government subscribers and 40% for government subscribers — unless the corpus is ₹8 lakh or less, when no annuity is needed at all. The monthly pension is the annuity corpus times the annuity rate divided by 12.",
+    steps: [
+      ["Enter your age now and retirement age", "Your age now (18 to 84) and the age you plan to retire at (60 to 85) — 60 is the usual NPS exit age, and the example uses 30 to 60. You can now stay in NPS up to 85."],
+      ["Enter your monthly contribution and step-up", "From ₹500 to ₹2,00,000 a month into Tier I. The step-up (0% to 20%) raises your contribution every year — the example for a growing salary uses 5%."],
+      ["Set the return, the subscriber type and the annuity share", "Your expected yearly return (10% is the usual assumption — it is not a promise), whether you are a government or non-government subscriber, the share of the corpus that buys an annuity, and the annuity rate (6% is a common assumption)."],
+      ["Read the corpus, the split and the pension", "The answer appears as you type — your corpus at retirement, what you invested, the lump sum, the annuity corpus and the monthly pension, with a table of how the corpus builds each year."]
+    ],
+    stories: [
+      {
+        age: 30, retireAge: 60, monthly: 10000, stepUp: 0, rate: 10, type: "nongovt", annuity: 40, annuityRate: 6, preset: "npsMain",
+        title: "Age 30 to 60 on ₹10,000: ₹2,27,93,253",
+        body: "₹10,000 a month for 30 years at 10% a year. You invest ₹36,00,000 and growth adds ₹1,91,93,253. With 40% in an annuity at 6%, the lump sum is ₹1,36,75,952 and the pension is ₹45,587 a month."
+      },
+      {
+        age: 30, retireAge: 60, monthly: 5000, stepUp: 5, rate: 10, type: "nongovt", annuity: 40, annuityRate: 6, preset: "npsStepUp",
+        title: "₹5,000 a month, 5% step-up: ₹1,79,65,105",
+        body: "₹5,000 a month rising 5% every year for 30 years at 10%. You invest ₹39,86,331 and the corpus reaches ₹1,79,65,105 — the step-up alone adds ₹65,68,478 over a flat ₹5,000. The lump sum is ₹1,07,79,063 and the pension is ₹35,930 a month."
+      },
+      {
+        age: 30, retireAge: 60, monthly: 10000, stepUp: 0, rate: 10, type: "nongovt", annuity: 20, annuityRate: 6, preset: "npsNewRule",
+        title: "Same person, the new 20% annuity: ₹1,82,34,602 lump sum",
+        body: "The same ₹10,000 a month, but using the December 2025 rule for non-government subscribers: only 20% into an annuity. The lump sum rises to ₹1,82,34,602 and the pension falls to ₹22,793 a month. Only ₹1,36,75,952 of the lump sum is tax-free — the other ₹45,58,650 is taxed at your slab."
+      },
+      {
+        age: 55, retireAge: 60, monthly: 1000, stepUp: 0, rate: 10, type: "nongovt", annuity: 0, annuityRate: 6, preset: "npsSmall",
+        title: "₹1,000 a month from age 55: ₹78,082, all yours",
+        body: "₹1,000 a month for 5 years at 10% builds ₹78,082 from ₹60,000 invested. Because the corpus is under ₹8 lakh, no annuity is needed at all — you take the whole ₹78,082 as a lump sum and there is no pension to buy."
+      },
+      {
+        age: 35, retireAge: 60, monthly: 15000, stepUp: 3, rate: 10, type: "govt", annuity: 40, annuityRate: 6, preset: "npsGovt",
+        title: "Government subscriber, ₹15,000 a month: ₹2,53,44,187",
+        body: "₹15,000 a month from age 35, rising 3% a year, at 10% to age 60. You invest ₹65,62,668 and the corpus reaches ₹2,53,44,187. Government subscribers stay on the old 60/40 split: the lump sum is ₹1,52,06,512 and the pension is ₹50,688 a month."
+      }
+    ],
+    rateRows: [
+      { rate: "Normal exit at 60 (or 15 years)", applies: "All Citizen Model", example: "You can exit normally after 15 years in NPS or at age 60, whichever comes first. Corporate subscribers exit at retirement or superannuation." },
+      { rate: "Non-government: up to 80% lump sum", applies: "At least 20% annuity", example: "Since December 2025, non-government subscribers (All Citizen and Corporate) may take up to 80% of the corpus as a lump sum; at least 20% must buy an annuity. Before the change it was 60% and 40%." },
+      { rate: "Government: up to 60% lump sum", applies: "At least 40% annuity", example: "Government subscribers stay on the old split — up to 60% as a lump sum and at least 40% into an annuity. The December 2025 change did not move them." },
+      { rate: "Corpus up to ₹8 lakh", applies: "100% lump sum allowed", example: "If your corpus at exit is ₹8 lakh or less, you may take the whole amount as a lump sum with no annuity at all — or still choose the 80/20 (or 60/40) split. The old limit was ₹5 lakh." },
+      { rate: "Corpus ₹8 lakh to ₹12 lakh", applies: "Two options", example: "Take up to ₹6 lakh as a lump sum and the balance through systematic unit redemption over at least 6 years or an annuity — or take up to 80% (60% for government) as a lump sum with at least 20% (40%) in an annuity." },
+      { rate: "Premature exit (before 60)", applies: "Up to 20% lump sum", example: "If you exit before the vesting period, at most 20% is a lump sum and at least 80% must buy an annuity. If the corpus is ₹5 lakh or less, you may take it all. The 5-year lock-in for All Citizen subscribers was removed in December 2025." },
+      { rate: "Entry and exit age up to 85", applies: "Automatic continuation", example: "You may join NPS up to age 85 and stay invested up to 85. Past 60 your account now continues automatically — the old 15-day advance intimation is gone." },
+      { rate: "Tier I minimum ₹500", applies: "₹1,000 a year", example: "Tier I, the pension account, needs at least ₹500 per contribution and ₹1,000 a year to stay active. Tier II is an optional savings account with no withdrawal limits and no tax benefits." },
+      { rate: "Tax: 80CCD(1B) ₹50,000 extra", applies: "Old regime", example: "Your contributions qualify under Section 80CCD(1) within the ₹1.5 lakh Section 80C limit, plus an extra ₹50,000 under Section 80CCD(1B). Employer contributions qualify separately under Section 80CCD(2). At exit, only 60% of the corpus is tax-free under Section 10(12A); the pension is taxed as income." }
+    ],
+    rateTableTitle: "NPS rules at a glance",
+    rateTableNote: "The exit age, the lump-sum and annuity splits for government and non-government subscribers, the corpus bands, premature exit, the age limits, the Tier I minimums and the tax deductions. Every rule here comes from PFRDA or the Income-tax Act — never from a blog or a competitor.",
+    rateTableConclusion: "The rules are fixed — the December 2025 split, the ₹8 lakh full-withdrawal limit and the age limits decide everything. The only judgement calls are the return and the annuity rate you assume, and this page states both plainly: 10% and 6% are the examples, not promises.",
+    calloutTitle: "Why two NPS calculators can disagree by ₹1,48,472",
+    calloutNote: "On ₹5,000 a month rising 5% a year for 30 years at 10%, this calculator gives ₹1,79,65,105 and another ranking calculator gives ₹1,78,16,633 — the same invested total of ₹39,86,331 either way. The difference is timing: this calculator pays each month's contribution at the start of the month, so it earns that month's return, while the other pays it at the end of the month. Neither is wrong, but the figures are not comparable unless the timing matches. This page states its timing in the method section, and the same start-of-month timing is what the site's SIP calculator uses.",
+    faq: [
+      ["What is NPS?", "The National Pension System is a market-linked, defined-contribution retirement scheme regulated by the Pension Fund Regulatory and Development Authority (PFRDA). You contribute to a Tier I pension account, a pension fund manager invests it across equity, government bonds, corporate debt and alternate assets, and at exit part of the corpus buys an annuity that pays a monthly pension for life. Tier II is an optional savings account with no withdrawal limits and no tax benefits. NPS is open to Indian citizens aged 18 to 85."],
+      ["How much of my NPS corpus can I withdraw at 60?", "If you are a non-government subscriber, up to 80% as a lump sum with at least 20% into an annuity, under the December 2025 rules. Government subscribers stay at 60% and 40%. If your corpus is ₹8 lakh or less you may take it all as a lump sum. Between ₹8 lakh and ₹12 lakh you may instead take up to ₹6 lakh and draw the balance gradually over at least 6 years."],
+      ["Is the NPS lump sum tax-free?", "Only 60% of the corpus is exempt from tax at exit, under Section 10(12A) of the Income-tax Act. The December 2025 change lets non-government subscribers take up to 80% as a lump sum, but the tax law was not changed with it — so the extra 20% above the 60% ceiling is taxed at your slab rate. The monthly pension is also taxed as income in the year you receive it."],
+      ["What tax deductions does NPS give?", "Your own contributions qualify under Section 80CCD(1) within the overall ₹1.5 lakh Section 80C limit, plus an extra ₹50,000 a year under Section 80CCD(1B) — the only deduction that sits outside Section 80C. Your employer's contributions qualify separately under Section 80CCD(2), up to 10% of salary. These deductions apply under the old tax regime; under the new regime only the employer's contribution under Section 80CCD(2) remains deductible."],
+      ["What is the minimum NPS contribution?", "For Tier I, at least ₹500 per contribution and ₹1,000 in total every financial year, to keep the account active. There is no maximum — you can contribute as much as you like. Tier II needs ₹1,000 to open and ₹250 per contribution, with no annual minimum."],
+      ["Can I withdraw from NPS before 60?", "Yes, in two ways. A premature exit is allowed — the 5-year lock-in for All Citizen subscribers was removed in December 2025 — but at most 20% is a lump sum and at least 80% must buy an annuity, unless the corpus is ₹5 lakh or less, when you may take it all. Separately, after 3 years you may make a partial withdrawal of up to 25% of your own contributions, up to 4 times before 60 with a 4-year gap between withdrawals, for specified needs such as a first house, children's education or marriage, or medical treatment."],
+      ["Until what age can I stay in NPS?", "You may join up to age 85 and stay invested up to 85, under the December 2025 amendment — entry and exit ages were both raised from 70 and 75. Past 60 your account now continues automatically; the old rule that you had to intimate 15 days in advance is gone. Normal exit for the All Citizen model is after 15 years or at age 60, whichever comes first."],
+      ["What return should I assume for NPS?", "NPS returns follow the market — equity-heavy portfolios have returned 10–12% a year over long periods and conservative ones 7–9%, but no rate is guaranteed and a single steady rate will not hold for 30 years. This calculator defaults to 10% as an assumption, not a promise. Try 8% too, to see a safer estimate, and remember the annuity rate at exit is set by the insurer then, not today."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
+
+  {
+    key: "ssy",
+    kind: "ssy",
+    slug: "ssy-calculator",
+    title: "SSY Calculator",
+    meta: "Work out your Sukanya Samriddhi Yojana maturity: yearly deposits from ₹250 to ₹1,50,000 at the notified 8.2% rate, 15 years of deposits, maturity at 21 years, with a year-by-year table. Free, instant, and calculated in your browser.",
+    lead: "Enter your yearly deposit, your daughter's age when the account opens and the interest rate — and get the maturity value at 21 years, what you invested, the tax-free interest and the growth year by year.",
+    presets: [
+      { id: "ssyMax", label: "₹1,50,000 a year, girl aged 0", deposit: 150000, age: 0, rate: 8.2, years: 15 },
+      { id: "ssy50k", label: "₹50,000 a year, girl aged 0", deposit: 50000, age: 0, rate: 8.2, years: 15 },
+      { id: "ssy100kAge5", label: "₹1,00,000 a year, girl aged 5", deposit: 100000, age: 5, rate: 8.2, years: 15 },
+      { id: "ssy25k", label: "₹25,000 a year, girl aged 0", deposit: 25000, age: 0, rate: 8.2, years: 15 },
+      { id: "ssyMin", label: "₹250 a year, the minimum", deposit: 250, age: 0, rate: 8.2, years: 15 }
+    ],
+    defaultPreset: "ssyMax",
+    sampleDeposit: 150000,
+    sampleAge: 0,
+    sampleRate: 8.2,
+    sampleYears: 15,
+    notice: "This tool is an estimate for planning: the SSY rate is notified every quarter and can change, so the projection holds today's 8.2% steady for all 21 years. It is not financial, tax or legal advice. Check the rules table below before you rely on it.",
+    overviewTitle: "What does an SSY calculator do?",
+    overview: "Sukanya Samriddhi Yojana (SSY) is a government small-savings account for a girl child, opened by a parent or guardian before she turns 10. You deposit between ₹250 and ₹1,50,000 a year for 15 years, the balance earns the notified rate — 8.2% a year for October to December 2026 — and the account matures 21 years after opening. On the maximum deposit of ₹1,50,000 a year, that builds ₹71,82,119 from ₹22,50,000 paid in, entirely tax-free. This calculator works out the maturity value from your own figures and lists the growth year by year.",
+    inputNote: "Enter your yearly deposit first — the other figures are already filled in with the usual example. Your deposit is what you pay in each year for the first 15 years; the minimum is ₹250 a year and the maximum ₹1,50,000.",
+    modelNote: "Every year your deposit is paid at the start of the year and the whole balance earns one year of interest at the rate you enter. Deposits run for the deposit years you enter — 15 under the scheme — and then the balance keeps compounding for the remaining years until year 21, with no new deposits. Balances are carried at full precision and each figure is rounded to the nearest rupee, so a row's interest can differ by a rupee from the interest worked out on the rounded balances. The rate is the notified rate for October to December 2026, 8.2%, and the projection holds it steady for all 21 years — in reality it is reviewed every quarter and can change.",
+    steps: [
+      ["Enter your yearly deposit", "From ₹250 to ₹1,50,000 a year — the example uses the maximum, ₹1,50,000. Deposits are made in multiples of ₹50, with at least ₹250 every financial year."],
+      ["Enter your daughter's age when the account opens", "A whole number from 0 to 10 — the account can only be opened before she turns 10. The example uses 0, a newborn, so the account matures when she turns 21."],
+      ["Set the rate and the deposit years", "8.2% is the rate notified for October to December 2026. Deposit years default to 15, the scheme rule — set fewer only to model stopping early."],
+      ["Read the maturity value and the growth table", "The answer appears as you type — the maturity value at 21 years, what you invested, the tax-free interest, the year it matures and her age then, with a table of how the balance builds each year."]
+    ],
+    stories: [
+      {
+        deposit: 150000, age: 0, rate: 8.2, years: 15, preset: "ssyMax",
+        title: "₹1,50,000 a year from birth: ₹71,82,119",
+        body: "₹1,50,000 a year for 15 years at 8.2%. You invest ₹22,50,000 and interest adds ₹49,32,119. The account matures when she turns 21 — the last six years, with no new deposits, add ₹27,06,130 on their own."
+      },
+      {
+        deposit: 50000, age: 0, rate: 8.2, years: 15, preset: "ssy50k",
+        title: "₹50,000 a year from birth: ₹23,94,040",
+        body: "₹50,000 a year for 15 years at 8.2%. You invest ₹7,50,000 and interest adds ₹16,44,040. The same figure ClearTax publishes for these inputs — and the 80C deduction still saves tax every year you deposit."
+      },
+      {
+        deposit: 100000, age: 5, rate: 8.2, years: 15, preset: "ssy100kAge5",
+        title: "₹1,00,000 a year from age 5: ₹47,88,079",
+        body: "₹1,00,000 a year for 15 years at 8.2%, starting when she is 5. You invest ₹15,00,000 and interest adds ₹32,88,079. The account matures when she turns 26 — in time for higher education or a postgraduate course."
+      },
+      {
+        deposit: 25000, age: 0, rate: 8.2, years: 15, preset: "ssy25k",
+        title: "₹25,000 a year from birth: ₹11,97,020",
+        body: "₹25,000 a year for 15 years at 8.2%. You invest ₹3,75,000 and interest adds ₹8,22,020 — more than double what you paid in, and every rupee of it tax-free."
+      },
+      {
+        deposit: 250, age: 0, rate: 8.2, years: 15, preset: "ssyMin",
+        title: "₹250 a year, the minimum: ₹11,970",
+        body: "The smallest deposit the scheme allows — ₹250 a year for 15 years at 8.2%. You invest ₹3,750 and the account matures at ₹11,970. Even the minimum keeps the account alive and compounding."
+      }
+    ],
+    rateRows: [
+      { rate: "8.2% a year (Oct–Dec 2026)", applies: "Current notified rate", example: "The rate for 1 October to 31 December 2026, notified by the Ministry of Finance on 30 September 2026. It has been 8.2% since 1 January 2024 and is reviewed every quarter — the next review is due around 31 December 2026." },
+      { rate: "₹250 to ₹1,50,000 a year", applies: "Deposit limits", example: "At least ₹250 every financial year, in multiples of ₹50, and at most ₹1,50,000 a year. Anything above ₹1,50,000 in a year earns no interest and is returned." },
+      { rate: "Girl below 10 years", applies: "Who can open", example: "A parent or legal guardian opens the account for a resident girl child who has not yet turned 10. One account per girl; a family may open at most two accounts, or three where twins or triplets are born at the second birth." },
+      { rate: "Deposits for 15 years", applies: "Deposit period", example: "Deposits may be made only for the first 15 years from opening. If the ₹250 minimum is missed in a year, the account is in default — revive it within the 15 years by paying ₹50 for each defaulted year plus the ₹250 minimum." },
+      { rate: "Maturity at 21 years", applies: "When the money comes out", example: "The account matures 21 years from opening. Years 16 to 21 take no new deposits, but the balance keeps earning interest. The girl operates the account herself from age 18." },
+      { rate: "50% after 18 for education", applies: "Partial withdrawal", example: "Once the girl turns 18, or has passed Class 10, whichever is earlier, up to 50% of the balance at the end of the previous financial year may be withdrawn for her higher education — in one payment or up to five yearly instalments, and never more than the fee shown." },
+      { rate: "Closure for marriage after 18", applies: "Early closure", example: "The account may be closed early for the girl's marriage once she is 18 — apply from one month before the wedding to three months after it, with an age declaration." },
+      { rate: "Premature closure, compassionate grounds", applies: "After 5 years only", example: "No premature closure before 5 years, except on the girl's death. After 5 years it is allowed on compassionate grounds — a life-threatening illness of the girl or the death of the guardian. Closing for any other reason earns only the post office savings-account rate, about 4%." },
+      { rate: "EEE — fully tax-free", applies: "Tax", example: "Deposits qualify for deduction under Section 80C (up to ₹1.5 lakh a year, old regime only, shared with PPF, ELSS and other 80C items). The interest and the maturity amount are exempt under Section 10(11A). If the girl becomes an NRI or loses Indian citizenship, the account must be closed and stops earning interest." }
+    ],
+    rateTableTitle: "SSY rules at a glance",
+    rateTableNote: "The current rate, the deposit limits, who can open an account, the 15-year deposit period, maturity at 21 years, the education withdrawal, early closure and the tax treatment. Every rule here comes from the Sukanya Samriddhi Account Scheme, 2019 or the Income-tax Act — never from a blog or a competitor.",
+    rateTableConclusion: "The rules are fixed — the 15-year deposit window, maturity at 21 years and the 8.2% rate decide everything. The only judgement call is the rate you assume for the years ahead, and this page states it plainly: 8.2% is today's notified rate, not a promise for 21 years.",
+    calloutTitle: "Why two SSY calculators can disagree by ₹5,44,301",
+    calloutNote: "On ₹1,50,000 a year for 15 years at 8.2%, this calculator gives ₹71,82,119 and a calculator that takes deposits at the end of each year gives ₹66,37,818 — the same invested total of ₹22,50,000 either way. The difference is timing: this calculator counts each year's deposit at the start of the year, so it earns that year's interest, while the other counts it at the end of the year. Neither is wrong, but the figures are not comparable unless the timing matches. This page states its timing in the method section, and the same start-of-year timing is what calcmint.co.in and desiutils.in use.",
+    faq: [
+      ["What is Sukanya Samriddhi Yojana (SSY)?", "Sukanya Samriddhi Yojana is a government small-savings scheme for a girl child, launched on 22 January 2015 under the Beti Bachao Beti Padhao campaign. A parent or legal guardian opens the account in the girl's name before she turns 10, deposits between ₹250 and ₹1,50,000 a year for 15 years, and the account matures 21 years after opening. It runs through post offices and authorised banks, and the rate — 8.2% a year for October to December 2026 — is notified by the Ministry of Finance every quarter."],
+      ["What is the current SSY interest rate?", "8.2% a year, compounded annually, for 1 October to 31 December 2026 (the third quarter of FY 2026-27). The Ministry of Finance kept small-savings rates unchanged in its office memorandum of 30 September 2026, and SSY has paid 8.2% since 1 January 2024. The rate is reviewed every quarter, so the next review is due around 31 December 2026 — this calculator lets you change the rate to see what a different rate would do."],
+      ["How much can I deposit in SSY each year?", "At least ₹250 and at most ₹1,50,000 in a financial year, in multiples of ₹50. You may deposit in one lump sum or in instalments through the year. The ₹250 minimum must be paid every year for the first 15 years to keep the account active; anything deposited above ₹1,50,000 in a year earns no interest and is returned."],
+      ["When does an SSY account mature — 15 or 21 years?", "21 years from the date of opening. You deposit for only the first 15 years; from year 16 to year 21 no new deposits are allowed, but the balance keeps earning interest. On the maximum deposit the balance at year 15 is ₹44,75,989 and the last six years add ₹27,06,130 with no new money. Alternatively the account closes earlier if the girl marries after turning 18."],
+      ["Can I withdraw from SSY before maturity?", "Yes, in three ways. Once the girl turns 18, or has passed Class 10, whichever is earlier, up to 50% of the balance at the end of the previous financial year may be withdrawn for her higher education — in one payment or up to five yearly instalments, and never more than the fee shown on the admission offer or fee slip. The account may be closed early for her marriage once she is 18. And after 5 years it may be closed on compassionate grounds, such as a life-threatening illness of the girl or the death of the guardian."],
+      ["Is SSY tax-free?", "Yes, fully — SSY has EEE (Exempt-Exempt-Exempt) status. Deposits up to ₹1.5 lakh a year qualify for deduction under Section 80C, the interest earned every year is exempt, and the maturity amount is exempt under Section 10(11A) of the Income-tax Act. The 80C deduction applies under the old tax regime only, and the ₹1.5 lakh limit is shared with PPF, ELSS, life insurance premiums and other 80C items."],
+      ["What happens if I miss a year's deposit?", "The account becomes a default account, but the balance keeps earning interest. To revive it, pay ₹50 for each defaulted year plus the ₹250 minimum deposit for each of those years — revival is allowed only within the 15-year deposit window. If it is not revived, the balance earns interest at the post office savings-account rate, about 4%, instead of the SSY rate."],
+      ["SSY or PPF — which is better?", "On returns alone, SSY wins while its rate is higher: ₹1,50,000 a year for 15 years gives ₹71,82,119 in SSY at 8.2% against ₹61,39,600 in PPF at 7.1% — ₹10,42,519 more on the same deposits, and both are fully tax-free. But SSY is only for a girl under 10, with a fixed 21-year maturity, while PPF is open to anyone, matures in 15 years and can be extended in 5-year blocks. If you have a daughter under 10, run both — SSY in her name and PPF in yours — and compare them on the PPF calculator."],
+      ["Does this calculator send my numbers anywhere?", "No. Every calculation runs entirely on this page — nothing is sent to a server, nothing is stored, and reloading the page clears your recent checks."]
+    ]
+  },
 ];
 
 export const css = `
@@ -24512,6 +24778,280 @@ export function renderHraCalculatorBody(p, others, css, clientSource) {
   <script>(${clientSource})(${safeJSON(config)});</script>`;
 }
 
+export const EPF_CEILINGS = ["25000", "15000"];
+export const EPF_CEILING_LABELS = {
+  "25000": "₹25,000 a month (from 17 September 2026)",
+  "15000": "₹15,000 a month (before 17 September 2026)"
+};
+
+export function epfMonthlySplit(basic, empRate, erRate, ceiling) {
+  const employee = roundRupee(basic * empRate / 100);
+  const employerTotal = roundRupee(basic * erRate / 100);
+  const eps = Math.min(employerTotal, roundRupee(0.0833 * Math.min(basic, ceiling)));
+  const employerEpf = employerTotal - eps;
+  return { employee, employerTotal, eps, employerEpf, credit: employee + employerEpf };
+}
+
+export function epfGrowth(age, retireAge, basic, growth, rate, balance, empRate, erRate, ceiling) {
+  const years = retireAge - age;
+  const rows = [];
+  let bal = Number(balance);
+  for (let y = 0; y < years; y++) {
+    const basicY = basic * Math.pow(1 + growth / 100, y);
+    const split = epfMonthlySplit(basicY, empRate, erRate, ceiling);
+    const opening = roundRupee(bal);
+    let accrued = 0;
+    for (let m = 0; m < 12; m++) {
+      bal += split.credit;
+      accrued += bal * rate / 1200;
+    }
+    const interest = roundRupee(accrued);
+    bal += interest;
+    rows.push({
+      year: y + 1,
+      label: "Age " + (age + y + 1),
+      opening,
+      employee: split.employee * 12,
+      employerEpf: split.employerEpf * 12,
+      eps: split.eps * 12,
+      interest,
+      closing: roundRupee(bal)
+    });
+  }
+  return rows;
+}
+
+export function epfCompute(age, retireAge, basic, growth, rate, balance, empRate, erRate, ceiling) {
+  const a = Number(age);
+  const ra = Number(retireAge);
+  const b = Number(basic);
+  const g = Number(growth);
+  const r = Number(rate);
+  const bal0 = Number(balance);
+  const emp = Number(empRate);
+  const er = Number(erRate);
+  const ceil = Number(ceiling);
+  if (!Number.isFinite(a) || !Number.isFinite(ra) || !Number.isFinite(b) || !Number.isFinite(g)
+    || !Number.isFinite(r) || !Number.isFinite(bal0) || !Number.isFinite(emp)
+    || !Number.isFinite(er) || !Number.isFinite(ceil)) return null;
+  if (!Number.isInteger(a) || a < 18 || a > 58) return null;
+  if (!Number.isInteger(ra) || ra < 50 || ra > 60) return null;
+  if (ra <= a) return null;
+  if (b < 1000 || b > 1000000) return null;
+  if (g < 0 || g > 20) return null;
+  if (r < 0 || r > 15) return null;
+  if (bal0 < 0 || bal0 > 50000000) return null;
+  if (emp < 12 || emp > 100) return null;
+  if (er < 0 || er > 12) return null;
+  if (ceil !== 15000 && ceil !== 25000) return null;
+  const growthRows = epfGrowth(a, ra, b, g, r, bal0, emp, er, ceil);
+  const employee = growthRows.reduce((s, row) => s + row.employee, 0);
+  const employerEpf = growthRows.reduce((s, row) => s + row.employerEpf, 0);
+  const eps = growthRows.reduce((s, row) => s + row.eps, 0);
+  const interest = growthRows.reduce((s, row) => s + row.interest, 0);
+  const maturity = growthRows[growthRows.length - 1].closing;
+  return {
+    age: a,
+    retireAge: ra,
+    basic: b,
+    rate: r,
+    balance: bal0,
+    empRate: emp,
+    erRate: er,
+    ceiling: ceil,
+    years: ra - a,
+    maturity,
+    employee,
+    employerEpf,
+    eps,
+    interest,
+    invested: employee + employerEpf,
+    growth: growthRows
+  };
+}
+
+export const epfCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(22, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+`;
+
+export const NPS_FULL_WITHDRAWAL_LIMIT = 800000;
+export const NPS_MIN_ANNUITY_NON_GOVT = 20;
+export const NPS_MIN_ANNUITY_GOVT = 40;
+
+export function npsMinAnnuity(type, corpus) {
+  if (corpus <= NPS_FULL_WITHDRAWAL_LIMIT) return 0;
+  return type === "govt" ? NPS_MIN_ANNUITY_GOVT : NPS_MIN_ANNUITY_NON_GOVT;
+}
+
+export function npsGrowth(age, retireAge, monthly, stepUp, rate) {
+  const years = retireAge - age;
+  const rows = [];
+  let bal = 0;
+  let investedExact = 0;
+  const i = rate / 1200;
+  for (let y = 0; y < years; y++) {
+    const m = monthly * Math.pow(1 + stepUp / 100, y);
+    const yearPayExact = m * 12;
+    for (let k = 0; k < 12; k++) {
+      bal = (bal + m) * (1 + i);
+    }
+    investedExact += yearPayExact;
+    const corpus = roundRupee(bal);
+    const invested = roundRupee(investedExact);
+    rows.push({
+      year: y + 1,
+      label: "Age " + (age + y + 1),
+      contribution: roundRupee(yearPayExact),
+      invested,
+      growth: corpus - invested,
+      corpus
+    });
+  }
+  return rows;
+}
+
+export function npsCompute(age, retireAge, monthly, stepUp, rate, type, annuityShare, annuityRate) {
+  const a = Number(age);
+  const ra = Number(retireAge);
+  const m = Number(monthly);
+  const s = Number(stepUp);
+  const r = Number(rate);
+  const t = String(type);
+  const shareIn = Number(annuityShare);
+  const ar = Number(annuityRate);
+  if (!Number.isFinite(a) || !Number.isFinite(ra) || !Number.isFinite(m) || !Number.isFinite(s)
+    || !Number.isFinite(r) || !Number.isFinite(shareIn) || !Number.isFinite(ar)) return null;
+  if (!Number.isInteger(a) || a < 18 || a > 84) return null;
+  if (!Number.isInteger(ra) || ra < 60 || ra > 85) return null;
+  if (ra <= a) return null;
+  if (m < 500 || m > 200000) return null;
+  if (s < 0 || s > 20) return null;
+  if (r < 0 || r > 20) return null;
+  if (t !== "nongovt" && t !== "govt") return null;
+  if (shareIn < 0 || shareIn > 100) return null;
+  if (ar < 0 || ar > 12) return null;
+  const growthRows = npsGrowth(a, ra, m, s, r);
+  const corpus = growthRows[growthRows.length - 1].corpus;
+  const invested = growthRows[growthRows.length - 1].invested;
+  const minShare = npsMinAnnuity(t, corpus);
+  const share = Math.max(shareIn, minShare);
+  const annuityCorpus = roundRupee(corpus * share / 100);
+  const lumpSum = corpus - annuityCorpus;
+  const taxFree = Math.min(lumpSum, roundRupee(corpus * 60 / 100));
+  const taxableLump = lumpSum - taxFree;
+  const pension = roundRupee(annuityCorpus * ar / 1200);
+  return {
+    age: a,
+    retireAge: ra,
+    monthly: m,
+    stepUp: s,
+    rate: r,
+    type: t,
+    annuityShare: share,
+    annuityRate: ar,
+    years: ra - a,
+    corpus,
+    invested,
+    growth: corpus - invested,
+    lumpSum,
+    annuityCorpus,
+    taxFree,
+    taxableLump,
+    pension,
+    minAnnuity: minShare,
+    fullWithdrawal: corpus <= NPS_FULL_WITHDRAWAL_LIMIT,
+    growthRows
+  };
+}
+
+export const npsCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(23, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+`;
+
+export const SSY_MATURITY_YEARS = 21;
+export const SSY_MAX_DEPOSIT_YEARS = 15;
+
+export function ssyGrowth(deposit, age, rate, depYears) {
+  const rows = [];
+  let bal = 0;
+  let investedExact = 0;
+  for (let y = 1; y <= SSY_MATURITY_YEARS; y++) {
+    const opening = roundRupee(bal);
+    const dep = y <= depYears ? deposit : 0;
+    bal = (bal + dep) * (1 + rate / 100);
+    const closing = roundRupee(bal);
+    investedExact += dep;
+    rows.push({
+      year: y,
+      label: "Year " + y,
+      age: age + y,
+      opening,
+      deposit: dep,
+      interest: closing - opening - dep,
+      invested: roundRupee(investedExact),
+      closing
+    });
+  }
+  return rows;
+}
+
+export function ssyCompute(deposit, age, rate, depYears) {
+  const p = Number(deposit);
+  const a = Number(age);
+  const r = Number(rate);
+  const d = Number(depYears);
+  if (!Number.isFinite(p) || !Number.isFinite(a) || !Number.isFinite(r) || !Number.isFinite(d)) return null;
+  if (p < 250 || p > 150000) return null;
+  if (!Number.isInteger(a) || a < 0 || a > 10) return null;
+  if (r < 0 || r > 15) return null;
+  if (!Number.isInteger(d) || d < 1 || d > SSY_MAX_DEPOSIT_YEARS) return null;
+  const growthRows = ssyGrowth(p, a, r, d);
+  const maturity = growthRows[growthRows.length - 1].closing;
+  const invested = roundRupee(p * d);
+  return {
+    deposit: p,
+    age: a,
+    rate: r,
+    depositYears: d,
+    years: SSY_MATURITY_YEARS,
+    maturity,
+    invested,
+    interest: maturity - invested,
+    maturityYear: new Date().getFullYear() + SSY_MATURITY_YEARS,
+    ageAtMaturity: a + SSY_MATURITY_YEARS,
+    year15Closing: growthRows[14].closing,
+    growthRows
+  };
+}
+
+export const ssyCss = `
+.calc-page .tool-switch {
+  grid-template-columns: repeat(24, 1fr);
+}
+
+@media(max-width: 760px) {
+  .calc-page .tool-switch {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+`;
+
 export function ciClient(c) {
   const $ = id => document.getElementById(id);
 
@@ -25614,6 +26154,3407 @@ export function renderCiCalculatorBody(p, others, css, clientSource) {
             this calculator takes a single steady rate, so it
             cannot model returns that change year to year — for
             market-linked investments, try a lower rate too.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function epfClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  const EPF_CEILINGS = ["25000", "15000"];
+
+  const EPF_CEILING_LABELS = {
+    "25000": "₹25,000 a month (from 17 September 2026)",
+    "15000": "₹15,000 a month (before 17 September 2026)"
+  };
+
+  function epfMonthlySplit(basic, empRate, erRate, ceiling) {
+    const employee = roundRupee(basic * empRate / 100);
+    const employerTotal = roundRupee(basic * erRate / 100);
+    const eps = Math.min(employerTotal, roundRupee(0.0833 * Math.min(basic, ceiling)));
+    const employerEpf = employerTotal - eps;
+    return { employee, employerTotal, eps, employerEpf, credit: employee + employerEpf };
+  }
+
+  function epfGrowth(age, retireAge, basic, growth, rate, balance, empRate, erRate, ceiling) {
+    const years = retireAge - age;
+    const rows = [];
+    let bal = Number(balance);
+    for (let y = 0; y < years; y++) {
+      const basicY = basic * Math.pow(1 + growth / 100, y);
+      const split = epfMonthlySplit(basicY, empRate, erRate, ceiling);
+      const opening = roundRupee(bal);
+      let accrued = 0;
+      for (let m = 0; m < 12; m++) {
+        bal += split.credit;
+        accrued += bal * rate / 1200;
+      }
+      const interest = roundRupee(accrued);
+      bal += interest;
+      rows.push({
+        year: y + 1,
+        label: "Age " + (age + y + 1),
+        opening,
+        employee: split.employee * 12,
+        employerEpf: split.employerEpf * 12,
+        eps: split.eps * 12,
+        interest,
+        closing: roundRupee(bal)
+      });
+    }
+    return rows;
+  }
+
+  function epfCompute(age, retireAge, basic, growth, rate, balance, empRate, erRate, ceiling) {
+    const a = Number(age);
+    const ra = Number(retireAge);
+    const b = Number(basic);
+    const g = Number(growth);
+    const r = Number(rate);
+    const bal0 = Number(balance);
+    const emp = Number(empRate);
+    const er = Number(erRate);
+    const ceil = Number(ceiling);
+    if (!Number.isFinite(a) || !Number.isFinite(ra) || !Number.isFinite(b) || !Number.isFinite(g)
+      || !Number.isFinite(r) || !Number.isFinite(bal0) || !Number.isFinite(emp)
+      || !Number.isFinite(er) || !Number.isFinite(ceil)) return null;
+    if (!Number.isInteger(a) || a < 18 || a > 58) return null;
+    if (!Number.isInteger(ra) || ra < 50 || ra > 60) return null;
+    if (ra <= a) return null;
+    if (b < 1000 || b > 1000000) return null;
+    if (g < 0 || g > 20) return null;
+    if (r < 0 || r > 15) return null;
+    if (bal0 < 0 || bal0 > 50000000) return null;
+    if (emp < 12 || emp > 100) return null;
+    if (er < 0 || er > 12) return null;
+    if (ceil !== 15000 && ceil !== 25000) return null;
+    const growthRows = epfGrowth(a, ra, b, g, r, bal0, emp, er, ceil);
+    const employee = growthRows.reduce((s, row) => s + row.employee, 0);
+    const employerEpf = growthRows.reduce((s, row) => s + row.employerEpf, 0);
+    const eps = growthRows.reduce((s, row) => s + row.eps, 0);
+    const interest = growthRows.reduce((s, row) => s + row.interest, 0);
+    const maturity = growthRows[growthRows.length - 1].closing;
+    return {
+      age: a,
+      retireAge: ra,
+      basic: b,
+      rate: r,
+      balance: bal0,
+      empRate: emp,
+      erRate: er,
+      ceiling: ceil,
+      years: ra - a,
+      maturity,
+      employee,
+      employerEpf,
+      eps,
+      interest,
+      invested: employee + employerEpf,
+      growth: growthRows
+    };
+  }
+
+  const presetSelect = $("preset");
+  const epfPill = $("epf-pill");
+  const inputAge = $("input-age");
+  const inputAgeError = $("input-age-error");
+  const inputRetire = $("input-retire");
+  const inputRetireError = $("input-retire-error");
+  const inputBasic = $("input-basic");
+  const inputBasicError = $("input-basic-error");
+  const inputGrowth = $("input-growth");
+  const inputGrowthError = $("input-growth-error");
+  const inputRate = $("input-rate");
+  const inputRateError = $("input-rate-error");
+  const inputBalance = $("input-balance");
+  const inputBalanceError = $("input-balance-error");
+  const inputEmpRate = $("input-emp-rate");
+  const inputEmpRateError = $("input-emp-rate-error");
+  const inputErRate = $("input-er-rate");
+  const inputErRateError = $("input-er-rate-error");
+  const inputCeiling = $("input-ceiling");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const growthBody = $("growth-body");
+  const growthNote = $("growth-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+  const ceilingLabel = v => v === "15000" ? "₹15,000 ceiling" : "₹25,000 ceiling";
+
+  function renderGrowth(r) {
+    growthBody.replaceChildren();
+    if (!r) {
+      growthNote.textContent = "Enter your figures to see the balance grow year by year.";
+      return;
+    }
+    r.growth.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row.label;
+      tr.appendChild(th);
+      [row.opening, row.employee, row.employerEpf, row.eps, row.interest, row.closing].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      growthBody.appendChild(tr);
+    });
+    growthNote.textContent = "The balance grows year by year — the interest column overtakes the deposits column as the years pass.";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your age, basic salary and the EPF rate to see your balance at retirement.";
+    working.textContent = "Enter your age, basic salary and the EPF rate to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    growthBody.replaceChildren();
+    growthNote.textContent = "Enter your figures to see the balance grow year by year.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(age, retireAge, basic, growth, rate, balance, empRate, erRate, ceiling, r) {
+    output.textContent = inr(r.maturity);
+    box1Val.textContent = inr(r.maturity);
+    box1Label.textContent = "EPF BALANCE AT RETIREMENT";
+    box2Val.textContent = inr(r.interest);
+    box2Label.textContent = "INTEREST EARNED";
+    box3Val.textContent = inr(r.invested);
+    box3Label.textContent = "TOTAL INVESTED";
+    working.textContent = inr(basic) + " basic + DA, " + growth + "% yearly raises, " + rate + "% interest, age "
+      + age + " to " + retireAge + ": your EPF balance at retirement is " + inr(r.maturity)
+      + " — " + inr(r.interest) + " of interest on " + inr(r.invested) + " invested.";
+    working2.textContent = "You pay " + inr(r.employee) + " · your employer adds " + inr(r.employerEpf)
+      + " to EPF · " + inr(r.eps) + " goes to EPS pension (not in this balance).";
+    workingNote.textContent = ceilingLabel(ceiling) + " · " + empRate + "% + " + erRate + "% contributions"
+      + " · interest credited once a year on 31 March"
+      + (balance > 0 ? " · includes your current balance of " + inr(balance) + "." : ".");
+    glanceText.textContent = inr(basic) + " basic · " + growth + "% raises · " + rate + "% · age "
+      + age + " to " + retireAge + " → balance " + inr(r.maturity)
+      + " (interest " + inr(r.interest) + "; EPS " + inr(r.eps) + ").";
+    renderGrowth(r);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | EPF Calculator"
+      + "\nQuestion: basic + DA " + inr(basic) + ", age " + age + " to " + retireAge + ", " + growth + "% yearly raises, "
+      + rate + "% interest, current balance " + inr(balance) + ", " + empRate + "% + " + erRate + "% contributions, "
+      + ceilingLabel(ceiling)
+      + "\nAnswer: EPF balance at retirement " + inr(r.maturity) + "; your contributions " + inr(r.employee)
+      + "; employer EPF " + inr(r.employerEpf) + "; EPS pension share " + inr(r.eps)
+      + "; interest earned " + inr(r.interest) + "; total invested " + inr(r.invested)
+      + "\nWorking: interest worked out monthly on the running balance at rate ÷ 1200 and credited once a year on 31 March";
+  }
+
+  function paint(showEmptyError = false) {
+    epfPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const ageRaw = inputAge.value;
+    const retireRaw = inputRetire.value;
+    const basicRaw = inputBasic.value;
+    const growthRaw = inputGrowth.value;
+    const rateRaw = inputRate.value;
+    const balanceRaw = inputBalance.value;
+    const empRateRaw = inputEmpRate.value;
+    const erRateRaw = inputErRate.value;
+    const ageNum = ageRaw === "" ? NaN : Number(ageRaw);
+    const retireNum = retireRaw === "" ? NaN : Number(retireRaw);
+    const basicNum = basicRaw === "" ? NaN : Number(basicRaw);
+    const growthNum = growthRaw === "" ? NaN : Number(growthRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    const balanceNum = balanceRaw === "" ? NaN : Number(balanceRaw);
+    const empRateNum = empRateRaw === "" ? NaN : Number(empRateRaw);
+    const erRateNum = erRateRaw === "" ? NaN : Number(erRateRaw);
+    let ageMsg = "";
+    let retireMsg = "";
+    let basicMsg = "";
+    let growthMsg = "";
+    let rateMsg = "";
+    let balanceMsg = "";
+    let empRateMsg = "";
+    let erRateMsg = "";
+    if (ageRaw === "") {
+      if (showEmptyError) ageMsg = "Enter your age now.";
+    } else if (!Number.isFinite(ageNum) || !Number.isInteger(ageNum) || ageNum < 18 || ageNum > 58) {
+      ageMsg = "Enter your age now — a whole number from 18 to 58.";
+    }
+    if (retireRaw === "") {
+      if (showEmptyError) retireMsg = "Enter the retirement age.";
+    } else if (!Number.isFinite(retireNum) || !Number.isInteger(retireNum) || retireNum < 50 || retireNum > 60) {
+      retireMsg = "Enter the retirement age — a whole number from 50 to 60.";
+    }
+    if (basicRaw === "") {
+      if (showEmptyError) basicMsg = "Enter your monthly basic + DA.";
+    } else if (!Number.isFinite(basicNum) || basicNum < 1000 || basicNum > 1000000) {
+      basicMsg = "Enter your monthly basic + DA from ₹1,000 to ₹10,00,000.";
+    }
+    if (growthRaw === "") {
+      if (showEmptyError) growthMsg = "Enter the yearly raise.";
+    } else if (!Number.isFinite(growthNum) || growthNum < 0 || growthNum > 20) {
+      growthMsg = "Enter the yearly raise from 0% to 20%.";
+    }
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the yearly EPF rate.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 15) {
+      rateMsg = "Enter the yearly EPF rate from 0% to 15%.";
+    }
+    if (balanceRaw === "") {
+      if (showEmptyError) balanceMsg = "Enter your current EPF balance — enter 0 if none.";
+    } else if (!Number.isFinite(balanceNum) || balanceNum < 0 || balanceNum > 50000000) {
+      balanceMsg = "Enter your current EPF balance from ₹0 to ₹5,00,00,000.";
+    }
+    if (empRateRaw === "") {
+      if (showEmptyError) empRateMsg = "Enter your contribution rate.";
+    } else if (!Number.isFinite(empRateNum) || empRateNum < 12 || empRateNum > 100) {
+      empRateMsg = "Enter your contribution from 12% to 100% — above 12% is VPF.";
+    }
+    if (erRateRaw === "") {
+      if (showEmptyError) erRateMsg = "Enter the employer's contribution rate.";
+    } else if (!Number.isFinite(erRateNum) || erRateNum < 0 || erRateNum > 12) {
+      erRateMsg = "Enter the employer's contribution from 0% to 12%.";
+    }
+    if (ageMsg === "" && retireMsg === "" && ageRaw !== "" && retireRaw !== "" && retireNum <= ageNum) {
+      retireMsg = "The retirement age must be after your age now.";
+    }
+    inputAgeError.textContent = ageMsg;
+    inputRetireError.textContent = retireMsg;
+    inputBasicError.textContent = basicMsg;
+    inputGrowthError.textContent = growthMsg;
+    inputRateError.textContent = rateMsg;
+    inputBalanceError.textContent = balanceMsg;
+    inputEmpRateError.textContent = empRateMsg;
+    inputErRateError.textContent = erRateMsg;
+    inputAge.setAttribute("aria-invalid", String(ageMsg !== ""));
+    inputRetire.setAttribute("aria-invalid", String(retireMsg !== ""));
+    inputBasic.setAttribute("aria-invalid", String(basicMsg !== ""));
+    inputGrowth.setAttribute("aria-invalid", String(growthMsg !== ""));
+    inputRate.setAttribute("aria-invalid", String(rateMsg !== ""));
+    inputBalance.setAttribute("aria-invalid", String(balanceMsg !== ""));
+    inputEmpRate.setAttribute("aria-invalid", String(empRateMsg !== ""));
+    inputErRate.setAttribute("aria-invalid", String(erRateMsg !== ""));
+
+    const valid = ageMsg === "" && retireMsg === "" && basicMsg === "" && growthMsg === ""
+      && rateMsg === "" && balanceMsg === "" && empRateMsg === "" && erRateMsg === ""
+      && ageRaw !== "" && retireRaw !== "" && basicRaw !== "" && growthRaw !== ""
+      && rateRaw !== "" && balanceRaw !== "" && empRateRaw !== "" && erRateRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = epfCompute(ageNum, retireNum, basicNum, growthNum, rateNum, balanceNum,
+      empRateNum, erRateNum, Number(inputCeiling.value));
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(ageNum, retireNum, basicNum, growthNum, rateNum, balanceNum,
+      empRateNum, erRateNum, inputCeiling.value, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = epfCompute(item.age, item.retireAge, item.basic, item.growth, item.rate,
+      item.balance, item.empRate, item.erRate, item.ceiling);
+    if (!r) return "";
+    return inr(item.basic) + " basic · age " + item.age + " to " + item.retireAge
+      + " · " + item.rate + "% → " + inr(r.maturity);
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputAge.value, inputRetire.value, inputBasic.value,
+      inputGrowth.value, inputRate.value, inputBalance.value, inputEmpRate.value,
+      inputErRate.value, inputCeiling.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputAge.value = String(item.age);
+        inputRetire.value = String(item.retireAge);
+        inputBasic.value = String(item.basic);
+        inputGrowth.value = String(item.growth);
+        inputRate.value = String(item.rate);
+        inputBalance.value = String(item.balance);
+        inputEmpRate.value = String(item.empRate);
+        inputErRate.value = String(item.erRate);
+        inputCeiling.value = String(item.ceiling);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      age: Number(inputAge.value),
+      retireAge: Number(inputRetire.value),
+      basic: Number(inputBasic.value),
+      growth: Number(inputGrowth.value),
+      rate: Number(inputRate.value),
+      balance: Number(inputBalance.value),
+      empRate: Number(inputEmpRate.value),
+      erRate: Number(inputErRate.value),
+      ceiling: Number(inputCeiling.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputAge.value = button.dataset.age || "";
+      inputRetire.value = button.dataset.retire || "";
+      inputBasic.value = button.dataset.basic || "";
+      inputGrowth.value = button.dataset.growth || "";
+      inputRate.value = button.dataset.rate || "";
+      inputBalance.value = button.dataset.balance || "";
+      inputEmpRate.value = button.dataset.empRate || "";
+      inputErRate.value = button.dataset.erRate || "";
+      inputCeiling.value = button.dataset.ceiling || "25000";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputAge.value = String(rec.age);
+    inputRetire.value = String(rec.retireAge);
+    inputBasic.value = String(rec.basic);
+    inputGrowth.value = String(rec.growth);
+    inputRate.value = String(rec.rate);
+    inputBalance.value = String(rec.balance);
+    inputEmpRate.value = String(rec.empRate);
+    inputErRate.value = String(rec.erRate);
+    inputCeiling.value = String(rec.ceiling);
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputAge.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRetire.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputBasic.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputGrowth.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputBalance.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputEmpRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputErRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputCeiling.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("epf-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderEpfCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleAge: p.sampleAge, sampleRetireAge: p.sampleRetireAge, sampleBasic: p.sampleBasic, sampleGrowth: p.sampleGrowth, sampleRate: p.sampleRate, sampleBalance: p.sampleBalance, sampleEmpRate: p.sampleEmpRate, sampleErRate: p.sampleErRate, sampleCeiling: p.sampleCeiling };
+  const sample = epfCompute(p.sampleAge, p.sampleRetireAge, p.sampleBasic, p.sampleGrowth, p.sampleRate, p.sampleBalance, p.sampleEmpRate, p.sampleErRate, Number(p.sampleCeiling));
+  const noRaiseSample = epfCompute(30, 58, 30000, 0, 8.25, 0, 12, 12, 25000);
+  const balanceSample = epfCompute(30, 58, 30000, 7, 8.25, 500000, 12, 12, 25000);
+
+  const presetSummary = pr => {
+    const r = epfCompute(pr.age, pr.retireAge, pr.basic, pr.growth, pr.rate, pr.balance, pr.empRate, pr.erRate, Number(pr.ceiling));
+    return `${inr2(pr.basic)} basic · age ${pr.age} to ${pr.retireAge} → ${inr2(r.maturity)}`;
+  };
+  const ceilingOptions = [
+    ["25000", "₹25,000 a month (from 17 September 2026)"],
+    ["15000", "₹15,000 a month (before 17 September 2026)"]
+  ].map(([v, label]) => `
+    <option value="${v}"${p.sampleCeiling === v ? " selected" : ""}>${label}</option>
+  `).join("");
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = epfCompute(st.age, st.retireAge, st.basic, st.growth, st.rate, st.balance, st.empRate, st.erRate, Number(st.ceiling));
+    return `${inr2(st.basic)} basic · age ${st.age} to ${st.retireAge} → balance ${inr2(r.maturity)}`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const growthRows = sample.growth.map(row => `
+      <tr>
+        <th scope="row">${e(row.label)}</th>
+        <td>${inr2(row.opening)}</td>
+        <td>${inr2(row.employee)}</td>
+        <td>${inr2(row.employerEpf)}</td>
+        <td>${inr2(row.eps)}</td>
+        <td>${inr2(row.interest)}</td>
+        <td>${inr2(row.closing)}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}${hraCss}${ciCss}${epfCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free EPF calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate your EPF →
+              </a>
+              <a href="#method" class="calc-link">How EPF is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.maturity)} EPF balance at retirement</strong>
+                <small>On ₹30,000 basic + DA, 7% raises a year, 8.25% interest, age 30 to 58</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.interest)} interest earned</strong>
+                <small>More than half of the balance is interest — compounding does the late work</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.eps)} goes to EPS pension</strong>
+                <small>₹2,083 a month of the employer's share funds your pension, not this balance</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>An estimate for planning — not financial, tax or legal advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/">RRB Age</a>
+              <a href="/emi-calculator/">EMI</a>
+              <a href="/sip-calculator/">SIP</a>
+              <a href="/bmi-calculator/">BMI</a>
+              <a href="/percentage-calculator/">Percentage</a>
+              <a href="/gst-calculator/">GST</a>
+              <a href="/ppf-calculator/">PPF</a>
+              <a href="/fd-calculator/">FD</a>
+              <a href="/income-tax-calculator/">Income Tax</a>
+              <a href="/rd-calculator/">RD</a>
+              <a href="/home-loan-emi-calculator/">Home Loan EMI</a>
+              <a href="/gratuity-calculator/">Gratuity</a>
+              <a href="/hra-calculator/">HRA</a>
+              <a href="/compound-interest-calculator/">Compound Interest</a>
+              <a href="/epf-calculator/" aria-current="page">EPF</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate your EPF</h2>
+              <span class="calc-pill" id="epf-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="epf-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-age">
+                Your age now
+                <span>A whole number, from 18 to 58</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-age"
+                type="number"
+                value="${p.sampleAge}"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="input-age-error"
+              >
+              <p class="calc-error" id="input-age-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-retire">
+                Retirement age
+                <span>A whole number, from 50 to 60 — 58 is the usual EPF age</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-retire"
+                type="number"
+                value="${p.sampleRetireAge}"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="input-retire-error"
+              >
+              <p class="calc-error" id="input-retire-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-basic">
+                Monthly basic salary + DA (₹)
+                <span>The figure on your payslip — from ₹1,000 to ₹10,00,000 a month. EPF is worked out on basic + DA, not on your gross salary</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-basic"
+                type="number"
+                value="${p.sampleBasic}"
+                step="1000"
+                inputmode="numeric"
+                aria-describedby="input-basic-error"
+              >
+              <p class="calc-error" id="input-basic-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-growth">
+                Yearly salary raise (%)
+                <span>Your expected raise every year, from 0% to 20% — the example uses 7%</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-growth"
+                type="number"
+                value="${p.sampleGrowth}"
+                step="0.5"
+                inputmode="decimal"
+                aria-describedby="input-growth-error"
+              >
+              <p class="calc-error" id="input-growth-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-rate">
+                EPF interest rate (% a year)
+                <span>EPFO has notified 8.25% for FY 2025-26 — from 0% to 15%. The rate is declared every year, so try a lower one too</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-rate"
+                type="number"
+                value="${p.sampleRate}"
+                step="0.05"
+                inputmode="decimal"
+                aria-describedby="input-rate-error"
+              >
+              <p class="calc-error" id="input-rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-balance">
+                Current EPF balance (₹)
+                <span>What you already have in EPF — from ₹0 to ₹5,00,00,000; enter 0 if you are starting fresh</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-balance"
+                type="number"
+                value="${p.sampleBalance}"
+                step="10000"
+                inputmode="numeric"
+                aria-describedby="input-balance-error"
+              >
+              <p class="calc-error" id="input-balance-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-emp-rate">
+                Your contribution (% of basic + DA)
+                <span>From 12% to 100% — 12% is the statutory rate; above 12% is VPF, which your employer does not match</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-emp-rate"
+                type="number"
+                value="${p.sampleEmpRate}"
+                step="1"
+                inputmode="decimal"
+                aria-describedby="input-emp-rate-error"
+              >
+              <p class="calc-error" id="input-emp-rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-er-rate">
+                Employer's contribution (% of basic + DA)
+                <span>From 0% to 12% — 12% is the statutory rate</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-er-rate"
+                type="number"
+                value="${p.sampleErRate}"
+                step="1"
+                inputmode="decimal"
+                aria-describedby="input-er-rate-error"
+              >
+              <p class="calc-error" id="input-er-rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-ceiling">
+                EPS wage ceiling
+                <span>The wage ceiling your employer applies to the pension share — ₹25,000 from 17 September 2026</span>
+              </label>
+
+              <select class="select-input" id="input-ceiling">
+                ${ceilingOptions}
+              </select>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-basic">${inr2(sample.maturity)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.maturity)}</strong>
+                  <small id="box1-label">EPF BALANCE AT RETIREMENT</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.interest)}</strong>
+                  <small id="box2-label">INTEREST EARNED</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.invested)}</strong>
+                  <small id="box3-label">TOTAL INVESTED</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">₹30,000 basic · 7% raises · 8.25% · age 30 to 58 → balance ${inr2(sample.maturity)} (interest ${inr2(sample.interest)}; EPS ${inr2(sample.eps)}).</span>
+              </div>
+
+              <p class="working" id="working">
+                ₹30,000 basic + DA, 7% yearly raises, 8.25% interest, age 30 to 58: your EPF balance at retirement is ${inr2(sample.maturity)} — ${inr2(sample.interest)} of interest on ${inr2(sample.invested)} invested.
+              </p>
+              <p class="working" id="working-2">You pay ${inr2(sample.employee)} · your employer adds ${inr2(sample.employerEpf)} to EPF · ${inr2(sample.eps)} goes to EPS pension (not in this balance).</p>
+              <p class="working" id="working-note">₹25,000 wage ceiling · 12% + 12% contributions · interest credited once a year on 31 March.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The figure is an estimate at the steady rate you
+                enter. EPFO declares a new rate every year, and the
+                wage ceiling can change again — and interest on your
+                own contributions above ₹2.5 lakh a year is taxable.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="growth">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Year by year</p>
+          <h2>How the balance grows</h2>
+          <p id="growth-note">The balance grows year by year — the interest column overtakes the deposits column as the years pass.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="growth-note">
+            <caption>Year-by-year growth on the sample figures: ₹30,000 basic + DA, 7% raises, 8.25% interest, age 30 to 58.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Age</th>
+                <th scope="col">Opening balance</th>
+                <th scope="col">You pay</th>
+                <th scope="col">Employer EPF</th>
+                <th scope="col">EPS</th>
+                <th scope="col">Interest</th>
+                <th scope="col">Closing balance</th>
+              </tr>
+            </thead>
+            <tbody id="growth-body">
+              ${growthRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#growth">Growth</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / TWO DEPOSITS A MONTH</span>
+            <h3>12% from you, 12% from your employer</h3>
+            <p>Every month you pay 12% of basic + DA and your employer pays 12% too. On a ₹30,000 basic that is ₹3,600 each — ₹7,200 a month before the pension split — and the employer's share is what makes EPF beat a plain savings account.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE PENSION SPLIT</span>
+            <h3>Up to ₹2,083 a month goes to EPS</h3>
+            <p>Of the employer's 12%, 8.33% of wages up to the ₹25,000 ceiling goes to the pension scheme — at most ₹2,083 a month. It pays a monthly pension after retirement, so it never appears in your EPF balance. On the ₹30,000 example it totals ₹6,99,888 over 28 years.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / RAISES DO THE HEAVY LIFTING</span>
+            <h3>7% raises add ₹94,75,388</h3>
+            <p>The same person with no raises at all retires with ₹63,79,104. With 7% raises every year the balance is ₹1,58,54,492 — because every higher deposit also earns interest for the years that remain.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your basic salary to a retirement balance</h2>
+          <p>
+            Enter your age and basic salary first — the other
+            figures are already filled in with the usual example —
+            then read the balance and the growth table.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How EPF is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The EPF formula</small>
+          You pay 12% · employer pays 12% · EPS takes 8.33% up to the ceiling · interest = balance × rate ÷ 1200 a month, credited 31 March
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. ₹30,000 basic, 7% raises, 8.25%, age 30 to 58
+            <strong>${fmt2(sample.maturity)} balance · ${fmt2(sample.interest)} interest</strong>
+            <span>In the first month you pay ₹3,600 and your employer pays ₹3,600 — ₹2,083 to EPS and ₹1,517 to your EPF. Over 28 years you pay ₹34,86,144, your employer adds ₹27,86,256 and interest adds ₹95,82,092.</span>
+          </div>
+
+          <div class="math-step">
+            2. Same person, no raises at all
+            <strong>${fmt2(noRaiseSample.maturity)} balance · ${fmt2(noRaiseSample.interest)} interest</strong>
+            <span>₹30,000 basic for 28 years with no raises. The balance is ₹63,79,104 — the 7% yearly raises add ₹94,75,388, because every higher deposit also earns interest for the years that remain.</span>
+          </div>
+
+          <div class="math-step">
+            3. Already have ₹5,00,000 in EPF
+            <strong>${fmt2(balanceSample.maturity)} balance · ${fmt2(balanceSample.interest)} interest</strong>
+            <span>The same person with ₹5,00,000 already in EPF today. The balance becomes ₹2,04,56,551 — ₹46,02,059 more — because the existing balance earns interest for all 28 years.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five cases, five balances</h2>
+          <p>
+            One example for each everyday case, including one with
+            no raises, one with an existing balance and one under
+            the old wage ceiling. Select any example to load it into
+            the calculator and check the working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.basic)} BASIC · AGE ${story.age} TO ${story.retireAge}</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-age="${story.age}" data-retire="${story.retireAge}" data-basic="${story.basic}" data-growth="${story.growth}" data-rate="${story.rate}" data-balance="${story.balance}" data-emp-rate="${story.empRate}" data-er-rate="${story.erRate}" data-ceiling="${story.ceiling}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>EPF rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>EPF contribution rates, the EPS pension split, the wage ceiling, the interest rate and how it is credited, the retirement age, the tax limit and VPF.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get EPF wrong</h2>
+          <p>
+            The rules are short, but four readings trip people up.
+            Each one can cost lakhs.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / USING GROSS SALARY</span>
+            <h3>Working it out on the wrong pay</h3>
+            <p>EPF is based on basic + DA only, and basic is often 40–50% of the total. Entering your gross salary overstates the balance by roughly double — read the figure from your payslip.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / COUNTING THE PENSION SHARE</span>
+            <h3>Adding the EPS share to your balance</h3>
+            <p>Up to 8.33% of the wage ceiling goes to the pension scheme, which pays a monthly pension later, not a lump sum into your EPF. On a ₹30,000 basic that is ₹2,083 a month — ₹6,99,888 over 28 years — that must stay out of the balance.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / TRUSTING ONE RATE FOR 28 YEARS</span>
+            <h3>Assuming 8.25% will last to retirement</h3>
+            <p>EPFO announces the rate every year, and it has moved in the past — it was 8.10% in 2021-22 and 8.15% in 2022-23. Try a lower rate such as 7.5% to see a safer estimate.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / IGNORING THE TAX LIMIT</span>
+            <h3>Forgetting tax on large contributions</h3>
+            <p>Interest is tax-free on your own contributions up to ₹2.5 lakh a year. If you pay more than that — through VPF or a very high basic — the interest on the extra amount is taxable. At a 12% contribution you cross ₹2.5 lakh only if your basic + DA is above about ₹1,73,611 a month.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>EPF calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses EPFO's own method: every month you pay
+            12% of basic + DA and your employer pays 12% too; of
+            the employer's share, 8.33% of wages up to the wage
+            ceiling goes to the pension scheme (EPS) and the rest
+            reaches your EPF. Interest for the month is the balance
+            after that month's deposits times the yearly rate
+            divided by 1200. EPFO works interest out monthly on the
+            running balance but adds it to your account only once a
+            year, on 31 March, so there is no compounding inside a
+            year. Your salary rises once a year, at the start of
+            each year. Monthly deposits and each year's interest
+            are rounded to the nearest rupee; the year-by-year
+            table rounds each row to the nearest rupee, so each
+            row's interest is its closing balance minus its opening
+            balance minus that year's deposits. The rate and the
+            raise are user-entered and treated as steady
+            assumptions — never as live quotes or forecasts.
+          </p>
+          <p>
+            Figures checked 12 November 2026: the 8.25% rate for FY
+            2025-26 was recommended by EPFO's Central Board of
+            Trustees on 2 March 2026, in the
+            <a href="https://www.pib.gov.in/newsite/erelcontent.aspx?relid=285110&reg=3&lang=2" rel="nofollow noopener" target="_blank">PIB press release</a>;
+            the wage ceiling was raised from ₹15,000 to ₹25,000 a
+            month from 17 September 2026 by the Union Cabinet, in
+            the
+            <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2310973&reg=48&lang=2" rel="nofollow noopener" target="_blank">PIB press release</a>
+            (Gazette notification S.O. 5109(E), 17 September 2026);
+            the EPF Scheme, 2026 (G.S.R. 525(E), 29 June 2026) and
+            the Employees' Pension Scheme, 2026 (G.S.R. 527(E))
+            replaced the 1952 schemes — see
+            <a href="https://www.epfindia.gov.in/" rel="nofollow noopener" target="_blank">EPFO</a>.
+            The worked examples reproduce the ranking EPF
+            calculator's published figures exactly: ₹30,000 basic,
+            7% raises, 8.25%, age 30 to 58 gives ₹1,58,54,492 (you
+            ₹34,86,144; employer EPF ₹27,86,256; interest
+            ₹95,82,092; EPS ₹6,99,888) on
+            <a href="https://calcsolver.in/tools/epf-calculator" rel="nofollow noopener" target="_blank">calcsolver.in</a>,
+            and the same page's no-raise figure ₹63,79,104, its
+            ₹5,00,000-balance figure ₹2,04,56,551 and its old
+            ₹15,000-ceiling figure ₹1,68,92,968 all reproduce
+            exactly. For a voluntary top-up at the same rate, use
+            the PPF calculator; for a recurring deposit, the RD
+            calculator; for the tax on your interest, the
+            income-tax calculator. One honest limit: this
+            calculator takes a single steady rate, so it cannot
+            model rates that change year to year — for a safer
+            estimate, try a lower rate too.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function npsClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  const NPS_FULL_WITHDRAWAL_LIMIT = 800000;
+
+  const NPS_MIN_ANNUITY_NON_GOVT = 20;
+
+  const NPS_MIN_ANNUITY_GOVT = 40;
+
+  function npsMinAnnuity(type, corpus) {
+    if (corpus <= NPS_FULL_WITHDRAWAL_LIMIT) return 0;
+    return type === "govt" ? NPS_MIN_ANNUITY_GOVT : NPS_MIN_ANNUITY_NON_GOVT;
+  }
+
+  function npsGrowth(age, retireAge, monthly, stepUp, rate) {
+    const years = retireAge - age;
+    const rows = [];
+    let bal = 0;
+    let investedExact = 0;
+    const i = rate / 1200;
+    for (let y = 0; y < years; y++) {
+      const m = monthly * Math.pow(1 + stepUp / 100, y);
+      const yearPayExact = m * 12;
+      for (let k = 0; k < 12; k++) {
+        bal = (bal + m) * (1 + i);
+      }
+      investedExact += yearPayExact;
+      const corpus = roundRupee(bal);
+      const invested = roundRupee(investedExact);
+      rows.push({
+        year: y + 1,
+        label: "Age " + (age + y + 1),
+        contribution: roundRupee(yearPayExact),
+        invested,
+        growth: corpus - invested,
+        corpus
+      });
+    }
+    return rows;
+  }
+
+  function npsCompute(age, retireAge, monthly, stepUp, rate, type, annuityShare, annuityRate) {
+    const a = Number(age);
+    const ra = Number(retireAge);
+    const m = Number(monthly);
+    const s = Number(stepUp);
+    const r = Number(rate);
+    const t = String(type);
+    const shareIn = Number(annuityShare);
+    const ar = Number(annuityRate);
+    if (!Number.isFinite(a) || !Number.isFinite(ra) || !Number.isFinite(m) || !Number.isFinite(s)
+      || !Number.isFinite(r) || !Number.isFinite(shareIn) || !Number.isFinite(ar)) return null;
+    if (!Number.isInteger(a) || a < 18 || a > 84) return null;
+    if (!Number.isInteger(ra) || ra < 60 || ra > 85) return null;
+    if (ra <= a) return null;
+    if (m < 500 || m > 200000) return null;
+    if (s < 0 || s > 20) return null;
+    if (r < 0 || r > 20) return null;
+    if (t !== "nongovt" && t !== "govt") return null;
+    if (shareIn < 0 || shareIn > 100) return null;
+    if (ar < 0 || ar > 12) return null;
+    const growthRows = npsGrowth(a, ra, m, s, r);
+    const corpus = growthRows[growthRows.length - 1].corpus;
+    const invested = growthRows[growthRows.length - 1].invested;
+    const minShare = npsMinAnnuity(t, corpus);
+    const share = Math.max(shareIn, minShare);
+    const annuityCorpus = roundRupee(corpus * share / 100);
+    const lumpSum = corpus - annuityCorpus;
+    const taxFree = Math.min(lumpSum, roundRupee(corpus * 60 / 100));
+    const taxableLump = lumpSum - taxFree;
+    const pension = roundRupee(annuityCorpus * ar / 1200);
+    return {
+      age: a,
+      retireAge: ra,
+      monthly: m,
+      stepUp: s,
+      rate: r,
+      type: t,
+      annuityShare: share,
+      annuityRate: ar,
+      years: ra - a,
+      corpus,
+      invested,
+      growth: corpus - invested,
+      lumpSum,
+      annuityCorpus,
+      taxFree,
+      taxableLump,
+      pension,
+      minAnnuity: minShare,
+      fullWithdrawal: corpus <= NPS_FULL_WITHDRAWAL_LIMIT,
+      growthRows
+    };
+  }
+
+  const presetSelect = $("preset");
+  const npsPill = $("nps-pill");
+  const inputAge = $("input-age");
+  const inputAgeError = $("input-age-error");
+  const inputRetire = $("input-retire");
+  const inputRetireError = $("input-retire-error");
+  const inputMonthly = $("input-monthly");
+  const inputMonthlyError = $("input-monthly-error");
+  const inputStepUp = $("input-stepup");
+  const inputStepUpError = $("input-stepup-error");
+  const inputRate = $("input-rate");
+  const inputRateError = $("input-rate-error");
+  const inputType = $("input-type");
+  const inputAnnuity = $("input-annuity");
+  const inputAnnuityError = $("input-annuity-error");
+  const inputAnnuityRate = $("input-annuity-rate");
+  const inputAnnuityRateError = $("input-annuity-rate-error");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const growthBody = $("growth-body");
+  const growthNote = $("growth-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+  const typeLabel = v => v === "govt" ? "Government subscriber" : "Non-government subscriber";
+
+  function renderGrowth(r) {
+    growthBody.replaceChildren();
+    if (!r) {
+      growthNote.textContent = "Enter your figures to see the corpus grow year by year.";
+      return;
+    }
+    r.growthRows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row.label;
+      tr.appendChild(th);
+      [row.contribution, row.invested, row.growth, row.corpus].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      growthBody.appendChild(tr);
+    });
+    growthNote.textContent = "The corpus grows year by year — the growth column overtakes the contributions column as the years pass.";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your monthly contribution, your age and the return to see your corpus at retirement.";
+    working.textContent = "Enter your monthly contribution, your age and the return to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    growthBody.replaceChildren();
+    growthNote.textContent = "Enter your figures to see the corpus grow year by year.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(age, retireAge, monthly, stepUp, rate, type, annuityEntered, annuityRate, r) {
+    output.textContent = inr(r.corpus);
+    box1Val.textContent = inr(r.corpus);
+    box1Label.textContent = "RETIREMENT CORPUS";
+    box2Val.textContent = inr(r.lumpSum);
+    box2Label.textContent = "LUMP SUM AT EXIT";
+    box3Val.textContent = inr(r.pension);
+    box3Label.textContent = "MONTHLY PENSION";
+    working.textContent = inr(monthly) + " a month, " + stepUp + "% step-up, " + rate + "% return, age "
+      + age + " to " + retireAge + ": your NPS corpus at retirement is " + inr(r.corpus)
+      + " — " + inr(r.growth) + " of growth on " + inr(r.invested) + " invested.";
+    working2.textContent = "Lump sum " + inr(r.lumpSum) + " · " + inr(r.taxFree) + " of it tax-free"
+      + (r.taxableLump > 0 ? " · " + inr(r.taxableLump) + " taxed at your slab" : "")
+      + (r.annuityCorpus > 0
+        ? " · " + inr(r.annuityCorpus) + " buys the annuity · pension " + inr(r.pension) + " a month at " + annuityRate + "%."
+        : " · no annuity bought.");
+    workingNote.textContent = typeLabel(type) + " · " + r.annuityShare + "% into an annuity"
+      + (r.annuityShare !== annuityEntered
+        ? " (your " + annuityEntered + "% was raised to the " + r.minAnnuity + "% minimum for a corpus above ₹8 lakh)"
+        : "")
+      + " · contributions at the start of each month"
+      + (r.fullWithdrawal && r.annuityShare === 0 ? " · corpus under ₹8 lakh, so no annuity is needed." : ".");
+    glanceText.textContent = inr(monthly) + " a month · " + stepUp + "% step-up · " + rate + "% · age "
+      + age + " to " + retireAge + " → corpus " + inr(r.corpus)
+      + " (lump sum " + inr(r.lumpSum) + "; pension " + inr(r.pension) + " a month).";
+    renderGrowth(r);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | NPS Calculator"
+      + "\nQuestion: " + inr(monthly) + " a month, " + stepUp + "% step-up, " + rate + "% return, age " + age + " to " + retireAge
+      + ", " + typeLabel(type).toLowerCase() + ", " + annuityEntered + "% into an annuity at " + annuityRate + "%"
+      + "\nAnswer: retirement corpus " + inr(r.corpus) + "; lump sum " + inr(r.lumpSum)
+      + " (" + inr(r.taxFree) + " tax-free); annuity corpus " + inr(r.annuityCorpus)
+      + "; monthly pension " + inr(r.pension) + "; total invested " + inr(r.invested)
+      + "\nWorking: contributions at the start of each month, balance earns rate ÷ 1200 a month, annuity share " + r.annuityShare + "%";
+  }
+
+  function paint(showEmptyError = false) {
+    npsPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const ageRaw = inputAge.value;
+    const retireRaw = inputRetire.value;
+    const monthlyRaw = inputMonthly.value;
+    const stepUpRaw = inputStepUp.value;
+    const rateRaw = inputRate.value;
+    const annuityRaw = inputAnnuity.value;
+    const annuityRateRaw = inputAnnuityRate.value;
+    const ageNum = ageRaw === "" ? NaN : Number(ageRaw);
+    const retireNum = retireRaw === "" ? NaN : Number(retireRaw);
+    const monthlyNum = monthlyRaw === "" ? NaN : Number(monthlyRaw);
+    const stepUpNum = stepUpRaw === "" ? NaN : Number(stepUpRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    const annuityNum = annuityRaw === "" ? NaN : Number(annuityRaw);
+    const annuityRateNum = annuityRateRaw === "" ? NaN : Number(annuityRateRaw);
+    let ageMsg = "";
+    let retireMsg = "";
+    let monthlyMsg = "";
+    let stepUpMsg = "";
+    let rateMsg = "";
+    let annuityMsg = "";
+    let annuityRateMsg = "";
+    if (ageRaw === "") {
+      if (showEmptyError) ageMsg = "Enter your age now.";
+    } else if (!Number.isFinite(ageNum) || !Number.isInteger(ageNum) || ageNum < 18 || ageNum > 84) {
+      ageMsg = "Enter your age now — a whole number from 18 to 84.";
+    }
+    if (retireRaw === "") {
+      if (showEmptyError) retireMsg = "Enter the retirement age.";
+    } else if (!Number.isFinite(retireNum) || !Number.isInteger(retireNum) || retireNum < 60 || retireNum > 85) {
+      retireMsg = "Enter the retirement age — a whole number from 60 to 85.";
+    }
+    if (monthlyRaw === "") {
+      if (showEmptyError) monthlyMsg = "Enter your monthly contribution.";
+    } else if (!Number.isFinite(monthlyNum) || monthlyNum < 500 || monthlyNum > 200000) {
+      monthlyMsg = "Enter your monthly contribution from ₹500 to ₹2,00,000.";
+    }
+    if (stepUpRaw === "") {
+      if (showEmptyError) stepUpMsg = "Enter the yearly step-up.";
+    } else if (!Number.isFinite(stepUpNum) || stepUpNum < 0 || stepUpNum > 20) {
+      stepUpMsg = "Enter the yearly step-up from 0% to 20%.";
+    }
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the expected yearly return.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 20) {
+      rateMsg = "Enter the expected yearly return from 0% to 20%.";
+    }
+    if (annuityRaw === "") {
+      if (showEmptyError) annuityMsg = "Enter the annuity share.";
+    } else if (!Number.isFinite(annuityNum) || annuityNum < 0 || annuityNum > 100) {
+      annuityMsg = "Enter the annuity share from 0% to 100%.";
+    }
+    if (annuityRateRaw === "") {
+      if (showEmptyError) annuityRateMsg = "Enter the annuity rate.";
+    } else if (!Number.isFinite(annuityRateNum) || annuityRateNum < 0 || annuityRateNum > 12) {
+      annuityRateMsg = "Enter the annuity rate from 0% to 12%.";
+    }
+    if (ageMsg === "" && retireMsg === "" && ageRaw !== "" && retireRaw !== "" && retireNum <= ageNum) {
+      retireMsg = "The retirement age must be after your age now.";
+    }
+    inputAgeError.textContent = ageMsg;
+    inputRetireError.textContent = retireMsg;
+    inputMonthlyError.textContent = monthlyMsg;
+    inputStepUpError.textContent = stepUpMsg;
+    inputRateError.textContent = rateMsg;
+    inputAnnuityError.textContent = annuityMsg;
+    inputAnnuityRateError.textContent = annuityRateMsg;
+    inputAge.setAttribute("aria-invalid", String(ageMsg !== ""));
+    inputRetire.setAttribute("aria-invalid", String(retireMsg !== ""));
+    inputMonthly.setAttribute("aria-invalid", String(monthlyMsg !== ""));
+    inputStepUp.setAttribute("aria-invalid", String(stepUpMsg !== ""));
+    inputRate.setAttribute("aria-invalid", String(rateMsg !== ""));
+    inputAnnuity.setAttribute("aria-invalid", String(annuityMsg !== ""));
+    inputAnnuityRate.setAttribute("aria-invalid", String(annuityRateMsg !== ""));
+
+    const valid = ageMsg === "" && retireMsg === "" && monthlyMsg === "" && stepUpMsg === ""
+      && rateMsg === "" && annuityMsg === "" && annuityRateMsg === ""
+      && ageRaw !== "" && retireRaw !== "" && monthlyRaw !== "" && stepUpRaw !== ""
+      && rateRaw !== "" && annuityRaw !== "" && annuityRateRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = npsCompute(ageNum, retireNum, monthlyNum, stepUpNum, rateNum,
+      inputType.value, annuityNum, annuityRateNum);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(ageNum, retireNum, monthlyNum, stepUpNum, rateNum,
+      inputType.value, annuityNum, annuityRateNum, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = npsCompute(item.age, item.retireAge, item.monthly, item.stepUp, item.rate,
+      item.type, item.annuity, item.annuityRate);
+    if (!r) return "";
+    return inr(item.monthly) + " a month · age " + item.age + " to " + item.retireAge
+      + " · " + item.rate + "% → " + inr(r.corpus);
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputAge.value, inputRetire.value, inputMonthly.value,
+      inputStepUp.value, inputRate.value, inputType.value, inputAnnuity.value,
+      inputAnnuityRate.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputAge.value = String(item.age);
+        inputRetire.value = String(item.retireAge);
+        inputMonthly.value = String(item.monthly);
+        inputStepUp.value = String(item.stepUp);
+        inputRate.value = String(item.rate);
+        inputType.value = String(item.type);
+        inputAnnuity.value = String(item.annuity);
+        inputAnnuityRate.value = String(item.annuityRate);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      age: Number(inputAge.value),
+      retireAge: Number(inputRetire.value),
+      monthly: Number(inputMonthly.value),
+      stepUp: Number(inputStepUp.value),
+      rate: Number(inputRate.value),
+      type: inputType.value,
+      annuity: Number(inputAnnuity.value),
+      annuityRate: Number(inputAnnuityRate.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputAge.value = button.dataset.age || "";
+      inputRetire.value = button.dataset.retire || "";
+      inputMonthly.value = button.dataset.monthly || "";
+      inputStepUp.value = button.dataset.stepup || "";
+      inputRate.value = button.dataset.rate || "";
+      inputType.value = button.dataset.type || "nongovt";
+      inputAnnuity.value = button.dataset.annuity || "";
+      inputAnnuityRate.value = button.dataset.annuityRate || "";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputAge.value = String(rec.age);
+    inputRetire.value = String(rec.retireAge);
+    inputMonthly.value = String(rec.monthly);
+    inputStepUp.value = String(rec.stepUp);
+    inputRate.value = String(rec.rate);
+    inputType.value = String(rec.type);
+    inputAnnuity.value = String(rec.annuity);
+    inputAnnuityRate.value = String(rec.annuityRate);
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputAge.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRetire.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputMonthly.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputStepUp.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputType.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputAnnuity.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputAnnuityRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("nps-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderNpsCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleAge: p.sampleAge, sampleRetireAge: p.sampleRetireAge, sampleMonthly: p.sampleMonthly, sampleStepUp: p.sampleStepUp, sampleRate: p.sampleRate, sampleType: p.sampleType, sampleAnnuity: p.sampleAnnuity, sampleAnnuityRate: p.sampleAnnuityRate };
+  const sample = npsCompute(p.sampleAge, p.sampleRetireAge, p.sampleMonthly, p.sampleStepUp, p.sampleRate, p.sampleType, p.sampleAnnuity, p.sampleAnnuityRate);
+  const stepUpSample = npsCompute(30, 60, 5000, 5, 10, "nongovt", 40, 6);
+  const smallSample = npsCompute(55, 60, 1000, 0, 10, "nongovt", 0, 6);
+
+  const presetSummary = pr => {
+    const r = npsCompute(pr.age, pr.retireAge, pr.monthly, pr.stepUp, pr.rate, pr.type, pr.annuity, pr.annuityRate);
+    return `${inr2(pr.monthly)} a month · age ${pr.age} to ${pr.retireAge} → ${inr2(r.corpus)}`;
+  };
+  const typeOptions = [
+    ["nongovt", "Non-government (All Citizen / Corporate)"],
+    ["govt", "Government subscriber"]
+  ].map(([v, label]) => `
+    <option value="${v}"${p.sampleType === v ? " selected" : ""}>${label}</option>
+  `).join("");
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = npsCompute(st.age, st.retireAge, st.monthly, st.stepUp, st.rate, st.type, st.annuity, st.annuityRate);
+    return `${inr2(st.monthly)} a month · age ${st.age} to ${st.retireAge} → corpus ${inr2(r.corpus)}`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const growthRows = sample.growthRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.label)}</th>
+        <td>${inr2(row.contribution)}</td>
+        <td>${inr2(row.invested)}</td>
+        <td>${inr2(row.growth)}</td>
+        <td>${inr2(row.corpus)}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}${hraCss}${ciCss}${epfCss}${npsCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free NPS calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate your NPS →
+              </a>
+              <a href="#method" class="calc-link">How NPS is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.corpus)} retirement corpus</strong>
+                <small>On ₹10,000 a month at 10% a year, age 30 to 60</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.lumpSum)} lump sum at exit</strong>
+                <small>With 40% put into an annuity — ${inr2(sample.taxFree)} of it tax-free</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.pension)} pension a month</strong>
+                <small>From ₹91,17,301 in an annuity at 6% a year</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>An estimate for planning — not financial, tax or legal advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/">RRB Age</a>
+              <a href="/emi-calculator/">EMI</a>
+              <a href="/sip-calculator/">SIP</a>
+              <a href="/bmi-calculator/">BMI</a>
+              <a href="/percentage-calculator/">Percentage</a>
+              <a href="/gst-calculator/">GST</a>
+              <a href="/ppf-calculator/">PPF</a>
+              <a href="/fd-calculator/">FD</a>
+              <a href="/income-tax-calculator/">Income Tax</a>
+              <a href="/rd-calculator/">RD</a>
+              <a href="/home-loan-emi-calculator/">Home Loan EMI</a>
+              <a href="/gratuity-calculator/">Gratuity</a>
+              <a href="/hra-calculator/">HRA</a>
+              <a href="/compound-interest-calculator/">Compound Interest</a>
+              <a href="/epf-calculator/">EPF</a>
+              <a href="/nps-calculator/" aria-current="page">NPS</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate your NPS</h2>
+              <span class="calc-pill" id="nps-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="nps-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-age">
+                Your age now
+                <span>A whole number, from 18 to 84</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-age"
+                type="number"
+                value="${p.sampleAge}"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="input-age-error"
+              >
+              <p class="calc-error" id="input-age-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-retire">
+                Retirement age
+                <span>A whole number, from 60 to 85 — 60 is the usual NPS exit age, and you can now stay in NPS up to 85</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-retire"
+                type="number"
+                value="${p.sampleRetireAge}"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="input-retire-error"
+              >
+              <p class="calc-error" id="input-retire-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-monthly">
+                Monthly NPS contribution (₹)
+                <span>What you pay into Tier I every month — from ₹500 to ₹2,00,000. The Tier I minimum is ₹500 a contribution and ₹1,000 a year</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-monthly"
+                type="number"
+                value="${p.sampleMonthly}"
+                step="500"
+                inputmode="numeric"
+                aria-describedby="input-monthly-error"
+              >
+              <p class="calc-error" id="input-monthly-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-stepup">
+                Yearly step-up (%)
+                <span>How much your contribution rises every year, from 0% to 20% — the example for a growing salary uses 5%</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-stepup"
+                type="number"
+                value="${p.sampleStepUp}"
+                step="0.5"
+                inputmode="decimal"
+                aria-describedby="input-stepup-error"
+              >
+              <p class="calc-error" id="input-stepup-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-rate">
+                Expected return (% a year)
+                <span>Your assumed yearly return, from 0% to 20% — 10% is the usual assumption. NPS returns follow the market and are not guaranteed, so try a lower one too</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-rate"
+                type="number"
+                value="${p.sampleRate}"
+                step="0.5"
+                inputmode="decimal"
+                aria-describedby="input-rate-error"
+              >
+              <p class="calc-error" id="input-rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-type">
+                Subscriber type
+                <span>The minimum annuity is 20% for non-government subscribers and 40% for government subscribers</span>
+              </label>
+
+              <select class="select-input" id="input-type">
+                ${typeOptions}
+              </select>
+
+              <label class="field-label" for="input-annuity">
+                Share of the corpus put into an annuity (%)
+                <span>From 0% to 100% — at least 20% for non-government subscribers (40% for government) once the corpus is above ₹8 lakh; no minimum at or below ₹8 lakh</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-annuity"
+                type="number"
+                value="${p.sampleAnnuity}"
+                step="1"
+                inputmode="decimal"
+                aria-describedby="input-annuity-error"
+              >
+              <p class="calc-error" id="input-annuity-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-annuity-rate">
+                Annuity rate (% a year)
+                <span>The yearly rate the annuity pays, from 0% to 12% — 6% is a common assumption. The insurer sets it when you exit</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-annuity-rate"
+                type="number"
+                value="${p.sampleAnnuityRate}"
+                step="0.5"
+                inputmode="decimal"
+                aria-describedby="input-annuity-rate-error"
+              >
+              <p class="calc-error" id="input-annuity-rate-error" aria-live="polite"></p>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-monthly">${inr2(sample.corpus)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.corpus)}</strong>
+                  <small id="box1-label">RETIREMENT CORPUS</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.lumpSum)}</strong>
+                  <small id="box2-label">LUMP SUM AT EXIT</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.pension)}</strong>
+                  <small id="box3-label">MONTHLY PENSION</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">₹10,000 a month · 0% step-up · 10% · age 30 to 60 → corpus ${inr2(sample.corpus)} (lump sum ${inr2(sample.lumpSum)}; pension ${inr2(sample.pension)} a month).</span>
+              </div>
+
+              <p class="working" id="working">
+                ₹10,000 a month, 0% step-up, 10% return, age 30 to 60: your NPS corpus at retirement is ${inr2(sample.corpus)} — ${inr2(sample.growth)} of growth on ${inr2(sample.invested)} invested.
+              </p>
+              <p class="working" id="working-2">Lump sum ${inr2(sample.lumpSum)} · ${inr2(sample.taxFree)} of it tax-free · ${inr2(sample.annuityCorpus)} buys the annuity · pension ${inr2(sample.pension)} a month at 6%.</p>
+              <p class="working" id="working-note">Non-government subscriber · 40% into an annuity · contributions at the start of each month.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The figure is an estimate at the steady return you
+                enter. NPS returns follow the market, the annuity
+                rate is set by the insurer when you exit, and only
+                60% of the corpus is tax-free at exit.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="growth">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Year by year</p>
+          <h2>How the corpus grows</h2>
+          <p id="growth-note">The corpus grows year by year — the growth column overtakes the contributions column as the years pass.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="growth-note">
+            <caption>Year-by-year growth on the sample figures: ₹10,000 a month, 10% return, age 30 to 60.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Age</th>
+                <th scope="col">You pay</th>
+                <th scope="col">Total invested</th>
+                <th scope="col">Growth</th>
+                <th scope="col">Corpus</th>
+              </tr>
+            </thead>
+            <tbody id="growth-body">
+              ${growthRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#growth">Growth</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / TWO ACCOUNTS</span>
+            <h3>Tier I is the pension account</h3>
+            <p>Tier I is where the retirement corpus, the annuity rule and the tax deductions live. It needs at least ₹500 per contribution and ₹1,000 a year. Tier II is an optional savings account with no withdrawal limits — but no tax benefits either. This calculator models Tier I only.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE DECEMBER 2025 CHANGE</span>
+            <h3>80% lump sum for non-government subscribers</h3>
+            <p>Since December 2025, non-government subscribers may take up to 80% of the corpus as a lump sum, with only 20% into an annuity. On the ₹10,000 example that lifts the lump sum from ₹1,36,75,952 to ₹1,82,34,602 — but the pension falls from ₹45,587 to ₹22,793 a month, and only 60% of the corpus stays tax-free.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / STEP-UP DOES THE HEAVY LIFTING</span>
+            <h3>5% step-up adds ₹65,68,478</h3>
+            <p>₹5,000 a month flat for 30 years at 10% builds ₹1,13,96,627. Raise the contribution 5% every year and the same 30 years build ₹1,79,65,105 — because every higher deposit also earns returns for the years that remain.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your monthly contribution to a retirement corpus</h2>
+          <p>
+            Enter your age and monthly contribution first — the
+            other figures are already filled in with the usual
+            example — then read the corpus, the split and the
+            pension.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How NPS is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The NPS formula</small>
+          Each month's contribution is paid at the start of the month · the balance earns rate ÷ 1200 a month · at exit the split is 80/20 (non-government) or 60/40 (government) · pension = annuity × rate ÷ 12
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. ₹10,000 a month, 10%, age 30 to 60
+            <strong>${fmt2(sample.corpus)} corpus · ${fmt2(sample.growth)} growth</strong>
+            <span>In the first year you pay ₹1,20,000 and the corpus reaches ₹1,26,703. Over 30 years you pay ₹36,00,000, growth adds ₹1,91,93,253, and the corpus is ₹2,27,93,253 — ₹1,36,75,952 as a lump sum and ₹45,587 a month of pension.</span>
+          </div>
+
+          <div class="math-step">
+            2. ₹5,000 a month, 5% step-up, 10%, age 30 to 60
+            <strong>${fmt2(stepUpSample.corpus)} corpus · ${fmt2(stepUpSample.growth)} growth</strong>
+            <span>₹5,000 a month rising 5% every year. You invest ₹39,86,331 and the corpus is ₹1,79,65,105 — the step-up adds ₹65,68,478 over a flat ₹5,000. The lump sum is ₹1,07,79,063 and the pension is ₹35,930 a month.</span>
+          </div>
+
+          <div class="math-step">
+            3. ₹1,000 a month from age 55
+            <strong>${fmt2(smallSample.corpus)} corpus · ${fmt2(smallSample.growth)} growth</strong>
+            <span>₹1,000 a month for 5 years at 10% builds ₹78,082 from ₹60,000 invested. Because the corpus is under ₹8 lakh, no annuity is needed — the whole ₹78,082 is your lump sum.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five cases, five corpuses</h2>
+          <p>
+            One example for each everyday case, including one with
+            a step-up, one under the new 20% annuity rule, one
+            under the ₹8 lakh full-withdrawal limit and one for a
+            government subscriber. Select any example to load it
+            into the calculator and check the working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.monthly)} A MONTH · AGE ${story.age} TO ${story.retireAge}</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-age="${story.age}" data-retire="${story.retireAge}" data-monthly="${story.monthly}" data-stepup="${story.stepUp}" data-rate="${story.rate}" data-type="${story.type}" data-annuity="${story.annuity}" data-annuity-rate="${story.annuityRate}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>NPS rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>NPS exit age, the lump-sum and annuity splits, the corpus bands, premature exit, the age limits, the Tier I minimums and the tax deductions.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get NPS wrong</h2>
+          <p>
+            The rules changed in December 2025, so the old
+            readings are now the expensive ones. Each of these can
+            cost lakhs.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / USING THE OLD 60/40 SPLIT</span>
+            <h3>Planning on 40% into an annuity</h3>
+            <p>Non-government subscribers now need only 20% in an annuity, not 40%. On the ₹10,000 example that is ₹45,58,650 instead of ₹91,17,301 — planning on the old split understates the lump sum by ₹45,58,650 and overstates the pension by ₹22,794 a month.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / COUNTING THE WHOLE LUMP SUM AS TAX-FREE</span>
+            <h3>Forgetting the 60% tax ceiling</h3>
+            <p>Only 60% of the corpus is tax-free at exit under Section 10(12A). Take the new 80% lump sum and the extra 20% is taxed at your slab — on a ₹2.28 crore corpus that is ₹45,58,650 of taxable lump sum.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / TRUSTING ONE RETURN FOR 30 YEARS</span>
+            <h3>Assuming 10% will last to retirement</h3>
+            <p>NPS returns follow the market and no rate is guaranteed. At 8% instead of 10%, the ₹10,000 example builds ₹1,50,29,952 instead of ₹2,27,93,253. Try a lower return to see a safer estimate.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / COUNTING THE ANNUITY AS SPENDABLE CASH</span>
+            <h3>Adding the annuity corpus to your lump sum</h3>
+            <p>The annuity share buys a pension from an insurer — it is not cash in hand. On the ₹10,000 example, ₹91,17,301 of the ₹2.28 crore corpus is locked into the annuity and pays ₹45,587 a month instead. Only the lump sum is yours to spend.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>NPS calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the standard NPS-calculator method: every
+            month your contribution is paid at the start of the
+            month and the whole balance earns one month of return
+            at the yearly rate divided by 12. Your contribution
+            rises once a year, at the start of each year, by the
+            step-up you enter. At exit the corpus is split: the
+            annuity share buys a pension from an insurer and the
+            rest is your lump sum. The annuity share cannot go
+            below the legal minimum — 20% for non-government
+            subscribers and 40% for government subscribers —
+            unless the corpus is ₹8 lakh or less, when no annuity
+            is needed at all. The monthly pension is the annuity
+            corpus times the annuity rate divided by 12. Monthly
+            contributions are carried at full precision and each
+            total is rounded to the nearest rupee, so a row's
+            invested total can differ by a rupee from the sum of
+            the yearly payments. The return and the annuity rate
+            are user-entered and treated as steady assumptions —
+            never as live quotes or forecasts.
+          </p>
+          <p>
+            Figures checked 12 November 2026: the December 2025
+            exit rules — up to 80% lump sum and at least 20%
+            annuity for non-government subscribers, the ₹8 lakh
+            full-withdrawal limit, the ₹8–12 lakh band, the ₹5
+            lakh premature-exit limit, entry and exit ages raised
+            to 85, and automatic continuation past 60 — are in the
+            Ministry of Finance press release of 19 December 2025,
+            in the
+            <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2206763&reg=3&lang=1" rel="nofollow noopener" target="_blank">PIB press release</a>,
+            under the PFRDA (Exits and Withdrawals under the
+            National Pension System) (Amendment) Regulations, 2025
+            — see
+            <a href="https://www.pfrda.org.in/" rel="nofollow noopener" target="_blank">PFRDA</a>.
+            The Tier I minimums (₹500 a contribution, ₹1,000 a
+            year) and the Tier I / Tier II features are in
+            PFRDA's
+            <a href="https://www.pfrda.org.in/documents/33652/109556/NPS-All+citizen+Model.pdf" rel="nofollow noopener" target="_blank">All Citizen Model FAQs</a>.
+            The tax treatment — 80CCD(1) within the ₹1.5 lakh
+            Section 80C limit, the extra ₹50,000 under 80CCD(1B),
+            employer contributions under 80CCD(2), and the 60%
+            tax-free lump sum under Section 10(12A) — is in the
+            Income-tax Act, 1961 — see
+            <a href="https://www.incometax.gov.in/" rel="nofollow noopener" target="_blank">the Income Tax Department</a>.
+            The worked examples reproduce the ranking NPS
+            calculators' published figures: ₹10,000 a month from
+            age 30 at 10% gives ₹2,27,93,253 with a ₹1,36,75,952
+            lump sum and a ₹45,587 monthly pension on
+            <a href="https://www.ultimatecalc.in/finance/nps-calculator" rel="nofollow noopener" target="_blank">ultimatecalc.in</a>,
+            and the same page's 20% split gives a ₹22,793 pension;
+            ₹5,000 a month rising 5% a year for 30 years at 10%
+            invests ₹39,86,331 on
+            <a href="https://www.onlycalculators.com/finance/indian-finance/nps-calculator-for-india/" rel="nofollow noopener" target="_blank">onlycalculators.com</a>
+            — whose corpus of ₹1,78,16,633 uses end-of-month
+            contributions, while this page uses start-of-month
+            contributions and gives ₹1,79,65,105 for the same
+            inputs, as the callout above explains. For a
+            guaranteed-return comparison, use the PPF calculator;
+            for a monthly deposit without an annuity, the RD
+            calculator; for the tax on your contributions, the
+            income-tax calculator. One honest limit: this
+            calculator takes a single steady return, so it cannot
+            model returns that change year to year — for a safer
+            estimate, try a lower return too.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section cta">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <h2>Check another plan before you start</h2>
+          <p>
+            Try different numbers — or run the same check with the
+            related tools for your other plans.
+          </p>
+        </div>
+
+        <div class="others-row">
+          ${others.map(item => `<a href="/${e(item.slug)}/">${e(item.title)}</a>`).join("")}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json">${safeJSON({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: p.faq.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text }
+    }))
+  })}</script>
+  <script>(${clientSource})(${safeJSON(config)});</script>`;
+}
+
+export function ssyClient(c) {
+  const $ = id => document.getElementById(id);
+
+  function roundRupee(n) {
+    return Math.round(n);
+  }
+
+  const SSY_MATURITY_YEARS = 21;
+
+  const SSY_MAX_DEPOSIT_YEARS = 15;
+
+  function ssyGrowth(deposit, age, rate, depYears) {
+    const rows = [];
+    let bal = 0;
+    let investedExact = 0;
+    for (let y = 1; y <= SSY_MATURITY_YEARS; y++) {
+      const opening = roundRupee(bal);
+      const dep = y <= depYears ? deposit : 0;
+      bal = (bal + dep) * (1 + rate / 100);
+      const closing = roundRupee(bal);
+      investedExact += dep;
+      rows.push({
+        year: y,
+        label: "Year " + y,
+        age: age + y,
+        opening,
+        deposit: dep,
+        interest: closing - opening - dep,
+        invested: roundRupee(investedExact),
+        closing
+      });
+    }
+    return rows;
+  }
+
+  function ssyCompute(deposit, age, rate, depYears) {
+    const p = Number(deposit);
+    const a = Number(age);
+    const r = Number(rate);
+    const d = Number(depYears);
+    if (!Number.isFinite(p) || !Number.isFinite(a) || !Number.isFinite(r) || !Number.isFinite(d)) return null;
+    if (p < 250 || p > 150000) return null;
+    if (!Number.isInteger(a) || a < 0 || a > 10) return null;
+    if (r < 0 || r > 15) return null;
+    if (!Number.isInteger(d) || d < 1 || d > SSY_MAX_DEPOSIT_YEARS) return null;
+    const growthRows = ssyGrowth(p, a, r, d);
+    const maturity = growthRows[growthRows.length - 1].closing;
+    const invested = roundRupee(p * d);
+    return {
+      deposit: p,
+      age: a,
+      rate: r,
+      depositYears: d,
+      years: SSY_MATURITY_YEARS,
+      maturity,
+      invested,
+      interest: maturity - invested,
+      maturityYear: new Date().getFullYear() + SSY_MATURITY_YEARS,
+      ageAtMaturity: a + SSY_MATURITY_YEARS,
+      year15Closing: growthRows[14].closing,
+      growthRows
+    };
+  } 
+
+  const presetSelect = $("preset");
+  const ssyPill = $("ssy-pill");
+  const inputDeposit = $("input-deposit");
+  const inputDepositError = $("input-deposit-error");
+  const inputAge = $("input-age");
+  const inputAgeError = $("input-age-error");
+  const inputRate = $("input-rate");
+  const inputRateError = $("input-rate-error");
+  const inputYears = $("input-years");
+  const inputYearsError = $("input-years-error");
+  const output = $("answer");
+  const box1Val = $("box1-val");
+  const box1Label = $("box1-label");
+  const box2Val = $("box2-val");
+  const box2Label = $("box2-label");
+  const box3Val = $("box3-val");
+  const box3Label = $("box3-label");
+  const glanceBox = $("glance-box");
+  const glanceTitle = $("glance-title");
+  const glanceText = $("glance-text");
+  const working = $("working");
+  const working2 = $("working-2");
+  const workingNote = $("working-note");
+  const growthBody = $("growth-body");
+  const growthNote = $("growth-note");
+  const status = $("copy-status");
+  const copyBox = $("copy-text");
+  const copyButton = $("copy-result");
+  const history = [];
+  let summary = "";
+
+  const fmt = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr = n => "₹" + fmt(n);
+  const presetRec = id => {
+    const f = c.presets.find(x => x.id === id);
+    return f || c.presets[0];
+  };
+
+  function renderGrowth(r) {
+    growthBody.replaceChildren();
+    if (!r) {
+      growthNote.textContent = "Enter your figures to see the balance grow year by year.";
+      return;
+    }
+    r.growthRows.forEach(row => {
+      const tr = document.createElement("tr");
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.textContent = row.label;
+      tr.appendChild(th);
+      const ageTd = document.createElement("td");
+      ageTd.textContent = String(row.age);
+      tr.appendChild(ageTd);
+      [row.deposit, row.interest, row.closing].forEach(v => {
+        const td = document.createElement("td");
+        td.textContent = inr(v);
+        tr.appendChild(td);
+      });
+      growthBody.appendChild(tr);
+    });
+    growthNote.textContent = "The balance grows year by year — deposits stop after year 15, but the interest column keeps growing to year 21.";
+  }
+
+  function clearResult() {
+    output.textContent = "—";
+    box1Val.textContent = "—";
+    box2Val.textContent = "—";
+    box3Val.textContent = "—";
+    glanceBox.className = "verdict";
+    glanceTitle.textContent = "Your answer at a glance";
+    glanceText.textContent = "Enter your yearly deposit, her age and the rate to see the maturity value.";
+    working.textContent = "Enter your yearly deposit, her age and the rate to see the working.";
+    working2.textContent = "";
+    workingNote.textContent = "";
+    growthBody.replaceChildren();
+    growthNote.textContent = "Enter your figures to see the balance grow year by year.";
+    status.textContent = "";
+    copyBox.hidden = true;
+    copyBox.value = "";
+    copyButton.disabled = true;
+    summary = "";
+  }
+
+  function paintResult(deposit, age, rate, years, r) {
+    output.textContent = inr(r.maturity);
+    box1Val.textContent = inr(r.maturity);
+    box1Label.textContent = "MATURITY VALUE";
+    box2Val.textContent = inr(r.invested);
+    box2Label.textContent = "TOTAL INVESTED";
+    box3Val.textContent = inr(r.interest);
+    box3Label.textContent = "TOTAL INTEREST";
+    working.textContent = inr(deposit) + " a year, " + rate + "%, girl aged " + age + ", " + years
+      + " deposit years: your SSY account matures at " + inr(r.maturity)
+      + " — " + inr(r.interest) + " of interest on " + inr(r.invested) + " invested.";
+    working2.textContent = "Matures in " + r.maturityYear + " · she turns " + r.ageAtMaturity
+      + " · " + years + " deposit years, then " + (21 - years) + " years of interest only.";
+    workingNote.textContent = "Deposits at the start of each year · rate held steady at " + rate + "% for all 21 years"
+      + (years < 15
+        ? " · fewer than 15 deposit years — the account would still need the ₹250 minimum each year to stay active."
+        : ".");
+    glanceText.textContent = inr(deposit) + " a year · " + rate + "% · girl aged " + age + ", " + years
+      + " deposit years → maturity " + inr(r.maturity)
+      + " (invested " + inr(r.invested) + "; interest " + inr(r.interest) + ").";
+    renderGrowth(r);
+    glanceBox.className = "verdict verdict-ok";
+    glanceTitle.textContent = "Your answer at a glance";
+    copyButton.disabled = false;
+    summary = "VisitBest | SSY Calculator"
+      + "\nQuestion: " + inr(deposit) + " a year, " + rate + "%, girl aged " + age + ", " + years + " deposit years"
+      + "\nAnswer: maturity value " + inr(r.maturity) + "; total invested " + inr(r.invested)
+      + "; total interest " + inr(r.interest) + "; matures in " + r.maturityYear + "; she turns " + r.ageAtMaturity
+      + "\nWorking: deposits at the start of each year, balance earns rate ÷ 100 a year, deposits for " + years + " years then interest only to year 21";
+  }
+
+  function paint(showEmptyError = false) {
+    ssyPill.textContent = presetSelect.value === "custom"
+      ? "Custom figures"
+      : presetRec(presetSelect.value).label;
+
+    const depositRaw = inputDeposit.value;
+    const ageRaw = inputAge.value;
+    const rateRaw = inputRate.value;
+    const yearsRaw = inputYears.value;
+    const depositNum = depositRaw === "" ? NaN : Number(depositRaw);
+    const ageNum = ageRaw === "" ? NaN : Number(ageRaw);
+    const rateNum = rateRaw === "" ? NaN : Number(rateRaw);
+    const yearsNum = yearsRaw === "" ? NaN : Number(yearsRaw);
+    let depositMsg = "";
+    let ageMsg = "";
+    let rateMsg = "";
+    let yearsMsg = "";
+    if (depositRaw === "") {
+      if (showEmptyError) depositMsg = "Enter your yearly deposit.";
+    } else if (!Number.isFinite(depositNum) || depositNum < 250 || depositNum > 150000) {
+      depositMsg = "Enter your yearly deposit from ₹250 to ₹1,50,000.";
+    }
+    if (ageRaw === "") {
+      if (showEmptyError) ageMsg = "Enter her age when the account opens.";
+    } else if (!Number.isFinite(ageNum) || !Number.isInteger(ageNum) || ageNum < 0 || ageNum > 10) {
+      ageMsg = "Enter her age when the account opens — a whole number from 0 to 10.";
+    }
+    if (rateRaw === "") {
+      if (showEmptyError) rateMsg = "Enter the interest rate.";
+    } else if (!Number.isFinite(rateNum) || rateNum < 0 || rateNum > 15) {
+      rateMsg = "Enter the interest rate from 0% to 15%.";
+    }
+    if (yearsRaw === "") {
+      if (showEmptyError) yearsMsg = "Enter the deposit years.";
+    } else if (!Number.isFinite(yearsNum) || !Number.isInteger(yearsNum) || yearsNum < 1 || yearsNum > 15) {
+      yearsMsg = "Enter the deposit years — a whole number from 1 to 15.";
+    }
+    inputDepositError.textContent = depositMsg;
+    inputAgeError.textContent = ageMsg;
+    inputRateError.textContent = rateMsg;
+    inputYearsError.textContent = yearsMsg;
+    inputDeposit.setAttribute("aria-invalid", String(depositMsg !== ""));
+    inputAge.setAttribute("aria-invalid", String(ageMsg !== ""));
+    inputRate.setAttribute("aria-invalid", String(rateMsg !== ""));
+    inputYears.setAttribute("aria-invalid", String(yearsMsg !== ""));
+
+    const valid = depositMsg === "" && ageMsg === "" && rateMsg === "" && yearsMsg === ""
+      && depositRaw !== "" && ageRaw !== "" && rateRaw !== "" && yearsRaw !== "";
+    if (!valid) {
+      clearResult();
+      return false;
+    }
+
+    const r = ssyCompute(depositNum, ageNum, rateNum, yearsNum);
+    if (!r) {
+      clearResult();
+      return false;
+    }
+    paintResult(depositNum, ageNum, rateNum, yearsNum, r);
+    return true;
+  }
+
+  function historyText(item) {
+    const r = ssyCompute(item.deposit, item.age, item.rate, item.years);
+    if (!r) return "";
+    return inr(item.deposit) + " a year · girl aged " + item.age + " · " + item.rate + "% → " + inr(r.maturity);
+  }
+
+  function scenarioKey() {
+    return [presetSelect.value, inputDeposit.value, inputAge.value,
+      inputRate.value, inputYears.value].join("|");
+  }
+
+  function renderHistory() {
+    const list = $("history-list");
+    list.replaceChildren();
+    $("history-empty").hidden = history.length > 0;
+    $("clear-history").disabled = history.length === 0;
+    history.forEach(item => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = historyText(item);
+      button.setAttribute("aria-label", "Load check: " + historyText(item));
+      button.addEventListener("click", () => {
+        presetSelect.value = "custom";
+        inputDeposit.value = String(item.deposit);
+        inputAge.value = String(item.age);
+        inputRate.value = String(item.rate);
+        inputYears.value = String(item.years);
+        paint();
+        document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+      });
+      list.appendChild(button);
+    });
+  }
+
+  function pushHistory() {
+    const key = scenarioKey();
+    if (history.some(item => item.key === key)) return;
+    history.unshift({
+      key,
+      deposit: Number(inputDeposit.value),
+      age: Number(inputAge.value),
+      rate: Number(inputRate.value),
+      years: Number(inputYears.value)
+    });
+    if (history.length > 5) history.pop();
+    renderHistory();
+  }
+
+  function scenarioButton(button) {
+    return () => {
+      presetSelect.value = button.dataset.preset || "custom";
+      inputDeposit.value = button.dataset.deposit || "";
+      inputAge.value = button.dataset.age || "";
+      inputRate.value = button.dataset.rate || "";
+      inputYears.value = button.dataset.years || "";
+      paint(true);
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    };
+  }
+
+  document.querySelectorAll("[data-scenario]").forEach(button => {
+    button.addEventListener("click", scenarioButton(button));
+  });
+
+  document.querySelectorAll("[data-jump]").forEach(button => {
+    button.addEventListener("click", () => {
+      document.getElementById("calculator").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  function applyPreset(rec) {
+    inputDeposit.value = String(rec.deposit);
+    inputAge.value = String(rec.age);
+    inputRate.value = String(rec.rate);
+    inputYears.value = String(rec.years);
+  }
+
+  presetSelect.addEventListener("change", () => {
+    if (presetSelect.value === "custom") return;
+    applyPreset(presetRec(presetSelect.value));
+    paint();
+  });
+
+  ["input", "change"].forEach(evt => {
+    inputDeposit.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputAge.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputRate.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+    inputYears.addEventListener(evt, () => { presetSelect.value = "custom"; paint(); });
+  });
+
+  $("ssy-form").addEventListener("submit", event => {
+    event.preventDefault();
+    if (paint(true)) pushHistory();
+  });
+
+  $("reset").addEventListener("click", () => {
+    const rec = presetRec(c.defaultPreset);
+    presetSelect.value = c.defaultPreset;
+    applyPreset(rec);
+    clearResult();
+    paint();
+  });
+
+  $("clear-history").addEventListener("click", () => {
+    history.length = 0;
+    renderHistory();
+  });
+
+  copyButton.addEventListener("click", async () => {
+    if (!summary) return;
+    copyBox.hidden = false;
+    copyBox.value = summary;
+    copyBox.select();
+    try {
+      await navigator.clipboard.writeText(summary);
+      status.textContent = "Copied.";
+    } catch (err) {
+      status.textContent = "Copy the text below.";
+    }
+  });
+
+  paint();
+}
+
+export function renderSsyCalculatorBody(p, others, css, clientSource) {
+  const e = escapeHTML;
+  const safeJSON = v => JSON.stringify(v).replace(/</g, "\\u003c");
+  const fmt2 = n => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 2 }).format(n);
+  const inr2 = n => "₹" + fmt2(n);
+
+  const config = { key: p.key, title: p.title, presets: p.presets, defaultPreset: p.defaultPreset, sampleDeposit: p.sampleDeposit, sampleAge: p.sampleAge, sampleRate: p.sampleRate, sampleYears: p.sampleYears };
+  const sample = ssyCompute(p.sampleDeposit, p.sampleAge, p.sampleRate, p.sampleYears);
+  const fiftySample = ssyCompute(50000, 0, 8.2, 15);
+  const partialSample = ssyCompute(150000, 0, 8.2, 10);
+
+  const presetSummary = pr => {
+    const r = ssyCompute(pr.deposit, pr.age, pr.rate, pr.years);
+    return `${inr2(pr.deposit)} a year · girl aged ${pr.age} → ${inr2(r.maturity)}`;
+  };
+  const presetOptions = p.presets.map(pr => `
+    <option value="${e(pr.id)}"${pr.id === p.defaultPreset ? " selected" : ""}>${e(pr.label)} — ${presetSummary(pr)}</option>
+  `).join("");
+
+  const storyPreview = st => {
+    const r = ssyCompute(st.deposit, st.age, st.rate, st.years);
+    return `${inr2(st.deposit)} a year · girl aged ${st.age} → maturity ${inr2(r.maturity)}`;
+  };
+
+  const rateRows = p.rateRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.rate)}</th>
+        <td>${e(row.applies)}</td>
+        <td>${e(row.example)}</td>
+      </tr>`).join("");
+
+  const growthRows = sample.growthRows.map(row => `
+      <tr>
+        <th scope="row">${e(row.label)}</th>
+        <td>${row.age}</td>
+        <td>${inr2(row.deposit)}</td>
+        <td>${inr2(row.interest)}</td>
+        <td>${inr2(row.closing)}</td>
+      </tr>`).join("");
+
+  return `<style>${css}${ageCss}${ppfCss}${fdCss}${rdCss}${hlCss}${grCss}${hraCss}${ciCss}${epfCss}${npsCss}${ssyCss}</style>
+  <div class="calc-page">
+    <div class="calc-hero">
+      <div class="calc-wrap">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>${e(p.title)}</span>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free SSY calculator</p>
+            <h1 class="calc-title">${e(p.title)}</h1>
+            <p class="calc-lead">${e(p.lead)}</p>
+
+            <div class="benefits">
+              <span>✓ Free to use</span>
+              <span>✓ No signup</span>
+              <span>✓ Browser calculation</span>
+            </div>
+
+            <div class="hero-links">
+              <a class="calc-btn calc-btn-primary" href="#calculator">
+                Calculate your SSY →
+              </a>
+              <a href="#method" class="calc-link">How SSY is calculated ↓</a>
+            </div>
+
+            <div class="facts">
+              <div>
+                <strong>${inr2(sample.maturity)} maturity value</strong>
+                <small>On ₹1,50,000 a year at 8.2%, girl aged 0, 15 deposit years</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.invested)} total invested</strong>
+                <small>₹1,50,000 a year for 15 years</small>
+              </div>
+              <div>
+                <strong>${inr2(sample.interest)} interest earned</strong>
+                <small>Entirely tax-free, over 21 years</small>
+              </div>
+            </div>
+
+            <p class="scope-note">
+              <strong>An estimate for planning — not financial, tax or legal advice.</strong>
+              ${e(p.notice)}
+            </p>
+          </div>
+
+          <section class="calculator" id="calculator" aria-labelledby="tool-heading">
+            <nav class="tool-switch" aria-label="Choose a calculator">
+              <a href="/wam-to-gpa-calculator/">WAM → GPA</a>
+              <a href="/gpa-to-wam-calculator/">GPA → WAM</a>
+              <a href="/ssc-age-calculator/">SSC Age</a>
+              <a href="/cgpa-to-percentage-calculator/">CGPA → %</a>
+              <a href="/age-calculator/">Age</a>
+              <a href="/upsc-age-calculator/">UPSC Age</a>
+              <a href="/ibps-age-calculator/">IBPS Age</a>
+              <a href="/rrb-age-calculator/">RRB Age</a>
+              <a href="/emi-calculator/">EMI</a>
+              <a href="/sip-calculator/">SIP</a>
+              <a href="/bmi-calculator/">BMI</a>
+              <a href="/percentage-calculator/">Percentage</a>
+              <a href="/gst-calculator/">GST</a>
+              <a href="/ppf-calculator/">PPF</a>
+              <a href="/fd-calculator/">FD</a>
+              <a href="/income-tax-calculator/">Income Tax</a>
+              <a href="/rd-calculator/">RD</a>
+              <a href="/home-loan-emi-calculator/">Home Loan EMI</a>
+              <a href="/gratuity-calculator/">Gratuity</a>
+              <a href="/hra-calculator/">HRA</a>
+              <a href="/compound-interest-calculator/">Compound Interest</a>
+              <a href="/epf-calculator/">EPF</a>
+              <a href="/nps-calculator/">NPS</a>
+              <a href="/ssy-calculator/" aria-current="page">SSY</a>
+            </nav>
+
+            <div class="tool-title">
+              <h2 id="tool-heading">Calculate your SSY</h2>
+              <span class="calc-pill" id="ssy-pill">${e(p.presets[0].label)}</span>
+            </div>
+
+            <p class="calc-small">Example figures are filled in. Replace them with your own numbers.</p>
+
+            <form id="ssy-form" novalidate>
+              <label class="field-label" for="preset">
+                Starting point
+                <span>Pick one to fill in a real-life example, then edit any figure</span>
+              </label>
+
+              <select class="select-input" id="preset">
+                ${presetOptions}
+                <option value="custom">Custom figures</option>
+              </select>
+
+              <label class="field-label" for="input-deposit">
+                Yearly deposit (₹)
+                <span>What you pay in each year for the first 15 years — from ₹250 to ₹1,50,000, in multiples of ₹50</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-deposit"
+                type="number"
+                value="${p.sampleDeposit}"
+                step="50"
+                inputmode="numeric"
+                aria-describedby="input-deposit-error"
+              >
+              <p class="calc-error" id="input-deposit-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-age">
+                Girl's age when the account opens
+                <span>A whole number, from 0 to 10 — the account can only be opened before she turns 10</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-age"
+                type="number"
+                value="${p.sampleAge}"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="input-age-error"
+              >
+              <p class="calc-error" id="input-age-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-rate">
+                Interest rate (% a year)
+                <span>The notified SSY rate, from 0% to 15% — 8.2% is the rate for October to December 2026. The rate is reviewed every quarter, so try a lower one too</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-rate"
+                type="number"
+                value="${p.sampleRate}"
+                step="0.1"
+                inputmode="decimal"
+                aria-describedby="input-rate-error"
+              >
+              <p class="calc-error" id="input-rate-error" aria-live="polite"></p>
+
+              <label class="field-label" for="input-years">
+                Deposit years
+                <span>A whole number, from 1 to 15 — 15 is the scheme rule. Set fewer only to model stopping early</span>
+              </label>
+
+              <input
+                class="number-input"
+                id="input-years"
+                type="number"
+                value="${p.sampleYears}"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="input-years-error"
+              >
+              <p class="calc-error" id="input-years-error" aria-live="polite"></p>
+
+              <div class="actions" style="margin-top:18px">
+                <button class="calc-btn calc-btn-primary" type="submit">
+                  Calculate →
+                </button>
+                <button class="calc-btn" id="reset" type="button">Reset</button>
+              </div>
+
+              <noscript>
+                <p class="calc-error">
+                  Enable JavaScript to calculate. The worked examples and the method below remain available.
+                </p>
+              </noscript>
+            </form>
+
+            <section
+              class="result"
+              id="result"
+              tabindex="-1"
+              aria-labelledby="result-heading"
+            >
+              <div class="result-tag">
+                <span>YOUR ANSWER</span>
+                <span>WORKING SHOWN BELOW</span>
+              </div>
+
+              <div aria-live="polite" aria-atomic="true">
+                <h3 id="result-heading">Your answer</h3>
+
+                <div class="result-value">
+                  <output id="answer" for="input-deposit">${inr2(sample.maturity)}</output>
+                </div>
+              </div>
+
+              <div class="age-breakdown">
+                <div>
+                  <strong id="box1-val">${inr2(sample.maturity)}</strong>
+                  <small id="box1-label">MATURITY VALUE</small>
+                </div>
+                <div>
+                  <strong id="box2-val">${inr2(sample.invested)}</strong>
+                  <small id="box2-label">TOTAL INVESTED</small>
+                </div>
+                <div>
+                  <strong id="box3-val">${inr2(sample.interest)}</strong>
+                  <small id="box3-label">TOTAL INTEREST</small>
+                </div>
+              </div>
+
+              <div class="verdict verdict-ok" id="glance-box">
+                <strong id="glance-title">Your answer at a glance</strong>
+                <span id="glance-text">₹1,50,000 a year · 8.2% · girl aged 0, 15 deposit years → maturity ${inr2(sample.maturity)} (invested ${inr2(sample.invested)}; interest ${inr2(sample.interest)}).</span>
+              </div>
+
+              <p class="working" id="working">
+                ₹1,50,000 a year, 8.2%, girl aged 0, 15 deposit years: your SSY account matures at ${inr2(sample.maturity)} — ${inr2(sample.interest)} of interest on ${inr2(sample.invested)} invested.
+              </p>
+              <p class="working" id="working-2">Matures in ${sample.maturityYear} · she turns ${sample.ageAtMaturity} · 15 deposit years, then 6 years of interest only.</p>
+              <p class="working" id="working-note">Deposits at the start of each year · rate held steady at 8.2% for all 21 years.</p>
+
+              <p class="calc-small" style="color:#c8dce6;margin-top:14px">
+                The figure is an estimate at the rate you
+                enter, held steady for 21 years. The SSY rate is
+                notified every quarter and can change, and the
+                interest and maturity are entirely tax-free.
+              </p>
+
+              <div class="result-actions">
+                <button class="calc-btn copy-btn" type="button" id="copy-result">
+                  Copy result
+                </button>
+                <span class="calc-status" id="copy-status" role="status"></span>
+              </div>
+
+              <textarea
+                class="copy-box"
+                id="copy-text"
+                aria-label="Summary for manual copying"
+                readonly
+                hidden
+              ></textarea>
+            </section>
+
+            <div class="history">
+              <div class="history-head">
+                <span>Recent checks · this session</span>
+                <button class="quiet" type="button" id="clear-history" disabled>
+                  Clear history
+                </button>
+              </div>
+
+              <p class="calc-small" id="history-empty">
+                Select Calculate to keep up to five checks while this page is open.
+              </p>
+
+              <div class="history-list" id="history-list"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="calc-section" id="growth">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Year by year</p>
+          <h2>How the balance grows</h2>
+          <p id="growth-note">The balance grows year by year — deposits stop after year 15, but the interest column keeps growing to year 21.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="growth-note">
+            <caption>Year-by-year growth on the sample figures: ₹1,50,000 a year, 8.2%, girl aged 0, 15 deposit years.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Girl's age</th>
+                <th scope="col">Deposit</th>
+                <th scope="col">Interest</th>
+                <th scope="col">Closing balance</th>
+              </tr>
+            </thead>
+            <tbody id="growth-body">
+              ${growthRows}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <nav class="jump" aria-label="On this page">
+      <div class="calc-wrap jump-row">
+        <a href="#overview">Overview</a>
+        <a href="#steps">How to use</a>
+        <a href="#method">Formula</a>
+        <a href="#examples">Examples</a>
+        <a href="#growth">Growth</a>
+        <a href="#rates-table">Rules</a>
+        <a href="#mistakes">Mistakes</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </nav>
+
+    <section class="calc-section" id="overview">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Understand the result</p>
+          <h2>${e(p.overviewTitle)}</h2>
+          <p>${e(p.overview)}</p>
+        </div>
+
+        <div class="grid3">
+          <article class="card">
+            <span class="number-label">01 / FIFTEEN YEARS IN, SIX YEARS FREE</span>
+            <h3>Deposits stop at 15 — the balance does not</h3>
+            <p>You deposit for 15 years and the balance compounds for 21. On the maximum deposit the last six years, with no new money, add ₹27,06,130 — more than everything you paid in.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / THE HIGHEST SMALL-SAVINGS RATE</span>
+            <h3>8.2% beats PPF's 7.1% by ₹10,42,519</h3>
+            <p>On ₹1,50,000 a year for 15 years, SSY at 8.2% builds ₹71,82,119 and PPF at 7.1% builds ₹61,39,600 on the same deposits. Both are fully tax-free — the gap is the rate alone.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / TAX-FREE AT EVERY STAGE</span>
+            <h3>EEE — deposit, interest and maturity</h3>
+            <p>Deposits up to ₹1,50,000 a year are deductible under Section 80C — up to ₹46,800 a year back at the 30% slab plus cess — and the ₹49,32,119 of interest on the maximum deposit is entirely tax-free, as is the maturity amount.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="steps">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From your yearly deposit to a maturity value</h2>
+          <p>
+            Enter your yearly deposit first — the
+            other figures are already filled in with the usual
+            example — then read the maturity value, the invested
+            total and the interest.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.steps.map(([title, body], i) => `
+            <article class="step">
+              <span class="step-index">0${i + 1}</span>
+              <h3>${e(title)}</h3>
+              <p>${e(body)}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="method">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">The calculation, explained</p>
+          <h2>How SSY is calculated</h2>
+          <p>${e(p.modelNote)}</p>
+        </div>
+
+        <div class="formula-banner">
+          <small>The SSY formula</small>
+          Each year's deposit is paid at the start of the year · the balance earns rate ÷ 100 a year · deposits for 15 years, then 6 years of interest only · maturity = balance at year 21
+        </div>
+
+        <div class="grid3">
+          <div class="math-step">
+            1. ₹1,50,000 a year, 8.2%, 15 years
+            <strong>${fmt2(sample.maturity)} maturity · ${fmt2(sample.interest)} interest</strong>
+            <span>In the first year you deposit ₹1,50,000 and the balance reaches ₹1,62,300. After 15 years you have paid ₹22,50,000 and the balance is ₹44,75,989. Six more years of interest with no new deposits take it to ₹71,82,119.</span>
+          </div>
+
+          <div class="math-step">
+            2. ₹50,000 a year, 8.2%, 15 years
+            <strong>${fmt2(fiftySample.maturity)} maturity · ${fmt2(fiftySample.interest)} interest</strong>
+            <span>₹50,000 a year for 15 years at 8.2%. You invest ₹7,50,000 and the account matures at ₹23,94,040 — the figure ClearTax publishes for the same inputs, under the correct 15-year deposit rule.</span>
+          </div>
+
+          <div class="math-step">
+            3. ₹1,50,000 a year for 10 years only
+            <strong>${fmt2(partialSample.maturity)} maturity · ${fmt2(partialSample.interest)} interest</strong>
+            <span>Deposit for 10 years instead of 15 and stop: you invest ₹15,00,000, the balance is ₹23,73,618 at year 10, and 11 more years of compounding take it to ₹56,48,207 — ₹15,33,912 less than depositing for the full 15 years.</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>${e(p.calloutTitle)}</strong>
+          ${e(p.calloutNote)}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="examples">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Worked examples</p>
+          <h2>Five cases, five maturity values</h2>
+          <p>
+            One example for each everyday case, including one
+            starting at age 5, one at a smaller deposit and one
+            at the minimum. Select any example to load it
+            into the calculator and check the working for yourself.
+          </p>
+        </div>
+
+        <div class="grid4">
+          ${p.stories.map(story => {
+            return `
+            <article class="card">
+              <span class="number-label">${fmt2(story.deposit)} A YEAR · GIRL AGED ${story.age}</span>
+              <h3>${e(story.title)}</h3>
+              <p>${e(story.body)}</p>
+              <p class="result-preview">
+                ${e(storyPreview(story))}
+              </p>
+              <button class="calc-btn" type="button" data-scenario${story.preset ? ` data-preset="${e(story.preset)}"` : ""} data-deposit="${story.deposit}" data-age="${story.age}" data-rate="${story.rate}" data-years="${story.years}">Try these figures</button>
+            </article>`;
+          }).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="rates-table">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">${e(p.rateTableTitle)}</p>
+          <h2>SSY rules at a glance</h2>
+          <p>${e(p.rateTableNote)}</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table" aria-describedby="rates-note">
+            <caption>The current SSY rate, the deposit limits, who can open an account, the 15-year deposit period, maturity at 21 years, the education withdrawal, early closure and the tax treatment.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Figure</th>
+                <th scope="col">Rule</th>
+                <th scope="col">What it means</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rateRows}
+            </tbody>
+          </table>
+          <p class="calc-small" id="rates-note">${e(p.rateTableConclusion)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="mistakes">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Common mistakes</p>
+          <h2>Four ways to get SSY wrong</h2>
+          <p>
+            The scheme rewards patience and punishes missed
+            years. Each of these can cost lakhs.
+          </p>
+        </div>
+
+        <div class="grid4">
+          <article class="card">
+            <span class="number-label">01 / COUNTING 15 YEARS AS MATURITY</span>
+            <h3>Stopping the clock at 15 years</h3>
+            <p>Deposits stop at 15 years, but maturity is at 21. At year 15 the balance on the maximum deposit is ₹44,75,989 — the last six years add ₹27,06,130 with no new money. Anyone who treats 15 years as the finish line understates the account by more than a third.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">02 / DEPOSITING LATE IN THE YEAR</span>
+            <h3>Missing the 5th-of-the-month rule</h3>
+            <p>Post office interest is worked out on the lowest balance between the 5th and the last day of each month. A deposit made after the 5th earns nothing for that month, and a deposit made late in the financial year misses months of interest. Deposit early in the year, and before the 5th of the month.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">03 / TRUSTING 8.2% FOR 21 YEARS</span>
+            <h3>Assuming the rate will never move</h3>
+            <p>The rate is notified every quarter and can change. At 7.5% instead of 8.2%, the maximum deposit builds ₹64,99,748 instead of ₹71,82,119 — ₹6,82,371 less. Try a lower rate to see a safer estimate.</p>
+          </article>
+
+          <article class="card">
+            <span class="number-label">04 / MISSING THE ₹250 MINIMUM</span>
+            <h3>Letting the account go into default</h3>
+            <p>Miss the ₹250 minimum in a year and the account is in default: ₹50 for each defaulted year plus the ₹250 minimum to revive it, and only within the 15-year window. An unrevived balance earns the post office savings-account rate, about 4%, instead of 8.2%.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section" id="faq">
+      <div class="calc-wrap">
+        <div class="section-head">
+          <p class="eyebrow">Your questions, answered</p>
+          <h2>SSY calculator FAQs</h2>
+        </div>
+
+        <div class="faq-list">
+          ${p.faq.map(([q, a]) => `
+          <details class="calc-faq">
+            <summary>${e(q)}</summary>
+            <p>${e(a)}</p>
+          </details>
+          `).join("")}
+        </div>
+      </div>
+    </section>
+
+    <section class="calc-section soft" id="methodology">
+      <div class="calc-wrap">
+        <div class="method-box">
+          <h2>About the method</h2>
+          <p>
+            This page uses the standard SSY-calculator method:
+            every year your deposit is paid at the start of the
+            year and the whole balance earns one year of
+            interest at the rate you enter. Deposits run for
+            the deposit years you enter — 15 under the scheme —
+            and then the balance keeps compounding for the
+            remaining years until year 21, with no new
+            deposits. Balances are carried at full precision
+            and each figure is rounded to the nearest rupee, so
+            a row's interest can differ by a rupee from the
+            interest worked out on the rounded balances. The
+            rate is user-entered and treated as a steady
+            assumption — never as a live quote or a promise
+            for 21 years.
+          </p>
+          <p>
+            Figures checked 12 November 2026: the 8.2% rate
+            for 1 October to 31 December 2026 is in the
+            Ministry of Finance (Department of Economic
+            Affairs) Office Memorandum F.No.1/4/2019-NS,
+            dated 30 September 2026, keeping small savings
+            rates unchanged for the third quarter of FY
+            2026-27 — see the
+            <a href="https://www.nsiindia.gov.in/" rel="nofollow noopener" target="_blank">National Savings Institute</a>.
+            The deposit limits, the 15-year deposit period,
+            maturity at 21 years, the 50% education
+            withdrawal, early closure and the default rules
+            are in the Sukanya Samriddhi Account Scheme, 2019
+            (G.S.R. 914(E), 12 December 2019) — see
+            <a href="https://www.indiapost.gov.in/" rel="nofollow noopener" target="_blank">India Post</a>.
+            The tax treatment — deposits deductible under
+            Section 80C, interest and maturity exempt under
+            Section 10(11A) — is in the Income-tax Act, 1961
+            — see
+            <a href="https://www.incometax.gov.in/" rel="nofollow noopener" target="_blank">the Income Tax Department</a>.
+            The worked examples reproduce the ranking SSY
+            calculators' published figures: ₹1,50,000 a year
+            for 15 years at 8.2% gives ₹71,82,119 on
+            <a href="https://www.calcmint.co.in/calculators/sukanya-samriddhi-yojana-calculator" rel="nofollow noopener" target="_blank">calcmint.co.in</a>
+            and on
+            <a href="https://desiutils.in/tools/ssy-calculator" rel="nofollow noopener" target="_blank">desiutils.in</a>,
+            and ₹50,000 a year gives ₹23,94,040 on
+            <a href="https://cleartax.in/s/sukanya-samriddhi-yojana-ssy-calculator" rel="nofollow noopener" target="_blank">cleartax.in</a>
+            — whose figure matches the correct 15-year deposit
+            rule, although its text wrongly says deposits run
+            for 21 years. One honest limit: this calculator
+            assumes each year's deposit is made at the start
+            of the year, but a real account earns interest on
+            the lowest balance between the 5th and the last
+            day of each month, so deposits made later in the
+            year earn slightly less. For a guaranteed-return
+            comparison, use the PPF calculator; for a monthly
+            deposit without a maturity lock-in, the RD
+            calculator; for the tax on your deposits, the
+            income-tax calculator; for a market-linked
+            retirement corpus, the NPS calculator.
           </p>
         </div>
       </div>

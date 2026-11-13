@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, renderUpscAgeCalculatorBody, renderIbpsAgeCalculatorBody, renderRrbAgeCalculatorBody, renderEmiCalculatorBody, renderSipCalculatorBody, renderBmiCalculatorBody, renderPctCalculatorBody, renderGstCalculatorBody, renderPpfCalculatorBody, renderFdCalculatorBody, renderTaxCalculatorBody, renderRdCalculatorBody, renderHlCalculatorBody, renderGrCalculatorBody, renderHraCalculatorBody, renderCiCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient, upscClient, ibpsClient, rrbClient, emiClient, sipClient, bmiClient, pctClient, gstClient, ppfClient, fdClient, taxClient, rdClient, hlClient, grClient, hraClient, ciClient } from "./calculators.mjs";
+import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, renderUpscAgeCalculatorBody, renderIbpsAgeCalculatorBody, renderRrbAgeCalculatorBody, renderEmiCalculatorBody, renderSipCalculatorBody, renderBmiCalculatorBody, renderPctCalculatorBody, renderGstCalculatorBody, renderPpfCalculatorBody, renderFdCalculatorBody, renderTaxCalculatorBody, renderRdCalculatorBody, renderHlCalculatorBody, renderGrCalculatorBody, renderHraCalculatorBody, renderCiCalculatorBody, renderEpfCalculatorBody, renderNpsCalculatorBody, renderSsyCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient, upscClient, ibpsClient, rrbClient, emiClient, sipClient, bmiClient, pctClient, gstClient, ppfClient, fdClient, taxClient, rdClient, hlClient, grClient, hraClient, ciClient, epfClient, npsClient, ssyClient } from "./calculators.mjs";
 import {
   polls as bbPolls,
   contestants as bbContestants,
@@ -518,6 +518,9 @@ function renderFooter() {
         <li><a href="/gratuity-calculator/">Gratuity Calculator</a></li>
         <li><a href="/hra-calculator/">HRA Calculator</a></li>
         <li><a href="/compound-interest-calculator/">Compound Interest Calculator</a></li>
+        <li><a href="/epf-calculator/">EPF Calculator</a></li>
+        <li><a href="/nps-calculator/">NPS Calculator</a></li>
+        <li><a href="/ssy-calculator/">SSY Calculator</a></li>
         <li><a href="/search/">Search All Guides</a></li>
         <li><a href="/assets/bb20-new/image-credits.html">Image Credits</a></li>
         <li><a href="mailto:visitbest10@gmail.com">visitbest10@gmail.com</a></li>
@@ -980,6 +983,12 @@ for (let i = 0; i < calculatorPages.length; i++) {
                 ? renderHraCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, hraClient.toString())
               : item.kind === "ci"
                 ? renderCiCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, ciClient.toString())
+              : item.kind === "epf"
+                ? renderEpfCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, epfClient.toString())
+              : item.kind === "nps"
+                ? renderNpsCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, npsClient.toString())
+              : item.kind === "ssy"
+                ? renderSsyCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, ssyClient.toString())
               : renderCalculatorBody(item, calculatorPages[1 - i], calculatorCss, calculatorClient.toString());
   const html = renderPage({
     title: `${item.title} - VisitBest`,
