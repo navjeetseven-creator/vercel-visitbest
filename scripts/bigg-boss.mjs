@@ -50,7 +50,7 @@ export const contestants = [
     "bio": "Tanmay Singh (born 30 July 1996), universally known as Scout or ScoutOP, is one of the pioneers of Indian esports — a former professional BGMI/PUBG Mobile player turned one of the country's biggest gaming creators. In the house he has played tactically and spoken bluntly, captained the house in Week 7, and clashed repeatedly with Qazi Touqeer, including in the 23 October captaincy task.",
     "longBio": "Scout's personal life has become the season's biggest outside-the-house storyline. He has said in the house that he has been in a relationship for around five years with gaming creator Kaashvi Hiranandani, known as KaashPlays (born 28 April 1997, Mumbai, age 29 — a streamer who moved from a finance career into gaming and was named Female Streamer of the Year at the Indian Gaming Awards 2022). Scout has discussed a difficult past relationship and spoken of marriage plans, saying Kaashvi wants to be financially independent first. That is now colliding with his on-screen bond with Love Gill, which both describe as a brother-sister bond but which guest host Rohit Shetty questioned in Weekend Ka Vaar promos, and with Kaashvi's 25 October Weekend Ka Vaar appearance, in which she told him to 'cut Love out', said she felt disgusted, and alleged Love had trapped him (Times Now; Times of India, 25 October). In Episode 51 (26 October), Scout acknowledged Kaashvi had raised valid concerns about his behaviour, while Love confronted him over his silence, telling him he had spoiled her career (Times Now; Times of India, 26 October).",
     "trend": "In house · Captain in Week 7, succeeded by Mahhi Vij · Nominated for the rest of the season (Ep 68)",
-    "highlight": "Week 7 captain whose game, his bond with Love Gill, and his relationship with girlfriend Kaashvi (KaashPlays) all collide on Weekend Ka Vaar — now nominated for the rest of the season after Bigg Boss's Episode 68 punishments."
+    "highlight": "Week 7 captain whose game, his bond with Love Gill, and his relationship with girlfriend Kaashvi (KaashPlays) all collide on Weekend Ka Vaar — now nominated for the rest of the season after Bigg Boss's Episode 68 punishments. In Episode 69 (13 November) he shaved his head on air after a clash with Love Gill — he says he trimmed too much by accident; Amrapali and Kanika questioned whether it was deliberate."
   },
   {
     "id": "mary-kom",
@@ -365,7 +365,7 @@ export const polls = [
     h1: "Who Will Be Evicted in Week 10? (Eviction Prediction — Open Poll)",
     lead: "A different question from the support poll: not who you back, but who you think is going home at this week's Weekend Ka Vaar. This Open Poll records reader expectation only — it is not a VisitBest forecast, it carries no insider information, and it does not decide evictions.",
     heroBadge: "🔮 EVICTION PREDICTION · WEEK 10 · OPEN POLL",
-    leaderNote: "The prediction poll opened on 11 November 2026. After the Week 10 eviction is confirmed on air, the readers' most-predicted name is recorded against the actual result in the scorecard on the voting hub. [VisitBest Open Poll — audience sentiment only.]",
+    leaderNote: "The prediction poll opened on 11 November 2026. The Week 10 result is confirmed on air — no eviction — and the readers' most-predicted name is recorded against it in the scorecard on the voting hub. [VisitBest Open Poll — audience sentiment only.]",
     pollType: "prediction",
     optionIds: ["gullu", "qazi-touqeer", "yung-dsa", "kanika-mann", "love-gill", "scout", "amrapali-dubey", "mahhi-vij", "uditi-singh", "manish-goel"],
     voteDistribution: {
@@ -382,7 +382,7 @@ export const polls = [
     },
     dangerIds: [],
     embedEyebrow: "Eviction Prediction · Week 10",
-    embedIntro: "Not who you support — who you think is going home. Pick the nominee you expect to be evicted at this week's Weekend Ka Vaar. This records reader expectation only: it is not a VisitBest forecast, it carries no insider information, and it does not decide evictions. After the eviction is confirmed on air, the outcome is entered in the scorecard below.",
+    embedIntro: "Not who you support — who you think is going home. Pick the nominee you expect to be evicted at this week's Weekend Ka Vaar. This records reader expectation only: it is not a VisitBest forecast, it carries no insider information, and it does not decide evictions. The Week 10 outcome is confirmed on air — no eviction — and is entered in the scorecard below.",
     buttonLabel: "PREDICT IN OPEN POLL",
     buttonIcon: "🔮",
     metaDesc: "Bigg Boss 20 Week 10 eviction prediction Open Poll: who do readers think will be evicted at Weekend Ka Vaar? A VisitBest audience-expectation poll — not a forecast and not official voting; official voting is only via JioCinema / JioHotstar as announced on air.",
@@ -760,7 +760,7 @@ export const polls = [
     h1: "Who Is the Current Captain of Bigg Boss 20?",
     lead: "Arishfa Khan is the last confirmed captain — she took the captaincy in Week 10 after a unanimous housemate vote in Episode 61. Her captaincy ended in Episode 67 (11 November 2026), when Bigg Boss removed her as captain and announced a new captaincy task; that task was called off in Episode 68 (12 November) after the Scout–Yung clash, and the next captain is yet to be decided. This is a living page — it is refreshed when a new captain is confirmed on air. Below: the quick answer, every captain this season, what the captain gets, and what happens next.",
     heroBadge: "👑 CAPTAIN OF THE HOUSE · LIVING PAGE",
-    leaderNote: "Living page — updated when a new captain is confirmed on air. The next captain is yet to be decided (12 November 2026).",
+    leaderNote: "Living page — updated when a new captain is confirmed on air. The next captain is yet to be decided (13 November 2026).",
     pollType: "captain-page",
     voteDistribution: {},
     dangerIds: [],
@@ -1063,11 +1063,12 @@ function renderNominationCallout() {
       <span class="bb-nom-names">Gullu (Kushal Tanwar) • Qazi Touqeer • Yung DSA • Kanika Mann • Love Gill • ScoutOP • Aamrapali Dubey • Mahhi Vij • Uditi Singh • Manish Goel</span>
     </p>
     <div class="bb-nom-safe-bar">
-      <span class="bb-safe-indicator">🟢 <strong>No captain this week:</strong> Arishfa Khan was removed as captain in Episode 67 (11 November 2026); the new-captain task was called off in Episode 68 (12 November) after Scout pushed Yung DSA, and no successor has been named. She was not nominated this week, so she is safe from the Week 10 eviction.</span>
-      <span class="bb-evicted-indicator">❌ <strong>Evicted:</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4), Aman Gandhi (Week 6), Mary Kom (Week 7), Aasif Khan (Week 8) · <strong>Removed:</strong> Nakul Dhull (wild card, Week 6) · <strong>Week 9:</strong> no eviction (Diwali week)</span>
+      <span class="bb-safe-indicator">🟢 <strong>No captain this week:</strong> Arishfa Khan was removed as captain in Episode 67 (11 November 2026); the new-captain task was called off in Episode 68 (12 November) after Scout pushed Yung DSA, and no successor has been named. She was not nominated in Week 10, and no eviction took place that week.</span>
+      <span class="bb-evicted-indicator">❌ <strong>Evicted:</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4), Aman Gandhi (Week 6), Mary Kom (Week 7), Aasif Khan (Week 8) · <strong>Removed:</strong> Nakul Dhull (wild card, Week 6) · <strong>Week 9:</strong> no eviction (Diwali week) · <strong>Week 10:</strong> no eviction (Mahhi Vij lost a lifeline)</span>
     </div>
+    <p class="bb-nom-list-text"><strong>Week 11 nominations — reported, not yet aired:</strong> reports from 15 November say the Sharbat Nomination Task left Uditi Singh as the only housemate to escape nomination, with all other ten housemates nominated. The task has not been shown on air yet — it airs in Episode 72 tonight (16 November) — so this stays reported until it is confirmed on air.</p>
     <p class="bb-nom-list-text"><strong>Open Poll — for audience sentiment only.</strong> Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
-    <p class="bb-nom-list-text">Last updated: 12 November 2026.</p>
+    <p class="bb-nom-list-text">Last updated: 16 November 2026.</p>
   </div>`;
 }
 
@@ -1085,7 +1086,7 @@ export const eliminationArchive = [
   { week: 7, evicted: "MC Mary Kom", note: "Announced on Weekend Ka Vaar by guest host Rohit Shetty." },
   { week: 8, evicted: "Aasif Khan", note: "Eviction confirmed on Weekend Ka Vaar (Episode 57)." },
   { week: 9, evicted: "No eviction", note: "Diwali week — the eviction was deferred and no housemate left the house." },
-  { week: 10, evicted: "—", note: "The whole house is nominated except Arishfa Khan (not nominated this week). Arishfa was removed as captain in Episode 67 (11 November 2026); the new-captain task was called off in Episode 68 (12 November) after Scout pushed Yung DSA, and no successor has been named. In Episode 68 Bigg Boss also announced punishments for Scout: nominated for the rest of the season and barred from captaincy. The eviction takes place at the coming Weekend Ka Vaar." },
+  { week: 10, evicted: "No eviction", note: "The whole house is nominated except Arishfa Khan (not nominated this week). Arishfa was removed as captain in Episode 67 (11 November 2026); the new-captain task was called off in Episode 68 (12 November) after Scout pushed Yung DSA, and no successor has been named. In Episode 68 Bigg Boss also announced punishments for Scout: nominated for the rest of the season and barred from captaincy. In Episode 69 (13 November) Scout shaved his head on air after a clash with Love Gill, and he and Yung DSA cleared the air; still no new captain was named. Reports from the Weekend Ka Vaar shoot on 14 November conflict: Siasat and Film Window first reported Manish Goel evicted after receiving the fewest votes, with a possible second eviction unnamed, while a later Film Window report says Manish stays in the house and Mahhi Vij received the fewest votes, losing one of her two lifelines. Sunday's episode (Episode 71, 15 November) aired and settled it: Salman Khan announced that no contestant would be evicted this week. Mahhi Vij received the fewest votes but survived on her extra lifeline, leaving her with one lifeline; Manish Goel stays in the house. The pre-air reports that Manish Goel had been evicted were contradicted by the aired episode." },
 ];
 
 export const nominationArchive = [
@@ -1208,7 +1209,7 @@ function renderEmbeddedPoll(poll) {
 }
 
 // Dated trend snapshot — the cumulative Open Poll standings recorded on
-// 12 November 2026, computed from this file's own Open Poll data only.
+// 16 November 2026, computed from this file's own Open Poll data only.
 function renderTrendSnapshot() {
   const mainPoll = pollBySlug.get("bigg-boss-20-voting");
   const { list } = getPollStats(mainPoll);
@@ -1217,8 +1218,8 @@ function renderTrendSnapshot() {
     <div class="bb-section-head">
       <div>
         <p class="eyebrow">Open Poll Trend Snapshot</p>
-        <h2>Open Poll Trend Snapshot — 12 November 2026</h2>
-        <p>Where the VisitBest Open Poll's cumulative audience sentiment stood when this hub was updated on 12 November 2026. Figures are VisitBest Open Poll votes only — they are not official Bigg Boss votes and do not decide evictions. The snapshot is refreshed each time this hub is updated.</p>
+        <h2>Open Poll Trend Snapshot — 16 November 2026</h2>
+        <p>Where the VisitBest Open Poll's cumulative audience sentiment stood when this hub was updated on 16 November 2026. Figures are VisitBest Open Poll votes only — they are not official Bigg Boss votes and do not decide evictions. The snapshot is refreshed each time this hub is updated.</p>
         ${HUB_DISCLAIMER_BOX}
       </div>
     </div>
@@ -1295,7 +1296,7 @@ function renderPredictionScorecard() {
       <div>
         <p class="eyebrow">Prediction Scorecard</p>
         <h2>Eviction Prediction Scorecard — Readers vs Results</h2>
-        <p>The eviction-prediction Open Poll starts in Week 10. After each Weekend Ka Vaar, this table records the readers' most-predicted evictee against the housemate who actually left — a row is filled in only once an eviction is confirmed on air.</p>
+        <p>The eviction-prediction Open Poll starts in Week 10. After each Weekend Ka Vaar, this table records the readers' most-predicted evictee against the housemate who actually left — a row is filled in only once the week's result is confirmed on air.</p>
         ${HUB_DISCLAIMER_BOX}
       </div>
     </div>
@@ -1305,7 +1306,7 @@ function renderPredictionScorecard() {
           <tr><th>Week</th><th>Readers' most-predicted evictee (VisitBest Open Poll)</th><th>Actually evicted (confirmed on air)</th><th>Result</th></tr>
         </thead>
         <tbody>
-          <tr><td>Week 10</td><td>Prediction poll open — the most-predicted name is recorded when the poll closes at Weekend Ka Vaar</td><td>To be confirmed on air</td><td>Pending</td></tr>
+          <tr><td>Week 10</td><td>Uditi Singh — most-predicted in the VisitBest Open Poll when it closed at Weekend Ka Vaar</td><td>No eviction — confirmed on air (Episode 71, 15 November 2026)</td><td>No eviction, so no prediction scored</td></tr>
         </tbody>
       </table>
     </div>
@@ -1769,7 +1770,7 @@ function renderYungScoutSections() {
       <li>Gullu and Yung kept interrupting and commenting, and abuses were exchanged.</li>
       <li>Scout pushed Yung. Yung's response: "Ab dosti khatam" — the friendship is over.</li>
       <li>Bigg Boss stopped the task and separated them — Scout to the bedroom area, Yung to the garden.</li>
-      <li>Scout later apologised. Reports differ on whether Yung accepted the apology, so that point stays open rather than settled either way here.</li>
+      <li>Scout later apologised — and in Episode 69 (13 November) the two cleared the air on air: Scout opened up to Yung, who consoled him and helped trim the back of his head after Scout shaved it.</li>
     </ul>`
     )
   );
@@ -2030,7 +2031,7 @@ export function renderBiggBossCaptainPage(poll) {
       "Arishfa Khan — the last confirmed captain",
       `${renderStoryPhoto(arishfa.image, "Arishfa Khan, captain of Bigg Boss 20 in Week 10", "Arishfa Khan — the last confirmed captain of the house (Week 10).")}
     <p><strong>Arishfa Khan is the last confirmed captain of Bigg Boss 20 (Week 10).</strong> She became captain after a unanimous housemate vote in Episode 61 — the earlier 2X Room captaincy vote had only been reported before that confirmation. As captain she was immune in Week 10 while all 10 other housemates were nominated.</p>
-    <p>Her captaincy ended in Episode 67 (aired 11 November 2026), when Bigg Boss removed her as captain after housemates broke several rules and announced a new captaincy task in the same episode; that task was called off in Episode 68 (12 November). <strong>The next captain is yet to be decided</strong> — no successor has been named as of 12 November 2026. This page is a living page: it is refreshed when a new captain is confirmed on air.</p>`
+    <p>Her captaincy ended in Episode 67 (aired 11 November 2026), when Bigg Boss removed her as captain after housemates broke several rules and announced a new captaincy task in the same episode; that task was called off in Episode 68 (12 November). <strong>The next captain is yet to be decided</strong> — no successor has been named as of 13 November 2026: Episode 69 (13 November) named none either. This page is a living page: it is refreshed when a new captain is confirmed on air.</p>`
     )}
 
     <section class="bb-leaderboard-section">
