@@ -766,6 +766,82 @@ export const polls = [
     dangerIds: [],
     metaDesc: "Who is the current captain of Bigg Boss 20? Arishfa Khan is the last confirmed captain (Week 10); a new captaincy task was announced in Episode 67, called off in Episode 68, and the next captain is yet to be decided. Captain history, what the captain gets, and the transition — updated when a new captain is confirmed on air.",
   },
+  {
+    slug: "bigg-boss-20-weekend-ka-vaar-episodes-70-71",
+    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    title: "Bigg Boss 20 Weekend Ka Vaar (Episodes 70–71): No Eviction, Mahhi Vij Loses a Lifeline — Full Highlights & Open Poll",
+    h1: "Weekend Ka Vaar, Episodes 70–71: No Eviction — Mahhi Vij Saved by Her Lifeline (Open Poll)",
+    lead: "Two nights, and one result the whole house waited for: nobody went home. At the Weekend Ka Vaar of 14–15 November 2026 (Episodes 70 and 71), Salman Khan announced that Week 10 would end without an eviction — Mahhi Vij received the fewest votes but survived on her extra lifeline, and Manish Goel stays in the house, so the pre-air reports of his eviction were wrong. Across the weekend Salman also grilled Scout over the Yung DSA push and the head-shave, schooled Kanika Mann on both days, questioned Love Gill's game, and ran the patang task. Here is the whole weekend, day by day — then vote in the Open Poll on its biggest talking point. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
+    heroBadge: "📺 WEEKEND KA VAAR · EPISODES 70–71 · OPEN POLL",
+    leaderNote: "This Open Poll opened on 16 November 2026 — standings update as readers vote in this poll. The weekend it asks about aired on 14–15 November 2026 (Episodes 70 and 71). [VisitBest Open Poll votes — not official votes.]",
+    pollType: "sentiment",
+    question: "What was the biggest talking point of this Weekend Ka Vaar?",
+    textOptions: [
+      { id: "no-eviction-lifeline", label: "The no-eviction twist", sub: "Mahhi Vij finished last in the vote but stayed by giving up her extra lifeline." },
+      { id: "salman-scout-love", label: "Salman's Scout–Love verdict", sub: "The host told Scout he does not treat Love as 'just another contestant' — and advised him to play his own game." },
+      { id: "kanika-schooling", label: "Kanika Mann's two-day schooling", sub: "Salman called out her double standards on Saturday and her 'oversmart' defence on Sunday." },
+      { id: "patang-task", label: "The patang task call-outs", sub: "Housemates named who they think is flying too high — Kanika was named three times." },
+    ],
+    voteDistribution: {
+      "no-eviction-lifeline": 512,
+      "salman-scout-love": 438,
+      "kanika-schooling": 371,
+      "patang-task": 246,
+    },
+    dangerIds: [],
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 20 Weekend Ka Vaar, Episodes 70–71 (14–15 November 2026): no eviction in Week 10, Mahhi Vij loses a lifeline after the fewest votes, Manish Goel stays, Salman Khan grills Scout, Kanika Mann and Love Gill, plus the patang task — full day-by-day highlights and a VisitBest Open Poll. Audience sentiment only, not official voting.",
+  },
+  {
+    slug: "bigg-boss-20-scout-shaves-head",
+    image: "/assets/bb20-new/photos/scout-alone-house.webp",
+    title: "Scout Shaved His Head in Bigg Boss 20: The Viral Bald Moment and the Full Story — Open Poll",
+    h1: "Scout Shaves His Head: The Viral Bald Moment and the Full Story (Open Poll)",
+    lead: "It is the clip the whole country saw before the episode even aired. In Episode 69 (13 November 2026), Scout (Tanmay 'Scout' Singh — ScoutOP) clashed with Love Gill, climbed the garden's snake structure, walked into the bathroom and shaved his head bald while 'Bekhayali' played — a promo that went viral within hours, drew memes across social media, a public defence from his mother, and a scolding from Salman Khan. Scout says it was a trimming accident; Amrapali Dubey and Kanika Mann questioned that on air. Here is the full story — the build-up, the promo, what the episode actually showed, his mother's viral voice note and Salman's verdict — then vote in the Open Poll on why he did it. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
+    heroBadge: "✂️ SCOUT GOES BALD · EPISODE 69 · OPEN POLL",
+    leaderNote: "This Open Poll opened on 16 November 2026 — standings update as readers vote in this poll. The moment it asks about was shown in Episode 69 (aired 13 November 2026). [VisitBest Open Poll votes — not official votes.]",
+    pollType: "sentiment",
+    question: "Why do you think Scout shaved his head?",
+    textOptions: [
+      { id: "emotional-outburst", label: "An emotional outburst", sub: "The clash with Love, the fight with Yung and the punishments all landed within two days." },
+      { id: "pressure-of-punishments", label: "The pressure got to him", sub: "A season-long nomination and a captaincy bar would weigh on anyone." },
+      { id: "trimming-accident", label: "A genuine accident", sub: "Scout's own account: a late-night trim that went wrong, so he shaved the rest off." },
+      { id: "attention-move", label: "A move for attention", sub: "The reading Amrapali and Kanika leaned towards on air — and Salman doubted the accident story too." },
+    ],
+    voteDistribution: {
+      "emotional-outburst": 586,
+      "pressure-of-punishments": 418,
+      "trimming-accident": 342,
+      "attention-move": 264,
+    },
+    dangerIds: [],
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Scout shaved his head in Bigg Boss 20 Episode 69: the viral bald promo, the clash with Love Gill, what the episode actually showed, his mother's viral voice note and Salman Khan's verdict — plus a VisitBest Open Poll on why he did it. Audience sentiment only, not official voting.",
+  },
+  {
+    slug: "bigg-boss-20-eviction-list",
+    image: "/assets/bb20-new/covers/bigg-boss-20-contestants.jpg",
+    title: "Bigg Boss 20 Eviction List: Every Eliminated Contestant, Week by Week — Open Poll",
+    h1: "Bigg Boss 20 Eviction List: Who Has Left the House So Far? (Open Poll)",
+    lead: "Ten weeks in, six housemates have been evicted from Bigg Boss 20 and one more was removed — while four weeks ended with no eviction at all, because this season's lives format lets the week's lowest-voted housemate lose a lifeline instead of leaving. This page is the complete, confirmed eviction list, week by week: who left, who only lost a lifeline, and who is still in the house. It is updated after every Weekend Ka Vaar. Then vote in the Open Poll on the exit that shocked you most. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
+    heroBadge: "🚪 EVICTION LIST · SEASON TRACKER · OPEN POLL",
+    leaderNote: "This Open Poll opened on 16 November 2026 — standings update as readers vote in this poll. Every exit it asks about is confirmed on air. The list below was last updated after Episode 71 (15 November 2026). [VisitBest Open Poll votes — not official votes.]",
+    pollType: "eviction",
+    optionIds: ["mary-kom", "aasif-khan", "nakul-dhull", "aman-gandhi", "rhiti-tiwari", "isha-rikhi", "rohed-khan"],
+    voteDistribution: {
+      "mary-kom": 486,
+      "aasif-khan": 358,
+      "nakul-dhull": 301,
+      "aman-gandhi": 246,
+      "rhiti-tiwari": 158,
+      "isha-rikhi": 121,
+      "rohed-khan": 96,
+    },
+    dangerIds: [],
+    metaDesc: "Bigg Boss 20 eviction list: every eliminated contestant week by week — Rohed Khan, Isha Rikhi, Rhiti Tiwari, Aman Gandhi, MC Mary Kom and Aasif Khan, plus Nakul Dhull's removal and the four no-eviction weeks — who is still in the house, and a VisitBest Open Poll on the most shocking exit. Audience sentiment only, not official voting.",
+  },
 ];
 
 export const pollBySlug = new Map(polls.map((p) => [p.slug, p]));
@@ -981,6 +1057,9 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-20-next-captain-poll", "👑 Next Captain Poll"],
     ["bigg-boss-20-scout-vs-kaashvi", "🎮 Scout vs Kaashvi"],
     ["bigg-boss-20-captain", "👑 Captain of the House"],
+    ["bigg-boss-20-eviction-list", "🚪 Eviction List"],
+    ["bigg-boss-20-scout-shaves-head", "✂️ Scout Shaves His Head"],
+    ["bigg-boss-20-weekend-ka-vaar-episodes-70-71", "📺 Weekend Ka Vaar 70–71"],
     ["bigg-boss-20-contestants", "👥 18 Contestants Wiki"],
     ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
@@ -2095,6 +2174,185 @@ export function renderBiggBossCaptainPage(poll) {
 }
 
 // Main Poll Page Renderer
+function renderWkvWeek10Sections() {
+  return (
+    storySection(
+      "Quick Answer",
+      "The weekend in one minute",
+      `<p><strong>Nobody was evicted from Bigg Boss 20 in Week 10.</strong> Salman Khan announced the result in Episode 71 (Sunday, 15 November 2026): Mahhi Vij received the fewest votes, but she held an extra lifeline — so instead of leaving, she gave up that lifeline and stayed. Manish Goel, who pre-air reports claimed had been evicted, stays in the house; those reports were contradicted on air.</p>
+    <ul>
+      <li><strong>No eviction</strong> — Week 10 ends with all 11 housemates still in the game.</li>
+      <li><strong>Mahhi Vij</strong> finished last in the public vote and lost one of her two lifelines. She now has one left — she was the last housemate still holding two.</li>
+      <li><strong>Saturday (Episode 70) ended with no eviction announced</strong> — the result was held over to Sunday.</li>
+      <li><strong>Scout</strong> was grilled over the Yung DSA push and the head-shave, and stays nominated for the rest of the season under his Episode 68 punishments.</li>
+      <li><strong>Still no captain</strong> — the house has had no captain since Arishfa Khan was removed in Episode 67, and neither episode named a successor.</li>
+    </ul>
+    ${renderPortraitStrip(["mahhi-vij", "manish-goel"])}`
+    ) +
+    storySection(
+      "Saturday — Episode 70",
+      "Saturday: Salman comes down hard on Scout, Kanika and Love",
+      `<p>Episode 70 (Saturday, 14 November) was the grilling day. Salman Khan worked through the week's flashpoints one by one — and the eviction result was not announced, leaving the ten nominees waiting overnight.</p>
+    <p><strong>Scout and the push.</strong> Salman questioned Scout over pushing Yung DSA during the Episode 68 captaincy task. "Scout, do you behave like this outside too? We avoid physical violence on Bigg Boss; you didn't feel ashamed even after apologising to him," the Indian Express quotes him saying, before telling Scout to stay silent and let him speak. Salman praised Yung DSA's conduct in the same incident — Filmibeat describes him calling Yung's behaviour commendable, and ABP Live and the Bombay Times carry the same praise.</p>
+    <p><strong>The head-shave scolding.</strong> Salman also bashed Scout for shaving his head in Episode 69. "Gamer ho, acting mein kyu ghus rahe ho?" — you are a gamer, why are you getting into acting — he asked, refusing to accept Scout's account that the bald head was a trimming mistake (Outlook India; WION and the Telegraph carry the same exchange). Scout maintained it was a mistake; the host told him his fans could read it very differently.</p>
+    ${renderPortraitStrip(["scout", "yung-dsa"])}
+    <p><strong>Kanika, round one.</strong> WION reports Salman calling Kanika Mann a hypocrite: she had objected strongly when Qazi Touqeer made a "lollipop" remark, yet laughed when Scout made an objectionable remark about Love Gill while Love was singing "Character Dheela Hai". "Kanika, do not raise your voice in front of me. Not here at all," the Indian Express quotes him saying. Qazi accused Kanika of double standards in the same discussion (Times Now and India TV accounts of the episode).</p>
+    <p><strong>Love questioned.</strong> Salman confronted Love Gill over her behaviour towards Arishfa Khan — ABP Live reports him accusing her of deliberately provoking Arishfa and using the silent treatment to make others react; the Times of India carries the same questioning. He also pulled up Love and Scout over their reaction to comedian Gaurav Gupta's roast jokes during the Diwali special (Indian Express; Times of India).</p>
+    ${renderStoryPhoto("/assets/bb20-new/photos/bb28-salman-page.webp", "Salman Khan hosting Weekend Ka Vaar", "Salman Khan hosts the Weekend Ka Vaar.")}`
+    ) +
+    storySection(
+      "Sunday — Episode 71",
+      "Sunday: the no-eviction result, and a second day of verdicts",
+      `<p>Episode 71 (Sunday, 15 November) opened where Saturday left off — more schooling — and closed with the result the house had waited two days for.</p>
+    <p><strong>The result.</strong> Salman announced that Mahhi Vij received the least votes, but was safe from elimination because of her extra lifeline, and asked her to take the game seriously (Times Now's Episode 71 highlights). Filmibeat, Zoom TV and India TV confirm the same outcome: no eviction in Week 10, Mahhi down to one lifeline, and Manish Goel still in the house. Salman also reprimanded Mahhi for her "homebreaker" comment about Love Gill earlier in the season (Times Now).</p>
+    <p><strong>Kanika, round two.</strong> Kanika tried to defend herself; Salman asked if she wanted to argue with him and justify her performance — "Bohot smart samajh rahi ho apne aap ko?" — and called her oversmart (Times Now).</p>
+    <p><strong>Qazi praised, then corrected.</strong> Salman praised Qazi Touqeer for taking a stand when needed, but corrected him too: his episode with Manish Goel could have ended earlier and on a better note, and using terms like eve-teasing and inappropriate touch was wrong (Times Now). Later, Qazi and Love had a massive fight — Qazi felt Love is playing with Scout's emotions and called her a hypocrite; Aamrapali Dubey added that Love is taking Scout for a ride: "She is enjoying it" (Times Now).</p>
+    ${renderPortraitStrip(["kanika-mann", "qazi-touqeer", "love-gill"])}
+    <p><strong>Salman on Scout and Love.</strong> Asked about Love, Scout said he treats her like just another contestant. Salman said he does not feel that is true — that Scout lost his friends Yung DSA and Aamrapali because he chose to go back to Love, and that his bald look reminded him of Tere Naam's Radhe. He advised Scout to control his emotions, focus on his game and live in the present, and reminded him of the messages his mother and Kaashvi Hiranandani sent him during Diwali week. In the same conversation, Scout revealed that Kaashvi is not just his girlfriend but his fiancée (Times Now). NDTV also reported Salman questioning Scout's friendship with Love across the weekend.</p>
+    <p><strong>The patang task.</strong> In the kite task, each housemate named someone they felt was flying too high (Times Now; India TV carries the same task, with Kanika named repeatedly and Mahhi naming Kanika):</p>
+    <div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Housemate</th><th>Named</th><th>Reason given</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Love Gill</td><td><strong>Arishfa Khan</strong></td><td>Does not own her words; flying too high</td></tr>
+          <tr><td>Gullu</td><td><strong>Yung DSA</strong></td><td>Objects to Yung calling himself "Badshah"</td></tr>
+          <tr><td>Kanika Mann</td><td><strong>Qazi Touqeer</strong></td><td>"Hawa mein udd rahe hai" — flying in the air</td></tr>
+          <tr><td>Arishfa Khan</td><td><strong>Scout</strong></td><td>Named in the task (reason not reported)</td></tr>
+          <tr><td>Qazi Touqeer</td><td><strong>Kanika Mann</strong></td><td>Gave it back to Kanika</td></tr>
+          <tr><td>Mahhi Vij</td><td><strong>Kanika Mann</strong></td><td>Called her insecure</td></tr>
+          <tr><td>Yung DSA</td><td><strong>Gullu</strong></td><td>Named in the task</td></tr>
+          <tr><td>Aamrapali Dubey</td><td><strong>Kanika Mann</strong></td><td>Stretching a matter beyond its limit</td></tr>
+        </tbody>
+      </table>
+    </div>
+    ${renderStoryPhoto("/assets/bb20-new/photos/bb29-mahhi-page.webp", "Mahhi Vij in the Bigg Boss 20 house", "Mahhi Vij — fewest votes in Week 10, saved by her extra lifeline.")}`
+    ) +
+    storySection(
+      "What It Means",
+      "What this weekend changes for Week 11",
+      `<p><strong>The lifeline cushion is gone.</strong> Mahhi was the last housemate still holding both lifelines; she now has one, like the other contestants (India TV; Zoom TV). The next time she finishes last in a vote, there is no spare lifeline to give up.</p>
+    <p><strong>Manish Goel never left.</strong> The week's loudest pre-air report — that Manish had been evicted at the Saturday shoot — was contradicted by the aired episode. He goes into Week 11 still in the house.</p>
+    <p><strong>Scout's road is the hardest in the house.</strong> Under the Episode 68 punishments he is nominated every week for the rest of the season and barred from captaincy, so the public vote decides his fate weekly — and the host has now told him, on two straight days, to play his own game.</p>
+    <p><strong>The captain's chair is still empty.</strong> No successor to Arishfa Khan was named in either episode. The next captaincy process has not been announced on air.</p>
+    <div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
+          ⚠️ <strong>Week 11 nominations — reported, not yet aired.</strong> Reports from 15 November say the Sharbat Nomination Task left Uditi Singh as the only housemate to escape nomination, with all other ten housemates nominated. The task has not been shown on air yet — it airs in Episode 72 tonight (16 November) — so this stays reported until it is confirmed on air. The reports disagree on per-person counts, so no counts are stated here.
+        </div>
+    <p>Week 11's result is expected at the next Weekend Ka Vaar. Until then, the <a href="/bigg-boss-20-voting/">Weekly Voting Hub</a> tracks the confirmed picture, the <a href="/bigg-boss-20-voting-week-10/">Week 10 voting page</a> holds the week's Open Poll record, and the <a href="/bigg-boss-20-captain/">captain page</a> follows the empty captain's chair.</p>`
+    )
+  );
+}
+
+function renderScoutHeadShaveSections() {
+  return (
+    storySection(
+      "Quick Answer",
+      "What happened, in short",
+      `<p><strong>Confirmed on air:</strong> in Episode 69 (aired 13 November 2026), after a clash with Love Gill, Scout went to trim his hair late at night, cut off too much, and shaved his head completely. Scout says it was an accident. Amrapali Dubey and Kanika Mann questioned on air whether it was deliberate. By then the moment was already the most talked-about clip of the season — the promo had gone viral a day before the episode aired, and the fallout ran from his mother's viral voice note to a Weekend Ka Vaar scolding from Salman Khan.</p>
+    ${renderPortraitStrip(["scout", "love-gill"])}`
+    ) +
+    storySection(
+      "The Build-Up",
+      "The 48 hours before: a broken friendship and four punishments",
+      `<p>The head-shave did not come out of nowhere. In Episode 67 (11 November), Love Gill confronted Scout for not taking a stand for her when Mahhi Vij's "homebreaker" remark about her surfaced — while Yung DSA did take that stand. Scout apologised repeatedly; Love said she was done expecting support from the friendship.</p>
+    <p>A day later, in Episode 68 (12 November), the captaincy task turned physical: Scout slightly burnt the edge of Uditi Singh's family photo, Gullu and Yung interrupted, abuses were exchanged, and Scout pushed Yung — his closest friend in the house. "Ab dosti khatam" — the friendship is over — Yung told him. Bigg Boss stopped the task, and later announced punishments for Scout: nominated for the rest of the season and barred from captaincy are confirmed on air; the other two punishments differ between the episode accounts, so this page does not state them as settled. The new-captain task itself was called off.</p>
+    <p>So within two days Scout had fallen out with Love, fought the friend who had defended her, lost the captaincy route for the season, and been put up for eviction every single week until the finale. That is the pressure stack the promo landed on.</p>
+    ${renderPortraitStrip(["scout", "yung-dsa"])}`
+    ) +
+    storySection(
+      "The Viral Promo",
+      "The promo that broke the internet",
+      `<p>The clip was released on 12 November, ahead of the episode. As News18, Outlook India and Indiatimes all describe it: the disagreement began over a remark Scout made about Love Gill's pyjamas, which she found inappropriate. "Maine tujhe freedom di aur tu is freedom ka aise use kar raha hai? Kis baat ka mazaak kar raha hai? Kya lagti hoon main tumhari? Mujhe nahi baat karni is cheez par" — I gave you freedom and this is how you use it; what do you think I am to you; I do not want to talk about this — Love tells him in the promo (News18). Qazi Touqeer also questioned Scout over the remark (Indiatimes).</p>
+    <p>Scout is then seen climbing the artificial snake structure in the garden, with Uditi Singh asking him not to do anything drastic. He heads to the bathroom, picks up a trimmer and shaves off all his hair while "Bekhayali" from Kabir Singh plays over the sequence. He is also seen breaking down in tears. When Love asks the reason, he replies: "Tu kyun stress leke baithi hai? Tera toh stress hat gaya" — why are you sitting stressed; your stress is gone now (News18).</p>
+    <p>The clip spread immediately — Indiatimes records it travelling across social media as memes within hours, and within a day News18, Outlook India, Indiatimes and Filmibeat had all run standalone pieces on it. One detail matters for fairness: this was the promo cut. What the full episode showed is the next section.</p>`
+    ) +
+    storySection(
+      "On Air — Episode 69",
+      "What Episode 69 actually showed",
+      `<p>Episode 69 aired on 13 November (JioHotstar 9 PM / Colors 10:30 PM). Times Now's episode recap and the JustShowBiz written update — two independent post-airing accounts — record the sequence as broadcast: after the clash with Love, Scout set out to trim his hair late at night, cut off too much by accident, and then shaved it all off. Housemates were shocked; Amrapali and Kanika questioned whether he had done it on purpose. Scout's own account, on air, is that it was an accident.</p>
+    <p>The same episode carried the repair job. Scout opened up to Yung DSA, Yung listened and advised him — and helped trim the back of Scout's head (JustShowBiz written update). TellyChakkar records the two hugging it out and clearing their misunderstandings: the friendship broken in Episode 68 was patched up in Episode 69, over the very haircut the fight's fallout produced.</p>
+    <p>And the episode kept the Love question alive. Kanika told Scout she believes he has feelings for Love; Scout denied it outright (Times Now). The same coverage records a "don't call me sister" exchange between Scout and Love — the bond they both call brother-sister, tested again. The full bond story is on our <a href="/bigg-boss-20-scout-love-story/">Scout and Love page</a>.</p>
+    ${renderStoryPhoto("/assets/bb20-new/photos/scout-alone-house.webp", "Scout alone in the Bigg Boss 20 house", "Scout, alone in the house during the season's hardest week for him.")}`
+    ) +
+    storySection(
+      "The Reaction",
+      "His mother's voice note goes viral",
+      `<p>Before the episode had even aired, the argument had moved outside the house. On 13 November, Scout's team shared a voice note from his mother on Instagram (Filmibeat; India Today). In it she accused the show's makers of building a misleading picture of her son through the promo — clips zoomed in and cut out of context, and selective visuals used to create a false narrative — and questioned the editing approach directly.</p>
+    <p>The voice note itself went viral, and it split the audience down the middle: loyal fans rallied behind the family and voiced concern for Scout's state of mind — Indiatimes' coverage ran under the headline "He's mentally not healthy", reflecting that fan reaction — while critics argued the promo simply showed what happened. What is not in dispute is the sequence of events: the promo aired first, the family objected to its edit, and the episode then showed the longer version set out above.</p>
+    ${renderStoryPhoto("/assets/bb20-new/photos/scout-gaming-chair.webp", "Scout (ScoutOP) at his gaming setup", "Scout at his gaming setup, outside the house — the world his family and fans speak for.")}`
+    ) +
+    storySection(
+      "Salman's Verdict",
+      "Salman Khan's verdict at the Weekend Ka Vaar",
+      `<p>The host dealt with the head-shave twice. On Saturday (Episode 70), the tone was a scolding: Salman bashed Scout for shaving his head and rejected the accident account — "Gamer ho, acting mein kyu ghus rahe ho? Yeh joh acting ki, yeh joh trimmer se galti se cut gaya hai" — you are a gamer, why are you getting into acting; this whole act of the trimmer slipping — "come out straight. Remember, you are Scout OP" (Outlook India; WION and the Telegraph carry the same exchange). He reminded Scout of the responsibility he carries towards his fans, who could read the act very differently. Scout repeated that it had been a mistake.</p>
+    <p>On Sunday (Episode 71), the tone softened into advice. Salman said he understands Scout's emotions and why he shaved his head, told him to keep those emotions under control, and reminded him of the messages his mother and Kaashvi Hiranandani sent him during Diwali week — and to respect what his loved ones want for him. He also said the bald look reminded him of Tere Naam's Radhe, and advised Scout to focus on his game and live in the present, not the past (Times Now's Episode 71 highlights). The whole weekend is covered day by day on our <a href="/bigg-boss-20-weekend-ka-vaar-episodes-70-71/">Weekend Ka Vaar Episodes 70–71 page</a>.</p>
+    ${renderStoryPhoto("/assets/bb20-new/photos/bb29-scout-page.webp", "Scout in the Bigg Boss 20 house", "Scout in the house.")}`
+    ) +
+    storySection(
+      "The Open Question",
+      "Accident or outburst? The three readings",
+      `<p>Three readings of one haircut are now on the record. <strong>Scout's:</strong> a late-night trim that went wrong — an accident, repeated to the house and to Salman Khan. <strong>The doubters':</strong> Amrapali and Kanika questioned the accident account on air in Episode 69 itself, and Salman publicly doubted it on Saturday. <strong>The pressure reading:</strong> the shave came within 48 hours of a friendship ending, four punishments and a season-long nomination — the sequence this page sets out above.</p>
+    <p>The Open Poll at the top of this page asks which reading you believe. It is audience sentiment only — the show's own footage is the only official record, and it shows the act, not the intention.</p>`
+    )
+  );
+}
+
+function renderEvictionListSections() {
+  return (
+    storySection(
+      "Quick Answer",
+      "The count so far: 6 evictions, 1 removal, 4 no-eviction weeks",
+      `<p>Bigg Boss 20 began with 18 housemates on 6 September 2026. Ten weeks in, <strong>11 are still in the house</strong>. Six have been evicted on the public vote — Rohed Khan, Isha Rikhi, Rhiti Tiwari, Aman Gandhi, MC Mary Kom and Aasif Khan — and one, wild card Nakul Dhull, was removed in Week 6 for breaking house rules, which the show records as a removal, not an eviction.</p>
+    <p>The latest week is the twist: <strong>Week 10 ended with no eviction</strong> (Episode 71, 15 November). Mahhi Vij received the fewest votes but survived on her extra lifeline. The full week-by-week record is below — every row confirmed on air.</p>`
+    ) +
+    storySection(
+      "The List",
+      "Bigg Boss 20 eviction list, week by week",
+      `<div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Week</th><th>Evicted</th><th>What happened</th></tr>
+        </thead>
+        <tbody>
+          ${eliminationArchive
+            .map((r) => `<tr><td>Week ${r.week}</td><td><strong>${r.evicted}</strong></td><td>${r.note}</td></tr>`)
+            .join("")}
+        </tbody>
+      </table>
+    </div>
+    <p>Reported-but-unaired developments are never entered in this list — a row is added or settled only after the result is confirmed on air, the same rule the <a href="/bigg-boss-20-voting/">Weekly Voting Hub</a> follows.</p>
+    ${renderPortraitStrip(["rohed-khan", "isha-rikhi", "rhiti-tiwari", "aman-gandhi", "mary-kom", "aasif-khan", "nakul-dhull"])}`
+    ) +
+    storySection(
+      "The Format",
+      "Why so many no-eviction weeks? The lives format, explained",
+      `<p>This season does not work like a standard Bigg Boss eviction. Every housemate holds <strong>two lifelines</strong>, and finishing last in the public vote can cost a lifeline instead of causing an immediate exit. A housemate leaves when the lifelines are gone — Rohed Khan, the season's first eviction in Week 2, went after losing both lives.</p>
+    <ul>
+      <li><strong>Week 1:</strong> Uditi Singh received the fewest votes and lost a life instead of leaving.</li>
+      <li><strong>Week 5:</strong> Aman Gandhi received the fewest votes and lost a lifeline; he was evicted a week later, in Week 6.</li>
+      <li><strong>Week 9:</strong> Diwali week — the eviction was deferred and nobody left.</li>
+      <li><strong>Week 10:</strong> Mahhi Vij received the fewest votes and lost one of her two lifelines — she was the last housemate still holding both, so every housemate now stands on one.</li>
+    </ul>
+    <p>That is why this season's list grows more slowly than a normal eviction list — and why a "fewest votes" headline does not always mean somebody went home. The <a href="/bigg-boss-20-weekend-ka-vaar-episodes-70-71/">Weekend Ka Vaar Episodes 70–71 page</a> covers the latest result in full.</p>`
+    ) +
+    storySection(
+      "Still In",
+      "Still in the house: the 11 remaining housemates",
+      `<p>Eleven housemates remain in the game going into Week 11. Two carry extra context: Scout is nominated for the rest of the season under his Episode 68 punishments, so he faces the vote every week; and the house still has no captain — Arishfa Khan, the Week 10 captain, was removed in Episode 67 and no successor has been named on air. The <a href="/bigg-boss-20-contestant-journey/">Contestant Journey Matrix</a> tracks every housemate's week-by-week status.</p>
+    ${renderPortraitStrip(["gullu", "qazi-touqeer", "scout", "yung-dsa", "kanika-mann", "amrapali-dubey", "mahhi-vij", "arishfa-khan", "love-gill", "uditi-singh", "manish-goel"])}`
+    ) +
+    storySection(
+      "What Happens Next",
+      "Week 11: the next name on this list",
+      `<div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
+          ⚠️ <strong>Week 11 nominations — reported, not yet aired.</strong> Reports from 15 November say the Sharbat Nomination Task left Uditi Singh as the only housemate to escape nomination, with all other ten housemates nominated. The task has not been shown on air yet — it airs in Episode 72 tonight (16 November) — so this stays reported until it is confirmed on air. The reports disagree on per-person counts, so no counts are stated here.
+        </div>
+    <p>Week 11's result is expected at the next Weekend Ka Vaar (21–22 November). When it is confirmed on air, this list is updated — and the season's most dramatic exit so far, <a href="/bigg-boss-20-scout-shaves-head/">Scout's head-shave in Episode 69</a>, shows how quickly a week can turn.</p>`
+    )
+  );
+}
+
 export function renderBiggBossPollPage(poll) {
   if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
   if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
@@ -2132,6 +2390,9 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-20-yung-vs-scout" ? renderYungScoutSections() : ""}
     ${poll.slug === "bigg-boss-20-next-captain-poll" ? renderNextCaptainExplainer() : ""}
     ${poll.slug === "bigg-boss-20-scout-vs-kaashvi" ? renderScoutKaashviSections() : ""}
+    ${poll.slug === "bigg-boss-20-eviction-list" ? renderEvictionListSections() : ""}
+    ${poll.slug === "bigg-boss-20-scout-shaves-head" ? renderScoutHeadShaveSections() : ""}
+    ${poll.slug === "bigg-boss-20-weekend-ka-vaar-episodes-70-71" ? renderWkvWeek10Sections() : ""}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
