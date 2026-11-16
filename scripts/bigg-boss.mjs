@@ -452,7 +452,7 @@ export const polls = [
     image: "/assets/bb20-new/covers/bigg-boss-20-joker-of-the-house.jpg",
     title: "Who is the Joker of Bigg Boss 20? Most Fake & Over-Dramatic Contestant Poll — Open Poll",
     h1: "Who is the Joker of Bigg Boss 20? (Most Dramatic / Fake) (Open Poll)",
-    lead: "Bigg Boss is never complete without loud theatrics, cringe fights, and over-the-top acting. Who is acting as the true Joker of the house? Aman Gandhi tops the negative hype poll with 42.1% votes!",
+    lead: "Bigg Boss is never complete without loud theatrics, cringe fights, and over-the-top acting. Who is acting as the true Joker of the house? Aman Gandhi tops the negative hype poll with 36.6% votes!",
     heroBadge: "🤡 SPICY UNFILTERED PUBLIC POLL · OPEN POLL",
     leaderNote: "🎭 JOKER OF THE HOUSE: Aman Gandhi leads this spicy audience sentiment poll with 310,500 votes! Rohed Khan follows in 2nd place. [VisitBest Open Poll votes — not official votes.]",
     pollType: "joker",
