@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, renderUpscAgeCalculatorBody, renderIbpsAgeCalculatorBody, renderRrbAgeCalculatorBody, renderEmiCalculatorBody, renderSipCalculatorBody, renderBmiCalculatorBody, renderPctCalculatorBody, renderGstCalculatorBody, renderPpfCalculatorBody, renderFdCalculatorBody, renderTaxCalculatorBody, renderRdCalculatorBody, renderHlCalculatorBody, renderGrCalculatorBody, renderHraCalculatorBody, renderCiCalculatorBody, renderEpfCalculatorBody, renderNpsCalculatorBody, renderSsyCalculatorBody, renderNscCalculatorBody, renderScssCalculatorBody, renderMisCalculatorBody, renderKvpCalculatorBody, renderPlCalculatorBody, renderTdCalculatorBody, renderClCalculatorBody, renderApyCalculatorBody, renderSwpCalculatorBody, renderWmCalculatorBody, renderMsCalculatorBody, renderLbCalculatorBody, renderEpCalculatorBody, renderRtCalculatorBody, renderSuCalculatorBody, renderHleCalculatorBody, renderLsCalculatorBody, renderElCalculatorBody, renderBlCalculatorBody, renderGlCalculatorBody, renderCcCalculatorBody, renderSalCalculatorBody, renderSiCalculatorBody, renderCagrCalculatorBody, renderBmrCalculatorBody, renderBodyfatCalculatorBody, renderXirrCalculatorBody, renderTdsCalculatorBody, renderRentVsBuyCalculatorBody, renderPregnancyDueDateCalculatorBody, renderOvulationCalculatorBody, renderDiscountCalculatorBody, renderDateCalculatorBody, renderInflationCalculatorBody, renderStampDutyCalculatorBody, renderCapitalGainsTaxCalculatorBody, renderFuelCostCalculatorBody, renderShareAverageCalculatorBody, renderAdvanceTaxCalculatorBody, renderBrokerageCalculatorBody, renderLeaveEncashmentCalculatorBody, renderRooftopSolarCalculatorBody, renderHomeLoanPrepaymentCalculatorBody, renderDaCalculatorBody, renderChildEducationCalculatorBody, renderSleepCalculatorBody, renderHomeLoanTaxBenefitCalculatorBody, renderGoldPriceCalculatorBody, renderAttendanceCalculatorBody, renderEmergencyFundCalculatorBody, renderSilverPriceCalculatorBody, renderAcTonnageCalculatorBody, renderHouseConstructionCostCalculatorBody, renderElectricityBillCalculatorBody, renderPaintCalculatorBody, renderTermInsuranceCalculatorBody, renderHealthInsurancePremiumCalculatorBody, renderTilesCalculatorBody, renderCarInsurancePremiumCalculatorBody, renderTwoWheelerInsurancePremiumCalculatorBody, renderPeriodCalculatorBody, renderConcreteCalculatorBody, renderProteinCalculatorBody, renderBrickCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient, upscClient, ibpsClient, rrbClient, emiClient, sipClient, bmiClient, pctClient, gstClient, ppfClient, fdClient, taxClient, rdClient, hlClient, grClient, hraClient, ciClient, epfClient, npsClient, ssyClient, nscClient, scssClient, misClient, kvpClient, plClient, tdClient, clClient, apyClient, swpClient, wmClient, msClient, lbClient, epClient, rtClient, suClient, hleClient, lsClient, elClient, blClient, glClient, ccClient, salClient, siClient, cagrClient, bmrClient, bodyfatClient, xirrClient, tdsClient, rbClient, pddClient, ovlClient, dscClient, dateClient, inflClient, stampClient, cgtClient, fuelClient, shareClient, atClient, brClient, leClient, soClient, hpClient, daClient, ceClient, slClient, hltbClient, gpcClient, attClient, efcClient, spcClient, atcClient, hccClient, ebcClient, paintClient, termClient, healthClient, tilesClient, carInsClient, twinClient, periodClient, concreteClient, proteinClient, brickClient } from "./calculators.mjs";
+import { pages as calculatorPages, renderCalculatorBody, renderAgeCalculatorBody, renderCgpaCalculatorBody, renderGeneralAgeCalculatorBody, renderUpscAgeCalculatorBody, renderIbpsAgeCalculatorBody, renderRrbAgeCalculatorBody, renderEmiCalculatorBody, renderSipCalculatorBody, renderBmiCalculatorBody, renderPctCalculatorBody, renderGstCalculatorBody, renderPpfCalculatorBody, renderFdCalculatorBody, renderTaxCalculatorBody, renderRdCalculatorBody, renderHlCalculatorBody, renderGrCalculatorBody, renderHraCalculatorBody, renderCiCalculatorBody, renderEpfCalculatorBody, renderNpsCalculatorBody, renderSsyCalculatorBody, renderNscCalculatorBody, renderScssCalculatorBody, renderMisCalculatorBody, renderKvpCalculatorBody, renderPlCalculatorBody, renderTdCalculatorBody, renderClCalculatorBody, renderApyCalculatorBody, renderSwpCalculatorBody, renderWmCalculatorBody, renderMsCalculatorBody, renderLbCalculatorBody, renderEpCalculatorBody, renderRtCalculatorBody, renderSuCalculatorBody, renderHleCalculatorBody, renderLsCalculatorBody, renderElCalculatorBody, renderBlCalculatorBody, renderGlCalculatorBody, renderCcCalculatorBody, renderSalCalculatorBody, renderSiCalculatorBody, renderCagrCalculatorBody, renderBmrCalculatorBody, renderBodyfatCalculatorBody, renderXirrCalculatorBody, renderTdsCalculatorBody, renderRentVsBuyCalculatorBody, renderPregnancyDueDateCalculatorBody, renderOvulationCalculatorBody, renderDiscountCalculatorBody, renderDateCalculatorBody, renderInflationCalculatorBody, renderStampDutyCalculatorBody, renderCapitalGainsTaxCalculatorBody, renderFuelCostCalculatorBody, renderShareAverageCalculatorBody, renderAdvanceTaxCalculatorBody, renderBrokerageCalculatorBody, renderLeaveEncashmentCalculatorBody, renderRooftopSolarCalculatorBody, renderHomeLoanPrepaymentCalculatorBody, renderDaCalculatorBody, renderChildEducationCalculatorBody, renderSleepCalculatorBody, renderHomeLoanTaxBenefitCalculatorBody, renderGoldPriceCalculatorBody, renderAttendanceCalculatorBody, renderEmergencyFundCalculatorBody, renderSilverPriceCalculatorBody, renderAcTonnageCalculatorBody, renderHouseConstructionCostCalculatorBody, renderElectricityBillCalculatorBody, renderPaintCalculatorBody, renderTermInsuranceCalculatorBody, renderHealthInsurancePremiumCalculatorBody, renderTilesCalculatorBody, renderCarInsurancePremiumCalculatorBody, renderTwoWheelerInsurancePremiumCalculatorBody, renderPeriodCalculatorBody, renderConcreteCalculatorBody, renderProteinCalculatorBody, renderBrickCalculatorBody, renderSteelWeightCalculatorBody, renderCementCalculatorBody, renderWaterTankCalculatorBody, renderStaircaseCalculatorBody, renderFalseCeilingCalculatorBody, renderModularKitchenCalculatorBody, renderInteriorDesignCalculatorBody, renderWallpaperCalculatorBody, renderCreditCardPayoffCalculatorBody, renderMileageCalculatorBody, renderEvPetrolCalculatorBody, renderHlbtCalculatorBody, renderRentReceiptGeneratorBody, renderInvbCalculatorBody, renderCpc7CalculatorBody, renderCpc8CalculatorBody, renderPleCalculatorBody, renderBleCalculatorBody, renderSandCalculatorBody, renderPlasterCalculatorBody, renderRoadTaxCalculatorBody, renderPlywoodCalculatorBody, renderPackersMoversCostCalculatorBody, renderWaterIntakeCalculatorBody, calculatorSchema, css as calculatorCss, client as calculatorClient, ageClient, cgpaClient, generalAgeClient, upscClient, ibpsClient, rrbClient, emiClient, sipClient, bmiClient, pctClient, gstClient, ppfClient, fdClient, taxClient, rdClient, hlClient, grClient, hraClient, ciClient, epfClient, npsClient, ssyClient, nscClient, scssClient, misClient, kvpClient, plClient, tdClient, clClient, apyClient, swpClient, wmClient, msClient, lbClient, epClient, rtClient, suClient, hleClient, lsClient, elClient, blClient, glClient, ccClient, salClient, siClient, cagrClient, bmrClient, bodyfatClient, xirrClient, tdsClient, rbClient, pddClient, ovlClient, dscClient, dateClient, inflClient, stampClient, cgtClient, fuelClient, shareClient, atClient, brClient, leClient, soClient, hpClient, daClient, ceClient, slClient, hltbClient, gpcClient, attClient, efcClient, spcClient, atcClient, hccClient, ebcClient, paintClient, termClient, healthClient, tilesClient, carInsClient, twinClient, periodClient, concreteClient, proteinClient, brickClient, steelClient, cementClient, waterTankClient, staircaseClient, falseCeilingClient, modularKitchenClient, interiorDesignClient, wallpaperClient, creditCardPayoffClient, mileageClient, evPetrolClient, hlbtClient, rentReceiptClient, invbClient, cpc7Client, cpc8Client, pleClient, bleClient, sandClient, plasterClient, roadtaxClient, plywoodClient, packersClient, waterIntakeClient } from "./calculators.mjs";
 import {
   polls as bbPolls,
   contestants as bbContestants,
@@ -440,9 +440,9 @@ function renderHeader(currentPath = "") {
   // soon as its own pack adds it to the registry — no header edit needed.
   const toolMenu = [
     ["Exam & Age", [["ssc-age-calculator", "SSC Age"], ["upsc-age-calculator", "UPSC Age"], ["ibps-age-calculator", "IBPS Age"], ["rrb-age-calculator", "RRB Age"], ["age-calculator", "Age Calculator"], ["date-calculator", "Date"]]],
-    ["Money & Tax", [["emi-calculator", "EMI"], ["home-loan-emi-calculator", "Home Loan EMI"], ["sip-calculator", "SIP"], ["rd-calculator", "RD"], ["fd-calculator", "FD"], ["ppf-calculator", "PPF"], ["epf-calculator", "EPF"], ["nps-calculator", "NPS"], ["ssy-calculator", "SSY"], ["nsc-calculator", "NSC"], ["scss-calculator", "SCSS"], ["gratuity-calculator", "Gratuity"], ["hra-calculator", "HRA"], ["income-tax-calculator", "Income Tax"], ["gst-calculator", "GST"], ["compound-interest-calculator", "Compound Interest"], ["percentage-calculator", "Percentage"], ["post-office-mis-calculator", "MIS"], ["kvp-calculator", "KVP"], ["personal-loan-emi-calculator", "Personal Loan EMI"], ["post-office-time-deposit-calculator", "Post Office TD"], ["car-loan-emi-calculator", "Car Loan EMI"], ["apy-calculator", "APY"], ["swp-calculator", "SWP"], ["laptop-budget-checker", "Laptop Budget"], ["event-planning-budget-estimator", "Event Planning Budget"], ["retirement-calculator", "Retirement"], ["step-up-sip-calculator", "Step-up SIP"], ["home-loan-eligibility-calculator", "Home Loan Eligibility"], ["lumpsum-calculator", "Lumpsum"], ["education-loan-emi-calculator", "Education Loan EMI"], ["bike-loan-emi-calculator", "Bike Loan EMI"], ["gold-loan-calculator", "Gold Loan"], ["credit-card-emi-calculator", "Credit Card EMI"], ["salary-calculator", "Salary"], ["simple-interest-calculator", "Simple Interest"], ["cagr-calculator", "CAGR"], ["xirr-calculator", "XIRR"], ["tds-calculator", "TDS"], ["rent-vs-buy-calculator", "Rent vs Buy"], ["discount-calculator", "Discount"], ["inflation-calculator", "Inflation"], ["stamp-duty-calculator", "Stamp Duty"], ["capital-gains-tax-calculator", "Capital Gains Tax"], ["fuel-cost-calculator", "Fuel Cost"], ["share-average-calculator", "Share Average"], ["advance-tax-calculator", "Advance Tax"], ["brokerage-calculator", "Brokerage"], ["leave-encashment-calculator", "Leave Encashment"], ["home-loan-prepayment-calculator", "Home Loan Prepayment"], ["da-calculator", "DA Calculator"], ["child-education-calculator", "Child Education Calculator"], ["home-loan-tax-benefit-calculator", "Home Loan Tax Benefit"], ["gold-price-calculator", "Gold Price Calculator"], ["emergency-fund-calculator", "Emergency Fund Calculator"], ["silver-price-calculator", "Silver Price Calculator"], ["term-insurance-calculator", "Term Insurance Calculator"], ["health-insurance-premium-calculator", "Health Insurance Premium Calculator"], ["car-insurance-premium-calculator", "Car Insurance Premium Calculator"], ["two-wheeler-insurance-premium-calculator", "Two-Wheeler Insurance Premium Calculator"]]],
-    ["Health & Study", [["bmi-calculator", "BMI"], ["bmr-calculator", "BMR"], ["cgpa-to-percentage-calculator", "CGPA to Percentage"], ["body-fat-calculator", "Body Fat"], ["pregnancy-due-date-calculator", "Pregnancy Due Date"], ["ovulation-calculator", "Ovulation"], ["sleep-calculator", "Sleep Calculator"], ["attendance-calculator", "Attendance Calculator"], ["period-calculator", "Period Calculator"], ["protein-calculator", "Protein Calculator"]]],
-    ["Home & Living", [["washing-machine-capacity-calculator", "Washing Machine Capacity"], ["mattress-size-finder", "Mattress Size Finder"], ["rooftop-solar-calculator", "Rooftop Solar"], ["ac-tonnage-calculator", "AC Tonnage Calculator"], ["house-construction-cost-calculator", "House Construction Cost Calculator"], ["electricity-bill-calculator", "Electricity Bill Calculator"], ["paint-calculator", "Paint Calculator"], ["tiles-calculator", "Tiles Calculator"], ["concrete-calculator", "Concrete Calculator"], ["brick-calculator", "Brick Calculator"]]],
+    ["Money & Tax", [["emi-calculator", "EMI"], ["home-loan-emi-calculator", "Home Loan EMI"], ["home-loan-balance-transfer-calculator", "Balance Transfer"], ["sip-calculator", "SIP"], ["rd-calculator", "RD"], ["fd-calculator", "FD"], ["ppf-calculator", "PPF"], ["epf-calculator", "EPF"], ["nps-calculator", "NPS"], ["ssy-calculator", "SSY"], ["nsc-calculator", "NSC"], ["scss-calculator", "SCSS"], ["gratuity-calculator", "Gratuity"], ["hra-calculator", "HRA"], ["income-tax-calculator", "Income Tax"], ["gst-calculator", "GST"], ["compound-interest-calculator", "Compound Interest"], ["percentage-calculator", "Percentage"], ["post-office-mis-calculator", "MIS"], ["kvp-calculator", "KVP"], ["personal-loan-emi-calculator", "Personal Loan EMI"], ["post-office-time-deposit-calculator", "Post Office TD"], ["car-loan-emi-calculator", "Car Loan EMI"], ["apy-calculator", "APY"], ["swp-calculator", "SWP"], ["laptop-budget-checker", "Laptop Budget"], ["event-planning-budget-estimator", "Event Planning Budget"], ["retirement-calculator", "Retirement"], ["step-up-sip-calculator", "Step-up SIP"], ["home-loan-eligibility-calculator", "Home Loan Eligibility"], ["lumpsum-calculator", "Lumpsum"], ["education-loan-emi-calculator", "Education Loan EMI"], ["bike-loan-emi-calculator", "Bike Loan EMI"], ["gold-loan-calculator", "Gold Loan"], ["credit-card-emi-calculator", "Credit Card EMI"], ["credit-card-payoff-calculator", "Credit Card Payoff Calculator"], ["salary-calculator", "Salary"], ["simple-interest-calculator", "Simple Interest"], ["cagr-calculator", "CAGR"], ["xirr-calculator", "XIRR"], ["tds-calculator", "TDS"], ["rent-vs-buy-calculator", "Rent vs Buy"], ["discount-calculator", "Discount"], ["inflation-calculator", "Inflation"], ["stamp-duty-calculator", "Stamp Duty"], ["capital-gains-tax-calculator", "Capital Gains Tax"], ["fuel-cost-calculator", "Fuel Cost"], ["mileage-calculator", "Mileage"], ["ev-vs-petrol-calculator", "EV vs Petrol"], ["rent-receipt-generator", "Rent Receipt"], ["share-average-calculator", "Share Average"], ["advance-tax-calculator", "Advance Tax"], ["brokerage-calculator", "Brokerage"], ["leave-encashment-calculator", "Leave Encashment"], ["home-loan-prepayment-calculator", "Home Loan Prepayment"], ["da-calculator", "DA Calculator"], ["child-education-calculator", "Child Education Calculator"], ["home-loan-tax-benefit-calculator", "Home Loan Tax Benefit"], ["gold-price-calculator", "Gold Price Calculator"], ["emergency-fund-calculator", "Emergency Fund Calculator"], ["silver-price-calculator", "Silver Price Calculator"], ["term-insurance-calculator", "Term Insurance Calculator"], ["health-insurance-premium-calculator", "Health Insurance Premium Calculator"], ["car-insurance-premium-calculator", "Car Insurance Premium Calculator"], ["two-wheeler-insurance-premium-calculator", "Two-Wheeler Insurance Premium Calculator"], ["7th-pay-commission-salary-calculator", "7th Pay Commission"], ["8th-pay-commission-salary-calculator", "8th Pay Commission"], ["personal-loan-eligibility-calculator", "Personal Loan Eligibility"], ["business-loan-emi-calculator", "Business Loan EMI"], ["road-tax-calculator", "Road Tax"]]],
+    ["Health & Study", [["bmi-calculator", "BMI"], ["bmr-calculator", "BMR"], ["cgpa-to-percentage-calculator", "CGPA to Percentage"], ["body-fat-calculator", "Body Fat"], ["pregnancy-due-date-calculator", "Pregnancy Due Date"], ["ovulation-calculator", "Ovulation"], ["sleep-calculator", "Sleep Calculator"], ["attendance-calculator", "Attendance Calculator"], ["period-calculator", "Period Calculator"], ["protein-calculator", "Protein Calculator"], ["water-intake-calculator", "Water Intake Calculator"]]],
+    ["Home & Living", [["washing-machine-capacity-calculator", "Washing Machine Capacity"], ["mattress-size-finder", "Mattress Size Finder"], ["rooftop-solar-calculator", "Rooftop Solar"], ["ac-tonnage-calculator", "AC Tonnage Calculator"], ["house-construction-cost-calculator", "House Construction Cost Calculator"], ["electricity-bill-calculator", "Electricity Bill Calculator"], ["paint-calculator", "Paint Calculator"], ["tiles-calculator", "Tiles Calculator"], ["concrete-calculator", "Concrete Calculator"], ["brick-calculator", "Brick Calculator"], ["steel-weight-calculator", "Steel Weight Calculator"], ["cement-calculator", "Cement Calculator"], ["sand-calculator", "Sand Calculator"], ["plaster-calculator", "Plaster Calculator"], ["plywood-calculator", "Plywood Calculator"], ["packers-and-movers-cost-calculator", "Packers and Movers Cost Calculator"], ["water-tank-calculator", "Water Tank Calculator"], ["staircase-calculator", "Staircase Calculator"], ["false-ceiling-cost-calculator", "False Ceiling Cost Calculator"], ["modular-kitchen-cost-calculator", "Modular Kitchen Cost Calculator"], ["interior-design-cost-calculator", "Interior Design Cost Calculator"], ["wallpaper-calculator", "Wallpaper Calculator"], ["inverter-battery-backup-calculator", "Inverter Battery Backup"]]],
   ];
   const liveToolSlugs = new Set(calculatorPages.map((page) => page.slug));
   const toolGroups = toolMenu
@@ -519,13 +519,9 @@ function renderFooter() {
         <li><a href="/education/universities/">Top Universities</a></li>
         <li><a href="/education/medical-colleges/">Medical Colleges (NIRF)</a></li>
         <li><a href="/business/">Business Directory (700+)</a></li>
-        <li><a href="/wam-to-gpa-calculator/">WAM to GPA Calculator</a></li>
         <li><a href="/ssc-age-calculator/">SSC Age Calculator</a></li>
         <li><a href="/cgpa-to-percentage-calculator/">CGPA to Percentage Calculator</a></li>
         <li><a href="/age-calculator/">Age Calculator</a></li>
-        <li><a href="/upsc-age-calculator/">UPSC Age Calculator</a></li>
-        <li><a href="/ibps-age-calculator/">IBPS Age Calculator</a></li>
-        <li><a href="/rrb-age-calculator/">RRB Age Calculator</a></li>
         <li><a href="/emi-calculator/">EMI Calculator</a></li>
         <li><a href="/sip-calculator/">SIP Calculator</a></li>
         <li><a href="/bmi-calculator/">BMI Calculator</a></li>
@@ -534,78 +530,7 @@ function renderFooter() {
         <li><a href="/ppf-calculator/">PPF Calculator</a></li>
         <li><a href="/fd-calculator/">FD Calculator</a></li>
         <li><a href="/income-tax-calculator/">Income Tax Calculator</a></li>
-        <li><a href="/rd-calculator/">RD Calculator</a></li>
         <li><a href="/home-loan-emi-calculator/">Home Loan EMI Calculator</a></li>
-        <li><a href="/gratuity-calculator/">Gratuity Calculator</a></li>
-        <li><a href="/hra-calculator/">HRA Calculator</a></li>
-        <li><a href="/compound-interest-calculator/">Compound Interest Calculator</a></li>
-        <li><a href="/epf-calculator/">EPF Calculator</a></li>
-        <li><a href="/nps-calculator/">NPS Calculator</a></li>
-        <li><a href="/ssy-calculator/">SSY Calculator</a></li>
-        <li><a href="/nsc-calculator/">NSC Calculator</a></li>
-        <li><a href="/scss-calculator/">SCSS Calculator</a></li>
-        <li><a href="/post-office-mis-calculator/">Post Office MIS Calculator</a></li>
-        <li><a href="/kvp-calculator/">KVP Calculator</a></li>
-        <li><a href="/personal-loan-emi-calculator/">Personal Loan EMI Calculator</a></li>
-        <li><a href="/post-office-time-deposit-calculator/">Post Office Time Deposit Calculator</a></li>
-        <li><a href="/car-loan-emi-calculator/">Car Loan EMI Calculator</a></li>
-        <li><a href="/apy-calculator/">APY Calculator</a></li>
-        <li><a href="/swp-calculator/">SWP Calculator</a></li>
-        <li><a href="/washing-machine-capacity-calculator/">Washing Machine Capacity Calculator</a></li>
-        <li><a href="/mattress-size-finder/">Mattress Size Finder</a></li>
-        <li><a href="/laptop-budget-checker/">Laptop Budget Checker</a></li>
-        <li><a href="/event-planning-budget-estimator/">Event Planning Budget Estimator</a></li>
-        <li><a href="/retirement-calculator/">Retirement Calculator</a></li>
-        <li><a href="/step-up-sip-calculator/">Step-up SIP Calculator</a></li>
-        <li><a href="/home-loan-eligibility-calculator/">Home Loan Eligibility Calculator</a></li>
-        <li><a href="/lumpsum-calculator/">Lumpsum Calculator</a></li>
-        <li><a href="/education-loan-emi-calculator/">Education Loan EMI Calculator</a></li>
-        <li><a href="/bike-loan-emi-calculator/">Bike Loan EMI Calculator</a></li>
-        <li><a href="/gold-loan-calculator/">Gold Loan Calculator</a></li>
-        <li><a href="/credit-card-emi-calculator/">Credit Card EMI Calculator</a></li>
-        <li><a href="/salary-calculator/">Salary Calculator</a></li>
-        <li><a href="/simple-interest-calculator/">Simple Interest Calculator</a></li>
-        <li><a href="/cagr-calculator/">CAGR Calculator</a></li>
-        <li><a href="/bmr-calculator/">BMR Calculator</a></li>
-        <li><a href="/body-fat-calculator/">Body Fat Calculator</a></li>
-        <li><a href="/xirr-calculator/">XIRR Calculator</a></li>
-        <li><a href="/tds-calculator/">TDS Calculator</a></li>
-        <li><a href="/rent-vs-buy-calculator/">Rent vs Buy Calculator</a></li>
-        <li><a href="/pregnancy-due-date-calculator/">Pregnancy Due Date Calculator</a></li>
-        <li><a href="/ovulation-calculator/">Ovulation Calculator</a></li>
-        <li><a href="/discount-calculator/">Discount Calculator</a></li>
-        <li><a href="/date-calculator/">Date Calculator</a></li>
-        <li><a href="/inflation-calculator/">Inflation Calculator</a></li>
-        <li><a href="/stamp-duty-calculator/">Stamp Duty Calculator</a></li>
-        <li><a href="/capital-gains-tax-calculator/">Capital Gains Tax Calculator</a></li>
-        <li><a href="/fuel-cost-calculator/">Fuel Cost Calculator</a></li>
-        <li><a href="/share-average-calculator/">Share Average Calculator</a></li>
-        <li><a href="/advance-tax-calculator/">Advance Tax Calculator</a></li>
-        <li><a href="/brokerage-calculator/">Brokerage Calculator</a></li>
-        <li><a href="/leave-encashment-calculator/">Leave Encashment Calculator</a></li>
-        <li><a href="/rooftop-solar-calculator/">Rooftop Solar Calculator</a></li>
-        <li><a href="/home-loan-prepayment-calculator/">Home Loan Prepayment Calculator</a></li>
-        <li><a href="/da-calculator/">DA Calculator</a></li>
-        <li><a href="/child-education-calculator/">Child Education Calculator</a></li>
-        <li><a href="/sleep-calculator/">Sleep Calculator</a></li>
-        <li><a href="/home-loan-tax-benefit-calculator/">Home Loan Tax Benefit Calculator</a></li>
-        <li><a href="/gold-price-calculator/">Gold Price Calculator</a></li>
-        <li><a href="/attendance-calculator/">Attendance Calculator</a></li>
-        <li><a href="/emergency-fund-calculator/">Emergency Fund Calculator</a></li>
-        <li><a href="/silver-price-calculator/">Silver Price Calculator</a></li>
-        <li><a href="/ac-tonnage-calculator/">AC Tonnage Calculator</a></li>
-        <li><a href="/house-construction-cost-calculator/">House Construction Cost Calculator</a></li>
-        <li><a href="/electricity-bill-calculator/">Electricity Bill Calculator</a></li>
-        <li><a href="/paint-calculator/">Paint Calculator</a></li>
-        <li><a href="/term-insurance-calculator/">Term Insurance Calculator</a></li>
-        <li><a href="/health-insurance-premium-calculator/">Health Insurance Premium Calculator</a></li>
-        <li><a href="/tiles-calculator/">Tiles Calculator</a></li>
-        <li><a href="/car-insurance-premium-calculator/">Car Insurance Premium Calculator</a></li>
-        <li><a href="/two-wheeler-insurance-premium-calculator/">Two-Wheeler Insurance Premium Calculator</a></li>
-        <li><a href="/period-calculator/">Period Calculator</a></li>
-        <li><a href="/concrete-calculator/">Concrete Calculator</a></li>
-        <li><a href="/protein-calculator/">Protein Calculator</a></li>
-        <li><a href="/brick-calculator/">Brick Calculator</a></li>
         <li><a href="/search/">Search All Guides</a></li>
         <li><a href="/assets/bb20-new/image-credits.html">Image Credits</a></li>
         <li><a href="mailto:visitbest10@gmail.com">visitbest10@gmail.com</a></li>
@@ -1202,6 +1127,54 @@ for (let i = 0; i < calculatorPages.length; i++) {
                 ? renderProteinCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, proteinClient.toString())
               : item.kind === "brickCalculator"
                 ? renderBrickCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, brickClient.toString())
+              : item.kind === "steelWeightCalculator"
+                ? renderSteelWeightCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, steelClient.toString())
+              : item.kind === "cementCalculator"
+                ? renderCementCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, cementClient.toString())
+              : item.kind === "waterTankCalculator"
+                ? renderWaterTankCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, waterTankClient.toString())
+              : item.kind === "staircaseCalculator"
+                ? renderStaircaseCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, staircaseClient.toString())
+              : item.kind === "falseCeilingCalculator"
+                ? renderFalseCeilingCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, falseCeilingClient.toString())
+              : item.kind === "modularKitchenCalculator"
+                ? renderModularKitchenCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, modularKitchenClient.toString())
+              : item.kind === "interiorDesignCalculator"
+                ? renderInteriorDesignCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, interiorDesignClient.toString())
+              : item.kind === "wallpaperCalculator"
+                ? renderWallpaperCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, wallpaperClient.toString())
+              : item.kind === "creditCardPayoffCalculator"
+                ? renderCreditCardPayoffCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, creditCardPayoffClient.toString())
+              : item.kind === "mileageCalculator"
+                ? renderMileageCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, mileageClient.toString())
+              : item.kind === "evPetrolCalculator"
+                ? renderEvPetrolCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, evPetrolClient.toString())
+              : item.kind === "rentReceiptGenerator"
+                ? renderRentReceiptGeneratorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, rentReceiptClient.toString())
+              : item.kind === "hlbtCalculator"
+                ? renderHlbtCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, hlbtClient.toString())
+              : item.kind === "invbCalculator"
+                ? renderInvbCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, invbClient.toString())
+              : item.kind === "cpc7Calculator"
+                ? renderCpc7CalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, cpc7Client.toString())
+              : item.kind === "cpc8Calculator"
+                ? renderCpc8CalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, cpc8Client.toString())
+              : item.kind === "pleCalculator"
+                ? renderPleCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, pleClient.toString())
+              : item.kind === "bleCalculator"
+                ? renderBleCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, bleClient.toString())
+              : item.kind === "sandCalculator"
+                ? renderSandCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, sandClient.toString())
+              : item.kind === "plasterCalculator"
+                ? renderPlasterCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, plasterClient.toString())
+              : item.kind === "roadTaxCalculator"
+                ? renderRoadTaxCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, roadtaxClient.toString())
+              : item.kind === "plywoodCalculator"
+                ? renderPlywoodCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, plywoodClient.toString())
+              : item.kind === "packersMoversCostCalculator"
+                ? renderPackersMoversCostCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, packersClient.toString())
+              : item.kind === "waterIntakeCalculator"
+                ? renderWaterIntakeCalculatorBody(item, calculatorPages.filter((page) => page !== item), calculatorCss, waterIntakeClient.toString())
               : renderCalculatorBody(item, calculatorPages[1 - i], calculatorCss, calculatorClient.toString());
   const html = renderPage({
     title: `${item.title} - VisitBest`,

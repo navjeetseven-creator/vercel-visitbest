@@ -583,3 +583,19 @@ h1, h2, h3, h4 { color: var(--ink); font-family: Georgia, "Times New Roman", ser
 .prose figure.vb-brand-figure { width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; }
 .prose figure.vb-brand-figure figcaption { width: 0; min-width: 100%; }
 .vb-buy-wrap { text-align: center; margin: .85rem 0 1.15rem; }
+
+/* ============================================================
+   RELATED-TOOLS ROW (owner instruction, 16 Nov 2026 — pack 387)
+   Append-only: no rule above this section is changed.
+   Calculator pages end with a "Check another plan before you
+   start" row of related-tool links (<div class="others-row">).
+   The class had no styles anywhere — not in this file and not
+   in the pages' inline CSS — so the links rendered as one
+   solid wall of jammed-together text. Render them as tidy
+   wrapped pill chips instead, in the site palette (border
+   --line, surface --white, hover --cream + --accent edge,
+   matching .button-quiet / .primary-nav hover tones).
+   ============================================================ */
+.others-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.others-row a { display: inline-block; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); color: var(--ink); font-size: .85rem; font-weight: 600; line-height: 1.35; text-decoration: none; }
+.others-row a:hover { background: var(--cream); border-color: var(--accent); color: var(--accent-dark); }
