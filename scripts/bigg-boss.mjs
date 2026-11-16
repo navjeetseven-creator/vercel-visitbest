@@ -45,11 +45,12 @@ export const contestants = [
     "city": "Mumbai, Maharashtra",
     "image": "/assets/bb20/scout.webp",
     "nominated": true,
+    "seasonNominated": true,
     "status": "in-house",
     "bio": "Tanmay Singh (born 30 July 1996), universally known as Scout or ScoutOP, is one of the pioneers of Indian esports — a former professional BGMI/PUBG Mobile player turned one of the country's biggest gaming creators. In the house he has played tactically and spoken bluntly, captained the house in Week 7, and clashed repeatedly with Qazi Touqeer, including in the 23 October captaincy task.",
     "longBio": "Scout's personal life has become the season's biggest outside-the-house storyline. He has said in the house that he has been in a relationship for around five years with gaming creator Kaashvi Hiranandani, known as KaashPlays (born 28 April 1997, Mumbai, age 29 — a streamer who moved from a finance career into gaming and was named Female Streamer of the Year at the Indian Gaming Awards 2022). Scout has discussed a difficult past relationship and spoken of marriage plans, saying Kaashvi wants to be financially independent first. That is now colliding with his on-screen bond with Love Gill, which both describe as a brother-sister bond but which guest host Rohit Shetty questioned in Weekend Ka Vaar promos, and with Kaashvi's 25 October Weekend Ka Vaar appearance, in which she told him to 'cut Love out', said she felt disgusted, and alleged Love had trapped him (Times Now; Times of India, 25 October). In Episode 51 (26 October), Scout acknowledged Kaashvi had raised valid concerns about his behaviour, while Love confronted him over his silence, telling him he had spoiled her career (Times Now; Times of India, 26 October).",
-    "trend": "In house · Captain in Week 7, succeeded by Mahhi Vij · Nominated Week 10",
-    "highlight": "Week 7 captain whose game, his bond with Love Gill, and his relationship with girlfriend Kaashvi (KaashPlays) all collide on Weekend Ka Vaar — now nominated in Week 9."
+    "trend": "In house · Captain in Week 7, succeeded by Mahhi Vij · Nominated for the rest of the season (Ep 68)",
+    "highlight": "Week 7 captain whose game, his bond with Love Gill, and his relationship with girlfriend Kaashvi (KaashPlays) all collide on Weekend Ka Vaar — now nominated for the rest of the season after Bigg Boss's Episode 68 punishments. In Episode 69 (13 November) he shaved his head on air after a clash with Love Gill — he says he trimmed too much by accident; Amrapali and Kanika questioned whether it was deliberate."
   },
   {
     "id": "mary-kom",
@@ -364,7 +365,7 @@ export const polls = [
     h1: "Who Will Be Evicted in Week 10? (Eviction Prediction — Open Poll)",
     lead: "A different question from the support poll: not who you back, but who you think is going home at this week's Weekend Ka Vaar. This Open Poll records reader expectation only — it is not a VisitBest forecast, it carries no insider information, and it does not decide evictions.",
     heroBadge: "🔮 EVICTION PREDICTION · WEEK 10 · OPEN POLL",
-    leaderNote: "The prediction poll opened on 11 November 2026. After the Week 10 eviction is confirmed on air, the readers' most-predicted name is recorded against the actual result in the scorecard on the voting hub. [VisitBest Open Poll — audience sentiment only.]",
+    leaderNote: "The prediction poll opened on 11 November 2026. The Week 10 result is confirmed on air — no eviction — and the readers' most-predicted name is recorded against it in the scorecard on the voting hub. [VisitBest Open Poll — audience sentiment only.]",
     pollType: "prediction",
     optionIds: ["gullu", "qazi-touqeer", "yung-dsa", "kanika-mann", "love-gill", "scout", "amrapali-dubey", "mahhi-vij", "uditi-singh", "manish-goel"],
     voteDistribution: {
@@ -381,7 +382,7 @@ export const polls = [
     },
     dangerIds: [],
     embedEyebrow: "Eviction Prediction · Week 10",
-    embedIntro: "Not who you support — who you think is going home. Pick the nominee you expect to be evicted at this week's Weekend Ka Vaar. This records reader expectation only: it is not a VisitBest forecast, it carries no insider information, and it does not decide evictions. After the eviction is confirmed on air, the outcome is entered in the scorecard below.",
+    embedIntro: "Not who you support — who you think is going home. Pick the nominee you expect to be evicted at this week's Weekend Ka Vaar. This records reader expectation only: it is not a VisitBest forecast, it carries no insider information, and it does not decide evictions. The Week 10 outcome is confirmed on air — no eviction — and is entered in the scorecard below.",
     buttonLabel: "PREDICT IN OPEN POLL",
     buttonIcon: "🔮",
     metaDesc: "Bigg Boss 20 Week 10 eviction prediction Open Poll: who do readers think will be evicted at Weekend Ka Vaar? A VisitBest audience-expectation poll — not a forecast and not official voting; official voting is only via JioCinema / JioHotstar as announced on air.",
@@ -663,11 +664,11 @@ export const polls = [
   {
     slug: "bigg-boss-20-yung-vs-scout",
     image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
-    title: "Yung DSA vs Scout: The Captaincy-Task Clash in Bigg Boss 20 (Reported) — Open Poll",
+    title: "Yung DSA vs Scout: The Captaincy-Task Clash in Bigg Boss 20 (Episode 68) — Open Poll",
     h1: "Yung DSA vs Scout: The Captaincy-Task Clash (Open Poll)",
-    lead: "Reports from the live feed say a captaincy task turned physical between Yung DSA and Scout: a burnt family photograph, a push, a friendship declared over, and season-long punishments reported for Scout. None of it had been confirmed in a telecast episode at the time of writing, and this page labels it as reported throughout. Read what the reports say happened, then vote in the Open Poll on who was more at fault. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
-    heroBadge: "🥊 YUNG VS SCOUT · REPORTED CLASH · OPEN POLL",
-    leaderNote: "This Open Poll opened on 12 November 2026 — standings update as readers vote in this poll. The clash it asks about is reported from the live feed and had not been confirmed in a telecast episode at the time of writing. [VisitBest Open Poll votes — not official votes.]",
+    lead: "Episode 68 (aired 12 November 2026) showed the captaincy task turning physical between Yung DSA and Scout: a burnt family photograph, a push, a friendship declared over — and Bigg Boss announcing punishments for Scout, including a season-long nomination and a captaincy ban. Read what happened, then vote in the Open Poll on who was more at fault. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
+    heroBadge: "🥊 YUNG VS SCOUT · EPISODE 68 · OPEN POLL",
+    leaderNote: "This Open Poll opened on 12 November 2026 — standings update as readers vote in this poll. The clash it asks about was shown in Episode 68 (aired 12 November 2026), when Scout pushed Yung during the captaincy task. [VisitBest Open Poll votes — not official votes.]",
     pollType: "sentiment",
     question: "Who was more at fault in the Yung–Scout clash?",
     textOptions: [
@@ -683,14 +684,14 @@ export const polls = [
     dangerIds: [],
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
-    metaDesc: "Yung DSA vs Scout: multiple outlets report a physical clash in the Bigg Boss 20 captaincy task and season-long punishments for Scout — not yet confirmed in a telecast episode. Read the reported sequence and vote in the VisitBest Open Poll. Audience sentiment only.",
+    metaDesc: "Yung DSA vs Scout: Episode 68 (aired 12 November 2026) showed the physical clash in the Bigg Boss 20 captaincy task and Bigg Boss announcing punishments for Scout — a season-long nomination and a captaincy ban. Read what happened and vote in the VisitBest Open Poll. Audience sentiment only.",
   },
   {
     slug: "bigg-boss-20-next-captain-poll",
     image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
     title: "Who Should Be the Next Captain of Bigg Boss 20? — Open Poll",
     h1: "Who Should Be the Next Captain of Bigg Boss 20? (Open Poll)",
-    lead: "Arishfa Khan's time as captain has ended: she was removed as captain in Episode 67 (aired 11 November), which announced a new captaincy task. No successor has been named. If the choice were yours, who should lead the house next? Vote for one of the ten other housemates below. Open Poll — for audience sentiment only; the show's own process decides the real captain.",
+    lead: "Arishfa Khan's time as captain has ended: she was removed as captain in Episode 67 (aired 11 November), which announced a new captaincy task — but Episode 68 (aired 12 November) called that task off after Scout pushed Yung DSA during it. No successor has been named. If the choice were yours, who should lead the house next? Vote for one of the ten other housemates below. Open Poll — for audience sentiment only; the show's own process decides the real captain.",
     heroBadge: "👑 NEXT CAPTAIN · OPEN POLL",
     leaderNote: "This Open Poll opened on 12 November 2026 — standings update as readers vote in this poll. [VisitBest Open Poll votes — not official votes.]",
     pollType: "captain",
@@ -710,7 +711,7 @@ export const polls = [
     dangerIds: [],
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
-    metaDesc: "Who should be the next captain of Bigg Boss 20? With Arishfa Khan removed as captain in Episode 67 and a new captaincy task announced, vote for Gullu, Qazi Touqeer, Yung DSA, Kanika Mann, Love Gill, Scout, Aamrapali Dubey, Mahhi Vij, Uditi Singh or Manish Goel in the VisitBest Open Poll. Audience sentiment only.",
+    metaDesc: "Who should be the next captain of Bigg Boss 20? With Arishfa Khan removed as captain in Episode 67 and the new-captain task called off in Episode 68, vote for Gullu, Qazi Touqeer, Yung DSA, Kanika Mann, Love Gill, Scout, Aamrapali Dubey, Mahhi Vij, Uditi Singh or Manish Goel in the VisitBest Open Poll. Audience sentiment only.",
   },
   {
     slug: "bigg-boss-20-contestant-journey",
@@ -757,13 +758,13 @@ export const polls = [
     image: "/assets/bb20-new/covers/bigg-boss-20-contestants.jpg",
     title: "Who Is the Current Captain of Bigg Boss 20? — Captain History & Next Captain",
     h1: "Who Is the Current Captain of Bigg Boss 20?",
-    lead: "Arishfa Khan is the last confirmed captain — she took the captaincy in Week 10 after a unanimous housemate vote in Episode 61. Her captaincy ended in Episode 67 (11 November 2026), when Bigg Boss removed her as captain and announced a new captaincy task; the next captain is yet to be decided. This is a living page — it is refreshed when a new captain is confirmed on air. Below: the quick answer, every captain this season, what the captain gets, and what happens next.",
+    lead: "Arishfa Khan is the last confirmed captain — she took the captaincy in Week 10 after a unanimous housemate vote in Episode 61. Her captaincy ended in Episode 67 (11 November 2026), when Bigg Boss removed her as captain and announced a new captaincy task; that task was called off in Episode 68 (12 November) after the Scout–Yung clash, and the next captain is yet to be decided. This is a living page — it is refreshed when a new captain is confirmed on air. Below: the quick answer, every captain this season, what the captain gets, and what happens next.",
     heroBadge: "👑 CAPTAIN OF THE HOUSE · LIVING PAGE",
-    leaderNote: "Living page — updated when a new captain is confirmed on air. The next captain is yet to be decided (12 November 2026).",
+    leaderNote: "Living page — updated when a new captain is confirmed on air. The next captain is yet to be decided (13 November 2026).",
     pollType: "captain-page",
     voteDistribution: {},
     dangerIds: [],
-    metaDesc: "Who is the current captain of Bigg Boss 20? Arishfa Khan is the last confirmed captain (Week 10); a new captaincy task was announced in Episode 67 and the next captain is yet to be decided. Captain history, what the captain gets, and the transition — updated when a new captain is confirmed on air.",
+    metaDesc: "Who is the current captain of Bigg Boss 20? Arishfa Khan is the last confirmed captain (Week 10); a new captaincy task was announced in Episode 67, called off in Episode 68, and the next captain is yet to be decided. Captain history, what the captain gets, and the transition — updated when a new captain is confirmed on air.",
   },
 ];
 
@@ -1062,11 +1063,12 @@ function renderNominationCallout() {
       <span class="bb-nom-names">Gullu (Kushal Tanwar) • Qazi Touqeer • Yung DSA • Kanika Mann • Love Gill • ScoutOP • Aamrapali Dubey • Mahhi Vij • Uditi Singh • Manish Goel</span>
     </p>
     <div class="bb-nom-safe-bar">
-      <span class="bb-safe-indicator">🟢 <strong>No captain this week:</strong> Arishfa Khan was removed as captain in Episode 67 (11 November 2026); a new-captain task is under way and no successor has been named. She was not nominated this week, so she is safe from the Week 10 eviction.</span>
-      <span class="bb-evicted-indicator">❌ <strong>Evicted:</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4), Aman Gandhi (Week 6), Mary Kom (Week 7), Aasif Khan (Week 8) · <strong>Removed:</strong> Nakul Dhull (wild card, Week 6) · <strong>Week 9:</strong> no eviction (Diwali week)</span>
+      <span class="bb-safe-indicator">🟢 <strong>No captain this week:</strong> Arishfa Khan was removed as captain in Episode 67 (11 November 2026); the new-captain task was called off in Episode 68 (12 November) after Scout pushed Yung DSA, and no successor has been named. She was not nominated in Week 10, and no eviction took place that week.</span>
+      <span class="bb-evicted-indicator">❌ <strong>Evicted:</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4), Aman Gandhi (Week 6), Mary Kom (Week 7), Aasif Khan (Week 8) · <strong>Removed:</strong> Nakul Dhull (wild card, Week 6) · <strong>Week 9:</strong> no eviction (Diwali week) · <strong>Week 10:</strong> no eviction (Mahhi Vij lost a lifeline)</span>
     </div>
+    <p class="bb-nom-list-text"><strong>Week 11 nominations — reported, not yet aired:</strong> reports from 15 November say the Sharbat Nomination Task left Uditi Singh as the only housemate to escape nomination, with all other ten housemates nominated. The task has not been shown on air yet — it airs in Episode 72 tonight (16 November) — so this stays reported until it is confirmed on air.</p>
     <p class="bb-nom-list-text"><strong>Open Poll — for audience sentiment only.</strong> Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
-    <p class="bb-nom-list-text">Last updated: 12 November 2026.</p>
+    <p class="bb-nom-list-text">Last updated: 16 November 2026.</p>
   </div>`;
 }
 
@@ -1084,7 +1086,7 @@ export const eliminationArchive = [
   { week: 7, evicted: "MC Mary Kom", note: "Announced on Weekend Ka Vaar by guest host Rohit Shetty." },
   { week: 8, evicted: "Aasif Khan", note: "Eviction confirmed on Weekend Ka Vaar (Episode 57)." },
   { week: 9, evicted: "No eviction", note: "Diwali week — the eviction was deferred and no housemate left the house." },
-  { week: 10, evicted: "—", note: "The whole house is nominated except Arishfa Khan (not nominated this week). Arishfa was removed as captain in Episode 67 (11 November 2026); a new-captain task is under way and no successor has been named. The eviction takes place at the coming Weekend Ka Vaar." },
+  { week: 10, evicted: "No eviction", note: "The whole house is nominated except Arishfa Khan (not nominated this week). Arishfa was removed as captain in Episode 67 (11 November 2026); the new-captain task was called off in Episode 68 (12 November) after Scout pushed Yung DSA, and no successor has been named. In Episode 68 Bigg Boss also announced punishments for Scout: nominated for the rest of the season and barred from captaincy. In Episode 69 (13 November) Scout shaved his head on air after a clash with Love Gill, and he and Yung DSA cleared the air; still no new captain was named. Reports from the Weekend Ka Vaar shoot on 14 November conflict: Siasat and Film Window first reported Manish Goel evicted after receiving the fewest votes, with a possible second eviction unnamed, while a later Film Window report says Manish stays in the house and Mahhi Vij received the fewest votes, losing one of her two lifelines. Sunday's episode (Episode 71, 15 November) aired and settled it: Salman Khan announced that no contestant would be evicted this week. Mahhi Vij received the fewest votes but survived on her extra lifeline, leaving her with one lifeline; Manish Goel stays in the house. The pre-air reports that Manish Goel had been evicted were contradicted by the aired episode." },
 ];
 
 export const nominationArchive = [
@@ -1207,7 +1209,7 @@ function renderEmbeddedPoll(poll) {
 }
 
 // Dated trend snapshot — the cumulative Open Poll standings recorded on
-// 12 November 2026, computed from this file's own Open Poll data only.
+// 16 November 2026, computed from this file's own Open Poll data only.
 function renderTrendSnapshot() {
   const mainPoll = pollBySlug.get("bigg-boss-20-voting");
   const { list } = getPollStats(mainPoll);
@@ -1216,8 +1218,8 @@ function renderTrendSnapshot() {
     <div class="bb-section-head">
       <div>
         <p class="eyebrow">Open Poll Trend Snapshot</p>
-        <h2>Open Poll Trend Snapshot — 12 November 2026</h2>
-        <p>Where the VisitBest Open Poll's cumulative audience sentiment stood when this hub was updated on 12 November 2026. Figures are VisitBest Open Poll votes only — they are not official Bigg Boss votes and do not decide evictions. The snapshot is refreshed each time this hub is updated.</p>
+        <h2>Open Poll Trend Snapshot — 16 November 2026</h2>
+        <p>Where the VisitBest Open Poll's cumulative audience sentiment stood when this hub was updated on 16 November 2026. Figures are VisitBest Open Poll votes only — they are not official Bigg Boss votes and do not decide evictions. The snapshot is refreshed each time this hub is updated.</p>
         ${HUB_DISCLAIMER_BOX}
       </div>
     </div>
@@ -1235,7 +1237,7 @@ function renderTrendSnapshot() {
                 <td class="bb-table-contestant"><strong>${c.name}</strong></td>
                 <td><strong>${c.votes.toLocaleString("en-IN")}</strong></td>
                 <td><span class="bb-table-pct">${c.pctStr}</span></td>
-                <td>${c.captain ? "🟢 Captain — Week 10" : c.exCaptain ? "🟢 Ex-captain — removed Ep 67" : c.nominated ? "🔴 Nominated — Week 10" : "In house"}</td>
+                <td>${c.captain ? "🟢 Captain — Week 10" : c.exCaptain ? "🟢 Ex-captain — removed Ep 67" : c.seasonNominated ? "🔴 Nominated — rest of season (Ep 68)" : c.nominated ? "🔴 Nominated — Week 10" : "In house"}</td>
               </tr>`
             )
             .join("")}
@@ -1294,7 +1296,7 @@ function renderPredictionScorecard() {
       <div>
         <p class="eyebrow">Prediction Scorecard</p>
         <h2>Eviction Prediction Scorecard — Readers vs Results</h2>
-        <p>The eviction-prediction Open Poll starts in Week 10. After each Weekend Ka Vaar, this table records the readers' most-predicted evictee against the housemate who actually left — a row is filled in only once an eviction is confirmed on air.</p>
+        <p>The eviction-prediction Open Poll starts in Week 10. After each Weekend Ka Vaar, this table records the readers' most-predicted evictee against the housemate who actually left — a row is filled in only once the week's result is confirmed on air.</p>
         ${HUB_DISCLAIMER_BOX}
       </div>
     </div>
@@ -1304,7 +1306,7 @@ function renderPredictionScorecard() {
           <tr><th>Week</th><th>Readers' most-predicted evictee (VisitBest Open Poll)</th><th>Actually evicted (confirmed on air)</th><th>Result</th></tr>
         </thead>
         <tbody>
-          <tr><td>Week 10</td><td>Prediction poll open — the most-predicted name is recorded when the poll closes at Weekend Ka Vaar</td><td>To be confirmed on air</td><td>Pending</td></tr>
+          <tr><td>Week 10</td><td>Uditi Singh — most-predicted in the VisitBest Open Poll when it closed at Weekend Ka Vaar</td><td>No eviction — confirmed on air (Episode 71, 15 November 2026)</td><td>No eviction, so no prediction scored</td></tr>
         </tbody>
       </table>
     </div>
@@ -1555,18 +1557,18 @@ export function renderAdSenseUnit(position = "mid", label = "Advertisement") {
 
 // ---------- Engagement pages (queue entry 280, 12 Nov 2026) ----------
 
-// The reported-punishments poll is embedded on the Yung vs Scout page only
+// The Episode 68 punishments poll is embedded on the Yung vs Scout page only
 // (not a standalone route), following the hub's embedded-poll pattern.
 export const yungScoutFairnessPoll = {
   slug: "bigg-boss-20-yung-scout-punishments-fair",
-  h1: "Are the Reported Punishments for Scout Fair?",
-  embedEyebrow: "Reported Punishments · Open Poll",
-  embedIntro: "The punishments listed above are reported, not confirmed on air. Judging them as reported: are they fair, too harsh, or should judgement wait until the episode airs?",
+  h1: "Are Scout's Episode 68 Punishments Fair?",
+  embedEyebrow: "Episode 68 Punishments · Open Poll",
+  embedIntro: "Bigg Boss announced these punishments on air in Episode 68 (12 November 2026). Are they fair, too harsh, or should judgement wait until the season plays out?",
   pollType: "sentiment",
   textOptions: [
     { id: "fair", label: "Fair", sub: "Getting physical in a task deserves a season-long cost." },
-    { id: "too-harsh", label: "Too harsh", sub: "The reported punishment goes beyond what a task clash should cost." },
-    { id: "wait-for-episode", label: "Wait for the episode first", sub: "Nothing should be judged until the clash is shown on air." },
+    { id: "too-harsh", label: "Too harsh", sub: "The punishment goes beyond what a task clash should cost." },
+    { id: "wait-for-episode", label: "Wait and watch", sub: "Nothing should be judged until the season plays out." },
   ],
   voteDistribution: {
     "too-harsh": 388,
@@ -1754,13 +1756,13 @@ function renderYungScoutSections() {
       "Reported From the Live Feed",
       "First, a straight note on what is confirmed — and what is not",
       `<div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
-          ⚠️ <strong>Reported, not confirmed on air.</strong> The clash described on this page has been reported from the show's live feed by multiple outlets — ABP Live, Siasat, NewsX, India Times and NewsBytes. At the time of writing it had NOT been shown or confirmed in a telecast episode. Read everything below as reported.
+          ✅ <strong>Confirmed on air.</strong> The clash described on this page was shown in Episode 68 (aired 12 November 2026) — Times Now's episode recap and TellyChakkar both record Bigg Boss announcing punishments for Scout after the push. Read everything below as shown on air, except where a point is flagged as reported.
         </div>
-    <p>Scout and Yung DSA were friends in this house — which is why the reported end to that friendship, in the middle of a task, is the story. Here is the sequence the reports agree on.</p>`
+    <p>Scout and Yung DSA were friends in this house — which is why the end to that friendship, in the middle of a task, is the story. Here is the sequence as shown in Episode 68.</p>`
     ) +
     storySection(
-      "The Reported Sequence",
-      "What the reports say happened in the captaincy task",
+      "What Happened in Episode 68",
+      "The sequence as shown in the episode",
       `${renderPortraitStrip(["yung-dsa", "scout"])}
     <ul>
       <li>Round 2 of the captaincy task: Uditi Singh sat on a robot chair while Team A tried to make her cry.</li>
@@ -1768,7 +1770,7 @@ function renderYungScoutSections() {
       <li>Gullu and Yung kept interrupting and commenting, and abuses were exchanged.</li>
       <li>Scout pushed Yung. Yung's response: "Ab dosti khatam" — the friendship is over.</li>
       <li>Bigg Boss stopped the task and separated them — Scout to the bedroom area, Yung to the garden.</li>
-      <li>Scout later apologised. Reports differ on whether Yung accepted the apology, so that point stays open rather than settled either way here.</li>
+      <li>Scout later apologised — and in Episode 69 (13 November) the two cleared the air on air: Scout opened up to Yung, who consoled him and helped trim the back of his head after Scout shaved it.</li>
     </ul>`
     )
   );
@@ -1777,16 +1779,17 @@ function renderYungScoutSections() {
 function renderYungScoutPunishments() {
   return (
     storySection(
-      "Reported Punishments",
-      "The punishments reported for Scout",
-      `<p>Alongside the clash, the same reporting described a set of punishments for Scout. Like the clash itself, <strong>these are reported — they had not been confirmed in a telecast episode at the time of writing</strong>:</p>
+      "Punishments Announced in Episode 68",
+      "What Bigg Boss announced for Scout",
+      `<p>After the push, Bigg Boss announced punishments for Scout in Episode 68 (aired 12 November 2026). Times Now's episode recap and TellyChakkar both record the announcement; the first two punishments below are confirmed by both, and the other two are carried by multiple outlets:</p>
     <ul>
       <li><strong>Nominated for the entire season</strong></li>
       <li><strong>Barred from captaincy</strong></li>
       <li><strong>No special powers</strong></li>
       <li><strong>Can be evicted at any time</strong></li>
     </ul>
-    <p>A season-long nomination plus a captaincy bar would be among the harshest punishments of this season — if they are confirmed when the episode airs. Is that proportionate for a task clash that reportedly turned physical, or does it go too far before viewers have seen the footage for themselves? Vote below.</p>`
+    <p>One difference between the accounts: Times Now's recap describes the announcement as also denying Scout a lifeline revival, and notes the reaction task was cancelled in the same episode. The task was called off either way.</p>
+    <p>A season-long nomination plus a captaincy bar are among the harshest punishments of this season. Is that proportionate for a task clash that turned physical on air, or does it go too far? Vote below.</p>`
     ) + renderEmbeddedTextPoll(yungScoutFairnessPoll)
   );
 }
@@ -1794,11 +1797,11 @@ function renderYungScoutPunishments() {
 function renderNextCaptainExplainer() {
   return storySection(
     "Why This Poll, Why Now",
-    "Arishfa's captaincy has ended — a new captaincy task is under way",
-    `<p>Episode 67 (aired 11 November) announced a new captaincy task, as covered in Times Now's episode highlights — so the house will have a new captain soon, one way or another.</p>
-    <p>Arishfa was removed as captain in Episode 67 (aired 11 November), which announced the new captaincy task. No new captain has been named, and this page does not present one as chosen.</p>
+    "Arishfa's captaincy has ended — the new-captain task was called off in Episode 68",
+    `<p>Episode 67 (aired 11 November) announced a new captaincy task — but Episode 68 (aired 12 November) called it off after Scout pushed Yung DSA during the task, so the house still has no captain.</p>
+    <p>Arishfa was removed as captain in Episode 67 (aired 11 November). No new captain has been named, and this page does not present one as chosen.</p>
     <div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
-          ℹ️ <strong>One name to weigh carefully:</strong> Scout is <strong>reported</strong> to be barred from captaincy, as part of the punishments reported after the captaincy-task clash with Yung DSA (see <a href="/bigg-boss-20-yung-vs-scout/">Yung vs Scout</a>). That bar is reported, not confirmed on air — keep it in mind as you vote.
+          ℹ️ <strong>One name to weigh carefully:</strong> Scout is <strong>barred from captaincy</strong>, as announced by Bigg Boss in Episode 68 after the captaincy-task clash with Yung DSA (see <a href="/bigg-boss-20-yung-vs-scout/">Yung vs Scout</a>). He cannot become captain again this season — keep it in mind as you vote.
         </div>
     <p>The ten names in the poll below are the ten housemates other than Arishfa. Pick the one you would hand the captaincy to.</p>`
   );
@@ -1859,6 +1862,7 @@ function journeyCurrentStatus(c) {
   if (c.evicted) return `Evicted — Week ${c.evictedWeek}`;
   if (c.captain) return "In house · Captain (Week 10)";
   if (c.exCaptain) return "In house · Ex-captain (removed Ep 67, 11 Nov)";
+  if (c.seasonNominated) return "In house · Nominated for the rest of the season (Ep 68)";
   if (c.nominated) return "In house · Nominated (Week 10)";
   return "In house";
 }
@@ -1975,7 +1979,7 @@ function renderScoutKaashviSections() {
       "More on Scout, Love and the house",
       `<ul>
       <li><a href="/bigg-boss-20-scout-love-story/"><strong>Scout and Love Gill: the bond, the Kaashvi question and the fall-out</strong></a> — the other half of this story, with its own Open Poll.</li>
-      <li><a href="/bigg-boss-20-yung-vs-scout/"><strong>Yung DSA vs Scout: the captaincy-task clash (reported)</strong></a></li>
+      <li><a href="/bigg-boss-20-yung-vs-scout/"><strong>Yung DSA vs Scout: the captaincy-task clash (Episode 68)</strong></a></li>
       <li><a href="/bigg-boss-20-next-captain-poll/"><strong>Who should be the next captain? Open Poll</strong></a></li>
       <li><a href="/bigg-boss-20-voting/"><strong>Bigg Boss 20 Weekly Voting Hub</strong></a> — this week's Open Poll, the archives and every poll on one page.</li>
     </ul>`
@@ -2001,7 +2005,7 @@ export const captainHistory = [
   { id: "scout", when: "Week 7", note: "Captained in Week 7 (site records)." },
   { id: "mahhi-vij", when: "23 Oct 2026", note: "Qazi won the captaincy task round on 23 October and declared Mahhi the new captain, succeeding Scout (her record). The week number is not pinned in the site's records." },
   { id: "kanika-mann", when: "Week 9", note: "Captain during the Week 9 nomination cycle — used a captain's power to nominate Mahhi Vij directly in Episode 58." },
-  { id: "arishfa-khan", when: "Week 10 — removed in Episode 67 (11 Nov 2026)", note: "Confirmed by a unanimous housemate vote in Episode 61 (the earlier 2X Room vote was reported before that confirmation). Immune in Week 10 while all 10 other housemates were nominated. Removed as captain in Episode 67 (11 November 2026); a new-captain task is under way and no successor has been named." },
+  { id: "arishfa-khan", when: "Week 10 — removed in Episode 67 (11 Nov 2026)", note: "Confirmed by a unanimous housemate vote in Episode 61 (the earlier 2X Room vote was reported before that confirmation). Immune in Week 10 while all 10 other housemates were nominated. Removed as captain in Episode 67 (11 November 2026); the new-captain task was called off in Episode 68 (12 November) and no successor has been named." },
 ];
 
 export function renderBiggBossCaptainPage(poll) {
@@ -2027,7 +2031,7 @@ export function renderBiggBossCaptainPage(poll) {
       "Arishfa Khan — the last confirmed captain",
       `${renderStoryPhoto(arishfa.image, "Arishfa Khan, captain of Bigg Boss 20 in Week 10", "Arishfa Khan — the last confirmed captain of the house (Week 10).")}
     <p><strong>Arishfa Khan is the last confirmed captain of Bigg Boss 20 (Week 10).</strong> She became captain after a unanimous housemate vote in Episode 61 — the earlier 2X Room captaincy vote had only been reported before that confirmation. As captain she was immune in Week 10 while all 10 other housemates were nominated.</p>
-    <p>Her captaincy ended in Episode 67 (aired 11 November 2026), when Bigg Boss removed her as captain after housemates broke several rules and announced a new captaincy task in the same episode. <strong>The next captain is yet to be decided</strong> — no successor has been named as of 12 November 2026. This page is a living page: it is refreshed when a new captain is confirmed on air.</p>`
+    <p>Her captaincy ended in Episode 67 (aired 11 November 2026), when Bigg Boss removed her as captain after housemates broke several rules and announced a new captaincy task in the same episode; that task was called off in Episode 68 (12 November). <strong>The next captain is yet to be decided</strong> — no successor has been named as of 13 November 2026: Episode 69 (13 November) named none either. This page is a living page: it is refreshed when a new captain is confirmed on air.</p>`
     )}
 
     <section class="bb-leaderboard-section">
@@ -2070,9 +2074,9 @@ export function renderBiggBossCaptainPage(poll) {
     ${storySection(
       "The New Captain",
       "A new captain is coming — who will it be?",
-      `<p>Episode 67 (aired 11 November) removed Arishfa as captain and announced a new captaincy task, as covered in Times Now's episode highlights. No new captain has been named, and this page names none.</p>
+      `<p>Episode 67 (aired 11 November) removed Arishfa as captain and announced a new captaincy task, as covered in Times Now's episode highlights. Episode 68 (aired 12 November) called that task off after Scout pushed Yung DSA during it. No new captain has been named, and this page names none.</p>
     <div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
-          ℹ️ <strong>One name to weigh carefully:</strong> Scout is <strong>reported</strong> to be barred from captaincy, as part of the punishments reported after the captaincy-task clash with Yung DSA (see <a href="/bigg-boss-20-yung-vs-scout/">Yung vs Scout</a>). That bar is reported, not confirmed on air.
+          ℹ️ <strong>One name to weigh carefully:</strong> Scout is <strong>barred from captaincy</strong>, as announced by Bigg Boss in Episode 68 after the captaincy-task clash with Yung DSA (see <a href="/bigg-boss-20-yung-vs-scout/">Yung vs Scout</a>). He cannot become captain again this season.
         </div>
     <p>Want a say? Vote in the Open Poll below — <a href="/bigg-boss-20-next-captain-poll/"><strong>Who Should Be the Next Captain?</strong></a> — and see how the house's journey has run so far in the <a href="/bigg-boss-20-contestant-journey/"><strong>Contestant Journey Matrix</strong></a>.</p>`
     )}
