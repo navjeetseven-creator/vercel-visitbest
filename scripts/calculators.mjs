@@ -146766,7 +146766,7 @@ export function renderElectricityBillCalculatorBody(p, others, css, clientSource
               </div>
               <div>
                 <strong>Checked 14 November 2026</strong>
-                <small>TheDiscomBill, Palz, MERC, TGERC, KSEB and the state tariff orders — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -148186,7 +148186,7 @@ export function renderPaintCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 14 November 2026</strong>
-                <small>aapkapainter, onsiteteams, calculatorking, bttotek and dailytools — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -149529,7 +149529,7 @@ export function renderTermInsuranceCalculatorBody(p, others, css, clientSource) 
               </div>
               <div>
                 <strong>Checked 14 November 2026</strong>
-                <small>calculatorkosh, policybachat, calcusy, 1dollars and globalcalqulate — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -150816,7 +150816,7 @@ export function renderHealthInsurancePremiumCalculatorBody(p, others, css, clien
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>calkulator.in, CalcWise, Tata AIG, DealPlexus and Hanitech — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -152185,7 +152185,7 @@ export function renderTilesCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>RupeesCalc, Helperzy, Techidea, Rupeka and Ekzapp — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -153538,7 +153538,7 @@ export function renderCarInsurancePremiumCalculatorBody(p, others, css, clientSo
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>Zurich Kotak, PolicyBazaar, CalcFinex, PolicyBachat and CalcWise — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -161294,7 +161294,7 @@ export function renderTwoWheelerInsurancePremiumCalculatorBody(p, others, css, c
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>SMC Insurance, BikeLeague, PolicyBazaar and PolicyBachat — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -162222,7 +162222,7 @@ export function renderPeriodCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>Calculator Website, Calculator Park, ProbaBaby, Toolsped and Mr. Calco — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -163225,7 +163225,7 @@ export function renderConcreteCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>CivilSite, TheCivilStudies, Worldofcalcs, InstaCalc, InteriorCalculator and CalculatorLib — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -164087,7 +164087,7 @@ export function renderProteinCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>FitTrackPro, CalcVind, FitLives, MuscleBlaze and ProteinIntakeCalculator — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -165077,7 +165077,7 @@ export function renderBrickCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>NineClip, RupeesCalc, CivilSite, BuildHQ and OnsiteTeams — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -166084,7 +166084,7 @@ export function renderSteelWeightCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>ERP Group, TheCivilStudies, Ekzapp, CivilSolution, Vystra and Plotr — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -167276,7 +167276,7 @@ export function renderCementCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>TheCivilStudies, NineClip, DevCalc, Whiz.tools, CalculatorLib and Construction Estimator India — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -168571,7 +168571,7 @@ export function renderWaterTankCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>NirmanShastra, InteriorCalculator, CivilSite, NineClip, Bansal, Sintex and Engineering Nepal — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -169970,7 +169970,7 @@ export function renderStaircaseCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>TheCivilStudies, NineClip, InteriorCalculator, Fingtaj, Infralens and Calcvind — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -171315,7 +171315,7 @@ export function renderFalseCeilingCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>InteriorCalculator, Toolique, Kalikolom, IdeasAndLiving, SpaceForm and USG — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -172475,7 +172475,7 @@ export function renderModularKitchenCalculatorBody(p, others, css, clientSource)
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>Livspace, Asian Paints Beautiful Homes, Interior Company, Novella Kitchens and NoBroker — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -173810,7 +173810,7 @@ export function renderInteriorDesignCalculatorBody(p, others, css, clientSource)
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>NoBroker, Livspace, HouseGyan and Black Ant Studio — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -174981,7 +174981,7 @@ export function renderWallpaperCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>Asian Paints, HouseYog, Calclabhub, Magicdecor, NRTechStudio and CodingAce — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -176473,7 +176473,7 @@ export function renderCreditCardPayoffCalculatorBody(p, others, css, clientSourc
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>RBI Directions 2025, HDFC Bank's key fact statement, CredoCalc, Rupeka, CreditBharosa and Zarth — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -178169,7 +178169,7 @@ export function renderMileageCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>CalcVind, Calculator King, ViralScopeHub and ap7am — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -180162,7 +180162,7 @@ export function renderEvPetrolCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>evvsgascarcost.com, evcommunity.in, techovn.com and others — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -181506,7 +181506,7 @@ export function renderRentReceiptGeneratorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>TAXAJ, Indian Pay Calculator, Srutved, RentReceipt.online and ToolsGalaxio — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -183142,7 +183142,7 @@ export function renderHlbtCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>blogbanking.com, credocalc.com, nivesh.org.in and convertsheet.com — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -184801,7 +184801,7 @@ export function renderInvbCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>toq.in, desiutility.com, lentoindia.com and bijlibeetools.online — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -192107,7 +192107,7 @@ export function renderSandCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 15 November 2026</strong>
-                <small>PropertiesOnline, Toolique and SiteSetu — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -193210,7 +193210,7 @@ export function renderPlasterCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 16 November 2026</strong>
-                <small>TheCivilStudies, Civilsite, Calcvind and CalculatorApp — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -194350,7 +194350,7 @@ export function renderRoadTaxCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 16 November 2026</strong>
-                <small>GoDigit, feescalculator, motoautiv, parivahanbharat and InvestVerdict — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -195340,7 +195340,7 @@ export function renderPlywoodCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 16 November 2026</strong>
-                <small>Sri Sri Plywoods, Saburi Ply, eightbyfour, Greenply and NRTech Studio — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -196378,7 +196378,7 @@ export function renderPackersMoversCostCalculatorBody(p, others, css, clientSour
               </div>
               <div>
                 <strong>Checked 16 November 2026</strong>
-                <small>servicesutra, RentNiti, InteriorCalculator, DZ Cargo and shiftingapp — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
@@ -197326,7 +197326,7 @@ export function renderWaterIntakeCalculatorBody(p, others, css, clientSource) {
               </div>
               <div>
                 <strong>Checked 16 November 2026</strong>
-                <small>NNWA, Calkulator, Calculator Planet, DoItSwift, AIM India and AFG Wellness — see the methodology at the foot of the page</small>
+                <small>See the methodology at the foot of the page</small>
               </div>
             </div>
 
