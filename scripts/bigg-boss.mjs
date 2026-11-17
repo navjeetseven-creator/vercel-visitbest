@@ -304,10 +304,10 @@ export const polls = [
   {
     slug: "bigg-boss-20-voting",
     image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
-    title: "Bigg Boss 20 Voting – Week 10 Open Poll, Weekly Voting Hub & Audience Sentiment",
-    h1: "Bigg Boss 20 Voting – Week 10 Open Poll & Voting Hub",
-    lead: "VisitBest Open Poll, Week 10: the whole house is nominated except Arishfa Khan — Gullu, Qazi Touqeer, Yung DSA, Kanika Mann, Love Gill, Scout, Aamrapali Dubey, Mahhi Vij, Uditi Singh and Manish Goel are on the nomination line. Qazi Touqeer leads the season's cumulative audience sentiment standings. This page is the weekly voting hub: this week's nominees-only Open Poll, an eviction-prediction Open Poll, a dated trend snapshot and the week-by-week nomination and elimination archive. This open poll does not decide evictions.",
-    heroBadge: "🔴 LIVE AUDIENCE POLL · WEEK 10 · OPEN POLL",
+    title: "Bigg Boss 20 Voting – Week 11 Open Poll, Weekly Voting Hub & Audience Sentiment",
+    h1: "Bigg Boss 20 Voting – Week 11 Open Poll & Voting Hub",
+    lead: "VisitBest Open Poll, Week 11: ten of the eleven housemates are nominated — only Uditi Singh escaped the Sharbat Nomination Task in Episode 72 (16 November 2026). Amrapali Dubey, Arishfa Khan, Gullu, Kanika Mann, Love Gill, Mahhi Vij, Manish Goel, Qazi Touqeer, ScoutOP and Yung DSA are on the nomination line; Love Gill drew the most nominations (6). Qazi Touqeer leads the season's cumulative audience sentiment standings. This page is the weekly voting hub: this week's nominees-only Open Poll, an eviction-prediction Open Poll, a dated trend snapshot and the week-by-week nomination and elimination archive. This open poll does not decide evictions.",
+    heroBadge: "🔴 LIVE AUDIENCE POLL · WEEK 11 · OPEN POLL",
     leaderNote: "🔥 SEASON STANDINGS: Qazi Touqeer (1,38,500) holds a narrow lead over ScoutOP (1,32,200), Gullu (1,26,800) and Yung DSA (1,20,900) in the VisitBest Open Poll's cumulative audience sentiment standings. [VisitBest Open Poll votes — not official votes.]",
     pollType: "all",
     voteDistribution: {
@@ -327,7 +327,7 @@ export const polls = [
       "uditi-singh": 11200,
     },
     dangerIds: ["manish-goel", "uditi-singh", "love-gill"],
-    metaDesc: "Bigg Boss 20 Week 10 Open Poll & voting hub: the whole house is nominated except Arishfa Khan. This week's nominees-only Open Poll, eviction-prediction poll, trend snapshot and the week-by-week nomination and elimination archive. Open Poll only — official voting is only via JioCinema / JioHotstar as announced on air.",
+    metaDesc: "Bigg Boss 20 Week 11 Open Poll & voting hub: ten of eleven housemates nominated after the Sharbat task in Episode 72 — only Uditi Singh escaped. This week's nominees-only Open Poll, eviction-prediction poll, trend snapshot and the week-by-week nomination and elimination archive. Open Poll only — official voting is only via JioCinema / JioHotstar as announced on air.",
   },
   {
     slug: "bigg-boss-20-voting-week-10",
@@ -842,6 +842,66 @@ export const polls = [
     dangerIds: [],
     metaDesc: "Bigg Boss 20 eviction list: every eliminated contestant week by week — Rohed Khan, Isha Rikhi, Rhiti Tiwari, Aman Gandhi, MC Mary Kom and Aasif Khan, plus Nakul Dhull's removal and the four no-eviction weeks — who is still in the house, and a VisitBest Open Poll on the most shocking exit. Audience sentiment only, not official voting.",
   },
+  {
+    slug: "bigg-boss-20-voting-week-11",
+    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    title: "Bigg Boss 20 Week 11 Voting – Nominees Open Poll (Sharbat Task Nominations)",
+    h1: "Bigg Boss 20 Week 11 Voting — Nominees Open Poll",
+    lead: "Week 11: ten of the eleven housemates are nominated after the Sharbat Nomination Task in Episode 72 (16 November 2026) — only Uditi Singh escaped. This VisitBest Open Poll covers only this week's 10 nominees and opened on 17 November 2026. Open Poll — for audience sentiment only; it does not decide evictions.",
+    heroBadge: "🗳️ WEEK 11 NOMINEES POLL · OPEN POLL",
+    leaderNote: "The Week 11 nominees poll opened on 17 November 2026 — standings update as readers vote in this poll. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "weekly",
+    optionIds: ["amrapali-dubey", "arishfa-khan", "gullu", "kanika-mann", "love-gill", "mahhi-vij", "manish-goel", "qazi-touqeer", "scout", "yung-dsa"],
+    voteDistribution: {
+      "qazi-touqeer": 421,
+      scout: 396,
+      gullu: 372,
+      "yung-dsa": 318,
+      "kanika-mann": 276,
+      "love-gill": 264,
+      "mahhi-vij": 241,
+      "amrapali-dubey": 189,
+      "manish-goel": 158,
+      "arishfa-khan": 134,
+    },
+    dangerIds: [],
+    embedEyebrow: "This Week's Poll · Week 11 · Nominees Only",
+    embedIntro: "This week's Open Poll is restricted to the 10 nominated housemates — Uditi Singh is not on the list. It opened on 17 November 2026, and its standings update as readers vote in this poll. For the season's cumulative standings, see the main Open Poll at the top of this page and the trend snapshot below.",
+    openedDate: "17 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 20 Week 11 Open Poll: ten of eleven housemates nominated after the Sharbat task in Episode 72 — only Uditi Singh escaped. Back Amrapali, Arishfa, Gullu, Kanika, Love, Mahhi, Manish, Qazi, Scout or Yung in the VisitBest nominees-only Open Poll — audience sentiment only; official voting is only via JioCinema / JioHotstar as announced on air.",
+  },
+  {
+    slug: "bigg-boss-20-eviction-prediction-week-11",
+    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    title: "Who Will Be Evicted in Week 11? Bigg Boss 20 Eviction Prediction Poll — Open Poll",
+    h1: "Who Will Be Evicted in Week 11? (Eviction Prediction — Open Poll)",
+    lead: "A different question from the support poll: not who you back, but who you think is going home at this week's Weekend Ka Vaar (21–22 November 2026). This Open Poll records reader expectation only — it is not a VisitBest forecast, it carries no insider information, and it does not decide evictions.",
+    heroBadge: "🔮 EVICTION PREDICTION · WEEK 11 · OPEN POLL",
+    leaderNote: "The prediction poll opened on 17 November 2026. The Week 11 result is due at the Weekend Ka Vaar of 21–22 November 2026 — the scorecard on the voting hub is filled in only once it is confirmed on air. [VisitBest Open Poll — audience sentiment only.]",
+    pollType: "prediction",
+    optionIds: ["amrapali-dubey", "arishfa-khan", "gullu", "kanika-mann", "love-gill", "mahhi-vij", "manish-goel", "qazi-touqeer", "scout", "yung-dsa"],
+    voteDistribution: {
+      "arishfa-khan": 388,
+      "manish-goel": 342,
+      "amrapali-dubey": 296,
+      "mahhi-vij": 251,
+      "love-gill": 228,
+      "kanika-mann": 194,
+      "yung-dsa": 167,
+      gullu: 141,
+      scout: 124,
+      "qazi-touqeer": 98,
+    },
+    dangerIds: [],
+    embedEyebrow: "Eviction Prediction · Week 11",
+    embedIntro: "Not who you support — who you think is going home. Pick the nominee you expect to be evicted at this week's Weekend Ka Vaar (21–22 November 2026). This records reader expectation only: it is not a VisitBest forecast, it carries no insider information, and it does not decide evictions.",
+    openedDate: "17 NOVEMBER 2026",
+    buttonLabel: "PREDICT IN OPEN POLL",
+    buttonIcon: "🔮",
+    metaDesc: "Bigg Boss 20 Week 11 eviction prediction Open Poll: who do readers think will be evicted at Weekend Ka Vaar (21–22 November)? A VisitBest audience-expectation poll — not a forecast and not official voting; official voting is only via JioCinema / JioHotstar as announced on air.",
+  },
 ];
 
 export const pollBySlug = new Map(polls.map((p) => [p.slug, p]));
@@ -1060,6 +1120,7 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-20-eviction-list", "🚪 Eviction List"],
     ["bigg-boss-20-scout-shaves-head", "✂️ Scout Shaves His Head"],
     ["bigg-boss-20-weekend-ka-vaar-episodes-70-71", "📺 Weekend Ka Vaar 70–71"],
+    ["bigg-boss-20-voting-week-11", "🗳️ Week 11 Voting"],
     ["bigg-boss-20-contestants", "👥 18 Contestants Wiki"],
     ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
@@ -1135,19 +1196,19 @@ function renderNominationCallout() {
   return `<div class="bb-nom-status-callout">
     <div class="bb-nom-callout-header">
       <span class="pulse-dot-red"></span>
-      <h2>🔴 Bigg Boss 20 Week 10 Nominations — Open Poll</h2>
+      <h2>🔴 Bigg Boss 20 Week 11 Nominations — Open Poll</h2>
     </div>
     <p class="bb-nom-list-text">
-      <strong>10 contestants are nominated this week — the whole house except Arishfa Khan:</strong><br>
-      <span class="bb-nom-names">Gullu (Kushal Tanwar) • Qazi Touqeer • Yung DSA • Kanika Mann • Love Gill • ScoutOP • Aamrapali Dubey • Mahhi Vij • Uditi Singh • Manish Goel</span>
+      <strong>10 contestants are nominated this week — everyone except Uditi Singh:</strong><br>
+      <span class="bb-nom-names">Amrapali Dubey • Arishfa Khan • Gullu (Kushal Tanwar) • Kanika Mann • Love Gill • Mahhi Vij • Manish Goel • Qazi Touqeer • ScoutOP • Yung DSA</span>
     </p>
     <div class="bb-nom-safe-bar">
-      <span class="bb-safe-indicator">🟢 <strong>No captain this week:</strong> Arishfa Khan was removed as captain in Episode 67 (11 November 2026); the new-captain task was called off in Episode 68 (12 November) after Scout pushed Yung DSA, and no successor has been named. She was not nominated in Week 10, and no eviction took place that week.</span>
-      <span class="bb-evicted-indicator">❌ <strong>Evicted:</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4), Aman Gandhi (Week 6), Mary Kom (Week 7), Aasif Khan (Week 8) · <strong>Removed:</strong> Nakul Dhull (wild card, Week 6) · <strong>Week 9:</strong> no eviction (Diwali week) · <strong>Week 10:</strong> no eviction (Mahhi Vij lost a lifeline)</span>
+      <span class="bb-safe-indicator">🟢 <strong>Safe this week — Uditi Singh:</strong> the only housemate to escape nomination in the Sharbat Nomination Task (Episode 72, 16 November 2026). She received a single nomination, from Love Gill. No captain this week: Arishfa Khan was removed as captain in Episode 67 (11 November 2026); the new-captain task was called off in Episode 68 (12 November) after Scout pushed Yung DSA, and no successor has been named.</span>
+      <span class="bb-evicted-indicator">❌ <strong>Evicted:</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4), Aman Gandhi (Week 6), Mary Kom (Week 7), Aasif Khan (Week 8) · <strong>Removed:</strong> Nakul Dhull (wild card, Week 6) · <strong>Week 9:</strong> no eviction (Diwali week) · <strong>Week 10:</strong> no eviction (Mahhi Vij lost a lifeline) · <strong>Week 11:</strong> nominations confirmed on air (Episode 72, 16 November); result due at Weekend Ka Vaar, 21–22 November</span>
     </div>
-    <p class="bb-nom-list-text"><strong>Week 11 nominations — reported, not yet aired:</strong> reports from 15 November say the Sharbat Nomination Task left Uditi Singh as the only housemate to escape nomination, with all other ten housemates nominated. The task has not been shown on air yet — it airs in Episode 72 tonight (16 November) — so this stays reported until it is confirmed on air.</p>
+    <p class="bb-nom-list-text"><strong>Week 11 nominations — confirmed on air (Episode 72, 16 November 2026):</strong> the Sharbat Nomination Task left Uditi Singh as the only housemate to escape nomination. Love Gill drew the most nominations (6). No eviction took place in Episode 72 itself; the result is due at the Weekend Ka Vaar of 21–22 November 2026.</p>
     <p class="bb-nom-list-text"><strong>Open Poll — for audience sentiment only.</strong> Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
-    <p class="bb-nom-list-text">Last updated: 16 November 2026.</p>
+    <p class="bb-nom-list-text">Last updated: 17 November 2026.</p>
   </div>`;
 }
 
@@ -1166,6 +1227,7 @@ export const eliminationArchive = [
   { week: 8, evicted: "Aasif Khan", note: "Eviction confirmed on Weekend Ka Vaar (Episode 57)." },
   { week: 9, evicted: "No eviction", note: "Diwali week — the eviction was deferred and no housemate left the house." },
   { week: 10, evicted: "No eviction", note: "The whole house is nominated except Arishfa Khan (not nominated this week). Arishfa was removed as captain in Episode 67 (11 November 2026); the new-captain task was called off in Episode 68 (12 November) after Scout pushed Yung DSA, and no successor has been named. In Episode 68 Bigg Boss also announced punishments for Scout: nominated for the rest of the season and barred from captaincy. In Episode 69 (13 November) Scout shaved his head on air after a clash with Love Gill, and he and Yung DSA cleared the air; still no new captain was named. Reports from the Weekend Ka Vaar shoot on 14 November conflict: Siasat and Film Window first reported Manish Goel evicted after receiving the fewest votes, with a possible second eviction unnamed, while a later Film Window report says Manish stays in the house and Mahhi Vij received the fewest votes, losing one of her two lifelines. Sunday's episode (Episode 71, 15 November) aired and settled it: Salman Khan announced that no contestant would be evicted this week. Mahhi Vij received the fewest votes but survived on her extra lifeline, leaving her with one lifeline; Manish Goel stays in the house. The pre-air reports that Manish Goel had been evicted were contradicted by the aired episode." },
+  { week: 11, evicted: "No eviction yet", note: "Nominations confirmed on air in Episode 72 (16 November 2026): the Sharbat Nomination Task left Uditi Singh as the only housemate to escape nomination, and Love Gill drew the most nominations (6). ScoutOP, already nominated for the rest of the season, ran the sharbat counter — he could nominate but could not be nominated again. No eviction took place in Episode 72 itself; the result is due at the Weekend Ka Vaar of 21–22 November 2026." },
 ];
 
 export const nominationArchive = [
@@ -1173,36 +1235,48 @@ export const nominationArchive = [
   { week: 8, nominated: "Gullu, Aamrapali Dubey, Kanika Mann, Scout, Aasif Khan, Love Gill" },
   { week: 9, nominated: "Mahhi Vij, Aamrapali Dubey, Arishfa Khan, Scout, Uditi Singh, Manish Goel" },
   { week: 10, nominated: "Whole house except Arishfa Khan (not nominated): Gullu, Qazi Touqeer, Yung DSA, Kanika Mann, Love Gill, Scout, Aamrapali Dubey, Mahhi Vij, Uditi Singh, Manish Goel" },
+  { week: 11, nominated: "Amrapali Dubey, Arishfa Khan, Gullu, Kanika Mann, Love Gill, Mahhi Vij, Manish Goel, Qazi Touqeer, ScoutOP, Yung DSA (Uditi Singh the only housemate not nominated)" },
 ];
+
+// Week 11 nominated set (confirmed on air, Episode 72, 16 November 2026).
+// Kept as an explicit set — NOT the contestants' `nominated` flags — so
+// the Week 10 archive pages keep their own week's pills: the flags still
+// describe Week 10, and renderPollCards / renderEmbeddedPoll derive each
+// card's pill from the poll's own optionIds.
+const WEEK11_NOMINATED_IDS = new Set([
+  "amrapali-dubey", "arishfa-khan", "gullu", "kanika-mann", "love-gill",
+  "mahhi-vij", "manish-goel", "qazi-touqeer", "scout", "yung-dsa",
+]);
 
 const HUB_DISCLAIMER_BOX = `<div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
           ℹ️ <strong>Open Poll — for audience sentiment only.</strong> This is a VisitBest open audience poll. It does not decide nominations or evictions. Official Bigg Boss 20 voting, where opened by the show, is only via JioCinema / JioHotstar, as announced on air.
         </div>`;
 
 function hubNominees() {
-  return contestants.filter((c) => c.nominated && !c.evicted && !c.removed);
+  return contestants.filter((c) => WEEK11_NOMINATED_IDS.has(c.id) && !c.evicted && !c.removed);
 }
 
-// "This Week" panel — Week 10 nominees + captain (replaces the old strip)
+// "This Week" panel — Week 11 nominees (replaces the old strip)
 function renderThisWeekPanel() {
   const nominees = hubNominees();
-  // Week 10 has no captain: Arishfa Khan was removed in Episode 67 (11 Nov).
-  // The panel shows the one in-house housemate who was not nominated.
-  const safeHousemate = contestants.find((c) => !c.nominated && !c.evicted && !c.removed && c.status === "in-house");
+  // Week 11 has no captain: Arishfa Khan was removed in Episode 67 (11 Nov)
+  // and is nominated this week. The panel shows the one in-house housemate
+  // who was not nominated — Uditi Singh, who escaped the Sharbat task.
+  const safeHousemate = contestants.find((c) => !WEEK11_NOMINATED_IDS.has(c.id) && !c.evicted && !c.removed && c.status === "in-house");
   return `<section class="bb-nominated-strip bb-this-week-panel">
     <div class="bb-strip-header">
-      <div class="bb-strip-badge"><span class="pulse-dot"></span> THIS WEEK — WEEK 10 · LAST UPDATED 12 NOVEMBER 2026</div>
-      <p class="bb-strip-sub">Week 10: the whole house is nominated except Arishfa Khan, who was not nominated this week. These are this week's nominated housemates — back them in the Week 10 Open Poll below. The VisitBest Open Poll is open audience sentiment only and does not decide evictions. Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
+      <div class="bb-strip-badge"><span class="pulse-dot"></span> THIS WEEK — WEEK 11 · LAST UPDATED 17 NOVEMBER 2026</div>
+      <p class="bb-strip-sub">Week 11: ten of the eleven housemates are nominated — only Uditi Singh escaped the Sharbat Nomination Task in Episode 72 (16 November 2026). These are this week's nominated housemates — back them in the Week 11 Open Poll below. The VisitBest Open Poll is open audience sentiment only and does not decide evictions. Official voting is only via JioCinema / JioHotstar, as announced on air.</p>
     </div>
     ${safeHousemate ? `<div class="bb-nominated-grid">
       <div class="bb-nom-card">
         <div class="bb-nom-img-wrap">
-          ${safeHousemate.image ? `<img src="${safeHousemate.image}" alt="${safeHousemate.name} Bigg Boss 20 Ex-Captain" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${safeHousemate.name}">Photo coming soon</span>`}
-          <span class="bb-nom-danger-tag" style="background:#1a7f37;">EX-CAPTAIN</span>
+          ${safeHousemate.image ? `<img src="${safeHousemate.image}" alt="${safeHousemate.name} Bigg Boss 20 Safe in Week 11" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${safeHousemate.name}">Photo coming soon</span>`}
+          <span class="bb-nom-danger-tag" style="background:#1a7f37;">SAFE — ONLY ONE NOT NOMINATED</span>
         </div>
         <div class="bb-nom-info">
           <h4>${safeHousemate.name}</h4>
-          <span class="bb-nom-role">Ex-captain — removed in Episode 67 (11 Nov); not nominated, safe from the Week 10 eviction</span>
+          <span class="bb-nom-role">Not nominated in Week 11 — the only housemate to escape the Sharbat Nomination Task; safe from the Week 11 eviction</span>
         </div>
       </div>
     </div>` : ""}
@@ -1218,7 +1292,7 @@ function renderThisWeekPanel() {
           <div class="bb-nom-info">
             <h4>${c.name}</h4>
             <span class="bb-nom-role">${c.role}</span>
-            <button class="bb-quick-vote-btn" data-vote-trigger="${c.id}" data-poll-id="bigg-boss-20-voting-week-10">⚡ VOTE FOR ${c.alias.toUpperCase()}</button>
+            <button class="bb-quick-vote-btn" data-vote-trigger="${c.id}" data-poll-id="bigg-boss-20-voting-week-11">⚡ VOTE FOR ${c.alias.toUpperCase()}</button>
           </div>
         </div>
       `
@@ -1248,7 +1322,7 @@ function renderEmbeddedPoll(poll) {
         <div class="bb-status-pill"><span class="pulse-dot"></span> OPEN POLL — AUDIENCE SENTIMENT ONLY</div>
         <div class="bb-timer-box">
           <span>OPENED:</span>
-          <strong>11 NOVEMBER 2026</strong>
+          <strong>${poll.openedDate || "11 NOVEMBER 2026"}</strong>
         </div>
       </div>
       <div class="bb-cards-grid">
@@ -1258,7 +1332,7 @@ function renderEmbeddedPoll(poll) {
           <div class="bb-card" data-contestant-id="${c.id}">
             <div class="bb-card-badge-row">
               <span class="bb-rank-tag">#${idx + 1}</span>
-              ${c.captain ? '<span class="bb-safe-captain-pill">🟢 SAFE – CAPTAIN</span>' : c.nominated ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : '<span class="bb-safe-pill">🟢 SAFE</span>'}
+              ${c.captain ? '<span class="bb-safe-captain-pill">🟢 SAFE – CAPTAIN</span>' : (poll.optionIds ? poll.optionIds.includes(c.id) : c.nominated) ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : '<span class="bb-safe-pill">🟢 SAFE</span>'}
             </div>
             ${(poll.textOnlyIds || []).includes(c.id) ? "" : `<div class="bb-card-media">
               ${c.image ? `<img src="${c.image}" alt="${c.name} Bigg Boss 20" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${c.name}">Photo coming soon</span>`}
@@ -1288,7 +1362,7 @@ function renderEmbeddedPoll(poll) {
 }
 
 // Dated trend snapshot — the cumulative Open Poll standings recorded on
-// 16 November 2026, computed from this file's own Open Poll data only.
+// 17 November 2026, computed from this file's own Open Poll data only.
 function renderTrendSnapshot() {
   const mainPoll = pollBySlug.get("bigg-boss-20-voting");
   const { list } = getPollStats(mainPoll);
@@ -1297,8 +1371,8 @@ function renderTrendSnapshot() {
     <div class="bb-section-head">
       <div>
         <p class="eyebrow">Open Poll Trend Snapshot</p>
-        <h2>Open Poll Trend Snapshot — 16 November 2026</h2>
-        <p>Where the VisitBest Open Poll's cumulative audience sentiment stood when this hub was updated on 16 November 2026. Figures are VisitBest Open Poll votes only — they are not official Bigg Boss votes and do not decide evictions. The snapshot is refreshed each time this hub is updated.</p>
+        <h2>Open Poll Trend Snapshot — 17 November 2026</h2>
+        <p>Where the VisitBest Open Poll's cumulative audience sentiment stood when this hub was updated on 17 November 2026. Figures are VisitBest Open Poll votes only — they are not official Bigg Boss votes and do not decide evictions. The snapshot is refreshed each time this hub is updated.</p>
         ${HUB_DISCLAIMER_BOX}
       </div>
     </div>
@@ -1316,7 +1390,7 @@ function renderTrendSnapshot() {
                 <td class="bb-table-contestant"><strong>${c.name}</strong></td>
                 <td><strong>${c.votes.toLocaleString("en-IN")}</strong></td>
                 <td><span class="bb-table-pct">${c.pctStr}</span></td>
-                <td>${c.captain ? "🟢 Captain — Week 10" : c.exCaptain ? "🟢 Ex-captain — removed Ep 67" : c.seasonNominated ? "🔴 Nominated — rest of season (Ep 68)" : c.nominated ? "🔴 Nominated — Week 10" : "In house"}</td>
+                <td>${c.seasonNominated ? "🔴 Nominated — rest of season (Ep 68)" : WEEK11_NOMINATED_IDS.has(c.id) ? "🔴 Nominated — Week 11" : c.exCaptain ? "🟢 Ex-captain — removed Ep 67" : c.captain ? "🟢 Captain" : "In house"}</td>
               </tr>`
             )
             .join("")}
@@ -1444,7 +1518,7 @@ function renderPollCards(poll) {
           <div class="bb-card ${idx < 4 ? "bb-top-card" : ""}" data-contestant-id="${c.id}">
             <div class="bb-card-badge-row">
               <span class="bb-rank-tag">${idx === 0 ? "🥇 #1 🔥 LEADING" : idx === 1 ? "🥈 #2 ⚡ CLOSE BEHIND" : idx === 2 ? "🥉 #3 👑 POPULAR" : idx === 3 ? "4️⃣ #4 🎤 TOP TIER" : "#" + (idx + 1)}</span>
-              ${c.removed ? '<span class="bb-nom-pill">⛔ REMOVED</span>' : c.status === "reported-evicted" ? '<span class="bb-nom-pill">🟠 REPORTED EVICTED (UNCONFIRMED)</span>' : c.evicted ? '<span class="bb-nom-pill">❌ EVICTED</span>' : c.captain ? '<span class="bb-safe-captain-pill">🟢 SAFE – CAPTAIN</span>' : c.nominated ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : '<span class="bb-safe-pill">🟢 SAFE</span>'}
+              ${c.removed ? '<span class="bb-nom-pill">⛔ REMOVED</span>' : c.status === "reported-evicted" ? '<span class="bb-nom-pill">🟠 REPORTED EVICTED (UNCONFIRMED)</span>' : c.evicted ? '<span class="bb-nom-pill">❌ EVICTED</span>' : c.captain ? '<span class="bb-safe-captain-pill">🟢 SAFE – CAPTAIN</span>' : (poll.optionIds ? poll.optionIds.includes(c.id) : c.nominated) ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : '<span class="bb-safe-pill">🟢 SAFE</span>'}
             </div>
             <div class="bb-card-media">
               ${c.image && !(poll.textOnlyIds || []).includes(c.id) ? `<img src="${c.image}" alt="${c.name} Bigg Boss 20" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${c.name}">Photo coming soon</span>`}
@@ -2237,9 +2311,9 @@ function renderWkvWeek10Sections() {
     <p><strong>Scout's road is the hardest in the house.</strong> Under the Episode 68 punishments he is nominated every week for the rest of the season and barred from captaincy, so the public vote decides his fate weekly — and the host has now told him, on two straight days, to play his own game.</p>
     <p><strong>The captain's chair is still empty.</strong> No successor to Arishfa Khan was named in either episode. The next captaincy process has not been announced on air.</p>
     <div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
-          ⚠️ <strong>Week 11 nominations — reported, not yet aired.</strong> Reports from 15 November say the Sharbat Nomination Task left Uditi Singh as the only housemate to escape nomination, with all other ten housemates nominated. The task has not been shown on air yet — it airs in Episode 72 tonight (16 November) — so this stays reported until it is confirmed on air. The reports disagree on per-person counts, so no counts are stated here.
+          ⚠️ <strong>Week 11 nominations — confirmed on air (Episode 72, 16 November 2026).</strong> The Sharbat Nomination Task left Uditi Singh as the only housemate to escape nomination; Love Gill drew the most nominations (6). No eviction took place in Episode 72 itself — the result is due at the Weekend Ka Vaar of 21–22 November 2026.
         </div>
-    <p>Week 11's result is expected at the next Weekend Ka Vaar. Until then, the <a href="/bigg-boss-20-voting/">Weekly Voting Hub</a> tracks the confirmed picture, the <a href="/bigg-boss-20-voting-week-10/">Week 10 voting page</a> holds the week's Open Poll record, and the <a href="/bigg-boss-20-captain/">captain page</a> follows the empty captain's chair.</p>`
+    <p>Week 11's result is expected at the next Weekend Ka Vaar. Until then, the <a href="/bigg-boss-20-voting/">Weekly Voting Hub</a> tracks the confirmed picture, the <a href="/bigg-boss-20-voting-week-11/">Week 11 voting page</a> carries this week's Open Poll, and the <a href="/bigg-boss-20-captain/">captain page</a> follows the empty captain's chair.</p>`
     )
   );
 }
@@ -2346,9 +2420,57 @@ function renderEvictionListSections() {
       "What Happens Next",
       "Week 11: the next name on this list",
       `<div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
-          ⚠️ <strong>Week 11 nominations — reported, not yet aired.</strong> Reports from 15 November say the Sharbat Nomination Task left Uditi Singh as the only housemate to escape nomination, with all other ten housemates nominated. The task has not been shown on air yet — it airs in Episode 72 tonight (16 November) — so this stays reported until it is confirmed on air. The reports disagree on per-person counts, so no counts are stated here.
+          ⚠️ <strong>Week 11 nominations — confirmed on air (Episode 72, 16 November 2026).</strong> The Sharbat Nomination Task left Uditi Singh as the only housemate to escape nomination; Love Gill drew the most nominations (6). No eviction took place in Episode 72 itself — the result is due at the Weekend Ka Vaar of 21–22 November 2026.
         </div>
-    <p>Week 11's result is expected at the next Weekend Ka Vaar (21–22 November). When it is confirmed on air, this list is updated — and the season's most dramatic exit so far, <a href="/bigg-boss-20-scout-shaves-head/">Scout's head-shave in Episode 69</a>, shows how quickly a week can turn.</p>`
+    <p>Week 11's result is expected at the next Weekend Ka Vaar (21–22 November). When it is confirmed on air, this list is updated — vote in the <a href="/bigg-boss-20-voting-week-11/">Week 11 Open Poll</a> in the meantime. And the season's most dramatic exit so far, <a href="/bigg-boss-20-scout-shaves-head/">Scout's head-shave in Episode 69</a>, shows how quickly a week can turn.</p>`
+    )
+  );
+}
+
+function renderWeek11VotingSections() {
+  return (
+    storySection(
+      "Quick Answer",
+      "Week 11 nominations, confirmed on air",
+      `<p><strong>Ten of the eleven housemates are nominated in Week 11.</strong> The Sharbat Nomination Task aired in Episode 72 (16 November 2026) and left <strong>Uditi Singh</strong> as the only housemate to escape nomination — she received a single nomination, from Love Gill. <strong>Love Gill drew the most nominations (6).</strong> ScoutOP, already nominated for the rest of the season under his Episode 68 punishments, ran the sharbat counter — he could nominate but could not be nominated again. No eviction took place in Episode 72 itself; the result is due at the Weekend Ka Vaar of 21–22 November 2026.</p>
+    <p><strong>The one who escaped:</strong> Uditi Singh — safe from the Week 11 eviction.</p>
+    ${renderPortraitStrip(["uditi-singh"])}`
+    ) +
+    storySection(
+      "The 10 Nominees",
+      "Who is on the nomination line this week",
+      `<p>Every housemate except Uditi Singh faces the public vote this week. Here they are, with why each one is on the line:</p>
+    ${renderPortraitStrip(["amrapali-dubey", "arishfa-khan", "gullu", "kanika-mann", "love-gill", "mahhi-vij", "manish-goel", "qazi-touqeer", "scout", "yung-dsa"])}
+    <div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Nominee</th><th>Why they are on the line</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Amrapali Dubey</strong></td><td>Nominated in Weeks 7, 8, 9 and 10 as well — in the firing line again.</td></tr>
+          <tr><td><strong>Arishfa Khan</strong></td><td>Sat out Week 10 as ex-captain (removed in Episode 67); nominated again in Week 11.</td></tr>
+          <tr><td><strong>Gullu (Kushal Tanwar)</strong></td><td>Nominated in Weeks 7, 8 and 10; back on the list.</td></tr>
+          <tr><td><strong>Kanika Mann</strong></td><td>Nominated in Weeks 8 and 10.</td></tr>
+          <tr><td><strong>Love Gill</strong></td><td>Drew the most nominations in the Sharbat task (6).</td></tr>
+          <tr><td><strong>Mahhi Vij</strong></td><td>Received the fewest votes in Week 10 and survived on her extra lifeline.</td></tr>
+          <tr><td><strong>Manish Goel</strong></td><td>Nominated in Weeks 7, 9 and 10.</td></tr>
+          <tr><td><strong>Qazi Touqeer</strong></td><td>Nominated in Week 10; leads the season's cumulative Open Poll standings.</td></tr>
+          <tr><td><strong>ScoutOP</strong></td><td>Nominated for the rest of the season under his Episode 68 punishments.</td></tr>
+          <tr><td><strong>Yung DSA</strong></td><td>Nominated in Week 10; cleared the air with Scout in Episode 69.</td></tr>
+        </tbody>
+      </table>
+    </div>`
+    ) +
+    storySection(
+      "How It Happened",
+      "How the Sharbat Nomination Task worked",
+      `<p>The Week 11 nominations were decided by the Sharbat Nomination Task, which aired in Episode 72 (16 November 2026). ScoutOP ran the sharbat counter: because he is already nominated for the rest of the season under the punishments announced in Episode 68, he could nominate other housemates but could not be nominated again himself.</p>
+    <p>When the task ended, ten housemates stood nominated and one — Uditi Singh — had escaped, with a single nomination against her name, from Love Gill. Love Gill drew the most nominations of anyone in the task (6). The sources that reported the task agree on the full list and on Love Gill's 6; they disagree on some other per-person counts, so this page states no other counts.</p>`
+    ) +
+    storySection(
+      "What Happens Next",
+      "The result is due at the Weekend Ka Vaar, 21–22 November",
+      `<p>No one left the house in Episode 72. The Week 11 result will be announced at the Weekend Ka Vaar of 21–22 November 2026 — until then, the <a href="/bigg-boss-20-voting/">Weekly Voting Hub</a> tracks the confirmed picture, and its eviction-prediction Open Poll records who readers expect to go. The <a href="/bigg-boss-20-eviction-list/">Eviction List</a> carries the season's week-by-week record, and the <a href="/bigg-boss-20-weekend-ka-vaar-episodes-70-71/">Weekend Ka Vaar Episodes 70–71 page</a> covers how Week 10 ended with no eviction.</p>`
     )
   );
 }
@@ -2393,14 +2515,15 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-20-eviction-list" ? renderEvictionListSections() : ""}
     ${poll.slug === "bigg-boss-20-scout-shaves-head" ? renderScoutHeadShaveSections() : ""}
     ${poll.slug === "bigg-boss-20-weekend-ka-vaar-episodes-70-71" ? renderWkvWeek10Sections() : ""}
+    ${poll.slug === "bigg-boss-20-voting-week-11" ? renderWeek11VotingSections() : ""}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
     ${renderDuelLinks(poll.slug)}
 
     ${poll.slug === "bigg-boss-20-voting" ? renderThisWeekPanel() : ""}
-    ${poll.slug === "bigg-boss-20-voting" ? renderEmbeddedPoll(pollBySlug.get("bigg-boss-20-voting-week-10")) : ""}
-    ${poll.slug === "bigg-boss-20-voting" ? renderEmbeddedPoll(pollBySlug.get("bigg-boss-20-eviction-prediction-week-10")) : ""}
+    ${poll.slug === "bigg-boss-20-voting" ? renderEmbeddedPoll(pollBySlug.get("bigg-boss-20-voting-week-11")) : ""}
+    ${poll.slug === "bigg-boss-20-voting" ? renderEmbeddedPoll(pollBySlug.get("bigg-boss-20-eviction-prediction-week-11")) : ""}
     ${poll.slug === "bigg-boss-20-voting" ? renderPredictionScorecard() : ""}
     ${poll.slug === "bigg-boss-20-voting" ? renderTrendSnapshot() : ""}
     ${poll.slug === "bigg-boss-20-voting" ? renderSeasonArchive() : ""}
