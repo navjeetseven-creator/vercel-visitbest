@@ -768,3 +768,12 @@ table[class$="-table"] tr.due-row { background: var(--accent-soft); font-weight:
   .result-tag { font-size: 27px; }
   .facts strong { font-size: 19px; }
 }
+
+/* ===== Entry 395 — result-panel heading contrast fix (17 Nov 2026) =====
+   The global h1–h4 colour rule in site.css (color: var(--ink)) is a direct
+   rule on the heading element, so it beat the white text the dark result
+   panel passes down by inheritance. Entry 394 styled .result h3 white but
+   not h4, so the "Recent calculations" h4 inside the panel rendered dark
+   navy on navy — invisible (owner screenshot, 17 Nov 2026). Force every
+   heading level inside the panel to white. */
+.result h4 { color: #fff; }
