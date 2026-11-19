@@ -1195,7 +1195,7 @@ export function biggBossSchema(item, isContestantsPage = false, isRulesPage = fa
 
 // Shared Open Poll disclaimer — required on every poll / contestants / rules page
 export const bbCoverFigure = (src, alt) =>
-  src ? `<figure class="bb-cover" style="margin:1.25rem 0 0;"><img src="${src}" alt="${alt}" loading="eager" decoding="async" style="width:100%;height:auto;display:block;border-radius:12px;"></figure>` : "";
+  src ? `<figure class="bb-cover" style="margin:1.25rem auto 0;max-width:820px;"><img src="${src}" alt="${alt}" loading="eager" decoding="async" style="width:100%;height:auto;display:block;border-radius:12px;"></figure>` : "";
 
 export const OPEN_POLL_DISCLAIMER = "Open Poll — for audience sentiment only. This poll is run by VisitBest for entertainment and discussion. It is NOT official Bigg Boss voting, it does not decide nominations or evictions, and its results are not official vote counts. Official voting, where opened by the show, is only through the official platform — JioCinema / JioHotstar — as announced on Colors TV / JioHotstar during the episode. Please do not treat VisitBest poll percentages as official results.";
 
@@ -2923,11 +2923,11 @@ export function renderBiggBossTrendPage(poll) {
       <a href="/">Home</a> <span>›</span> <a href="/bigg-boss-20-voting/">Bigg Boss 20 Voting</a> <span>›</span> <span>Voting Trend Today</span>
     </nav>
 
-    <section class="bb-hero">
+    <header class="bb-hero-section">
       <span class="bb-hero-badge">${poll.heroBadge}</span>
-      <h1>${poll.h1}</h1>
+      <h1 class="bb-hero-title">${poll.h1}</h1>
       <p class="bb-hero-lead">${poll.lead}</p>
-    </section>
+    </header>
 
     ${bbCoverFigure(poll.coverImage, poll.coverAlt)}
 
@@ -3155,11 +3155,11 @@ export function renderBiggBossFinalePage(poll) {
       <a href="/">Home</a> <span>›</span> <a href="/bigg-boss-20-voting/">Bigg Boss 20 Voting</a> <span>›</span> <span>Finale</span>
     </nav>
 
-    <section class="bb-hero">
+    <header class="bb-hero-section">
       <span class="bb-hero-badge">${poll.heroBadge}</span>
-      <h1>${poll.h1}</h1>
+      <h1 class="bb-hero-title">${poll.h1}</h1>
       <p class="bb-hero-lead">${poll.lead}</p>
-    </section>
+    </header>
 
     ${bbCoverFigure(poll.coverImage, poll.coverAlt)}
 
