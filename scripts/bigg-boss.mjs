@@ -938,6 +938,46 @@ export const polls = [
     dangerIds: [],
     metaDesc: "Bigg Boss 20 top 5 contestants: Qazi Touqeer, Yung DSA, ScoutOP, Arishfa Khan and Kanika Mann — why each is in the current top 5, their journey so far, what could stop them, and the full list of the 11 housemates still in the house, including new captain Uditi Singh.",
   },
+  {
+    slug: "bigg-boss-20-voting-trend",
+    pollType: "trend",
+    badge: "BIGG BOSS 20",
+    title: "Bigg Boss 20 Voting Trend Today — Open Poll Standings (Audience Sentiment)",
+    h1: "Bigg Boss 20 Voting Trend Today — Live Open Poll Standings",
+    heroBadge: "📈 VOTING TREND TODAY · THURSDAY 19 NOVEMBER 2026 · OPEN POLL STANDINGS",
+    lead:
+      "This page reports the standings of VisitBest's own Bigg Boss 20 Open Polls as they stand today, Thursday 19 November 2026: the Week 11 nominees poll, the season-long audience sentiment poll and the winner-race poll. These are audience sentiment standings only — they are NOT official votes and NOT official results. The official vote happens only on JioCinema / JioHotstar, as announced on air. To cast your own Open Poll vote, use the voting hub or the Week 11 voting page — this trend page reports the numbers, it does not collect votes.",
+    leaderNote:
+      "📈 TODAY'S TREND (19 November 2026): Qazi Touqeer leads all three Open Poll reads — the Week 11 nominees poll (421 votes), the season sentiment standings (1,38,500) and the winner-race poll (742). [VisitBest Open Poll votes — not official votes.]",
+    coverImage: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    coverAlt: "Bigg Boss 20 voting trend today — VisitBest Open Poll standings cover",
+    metaTitle: "Bigg Boss 20 Voting Trend Today — Open Poll Standings | VisitBest",
+    metaDesc:
+      "Bigg Boss 20 voting trend today: the live standings of VisitBest's Open Polls — Week 11 nominees, season sentiment and the winner race. Audience sentiment only, not official votes or official results.",
+    updatedLabel: "Updated 19 November 2026 · Open Poll standings",
+    options: [],
+    voteDistribution: {},
+  },
+  {
+    slug: "bigg-boss-20-finale",
+    pollType: "finale",
+    badge: "BIGG BOSS 20",
+    title: "Bigg Boss 20 Finale Date — Expected Window, Finalist Race & How the Finale Works",
+    h1: "Bigg Boss 20 Finale — Date, Finalists & How the Winner Is Decided",
+    heroBadge: "🏁 BIGG BOSS 20 FINALE · DATE NOT ANNOUNCED YET · UPDATED 19 NOVEMBER 2026",
+    lead:
+      "The Bigg Boss 20 finale date has NOT been officially announced yet — as of Thursday 19 November 2026, neither Colors TV nor the makers have confirmed a date. On the season's own arithmetic the finale is expected in late December 2026, but that is an expectation, not a confirmation. This page tracks what is actually known: how the finale works, the road from eleven housemates to the finalists, the finalist race as it stands, and the recent past winners the new champion will join.",
+    leaderNote:
+      "🏁 FINALE DATE: not officially announced as of 19 November 2026. Expected window on the season's arithmetic: late December 2026 — expected, not confirmed. This page will be updated the day the makers announce the date.",
+    coverImage: "/assets/bb20-new/covers/bigg-boss-20-winner-prediction.jpg",
+    coverAlt: "Bigg Boss 20 finale — date, finalists and how the winner is decided cover",
+    metaTitle: "Bigg Boss 20 Finale Date — Expected Window & Finalist Race | VisitBest",
+    metaDesc:
+      "Bigg Boss 20 finale date: not officially announced yet. The expected window from the season's run, how the finale works, the road to the top 5 and the finalist race — updated 19 November 2026.",
+    updatedLabel: "Updated 19 November 2026 · Finale date not announced yet",
+    options: [],
+    voteDistribution: {},
+  }
 ];
 
 export const pollBySlug = new Map(polls.map((p) => [p.slug, p]));
@@ -1011,6 +1051,26 @@ export function biggBossSchema(item, isContestantsPage = false, isRulesPage = fa
     };
   }
   if (item && item.pollType === "top5") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: item.title,
+      description: item.lead,
+      url: `${baseUri}/${item.slug}/`,
+      ...(item.image ? { image: `${baseUri}${item.image}` } : {}),
+    };
+  }
+  if (item && item.pollType === "trend") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: item.title,
+      description: item.lead,
+      url: `${baseUri}/${item.slug}/`,
+      ...(item.image ? { image: `${baseUri}${item.image}` } : {}),
+    };
+  }
+  if (item && item.pollType === "finale") {
     return {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
@@ -1169,6 +1229,8 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-20-voting-week-11", "🗳️ Week 11 Voting"],
     ["who-will-win-bigg-boss-20", "🏆 Who Will Win BB20?"],
     ["bigg-boss-20-top-5-contestants", "🔝 Top 5 Contestants"],
+    ["bigg-boss-20-voting-trend", "📈 Voting Trend Today"],
+    ["bigg-boss-20-finale", "🏁 Finale"],
     ["bigg-boss-20-contestants", "👥 18 Contestants Wiki"],
     ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
@@ -2753,10 +2815,493 @@ export function renderBiggBossTop5Page(poll) {
   `;
 }
 
+export function renderBiggBossTrendPage(poll) {
+  const week11 = pollBySlug.get("bigg-boss-20-voting-week-11");
+  const season = pollBySlug.get("bigg-boss-20-voting");
+  const winnerRace = pollBySlug.get("who-will-win-bigg-boss-20");
+  const w11 = getPollStats(week11);
+  const seasonStats = getPollStats(season);
+  const winStats = getPollStats(winnerRace);
+  const fmt = (n) => n.toLocaleString("en-IN");
+  const inHouse = seasonStats.list.filter((c) => !c.evicted && !c.removed);
+  const withVotes = inHouse.filter((c) => c.votes > 0);
+  const noVotes = inHouse.filter((c) => c.votes === 0);
+  const top3 = w11.list.slice(0, 3);
+  const qaziW11 = w11.list.find((c) => c.id === "qazi-touqeer");
+  const qaziSeason = seasonStats.list.find((c) => c.id === "qazi-touqeer");
+  const qaziWin = winStats.list.find((c) => c.id === "qazi-touqeer");
+  const lastW11 = w11.list[w11.list.length - 1];
+  const uditiSeason = seasonStats.list.find((c) => c.id === "uditi-singh");
+  const manishW11 = w11.list.find((c) => c.id === "manish-goel");
+  const statusFor = (c) =>
+    c.id === "uditi-singh"
+      ? "🟢 Captain (since Ep 74)"
+      : c.seasonNominated
+        ? "🔴 Nominated — rest of season (Ep 68)"
+        : WEEK11_NOMINATED_IDS.has(c.id)
+          ? "🔴 Nominated — Week 11"
+          : c.exCaptain
+            ? "🟢 Ex-captain — removed Ep 67"
+            : "In the house";
+  const weekRows = w11.list
+    .map(
+      (c, i) => `
+            <tr>
+              <td data-label="Rank"><strong>#${i + 1}</strong></td>
+              <td data-label="Contestant"><div class="bb-table-contestant"><img class="bb-table-avatar" src="${c.image}" alt="${c.name}" loading="lazy" decoding="async"><span>${c.name}</span></div></td>
+              <td data-label="Open Poll Votes"><strong>${fmt(c.votes)}</strong></td>
+              <td data-label="Vote Share">${c.pctStr}</td>
+              <td data-label="Status">${c.id === "scout" ? "🔴 Nominated — rest of season (Ep 68)" : "🔴 Nominated — Week 11"}</td>
+            </tr>`,
+    )
+    .join("");
+  const seasonRows = withVotes
+    .map(
+      (c, i) => `
+            <tr>
+              <td data-label="Rank"><strong>#${i + 1}</strong></td>
+              <td data-label="Contestant"><div class="bb-table-contestant"><img class="bb-table-avatar" src="${c.image}" alt="${c.name}" loading="lazy" decoding="async"><span>${c.name}</span></div></td>
+              <td data-label="Open Poll Votes"><strong>${fmt(c.votes)}</strong></td>
+              <td data-label="Share of Season Poll">${c.pctStr}</td>
+              <td data-label="Status">${statusFor(c)}</td>
+            </tr>`,
+    )
+    .join("");
+  const winnerRows = winStats.list
+    .map(
+      (c, i) => `
+            <tr>
+              <td data-label="Rank"><strong>#${i + 1}</strong></td>
+              <td data-label="Finalist"><div class="bb-table-contestant"><img class="bb-table-avatar" src="${c.image}" alt="${c.name}" loading="lazy" decoding="async"><span>${c.name}</span></div></td>
+              <td data-label="Open Poll Votes"><strong>${fmt(c.votes)}</strong></td>
+              <td data-label="Vote Share">${c.pctStr}</td>
+            </tr>`,
+    )
+    .join("");
+  const leaderCards = top3
+    .map(
+      (c, i) => `
+        <div class="bb-nom-card">
+          <div class="bb-nom-img-wrap"><img src="${c.image}" alt="${c.name} Bigg Boss 20" loading="lazy" decoding="async"></div>
+          <div class="bb-nom-info">
+            <h4>#${i + 1} ${c.name}</h4>
+            <span class="bb-nom-role">${fmt(c.votes)} Open Poll votes · ${c.pctStr} of the Week 11 poll</span>
+          </div>
+        </div>`,
+    )
+    .join("");
+  const trendFaqs = [
+    {
+      q: "Is this the official result?",
+      a: "No. Every number on this page comes from VisitBest's own Open Polls — free audience sentiment polls run by this website. They are not official votes and not official results. The official Bigg Boss 20 vote happens only on JioCinema / JioHotstar, and the result is announced on the show itself, at Weekend Ka Vaar.",
+    },
+    {
+      q: "Who is leading the Bigg Boss 20 voting trend today?",
+      a: `As of 19 November 2026, Qazi Touqeer leads all three Open Poll reads: the Week 11 nominees poll with ${fmt(qaziW11.votes)} votes (${qaziW11.pctStr}), the season sentiment standings with ${fmt(qaziSeason.votes)} votes, and the winner-race poll with ${fmt(qaziWin.votes)} votes (${qaziWin.pctStr}). These are VisitBest Open Poll standings — audience sentiment only, not official votes.`,
+    },
+    {
+      q: "Why is Uditi Singh missing from the Week 11 table?",
+      a: "Uditi was the only housemate not nominated in the Week 11 Sharbat task, so she is not an option in the Week 11 poll. She is in the season standings table on this page, and she is the current house captain (since Episode 74).",
+    },
+    {
+      q: "How do I vote?",
+      a: "For the Open Polls, vote free on the voting hub or the Week 11 voting page — both are linked at the top and bottom of this page. For the official vote that decides evictions, use JioCinema / JioHotstar in the windows announced on air.",
+    },
+    {
+      q: "How often does this page change?",
+      a: "The standings are read from the site's own Open Polls, so they reflect the polls as they stand when this page is published and refreshed. This edition is dated 19 November 2026. After the Week 11 result at Weekend Ka Vaar (21–22 November 2026), the trend resets around the next week's nominees.",
+    },
+    {
+      q: "Does the trend decide who is evicted?",
+      a: "No. Evictions are decided by the official public vote and the show's own twists, such as lifelines. The trend only shows which way VisitBest's readers are leaning — it has no role in the result.",
+    },
+  ];
+  return `
+  <div class="bb-wrap">
+    ${renderPollPills(poll.slug)}
+    <nav class="bb-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span>›</span> <a href="/bigg-boss-20-voting/">Bigg Boss 20 Voting</a> <span>›</span> <span>Voting Trend Today</span>
+    </nav>
+
+    <section class="bb-hero">
+      <span class="bb-hero-badge">${poll.heroBadge}</span>
+      <h1>${poll.h1}</h1>
+      <p class="bb-hero-lead">${poll.lead}</p>
+    </section>
+
+    ${bbCoverFigure(poll.coverImage, poll.coverAlt)}
+
+    ${storySection(
+      "Today's Trend",
+      "The top of the Week 11 poll, as it stands today",
+      `<p>These are the three most-backed nominees in this week's Open Poll right now. The Week 11 result itself is decided by the official vote and is due at Weekend Ka Vaar on 21–22 November 2026 — this section only shows how VisitBest readers are leaning.</p>
+      <div class="bb-nominated-grid">${leaderCards}
+      </div>
+      ${HUB_DISCLAIMER_BOX}`,
+    )}
+
+    <section class="bb-section leaderboard-section">
+      <div class="bb-section-head">
+        <span class="bb-section-eyebrow">Week 11 Nominees</span>
+        <h2>Full Week 11 standings — all 10 nominees</h2>
+        <p class="bb-section-sub">The Week 11 nominees Open Poll opened on 17 November 2026 and has ${fmt(w11.total)} votes so far. Every nominee is listed, in the order readers are backing them today.</p>
+      </div>
+      <div class="bb-leaderboard-wrap">
+        <table class="bb-leaderboard-table">
+          <thead>
+            <tr><th>Rank</th><th>Contestant</th><th>Open Poll Votes</th><th>Vote Share</th><th>Status</th></tr>
+          </thead>
+          <tbody>${weekRows}
+          </tbody>
+        </table>
+      </div>
+      ${HUB_DISCLAIMER_BOX}
+      <p class="bb-small">Uditi Singh is not in this table: she is the only housemate who was not nominated in Week 11, and she is the house captain. Her standing is in the season table below. To vote in this poll, open the <a href="/bigg-boss-20-voting-week-11/">Week 11 voting page</a>.</p>
+    </section>
+
+    <section class="bb-section leaderboard-section">
+      <div class="bb-section-head">
+        <span class="bb-section-eyebrow">Season Standings</span>
+        <h2>Season sentiment standings — the whole run so far</h2>
+        <p class="bb-section-sub">The cumulative Open Poll on the voting hub has ${fmt(seasonStats.total)} votes across the season. Shares below are of that whole poll, which still includes votes cast earlier for housemates who have since left the house — so the eleven still in the game do not add up to 100% between them.</p>
+      </div>
+      <div class="bb-leaderboard-wrap">
+        <table class="bb-leaderboard-table">
+          <thead>
+            <tr><th>Rank</th><th>Contestant</th><th>Open Poll Votes</th><th>Share of Season Poll</th><th>Status</th></tr>
+          </thead>
+          <tbody>${seasonRows}
+          </tbody>
+        </table>
+      </div>
+      ${HUB_DISCLAIMER_BOX}
+      <p class="bb-small">${noVotes.map((c) => c.name).join(", ")} — the season's first wild card (Week 5) — has no recorded votes yet in the cumulative season poll. His support shows in the weekly polls instead: ${fmt(manishW11.votes)} votes in the Week 11 table above. The full season table, including the housemates who have left, is on the <a href="/bigg-boss-20-voting/">voting hub</a>.</p>
+    </section>
+
+    <section class="bb-section leaderboard-section">
+      <div class="bb-section-head">
+        <span class="bb-section-eyebrow">Winner Race</span>
+        <h2>The winner race — the newest trend on the site</h2>
+        <p class="bb-section-sub">The winner-prediction Open Poll opened today, 19 November 2026, with the five predicted finalists, and already has ${fmt(winStats.total)} votes — the earliest read on who readers think lifts the trophy.</p>
+      </div>
+      <div class="bb-leaderboard-wrap">
+        <table class="bb-leaderboard-table">
+          <thead>
+            <tr><th>Rank</th><th>Finalist</th><th>Open Poll Votes</th><th>Vote Share</th></tr>
+          </thead>
+          <tbody>${winnerRows}
+          </tbody>
+        </table>
+      </div>
+      ${HUB_DISCLAIMER_BOX}
+      <p class="bb-small">Vote in this poll and read the full case for each finalist on the <a href="/who-will-win-bigg-boss-20/">Who Will Win Bigg Boss 20</a> page.</p>
+    </section>
+
+    ${storySection(
+      "Reading the Numbers",
+      "What the trend means — and what it does not",
+      `<p><strong>One name leads every read.</strong> Qazi Touqeer tops the Week 11 poll (${fmt(qaziW11.votes)} votes), the season standings (${fmt(qaziSeason.votes)}) and the winner race (${fmt(qaziWin.votes)}). Three different polls, three different fields, the same leader — that consistency is the strongest signal on this page.</p>
+      <p><strong>The fields are different, so the percentages are not comparable.</strong> The Week 11 poll asks about this week's ten nominees only. The season poll is cumulative across the whole season and still carries votes for housemates who have left. The winner race has just five names. A 15% share in one table is not the same thing as 15% in another.</p>
+      <p><strong>The top of the Week 11 table is tight.</strong> First and fourth are separated by under four percentage points (${w11.list[0].pctStr} down to ${w11.list[3].pctStr}), with ScoutOP and Gullu between Qazi Touqeer and Yung DSA. There is no runaway leader this week.</p>
+      <p><strong>The bottom of the table is where the eviction conversation sits.</strong> ${lastW11.name} is the least-backed nominee in the support poll (${fmt(lastW11.votes)} votes, ${lastW11.pctStr}). A support poll measures who readers back, not who they expect to leave — VisitBest asks that second question separately, on the <a href="/bigg-boss-20-eviction-prediction-week-11/">Week 11 eviction prediction page</a>.</p>
+      <p><strong>The captain's paradox.</strong> Uditi Singh runs the house but sits last among the current housemates in the season sentiment table (${fmt(uditiSeason.votes)} votes, ${uditiSeason.pctStr}). Captaincy is won in tasks inside the house; sentiment is won with the audience outside it. She is also the only housemate completely safe this week.</p>
+      <p><strong>No invented movement.</strong> VisitBest does not publish day-by-day movement for these polls. What you see is the standings as they stand on 19 November 2026, read from the polls themselves. This page is refreshed as the polls move and re-dated when it is.</p>`,
+    )}
+
+    ${storySection(
+      "The Official Vote",
+      "How official voting works",
+      `<p>Official voting for Bigg Boss 20 happens only on JioCinema / JioHotstar, in the windows announced on air during the episodes. Lines open and close as the show announces them, and the results are declared on the show itself — the Week 11 result is due at Weekend Ka Vaar on 21–22 November 2026.</p>
+      <p>VisitBest does not run, collect or publish the official vote, and no number on this page comes from it. When an eviction is confirmed on air, VisitBest updates the <a href="/bigg-boss-20-voting/">voting hub</a>, the <a href="/bigg-boss-20-eviction-list/">eviction list</a> and the context on this page.</p>`,
+    )}
+
+    <section class="bb-section bb-faq-section">
+      <div class="bb-section-head">
+        <span class="bb-section-eyebrow">FAQ</span>
+        <h2>Voting trend — frequently asked questions</h2>
+      </div>
+      <div class="bb-faq-grid">
+        ${trendFaqs
+          .map(
+            (f) => `
+        <div class="bb-faq-item">
+          <details>
+            <summary>${f.q}</summary>
+            <p>${f.a}</p>
+          </details>
+        </div>`,
+          )
+          .join("")}
+      </div>
+    </section>
+
+    <section class="bb-section">
+      <div class="bb-section-head">
+        <span class="bb-section-eyebrow">Keep Reading</span>
+        <h2>More Bigg Boss 20 on VisitBest</h2>
+      </div>
+      <div class="bb-related-grid">
+        <a class="bb-related-card" href="/bigg-boss-20-voting/">
+          <span class="bb-related-emoji">🗳️</span>
+          <h3>Bigg Boss 20 Voting Hub</h3>
+          <p>Vote in the season Open Poll and follow the week-by-week archives.</p>
+          <span class="bb-related-link">Open the hub →</span>
+        </a>
+        <a class="bb-related-card" href="/bigg-boss-20-voting-week-11/">
+          <span class="bb-related-emoji">🗳️</span>
+          <h3>Week 11 Voting</h3>
+          <p>Cast your Open Poll vote for this week's ten nominees.</p>
+          <span class="bb-related-link">Vote this week →</span>
+        </a>
+        <a class="bb-related-card" href="/who-will-win-bigg-boss-20/">
+          <span class="bb-related-emoji">🏆</span>
+          <h3>Who Will Win Bigg Boss 20?</h3>
+          <p>The winner prediction, the top 5 finalists and the winner-race Open Poll.</p>
+          <span class="bb-related-link">Read the prediction →</span>
+        </a>
+        <a class="bb-related-card" href="/bigg-boss-20-top-5-contestants/">
+          <span class="bb-related-emoji">🔝</span>
+          <h3>Top 5 Contestants</h3>
+          <p>The predicted final five, the full house table and how the ranking was made.</p>
+          <span class="bb-related-link">See the top 5 →</span>
+        </a>
+        <a class="bb-related-card" href="/bigg-boss-20-eviction-list/">
+          <span class="bb-related-emoji">🚪</span>
+          <h3>Eviction List</h3>
+          <p>Every eviction of the season so far, week by week.</p>
+          <span class="bb-related-link">See who has left →</span>
+        </a>
+        <a class="bb-related-card" href="/bigg-boss-20-finale/">
+          <span class="bb-related-emoji">🏁</span>
+          <h3>Bigg Boss 20 Finale</h3>
+          <p>The finale date position, the finalist race and how the winner is decided.</p>
+          <span class="bb-related-link">Read the finale guide →</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="bb-footer-note">VisitBest editorial page · Bigg Boss 20 airs on Colors TV and streams on JioHotstar. All standings on this page are from the VisitBest Open Poll — audience sentiment only, not official votes or results.</p>
+  </div>`;
+}
+
+export function renderBiggBossFinalePage(poll) {
+  const finalistIds = ["qazi-touqeer", "yung-dsa", "scout", "arishfa-khan", "kanika-mann"];
+  const otherIds = ["gullu", "uditi-singh", "love-gill", "mahhi-vij", "amrapali-dubey", "manish-goel"];
+  const cases = {
+    "qazi-touqeer": "VisitBest's predicted winner — the season's entertainer-in-chief and the Open Poll's season leader.",
+    "yung-dsa": "The predicted runner-up — the late surge, the loyalty stands, the house's conscience.",
+    scout: "The gamer with the biggest outside army — playing every remaining week under a season-long nomination.",
+    "arishfa-khan": "The strategist — a captaincy, a stand in the season's biggest fight, and a finale-week game still to come.",
+    "kanika-mann": "The quiet climber — tasks won, the fewest enemies in the house, support that has only grown.",
+  };
+  const finalistRows = finalistIds
+    .map((id, i) => {
+      const c = contestantById.get(id);
+      return `
+            <tr>
+              <td data-label="Predicted Finish"><strong>#${i + 1}</strong></td>
+              <td data-label="Finalist"><div class="bb-table-contestant"><img class="bb-table-avatar" src="${c.image}" alt="${c.name}" loading="lazy" decoding="async"><span>${c.name}</span></div></td>
+              <td data-label="The Case">${cases[id]}</td>
+            </tr>`;
+    })
+    .join("");
+  const winnerRows = [
+    ["Season 19 (2025)", "Gaurav Khanna", "Farrhana Bhatt", "7 December 2025"],
+    ["Season 18", "Karan Veer Mehra", "Vivian Dsena", "19 January 2025"],
+    ["Season 17", "Munawar Faruqui", "Abhishek Kumar", "28 January 2024"],
+    ["Season 16", "MC Stan", "Shiv Thakare", "12 February 2023"],
+    ["Season 15", "Tejasswi Prakash", "Pratik Sehajpal", "30 January 2022"],
+  ]
+    .map(
+      (r) => `
+            <tr>
+              <td data-label="Season"><strong>${r[0]}</strong></td>
+              <td data-label="Winner">${r[1]}</td>
+              <td data-label="Runner-up">${r[2]}</td>
+              <td data-label="Finale Date">${r[3]}</td>
+            </tr>`,
+    )
+    .join("");
+  const finaleFaqs = [
+    {
+      q: "When is the Bigg Boss 20 finale?",
+      a: "The date has not been officially announced yet. On the season's arithmetic — a 6 September 2026 premiere and recent Hindi seasons running about 15–16 weeks — the finale is expected in late December 2026. That is an expectation, not a confirmed date, and this page will carry the date at the top the day the makers announce it.",
+    },
+    {
+      q: "How is the Bigg Boss 20 winner decided?",
+      a: "By the official public vote in the finale window announced on air, on JioCinema / JioHotstar and as announced during the show. On finale night, host Salman Khan announces the winner live. VisitBest's Open Polls and predictions play no part in the official result.",
+    },
+    {
+      q: "How many finalists will there be?",
+      a: "The show's final week usually features a small group of finalists — between three and six housemates in the format's history. VisitBest's predicted top 5 on this page is an editorial ranking of the current race, not the confirmed finalist list.",
+    },
+    {
+      q: "What does the winner get?",
+      a: "The trophy and the Bigg Boss 20 title. The winner's prize has not been announced for this season — the makers confirm it closer to the finale, and this page will add it when they do.",
+    },
+    {
+      q: "Where can I watch the finale?",
+      a: "On Colors TV and streaming on JioHotstar, as announced by the makers. The exact finale-night schedule is published by the channel closer to the date.",
+    },
+    {
+      q: "Who are the favourites right now?",
+      a: "VisitBest's predicted final five are Qazi Touqeer, Yung DSA, ScoutOP, Arishfa Khan and Kanika Mann — the finalist race section above explains the order, and the winner page carries the full case for each of them. Predictions and Open Poll sentiment are not the official result.",
+    },
+  ];
+  return `
+  <div class="bb-wrap">
+    ${renderPollPills(poll.slug)}
+    <nav class="bb-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span>›</span> <a href="/bigg-boss-20-voting/">Bigg Boss 20 Voting</a> <span>›</span> <span>Finale</span>
+    </nav>
+
+    <section class="bb-hero">
+      <span class="bb-hero-badge">${poll.heroBadge}</span>
+      <h1>${poll.h1}</h1>
+      <p class="bb-hero-lead">${poll.lead}</p>
+    </section>
+
+    ${bbCoverFigure(poll.coverImage, poll.coverAlt)}
+
+    ${storySection(
+      "Finale Date",
+      "The finale date has not been announced — here is the expected window",
+      `<p><strong>The Bigg Boss 20 finale date has not been officially announced.</strong> As of 19 November 2026, Colors TV and the makers have not confirmed any date, and no specific date shared anywhere should be treated as official until they do.</p>
+      <p><strong>The expected window — expectation, not confirmation:</strong> Bigg Boss 20 premiered on 6 September 2026. The last three completed Hindi seasons ran 105 to 107 days each (Season 17: 106 days, Season 18: 107 days, Season 19: 105 days), and recent seasons have run about 15–16 weeks in total. A run of that length from 6 September 2026 ends between about 20 and 27 December 2026 — so the finale is <strong>expected in late December 2026</strong>, most likely on a weekend night, in line with recent seasons. If this season runs longer or shorter, the window moves with it.</p>
+      <p>When the makers announce the date — on air and on Colors TV / JioHotstar — this page will carry it at the top. Until then, treat every exact date you see on social media as a guess.</p>`,
+    )}
+
+    ${storySection(
+      "The Format",
+      "How the finale works",
+      `<p>The season ends with a final week. By then the house is down to a small group of finalists — between three and six housemates in the show's format — and the last evictions, often including mid-week exits inside the final week itself, settle who they are.</p>
+      <p>Through finale week, the public votes for the housemate they want to win, on JioCinema / JioHotstar in the windows announced on air. On finale night the finalists are brought down through the evening to the last two, and host Salman Khan announces the winner live, decided by that official vote.</p>
+      <p>The winner takes the trophy and the title. The prize position for this season is covered in the prize section below — nothing about it is confirmed yet.</p>`,
+    )}
+
+    ${storySection(
+      "From Here to the Finale",
+      "The road from here — eleven left, six exits to a top 5",
+      `<p>Eleven housemates remain in the house. The Week 11 result comes at Weekend Ka Vaar on 21–22 November 2026, with ten housemates nominated and only the captain, Uditi Singh, safe.</p>
+      <p>A top-5 finale means six more housemates must leave after this week. On the expected late-December window there are roughly four to five eviction weekends left — fewer weekends than the exits needed — so double evictions and mid-week evictions are the usual pattern the show uses to get the house down in time. Twists can change that arithmetic at any point, and one housemate's road is already fixed: ScoutOP is nominated every remaining week under his Episode 68 punishment, so his survival runs through the public vote every single week.</p>
+      <p>Track who has already gone on the <a href="/bigg-boss-20-eviction-list/">eviction list</a>, and the week-by-week picture on the <a href="/bigg-boss-20-voting/">voting hub</a>.</p>`,
+    )}
+
+    <section class="bb-section leaderboard-section">
+      <div class="bb-section-head">
+        <span class="bb-section-eyebrow">The Finalist Race</span>
+        <h2>The predicted final five — and the six chasing them</h2>
+        <p class="bb-section-sub">VisitBest's predicted finishing order, from the Top 5 Contestants page. It is an editorial prediction, updated as the season moves — not the confirmed finalist list.</p>
+      </div>
+      <div class="bb-leaderboard-wrap">
+        <table class="bb-leaderboard-table">
+          <thead>
+            <tr><th>Predicted Finish</th><th>Finalist</th><th>The Case</th></tr>
+          </thead>
+          <tbody>${finalistRows}
+          </tbody>
+        </table>
+      </div>
+      <p class="bb-small">The other six still in the race — any of them can break into the five with one big week:</p>
+      ${renderPortraitStrip(otherIds)}
+      <p class="bb-small">Read the full cases on <a href="/who-will-win-bigg-boss-20/">Who Will Win Bigg Boss 20</a> and <a href="/bigg-boss-20-top-5-contestants/">Bigg Boss 20 Top 5 Contestants</a>.</p>
+    </section>
+
+    <section class="bb-section leaderboard-section">
+      <div class="bb-section-head">
+        <span class="bb-section-eyebrow">Past Winners</span>
+        <h2>The last five champions the winner will join</h2>
+        <p class="bb-section-sub">The five most recent completed Hindi seasons of Bigg Boss, their winners and their finale dates.</p>
+      </div>
+      <div class="bb-leaderboard-wrap">
+        <table class="bb-leaderboard-table">
+          <thead>
+            <tr><th>Season</th><th>Winner</th><th>Runner-up</th><th>Finale Date</th></tr>
+          </thead>
+          <tbody>${winnerRows}
+          </tbody>
+        </table>
+      </div>
+      <p class="bb-small">Winners, runners-up and finale dates from Wikipedia's Bigg Boss (Hindi TV series) series table, checked on 19 November 2026.</p>
+    </section>
+
+    ${storySection(
+      "The Prize",
+      "The Bigg Boss 20 prize — not announced yet",
+      `<p>The Bigg Boss 20 winner's prize has not been announced. The makers confirm the prize closer to the finale, and no figure for this season has been confirmed by reliable sources — so this page prints none, rather than repeat a guessed number.</p>
+      <p>What the winner certainly takes is the trophy and the Bigg Boss 20 title. When the prize is announced on air, it will be added here.</p>`,
+    )}
+
+    <section class="bb-section bb-faq-section">
+      <div class="bb-section-head">
+        <span class="bb-section-eyebrow">FAQ</span>
+        <h2>Finale — frequently asked questions</h2>
+      </div>
+      <div class="bb-faq-grid">
+        ${finaleFaqs
+          .map(
+            (f) => `
+        <div class="bb-faq-item">
+          <details>
+            <summary>${f.q}</summary>
+            <p>${f.a}</p>
+          </details>
+        </div>`,
+          )
+          .join("")}
+      </div>
+    </section>
+
+    <section class="bb-section">
+      <div class="bb-section-head">
+        <span class="bb-section-eyebrow">Keep Reading</span>
+        <h2>More Bigg Boss 20 on VisitBest</h2>
+      </div>
+      <div class="bb-related-grid">
+        <a class="bb-related-card" href="/who-will-win-bigg-boss-20/">
+          <span class="bb-related-emoji">🏆</span>
+          <h3>Who Will Win Bigg Boss 20?</h3>
+          <p>The winner prediction, the finalist cases and the winner-race Open Poll.</p>
+          <span class="bb-related-link">Read the prediction →</span>
+        </a>
+        <a class="bb-related-card" href="/bigg-boss-20-top-5-contestants/">
+          <span class="bb-related-emoji">🔝</span>
+          <h3>Top 5 Contestants</h3>
+          <p>The predicted final five, the full house table and how the ranking was made.</p>
+          <span class="bb-related-link">See the top 5 →</span>
+        </a>
+        <a class="bb-related-card" href="/bigg-boss-20-voting/">
+          <span class="bb-related-emoji">🗳️</span>
+          <h3>Bigg Boss 20 Voting Hub</h3>
+          <p>Vote in the season Open Poll and follow the week-by-week archives.</p>
+          <span class="bb-related-link">Open the hub →</span>
+        </a>
+        <a class="bb-related-card" href="/bigg-boss-20-voting-trend/">
+          <span class="bb-related-emoji">📈</span>
+          <h3>Voting Trend Today</h3>
+          <p>Today's Open Poll standings across the week, the season and the winner race.</p>
+          <span class="bb-related-link">See today's trend →</span>
+        </a>
+        <a class="bb-related-card" href="/bigg-boss-20-eviction-list/">
+          <span class="bb-related-emoji">🚪</span>
+          <h3>Eviction List</h3>
+          <p>Every eviction of the season so far, week by week.</p>
+          <span class="bb-related-link">See who has left →</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="bb-footer-note">VisitBest editorial page · Bigg Boss 20 airs on Colors TV and streams on JioHotstar. The finale date on this page is an expectation from the season's run, not an official announcement.</p>
+  </div>`;
+}
+
+
 export function renderBiggBossPollPage(poll) {
   if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
   if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
   if (poll.pollType === "top5") return renderBiggBossTop5Page(poll);
+  if (poll.pollType === "trend") return renderBiggBossTrendPage(poll);
+  if (poll.pollType === "finale") return renderBiggBossFinalePage(poll);
   return `
   <div class="container bb-page">
     <div class="bb-breadcrumbs">
