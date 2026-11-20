@@ -1076,6 +1076,68 @@ export const polls = [
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
     metaDesc: "Bigg Boss 19 voting: the official result — Gaurav Khanna won the ₹50 lakh prize, ahead of Farrhana Bhatt, Pranit More, Tanya Mittal and Amaal Mallik — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 19? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-16-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-16-voting.jpg",
+    title: "Bigg Boss 16 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 16 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 16 voting is closed — the season ended on 12 February 2023 with MC Stan lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the five finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 16. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 16 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 12 FEBRUARY 2023",
+    leaderNote: "🏆 FAN RE-VOTE: MC Stan — the official winner — also leads the fan re-vote as it stands, with 596 votes (25.9%), ahead of Shiv Thakare on 548. Official voting for Bigg Boss 16 is CLOSED: it ended with the season on 12 February 2023 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 16?",
+    textOptions: [
+      { id: "mc-stan", label: "MC Stan", sub: "Winner · Bigg Boss 16", image: "/assets/bb-seasons/s16-mc-stan.webp" },
+      { id: "shiv-thakare", label: "Shiv Thakare", sub: "1st runner-up · Bigg Boss 16", image: "/assets/bb-seasons/s16-shiv-thakare.webp" },
+      { id: "priyanka-chahar-choudhary", label: "Priyanka Chahar Choudhary", sub: "2nd runner-up · Bigg Boss 16", image: "/assets/bb-seasons/s16-priyanka-chahar-choudhary.webp" },
+      { id: "archana-gautam", label: "Archana Gautam", sub: "3rd runner-up · Bigg Boss 16", image: "/assets/bb-seasons/s16-archana-gautam.webp" },
+      { id: "shalin-bhanot", label: "Shalin Bhanot", sub: "4th runner-up · Bigg Boss 16", image: "/assets/bb-seasons/s16-shalin-bhanot.webp" },
+    ],
+    voteDistribution: {
+      "mc-stan": 596,
+      "shiv-thakare": 548,
+      "priyanka-chahar-choudhary": 472,
+      "archana-gautam": 384,
+      "shalin-bhanot": 300,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 16 voting: the official result — MC Stan won, ahead of Shiv Thakare, Priyanka Chahar Choudhary, Archana Gautam and Shalin Bhanot — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 16? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-13-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-13-voting.jpg",
+    title: "Bigg Boss 13 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 13 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 13 voting is closed — the season ended on the night of 15–16 February 2020 with Sidharth Shukla lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the six finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 13. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 13 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 15–16 FEBRUARY 2020",
+    leaderNote: "🏆 FAN RE-VOTE: Sidharth Shukla — the official winner — also leads the fan re-vote as it stands, with 648 votes (28.2%), ahead of Asim Riaz on 574. Official voting for Bigg Boss 13 is CLOSED: it ended with the season on the night of 15–16 February 2020 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 13?",
+    textOptions: [
+      { id: "sidharth-shukla", label: "Sidharth Shukla", sub: "Winner · Bigg Boss 13", image: "/assets/bb-seasons/s13-sidharth-shukla.webp" },
+      { id: "asim-riaz", label: "Asim Riaz", sub: "1st runner-up · Bigg Boss 13", image: "/assets/bb-seasons/s13-asim-riaz.webp" },
+      { id: "shehnaaz-gill", label: "Shehnaaz Gill", sub: "2nd runner-up · Bigg Boss 13", image: "/assets/bb-seasons/s13-shehnaaz-gill.webp" },
+      { id: "rashami-desai", label: "Rashami Desai", sub: "3rd runner-up · Bigg Boss 13", image: "/assets/bb-seasons/s13-rashami-desai.webp" },
+      { id: "arti-singh", label: "Arti Singh", sub: "4th runner-up · Bigg Boss 13", image: "/assets/bb-seasons/s13-arti-singh.webp" },
+      { id: "paras-chhabra", label: "Paras Chhabra", sub: "5th runner-up · Bigg Boss 13", image: "/assets/bb-seasons/s13-paras-chhabra.webp" },
+    ],
+    voteDistribution: {
+      "sidharth-shukla": 648,
+      "asim-riaz": 574,
+      "shehnaaz-gill": 486,
+      "rashami-desai": 268,
+      "arti-singh": 172,
+      "paras-chhabra": 152,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 13 voting: the official result — Sidharth Shukla won, ahead of Asim Riaz, Shehnaaz Gill, Rashami Desai, Arti Singh and Paras Chhabra — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 13? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
   }
 ];
 
@@ -1333,6 +1395,8 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-voting", "🗳️ Bigg Boss Voting (All Seasons)"],
     ["bigg-boss-17-voting", "🗳️ Bigg Boss 17 Voting"],
     ["bigg-boss-19-voting", "🗳️ Bigg Boss 19 Voting"],
+    ["bigg-boss-16-voting", "🗳️ Bigg Boss 16 Voting"],
+    ["bigg-boss-13-voting", "🗳️ Bigg Boss 13 Voting"],
     ["bigg-boss-20-contestants", "👥 18 Contestants Wiki"],
     ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
@@ -3421,6 +3485,7 @@ export function renderBiggBossFinalePage(poll) {
 // ship in later packs, which add their links to this grid as they go live.
 // (Entry 408+409 rebase: Seasons 17 and 19 now carry links — their voting
 // pages ship in this pack; the rest still open one by one.)
+// (Entries 410+411: Seasons 16 and 13 now carry links too.)
 const VOTING_HUB_SEASONS = [
   { season: 1, years: "2006–07", winner: "Rahul Roy" },
   { season: 2, years: "2008", winner: "Ashutosh Kaushik" },
@@ -3439,10 +3504,10 @@ const VOTING_HUB_SEASONS = [
   { season: 10, years: "2016–17", winner: "Manveer Gurjar" },
   { season: 11, years: "2017–18", winner: "Shilpa Shinde" },
   { season: 12, years: "2018", winner: "Dipika Kakar" },
-  { season: 13, years: "2019–20", winner: "Sidharth Shukla" },
+  { season: 13, years: "2019–20", winner: "Sidharth Shukla", link: "/bigg-boss-13-voting/" },
   { season: 14, years: "2020–21", winner: "Rubina Dilaik" },
   { season: 15, years: "2021–22", winner: "Tejasswi Prakash" },
-  { season: 16, years: "2022–23", winner: "MC Stan" },
+  { season: 16, years: "2022–23", winner: "MC Stan", link: "/bigg-boss-16-voting/" },
   { season: 17, years: "2023–24", winner: "Munawar Faruqui", link: "/bigg-boss-17-voting/" },
   { season: 18, years: "2024–25", winner: "Karan Veer Mehra" },
   { season: 19, years: "2025", winner: "Gaurav Khanna", link: "/bigg-boss-19-voting/" },
@@ -3501,7 +3566,7 @@ function renderVotingHubSections() {
     storySection(
       "Vote by Season",
       "Bigg Boss voting by season — every season, every winner",
-      `<p>One voting page per season. Season 20 is live now, and the first two finished-season pages — Bigg Boss 17 and Bigg Boss 19 — are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
+      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 17, Bigg Boss 16 and Bigg Boss 13 are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
       <div class="bb-steps-grid">
         <a class="bb-step-card" href="/bigg-boss-20-voting/" style="display:block;text-decoration:none;color:inherit;">
           <div class="bb-step-num">S20</div>
@@ -4061,6 +4126,421 @@ function renderSeason19Faq() {
 }
 
 
+// ---------- Past-season voting pages (entries 410 + 411) ----------
+// Bigg Boss 16 (entry 410) and Bigg Boss 13 (entry 411) fan re-vote pages.
+// Every fact below comes from the season research files, verified against
+// the seasons' Wikipedia articles (see the pack's sources.md): S16 facts in
+// ~/workspace/bb-seasons/batch1-17-16-13/s16/facts.md, S13 facts in
+// ~/workspace/bb-seasons/batch1-17-16-13/s13/facts.md. No prize figure
+// appears on either page: the Season 16 final figure is press-only and is
+// not stated in Wikipedia, and no Season 13 figure is stated in Wikipedia
+// at all (the moments that involved prize money are told without figures).
+// The Season 13 finale date is conflicted inside Wikipedia itself (infobox
+// and lead say the run ended 16 February 2020; finale-night press coverage
+// is dated 15 February 2020), so the page always gives it in the hedged
+// form "the night of 15–16 February 2020" and prints no season day count
+// (the same article's 141-day infobox figure and its Day 140 table exits
+// disagree). The renderers below reuse the shared season helpers defined
+// with the entry 408/409 pages.
+
+// ---------- Bigg Boss 16 (entry 410) ----------
+
+const SEASON16_FINALISTS = [
+  {
+    name: "MC Stan",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s16-mc-stan.webp",
+    story:
+      "MC Stan (Altaf Tadavi) won Bigg Boss 16 on finale night, 12 February 2023, at the end of a five-hour grand finale that closed a 134-day season of 17 housemates — the 'Upside Down' season, styled Iss Baar Bigg Boss Khud Khelenge, in which Bigg Boss himself played the game.",
+  },
+  {
+    name: "Shiv Thakare",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s16-shiv-thakare.webp",
+    story:
+      "Shiv Thakare finished as first runner-up in the Day 134 finale on 12 February 2023, behind only MC Stan in the final order.",
+  },
+  {
+    name: "Priyanka Chahar Choudhary",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s16-priyanka-chahar-choudhary.webp",
+    story:
+      "Priyanka Chahar Choudhary finished as second runner-up. Her season also carried a public-vote honour: she won the season-long MyGlamm Face of the Season segment on Day 83 by public vote.",
+  },
+  {
+    name: "Archana Gautam",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/s16-archana-gautam.webp",
+    story:
+      "Archana Gautam had the wildest ride of any finalist: she was ejected on Day 40 — and returned on Day 42 — then went all the way to the finale, finishing as third runner-up.",
+  },
+  {
+    name: "Shalin Bhanot",
+    placing: "4th runner-up",
+    image: "/assets/bb-seasons/s16-shalin-bhanot.webp",
+    story:
+      "Shalin Bhanot completed the final five, finishing as fourth runner-up when the finale order was declared on Day 134, 12 February 2023. Earlier in the season he had given up the remaining prize money to bring Tina Datta back into the house.",
+  },
+];
+
+const SEASON16_EVICTIONS = [
+  ["Manya Singh", 21, ""],
+  ["Gori Nagori", 42, ""],
+  ["Gautam Singh Vig", 49, ""],
+  ["Ankit Gupta", 84, "Evicted by housemates"],
+  ["Vikkas Manaktala", 91, "Wild-card entrant"],
+  ["Sreejita De", 105, "First evicted on Day 14; re-entered on Day 63"],
+  ["Sajid Khan", 105, "Walked"],
+  ["Abdu Rozik", 105, "Walked"],
+  ["Soundarya Sharma", 112, "Evicted by housemates"],
+  ["Tina Datta", 118, "First evicted on Day 70; re-entered on Day 71"],
+  ["Sumbul Touqeer", 125, ""],
+  ["Nimrit Kaur Ahluwalia", 131, ""],
+];
+
+const SEASON16_MOMENTS = [
+  {
+    title: "Bigg Boss khud khelenge",
+    text: "Under the 'Upside Down' concept, Bigg Boss himself played the game this season. The circus-themed house had four bedrooms and, for the first time, a private jacuzzi for the captain.",
+  },
+  {
+    title: "Format firsts",
+    text: "The first Bigg Boss Anthem replaced the usual morning wake-up songs, a new Sunday segment — Bigg Bulletin with Shekhar Suman — launched, and evictions moved to Saturdays for the first time.",
+  },
+  {
+    title: "The prize money became a game piece",
+    text: "Housemates repeatedly traded chunks of the prize pot to save nominated contestants, and Shalin Bhanot gave up the remaining prize money to bring Tina Datta back into the house.",
+  },
+  {
+    title: "MyGlamm Face of the Season",
+    text: "Priyanka Chahar Choudhary won the season-long MyGlamm Face of the Season segment on Day 83 by public vote, along with an ad shoot with Shraddha Kapoor.",
+  },
+  {
+    title: "A dog in the house",
+    text: "Maahim, a St. Bernard, was sent into the house on Day 87 and stayed until the finale.",
+  },
+];
+
+function renderSeason16Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 16 result — MC Stan won the season",
+      `<p>Bigg Boss 16 — styled <em>Bigg Boss: Iss Baar Bigg Boss Khud Khelenge</em>, on the "Upside Down" concept — ran from <strong>1 October 2022</strong> to the finale on <strong>12 February 2023</strong>: 134 days, 17 housemates, hosted by Salman Khan on Colors TV and Voot. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "MC Stan"],
+        ["1st runner-up", "Shiv Thakare"],
+        ["2nd runner-up", "Priyanka Chahar Choudhary"],
+        ["3rd runner-up", "Archana Gautam"],
+        ["4th runner-up", "Shalin Bhanot"],
+      ])}
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 16's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 16 final five",
+      renderSeasonFinalistCards(SEASON16_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 16 eviction order — who left, and when",
+      `<p>Twelve housemates left before the finale, in this order (from the season's record):</p>
+      ${renderSeasonEvictionTable(SEASON16_EVICTIONS)}
+      <p style="margin-top:1rem;">The finale followed on Day 134: Shalin Bhanot left as fourth runner-up, then Archana Gautam (third runner-up), Priyanka Chahar Choudhary (second runner-up) and Shiv Thakare (first runner-up), before MC Stan was declared the winner. Among the finalists, Archana Gautam's Day 40 ejection and Day 42 return stands out in this table's story.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 16 story — the season's defining moments",
+      renderSeasonMoments(SEASON16_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-13-voting/",
+        emoji: "🌟",
+        title: "Bigg Boss 13 Voting",
+        text: "Sidharth Shukla's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 13 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason16Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 16 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 16 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 16 voting closed when the season ended with the finale on 12 February 2023, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 16?</summary>
+        <div class="bb-faq-body">
+          <p>MC Stan won Bigg Boss 16. The final order was: Shiv Thakare (first runner-up), Priyanka Chahar Choudhary (second runner-up), Archana Gautam (third runner-up) and Shalin Bhanot (fourth runner-up).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 16 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The five finalists were MC Stan, Shiv Thakare, Priyanka Chahar Choudhary, Archana Gautam and Shalin Bhanot. The season ran from 1 October 2022 to 12 February 2023 — 134 days and 17 housemates, hosted by Salman Khan on Colors TV and Voot.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 16. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+
+// ---------- Bigg Boss 13 (entry 411) ----------
+
+const SEASON13_FINALISTS = [
+  {
+    name: "Sidharth Shukla",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s13-sidharth-shukla.webp",
+    story:
+      "Sidharth Shukla won Bigg Boss 13 in the finale on the night of 15–16 February 2020. His season included a mid-season hospital break — he was out of the house from Day 71 to Day 79 — and he returned to go on and win the season.",
+  },
+  {
+    name: "Asim Riaz",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s13-asim-riaz.webp",
+    story:
+      "Asim Riaz finished as first runner-up in the finale, behind only Sidharth Shukla. Their rivalry defined the season — in Week 13, Rohit Shetty entered the house to sort out the differences between the two.",
+  },
+  {
+    name: "Shehnaaz Gill",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s13-shehnaaz-gill.webp",
+    story:
+      "Shehnaaz Gill reached the final six of a 21-contestant season and finished as second runner-up in the finale on the night of 15–16 February 2020 — third in the final order, ahead of Rashami Desai, Arti Singh and Paras Chhabra.",
+  },
+  {
+    name: "Rashami Desai",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/s13-rashami-desai.webp",
+    story:
+      "Rashami Desai finished as third runner-up — after being evicted on Day 35 in the season's triple eviction and re-entering on Day 39.",
+  },
+  {
+    name: "Arti Singh",
+    placing: "4th runner-up",
+    image: "/assets/bb-seasons/s13-arti-singh.webp",
+    story:
+      "Arti Singh finished as fourth runner-up in the finale — fifth in the final order of the season's six finalists.",
+  },
+  {
+    name: "Paras Chhabra",
+    placing: "5th runner-up",
+    image: "/assets/bb-seasons/s13-paras-chhabra.webp",
+    story:
+      "Paras Chhabra is recorded in the season's table as 'Walked, 5th runner-up': he left during the finale itself, before the last placings were declared.",
+  },
+];
+
+const SEASON13_EVICTIONS = [
+  ["Dalljiet Kaur", 14, ""],
+  ["Koena Mitra", 15, ""],
+  ["Abu Malik", 22, "Evicted by housemates"],
+  ["Siddhartha Dey", 31, ""],
+  ["Tehseen Poonawalla", 44, "Wild-card entrant"],
+  ["Arhaan Khan", 92, "First evicted on Day 49; re-entered on Day 64"],
+  ["Khesari Lal Yadav", 54, "Evicted by housemates"],
+  ["Himanshi Khurana", 70, "Evicted by housemates"],
+  ["Vikas Pathak (Hindustani Bhau)", 77, ""],
+  ["Shefali Bagga", 99, "Evicted by housemates; first evicted on Day 35, re-entered on Day 64"],
+  ["Madhurima Tuli", 112, "Ejected"],
+  ["Shefali Jariwala", 119, ""],
+  ["Vishal Aditya Singh", 133, ""],
+  ["Mahira Sharma", 136, ""],
+];
+
+const SEASON13_MOMENTS = [
+  {
+    title: "An all-celebrity season",
+    text: "The makers announced this season would feature only celebrity contestants, with no commoners. The house followed a 'Bigg Boss Museum' theme in Goregaon, and the season averaged a 2.1–2.5 TRP — described as one of the most watched and successful seasons ever.",
+  },
+  {
+    title: "The winner's hospital break",
+    text: "Sidharth Shukla was hospitalised mid-season — out of the house from Day 71 to Day 79 per the season's record — and returned to go on and win the season.",
+  },
+  {
+    title: "The 'Tedha' twists",
+    text: "Launch-day Bed Friend Forever (BFF) bed pairings (cancelled on Day 10 over legal issues), the returning Sultani Akhada segment, the BB Elite Club introduced in Week 16, and Connection Week in Week 18.",
+  },
+  {
+    title: "A finalist walked out of the finale",
+    text: "Paras Chhabra is recorded in the season's table as 'Walked, 5th runner-up', leaving during the finale before the last placings were declared.",
+  },
+  {
+    title: "Rohit Shetty played peacemaker",
+    text: "Rohit Shetty entered the house in Week 13 to sort out differences between Sidharth Shukla and Asim Riaz.",
+  },
+];
+
+function renderSeason13Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 13 result — Sidharth Shukla won the season",
+      `<p>Bigg Boss 13 — styled <em>Bigg Boss Tedha</em> — premiered on <strong>29 September 2019</strong> and closed with the finale on <strong>the night of 15–16 February 2020</strong>: 21 contestants, hosted by Salman Khan on Colors TV. The final order, as declared at the finale, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Sidharth Shukla"],
+        ["1st runner-up", "Asim Riaz"],
+        ["2nd runner-up", "Shehnaaz Gill"],
+        ["3rd runner-up", "Rashami Desai"],
+        ["4th runner-up", "Arti Singh"],
+        ["5th runner-up", "Paras Chhabra"],
+      ])}
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 13's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 13 final six",
+      renderSeasonFinalistCards(SEASON13_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 13 eviction order — who left, and when",
+      `<p>Fourteen housemates left before the finale, in this order (from the season's record):</p>
+      ${renderSeasonEvictionTable(SEASON13_EVICTIONS)}
+      <p style="margin-top:1rem;">One eviction week stands out: on Day 35, Devoleena Bhattacharjee, Rashami Desai and Shefali Bagga were all evicted together; Rashami Desai and Devoleena Bhattacharjee re-entered on Day 39, and Devoleena later walked on Day 63, with Vikas Gupta entering as her proxy on Day 70. The finale followed on the night of 15–16 February 2020: Paras Chhabra walked out as fifth runner-up, then Arti Singh (fourth runner-up), Rashami Desai (third runner-up), Shehnaaz Gill (second runner-up) and Asim Riaz (first runner-up), before Sidharth Shukla was declared the winner.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 13 story — the season's defining moments",
+      renderSeasonMoments(SEASON13_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-16-voting/",
+        emoji: "🎪",
+        title: "Bigg Boss 16 Voting",
+        text: "MC Stan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 16 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason13Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 13 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 13 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 13 voting closed when the season ended with the finale on the night of 15–16 February 2020, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 13?</summary>
+        <div class="bb-faq-body">
+          <p>Sidharth Shukla won Bigg Boss 13. The final order was: Asim Riaz (first runner-up), Shehnaaz Gill (second runner-up), Rashami Desai (third runner-up), Arti Singh (fourth runner-up) and Paras Chhabra (fifth runner-up, who walked during the finale).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 13 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The six finalists were Sidharth Shukla, Asim Riaz, Shehnaaz Gill, Rashami Desai, Arti Singh and Paras Chhabra. The season premiered on 29 September 2019 and closed with the finale on the night of 15–16 February 2020 — 21 contestants, hosted by Salman Khan on Colors TV.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 13. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+
 export function renderBiggBossPollPage(poll) {
   if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
   if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
@@ -4109,6 +4589,8 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-voting" ? renderVotingHubSections() : ""}
     ${poll.slug === "bigg-boss-17-voting" ? renderSeason17Sections() : ""}
     ${poll.slug === "bigg-boss-19-voting" ? renderSeason19Sections() : ""}
+    ${poll.slug === "bigg-boss-16-voting" ? renderSeason16Sections() : ""}
+    ${poll.slug === "bigg-boss-13-voting" ? renderSeason13Sections() : ""}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
@@ -4131,7 +4613,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : renderFaqSection(poll)}
   </div>
   `;
 }
