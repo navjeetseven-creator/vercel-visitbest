@@ -866,7 +866,7 @@ export const polls = [
     },
     dangerIds: [],
     embedEyebrow: "This Week's Poll · Week 11 · Nominees Only",
-    embedIntro: "This week's Open Poll is restricted to the 10 nominated housemates — Uditi Singh is not on the list. It opened on 17 November 2026, and its standings update as readers vote in this poll. For the season's cumulative standings, see the main Open Poll at the top of this page and the trend snapshot below.",
+    embedIntro: "This week's Open Poll is restricted to the housemates nominated this week — Uditi Singh is not on the list. It opened on 17 November 2026, and its standings update as readers vote in this poll. For the season's cumulative standings, see the main Open Poll at the top of this page and the trend snapshot below.",
     openedDate: "17 NOVEMBER 2026",
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
@@ -2969,7 +2969,7 @@ export function renderBiggBossTrendPage(poll) {
         </table>
       </div>
       ${HUB_DISCLAIMER_BOX}
-      <p class="bb-small">Uditi Singh is not in this table: she is the only housemate who was not nominated in Week 11, and she is the house captain. Her standing is in the season table below. To vote in this poll, open the <a href="/bigg-boss-20-voting-week-11/">Week 11 voting page</a>.</p>
+      <p class="bb-small">Uditi Singh is not in this table: she is the only housemate who escaped nomination in Week 11 altogether — Arishfa Khan was nominated, but won safety in Episode 75 — and she is the house captain. Her standing is in the season table below. To vote in this poll, open the <a href="/bigg-boss-20-voting-week-11/">Week 11 voting page</a>.</p>
     </section>
 
     <section class="bb-section leaderboard-section">
