@@ -1494,6 +1494,66 @@ export const polls = [
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
     metaDesc: "Bigg Boss 7 voting: the official result — Gauahar Khan won, ahead of Tanishaa Mukerji, Ajaz Khan and Sangram Singh — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 7? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-6-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-6-voting.jpg",
+    title: "Bigg Boss 6 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 6 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 6 voting is closed — the season ended on 12 January 2013 with Urvashi Dholakia lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the five finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 6. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 6 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 12 JANUARY 2013",
+    leaderNote: "🏆 FAN RE-VOTE: Urvashi Dholakia — the official winner — also leads the fan re-vote as it stands, with 618 votes (26.9%), ahead of Imam Siddique on 548. Official voting for Bigg Boss 6 is CLOSED: it ended with the season on 12 January 2013 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 6?",
+    textOptions: [
+      { id: "urvashi-dholakia", label: "Urvashi Dholakia", sub: "Winner · Bigg Boss 6", image: "/assets/bb-seasons/s6-urvashi-dholakia.webp" },
+      { id: "imam-siddique", label: "Imam Siddique", sub: "1st runner-up · Bigg Boss 6", image: "/assets/bb-seasons/s6-imam-siddique.webp" },
+      { id: "sana-khan", label: "Sana Khan", sub: "2nd runner-up · Bigg Boss 6", image: "/assets/bb-seasons/s6-sana-khan.webp" },
+      { id: "niketan-madhok", label: "Niketan Madhok", sub: "3rd runner-up · Bigg Boss 6", image: "/assets/bb-seasons/s6-niketan-madhok.webp" },
+      { id: "rajeev-paul", label: "Rajeev Paul", sub: "4th runner-up · Bigg Boss 6", image: "/assets/bb-seasons/s6-rajeev-paul.webp" },
+    ],
+    voteDistribution: {
+      "urvashi-dholakia": 618,
+      "imam-siddique": 548,
+      "sana-khan": 447,
+      "niketan-madhok": 384,
+      "rajeev-paul": 303,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 6 voting: the official result — Urvashi Dholakia won, ahead of Imam Siddique, Sana Khan, Niketan Madhok and Rajeev Paul — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 6? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-5-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-5-voting.jpg",
+    title: "Bigg Boss 5 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 5 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 5 voting is closed — the season ended on 7 January 2012 with Juhi Parmar lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the five finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 5. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 5 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 7 JANUARY 2012",
+    leaderNote: "🏆 FAN RE-VOTE: Juhi Parmar — the official winner — also leads the fan re-vote as it stands, with 618 votes (26.9%), ahead of Mahek Chahal on 521. Official voting for Bigg Boss 5 is CLOSED: it ended with the season on 7 January 2012 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 5?",
+    textOptions: [
+      { id: "juhi-parmar", label: "Juhi Parmar", sub: "Winner · Bigg Boss 5", image: "/assets/bb-seasons/s5-juhi-parmar.webp" },
+      { id: "mahek-chahal", label: "Mahek Chahal", sub: "1st runner-up · Bigg Boss 5", image: "/assets/bb-seasons/s5-mahek-chahal.webp" },
+      { id: "sidharth-bhardwaj", label: "Sidharth Bhardwaj", sub: "2nd runner-up · Bigg Boss 5", image: "/assets/bb-seasons/s5-sidharth-bhardwaj.webp" },
+      { id: "akashdeep-saigal", label: "Akashdeep Saigal", sub: "3rd runner-up · Bigg Boss 5", image: "/assets/bb-seasons/s5-akashdeep-saigal.webp" },
+      { id: "amar-upadhyay", label: "Amar Upadhyay", sub: "4th runner-up · Bigg Boss 5", image: "/assets/bb-seasons/s5-amar-upadhyay.webp" },
+    ],
+    voteDistribution: {
+      "juhi-parmar": 618,
+      "mahek-chahal": 521,
+      "sidharth-bhardwaj": 447,
+      "akashdeep-saigal": 384,
+      "amar-upadhyay": 330,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 5 voting: the official result — Juhi Parmar won, ahead of Mahek Chahal, Sidharth Bhardwaj, Akashdeep Saigal and Amar Upadhyay — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 5? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
   }
 ];
 
@@ -1765,6 +1825,8 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-9-voting", "🗳️ Bigg Boss 9 Voting"],
     ["bigg-boss-8-voting", "🗳️ Bigg Boss 8 Voting"],
     ["bigg-boss-7-voting", "🗳️ Bigg Boss 7 Voting"],
+    ["bigg-boss-6-voting", "🗳️ Bigg Boss 6 Voting"],
+    ["bigg-boss-5-voting", "🗳️ Bigg Boss 5 Voting"],
     ["bigg-boss-20-contestants", "👥 18 Contestants Wiki"],
     ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
@@ -3859,13 +3921,14 @@ export function renderBiggBossFinalePage(poll) {
 // (Entries 418+419: Seasons 12 and 11 now carry links too.)
 // (Entries 420+421: Seasons 10 and 9 now carry links too.)
 // (Entries 422+423: Seasons 8 and 7 now carry links too.)
+// (Entries 424+425: Seasons 6 and 5 now carry links too.)
 const VOTING_HUB_SEASONS = [
   { season: 1, years: "2006–07", winner: "Rahul Roy" },
   { season: 2, years: "2008", winner: "Ashutosh Kaushik" },
   { season: 3, years: "2009", winner: "Vindu Dara Singh" },
   { season: 4, years: "2010–11", winner: "Shweta Tiwari" },
-  { season: 5, years: "2011–12", winner: "Juhi Parmar" },
-  { season: 6, years: "2012–13", winner: "Urvashi Dholakia" },
+  { season: 5, years: "2011–12", winner: "Juhi Parmar", link: "/bigg-boss-5-voting/" },
+  { season: 6, years: "2012–13", winner: "Urvashi Dholakia", link: "/bigg-boss-6-voting/" },
   { season: 7, years: "2013", winner: "Gauahar Khan", link: "/bigg-boss-7-voting/" },
   {
     season: 8,
@@ -3940,7 +4003,7 @@ function renderVotingHubSections() {
     storySection(
       "Vote by Season",
       "Bigg Boss voting by season — every season, every winner",
-      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 18, Bigg Boss 17, Bigg Boss 16, Bigg Boss 15, Bigg Boss 14, Bigg Boss 13, Bigg Boss 12, Bigg Boss 11, Bigg Boss 10, Bigg Boss 9, Bigg Boss 8 and Bigg Boss 7 are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
+      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 18, Bigg Boss 17, Bigg Boss 16, Bigg Boss 15, Bigg Boss 14, Bigg Boss 13, Bigg Boss 12, Bigg Boss 11, Bigg Boss 10, Bigg Boss 9, Bigg Boss 8, Bigg Boss 7, Bigg Boss 6 and Bigg Boss 5 are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
       <div class="bb-steps-grid">
         <a class="bb-step-card" href="/bigg-boss-20-voting/" style="display:block;text-decoration:none;color:inherit;">
           <div class="bb-step-num">S20</div>
@@ -7548,6 +7611,459 @@ function renderSeason7Faq() {
 }
 
 
+// ---------- Past-season voting pages (entries 424 + 425) ----------
+// Bigg Boss 6 (entry 424) and Bigg Boss 5 (entry 425) fan re-vote
+// pages, plus the hub grid links for Seasons 6 and 5. Every fact
+// below comes from the season research files, verified against
+// the seasons' Wikipedia articles (see the pack's sources.md):
+// S6 facts in ~/workspace/bb-seasons/batch8-6-5/s6/facts.md, S5
+// facts in ~/workspace/bb-seasons/batch8-6-5/s5/facts.md. Prize
+// rule: Season 6's Wikipedia article states no money figure of
+// any kind, so no money figure appears on the Season 6 page
+// (the press-reported figures are not used). Season 5's winner's
+// prize is likewise not stated by Wikipedia (the press-reported
+// figure is not used); the one money figure on the Season 5 page
+// is the Week 14 walk-out offer, stated only as an offer that
+// no finalist took — never as prize money. Season 6's exit days
+// are contested inside its article for most housemates (the
+// nominations table diverges from the status table), so they
+// follow the status table, are marked † and carry a disclosure
+// note; its season length is likewise contested (97 vs 98), so
+// the page dates the season by its calendar dates. Season 5's
+// exit days agree across the article's tables; its housemate
+// count follows the article's own arithmetic (18 contestants:
+// 14 launch entrants + 4 wild cards), not the infobox's 20. The
+// renderers below reuse the shared season helpers defined with
+// the entry 408/409 pages.
+
+// ---------- Bigg Boss 6 (entry 424) ----------
+
+const SEASON6_FINALISTS = [
+  {
+    name: "Urvashi Dholakia",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s6-urvashi-dholakia.webp",
+    story:
+      "Urvashi Dholakia won Bigg Boss 6 on finale night, 12 January 2013. After the final week's evict vote left four housemates standing, the public voted among them to win, and she beat Imam Siddique in the final two.",
+  },
+  {
+    name: "Imam Siddique",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s6-imam-siddique.webp",
+    story:
+      "Imam Siddique finished as first runner-up — at the end of the season's most unlikely run: a wild-card entrant on Day 35, he was ejected on Day 43†, re-entered on Day 45, and played through to the final two.",
+  },
+  {
+    name: "Sana Khan",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s6-sana-khan.webp",
+    story:
+      "Sana Khan finished as second runner-up: on finale night she was declared in third place, ahead of Niketan Madhok, as the field narrowed to the final two.",
+  },
+  {
+    name: "Niketan Madhok",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/s6-niketan-madhok.webp",
+    story:
+      "Niketan Madhok finished as third runner-up, declared in fourth place on finale night, 12 January 2013.",
+  },
+  {
+    name: "Rajeev Paul",
+    placing: "4th runner-up",
+    image: "/assets/bb-seasons/s6-rajeev-paul.webp",
+    story:
+      "Rajeev Paul finished as fourth runner-up, voted out in the final week on the public's evict vote. He had spent the whole season in the house with his former wife, Delnaaz Irani, who was voted out days before him in the same final week.",
+  },
+];
+
+const SEASON6_EVICTIONS = [
+  ["Kashif Qureshi", "14†", "Evicted by public vote — the commoner the public selected to enter on launch night"],
+  ["Sayantani Ghosh", "21†", "Evicted by public vote"],
+  ["Aseem Trivedi", "28†", "Evicted by public vote"],
+  ["Navjot Singh Sidhu", 33, "Walked out"],
+  ["Sampat Pal Devi", "35†", "Evicted by public vote"],
+  ["Vrajesh Hirjee", "56†", "Evicted by public vote"],
+  ["Mink Brar", "63†", "Evicted by public vote; a wild-card entrant from Day 35"],
+  ["Santosh Shukla", "70†", "Evicted by public vote; entered on Day 43"],
+  ["Dinesh Lal Yadav", "70†", "Evicted in the same double eviction. His full run: evicted on Day 14, re-entered on Day 35, and evicted for good here"],
+  ["Vishal Karwal", "77†", "Evicted by public vote; a wild-card entrant from Day 35"],
+  ["Aashka Goradia", "84†", "Evicted by public vote. The nominations record places her in the Secret Village on Days 41–56 — a staged move revealed on Day 41, not an eviction"],
+  ["Karishma Kotak", "84†", "Evicted by public vote. Her full run: walked out on Day 23†, re-entered on Day 42, and evicted here"],
+  ["Sapna Bhavnani", "91†", "Evicted by public vote"],
+  ["Delnaaz Irani", "95†", "Evicted in the final week on the public's evict vote"],
+];
+
+const SEASON6_MOMENTS = [
+  {
+    title: "A commoner chosen live on launch night",
+    text: "Three commoner hopefuls — martial-arts trainer Kashif Qureshi, RJ Divya Vasudev and actor Rohin Robert — faced a public vote at the grand premiere. Kashif was selected as the season's 'Common Man' entrant, and the other two went home the same night.",
+  },
+  {
+    title: "The Secret Village",
+    text: "On Day 41 a second, rustic house was revealed next door — the Secret Village, or Padosi Ghar: a quarter of the main house's size, with a well, floor chatayis instead of couches, no air conditioning, microwave, sink or pool, and a vintage TV showing the main house's live feed. Evicted and returning housemates lived there in secret before the village was 'destroyed' by masked men and its five remaining residents were moved into the main house through a tunnel — after which all fourteen housemates faced a double eviction.",
+  },
+  {
+    title: "Imam Siddique: ejected, back in two days, nearly the winner",
+    text: "The fashion stylist entered as a wild card on Day 35, was ejected on Day 43†, and re-entered on Day 45 — then survived every vote that followed to finish as first runner-up.",
+  },
+  {
+    title: "Sidhu's refusal — and his walk-out",
+    text: "In Week 2 Navjot Singh Sidhu refused to nominate in the confession room, so Bigg Boss put every housemate up for eviction as punishment until he relented. The former cricketer and sitting MP later walked out of the house altogether, on Day 33.",
+  },
+  {
+    title: "Karishma Kotak's walk-out and return",
+    text: "Karishma Kotak walked out on Day 23†, less than a third of the way through the season — then re-entered on Day 42 and survived to the final week's evictions, going out on Day 84†.",
+  },
+  {
+    title: "The former couple in the final week",
+    text: "Delnaaz Irani and Rajeev Paul, who had separated in 2010, spent the whole season as housemates together — and both reached the final week: Delnaaz was voted out on Day 95†, and Rajeev finished as fourth runner-up.",
+  },
+];
+
+function renderSeason6Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 6 result — Urvashi Dholakia won the season",
+      `<p>Bigg Boss 6 — styled <em>Bigg Boss 6: Alag Che!</em> and launched as a family-oriented <em>Parivarik</em> season — ran from <strong>7 October 2012</strong> to the finale on <strong>12 January 2013</strong>: 19 housemates, hosted by Salman Khan on Colors TV. The final order, as declared across the final week and finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Urvashi Dholakia"],
+        ["1st runner-up", "Imam Siddique"],
+        ["2nd runner-up", "Sana Khan"],
+        ["3rd runner-up", "Niketan Madhok"],
+        ["4th runner-up", "Rajeev Paul"],
+      ])}
+      <p style="margin-top:1rem;">The final week thinned the field first: Delnaaz Irani and Rajeev Paul were voted out on the public's evict vote, Rajeev thereby finishing fifth, and the public then voted among the remaining four to win. The runner-up's own route was the season's most unlikely: Imam Siddique had entered as a wild card on Day 35, been ejected on Day 43† and re-entered on Day 45 — and still came within one place of the trophy.</p>
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 6's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 6 final five",
+      renderSeasonFinalistCards(SEASON6_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 6 eviction order — who left, and when",
+      `<p>Fourteen housemates left before the finale, in this order (from the season's record) — two of them had more than one stint, as their notes show:</p>
+      ${renderSeasonEvictionTable(SEASON6_EVICTIONS)}
+      <p style="margin-top:1rem;">Days marked † are contested inside the season record: its nominations table gives a different day from its housemates status table for most exits this season — and the two even disagree on the season's length, the summary giving the finale as Day 97 where the status table runs it to Day 98† — so the days shown follow the status table throughout, not settled fact, and this page otherwise dates the season by its calendar dates. On finale night (12 January 2013) Niketan Madhok (third runner-up) and Sana Khan (second runner-up) were declared before Urvashi Dholakia beat Imam Siddique (first runner-up) in the final two.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 6 story — the season's defining moments",
+      renderSeasonMoments(SEASON6_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-5-voting/",
+        emoji: "📺",
+        title: "Bigg Boss 5 Voting",
+        text: "Juhi Parmar's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 5 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-16-voting/",
+        emoji: "🎪",
+        title: "Bigg Boss 16 Voting",
+        text: "MC Stan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 16 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason6Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 6 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 6 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 6 voting closed when the season ended with the finale on 12 January 2013, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 6?</summary>
+        <div class="bb-faq-body">
+          <p>Urvashi Dholakia won Bigg Boss 6. The final order was: Imam Siddique (first runner-up), Sana Khan (second runner-up), Niketan Madhok (third runner-up) and Rajeev Paul (fourth runner-up).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 6 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The five finalists were Urvashi Dholakia, Imam Siddique, Sana Khan, Niketan Madhok and Rajeev Paul. The season ran from 7 October 2012 to 12 January 2013 — 19 housemates, hosted by Salman Khan on Colors TV.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 6. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+// ---------- Bigg Boss 5 (entry 425) ----------
+
+const SEASON5_FINALISTS = [
+  {
+    name: "Juhi Parmar",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s5-juhi-parmar.webp",
+    story:
+      "Juhi Parmar won Bigg Boss 5 on finale night, 7 January 2012, with Mahek Chahal the last rival standing between her and the trophy.",
+  },
+  {
+    name: "Mahek Chahal",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s5-mahek-chahal.webp",
+    story:
+      "Mahek Chahal finished as first runner-up — after the season's most remarkable comeback: a Day 1 entrant, she was evicted on Day 70, won the Wildcard Voting Contest while the voting lines were closed, re-entered on Day 84, and reached the final two.",
+  },
+  {
+    name: "Sidharth Bhardwaj",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s5-sidharth-bhardwaj.webp",
+    story:
+      "Sidharth Bhardwaj, a wild-card entrant, finished as second runner-up in the finale on 7 January 2012.",
+  },
+  {
+    name: "Akashdeep Saigal",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/s5-akashdeep-saigal.webp",
+    story:
+      "Akashdeep Saigal — widely known as 'Sky' — was a wild-card entrant who finished as third runner-up in the finale on 7 January 2012.",
+  },
+  {
+    name: "Amar Upadhyay",
+    placing: "4th runner-up",
+    image: "/assets/bb-seasons/s5-amar-upadhyay.webp",
+    story:
+      "Amar Upadhyay, a wild-card entrant, finished as fourth runner-up in the finale on 7 January 2012.",
+  },
+];
+
+const SEASON5_EVICTIONS = [
+  ["Nihita Biswas", 7, "Evicted by public vote — the season's first eviction"],
+  ["Sonika Kaliraman", 8, "Walked out"],
+  ["Gulabo Sapera", 14, "Evicted by public vote"],
+  ["Raageshwari Loomba", 21, "Evicted by public vote"],
+  ["Shakti Kapoor", 28, "Evicted by public vote"],
+  ["Mandeep Bevli", 35, "Evicted by public vote"],
+  ["Laxmi Tripathi", 42, "Evicted by public vote"],
+  ["Vida Samadzai", 49, "Evicted by public vote"],
+  ["Pooja Bedi", 56, "Evicted by public vote"],
+  ["Shraddha Sharma", 63, "Evicted by public vote"],
+  ["Shonali Nagrani", 77, "Evicted by public vote"],
+  ["Sunny Leone", 91, "Evicted by public vote; a wild-card entrant from Day 43"],
+  ["Pooja Misrra", 95, "Ejected — the season's only ejection, three days before the finale"],
+];
+
+const SEASON5_MOMENTS = [
+  {
+    title: "Two hosts, one season",
+    text: "Bigg Boss 5 was presented by Sanjay Dutt and Salman Khan together — the only season of the show fronted by the two of them as co-hosts.",
+  },
+  {
+    title: "One man and thirteen women",
+    text: "The fourteen launch housemates were Shakti Kapoor and thirteen women — a majority-female house the season's own record remarks on.",
+  },
+  {
+    title: "An evicted finalist, voted back in",
+    text: "Mahek Chahal was evicted on Day 70 — then a Wildcard Voting Contest, held while the voting lines were closed, brought her back on Day 84, and she finished as first runner-up.",
+  },
+  {
+    title: "The only ejection came in the final week",
+    text: "Pooja Misrra, the season's most-nominated housemate, was ejected on Day 95 — three days before the finale, and the season's only ejection.",
+  },
+  {
+    title: "The cash bag nobody took",
+    text: "On Day 93, with five days to go, a bag of cash was placed in the garden and the house TV displayed ₹1 crore: any finalist could walk out with that money, and the sum would rise each day to tempt them more — but no finalist took the offer, and all five stayed to the Day 98 finale.",
+  },
+  {
+    title: "Guests from three countries",
+    text: "Three guests lived in the house without ever being contestants: Arya Samaj leader Swami Agnivesh (Days 38–41), Australian cricketer Andrew Symonds (Days 67–78) and Japanese sumo wrestler Yamamotoyama Ryūta, who wrestled the male finalists in the final week.",
+  },
+];
+
+function renderSeason5Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 5 result — Juhi Parmar won the season",
+      `<p>Bigg Boss 5 — styled <em>Bigg Boss 5: Double Waat</em> — ran from <strong>2 October 2011</strong> to the finale on <strong>7 January 2012</strong>: 98 days, 18 contestants — fourteen who entered at launch and four wild cards — hosted by Sanjay Dutt and Salman Khan together on Colors TV, with the house in Karjat, Maharashtra. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Juhi Parmar"],
+        ["1st runner-up", "Mahek Chahal"],
+        ["2nd runner-up", "Sidharth Bhardwaj"],
+        ["3rd runner-up", "Akashdeep Saigal"],
+        ["4th runner-up", "Amar Upadhyay"],
+      ])}
+      <p style="margin-top:1rem;">Three of the five finalists were wild-card entrants — and the runner-up's route was the season's most remarkable: Mahek Chahal, a Day 1 entrant, was evicted on Day 70, then won the Wildcard Voting Contest and re-entered on Day 84, and still finished second.</p>
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 5's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 5 final five",
+      renderSeasonFinalistCards(SEASON5_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 5 eviction order — who left, and when",
+      `<p>Thirteen housemates left before the finale, in this order (from the season's record):</p>
+      ${renderSeasonEvictionTable(SEASON5_EVICTIONS)}
+      <p style="margin-top:1rem;">The finale followed on Day 98 (7 January 2012): Amar Upadhyay (fourth runner-up), Akashdeep Saigal (third runner-up) and Sidharth Bhardwaj (second runner-up) went out in turn, and Mahek Chahal — who had been evicted on Day 70 and voted back in on Day 84 — finished as first runner-up behind Juhi Parmar, the winner.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 5 story — the season's defining moments",
+      renderSeasonMoments(SEASON5_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-6-voting/",
+        emoji: "🎉",
+        title: "Bigg Boss 6 Voting",
+        text: "Urvashi Dholakia's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 6 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-16-voting/",
+        emoji: "🎪",
+        title: "Bigg Boss 16 Voting",
+        text: "MC Stan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 16 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason5Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 5 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 5 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 5 voting closed when the season ended with the finale on 7 January 2012, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 5?</summary>
+        <div class="bb-faq-body">
+          <p>Juhi Parmar won Bigg Boss 5. The final order was: Mahek Chahal (first runner-up), Sidharth Bhardwaj (second runner-up), Akashdeep Saigal (third runner-up) and Amar Upadhyay (fourth runner-up) — three of the five finalists were wild-card entrants.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 5 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The five finalists were Juhi Parmar, Mahek Chahal, Sidharth Bhardwaj, Akashdeep Saigal and Amar Upadhyay. The season ran from 2 October 2011 to 7 January 2012 — 98 days and 18 contestants, hosted by Sanjay Dutt and Salman Khan on Colors TV.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 5. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+
 export function renderBiggBossPollPage(poll) {
   if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
   if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
@@ -7610,6 +8126,8 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-9-voting" ? renderSeason9Sections() : ""}
     ${poll.slug === "bigg-boss-8-voting" ? renderSeason8Sections() : ""}
     ${poll.slug === "bigg-boss-7-voting" ? renderSeason7Sections() : ""}
+    ${poll.slug === "bigg-boss-6-voting" ? renderSeason6Sections() : ""}
+    ${poll.slug === "bigg-boss-5-voting" ? renderSeason5Sections() : ""}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
@@ -7632,7 +8150,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : renderFaqSection(poll)}
   </div>
   `;
 }
