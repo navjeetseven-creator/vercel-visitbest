@@ -9618,8 +9618,8 @@ export const css = `
 .bb-card-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center center;
   transition: transform 0.3s ease;
 }
 .bb-card:hover .bb-card-media img {
@@ -9748,14 +9748,15 @@ export const css = `
   height: 200px;
   border-radius: 16px;
   overflow: hidden;
+  background: #e2e8f0;
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
   margin-bottom: 1rem;
 }
 .bb-duel-photo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center center;
 }
 .bb-duel-pct {
   position: absolute;
@@ -9853,11 +9854,12 @@ export const css = `
   flex-shrink: 0;
   border-radius: 10px;
   overflow: hidden;
+  background: #e2e8f0;
 }
 .bb-nom-img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .bb-nom-danger-tag {
   position: absolute;
@@ -10182,8 +10184,8 @@ export const css = `
 .bb-wiki-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center center;
 }
 .bb-wiki-rank {
   position: absolute;
