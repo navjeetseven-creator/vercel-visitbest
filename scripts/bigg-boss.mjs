@@ -1322,6 +1322,64 @@ export const polls = [
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
     metaDesc: "Bigg Boss 14 voting: the official result — Rubina Dilaik won, ahead of Rahul Vaidya, Nikki Tamboli, Aly Goni and Rakhi Sawant — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 14? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-12-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-12-voting.jpg",
+    title: "Bigg Boss 12 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 12 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 12 voting is closed — the season ended on 30 December 2018 with Dipika Kakar lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the five finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 12. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 12 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 30 DECEMBER 2018",
+    leaderNote: "🏆 FAN RE-VOTE: Dipika Kakar — the official winner — also leads the fan re-vote as it stands, with 618 votes (26.9%), ahead of Sreesanth on 548. Official voting for Bigg Boss 12 is CLOSED: it ended with the season on 30 December 2018 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 12?",
+    textOptions: [
+      { id: "dipika-kakar", label: "Dipika Kakar", sub: "Winner · Bigg Boss 12", image: "/assets/bb-seasons/s12-dipika-kakar.webp" },
+      { id: "sreesanth", label: "Sreesanth", sub: "1st runner-up · Bigg Boss 12", image: "/assets/bb-seasons/s12-sreesanth.webp" },
+      { id: "deepak-thakur", label: "Deepak Thakur", sub: "2nd runner-up · Bigg Boss 12", image: "/assets/bb-seasons/s12-deepak-thakur.webp" },
+      { id: "romil-chaudhary", label: "Romil Chaudhary", sub: "3rd runner-up · Bigg Boss 12", image: "/assets/bb-seasons/s12-romil-chaudhary.webp" },
+      { id: "karanvir-bohra", label: "Karanvir Bohra", sub: "4th runner-up · Bigg Boss 12", image: "/assets/bb-seasons/s12-karanvir-bohra.webp" },
+    ],
+    voteDistribution: {
+      "dipika-kakar": 618,
+      "sreesanth": 548,
+      "deepak-thakur": 447,
+      "romil-chaudhary": 384,
+      "karanvir-bohra": 303,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 12 voting: the official result — Dipika Kakar won, ahead of Sreesanth, Deepak Thakur, Romil Chaudhary and Karanvir Bohra — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 12? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-11-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-11-voting.jpg",
+    title: "Bigg Boss 11 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 11 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 11 voting is closed — the season ended on 14 January 2018 with Shilpa Shinde lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the four finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 11. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 11 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 14 JANUARY 2018",
+    leaderNote: "🏆 FAN RE-VOTE: Shilpa Shinde — the official winner — also leads the fan re-vote as it stands, with 648 votes (28.2%), ahead of Hina Khan on 596. Official voting for Bigg Boss 11 is CLOSED: it ended with the season on 14 January 2018 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 11?",
+    textOptions: [
+      { id: "shilpa-shinde", label: "Shilpa Shinde", sub: "Winner · Bigg Boss 11", image: "/assets/bb-seasons/s11-shilpa-shinde.webp" },
+      { id: "hina-khan", label: "Hina Khan", sub: "1st runner-up · Bigg Boss 11", image: "/assets/bb-seasons/s11-hina-khan.webp" },
+      { id: "vikas-gupta", label: "Vikas Gupta", sub: "2nd runner-up · Bigg Boss 11", image: "/assets/bb-seasons/s11-vikas-gupta.webp" },
+      { id: "puneesh-sharma", label: "Puneesh Sharma", sub: "3rd runner-up · Bigg Boss 11", image: "/assets/bb-seasons/s11-puneesh-sharma.webp" },
+    ],
+    voteDistribution: {
+      "shilpa-shinde": 648,
+      "hina-khan": 596,
+      "vikas-gupta": 574,
+      "puneesh-sharma": 482,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 11 voting: the official result — Shilpa Shinde won, ahead of Hina Khan, Vikas Gupta and Puneesh Sharma — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 11? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
   }
 ];
 
@@ -1587,6 +1645,8 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-ott-3-voting", "🗳️ Bigg Boss OTT 3 Voting"],
     ["bigg-boss-15-voting", "🗳️ Bigg Boss 15 Voting"],
     ["bigg-boss-14-voting", "🗳️ Bigg Boss 14 Voting"],
+    ["bigg-boss-12-voting", "🗳️ Bigg Boss 12 Voting"],
+    ["bigg-boss-11-voting", "🗳️ Bigg Boss 11 Voting"],
     ["bigg-boss-20-contestants", "👥 18 Contestants Wiki"],
     ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
@@ -3678,6 +3738,7 @@ export function renderBiggBossFinalePage(poll) {
 // (Entries 410+411: Seasons 16 and 13 now carry links too.)
 // (Entry 412: Season 18 now carries a link too.)
 // (Entries 416+417: Seasons 15 and 14 now carry links too.)
+// (Entries 418+419: Seasons 12 and 11 now carry links too.)
 const VOTING_HUB_SEASONS = [
   { season: 1, years: "2006–07", winner: "Rahul Roy" },
   { season: 2, years: "2008", winner: "Ashutosh Kaushik" },
@@ -3694,8 +3755,8 @@ const VOTING_HUB_SEASONS = [
   },
   { season: 9, years: "2015–16", winner: "Prince Narula" },
   { season: 10, years: "2016–17", winner: "Manveer Gurjar" },
-  { season: 11, years: "2017–18", winner: "Shilpa Shinde" },
-  { season: 12, years: "2018", winner: "Dipika Kakar" },
+  { season: 11, years: "2017–18", winner: "Shilpa Shinde", link: "/bigg-boss-11-voting/" },
+  { season: 12, years: "2018", winner: "Dipika Kakar", link: "/bigg-boss-12-voting/" },
   { season: 13, years: "2019–20", winner: "Sidharth Shukla", link: "/bigg-boss-13-voting/" },
   { season: 14, years: "2020–21", winner: "Rubina Dilaik", link: "/bigg-boss-14-voting/" },
   { season: 15, years: "2021–22", winner: "Tejasswi Prakash", link: "/bigg-boss-15-voting/" },
@@ -3758,7 +3819,7 @@ function renderVotingHubSections() {
     storySection(
       "Vote by Season",
       "Bigg Boss voting by season — every season, every winner",
-      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 18, Bigg Boss 17, Bigg Boss 16, Bigg Boss 15, Bigg Boss 14 and Bigg Boss 13 are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
+      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 18, Bigg Boss 17, Bigg Boss 16, Bigg Boss 15, Bigg Boss 14, Bigg Boss 13, Bigg Boss 12 and Bigg Boss 11 are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
       <div class="bb-steps-grid">
         <a class="bb-step-card" href="/bigg-boss-20-voting/" style="display:block;text-decoration:none;color:inherit;">
           <div class="bb-step-num">S20</div>
@@ -6051,6 +6112,443 @@ function renderSeason14Faq() {
 }
 
 
+// ---------- Past-season voting pages (entries 418 + 419) ----------
+// Bigg Boss 12 (entry 418) and Bigg Boss 11 (entry 419) fan re-vote
+// pages, plus the hub grid links for Seasons 12 and 11. Every fact
+// below comes from the season research files, verified against the
+// seasons' Wikipedia articles (see the pack's sources.md): S12 facts
+// in ~/workspace/bb-seasons/batch5-12-11/s12/facts.md, S11 facts in
+// ~/workspace/bb-seasons/batch5-12-11/s11/facts.md. No prize figure
+// of any kind appears on either page: neither season's Wikipedia
+// article states a winner's prize, so none is published (the
+// press-reported figures are not Wikipedia-stated and are not
+// used), and Deepak Thakur's Season 12 finale walk is recorded
+// without any amount for the same reason. Season 11's Week 6
+// spaceship moment is likewise told without its sums. Exit days
+// the research files flag as contested (†) follow the files'
+// primary account and are marked † on the pages with a disclosure
+// note, never presented as settled fact; Season 11's finale is
+// dated by its calendar date only, because the article's accounts
+// disagree on its day number (the infobox's season length against
+// the tables' finale day). The renderers below reuse the shared
+// season helpers defined with the entry 408/409 pages.
+
+// ---------- Bigg Boss 12 (entry 418) ----------
+
+const SEASON12_FINALISTS = [
+  {
+    name: "Dipika Kakar",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s12-dipika-kakar.webp",
+    story:
+      "Dipika Kakar won Bigg Boss 12 on finale night, 30 December 2018, closing a 105-day season that began with 20 housemates. She beat Sreesanth in the final two to lift the trophy.",
+  },
+  {
+    name: "Sreesanth",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s12-sreesanth.webp",
+    story:
+      "Sreesanth finished as first runner-up in the finale on 30 December 2018. The former India cricketer's season included a secret-room stint: he was sent there on Day 24 and was back in the main house by Day 29.",
+  },
+  {
+    name: "Deepak Thakur",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s12-deepak-thakur.webp",
+    story:
+      "Deepak Thakur's finale ended with a walk: after the first two finalists were eliminated, he chose to walk out of the grand finale, and the season record carries him as 'Walked, 2nd runner-up'.",
+  },
+  {
+    name: "Romil Chaudhary",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/s12-romil-chaudhary.webp",
+    story:
+      "Romil Chaudhary finished as third runner-up in the finale on 30 December 2018 — after the season's fastest turnaround: evicted on Day 14 in a double pair eviction, he re-entered the very next day, Day 15, and played through to the final five.",
+  },
+  {
+    name: "Karanvir Bohra",
+    placing: "4th runner-up",
+    image: "/assets/bb-seasons/s12-karanvir-bohra.webp",
+    story:
+      "Karanvir Bohra finished as fourth runner-up when the finale order was declared on 30 December 2018; he and Romil Chaudhary were the first two finalists eliminated on finale night.",
+  },
+];
+
+const SEASON12_EVICTIONS = [
+  ["Kriti Verma", "14†", "Evicted by public vote — went out with her jodi partner Roshmi Banik"],
+  ["Roshmi Banik", "14†", "Evicted by public vote — went out with her jodi partner Kriti Verma"],
+  ["Nirmal Singh", "14†", "Evicted by public vote — went out with his jodi partner Romil Chaudhary"],
+  ["Romil Chaudhary", 14, "Evicted by public vote; re-entered on Day 15 and finished 3rd runner-up"],
+  ["Neha Pendse", 28, "Evicted by public vote"],
+  ["Sourabh Patel", "35†", "Evicted by public vote"],
+  ["Saba Khan", 42, "Evicted by public vote"],
+  ["Anup Jalota", "42†", "Evicted by public vote; he had earlier spent Days 21–29 in the secret room after a fake eviction"],
+  ["Urvashi Vani", "49†", "Evicted by housemates"],
+  ["Shivashish Mishra", "62†", "Ejected"],
+  ["Srishty Rode", 70, "Evicted by public vote"],
+  ["Jasleen Matharu", "84†", "Evicted by public vote"],
+  ["Megha Dhade", "84†", "Evicted by public vote"],
+  ["Rohit Suchanti", 91, "Evicted by public vote"],
+  ["Somi Khan", 98, "Evicted by public vote"],
+  ["Surbhi Rana", 102, "Evicted by public vote"],
+];
+
+const SEASON12_MOMENTS = [
+  {
+    title: "The 'Vichitra Jodis' theme",
+    text: "The season was built on pairs: contestants entered as 'jodis' — duos of spouses, siblings, friends and co-workers — alongside single housemates. The public had auditioned for the season by sending video clips through the Voot app from April 2018.",
+  },
+  {
+    title: "The Bigg Boss Outhouse",
+    text: "Four hopefuls — Surbhi Rana, Kriti Verma, Roshmi Banik and Mital Joshi — lived in a Bigg Boss Outhouse from a day before the premiere, with the footage streaming on Voot. In the 'Taala Khol' task the public voted Kriti and Roshmi into the main house on Day 1; Mital Joshi went home without ever entering the main house, and Surbhi Rana returned as a wild card on Day 15.",
+  },
+  {
+    title: "Two secret-room stints",
+    text: "Anup Jalota was sent to the secret room on Day 21 instead of being evicted — that week is recorded as a no-eviction week — and Sreesanth joined the secret room on Day 24. Both were back in the main house by Day 29; Anup was finally evicted for real later in the season.",
+  },
+  {
+    title: "Romil Chaudhary's 24-hour turnaround",
+    text: "Romil Chaudhary was evicted on Day 14 in Week 2's double pair eviction — and re-entered the very next day, Day 15. He went on to finish as third runner-up.",
+  },
+  {
+    title: "Deepak Thakur's finale walk",
+    text: "In the grand finale, with five finalists left, Karanvir Bohra and Romil Chaudhary were eliminated first; Deepak Thakur then chose to walk out — recorded as 'Walked, 2nd runner-up' — leaving Dipika Kakar and Sreesanth as the final two.",
+  },
+];
+
+function renderSeason12Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 12 result — Dipika Kakar won the season",
+      `<p>Bigg Boss 12 — styled <em>Bigg Boss: Vichitra Jodis</em> — ran from <strong>16 September 2018</strong> to the finale on <strong>30 December 2018</strong>: 105 days, 20 housemates, hosted by Salman Khan on Colors TV. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Dipika Kakar"],
+        ["1st runner-up", "Sreesanth"],
+        ["2nd runner-up", "Deepak Thakur"],
+        ["3rd runner-up", "Romil Chaudhary"],
+        ["4th runner-up", "Karanvir Bohra"],
+      ])}
+      <p style="margin-top:1rem;">Deepak Thakur's second runner-up placing came with the finale's biggest turn: after Karanvir Bohra and Romil Chaudhary were eliminated, he chose to walk out of the finale, leaving Dipika Kakar and Sreesanth as the final two.</p>
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 12's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 12 final five",
+      renderSeasonFinalistCards(SEASON12_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 12 eviction order — who left, and when",
+      `<p>Sixteen housemates left before the finale, in this order (from the season's record) — one of them, Romil Chaudhary, came straight back, as the notes show:</p>
+      ${renderSeasonEvictionTable(SEASON12_EVICTIONS)}
+      <p style="margin-top:1rem;">Days marked † are contested inside the season record: its housemates status table and its nominations table give different days for those exits — for Nirmal Singh, Sourabh Patel, Anup Jalota, Urvashi Vani and Shivashish Mishra the gap is a week or more (Anup Jalota's and Sourabh Patel's days are even swapped between the two accounts), and for Kriti Verma, Roshmi Banik, Jasleen Matharu and Megha Dhade they differ by a day — so the days shown follow the primary account, not settled fact. The finale followed on Day 105: Karanvir Bohra (fourth runner-up) and Romil Chaudhary (third runner-up) were eliminated first, Deepak Thakur walked out (recorded as 'Walked, 2nd runner-up') and Sreesanth finished as first runner-up, before Dipika Kakar was declared the winner.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 12 story — the season's defining moments",
+      renderSeasonMoments(SEASON12_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-11-voting/",
+        emoji: "🏠",
+        title: "Bigg Boss 11 Voting",
+        text: "Shilpa Shinde's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 11 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-16-voting/",
+        emoji: "🎪",
+        title: "Bigg Boss 16 Voting",
+        text: "MC Stan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 16 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason12Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 12 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 12 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 12 voting closed when the season ended with the finale on 30 December 2018, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 12?</summary>
+        <div class="bb-faq-body">
+          <p>Dipika Kakar won Bigg Boss 12. The final order was: Sreesanth (first runner-up), Deepak Thakur (second runner-up — he walked out during the finale), Romil Chaudhary (third runner-up) and Karanvir Bohra (fourth runner-up).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 12 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The five finalists were Dipika Kakar, Sreesanth, Deepak Thakur, Romil Chaudhary and Karanvir Bohra. The season ran from 16 September 2018 to 30 December 2018 — 105 days and 20 housemates, hosted by Salman Khan on Colors TV.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 12. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+// ---------- Bigg Boss 11 (entry 419) ----------
+
+const SEASON11_FINALISTS = [
+  {
+    name: "Shilpa Shinde",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s11-shilpa-shinde.webp",
+    story:
+      "Shilpa Shinde won Bigg Boss 11 on finale night, 14 January 2018. She beat Hina Khan in the final two — a finish settled by a live vote during the finale itself — to lift the trophy.",
+  },
+  {
+    name: "Hina Khan",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s11-hina-khan.webp",
+    story:
+      "Hina Khan finished as first runner-up in the finale on 14 January 2018, losing the final-two live vote to Shilpa Shinde.",
+  },
+  {
+    name: "Vikas Gupta",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s11-vikas-gupta.webp",
+    story:
+      "Vikas Gupta finished as second runner-up when the finale order was declared on 14 January 2018.",
+  },
+  {
+    name: "Puneesh Sharma",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/s11-puneesh-sharma.webp",
+    story:
+      "Puneesh Sharma finished as third runner-up; he was the first of the four finalists eliminated on finale night, 14 January 2018.",
+  },
+];
+
+const SEASON11_EVICTIONS = [
+  ["Zubair Khan", "7†", "Ejected"],
+  ["Sshivani Durga", 14, "Evicted by public vote"],
+  ["Lucinda Nicholas", 15, "Evicted by housemates"],
+  ["Jyoti Kumari", 28, "Evicted by public vote"],
+  ["Dhinchak Pooja", 35, "Evicted by public vote — the season's only wild-card entrant, who had entered on Day 21"],
+  ["Mehjabi Siddiqui", 42, "Evicted by public vote"],
+  ["Sabyasachi Satpathy", 42, "Evicted by public vote"],
+  ["Benafsha Soonawalla", 49, "Evicted by public vote"],
+  ["Sapna Choudhary", "55†", "Evicted by public vote"],
+  ["Bandgi Kalra", 63, "Evicted by public vote"],
+  ["Hiten Tejwani", 77, "Evicted by housemates"],
+  ["Arshi Khan", 83, "Evicted by public vote"],
+  ["Priyank Sharma", "90†", "Evicted by public vote; he had first been ejected on Day 6 for pushing Akash Dadlani during a fight, then re-entered on Day 26"],
+  ["Luv Tyagi", 98, "Evicted by public vote"],
+  ["Akash Dadlani", 102, "Evicted by public vote"],
+];
+
+const SEASON11_MOMENTS = [
+  {
+    title: "The Padosi theme",
+    text: "Four housemates — Lucinda Nicholas, Mehjabi Siddiqui, Sabyasachi Satpathy and Luv Tyagi — were introduced on premiere night as 'padosi' (neighbours) living in a separate house, handing tasks to the main house. They held powers to nominate and save, later joined the main house — and Lucinda was voted out by the housemates on Day 15.",
+  },
+  {
+    title: "Priyank Sharma's ejection and return",
+    text: "Priyank Sharma was ejected on Day 6 for physically pushing Akash Dadlani during a fight — one of the earliest ejections in the show's run to that point. He re-entered on Day 26 and survived until Day 90†, finishing just outside the finale week.",
+  },
+  {
+    title: "The spaceship task wiped out the prize money",
+    text: "In Week 6 the garden became a spaceship, and each stranded 'astronaut' carried a sum that would be deducted from the winner's prize money when they stepped down. All fourteen sums were deducted, and the week's record states the result plainly: the prize money became zero.",
+  },
+  {
+    title: "Hiten Tejwani was evicted by the housemates",
+    text: "On Day 77, Hiten Tejwani went out on the housemates' votes rather than the public's — one of only two housemate-vote evictions of the season, the other being Lucinda Nicholas on Day 15.",
+  },
+  {
+    title: "A no-eviction week",
+    text: "Week 10 saw no eviction at all, because the voting lines were closed.",
+  },
+];
+
+function renderSeason11Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 11 result — Shilpa Shinde won the season",
+      `<p>Bigg Boss 11 — styled <em>Bigg Boss 11: Padosi Bajayenge Barah</em> — ran from <strong>1 October 2017</strong> to the finale on <strong>14 January 2018</strong>: 19 housemates, hosted by Salman Khan on Colors TV, with the season also carried on Voot. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Shilpa Shinde"],
+        ["1st runner-up", "Hina Khan"],
+        ["2nd runner-up", "Vikas Gupta"],
+        ["3rd runner-up", "Puneesh Sharma"],
+      ])}
+      <p style="margin-top:1rem;">The last two standing were Shilpa Shinde and Hina Khan, and their order was settled by a live vote during the finale itself.</p>
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 11's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 11 final four",
+      renderSeasonFinalistCards(SEASON11_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 11 eviction order — who left, and when",
+      `<p>Fifteen housemates left before the finale, in this order (from the season's record):</p>
+      ${renderSeasonEvictionTable(SEASON11_EVICTIONS)}
+      <p style="margin-top:1rem;">Days marked † are contested inside the season record: Zubair Khan's exit is a three-way split (the housemates status table says ejected on Day 7, the nominations table says Day 6, and the weekly summary calls it a public-vote eviction), while Sapna Choudhary's and Priyank Sharma's days differ by one between the status table and the other two accounts — so the days shown follow the primary account, not settled fact. The finale followed on 14 January 2018: Puneesh Sharma (third runner-up) and Vikas Gupta (second runner-up) were eliminated, Hina Khan finished as first runner-up, and Shilpa Shinde was declared the winner.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 11 story — the season's defining moments",
+      renderSeasonMoments(SEASON11_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-12-voting/",
+        emoji: "👥",
+        title: "Bigg Boss 12 Voting",
+        text: "Dipika Kakar's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 12 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-16-voting/",
+        emoji: "🎪",
+        title: "Bigg Boss 16 Voting",
+        text: "MC Stan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 16 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason11Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 11 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 11 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 11 voting closed when the season ended with the finale on 14 January 2018, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 11?</summary>
+        <div class="bb-faq-body">
+          <p>Shilpa Shinde won Bigg Boss 11. The final order was: Hina Khan (first runner-up), Vikas Gupta (second runner-up) and Puneesh Sharma (third runner-up).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 11 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The four finalists were Shilpa Shinde, Hina Khan, Vikas Gupta and Puneesh Sharma. The season ran from 1 October 2017 to 14 January 2018 — 19 housemates, hosted by Salman Khan on Colors TV.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 11. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+
 export function renderBiggBossPollPage(poll) {
   if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
   if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
@@ -6107,6 +6605,8 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Sections() : ""}
     ${poll.slug === "bigg-boss-15-voting" ? renderSeason15Sections() : ""}
     ${poll.slug === "bigg-boss-14-voting" ? renderSeason14Sections() : ""}
+    ${poll.slug === "bigg-boss-12-voting" ? renderSeason12Sections() : ""}
+    ${poll.slug === "bigg-boss-11-voting" ? renderSeason11Sections() : ""}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
@@ -6129,7 +6629,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : renderFaqSection(poll)}
   </div>
   `;
 }
