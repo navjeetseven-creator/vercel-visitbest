@@ -1230,6 +1230,36 @@ export const polls = [
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
     metaDesc: "Bigg Boss OTT 2 voting: the official result — Elvish Yadav won, ahead of Abhishek Malhan, Manisha Rani, Bebika Dhurve and Pooja Bhatt — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss OTT 2? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-ott-3-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-ott-3-voting.jpg",
+    title: "Bigg Boss OTT 3 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss OTT 3 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss OTT 3 voting is closed — the season ended on 2 August 2024 with Sana Makbul lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the five finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss OTT 3. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS OTT 3 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 2 AUGUST 2024",
+    leaderNote: "🏆 FAN RE-VOTE: Sana Makbul — the official winner — also leads the fan re-vote as it stands, with 596 votes (25.9%), ahead of Naezy on 521. Official voting for Bigg Boss OTT 3 is CLOSED: it ended with the season on 2 August 2024 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss OTT 3?",
+    textOptions: [
+      { id: "sana-makbul", label: "Sana Makbul", sub: "Winner · Bigg Boss OTT 3", image: "/assets/bb-seasons/ott3-sana-makbul.webp" },
+      { id: "naezy", label: "Naezy", sub: "1st runner-up · Bigg Boss OTT 3", image: "/assets/bb-seasons/ott3-naezy.webp" },
+      { id: "ranvir-shorey", label: "Ranvir Shorey", sub: "2nd runner-up · Bigg Boss OTT 3", image: "/assets/bb-seasons/ott3-ranvir-shorey.webp" },
+      { id: "sai-ketan-rao", label: "Sai Ketan Rao", sub: "3rd runner-up · Bigg Boss OTT 3", image: "/assets/bb-seasons/ott3-sai-ketan-rao.webp" },
+      { id: "kritika-malik", label: "Kritika Malik", sub: "4th runner-up · Bigg Boss OTT 3", image: "/assets/bb-seasons/ott3-kritika-malik.webp" },
+    ],
+    voteDistribution: {
+      "sana-makbul": 596,
+      "naezy": 521,
+      "ranvir-shorey": 447,
+      "sai-ketan-rao": 402,
+      "kritika-malik": 334,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss OTT 3 voting: the official result — Sana Makbul won, ahead of Naezy, Ranvir Shorey, Sai Ketan Rao and Kritika Malik — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss OTT 3? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
   }
 ];
 
@@ -1492,6 +1522,7 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-18-voting", "🗳️ Bigg Boss 18 Voting"],
     ["bigg-boss-ott-1-voting", "🗳️ Bigg Boss OTT 1 Voting"],
     ["bigg-boss-ott-2-voting", "🗳️ Bigg Boss OTT 2 Voting"],
+    ["bigg-boss-ott-3-voting", "🗳️ Bigg Boss OTT 3 Voting"],
     ["bigg-boss-20-contestants", "👥 18 Contestants Wiki"],
     ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
@@ -3672,7 +3703,7 @@ function renderVotingHubSections() {
         </a>
         ${seasonCards}
       </div>
-      <p style="margin-top:1rem;">Bigg Boss OTT seasons get their own voting pages later, after the main series.</p>`,
+      <p style="margin-top:1rem;">The Bigg Boss OTT seasons have their own voting pages too, and all three are live now: <a href="/bigg-boss-ott-1-voting/"><strong>Bigg Boss OTT 1</strong></a> · <a href="/bigg-boss-ott-2-voting/"><strong>Bigg Boss OTT 2</strong></a> · <a href="/bigg-boss-ott-3-voting/"><strong>Bigg Boss OTT 3</strong></a> — each with its official result, its finalists and a fan re-vote Open Poll.</p>`,
     ) +
     storySection(
       "How Voting Works",
@@ -5273,6 +5304,227 @@ function renderOtt2Faq() {
 }
 
 
+// ---------- Past-season voting pages (entry 415) ----------
+// Bigg Boss OTT 3 (entry 415) fan re-vote page, plus the hub
+// wording fix that points the all-seasons hub's season grid at the
+// three live OTT pages. Every fact below comes from the season
+// research file, verified against the season's Wikipedia article
+// (see the pack's sources.md): OTT 3 facts in
+// ~/workspace/bb-seasons/batch3-ott/ott3/facts.md. No prize figure
+// appears on the page: the season's Wikipedia article states none
+// anywhere in its infobox or body text, so none is published (the
+// ₹25 lakh figure carried in press reports is not Wikipedia-stated
+// and is not used). The renderers below reuse the shared season
+// helpers defined with the entry 408/409 pages.
+
+// ---------- Bigg Boss OTT 3 (entry 415) ----------
+
+const OTT3_FINALISTS = [
+  {
+    name: "Sana Makbul",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/ott3-sana-makbul.webp",
+    story:
+      "Sana Makbul won Bigg Boss OTT 3 in the finale on 2 August 2024. Finale reports agreed on the result across the board — The Hindu, Hindustan Times and Telegraph India all recorded Sana as the winner, with Naezy the runner-up and Ranvir Shorey in the top three.",
+  },
+  {
+    name: "Naezy",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/ott3-naezy.webp",
+    story:
+      "Naezy — real name Naved Shaikh — finished as first runner-up in the Day 42 finale on 2 August 2024, behind only Sana Makbul.",
+  },
+  {
+    name: "Ranvir Shorey",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/ott3-ranvir-shorey.webp",
+    story:
+      "Ranvir Shorey finished as second runner-up when the finale order was declared on Day 42, 2 August 2024.",
+  },
+  {
+    name: "Sai Ketan Rao",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/ott3-sai-ketan-rao.webp",
+    story:
+      "Sai Ketan Rao finished as third runner-up in the Day 42 finale on 2 August 2024.",
+  },
+  {
+    name: "Kritika Malik",
+    placing: "4th runner-up",
+    image: "/assets/bb-seasons/ott3-kritika-malik.webp",
+    story:
+      "Kritika Malik finished as fourth runner-up in the finale on 2 August 2024. She had entered the house alongside her husband Armaan Malik and his first wife Payal Malik; Payal was evicted on Day 9, while Kritika lasted the full season to the finale.",
+  },
+];
+
+const OTT3_EVICTIONS = [
+  ["Neeraj Goyat", 5, ""],
+  ["Payal Malik", 9, ""],
+  ["Poulomi Das", 12, "Evicted by the Baaharwala"],
+  ["Munisha Khatwani", 16, "Evicted by housemates"],
+  ["Chandrika Dixit Gera", 23, ""],
+  ["Deepak Chaurasia", 30, ""],
+  ["Sana Sultan Khan", 31, ""],
+  ["Adnaan Shaikh", 31, "Wild-card entrant, entered Day 24"],
+  ["Shivani Kumari", 36, "Evicted by housemates"],
+  ["Vishal Pandey", 36, ""],
+  ["Lovekesh Kataria", 40, "Evicted by housemates"],
+  ["Armaan Malik", 40, ""],
+];
+
+const OTT3_MOMENTS = [
+  {
+    title: "Anil Kapoor took over as host",
+    text: "Anil Kapoor hosted Bigg Boss OTT 3 — his first time hosting the show, taking over from Salman Khan, who had hosted the previous OTT season.",
+  },
+  {
+    title: "Phones in the house for the first time",
+    text: "For the first time in the seventeen-year history of Bigg Boss, housemates were allowed smartphones in the house, receiving messages from Bigg Boss. Only the Baaharwala could receive feedback from the outside world.",
+  },
+  {
+    title: "The Baaharwala twist",
+    text: "One housemate at a time was designated the Baaharwala, receiving information and feedback from the outside world, with special powers and immunity from eviction while in the role. Sana Sultan Khan was the inaugural Baaharwala, and the role later expanded into a Baaharwala Gang.",
+  },
+  {
+    title: "Armaan Malik entered with both his wives",
+    text: "Armaan Malik was a housemate in the same season as both his wives — Payal Malik, his first wife, and Kritika Malik, his second wife. Payal was evicted on Day 9; Kritika reached the finale as fourth runner-up.",
+  },
+  {
+    title: "Armaan nominated for the rest of the season",
+    text: "On Day 16, host Anil Kapoor announced that Armaan Malik would stay nominated for the remainder of the season, as a consequence of physical violence towards Vishal Pandey. He was finally evicted on Day 40.",
+  },
+];
+
+function renderOtt3Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss OTT 3 result — Sana Makbul won the season",
+      `<p>Bigg Boss OTT 3 — styled <em>Bigg Boss: Over-The-Top Season 3</em> — ran from <strong>21 June 2024</strong> to the finale on <strong>2 August 2024</strong>: 42 days, 17 housemates, hosted by Anil Kapoor on JioCinema Premium. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Sana Makbul"],
+        ["1st runner-up", "Naezy"],
+        ["2nd runner-up", "Ranvir Shorey"],
+        ["3rd runner-up", "Sai Ketan Rao"],
+        ["4th runner-up", "Kritika Malik"],
+      ])}
+      <p style="margin-top:1rem;">That result is final. Bigg Boss OTT 3's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss OTT 3 final five",
+      renderSeasonFinalistCards(OTT3_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss OTT 3 eviction order — who left, and when",
+      `<p>Twelve housemates left before the finale, in this order (from the season's record):</p>
+      ${renderSeasonEvictionTable(OTT3_EVICTIONS)}
+      <p style="margin-top:1rem;">The finale followed on Day 42: Kritika Malik left as fourth runner-up, then Sai Ketan Rao (third runner-up), Ranvir Shorey (second runner-up) and Naezy (first runner-up), before Sana Makbul was declared the winner.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss OTT 3 story — the season's defining moments",
+      renderSeasonMoments(OTT3_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-ott-1-voting/",
+        emoji: "📱",
+        title: "Bigg Boss OTT 1 Voting",
+        text: "Divya Agarwal's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the OTT 1 page →",
+      },
+      {
+        href: "/bigg-boss-ott-2-voting/",
+        emoji: "📱",
+        title: "Bigg Boss OTT 2 Voting",
+        text: "Elvish Yadav's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the OTT 2 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderOtt3Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss OTT 3 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss OTT 3 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss OTT 3 voting closed when the season ended with the finale on 2 August 2024, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss OTT 3?</summary>
+        <div class="bb-faq-body">
+          <p>Sana Makbul won Bigg Boss OTT 3. The final order was: Naezy (first runner-up), Ranvir Shorey (second runner-up), Sai Ketan Rao (third runner-up) and Kritika Malik (fourth runner-up).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss OTT 3 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The five finalists were Sana Makbul, Naezy, Ranvir Shorey, Sai Ketan Rao and Kritika Malik. The season ran from 21 June 2024 to 2 August 2024 — 42 days and 17 housemates, hosted by Anil Kapoor on JioCinema Premium.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss OTT 3. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+
 export function renderBiggBossPollPage(poll) {
   if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
   if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
@@ -5326,6 +5578,7 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-18-voting" ? renderSeason18Sections() : ""}
     ${poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Sections() : ""}
     ${poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Sections() : ""}
+    ${poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Sections() : ""}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
@@ -5348,7 +5601,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : renderFaqSection(poll)}
   </div>
   `;
 }
