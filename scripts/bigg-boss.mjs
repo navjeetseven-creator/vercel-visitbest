@@ -1170,6 +1170,66 @@ export const polls = [
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
     metaDesc: "Bigg Boss 18 voting: the official result — Karan Veer Mehra won, ahead of Vivian Dsena, Rajat Dalal, Avinash Mishra, Chum Darang and Eisha Singh — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 18? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-ott-1-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-ott-1-voting.jpg",
+    title: "Bigg Boss OTT 1 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss OTT 1 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss OTT 1 voting is closed — the season ended on 18 September 2021 with Divya Agarwal lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the five finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss OTT 1. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS OTT 1 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 18 SEPTEMBER 2021",
+    leaderNote: "🏆 FAN RE-VOTE: Divya Agarwal — the official winner — also leads the fan re-vote as it stands, with 612 votes (26.6%), ahead of Nishant Bhat on 498. Official voting for Bigg Boss OTT 1 is CLOSED: it ended with the season on 18 September 2021 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss OTT 1?",
+    textOptions: [
+      { id: "divya-agarwal", label: "Divya Agarwal", sub: "Winner · Bigg Boss OTT 1", image: "/assets/bb-seasons/ott1-divya-agarwal.webp" },
+      { id: "nishant-bhat", label: "Nishant Bhat", sub: "1st runner-up · Bigg Boss OTT 1", image: "/assets/bb-seasons/ott1-nishant-bhat.webp" },
+      { id: "shamita-shetty", label: "Shamita Shetty", sub: "2nd runner-up · Bigg Boss OTT 1", image: "/assets/bb-seasons/ott1-shamita-shetty.webp" },
+      { id: "raqesh-bapat", label: "Raqesh Bapat", sub: "3rd runner-up · Bigg Boss OTT 1", image: "/assets/bb-seasons/ott1-raqesh-bapat.webp" },
+      { id: "pratik-sehajpal", label: "Pratik Sehajpal", sub: "4th runner-up · Bigg Boss OTT 1", image: "/assets/bb-seasons/ott1-pratik-sehajpal.webp" },
+    ],
+    voteDistribution: {
+      "divya-agarwal": 612,
+      "nishant-bhat": 498,
+      "shamita-shetty": 447,
+      "raqesh-bapat": 398,
+      "pratik-sehajpal": 345,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss OTT 1 voting: the official result — Divya Agarwal won, ahead of Nishant Bhat, Shamita Shetty, Raqesh Bapat and Pratik Sehajpal — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss OTT 1? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-ott-2-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-ott-2-voting.jpg",
+    title: "Bigg Boss OTT 2 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss OTT 2 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss OTT 2 voting is closed — the season ended on 14 August 2023 with Elvish Yadav lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the five finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss OTT 2. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS OTT 2 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 14 AUGUST 2023",
+    leaderNote: "🏆 FAN RE-VOTE: Elvish Yadav — the official winner — also leads the fan re-vote as it stands, with 648 votes (28.2%), ahead of Abhishek Malhan on 574. Official voting for Bigg Boss OTT 2 is CLOSED: it ended with the season on 14 August 2023 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss OTT 2?",
+    textOptions: [
+      { id: "elvish-yadav", label: "Elvish Yadav", sub: "Winner · Bigg Boss OTT 2", image: "/assets/bb-seasons/ott2-elvish-yadav.webp" },
+      { id: "abhishek-malhan", label: "Abhishek Malhan", sub: "1st runner-up · Bigg Boss OTT 2", image: "/assets/bb-seasons/ott2-abhishek-malhan.webp" },
+      { id: "manisha-rani", label: "Manisha Rani", sub: "2nd runner-up · Bigg Boss OTT 2", image: "/assets/bb-seasons/ott2-manisha-rani.webp" },
+      { id: "bebika-dhurve", label: "Bebika Dhurve", sub: "3rd runner-up · Bigg Boss OTT 2", image: "/assets/bb-seasons/ott2-bebika-dhurve.webp" },
+      { id: "pooja-bhatt", label: "Pooja Bhatt", sub: "4th runner-up · Bigg Boss OTT 2", image: "/assets/bb-seasons/ott2-pooja-bhatt.webp" },
+    ],
+    voteDistribution: {
+      "elvish-yadav": 648,
+      "abhishek-malhan": 574,
+      "manisha-rani": 486,
+      "bebika-dhurve": 318,
+      "pooja-bhatt": 274,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss OTT 2 voting: the official result — Elvish Yadav won, ahead of Abhishek Malhan, Manisha Rani, Bebika Dhurve and Pooja Bhatt — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss OTT 2? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
   }
 ];
 
@@ -1430,6 +1490,8 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-16-voting", "🗳️ Bigg Boss 16 Voting"],
     ["bigg-boss-13-voting", "🗳️ Bigg Boss 13 Voting"],
     ["bigg-boss-18-voting", "🗳️ Bigg Boss 18 Voting"],
+    ["bigg-boss-ott-1-voting", "🗳️ Bigg Boss OTT 1 Voting"],
+    ["bigg-boss-ott-2-voting", "🗳️ Bigg Boss OTT 2 Voting"],
     ["bigg-boss-20-contestants", "👥 18 Contestants Wiki"],
     ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
@@ -4802,6 +4864,415 @@ function renderSeason18Faq() {
 }
 
 
+// ---------- Past-season voting pages (entries 413 + 414) ----------
+// Bigg Boss OTT 1 (entry 413) and Bigg Boss OTT 2 (entry 414) fan
+// re-vote pages. Every fact below comes from the season research
+// files, verified against the seasons' Wikipedia articles (see the
+// pack's sources.md): OTT 1 facts in
+// ~/workspace/bb-seasons/batch3-ott/ott1/facts.md, OTT 2 facts in
+// ~/workspace/bb-seasons/batch3-ott/ott2/facts.md. No prize figure
+// appears on either page: neither season's Wikipedia article states
+// one in its body text, so none is published (the OTT 1 article's
+// reference list carries a "Rs 10 Crore" headline claim that every
+// contemporaneous finale report contradicts — it is not used). The
+// renderers below reuse the shared season helpers defined with the
+// entry 408/409 pages.
+
+// ---------- Bigg Boss OTT 1 (entry 413) ----------
+
+const OTT1_FINALISTS = [
+  {
+    name: "Divya Agarwal",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/ott1-divya-agarwal.webp",
+    story:
+      "Divya Agarwal won Bigg Boss OTT 1 in the finale on 18 September 2021. She had entered the house alone — the only housemate left without a connection under the season's 'Stay Connected' theme — and was directly nominated on premiere night; on Day 4, Zeeshan Khan pressed the buzzer to become her connection. Finale reports agreed on the result across the board: Divya the winner, Nishant Bhat the runner-up and Shamita Shetty in the top three.",
+  },
+  {
+    name: "Nishant Bhat",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/ott1-nishant-bhat.webp",
+    story:
+      "Nishant Bhat finished as first runner-up in the Day 42 finale on 18 September 2021, behind only Divya Agarwal.",
+  },
+  {
+    name: "Shamita Shetty",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/ott1-shamita-shetty.webp",
+    story:
+      "Shamita Shetty finished as second runner-up in the finale on 18 September 2021, completing the season's top three alongside Divya Agarwal and Nishant Bhat.",
+  },
+  {
+    name: "Raqesh Bapat",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/ott1-raqesh-bapat.webp",
+    story:
+      "Raqesh Bapat finished as third runner-up when the finale order was declared on Day 42, 18 September 2021.",
+  },
+  {
+    name: "Pratik Sehajpal",
+    placing: "4th runner-up",
+    image: "/assets/bb-seasons/ott1-pratik-sehajpal.webp",
+    story:
+      "Pratik Sehajpal is recorded as 'Walked, 4th runner-up': all five finalists were offered a ticket to Bigg Boss 15 on condition they leave the finale race, and Pratik accepted — becoming the first confirmed Bigg Boss 15 contestant — and left the OTT 1 finale as fourth runner-up.",
+  },
+];
+
+const OTT1_EVICTIONS = [
+  ["Urfi Javed", 8, "Evicted by public vote"],
+  ["Karan Nath", 15, ""],
+  ["Ridhima Pandit", 15, ""],
+  ["Zeeshan Khan", 18, "Ejected — physical fight with Pratik Sehajpal"],
+  ["Milind Gaba", 29, ""],
+  ["Akshara Singh", 29, ""],
+  ["Muskan Jattana", 36, "Evicted by housemates"],
+  ["Neha Bhasin", 39, ""],
+];
+
+const OTT1_MOMENTS = [
+  {
+    title: "The first OTT season, built on connections",
+    text: "Bigg Boss OTT launched six weeks before the television version — a first in Bigg Boss history — with the theme 'Stay Connected': six boys and six girls entered as pairs, and one girl, Divya Agarwal, entered alone. Housemates had to strengthen their connection to survive.",
+  },
+  {
+    title: "The winner started with no connection",
+    text: "No connection was left for Divya Agarwal, so she was directly nominated on premiere night. On Day 4, Zeeshan Khan pressed the buzzer to become her connection, leaving Urfi Javed nominated in her place. Divya went on to win the season.",
+  },
+  {
+    title: "Zeeshan Khan ejected on Day 18",
+    text: "Zeeshan Khan was thrown out of the house on Day 18 after getting into a physical fight with Pratik Sehajpal.",
+  },
+  {
+    title: "The connections were dissolved",
+    text: "Around Day 29–30, Bigg Boss announced that all connections were broken and every housemate would play as an individual for the rest of the season.",
+  },
+  {
+    title: "The Ticket to Bigg Boss 15",
+    text: "All five finalists were offered a ticket to Bigg Boss 15 on condition they leave the finale race. Pratik Sehajpal accepted and became the first confirmed Bigg Boss 15 contestant, finishing as walked / fourth runner-up here.",
+  },
+];
+
+function renderOtt1Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss OTT 1 result — Divya Agarwal won the season",
+      `<p>Bigg Boss OTT 1 — styled <em>Bigg Boss: Over-the-Top Season 1</em>, the first season of the digital spin-off — ran from <strong>8 August 2021</strong> to the finale on <strong>18 September 2021</strong>: 42 days, 13 housemates, hosted by Karan Johar on Voot. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Divya Agarwal"],
+        ["1st runner-up", "Nishant Bhat"],
+        ["2nd runner-up", "Shamita Shetty"],
+        ["3rd runner-up", "Raqesh Bapat"],
+        ["4th runner-up", "Pratik Sehajpal"],
+      ])}
+      <p style="margin-top:1rem;">That result is final. Bigg Boss OTT 1's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss OTT 1 final five",
+      renderSeasonFinalistCards(OTT1_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss OTT 1 eviction order — who left, and when",
+      `<p>Eight housemates left before the finale, in this order (from the season's record):</p>
+      ${renderSeasonEvictionTable(OTT1_EVICTIONS)}
+      <p style="margin-top:1rem;">The finale followed on Day 42: Pratik Sehajpal walked — accepting the Ticket to Bigg Boss 15 — as fourth runner-up, then Raqesh Bapat (third runner-up), Shamita Shetty (second runner-up) and Nishant Bhat (first runner-up), before Divya Agarwal was declared the winner.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss OTT 1 story — the season's defining moments",
+      renderSeasonMoments(OTT1_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-ott-2-voting/",
+        emoji: "📱",
+        title: "Bigg Boss OTT 2 Voting",
+        text: "Elvish Yadav's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the OTT 2 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderOtt1Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss OTT 1 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss OTT 1 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss OTT 1 voting closed when the season ended with the finale on 18 September 2021, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss OTT 1?</summary>
+        <div class="bb-faq-body">
+          <p>Divya Agarwal won Bigg Boss OTT 1. The final order was: Nishant Bhat (first runner-up), Shamita Shetty (second runner-up), Raqesh Bapat (third runner-up) and Pratik Sehajpal (fourth runner-up, walked).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss OTT 1 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The five finalists were Divya Agarwal, Nishant Bhat, Shamita Shetty, Raqesh Bapat and Pratik Sehajpal. The season ran from 8 August 2021 to 18 September 2021 — 42 days and 13 housemates, hosted by Karan Johar on Voot.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss OTT 1. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+// ---------- Bigg Boss OTT 2 (entry 414) ----------
+
+const OTT2_FINALISTS = [
+  {
+    name: "Elvish Yadav",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/ott2-elvish-yadav.webp",
+    story:
+      "Elvish Yadav won Bigg Boss OTT 2 in the finale on 14 August 2023. He had entered the house on Day 26 as a wild-card entrant — and went on to become the first wild-card winner in Bigg Boss history. Finale reports agreed on the result and the top five across the board — Hindustan Times, the Economic Times, India Today and ABP Live all recorded Elvish as the winner and Abhishek Malhan as runner-up.",
+  },
+  {
+    name: "Abhishek Malhan",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/ott2-abhishek-malhan.webp",
+    story:
+      "Abhishek Malhan finished as first runner-up in the Day 58 finale on 14 August 2023, behind only Elvish Yadav.",
+  },
+  {
+    name: "Manisha Rani",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/ott2-manisha-rani.webp",
+    story:
+      "Manisha Rani finished as second runner-up when the finale order was declared on Day 58, 14 August 2023.",
+  },
+  {
+    name: "Bebika Dhurve",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/ott2-bebika-dhurve.webp",
+    story:
+      "Bebika Dhurve finished as third runner-up in the Day 58 finale on 14 August 2023.",
+  },
+  {
+    name: "Pooja Bhatt",
+    placing: "4th runner-up",
+    image: "/assets/bb-seasons/ott2-pooja-bhatt.webp",
+    story:
+      "Pooja Bhatt finished as fourth runner-up in the Day 58 finale on 14 August 2023.",
+  },
+];
+
+const OTT2_EVICTIONS = [
+  ["Puneet Kumar", 1, "Ejected by housemates"],
+  ["Palak Purswani", 8, "Entered on Day 2"],
+  ["Aaliya Siddiqui", 11, ""],
+  ["Akanksha Puri", 15, "Entered on Day 2"],
+  ["Cyrus Broacha", 23, "Walked — family emergency"],
+  ["Falaq Naaz", 35, "Evicted by housemates"],
+  ["Aashika Bhatia", 42, "Wild-card entrant, entered Day 26"],
+  ["Jad Hadid", 50, ""],
+  ["Avinash Sachdev", 50, ""],
+  ["Jiya Shankar", 54, ""],
+];
+
+const OTT2_MOMENTS = [
+  {
+    title: "The most successful OTT season",
+    text: "The season's record describes Bigg Boss OTT 2 as the most successful season in the history of Bigg Boss OTT — and it was Salman Khan's first time hosting the OTT version.",
+  },
+  {
+    title: "The first wild-card winner in Bigg Boss history",
+    text: "Elvish Yadav entered on Day 26 as a wild card and went on to win the season — the first wild-card winner in Bigg Boss history.",
+  },
+  {
+    title: "Ejected on Day 1",
+    text: "Puneet Kumar was nominated by Bigg Boss on launch day for misusing house property and misbehaving, then voted out by the housemates the same day — the earliest exit of the season.",
+  },
+  {
+    title: "Bigg Boss Currency",
+    text: "Housemates were ranked by viewer votes and given different amounts of 'BB Currency' to pay for their needs around the house. The currency theme ended on Day 9.",
+  },
+  {
+    title: "Cyrus Broacha walked out",
+    text: "Veteran comedian Cyrus Broacha voluntarily left the house on Day 23; the season's record attributes his exit to a family emergency.",
+  },
+];
+
+function renderOtt2Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss OTT 2 result — Elvish Yadav won the season",
+      `<p>Bigg Boss OTT 2 — styled <em>Bigg Boss: Over-the-Top Season 2</em>, with the tagline #IssBaarJantaHaiAsliBoss — ran from <strong>17 June 2023</strong> to the finale on <strong>14 August 2023</strong>: 58 days, 15 housemates, hosted by Salman Khan on JioCinema. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Elvish Yadav"],
+        ["1st runner-up", "Abhishek Malhan"],
+        ["2nd runner-up", "Manisha Rani"],
+        ["3rd runner-up", "Bebika Dhurve"],
+        ["4th runner-up", "Pooja Bhatt"],
+      ])}
+      <p style="margin-top:1rem;">That result is final. Bigg Boss OTT 2's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss OTT 2 final five",
+      renderSeasonFinalistCards(OTT2_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss OTT 2 eviction order — who left, and when",
+      `<p>Ten housemates left before the finale, in this order (from the season's record):</p>
+      ${renderSeasonEvictionTable(OTT2_EVICTIONS)}
+      <p style="margin-top:1rem;">The finale followed on Day 58: Pooja Bhatt left as fourth runner-up, then Bebika Dhurve (third runner-up), Manisha Rani (second runner-up) and Abhishek Malhan (first runner-up), before Elvish Yadav — a Day 26 wild-card entrant — was declared the winner.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss OTT 2 story — the season's defining moments",
+      renderSeasonMoments(OTT2_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-ott-1-voting/",
+        emoji: "📱",
+        title: "Bigg Boss OTT 1 Voting",
+        text: "Divya Agarwal's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the OTT 1 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderOtt2Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss OTT 2 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss OTT 2 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss OTT 2 voting closed when the season ended with the finale on 14 August 2023, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss OTT 2?</summary>
+        <div class="bb-faq-body">
+          <p>Elvish Yadav won Bigg Boss OTT 2 — entering as a wild card on Day 26, he became the first wild-card winner in Bigg Boss history. The final order was: Abhishek Malhan (first runner-up), Manisha Rani (second runner-up), Bebika Dhurve (third runner-up) and Pooja Bhatt (fourth runner-up).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss OTT 2 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The five finalists were Elvish Yadav, Abhishek Malhan, Manisha Rani, Bebika Dhurve and Pooja Bhatt. The season ran from 17 June 2023 to 14 August 2023 — 58 days and 15 housemates, hosted by Salman Khan on JioCinema.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss OTT 2. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+
 export function renderBiggBossPollPage(poll) {
   if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
   if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
@@ -4853,6 +5324,8 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-16-voting" ? renderSeason16Sections() : ""}
     ${poll.slug === "bigg-boss-13-voting" ? renderSeason13Sections() : ""}
     ${poll.slug === "bigg-boss-18-voting" ? renderSeason18Sections() : ""}
+    ${poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Sections() : ""}
+    ${poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Sections() : ""}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
@@ -4875,7 +5348,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : renderFaqSection(poll)}
   </div>
   `;
 }
