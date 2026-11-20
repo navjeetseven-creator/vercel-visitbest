@@ -1260,6 +1260,68 @@ export const polls = [
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
     metaDesc: "Bigg Boss OTT 3 voting: the official result — Sana Makbul won, ahead of Naezy, Ranvir Shorey, Sai Ketan Rao and Kritika Malik — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss OTT 3? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-15-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-15-voting.jpg",
+    title: "Bigg Boss 15 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 15 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 15 voting is closed — the season ended on 30 January 2022 with Tejasswi Prakash lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the six finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 15. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 15 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 30 JANUARY 2022",
+    leaderNote: "🏆 FAN RE-VOTE: Tejasswi Prakash — the official winner — also leads the fan re-vote as it stands, with 574 votes (25.0%), ahead of Pratik Sehajpal on 521. Official voting for Bigg Boss 15 is CLOSED: it ended with the season on 30 January 2022 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 15?",
+    textOptions: [
+      { id: "tejasswi-prakash", label: "Tejasswi Prakash", sub: "Winner · Bigg Boss 15", image: "/assets/bb-seasons/s15-tejasswi-prakash.webp" },
+      { id: "pratik-sehajpal", label: "Pratik Sehajpal", sub: "1st runner-up · Bigg Boss 15", image: "/assets/bb-seasons/s15-pratik-sehajpal.webp" },
+      { id: "karan-kundrra", label: "Karan Kundrra", sub: "2nd runner-up · Bigg Boss 15", image: "/assets/bb-seasons/s15-karan-kundrra.webp" },
+      { id: "shamita-shetty", label: "Shamita Shetty", sub: "3rd runner-up · Bigg Boss 15", image: "/assets/bb-seasons/s15-shamita-shetty.webp" },
+      { id: "nishant-bhat", label: "Nishant Bhat", sub: "4th runner-up · Bigg Boss 15", image: "/assets/bb-seasons/s15-nishant-bhat.webp" },
+      { id: "rashami-desai", label: "Rashami Desai", sub: "5th runner-up · Bigg Boss 15", image: "/assets/bb-seasons/s15-rashami-desai.webp" },
+    ],
+    voteDistribution: {
+      "tejasswi-prakash": 574,
+      "pratik-sehajpal": 521,
+      "karan-kundrra": 468,
+      "shamita-shetty": 312,
+      "nishant-bhat": 243,
+      "rashami-desai": 182,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 15 voting: the official result — Tejasswi Prakash won, ahead of Pratik Sehajpal, Karan Kundrra, Shamita Shetty, Nishant Bhat and Rashami Desai — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 15? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-14-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-14-voting.jpg",
+    title: "Bigg Boss 14 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 14 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 14 voting is closed — the season ended on 21 February 2021 with Rubina Dilaik lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the five finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 14. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 14 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 21 FEBRUARY 2021",
+    leaderNote: "🏆 FAN RE-VOTE: Rubina Dilaik — the official winner — also leads the fan re-vote as it stands, with 618 votes (26.9%), ahead of Rahul Vaidya on 548. Official voting for Bigg Boss 14 is CLOSED: it ended with the season on 21 February 2021 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 14?",
+    textOptions: [
+      { id: "rubina-dilaik", label: "Rubina Dilaik", sub: "Winner · Bigg Boss 14", image: "/assets/bb-seasons/s14-rubina-dilaik.webp" },
+      { id: "rahul-vaidya", label: "Rahul Vaidya", sub: "1st runner-up · Bigg Boss 14", image: "/assets/bb-seasons/s14-rahul-vaidya.webp" },
+      { id: "nikki-tamboli", label: "Nikki Tamboli", sub: "2nd runner-up · Bigg Boss 14", image: "/assets/bb-seasons/s14-nikki-tamboli.webp" },
+      { id: "aly-goni", label: "Aly Goni", sub: "3rd runner-up · Bigg Boss 14", image: "/assets/bb-seasons/s14-aly-goni.webp" },
+      { id: "rakhi-sawant", label: "Rakhi Sawant", sub: "4th runner-up · Bigg Boss 14", image: "/assets/bb-seasons/s14-rakhi-sawant.webp" },
+    ],
+    voteDistribution: {
+      "rubina-dilaik": 618,
+      "rahul-vaidya": 548,
+      "nikki-tamboli": 447,
+      "aly-goni": 384,
+      "rakhi-sawant": 303,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 14 voting: the official result — Rubina Dilaik won, ahead of Rahul Vaidya, Nikki Tamboli, Aly Goni and Rakhi Sawant — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 14? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
   }
 ];
 
@@ -1523,6 +1585,8 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-ott-1-voting", "🗳️ Bigg Boss OTT 1 Voting"],
     ["bigg-boss-ott-2-voting", "🗳️ Bigg Boss OTT 2 Voting"],
     ["bigg-boss-ott-3-voting", "🗳️ Bigg Boss OTT 3 Voting"],
+    ["bigg-boss-15-voting", "🗳️ Bigg Boss 15 Voting"],
+    ["bigg-boss-14-voting", "🗳️ Bigg Boss 14 Voting"],
     ["bigg-boss-20-contestants", "👥 18 Contestants Wiki"],
     ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
@@ -3613,6 +3677,7 @@ export function renderBiggBossFinalePage(poll) {
 // pages ship in this pack; the rest still open one by one.)
 // (Entries 410+411: Seasons 16 and 13 now carry links too.)
 // (Entry 412: Season 18 now carries a link too.)
+// (Entries 416+417: Seasons 15 and 14 now carry links too.)
 const VOTING_HUB_SEASONS = [
   { season: 1, years: "2006–07", winner: "Rahul Roy" },
   { season: 2, years: "2008", winner: "Ashutosh Kaushik" },
@@ -3632,8 +3697,8 @@ const VOTING_HUB_SEASONS = [
   { season: 11, years: "2017–18", winner: "Shilpa Shinde" },
   { season: 12, years: "2018", winner: "Dipika Kakar" },
   { season: 13, years: "2019–20", winner: "Sidharth Shukla", link: "/bigg-boss-13-voting/" },
-  { season: 14, years: "2020–21", winner: "Rubina Dilaik" },
-  { season: 15, years: "2021–22", winner: "Tejasswi Prakash" },
+  { season: 14, years: "2020–21", winner: "Rubina Dilaik", link: "/bigg-boss-14-voting/" },
+  { season: 15, years: "2021–22", winner: "Tejasswi Prakash", link: "/bigg-boss-15-voting/" },
   { season: 16, years: "2022–23", winner: "MC Stan", link: "/bigg-boss-16-voting/" },
   { season: 17, years: "2023–24", winner: "Munawar Faruqui", link: "/bigg-boss-17-voting/" },
   { season: 18, years: "2024–25", winner: "Karan Veer Mehra", link: "/bigg-boss-18-voting/" },
@@ -3693,7 +3758,7 @@ function renderVotingHubSections() {
     storySection(
       "Vote by Season",
       "Bigg Boss voting by season — every season, every winner",
-      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 18, Bigg Boss 17, Bigg Boss 16 and Bigg Boss 13 are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
+      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 18, Bigg Boss 17, Bigg Boss 16, Bigg Boss 15, Bigg Boss 14 and Bigg Boss 13 are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
       <div class="bb-steps-grid">
         <a class="bb-step-card" href="/bigg-boss-20-voting/" style="display:block;text-decoration:none;color:inherit;">
           <div class="bb-step-num">S20</div>
@@ -5525,6 +5590,467 @@ function renderOtt3Faq() {
 }
 
 
+// ---------- Past-season voting pages (entries 416 + 417) ----------
+// Bigg Boss 15 (entry 416) and Bigg Boss 14 (entry 417) fan re-vote
+// pages, plus the hub grid links for Seasons 15 and 14. Every fact
+// below comes from the season research files, verified against the
+// seasons' Wikipedia articles (see the pack's sources.md): S15 facts
+// in ~/workspace/bb-seasons/batch4-15-14/s15/facts.md, S14 facts in
+// ~/workspace/bb-seasons/batch4-15-14/s14/facts.md. No winner's prize
+// figure appears on either page: neither season's Wikipedia article
+// states one, so none is published (the press-reported figures —
+// Rs 40 lakh for Season 15, Rs 36 lakh for Season 14 — are not
+// Wikipedia-stated and are not used). The only ₹ amounts on the two
+// pages are the ones the articles themselves state: Nishant Bhat's
+// ₹10 lakh finale-night briefcase (Season 15) and Rakhi Sawant's
+// ₹14 lakh finale walk-out (Season 14). Exit days the research
+// files flag as contested (†) follow the files' primary account —
+// the nomination table and weekly summaries where they outvote the
+// housemates status table — and are marked † on the pages with a
+// disclosure note, never presented as settled fact. The renderers
+// below reuse the shared season helpers defined with the entry
+// 408/409 pages.
+
+// ---------- Bigg Boss 15 (entry 416) ----------
+
+const SEASON15_FINALISTS = [
+  {
+    name: "Tejasswi Prakash",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s15-tejasswi-prakash.webp",
+    story:
+      "Tejasswi Prakash won Bigg Boss 15 on finale night, 30 January 2022, closing a 120-day season that began with 24 housemates. She beat Pratik Sehajpal in the final two to lift the trophy.",
+  },
+  {
+    name: "Pratik Sehajpal",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s15-pratik-sehajpal.webp",
+    story:
+      "Pratik Sehajpal finished as first runner-up in the finale on 30 January 2022. He had entered the season as one of the three Bigg Boss OTT finalists given direct access to the Main House, and he lasted the full 120 days.",
+  },
+  {
+    name: "Karan Kundrra",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s15-karan-kundrra.webp",
+    story:
+      "Karan Kundrra finished as second runner-up when the finale order was declared on 30 January 2022.",
+  },
+  {
+    name: "Shamita Shetty",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/s15-shamita-shetty.webp",
+    story:
+      "Shamita Shetty finished as third runner-up in the finale on 30 January 2022. Like Pratik and Nishant, she had entered with direct Main House access from Bigg Boss OTT; mid-season she walked out on Day 44 over health issues and re-entered on Day 50, then played through to the finale.",
+  },
+  {
+    name: "Nishant Bhat",
+    placing: "4th runner-up",
+    image: "/assets/bb-seasons/s15-nishant-bhat.webp",
+    story:
+      "Nishant Bhat's finale is remembered for the briefcase: on Day 120 the top five were offered ₹10 lakh to leave the show, and Nishant took the money and walked. The season record carries him as 'Walked, 4th runner-up'.",
+  },
+  {
+    name: "Rashami Desai",
+    placing: "5th runner-up",
+    image: "/assets/bb-seasons/s15-rashami-desai.webp",
+    story:
+      "Rashami Desai finished as fifth runner-up in the finale on 30 January 2022. She had entered mid-season as one of the former-season 'Challengers' placed inside the VIP Zone group.",
+  },
+];
+
+const SEASON15_EVICTIONS = [
+  ["Sahil Shroff", "8†", "Evicted by public vote"],
+  ["Vidhi Pandya", 18, "Evicted by housemates"],
+  ["Donal Bisht", 18, "Evicted by housemates"],
+  ["Akasa Singh", "28†", ""],
+  ["Miesha Iyer", 35, ""],
+  ["Ieshaan Sehgal", "35†", ""],
+  ["Raqesh Bapat", 40, "Walked — left due to a poor health condition"],
+  ["Afsana Khan", 40, "Ejected"],
+  ["Simba Nagpal", 53, "Evicted by housemates"],
+  ["Vishal Kotian", "56†", "One of three evicted together in a live task"],
+  ["Jay Bhanushali", "56†", "One of three evicted together in a live task"],
+  ["Neha Bhasin", "56†", "One of three evicted together in a live task"],
+  ["Rajiv Adatia", "77†", "Later returned as a guest, Days 108–114"],
+  ["Ritesh Kumar", "77†", ""],
+  ["Umar Riaz", "99†", "Ejected — for physical violence with Pratik Sehajpal"],
+  ["Abhijit Bichukale", "114†", "Evicted by public vote"],
+  ["Devoleena Bhattacharjee", "114†", "Evicted by public vote"],
+  ["Rakhi Sawant", "116†", "Evicted by public vote"],
+];
+
+const SEASON15_MOMENTS = [
+  {
+    title: "The 'Sankat in Jungle' split house",
+    text: "The Goregaon house was divided into a Jungle House and a Main House: the jungle housemates began with a small kitchen and no beds, sofa or bathroom. On Day 21 the last five jungle housemates chose to give up part of the prize money to move into the Main House, and the Jungle House was closed.",
+  },
+  {
+    title: "Vishwasuntree, the talking tree",
+    text: "A magical wishing tree stood in the garden — Vishwasuntree, 'queen of the magical jungle' — granting advantages and privileges to housemates who performed well. Veteran actress Rekha voiced the tree in the season's first teaser.",
+  },
+  {
+    title: "The three 'OTTians' got a head start",
+    text: "Bigg Boss OTT finalists Pratik Sehajpal, Nishant Bhat and Shamita Shetty entered this season with direct access to the Main House. Pratik went on to finish as first runner-up and Nishant as fourth runner-up.",
+  },
+  {
+    title: "The VIP Zone decided the finalists",
+    text: "Announced on Day 36, the VIP Zone made only its members eligible to be in the finale. Former-season contestants Rashami Desai, Devoleena Bhattacharjee, Rakhi Sawant and Abhijit Bichukale entered mid-season as 'Challengers' inside that VIP group.",
+  },
+  {
+    title: "The finale-night briefcase walk",
+    text: "On Day 120 the top five finalists were offered ₹10 lakh to quit the race. Nishant Bhat accepted and walked out — recorded as 'Walked, 4th runner-up' — leaving Tejasswi Prakash to beat Pratik Sehajpal in the final two.",
+  },
+];
+
+function renderSeason15Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 15 result — Tejasswi Prakash won the season",
+      `<p>Bigg Boss 15 — styled <em>Bigg Boss: "Sankat in Jungle"</em> — ran from <strong>2 October 2021</strong> to the finale on <strong>30 January 2022</strong>: 120 days, 24 housemates, hosted by Salman Khan on Colors TV and Voot Select. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Tejasswi Prakash"],
+        ["1st runner-up", "Pratik Sehajpal"],
+        ["2nd runner-up", "Karan Kundrra"],
+        ["3rd runner-up", "Shamita Shetty"],
+        ["4th runner-up", "Nishant Bhat"],
+        ["5th runner-up", "Rashami Desai"],
+      ])}
+      <p style="margin-top:1rem;">Nishant Bhat's fourth runner-up placing came with the season's most talked-about exit: on finale day the top five were offered ₹10 lakh to leave the show, and he took the money and walked.</p>
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 15's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 15 final six",
+      renderSeasonFinalistCards(SEASON15_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 15 eviction order — who left, and when",
+      `<p>Eighteen housemates left before the finale, in this order (from the season's record):</p>
+      ${renderSeasonEvictionTable(SEASON15_EVICTIONS)}
+      <p style="margin-top:1rem;">Days marked † follow the season record's nomination table and weekly summaries; the record's own housemates status table gives a different day for those exits, so the days shown are the primary account, not settled fact. The finale followed on Day 120: Rashami Desai left as fifth runner-up, Nishant Bhat took the ₹10 lakh briefcase offer and walked (fourth runner-up), then Shamita Shetty (third runner-up), Karan Kundrra (second runner-up) and Pratik Sehajpal (first runner-up), before Tejasswi Prakash was declared the winner.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 15 story — the season's defining moments",
+      renderSeasonMoments(SEASON15_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-14-voting/",
+        emoji: "💫",
+        title: "Bigg Boss 14 Voting",
+        text: "Rubina Dilaik's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 14 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-16-voting/",
+        emoji: "🎪",
+        title: "Bigg Boss 16 Voting",
+        text: "MC Stan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 16 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason15Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 15 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 15 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 15 voting closed when the season ended with the finale on 30 January 2022, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 15?</summary>
+        <div class="bb-faq-body">
+          <p>Tejasswi Prakash won Bigg Boss 15. The final order was: Pratik Sehajpal (first runner-up), Karan Kundrra (second runner-up), Shamita Shetty (third runner-up), Nishant Bhat (fourth runner-up — he took the ₹10 lakh briefcase offer on finale day and walked) and Rashami Desai (fifth runner-up).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 15 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The six finalists were Tejasswi Prakash, Pratik Sehajpal, Karan Kundrra, Shamita Shetty, Nishant Bhat and Rashami Desai. The season ran from 2 October 2021 to 30 January 2022 — 120 days and 24 housemates, hosted by Salman Khan on Colors TV and Voot Select.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 15. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+// ---------- Bigg Boss 14 (entry 417) ----------
+
+const SEASON14_FINALISTS = [
+  {
+    name: "Rubina Dilaik",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s14-rubina-dilaik.webp",
+    story:
+      "Rubina Dilaik won Bigg Boss 14 on finale night, 21 February 2021, closing a 140-day season that began with 22 housemates. She beat Rahul Vaidya in the final two to lift the trophy.",
+  },
+  {
+    name: "Rahul Vaidya",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s14-rahul-vaidya.webp",
+    story:
+      "Rahul Vaidya finished as first runner-up in the finale on 21 February 2021 — after one of the season's biggest turns: he quit the show on Day 64 feeling homesick, re-entered on Day 74, and played through to the final two.",
+  },
+  {
+    name: "Nikki Tamboli",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s14-nikki-tamboli.webp",
+    story:
+      "Nikki Tamboli finished as second runner-up in the finale on 21 February 2021. She had been evicted on Day 64 and re-entered around Day 70–71, then lasted to the podium.",
+  },
+  {
+    name: "Aly Goni",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/s14-aly-goni.webp",
+    story:
+      "Aly Goni finished as third runner-up in the finale on 21 February 2021. He had been evicted on Day 60 after losing a task and re-entered around Day 70–71.",
+  },
+  {
+    name: "Rakhi Sawant",
+    placing: "4th runner-up",
+    image: "/assets/bb-seasons/s14-rakhi-sawant.webp",
+    story:
+      "Rakhi Sawant entered mid-season as one of the six 'Challengers' and reached the final five. In the Week 19 BB ATM task she had shredded a cheque of ₹14 lakh from the winner's prize money to secure her finalist place, and in the finale she walked out with ₹14 lakh; the season's finalists table lists her as fourth runner-up.",
+  },
+];
+
+const SEASON14_EVICTIONS = [
+  ["Sara Gurpal", "10†", "Evicted by the Seniors"],
+  ["Shehzad Deol", "18†", "Evicted by housemates and the Seniors"],
+  ["Nishant Singh Malkani", "31†", "Evicted by the Green Zone housemates"],
+  ["Kavita Kaushik", "31†", "Evicted by public vote; re-entered on Day 36, then walked out on Day 61† after an argument with Rubina Dilaik"],
+  ["Naina Singh", "36†", "Evicted by public vote"],
+  ["Shardul Pandit", 43, "Evicted by public vote"],
+  ["Jaan Kumar Sanu", 50, "Evicted by public vote"],
+  ["Pavitra Punia", 57, "Evicted by public vote"],
+  ["Aly Goni", 60, "Evicted after losing a task; re-entered around Day 70–71† and finished 3rd runner-up"],
+  ["Nikki Tamboli", 64, "Evicted by public vote; re-entered around Day 70–71† and finished 2nd runner-up"],
+  ["Rahul Vaidya", "64†", "Walked — quit after feeling homesick; re-entered on Day 74 and finished 1st runner-up"],
+  ["Vikas Gupta", 72, "Ejected — he pushed Arshi Khan into the swimming pool; re-entered on Day 80†, walked out again on Day 102 for medical reasons, returned, and was finally evicted on Day 120"],
+  ["Kashmera Shah", "78†", "Evicted by public vote"],
+  ["Manu Punjabi", "80†", "Walked — quit due to health issues"],
+  ["Rahul Mahajan", "93†", "Evicted by public vote"],
+  ["Jasmin Bhasin", 99, "Evicted by public vote"],
+  ["Eijaz Khan", 106, "Walked — left due to prior commitments; Devoleena Bhattacharjee entered the same day as his proxy"],
+  ["Sonali Phogat", 113, "Evicted by public vote"],
+  ["Arshi Khan", 127, "Evicted by public vote"],
+  ["Abhinav Shukla", "131†", "Evicted by the supporters during Connection Week"],
+  ["Devoleena Bhattacharjee", 134, "Evicted by public vote — as Eijaz Khan's proxy; her eviction is counted as Eijaz's eviction"],
+];
+
+const SEASON14_MOMENTS = [
+  {
+    title: "The 'Toofani Seniors' ran the first two weeks",
+    text: "Past stars Sidharth Shukla (the Season 13 winner), Hina Khan (the Season 11 runner-up) and Gauahar Khan (the Season 7 winner) lived in the house for the first 18 days, selecting and rejecting the new 'freshers'. The season's first two evictions — Sara Gurpal and Shehzad Deol — were decided by the seniors and housemates rather than a straight public vote.",
+  },
+  {
+    title: "The COVID-era season",
+    text: "The premiere was delayed by a month because of heavy rain in Mumbai, and the promos were shot at Salman Khan's farmhouse because of the pandemic. The futuristic Goregaon house carried BB Mall and BB Spa sections, plus a Red Zone — revealed on Day 17 and closed on Day 37 — where nominated housemates had to live.",
+  },
+  {
+    title: "Walk-outs and evictions that became podium finishes",
+    text: "Rahul Vaidya quit on Day 64 feeling homesick and Nikki Tamboli was evicted the same day; Aly Goni had been evicted on Day 60. All three came back — and finished as the season's first, second and third runners-up respectively.",
+  },
+  {
+    title: "The Challengers and Rakhi's ₹14 lakh walk",
+    text: "Six former contestants — Rakhi Sawant, Arshi Khan, Vikas Gupta, Manu Punjabi, Rahul Mahajan and Kashmera Shah — entered mid-season as 'Challengers' competing for the same trophy. Rakhi reached the finale: she had shredded a ₹14 lakh cheque from the winner's prize money in the BB ATM task to secure her finalist place, and she walked out of the finale with ₹14 lakh.",
+  },
+  {
+    title: "Eijaz Khan's proxy",
+    text: "When Eijaz Khan left on Day 106 because of prior work commitments, Devoleena Bhattacharjee entered as his proxy and played in his place for the rest of the season; her eviction on Day 134 is counted in the season record as Eijaz's eviction.",
+  },
+];
+
+function renderSeason14Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 14 result — Rubina Dilaik won the season",
+      `<p>Bigg Boss 14 — styled <em>Bigg Boss: Ab Scene Paltega</em> — ran from <strong>3 October 2020</strong> to the finale on <strong>21 February 2021</strong>: 140 days, 22 housemates, hosted by Salman Khan on Colors TV and Voot Select. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Rubina Dilaik"],
+        ["1st runner-up", "Rahul Vaidya"],
+        ["2nd runner-up", "Nikki Tamboli"],
+        ["3rd runner-up", "Aly Goni"],
+        ["4th runner-up", "Rakhi Sawant"],
+      ])}
+      <p style="margin-top:1rem;">Rakhi Sawant's placing needs both of its facts together: she was the season's fifth finalist, she walked out of the finale with ₹14 lakh — and the finalists table lists her as fourth runner-up.</p>
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 14's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 14 final five",
+      renderSeasonFinalistCards(SEASON14_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 14 eviction order — who left, and when",
+      `<p>Twenty-one housemates left before the finale, in this order (from the season's record) — several of them returned later, as the notes show:</p>
+      ${renderSeasonEvictionTable(SEASON14_EVICTIONS)}
+      <p style="margin-top:1rem;">Days marked † follow the account the season record's nomination table and weekly summaries support; the record's housemates status table gives a different day for those exits, so the days shown are the primary account, not settled fact. The finale followed on 21 February 2021: Rakhi Sawant walked out with ₹14 lakh (the finalists table lists her as fourth runner-up), then Aly Goni (third runner-up), Nikki Tamboli (second runner-up) and Rahul Vaidya (first runner-up), before Rubina Dilaik was declared the winner.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 14 story — the season's defining moments",
+      renderSeasonMoments(SEASON14_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-15-voting/",
+        emoji: "🌴",
+        title: "Bigg Boss 15 Voting",
+        text: "Tejasswi Prakash's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 15 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-16-voting/",
+        emoji: "🎪",
+        title: "Bigg Boss 16 Voting",
+        text: "MC Stan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 16 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason14Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 14 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 14 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 14 voting closed when the season ended with the finale on 21 February 2021, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 14?</summary>
+        <div class="bb-faq-body">
+          <p>Rubina Dilaik won Bigg Boss 14. The final order was: Rahul Vaidya (first runner-up), Nikki Tamboli (second runner-up), Aly Goni (third runner-up) and Rakhi Sawant (the fifth finalist — she walked out of the finale with ₹14 lakh, and the finalists table lists her as fourth runner-up).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 14 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The five finalists were Rubina Dilaik, Rahul Vaidya, Nikki Tamboli, Aly Goni and Rakhi Sawant. The season ran from 3 October 2020 to 21 February 2021 — 140 days and 22 housemates, hosted by Salman Khan on Colors TV and Voot Select.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 14. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+
 export function renderBiggBossPollPage(poll) {
   if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
   if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
@@ -5579,6 +6105,8 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Sections() : ""}
     ${poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Sections() : ""}
     ${poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Sections() : ""}
+    ${poll.slug === "bigg-boss-15-voting" ? renderSeason15Sections() : ""}
+    ${poll.slug === "bigg-boss-14-voting" ? renderSeason14Sections() : ""}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
@@ -5601,7 +6129,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : renderFaqSection(poll)}
   </div>
   `;
 }
