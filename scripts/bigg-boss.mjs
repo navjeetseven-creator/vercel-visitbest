@@ -1554,7 +1554,63 @@ export const polls = [
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
     metaDesc: "Bigg Boss 5 voting: the official result — Juhi Parmar won, ahead of Mahek Chahal, Sidharth Bhardwaj, Akashdeep Saigal and Amar Upadhyay — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 5? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-4-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-4-voting.jpg",
+    title: "Bigg Boss 4 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 4 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 4 voting is closed — the season ended on 8 January 2011 with Shweta Tiwari lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the four finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 4. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 4 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 8 JANUARY 2011",
+    leaderNote: "🏆 FAN RE-VOTE: Shweta Tiwari — the official winner — also leads the fan re-vote as it stands, with 648 votes (28.2%), ahead of Dalip Singh Rana (The Great Khali) on 574. Official voting for Bigg Boss 4 is CLOSED: it ended with the season on 8 January 2011 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 4?",
+    textOptions: [
+      { id: "shweta-tiwari", label: "Shweta Tiwari", sub: "Winner · Bigg Boss 4", image: "/assets/bb-seasons/s4-shweta-tiwari.webp" },
+      { id: "dalip-singh-rana", label: "Dalip Singh Rana (The Great Khali)", sub: "1st runner-up · Bigg Boss 4", image: "/assets/bb-seasons/s4-great-khali.webp" },
+      { id: "ashmit-patel", label: "Ashmit Patel", sub: "2nd runner-up · Bigg Boss 4", image: "/assets/bb-seasons/s4-ashmit-patel.webp" },
+      { id: "dolly-bindra", label: "Dolly Bindra", sub: "3rd runner-up · Bigg Boss 4", image: "/assets/bb-seasons/s4-dolly-bindra.webp" },
+    ],
+    voteDistribution: {
+      "shweta-tiwari": 648,
+      "dalip-singh-rana": 574,
+      "ashmit-patel": 548,
+      "dolly-bindra": 530,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 4 voting: the official result — Shweta Tiwari won, ahead of Dalip Singh Rana (The Great Khali), Ashmit Patel and Dolly Bindra — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 4? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
   }
+,
+  {
+    slug: "bigg-boss-3-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-3-voting.jpg",
+    title: "Bigg Boss 3 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 3 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 3 voting is closed — the season ended on 26 December 2009 with Vindu Dara Singh lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the three finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 3. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 3 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 26 DECEMBER 2009",
+    leaderNote: "🏆 FAN RE-VOTE: Vindu Dara Singh — the official winner — also leads the fan re-vote as it stands, with 648 votes (36.0%), ahead of Pravesh Rana on 596. Official voting for Bigg Boss 3 is CLOSED: it ended with the season on 26 December 2009 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 3?",
+    textOptions: [
+      { id: "vindu-dara-singh", label: "Vindu Dara Singh", sub: "Winner · Bigg Boss 3", image: "/assets/bb-seasons/s3-vindu-dara-singh.webp" },
+      { id: "pravesh-rana", label: "Pravesh Rana", sub: "1st runner-up · Bigg Boss 3", image: "/assets/bb-seasons/s3-pravesh-rana.webp" },
+      { id: "poonam-dhillon", label: "Poonam Dhillon", sub: "2nd runner-up · Bigg Boss 3", image: "/assets/bb-seasons/s3-poonam-dhillon.webp" },
+    ],
+    voteDistribution: {
+      "vindu-dara-singh": 648,
+      "pravesh-rana": 596,
+      "poonam-dhillon": 556,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 3 voting: the official result — Vindu Dara Singh won, ahead of Pravesh Rana and Poonam Dhillon — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 3? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  }
+
 ];
 
 export const pollBySlug = new Map(polls.map((p) => [p.slug, p]));
@@ -1827,6 +1883,8 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-7-voting", "🗳️ Bigg Boss 7 Voting"],
     ["bigg-boss-6-voting", "🗳️ Bigg Boss 6 Voting"],
     ["bigg-boss-5-voting", "🗳️ Bigg Boss 5 Voting"],
+ ["bigg-boss-4-voting", "🗳️ Bigg Boss 4 Voting"],
+ ["bigg-boss-3-voting", "🗳️ Bigg Boss 3 Voting"],
     ["bigg-boss-20-contestants", "👥 18 Contestants Wiki"],
     ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
@@ -3922,11 +3980,12 @@ export function renderBiggBossFinalePage(poll) {
 // (Entries 420+421: Seasons 10 and 9 now carry links too.)
 // (Entries 422+423: Seasons 8 and 7 now carry links too.)
 // (Entries 424+425: Seasons 6 and 5 now carry links too.)
+// (Entries 426+427: Seasons 4 and 3 now carry links too.)
 const VOTING_HUB_SEASONS = [
   { season: 1, years: "2006–07", winner: "Rahul Roy" },
   { season: 2, years: "2008", winner: "Ashutosh Kaushik" },
-  { season: 3, years: "2009", winner: "Vindu Dara Singh" },
-  { season: 4, years: "2010–11", winner: "Shweta Tiwari" },
+  { season: 3, years: "2009", winner: "Vindu Dara Singh", link: "/bigg-boss-3-voting/" },
+  { season: 4, years: "2010–11", winner: "Shweta Tiwari", link: "/bigg-boss-4-voting/" },
   { season: 5, years: "2011–12", winner: "Juhi Parmar", link: "/bigg-boss-5-voting/" },
   { season: 6, years: "2012–13", winner: "Urvashi Dholakia", link: "/bigg-boss-6-voting/" },
   { season: 7, years: "2013", winner: "Gauahar Khan", link: "/bigg-boss-7-voting/" },
@@ -4003,7 +4062,7 @@ function renderVotingHubSections() {
     storySection(
       "Vote by Season",
       "Bigg Boss voting by season — every season, every winner",
-      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 18, Bigg Boss 17, Bigg Boss 16, Bigg Boss 15, Bigg Boss 14, Bigg Boss 13, Bigg Boss 12, Bigg Boss 11, Bigg Boss 10, Bigg Boss 9, Bigg Boss 8, Bigg Boss 7, Bigg Boss 6 and Bigg Boss 5 are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
+      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 18, Bigg Boss 17, Bigg Boss 16, Bigg Boss 15, Bigg Boss 14, Bigg Boss 13, Bigg Boss 12, Bigg Boss 11, Bigg Boss 10, Bigg Boss 9, Bigg Boss 8, Bigg Boss 7, Bigg Boss 6, Bigg Boss 5, Bigg Boss 4 and Bigg Boss 3 are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
       <div class="bb-steps-grid">
         <a class="bb-step-card" href="/bigg-boss-20-voting/" style="display:block;text-decoration:none;color:inherit;">
           <div class="bb-step-num">S20</div>
@@ -8064,6 +8123,438 @@ function renderSeason5Faq() {
 }
 
 
+// ---------- Past-season voting pages (entries 426 + 427) ----------
+// Bigg Boss 4 (entry 426) and Bigg Boss 3 (entry 427) fan re-vote
+// pages, plus the hub grid links for Seasons 4 and 3. Every fact
+// below comes from the season research files, verified against
+// the seasons' Wikipedia articles (see the pack's sources.md):
+// S4 facts in ~/workspace/bb-seasons/batch9-4-3/s4/facts.md, S3
+// facts in ~/workspace/bb-seasons/batch9-4-3/s3/facts.md. Prize
+// rules: Season 4's winner's prize of ₹1 crore IS stated by
+// Wikipedia, so it is published as the winner's prize; the only
+// other money figure on the Season 4 page is Ashmit Patel's
+// Rs. 5 lakhs guaranteed cash prize, stated exactly as the
+// article states it — a guarantee he received for volunteering
+// his own name for eviction in the final week; he did NOT walk
+// out, and no walk-out amount exists this season. Season 3's
+// winner's prize is NOT stated by Wikipedia (the press-reported
+// figure is not used); the only money figure on the Season 3
+// page is Bakhtiyar Irani's ₹10 lakh final-week walk-out, the
+// figure Wikipedia itself states — Bakhtiyar is not a finalist,
+// so it appears in the eviction order and the season story,
+// never as a prize. Exit days: Season 4's record is the most
+// contested of the series — its status table, nominations table
+// and weekly summary give three different days for nearly every
+// exit — so the page follows the status table throughout, marks
+// the contested days †, carries a disclosure note, and prints
+// no hard season day count (97 vs 96 is likewise contested).
+// Season 3's contested days (Aditi Govitrikar's eviction,
+// Bakhtiyar's walk-out, the finale day 83 vs 84) are handled
+// the same way. The renderers below reuse the shared season
+// helpers defined with the entry 408/409 pages.
+
+// ---------- Bigg Boss 4 (entry 426) ----------
+
+const SEASON4_FINALISTS = [
+  {
+    name: "Shweta Tiwari",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s4-shweta-tiwari.webp",
+    story:
+      "Shweta Tiwari won Bigg Boss 4 on finale night, 8 January 2011, taking the winner's prize of ₹1 crore — and becoming the first woman to win the series.",
+  },
+  {
+    name: "Dalip Singh Rana (The Great Khali)",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s4-great-khali.webp",
+    story:
+      "Dalip Singh Rana — The Great Khali — finished as first runner-up, taking the second-highest votes in the finale. The professional wrestler had entered as a wild card on Day 14†.",
+  },
+  {
+    name: "Ashmit Patel",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s4-ashmit-patel.webp",
+    story:
+      "Ashmit Patel finished as second runner-up. In the final week he volunteered his own name for eviction, and Bigg Boss announced he would get a guaranteed cash prize of Rs. 5 lakhs, regardless of whether he won the show or not — he did not walk out: he stayed in the house and finished third in the final order.",
+  },
+  {
+    name: "Dolly Bindra",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/s4-dolly-bindra.webp",
+    story:
+      "Dolly Bindra finished as third runner-up — at the end of the season's most dramatic run: a wild-card entrant from Day 21, she was ejected on Day 45 after a huge fight, re-entered on Day 56†, and still reached the final four.",
+  },
+];
+
+const SEASON4_EVICTIONS = [
+  ["Devender Singh (Bunty Chor)", "1†", "Ejected — voted the first house captain on Day 1, then thrown out for violent and bad behaviour"],
+  ["Abbas Kazmi", "7†", "Evicted by public vote"],
+  ["Sakshi Pradhan", "14†", "Evicted by public vote"],
+  ["Begum Nawazish Ali (Ali Saleem)", "21†", "Evicted by public vote"],
+  ["Rahul Bhatt", "35†", "Evicted by public vote"],
+  ["Anchal Kumar", "42†", "Evicted by public vote"],
+  ["Hrishant Goswami", "56†", "Evicted by public vote"],
+  ["Manoj Tiwari", "63†", "Evicted by public vote"],
+  ["Sara Khan", "70†", "Evicted by public vote. Her run included a staged fake eviction on Day 26, when she was sent to a secret room instead of going home"],
+  ["Seema Parihar", "77†", "Evicted by public vote"],
+  ["Veena Malik", "91†", "Evicted by public vote"],
+  ["Samir Soni", "95†", "Evicted by public vote. His full run: ejected on Day 45 with Dolly Bindra after a huge fight, re-entered on Day 49, and evicted for good here — he also took the finale's Most Stylish Housemate award, a Chevrolet car"],
+];
+
+const SEASON4_MOMENTS = [
+  {
+    title: "Salman Khan's first season as host",
+    text: "Amitabh Bachchan, who presented the third season, announced his departure; Shah Rukh Khan was offered the hosting job and rejected it; and Salman Khan took over — going on, the season's record notes, to host every following season.",
+  },
+  {
+    title: "The first captain was ejected almost immediately",
+    text: "Devender Singh, 'Bunty Chor', was voted the first house captain on Day 1 — and then thrown out for violent and bad behaviour: abusing and cursing Bigg Boss, breaking the house rules and trying to cover the cameras with socks.",
+  },
+  {
+    title: "A wedding inside the house",
+    text: "Guest entrant Ali Merchant stayed in the house from Day 30 to Day 41, and Bigg Boss announced that he and housemate Sara Khan would marry inside the house; a whole week of tasks was built around the wedding, with mehendi, haldi and clothes ceremonies.",
+  },
+  {
+    title: "Sara Khan's fake eviction",
+    text: "On Day 26 Bigg Boss staged a fake eviction: Sara Khan was asked to leave but was sent to a secret room instead of going home, the eviction was cancelled — and from the secret room she nominated Dolly Bindra and Samir Soni for the following week.",
+  },
+  {
+    title: "A double ejection — and both came back",
+    text: "On Day 45 Dolly Bindra and Samir Soni were both ejected after a huge fight in which they broke most of the rules. Samir re-entered on Day 49 and Dolly on Day 56† — and Dolly went on to finish as third runner-up.",
+  },
+  {
+    title: "Pamela Anderson's guest stay",
+    text: "Pamela Anderson entered the house on 16 November 2010 (Day 44) and stayed for three days — a visit the season's record credits with spiking the ratings up high.",
+  },
+];
+
+function renderSeason4Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 4 result — Shweta Tiwari won the season",
+      `<p>Bigg Boss 4 ran from <strong>3 October 2010</strong> to the finale on <strong>8 January 2011</strong>: 16 housemates, hosted by Salman Khan — his first season as host — on Colors TV, with the house in Lonavala, Maharashtra. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Shweta Tiwari"],
+        ["1st runner-up", "Dalip Singh Rana (The Great Khali)"],
+        ["2nd runner-up", "Ashmit Patel"],
+        ["3rd runner-up", "Dolly Bindra"],
+      ])}
+      <p style="margin-top:1rem;">Shweta Tiwari took the winner's prize of ₹1 crore — and with it became the first woman to win the series. The runner-up was a wild card: Dalip Singh Rana, The Great Khali, had entered on Day 14† and took the second-highest votes. The final week also carried the season's other stated cash figure: Ashmit Patel volunteered his own name for eviction, and Bigg Boss announced he would get a guaranteed cash prize of Rs. 5 lakhs, regardless of whether he won the show or not. Ashmit did not walk out — he stayed and finished as second runner-up.</p>
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 4's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 4 final four",
+      renderSeasonFinalistCards(SEASON4_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 4 eviction order — who left, and when",
+      `<p>Twelve housemates left before the finale, in this order (from the season's record) — Samir Soni and Sara Khan had more than one stint, as their notes show:</p>
+      ${renderSeasonEvictionTable(SEASON4_EVICTIONS)}
+      <p style="margin-top:1rem;">Days marked † are contested inside the season record: for nearly every exit this season, its housemates status table, its nominations table and its weekly summary each give a different day — usually three consecutive days. The days shown follow the status table throughout, not settled fact. Veena Malik's is the widest gap (Day 91 here, against Day 83 and Day 82 in the other records), and the finale itself is Day 97 in the status table against Day 96 in the nominations table — so this page otherwise dates the season by its calendar dates. The finale followed on Day 97† (8 January 2011): Dolly Bindra (third runner-up), Ashmit Patel (second runner-up) and Dalip Singh Rana (first runner-up) finished behind Shweta Tiwari, the winner.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 4 story — the season's defining moments",
+      renderSeasonMoments(SEASON4_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-3-voting/",
+        emoji: "🎬",
+        title: "Bigg Boss 3 Voting",
+        text: "Vindu Dara Singh's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 3 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-16-voting/",
+        emoji: "🎪",
+        title: "Bigg Boss 16 Voting",
+        text: "MC Stan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 16 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason4Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 4 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 4 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 4 voting closed when the season ended with the finale on 8 January 2011, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 4?</summary>
+        <div class="bb-faq-body">
+          <p>Shweta Tiwari won Bigg Boss 4 — the first woman to win the series — and took the winner's prize of ₹1 crore. The final order was: Dalip Singh Rana, The Great Khali (first runner-up), Ashmit Patel (second runner-up) and Dolly Bindra (third runner-up).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 4 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The four finalists were Shweta Tiwari, Dalip Singh Rana (The Great Khali), Ashmit Patel and Dolly Bindra. The season ran from 3 October 2010 to 8 January 2011 — 16 housemates, hosted by Salman Khan on Colors TV.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 4. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+// ---------- Bigg Boss 3 (entry 427) ----------
+
+const SEASON3_FINALISTS = [
+  {
+    name: "Vindu Dara Singh",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s3-vindu-dara-singh.webp",
+    story:
+      "Vindu Dara Singh won Bigg Boss 3 on finale night, 26 December 2009 — after the season's most unusual route: in Week 10 the housemates themselves voted him out, but he was kept in a secret room instead of going home, re-entered, and went on to win.",
+  },
+  {
+    name: "Pravesh Rana",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s3-pravesh-rana.webp",
+    story:
+      "Pravesh Rana finished as first runner-up — a former Mr. India who entered as a wild card on Day 32 and played through to the final two.",
+  },
+  {
+    name: "Poonam Dhillon",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s3-poonam-dhillon.webp",
+    story:
+      "Poonam Dhillon finished as second runner-up in the finale on 26 December 2009.",
+  },
+];
+
+const SEASON3_EVICTIONS = [
+  ["Jaya Sawant", 5, "Evicted by public vote — the season's first eviction; she was Rakhi Sawant's mother"],
+  ["Kamaal Rashid Khan", 18, "Ejected for rude and violent behaviour. He later returned as a guest entrant on Day 46 and finally left on Day 67"],
+  ["Sherlyn Chopra", 26, "Evicted by public vote"],
+  ["Ismail Darbar", 33, "Evicted by public vote"],
+  ["Tannaz Irani", 40, "Evicted by public vote"],
+  ["Shamita Shetty", 41, "Walked out — she left the house for her sister Shilpa Shetty's wedding"],
+  ["Vinod Kambli", 47, "Evicted by public vote; a wild-card entrant from Day 33"],
+  ["Rohit Verma", 54, "Evicted by public vote"],
+  ["Raju Srivastav", 61, "Evicted by public vote"],
+  ["Claudia Ciesla", 68, "Evicted by public vote"],
+  ["Aditi Govitrikar", "75†", "Evicted by public vote"],
+  ["Bakhtiyar Irani", "79†", "Walked out — he accepted Bigg Boss's final-week offer of ₹10 lakh (Rs. 1 million) and left before the finale; the other three — Vindu, Pravesh and Poonam — are recorded as 'Didn't Take The Money'"],
+];
+
+const SEASON3_MOMENTS = [
+  {
+    title: "Amitabh Bachchan in the host's chair",
+    text: "The season aired with Amitabh Bachchan as the host — and it was Bachchan who announced Vindu Dara Singh's win at the finale.",
+  },
+  {
+    title: "Kamaal Rashid Khan: ejected — then back as a guest",
+    text: "On Day 18 Kamaal Rashid Khan threw a bottle at Rohit Verma (it hit Shamita Shetty instead), fought with Raju Srivastav and used highly offensive language; after the housemates threatened to leave the house if no action was taken, he was thrown out. He re-entered as a guest on Day 46, stayed until Day 67, and in Week 10 was even put in charge of the house for a week.",
+  },
+  {
+    title: "Shamita Shetty walked out for her sister's wedding",
+    text: "Shilpa Shetty appeared in the house on Day 39 to announce her wedding — and on Day 41 her sister Shamita walked out of the show to be there.",
+  },
+  {
+    title: "The winner was 'evicted' ten days before the finale",
+    text: "In Week 10 the housemates themselves voted Vindu Dara Singh out; instead of going home he was kept in a secret room, where he could watch the other contestants — then he returned, and won the season.",
+  },
+  {
+    title: "The final-week money offer",
+    text: "In the final week Bigg Boss offered any one of the last four contestants ₹10 lakh (Rs. 1 million) to leave the show if he was insecure about winning. Bakhtiyar Irani took it and walked out on Day 79†; Vindu, Pravesh and Poonam are recorded as 'Didn't Take The Money'.",
+  },
+  {
+    title: "The Hand Grenade",
+    text: "The season's signature twist: every evicted housemate left behind a 'Hand Grenade' — a penalty or chore imposed on a housemate of their choosing, from a week of simplicity with no make-up to washing everyone's clothes or cleaning the whole house.",
+  },
+];
+
+function renderSeason3Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 3 result — Vindu Dara Singh won the season",
+      `<p>Bigg Boss 3 — also called <em>Bigg Boss Tritiya!</em> — ran from <strong>4 October 2009</strong> to the finale on <strong>26 December 2009</strong>: 15 housemates, hosted by Amitabh Bachchan on Colors TV. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Vindu Dara Singh"],
+        ["1st runner-up", "Pravesh Rana"],
+        ["2nd runner-up", "Poonam Dhillon"],
+      ])}
+      <p style="margin-top:1rem;">The finalists were three, not four: Bakhtiyar Irani, the fourth person left in the final week, accepted Bigg Boss's offer of ₹10 lakh (Rs. 1 million) and walked out on Day 79†, before the finale — so the season record does not count him a finalist, and the other three are recorded as 'Didn't Take The Money'. The winner's own route was stranger still: Vindu Dara Singh had been voted out by the housemates on Day 68, only to be kept in a secret room and re-entered — and he came back to win.</p>
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 3's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 3 final three",
+      renderSeasonFinalistCards(SEASON3_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 3 eviction order — who left, and when",
+      `<p>Twelve housemates left before the finale, in this order (from the season's record) — Kamaal Rashid Khan's row covers his ejection and his later guest stay, as his note shows:</p>
+      ${renderSeasonEvictionTable(SEASON3_EVICTIONS)}
+      <p style="margin-top:1rem;">Days marked † are contested inside the season record: its Highlights list puts Aditi Govitrikar's eviction on Day 77 and Bakhtiyar Irani's walk-out on Day 78, against the status table's Day 75 and Day 79 — the days shown follow the status table, not settled fact. The finale day is likewise split — Day 83 in the status table and nominations table, Day 84 in the weekly summary and Highlights — so this page otherwise dates the season by its calendar dates. The finale followed on 26 December 2009: Poonam Dhillon (second runner-up) and Pravesh Rana (first runner-up) finished behind Vindu Dara Singh, the winner. Vindu's own Day 68 'eviction' is not in the table above: the housemates voted him out, but he was kept in a secret room and re-entered — it was not an exit.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 3 story — the season's defining moments",
+      renderSeasonMoments(SEASON3_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-4-voting/",
+        emoji: "💪",
+        title: "Bigg Boss 4 Voting",
+        text: "Shweta Tiwari's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 4 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-16-voting/",
+        emoji: "🎪",
+        title: "Bigg Boss 16 Voting",
+        text: "MC Stan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 16 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason3Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 3 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 3 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 3 voting closed when the season ended with the finale on 26 December 2009, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 3?</summary>
+        <div class="bb-faq-body">
+          <p>Vindu Dara Singh won Bigg Boss 3. The final order was: Pravesh Rana (first runner-up) and Poonam Dhillon (second runner-up). Bakhtiyar Irani, the fourth person left in the final week, is not counted a finalist — he took the final-week money offer and walked out before the finale.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 3 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The three finalists were Vindu Dara Singh, Pravesh Rana and Poonam Dhillon. The season ran from 4 October 2009 to 26 December 2009 — 15 housemates, hosted by Amitabh Bachchan on Colors TV.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 3. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+
+
 export function renderBiggBossPollPage(poll) {
   if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
   if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
@@ -8128,6 +8619,8 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-7-voting" ? renderSeason7Sections() : ""}
     ${poll.slug === "bigg-boss-6-voting" ? renderSeason6Sections() : ""}
     ${poll.slug === "bigg-boss-5-voting" ? renderSeason5Sections() : ""}
+ ${poll.slug === "bigg-boss-4-voting" ? renderSeason4Sections() : ""}
+ ${poll.slug === "bigg-boss-3-voting" ? renderSeason3Sections() : ""}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
@@ -8150,7 +8643,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : renderFaqSection(poll)}
   </div>
   `;
 }
