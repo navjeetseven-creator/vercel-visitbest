@@ -1380,6 +1380,62 @@ export const polls = [
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
     metaDesc: "Bigg Boss 11 voting: the official result — Shilpa Shinde won, ahead of Hina Khan, Vikas Gupta and Puneesh Sharma — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 11? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-10-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-10-voting.jpg",
+    title: "Bigg Boss 10 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 10 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 10 voting is closed — the season ended on 29 January 2017 with Manveer Gurjar, a commoner, lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the four finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 10. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 10 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 29 JANUARY 2017",
+    leaderNote: "🏆 FAN RE-VOTE: Manveer Gurjar — the official winner — also leads the fan re-vote as it stands, with 648 votes (28.2%), ahead of Bani Judge on 596. Official voting for Bigg Boss 10 is CLOSED: it ended with the season on 29 January 2017 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 10?",
+    textOptions: [
+      { id: "manveer-gurjar", label: "Manveer Gurjar", sub: "Winner · Bigg Boss 10", image: "/assets/bb-seasons/s10-manveer-gurjar.webp" },
+      { id: "bani-judge", label: "Bani Judge", sub: "1st runner-up · Bigg Boss 10", image: "/assets/bb-seasons/s10-bani-judge.webp" },
+      { id: "lopamudra-raut", label: "Lopamudra Raut", sub: "2nd runner-up · Bigg Boss 10", image: "/assets/bb-seasons/s10-lopamudra-raut.webp" },
+      { id: "manu-punjabi", label: "Manu Punjabi", sub: "3rd runner-up · Bigg Boss 10", image: "/assets/bb-seasons/s10-manu-punjabi.webp" },
+    ],
+    voteDistribution: {
+      "manveer-gurjar": 648,
+      "bani-judge": 596,
+      "lopamudra-raut": 548,
+      "manu-punjabi": 508,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 10 voting: the official result — Manveer Gurjar won, ahead of Bani Judge, Lopamudra Raut and Manu Punjabi — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 10? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-9-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-9-voting.jpg",
+    title: "Bigg Boss 9 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 9 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 9 voting is closed — the season ended on 23 January 2016 with Prince Narula lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the four finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 9. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 9 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 23 JANUARY 2016",
+    leaderNote: "🏆 FAN RE-VOTE: Prince Narula — the official winner — also leads the fan re-vote as it stands, with 648 votes (28.2%), ahead of Rishabh Sinha on 574. Official voting for Bigg Boss 9 is CLOSED: it ended with the season on 23 January 2016 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 9?",
+    textOptions: [
+      { id: "prince-narula", label: "Prince Narula", sub: "Winner · Bigg Boss 9", image: "/assets/bb-seasons/s9-prince-narula.webp" },
+      { id: "rishabh-sinha", label: "Rishabh Sinha", sub: "1st runner-up · Bigg Boss 9", image: "/assets/bb-seasons/s9-rishabh-sinha.webp" },
+      { id: "mandana-karimi", label: "Mandana Karimi", sub: "2nd runner-up · Bigg Boss 9", image: "/assets/bb-seasons/s9-mandana-karimi.webp" },
+      { id: "rochelle-rao", label: "Rochelle Rao", sub: "3rd runner-up · Bigg Boss 9", image: "/assets/bb-seasons/s9-rochelle-rao.webp" },
+    ],
+    voteDistribution: {
+      "prince-narula": 648,
+      "rishabh-sinha": 574,
+      "mandana-karimi": 548,
+      "rochelle-rao": 530,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 9 voting: the official result — Prince Narula won, ahead of Rishabh Sinha, Mandana Karimi and Rochelle Rao — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 9? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
   }
 ];
 
@@ -1647,6 +1703,8 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-14-voting", "🗳️ Bigg Boss 14 Voting"],
     ["bigg-boss-12-voting", "🗳️ Bigg Boss 12 Voting"],
     ["bigg-boss-11-voting", "🗳️ Bigg Boss 11 Voting"],
+    ["bigg-boss-10-voting", "🗳️ Bigg Boss 10 Voting"],
+    ["bigg-boss-9-voting", "🗳️ Bigg Boss 9 Voting"],
     ["bigg-boss-20-contestants", "👥 18 Contestants Wiki"],
     ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
@@ -3739,6 +3797,7 @@ export function renderBiggBossFinalePage(poll) {
 // (Entry 412: Season 18 now carries a link too.)
 // (Entries 416+417: Seasons 15 and 14 now carry links too.)
 // (Entries 418+419: Seasons 12 and 11 now carry links too.)
+// (Entries 420+421: Seasons 10 and 9 now carry links too.)
 const VOTING_HUB_SEASONS = [
   { season: 1, years: "2006–07", winner: "Rahul Roy" },
   { season: 2, years: "2008", winner: "Ashutosh Kaushik" },
@@ -3753,8 +3812,8 @@ const VOTING_HUB_SEASONS = [
     winner: "Gautam Gulati",
     note: "Season 8 ran into the Bigg Boss Halla Bol extension, where Gautam Gulati was declared the winner on 31 January 2015.",
   },
-  { season: 9, years: "2015–16", winner: "Prince Narula" },
-  { season: 10, years: "2016–17", winner: "Manveer Gurjar" },
+  { season: 9, years: "2015–16", winner: "Prince Narula", link: "/bigg-boss-9-voting/" },
+  { season: 10, years: "2016–17", winner: "Manveer Gurjar", link: "/bigg-boss-10-voting/" },
   { season: 11, years: "2017–18", winner: "Shilpa Shinde", link: "/bigg-boss-11-voting/" },
   { season: 12, years: "2018", winner: "Dipika Kakar", link: "/bigg-boss-12-voting/" },
   { season: 13, years: "2019–20", winner: "Sidharth Shukla", link: "/bigg-boss-13-voting/" },
@@ -3819,7 +3878,7 @@ function renderVotingHubSections() {
     storySection(
       "Vote by Season",
       "Bigg Boss voting by season — every season, every winner",
-      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 18, Bigg Boss 17, Bigg Boss 16, Bigg Boss 15, Bigg Boss 14, Bigg Boss 13, Bigg Boss 12 and Bigg Boss 11 are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
+      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 18, Bigg Boss 17, Bigg Boss 16, Bigg Boss 15, Bigg Boss 14, Bigg Boss 13, Bigg Boss 12, Bigg Boss 11, Bigg Boss 10 and Bigg Boss 9 are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
       <div class="bb-steps-grid">
         <a class="bb-step-card" href="/bigg-boss-20-voting/" style="display:block;text-decoration:none;color:inherit;">
           <div class="bb-step-num">S20</div>
@@ -6549,6 +6608,435 @@ function renderSeason11Faq() {
 }
 
 
+// ---------- Past-season voting pages (entries 420 + 421) ----------
+// Bigg Boss 10 (entry 420) and Bigg Boss 9 (entry 421) fan re-vote
+// pages, plus the hub grid links for Seasons 10 and 9. Every fact
+// below comes from the season research files, verified against the
+// seasons' Wikipedia articles (see the pack's sources.md): S10
+// facts in ~/workspace/bb-seasons/batch6-10-9/s10/facts.md, S9
+// facts in ~/workspace/bb-seasons/batch6-10-9/s9/facts.md. Neither
+// season's Wikipedia article states a winner's prize, so no
+// winner's prize figure is published (the press-reported figures
+// are not Wikipedia-stated and are not used). The only money
+// figures on either page are the two walk amounts Wikipedia
+// itself states: Manu Punjabi's finale walk figure on the Season
+// 10 page, and Kishwer Merchant's Day 89 walk figure on the
+// Season 9 page — each on its own page only. Season 10's Week 4
+// Immunity Medallion auction is told without its bid figures,
+// and Season 9's Road to Finale buzzer figure is not printed at
+// all. Exit days the research files flag as contested (†) follow
+// the files' primary account and are marked † on the pages with
+// a disclosure note, never presented as settled fact. The
+// renderers below reuse the shared season helpers defined with
+// the entry 408/409 pages.
+
+// ---------- Bigg Boss 10 (entry 420) ----------
+
+const SEASON10_FINALISTS = [
+  {
+    name: "Manveer Gurjar",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s10-manveer-gurjar.webp",
+    story:
+      "Manveer Gurjar won Bigg Boss 10 on finale night, 29 January 2017. A farmer from Haryana who entered as a commoner — one of the 'Indiawale' in the show's first commoners season — he beat Bani Judge in the final two. A week earlier he had won the Ticket to Finale in a shopping mall, topping an in-person public vote with 472 votes to Manu Punjabi's 338.",
+  },
+  {
+    name: "Bani Judge",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s10-bani-judge.webp",
+    story:
+      "Bani Judge — credited on the show as Bani J — finished as first runner-up in the finale on 29 January 2017, losing the final two to Manveer Gurjar.",
+  },
+  {
+    name: "Lopamudra Raut",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s10-lopamudra-raut.webp",
+    story:
+      "Lopamudra Raut finished as second runner-up when the finale order was declared on 29 January 2017.",
+  },
+  {
+    name: "Manu Punjabi",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/s10-manu-punjabi.webp",
+    story:
+      "Manu Punjabi's season had two exits: he walked out on Day 48† in an emergency exit and re-entered on Day 57 — spending Days 57–59 in the secret room before returning to the main house — and in the finale he accepted Bigg Boss's money offer of ₹10 lakh and left, recorded as 'Walked, 3rd runner-up'.",
+  },
+];
+
+const SEASON10_EVICTIONS = [
+  ["Akanksha Sharma", 14, "Evicted by public vote"],
+  ["Navin Prakash", "28†", "Evicted by public vote"],
+  ["Karan Mehra", 34, "Evicted by public vote — in a double eviction with Lokesh Kumari Sharma"],
+  ["Lokesh Kumari Sharma", 35, "Evicted by public vote"],
+  ["Elena Kazan", "49†", "Evicted by public vote; a wild-card entrant from Day 42"],
+  ["Sahil Anand", 56, "Evicted by public vote; a wild-card entrant from Day 42"],
+  ["Jason Shah", "56†", "Walked; a wild-card entrant from Day 42"],
+  ["Rahul Dev", 63, "Evicted by public vote"],
+  ["Priyanka Jagga", "69†", "Ejected — asked to leave by host Salman Khan after her behaviour towards him. Her full run: evicted on Day 7, re-entered as a wild card on Day 42†, evicted again on Day 56 but sent to the secret room instead of going home, then returned"],
+  ["Gaurav Chopra", 77, "Evicted by public vote"],
+  ["Swami Om", 81, "Ejected by Bigg Boss. His full run: fake-evicted on Day 21 and held in the secret room for three days (returned Day 24), walked out on Day 48 and returned on Day 50, then ejected on Day 81 after throwing urine on Bani and Rohan during a task"],
+  ["Nitibha Kaul", "91†", "Evicted by public vote"],
+  ["Antara Biswas (Monalisa)", "97†", "Evicted by public vote"],
+  ["Rohan Mehra", 102, "Evicted by public vote"],
+];
+
+const SEASON10_MOMENTS = [
+  {
+    title: "The first commoners season",
+    text: "For the first time, the house opened to common people — the 'Indiawale' — alongside celebrity housemates, and in Week 1 the Indiawale were made the Maliks (owners) of the house with the celebrities as their Sevaks (servants). It was also the first Bigg Boss season carried on an OTT platform, Voot, which ran the 'Unseen-Undekha' unseen footage.",
+  },
+  {
+    title: "The Immunity Medallion auction",
+    text: "In Week 4 the housemates bid for an Immunity Medallion, with Bigg Boss announcing that the winning bid would be cut from the winner's prize money. The three highest bids cancelled each other out, and Nitibha Kaul won the medallion with the second-highest bid.",
+  },
+  {
+    title: "Priyanka Jagga was thrown out by the host",
+    text: "Priyanka Jagga's season had four acts: evicted on Day 7, back as a wild card on Day 42†, 'evicted' again on Day 56 but sent to the secret room instead of going home — and finally asked to leave the house by Salman Khan himself after her behaviour towards him, recorded as an ejection on Day 69†.",
+  },
+  {
+    title: "Swami Om's ejection",
+    text: "During the Week 12 captaincy task, Swami Om threw his urine on Bani and Rohan; the task was cancelled, he was put in jail, and Bigg Boss then threw him out of the house — an ejection on Day 81, closing a run that had already included a fake eviction, a secret-room stay and a walk-out and return.",
+  },
+  {
+    title: "A ticket to the finale, won in a shopping mall",
+    text: "In the BB Solar System task's final leg, Manveer Gurjar and Manu Punjabi were taken to a shopping mall to ask the public to vote for them in person. Manveer won the Ticket to Finale week with 472 votes to Manu's 338.",
+  },
+];
+
+function renderSeason10Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 10 result — Manveer Gurjar won the season",
+      `<p>Bigg Boss 10 — styled <em>Bigg Boss: India Isse Apna Hi Ghar Samjho</em> — ran from <strong>16 October 2016</strong> to the finale on <strong>29 January 2017</strong>: 105 days, 18 housemates, hosted by Salman Khan on Colors TV. It was the first season to open the house to commoners, and the first carried on an OTT platform, Voot. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Manveer Gurjar"],
+        ["1st runner-up", "Bani Judge"],
+        ["2nd runner-up", "Lopamudra Raut"],
+        ["3rd runner-up", "Manu Punjabi"],
+      ])}
+      <p style="margin-top:1rem;">The finale's biggest turn came from Manu Punjabi: presented with Bigg Boss's money offer, he took the ₹10 lakh and left, and the season record carries him as 'Walked, 3rd runner-up'. The win itself made the season's experiment land — in the first year commoners lived alongside celebrities, a commoner took the trophy.</p>
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 10's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 10 final four",
+      renderSeasonFinalistCards(SEASON10_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 10 eviction order — who left, and when",
+      `<p>Fourteen housemates left before the finale, in this order (from the season's record) — two of them had more than one stint, as their notes show:</p>
+      ${renderSeasonEvictionTable(SEASON10_EVICTIONS)}
+      <p style="margin-top:1rem;">Days marked † are contested inside the season record: its housemates status table disagrees with its nominations table and weekly summary on nine exits or re-entries — Navin Prakash's, Elena Kazan's, Jason Shah's, Priyanka Jagga's, Nitibha Kaul's and Antara Biswas's days shown follow the primary account, not settled fact, and Manu Punjabi's mid-season walk is likewise contested (the nominations table's Day 48† against the status table's Day 44). The finale followed on Day 105: Manu Punjabi walked out with the ₹10 lakh offer (recorded as 'Walked, 3rd runner-up'), Lopamudra Raut finished as second runner-up and Bani Judge as first runner-up, before Manveer Gurjar was declared the winner.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 10 story — the season's defining moments",
+      renderSeasonMoments(SEASON10_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-9-voting/",
+        emoji: "👯",
+        title: "Bigg Boss 9 Voting",
+        text: "Prince Narula's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 9 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-16-voting/",
+        emoji: "🎪",
+        title: "Bigg Boss 16 Voting",
+        text: "MC Stan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 16 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason10Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 10 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 10 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 10 voting closed when the season ended with the finale on 29 January 2017, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 10?</summary>
+        <div class="bb-faq-body">
+          <p>Manveer Gurjar won Bigg Boss 10. The final order was: Bani Judge (first runner-up), Lopamudra Raut (second runner-up) and Manu Punjabi (third runner-up — he took the ₹10 lakh offer in the finale and walked out).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 10 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The four finalists were Manveer Gurjar, Bani Judge, Lopamudra Raut and Manu Punjabi. The season ran from 16 October 2016 to 29 January 2017 — 105 days and 18 housemates, hosted by Salman Khan on Colors TV.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 10. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+// ---------- Bigg Boss 9 (entry 421) ----------
+
+const SEASON9_FINALISTS = [
+  {
+    name: "Prince Narula",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s9-prince-narula.webp",
+    story:
+      "Prince Narula won Bigg Boss 9 on finale night, 23 January 2016. He arrived already a reality-show winner — he had won MTV Roadies 12 and MTV Splitsvilla 8 before entering the house — and in the finale week he also won the season's Ticket to Finale.",
+  },
+  {
+    name: "Rishabh Sinha",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s9-rishabh-sinha.webp",
+    story:
+      "Rishabh Sinha finished as first runner-up in the finale on 23 January 2016 — a remarkable run for a wild card: he entered on Day 22 as the season's first wild-card entrant and played through to the final two.",
+  },
+  {
+    name: "Mandana Karimi",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s9-mandana-karimi.webp",
+    story:
+      "Mandana Karimi finished as second runner-up in the finale on 23 January 2016. Her run included a fake eviction: told she had been evicted, she spent Days 38–39 in the secret room before returning to the house.",
+  },
+  {
+    name: "Rochelle Rao",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/s9-rochelle-rao.webp",
+    story:
+      "Rochelle Rao finished as third runner-up when the finale order was declared on 23 January 2016; she was the first of the four finalists eliminated on finale night.",
+  },
+];
+
+const SEASON9_EVICTIONS = [
+  ["Ankit Gera", 7, "Evicted by public vote"],
+  ["Roopal Tyagi", 14, "Evicted by public vote"],
+  ["Arvind Vegda", 20, "Evicted by public vote"],
+  ["Vikas Bhalla", 21, "Evicted by public vote"],
+  ["Yuvika Chaudhary", 28, "Evicted by public vote"],
+  ["Puneet Vashist", "35†", "Evicted by housemates; a Week 4 wild-card entrant"],
+  ["Aman Verma", 42, "Evicted by public vote"],
+  ["Rimi Sen", 51, "Evicted by public vote"],
+  ["Digangana Suryavanshi", 57, "Evicted by housemates — the housemates voted her out while Suyyash Rai was saved"],
+  ["Kawaljit Singh", 63, "Evicted by public vote; a wild-card entrant"],
+  ["Gizele Thakral", "77†", "Evicted by public vote after a direct nomination by the house captain"],
+  ["Nora Fatehi", 83, "Evicted by public vote; a wild-card entrant"],
+  ["Suyyash Rai", 84, "Evicted by public vote"],
+  ["Kishwer Merchant", 89, "Walked — she took the ₹15 lakh money bag in the Ticket to Finale twist"],
+  ["Priya Malik", "96†", "Evicted by public vote; a wild-card entrant and a former Big Brother Australia contestant"],
+  ["Keith Sequeira", "101†", "Evicted by public vote in the mid-week eviction, the last exit before the finale. His full run: walked out on Day 26 after a family emergency and re-entered on Day 48"],
+];
+
+const SEASON9_MOMENTS = [
+  {
+    title: "The Double Trouble pairs launch",
+    text: "The fourteen original housemates entered the house in seven pairs and were tied to each other; pairs nominated other pairs by consensus, though each housemate still faced eviction individually. The house itself followed the pairing theme, with all-double beds.",
+  },
+  {
+    title: "Kishwer Merchant's ₹15 lakh walk",
+    text: "In the finale week's Ticket to Finale twist, Bigg Boss announced that one of Kishwer Merchant and Prince Narula would have to leave with the money while the other stayed in the race. After a day of thinking, Kishwer took the money bag — ₹15 lakh, per the season's nominations record — on Day 89, and Prince won the Ticket to Finale.",
+  },
+  {
+    title: "Keith Sequeira's emergency exit and surprise return",
+    text: "Keith Sequeira walked out on Day 26 after a family emergency, then re-entered on Day 48 as a surprise birthday present for Rochelle Rao. In Week 12 he was nominated for the rest of the season through the Season Nomination task, and he was the last housemate evicted before the finale.",
+  },
+  {
+    title: "Mandana Karimi's fake eviction",
+    text: "Mandana Karimi was told she had been evicted after being named the worst performer of a task — but she was actually sent to the secret room for Days 38–39 while the housemates were made to talk about her. She returned and saved Prince and Rochelle from nomination.",
+  },
+  {
+    title: "Imam Siddiqui's guest week",
+    text: "Bigg Boss 6 finalist Imam Siddiqui entered as a guest for a week in Week 14 and ran the house through tasks such as 'Commander Imam'; in his 'Imam Ki Adalat' task, Priya Malik won and became the season's first finalist.",
+  },
+];
+
+function renderSeason9Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 9 result — Prince Narula won the season",
+      `<p>Bigg Boss 9 — styled <em>Bigg Boss Double Trouble</em> — ran from <strong>11 October 2015</strong> to the finale on <strong>23 January 2016</strong>: 104 days, 20 housemates, hosted by Salman Khan on Colors TV. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Prince Narula"],
+        ["1st runner-up", "Rishabh Sinha"],
+        ["2nd runner-up", "Mandana Karimi"],
+        ["3rd runner-up", "Rochelle Rao"],
+      ])}
+      <p style="margin-top:1rem;">The final four included a wild card: Rishabh Sinha, who had entered on Day 22, finished as first runner-up behind Prince Narula — while Mandana Karimi's road to the finale survived even a fake eviction and two days in the secret room.</p>
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 9's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 9 final four",
+      renderSeasonFinalistCards(SEASON9_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 9 eviction order — who left, and when",
+      `<p>Sixteen housemates left before the finale, in this order (from the season's record) — Keith Sequeira's row covers two stints, as his note shows:</p>
+      ${renderSeasonEvictionTable(SEASON9_EVICTIONS)}
+      <p style="margin-top:1rem;">Entries marked † are contested inside the season record: Puneet Vashist is flagged because the status table implies he entered on Day 1, when the article's own housemates list and weekly summary make him a Week 4 wild-card entrant (his exit day is agreed); Gizele Thakral's exit manner is disputed — the status table says 'Evicted by Captain', the weekly summary says a public vote after the captain's direct nomination, and the table follows the public-vote account; and Priya Malik's and Keith Sequeira's days differ between accounts — so the entries shown follow the primary account, not settled fact. The finale followed on Day 104: Rochelle Rao (third runner-up), Mandana Karimi (second runner-up) and Rishabh Sinha (first runner-up) finished behind Prince Narula, the winner.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 9 story — the season's defining moments",
+      renderSeasonMoments(SEASON9_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-10-voting/",
+        emoji: "🏡",
+        title: "Bigg Boss 10 Voting",
+        text: "Manveer Gurjar's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 10 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-16-voting/",
+        emoji: "🎪",
+        title: "Bigg Boss 16 Voting",
+        text: "MC Stan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 16 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason9Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 9 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 9 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 9 voting closed when the season ended with the finale on 23 January 2016, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 9?</summary>
+        <div class="bb-faq-body">
+          <p>Prince Narula won Bigg Boss 9. The final order was: Rishabh Sinha (first runner-up — a wild card who had entered on Day 22), Mandana Karimi (second runner-up) and Rochelle Rao (third runner-up).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 9 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The four finalists were Prince Narula, Rishabh Sinha, Mandana Karimi and Rochelle Rao. The season ran from 11 October 2015 to 23 January 2016 — 104 days and 20 housemates, hosted by Salman Khan on Colors TV.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 9. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+
 export function renderBiggBossPollPage(poll) {
   if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
   if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
@@ -6607,6 +7095,8 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-14-voting" ? renderSeason14Sections() : ""}
     ${poll.slug === "bigg-boss-12-voting" ? renderSeason12Sections() : ""}
     ${poll.slug === "bigg-boss-11-voting" ? renderSeason11Sections() : ""}
+    ${poll.slug === "bigg-boss-10-voting" ? renderSeason10Sections() : ""}
+    ${poll.slug === "bigg-boss-9-voting" ? renderSeason9Sections() : ""}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
@@ -6629,7 +7119,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : renderFaqSection(poll)}
   </div>
   `;
 }
