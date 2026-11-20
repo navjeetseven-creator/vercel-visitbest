@@ -1138,6 +1138,38 @@ export const polls = [
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
     metaDesc: "Bigg Boss 13 voting: the official result — Sidharth Shukla won, ahead of Asim Riaz, Shehnaaz Gill, Rashami Desai, Arti Singh and Paras Chhabra — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 13? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-18-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-18-voting.jpg",
+    title: "Bigg Boss 18 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 18 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 18 voting is closed — the season ended on 19 January 2025 with Karan Veer Mehra lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the six finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 18. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 18 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 19 JANUARY 2025",
+    leaderNote: "🏆 FAN RE-VOTE: Karan Veer Mehra — the official winner — also leads the fan re-vote as it stands, with 574 votes (25.0%), ahead of Vivian Dsena on 512. Official voting for Bigg Boss 18 is CLOSED: it ended with the season on 19 January 2025 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 18?",
+    textOptions: [
+      { id: "karan-veer-mehra", label: "Karan Veer Mehra", sub: "Winner · Bigg Boss 18", image: "/assets/bb-seasons/s18-karan-veer-mehra.webp" },
+      { id: "vivian-dsena", label: "Vivian Dsena", sub: "1st runner-up · Bigg Boss 18", image: "/assets/bb-seasons/s18-vivian-dsena.webp" },
+      { id: "rajat-dalal", label: "Rajat Dalal", sub: "2nd runner-up · Bigg Boss 18", image: "/assets/bb-seasons/s18-rajat-dalal.webp" },
+      { id: "avinash-mishra", label: "Avinash Mishra", sub: "3rd runner-up · Bigg Boss 18", image: "/assets/bb-seasons/s18-avinash-mishra.webp" },
+      { id: "chum-darang", label: "Chum Darang", sub: "4th runner-up · Bigg Boss 18", image: "/assets/bb-seasons/s18-chum-darang.webp" },
+      { id: "eisha-singh", label: "Eisha Singh", sub: "6th finalist · Bigg Boss 18", image: "/assets/bb-seasons/s18-eisha-singh.webp" },
+    ],
+    voteDistribution: {
+      "karan-veer-mehra": 574,
+      "vivian-dsena": 512,
+      "rajat-dalal": 438,
+      "avinash-mishra": 326,
+      "chum-darang": 268,
+      "eisha-singh": 182,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 18 voting: the official result — Karan Veer Mehra won, ahead of Vivian Dsena, Rajat Dalal, Avinash Mishra, Chum Darang and Eisha Singh — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 18? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
   }
 ];
 
@@ -1397,6 +1429,7 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-19-voting", "🗳️ Bigg Boss 19 Voting"],
     ["bigg-boss-16-voting", "🗳️ Bigg Boss 16 Voting"],
     ["bigg-boss-13-voting", "🗳️ Bigg Boss 13 Voting"],
+    ["bigg-boss-18-voting", "🗳️ Bigg Boss 18 Voting"],
     ["bigg-boss-20-contestants", "👥 18 Contestants Wiki"],
     ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
@@ -3486,6 +3519,7 @@ export function renderBiggBossFinalePage(poll) {
 // (Entry 408+409 rebase: Seasons 17 and 19 now carry links — their voting
 // pages ship in this pack; the rest still open one by one.)
 // (Entries 410+411: Seasons 16 and 13 now carry links too.)
+// (Entry 412: Season 18 now carries a link too.)
 const VOTING_HUB_SEASONS = [
   { season: 1, years: "2006–07", winner: "Rahul Roy" },
   { season: 2, years: "2008", winner: "Ashutosh Kaushik" },
@@ -3509,7 +3543,7 @@ const VOTING_HUB_SEASONS = [
   { season: 15, years: "2021–22", winner: "Tejasswi Prakash" },
   { season: 16, years: "2022–23", winner: "MC Stan", link: "/bigg-boss-16-voting/" },
   { season: 17, years: "2023–24", winner: "Munawar Faruqui", link: "/bigg-boss-17-voting/" },
-  { season: 18, years: "2024–25", winner: "Karan Veer Mehra" },
+  { season: 18, years: "2024–25", winner: "Karan Veer Mehra", link: "/bigg-boss-18-voting/" },
   { season: 19, years: "2025", winner: "Gaurav Khanna", link: "/bigg-boss-19-voting/" },
 ];
 
@@ -3566,7 +3600,7 @@ function renderVotingHubSections() {
     storySection(
       "Vote by Season",
       "Bigg Boss voting by season — every season, every winner",
-      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 17, Bigg Boss 16 and Bigg Boss 13 are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
+      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 18, Bigg Boss 17, Bigg Boss 16 and Bigg Boss 13 are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
       <div class="bb-steps-grid">
         <a class="bb-step-card" href="/bigg-boss-20-voting/" style="display:block;text-decoration:none;color:inherit;">
           <div class="bb-step-num">S20</div>
@@ -4541,6 +4575,233 @@ function renderSeason13Faq() {
 }
 
 
+// ---------- Past-season voting pages (entry 412) ----------
+// Bigg Boss 18 (entry 412) fan re-vote page. Every fact below comes from
+// the season research file, verified against the season's Wikipedia
+// article (see the pack's sources.md): S18 facts in
+// ~/workspace/bb-seasons/batch2-19-18/s18/facts.md. No prize figure
+// appears on this page: none is stated in the Wikipedia article body
+// (the ₹50 lakh figure appears only inside a cited press headline in
+// its references), so it is not published. The winner's name follows
+// the site's existing spelling, "Karan Veer Mehra" — Wikipedia's own
+// article is internally inconsistent (infobox "Karanveer Mehra",
+// housemates list "Karan Veer Mehra"). The renderers below reuse the
+// shared season helpers defined with the entry 408/409 pages.
+
+// ---------- Bigg Boss 18 (entry 412) ----------
+
+const SEASON18_FINALISTS = [
+  {
+    name: "Karan Veer Mehra",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s18-karan-veer-mehra.webp",
+    story:
+      "Karan Veer Mehra won Bigg Boss 18 in the finale on 19 January 2025, closing the 105-day 'Time Ka Tandav' season. Finale coverage agreed on the result across the board — Bollywood Hungama, the Economic Times, DNA and the Daily Pioneer all recorded Karan Veer Mehra as the winner and Vivian Dsena as first runner-up.",
+  },
+  {
+    name: "Vivian Dsena",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s18-vivian-dsena.webp",
+    story:
+      "Vivian Dsena finished as first runner-up in the Day 105 finale. Bigg Boss had marked him out on the very first night: on premiere night, Bigg Boss predicted Vivian Dsena and Alice Kaushik as the season's top two — Vivian lived up to the prediction, while Alice Kaushik was evicted on Day 49.",
+  },
+  {
+    name: "Rajat Dalal",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s18-rajat-dalal.webp",
+    story:
+      "Rajat Dalal finished as second runner-up when the finale order was declared on Day 105, 19 January 2025.",
+  },
+  {
+    name: "Avinash Mishra",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/s18-avinash-mishra.webp",
+    story:
+      "Avinash Mishra finished as third runner-up in the Day 105 finale on 19 January 2025.",
+  },
+  {
+    name: "Chum Darang",
+    placing: "4th runner-up",
+    image: "/assets/bb-seasons/s18-chum-darang.webp",
+    story:
+      "Chum Darang finished as fourth runner-up in the Day 105 finale on 19 January 2025.",
+  },
+  {
+    name: "Eisha Singh",
+    placing: "6th finalist",
+    image: "/assets/bb-seasons/s18-eisha-singh.webp",
+    story:
+      "Eisha Singh completed the season's final six: in the finale order she was placed as the sixth finalist, leaving before the runner-up placings were declared on Day 105.",
+  },
+];
+
+const SEASON18_EVICTIONS = [
+  ["Gunratan Sadavarte", 10, "Walked"],
+  ["Hema Sharma", 14, ""],
+  ["Muskan Bamne", 20, "Evicted by housemates"],
+  ["Nyrraa Banerjee", 21, ""],
+  ["Shehzada Dhami", 28, ""],
+  ["Arfeen Khan", 35, ""],
+  ["Alice Kaushik", 49, ""],
+  ["Aditi Mistry", 56, "Evicted by housemates"],
+  ["Tajinder Bagga", 70, ""],
+  ["Digvijay Singh Rathee", 75, "Evicted by housemates"],
+  ["Edin Rose", 77, ""],
+  ["Yamini Malhotra", 77, ""],
+  ["Sara Arfeen Khan", 84, ""],
+  ["Kashish Kapoor", 91, ""],
+  ["Shrutika Arjun", 95, ""],
+  ["Chahat Pandey", 98, ""],
+  ["Shilpa Shirodkar", 102, ""],
+];
+
+const SEASON18_MOMENTS = [
+  {
+    title: "The 'Time Ka Tandav' theme",
+    text: "The season was built around time: a 'Time God' concept ran through the game, and the house carried a Tandav activity room.",
+  },
+  {
+    title: "Bigg Boss's premiere-night prediction",
+    text: "On launch night, Bigg Boss predicted Vivian Dsena and Alice Kaushik as the season's top two. Vivian Dsena did finish first runner-up — Alice Kaushik was evicted on Day 49.",
+  },
+  {
+    title: "A donkey in the house",
+    text: "A donkey named Gadhraj was kept in the house during premiere week and was removed on Day 7.",
+  },
+  {
+    title: "The contestant who never entered",
+    text: "Nia Sharma was announced as the season's first confirmed contestant at the Khatron Ke Khiladi 14 finale — and later announced she would not participate after all.",
+  },
+  {
+    title: "A Season 1 face returned",
+    text: "Ravi Kishan, a Bigg Boss 1 finalist, hosted the 'Haaye Daiya with Ravi Bhaiyya' segment, and Rohit Shetty guest-hosted Weekend Ka Vaar in Week 5.",
+  },
+];
+
+function renderSeason18Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 18 result — Karan Veer Mehra won the season",
+      `<p>Bigg Boss 18 — styled <em>Bigg Boss: Time Ka Tandav</em> — ran from <strong>6 October 2024</strong> to the finale on <strong>19 January 2025</strong>: 105 days, 23 housemates, hosted by Salman Khan on Colors TV and JioCinema. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Karan Veer Mehra"],
+        ["1st runner-up", "Vivian Dsena"],
+        ["2nd runner-up", "Rajat Dalal"],
+        ["3rd runner-up", "Avinash Mishra"],
+        ["4th runner-up", "Chum Darang"],
+        ["6th finalist", "Eisha Singh"],
+      ])}
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 18's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 18 final six",
+      renderSeasonFinalistCards(SEASON18_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 18 eviction order — who left, and when",
+      `<p>Seventeen housemates left before the finale, in this order (from the season's record):</p>
+      ${renderSeasonEvictionTable(SEASON18_EVICTIONS)}
+      <p style="margin-top:1rem;">The finale followed on Day 105: Eisha Singh left as the sixth finalist, then Chum Darang (fourth runner-up), Avinash Mishra (third runner-up), Rajat Dalal (second runner-up) and Vivian Dsena (first runner-up), before Karan Veer Mehra was declared the winner.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 18 story — the season's defining moments",
+      renderSeasonMoments(SEASON18_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-16-voting/",
+        emoji: "🎪",
+        title: "Bigg Boss 16 Voting",
+        text: "MC Stan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 16 page →",
+      },
+      {
+        href: "/bigg-boss-13-voting/",
+        emoji: "🌟",
+        title: "Bigg Boss 13 Voting",
+        text: "Sidharth Shukla's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 13 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason18Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 18 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 18 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 18 voting closed when the season ended with the finale on 19 January 2025, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 18?</summary>
+        <div class="bb-faq-body">
+          <p>Karan Veer Mehra won Bigg Boss 18. The final order was: Vivian Dsena (first runner-up), Rajat Dalal (second runner-up), Avinash Mishra (third runner-up), Chum Darang (fourth runner-up) and Eisha Singh (sixth finalist).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 18 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The six finalists were Karan Veer Mehra, Vivian Dsena, Rajat Dalal, Avinash Mishra, Chum Darang and Eisha Singh. The season ran from 6 October 2024 to 19 January 2025 — 105 days and 23 housemates, hosted by Salman Khan on Colors TV and JioCinema.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 18. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+
 export function renderBiggBossPollPage(poll) {
   if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
   if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
@@ -4591,6 +4852,7 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-19-voting" ? renderSeason19Sections() : ""}
     ${poll.slug === "bigg-boss-16-voting" ? renderSeason16Sections() : ""}
     ${poll.slug === "bigg-boss-13-voting" ? renderSeason13Sections() : ""}
+    ${poll.slug === "bigg-boss-18-voting" ? renderSeason18Sections() : ""}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
@@ -4613,7 +4875,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : renderFaqSection(poll)}
   </div>
   `;
 }
