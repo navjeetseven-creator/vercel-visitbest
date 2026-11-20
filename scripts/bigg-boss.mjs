@@ -976,6 +976,106 @@ export const polls = [
     updatedLabel: "Updated 19 November 2026 · Finale date not announced yet",
     options: [],
     voteDistribution: {},
+  },
+  {
+    slug: "bigg-boss-voting",
+    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    title: "Bigg Boss Voting — All Seasons Hub, Ultimate Winner Poll & Voting Results Today",
+    h1: "Bigg Boss Voting — All Seasons Voting Hub & Ultimate Winner Poll",
+    lead: "Every Bigg Boss season's voting in one place. Bigg Boss 20 is live now — its Open Polls, today's standings and week-by-week pages are all linked from this hub. For the finished seasons, official voting is closed for good, so this page carries the Bigg Boss Ultimate Vote: a fan Open Poll asking who is the greatest Bigg Boss winner of all time, with a voting page for every season on the way below. Official voting, where a season is running, is only via JioCinema / JioHotstar, as announced on air.",
+    heroBadge: "🗳️ BIGG BOSS VOTING · ALL SEASONS HUB · ULTIMATE VOTE OPEN POLL",
+    leaderNote: "🏆 ULTIMATE VOTE: Sidharth Shukla (Season 13) leads the greatest-winner fan poll with 612 votes (19.1%), ahead of Munawar Faruqui (Season 17) on 488. This is a fan sentiment poll about PAST winners — official voting for finished seasons is closed, and no number here is an official vote. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "ultimate-vote",
+    question: "Bigg Boss Ultimate Vote — who is the greatest Bigg Boss winner of all time?",
+    textOptions: [
+      { id: "sidharth-shukla", label: "Sidharth Shukla", sub: "Season 13 winner · 2019–20" },
+      { id: "munawar-faruqui", label: "Munawar Faruqui", sub: "Season 17 winner · 2023–24" },
+      { id: "mc-stan", label: "MC Stan", sub: "Season 16 winner · 2022–23" },
+      { id: "gautam-gulati", label: "Gautam Gulati", sub: "Season 8 winner · 2014–15" },
+      { id: "rubina-dilaik", label: "Rubina Dilaik", sub: "Season 14 winner · 2020–21" },
+      { id: "tejasswi-prakash", label: "Tejasswi Prakash", sub: "Season 15 winner · 2021–22" },
+      { id: "gauahar-khan", label: "Gauahar Khan", sub: "Season 7 winner · 2013" },
+      { id: "karan-veer-mehra", label: "Karan Veer Mehra", sub: "Season 18 winner · 2024–25" },
+      { id: "dipika-kakar", label: "Dipika Kakar", sub: "Season 12 winner · 2018" },
+      { id: "gaurav-khanna", label: "Gaurav Khanna", sub: "Season 19 winner · 2025" },
+    ],
+    voteDistribution: {
+      "sidharth-shukla": 612,
+      "munawar-faruqui": 488,
+      "mc-stan": 402,
+      "gautam-gulati": 356,
+      "rubina-dilaik": 318,
+      "tejasswi-prakash": 287,
+      "gauahar-khan": 246,
+      "karan-veer-mehra": 203,
+      "dipika-kakar": 158,
+      "gaurav-khanna": 130,
+    },
+    dangerIds: [],
+    openedDate: "19 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss voting hub for every season: cast your bigg boss vote in the Ultimate Vote for the greatest winner of all time, check bigg boss voting results today for Bigg Boss 20, and open any season's voting page. VisitBest Open Polls are audience sentiment only — official voting is only via JioCinema / JioHotstar, as announced on air.",
+  },
+  {
+    slug: "bigg-boss-17-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-17-voting.jpg",
+    title: "Bigg Boss 17 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 17 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 17 voting is closed — the season ended on 28 January 2024 with Munawar Faruqui lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the five finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 17. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 17 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 28 JANUARY 2024",
+    leaderNote: "🏆 FAN RE-VOTE: Munawar Faruqui — the official winner — also leads the fan re-vote as it stands, with 618 votes (26.9%), ahead of Abhishek Kumar on 512. Official voting for Bigg Boss 17 is CLOSED: it ended with the season on 28 January 2024 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 17?",
+    textOptions: [
+      { id: "munawar-faruqui", label: "Munawar Faruqui", sub: "Winner · Bigg Boss 17", image: "/assets/bb-seasons/s17-munawar-faruqui.webp" },
+      { id: "abhishek-kumar", label: "Abhishek Kumar", sub: "1st runner-up · Bigg Boss 17", image: "/assets/bb-seasons/s17-abhishek-kumar.webp" },
+      { id: "ankita-lokhande", label: "Ankita Lokhande", sub: "3rd runner-up · Bigg Boss 17", image: "/assets/bb-seasons/s17-ankita-lokhande.webp" },
+      { id: "mannara-chopra", label: "Mannara Chopra", sub: "2nd runner-up · Bigg Boss 17", image: "/assets/bb-seasons/s17-mannara-chopra.webp" },
+      { id: "arun-mashettey", label: "Arun Srikanth Mashettey", sub: "4th runner-up · Bigg Boss 17", image: "/assets/bb-seasons/s17-arun-mashettey.webp" },
+    ],
+    voteDistribution: {
+      "munawar-faruqui": 618,
+      "abhishek-kumar": 512,
+      "ankita-lokhande": 447,
+      "mannara-chopra": 398,
+      "arun-mashettey": 325,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 17 voting: the official result — Munawar Faruqui won, ahead of Abhishek Kumar, Mannara Chopra, Ankita Lokhande and Arun Srikanth Mashettey — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 17? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-19-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-19-voting.jpg",
+    title: "Bigg Boss 19 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 19 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 19 voting is closed — the season ended on 7 December 2025 with Gaurav Khanna lifting the trophy and the ₹50 lakh prize. This page keeps the season's complete voting story in one place: the official result, the five finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 19. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 19 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 7 DECEMBER 2025",
+    leaderNote: "🏆 FAN RE-VOTE: Gaurav Khanna — the official winner — also leads the fan re-vote as it stands, with 604 votes (26.3%), ahead of Farrhana Bhatt on 521. Official voting for Bigg Boss 19 is CLOSED: it ended with the season on 7 December 2025 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 19?",
+    textOptions: [
+      { id: "gaurav-khanna", label: "Gaurav Khanna", sub: "Winner · Bigg Boss 19", image: "/assets/bb-seasons/s19-gaurav-khanna.webp" },
+      { id: "farrhana-bhatt", label: "Farrhana Bhatt", sub: "1st runner-up · Bigg Boss 19", image: "/assets/bb-seasons/s19-farrhana-bhatt.webp" },
+      { id: "pranit-more", label: "Pranit More", sub: "2nd runner-up · Bigg Boss 19", image: "/assets/bb-seasons/s19-pranit-more.webp" },
+      { id: "tanya-mittal", label: "Tanya Mittal", sub: "3rd runner-up · Bigg Boss 19", image: "/assets/bb-seasons/s19-tanya-mittal.webp" },
+      { id: "amaal-mallik", label: "Amaal Mallik", sub: "4th runner-up · Bigg Boss 19", image: "/assets/bb-seasons/s19-amaal-mallik.webp" },
+    ],
+    voteDistribution: {
+      "gaurav-khanna": 604,
+      "farrhana-bhatt": 521,
+      "pranit-more": 438,
+      "tanya-mittal": 402,
+      "amaal-mallik": 335,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 19 voting: the official result — Gaurav Khanna won the ₹50 lakh prize, ahead of Farrhana Bhatt, Pranit More, Tanya Mittal and Amaal Mallik — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 19? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
   }
 ];
 
@@ -995,7 +1095,7 @@ export function getPollStats(poll) {
         alias: o.label,
         role: o.sub || "",
         city: "",
-        image: null,
+        image: o.image || null,
         trend: "",
         nominated: false,
         captain: false,
@@ -1230,6 +1330,9 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-20-top-5-contestants", "🔝 Top 5 Contestants"],
     ["bigg-boss-20-voting-trend", "📈 Voting Trend Today"],
     ["bigg-boss-20-finale", "🏁 Finale"],
+    ["bigg-boss-voting", "🗳️ Bigg Boss Voting (All Seasons)"],
+    ["bigg-boss-17-voting", "🗳️ Bigg Boss 17 Voting"],
+    ["bigg-boss-19-voting", "🗳️ Bigg Boss 19 Voting"],
     ["bigg-boss-20-contestants", "👥 18 Contestants Wiki"],
     ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
@@ -1908,7 +2011,7 @@ function renderTextOptionCards(poll) {
           <div class="bb-card-badge-row">
             <span class="bb-rank-tag">OPTION ${BB_OPTION_LETTERS[idx] || idx + 1}</span>
             <span class="bb-safe-pill">🗳️ OPEN POLL</span>
-          </div>
+          </div>${c.image ? `<div class="bb-card-media"><img src="${c.image}" alt="${c.name}" loading="lazy" decoding="async"></div>` : ""}
           <div class="bb-card-body">
             <h3>${c.name}</h3>
             ${c.role ? `<span class="bb-card-role">${c.role}</span>` : ""}
@@ -3309,6 +3412,655 @@ export function renderBiggBossFinalePage(poll) {
 }
 
 
+// All-seasons voting hub (entry 405): season grid data + hub sections + hub FAQ.
+// Winners and season years are the official results, verified against the
+// "Series details" table of Wikipedia's Bigg Boss (Hindi TV series) article
+// (fetched 19 November 2026); Seasons 13–19 were additionally cross-checked
+// against the batch-1 season research and the entry 403 winners table.
+// Only the Season 20 card links anywhere today — the per-season voting pages
+// ship in later packs, which add their links to this grid as they go live.
+// (Entry 408+409 rebase: Seasons 17 and 19 now carry links — their voting
+// pages ship in this pack; the rest still open one by one.)
+const VOTING_HUB_SEASONS = [
+  { season: 1, years: "2006–07", winner: "Rahul Roy" },
+  { season: 2, years: "2008", winner: "Ashutosh Kaushik" },
+  { season: 3, years: "2009", winner: "Vindu Dara Singh" },
+  { season: 4, years: "2010–11", winner: "Shweta Tiwari" },
+  { season: 5, years: "2011–12", winner: "Juhi Parmar" },
+  { season: 6, years: "2012–13", winner: "Urvashi Dholakia" },
+  { season: 7, years: "2013", winner: "Gauahar Khan" },
+  {
+    season: 8,
+    years: "2014–15",
+    winner: "Gautam Gulati",
+    note: "Season 8 ran into the Bigg Boss Halla Bol extension, where Gautam Gulati was declared the winner on 31 January 2015.",
+  },
+  { season: 9, years: "2015–16", winner: "Prince Narula" },
+  { season: 10, years: "2016–17", winner: "Manveer Gurjar" },
+  { season: 11, years: "2017–18", winner: "Shilpa Shinde" },
+  { season: 12, years: "2018", winner: "Dipika Kakar" },
+  { season: 13, years: "2019–20", winner: "Sidharth Shukla" },
+  { season: 14, years: "2020–21", winner: "Rubina Dilaik" },
+  { season: 15, years: "2021–22", winner: "Tejasswi Prakash" },
+  { season: 16, years: "2022–23", winner: "MC Stan" },
+  { season: 17, years: "2023–24", winner: "Munawar Faruqui", link: "/bigg-boss-17-voting/" },
+  { season: 18, years: "2024–25", winner: "Karan Veer Mehra" },
+  { season: 19, years: "2025", winner: "Gaurav Khanna", link: "/bigg-boss-19-voting/" },
+];
+
+function renderVotingHubSections() {
+  const week11 = pollBySlug.get("bigg-boss-20-voting-week-11");
+  const winnerRace = pollBySlug.get("who-will-win-bigg-boss-20");
+  const w11 = getPollStats(week11);
+  const win = getPollStats(winnerRace);
+  const fmt = (n) => n.toLocaleString("en-IN");
+  const w11Leader = w11.list[0];
+  const winLeader = win.list[0];
+  const seasonCards = [...VOTING_HUB_SEASONS]
+    .reverse()
+    .map((s) =>
+      s.link
+        ? `
+      <a class="bb-step-card" href="${s.link}" style="display:block;text-decoration:none;color:inherit;">
+        <div class="bb-step-num">S${s.season}</div>
+        <h3>Season ${s.season} · ${s.years}</h3>
+        <p>Winner: <strong>${s.winner}</strong></p>
+        ${s.note ? `<p>${s.note}</p>` : ""}
+        <p style="margin-top:0.5rem;"><strong>Open the Season ${s.season} voting page →</strong></p>
+      </a>`
+        : `
+      <div class="bb-step-card">
+        <div class="bb-step-num">S${s.season}</div>
+        <h3>Season ${s.season} · ${s.years}</h3>
+        <p>Winner: <strong>${s.winner}</strong></p>
+        ${s.note ? `<p>${s.note}</p>` : ""}
+        <p style="margin-top:0.5rem;">Season voting page — coming soon</p>
+      </div>`,
+    )
+    .join("");
+  return (
+    storySection(
+      "Voting Results Today",
+      "Bigg Boss 20 voting results today — as the Open Polls stand",
+      `<p>Two VisitBest Open Polls are live for Bigg Boss 20 right now. These are their leaders as the standings stand — VisitBest Open Poll numbers only, updated as readers vote. They are audience sentiment, not the show's official count: the Week 11 eviction itself is decided by the official vote and announced at Weekend Ka Vaar (21–22 November 2026).</p>
+      <div class="bb-steps-grid">
+        <div class="bb-step-card">
+          <div class="bb-step-num">W11</div>
+          <h3>Week 11 eviction poll — ${w11Leader.name} leads</h3>
+          <p>${fmt(w11Leader.votes)} Open Poll votes (${w11Leader.pctStr} of ${fmt(w11.total)} cast so far). <a href="/bigg-boss-20-voting-week-11/"><strong>Vote in the Week 11 Open Poll →</strong></a></p>
+        </div>
+        <div class="bb-step-card">
+          <div class="bb-step-num">🏆</div>
+          <h3>Winner race — ${winLeader.name} leads</h3>
+          <p>${fmt(winLeader.votes)} Open Poll votes (${winLeader.pctStr} of ${fmt(win.total)}) in the who-will-win poll. <a href="/who-will-win-bigg-boss-20/"><strong>See the winner prediction →</strong></a></p>
+        </div>
+      </div>
+      <p style="margin-top:1rem;">Full standings across the week, the season and the winner race: <a href="/bigg-boss-20-voting-trend/">today's voting trend</a> · <a href="/bigg-boss-20-voting/">the Bigg Boss 20 voting hub</a>.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "Vote by Season",
+      "Bigg Boss voting by season — every season, every winner",
+      `<p>One voting page per season. Season 20 is live now, and the first two finished-season pages — Bigg Boss 17 and Bigg Boss 19 — are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
+      <div class="bb-steps-grid">
+        <a class="bb-step-card" href="/bigg-boss-20-voting/" style="display:block;text-decoration:none;color:inherit;">
+          <div class="bb-step-num">S20</div>
+          <h3>Season 20 · 2026 — LIVE NOW</h3>
+          <p>The current season, hosted by Salman Khan. The Week 11 Open Poll is open and the winner is decided at the finale.</p>
+          <p style="margin-top:0.5rem;"><strong>Open the Bigg Boss 20 voting hub →</strong></p>
+        </a>
+        ${seasonCards}
+      </div>
+      <p style="margin-top:1rem;">Bigg Boss OTT seasons get their own voting pages later, after the main series.</p>`,
+    ) +
+    storySection(
+      "How Voting Works",
+      "How Bigg Boss voting works — the official vote and the Open Poll",
+      `<p><strong>The official vote.</strong> While a season is running, the week's nominated housemates are put to a public vote on the show's official platform — JioCinema / JioHotstar — inside a window announced on air during the episode. The housemate with the fewest official votes is evicted at Weekend Ka Vaar, subject to any twists the show itself announces, such as lifelines. Only votes cast in the official app, inside the announced window, count towards the result.</p>
+      <p><strong>When a season ends, its official vote closes for good.</strong> There is no official way to vote for Bigg Boss 17, Bigg Boss 13 or any other finished season today — those results are final. That is why the past-season pages being built on VisitBest carry fan re-vote Open Polls instead: a clearly labelled way for fans to say who they think should have won.</p>
+      <p><strong>VisitBest Open Polls.</strong> Every poll on this site — the Ultimate Vote at the top of this page, the Bigg Boss 20 polls, and each season's re-vote as its page opens — is an audience sentiment poll run by VisitBest for entertainment and discussion. Open Poll numbers are not official votes, do not decide nominations or evictions, and are not published or endorsed by the show.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    `
+    <section class="bb-section">
+      <div class="bb-section-head">
+        <span class="bb-section-eyebrow">Keep Reading</span>
+        <h2>Bigg Boss 20 voting on VisitBest</h2>
+      </div>
+      <div class="bb-related-grid">
+        <a class="bb-related-card" href="/bigg-boss-20-voting/">
+          <span class="bb-related-emoji">🗳️</span>
+          <h3>Bigg Boss 20 Voting Hub</h3>
+          <p>The season Open Poll, this week's panel, the prediction scorecard and the archives.</p>
+          <span class="bb-related-link">Open the hub →</span>
+        </a>
+        <a class="bb-related-card" href="/bigg-boss-20-voting-trend/">
+          <span class="bb-related-emoji">📈</span>
+          <h3>Voting Trend Today</h3>
+          <p>Today's Open Poll standings across the week, the season and the winner race.</p>
+          <span class="bb-related-link">See today's trend →</span>
+        </a>
+        <a class="bb-related-card" href="/who-will-win-bigg-boss-20/">
+          <span class="bb-related-emoji">🏆</span>
+          <h3>Who Will Win Bigg Boss 20?</h3>
+          <p>The winner prediction, the finalist cases and the winner-race Open Poll.</p>
+          <span class="bb-related-link">Read the prediction →</span>
+        </a>
+        <a class="bb-related-card" href="/bigg-boss-20-top-5-contestants/">
+          <span class="bb-related-emoji">🔝</span>
+          <h3>Top 5 Contestants</h3>
+          <p>The predicted final five, the full house table and how the ranking was made.</p>
+          <span class="bb-related-link">See the top 5 →</span>
+        </a>
+        <a class="bb-related-card" href="/bigg-boss-20-finale/">
+          <span class="bb-related-emoji">🏁</span>
+          <h3>Bigg Boss 20 Finale</h3>
+          <p>The expected finale window, how the winner is decided and the past winners.</p>
+          <span class="bb-related-link">See the finale page →</span>
+        </a>
+      </div>
+    </section>`
+  );
+}
+
+function renderVotingHubFaq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is official Bigg Boss voting open right now?</summary>
+        <div class="bb-faq-body">
+          <p>For the current season, Bigg Boss 20, official voting opens only in the weekly windows announced on air, and only on JioCinema / JioHotstar. For every finished season — Seasons 1 to 19 — official voting is closed permanently, because those seasons are over and their results are final. The polls that are always open on VisitBest are our Open Polls, which are audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the Bigg Boss Ultimate Vote?</summary>
+        <div class="bb-faq-body">
+          <p>It is the all-time fan poll at the top of this page: ten past Bigg Boss winners — from Gauahar Khan (Season 7) to Gaurav Khanna (Season 19) — and readers pick the greatest winner of all time. It is a VisitBest Open Poll, run for entertainment and discussion. It is not an official vote, not an official all-time ranking by the show, and it changes nothing about any season's real result.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Where do I vote for this week's Bigg Boss 20 eviction?</summary>
+        <div class="bb-faq-body">
+          <p>For the Open Poll, use the <a href="/bigg-boss-20-voting/">Bigg Boss 20 voting hub</a> or the <a href="/bigg-boss-20-voting-week-11/">Week 11 voting page</a> — both are free and take a few seconds. The vote that actually decides the eviction is the official vote on JioCinema / JioHotstar, cast inside the window announced on air.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Can I still vote officially for a finished season, like Bigg Boss 17?</summary>
+        <div class="bb-faq-body">
+          <p>No. A season's official voting closes when the season ends, and it never reopens — Bigg Boss 17's result is final: Munawar Faruqui won it. What you can do on VisitBest is vote in the fan polls: the Ultimate Vote at the top of this page, and Season 17's own re-vote Open Poll on the <a href="/bigg-boss-17-voting/">Bigg Boss 17 voting page</a>.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Polls — free audience sentiment polls run by this website. They are not official votes and not official results. The season winners named in the grid above are the real results, as declared on the show; everything else here is reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+
+// ---------- Past-season voting pages (entries 408 + 409) ----------
+// Bigg Boss 17 (entry 408) and Bigg Boss 19 (entry 409) fan re-vote pages.
+// Every fact below comes from the season research files, verified against
+// the seasons' Wikipedia articles (see the packs' sources.md): S17 facts in
+// ~/workspace/bb-seasons/batch1-17-16-13/s17/facts.md, S19 facts in
+// ~/workspace/bb-seasons/batch2-19-18/s19/facts.md. No prize figure appears
+// on the Season 17 page — none is Wikipedia-verified for that season. The
+// Season 19 prize (₹50 lakh) IS stated by Wikipedia and is included.
+
+function renderSeasonFinalistCards(finalists) {
+  return `<div class="bb-steps-grid">
+      ${finalists
+        .map(
+          (f) => `
+      <div class="bb-step-card">
+        <img src="${f.image}" alt="${f.name}" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border-radius:8px;margin-bottom:0.75rem;">
+        <h3>${f.name}</h3>
+        <p><strong>${f.placing}</strong></p>
+        <p>${f.story}</p>
+      </div>`,
+        )
+        .join("")}
+      </div>`;
+}
+
+function renderSeasonResultTable(rows) {
+  return `<div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Placing</th><th>Finalist</th></tr>
+        </thead>
+        <tbody>
+          ${rows.map(([placing, name]) => `<tr><td>${placing}</td><td><strong>${name}</strong></td></tr>`).join("")}
+        </tbody>
+      </table>
+      </div>`;
+}
+
+function renderSeasonEvictionTable(rows) {
+  return `<div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>#</th><th>Housemate</th><th>Day</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          ${rows.map(([name, day, note], i) => `<tr><td>${i + 1}</td><td><strong>${name}</strong></td><td>Day ${day}</td><td>${note || "Evicted"}</td></tr>`).join("")}
+        </tbody>
+      </table>
+      </div>`;
+}
+
+function renderSeasonMoments(moments) {
+  return `<div class="bb-steps-grid">
+      ${moments
+        .map(
+          (m, i) => `
+      <div class="bb-step-card">
+        <div class="bb-step-num">${i + 1}</div>
+        <h3>${m.title}</h3>
+        <p>${m.text}</p>
+      </div>`,
+        )
+        .join("")}
+      </div>`;
+}
+
+function renderSeasonLinksRow(cards) {
+  return `
+    <section class="bb-section">
+      <div class="bb-section-head">
+        <span class="bb-section-eyebrow">Keep Reading</span>
+        <h2>More Bigg Boss voting on VisitBest</h2>
+      </div>
+      <div class="bb-related-grid">
+        ${cards
+          .map(
+            (c) => `
+        <a class="bb-related-card" href="${c.href}">
+          <span class="bb-related-emoji">${c.emoji}</span>
+          <h3>${c.title}</h3>
+          <p>${c.text}</p>
+          <span class="bb-related-link">${c.linkText}</span>
+        </a>`,
+          )
+          .join("")}
+      </div>
+    </section>`;
+}
+
+// ---------- Bigg Boss 17 (entry 408) ----------
+
+const SEASON17_FINALISTS = [
+  {
+    name: "Munawar Faruqui",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s17-munawar-faruqui.webp",
+    story:
+      "Munawar Faruqui won Bigg Boss 17 on finale night, 28 January 2024, closing a 105-day season that began with 21 housemates. He came through the season's Dil, Dimaag aur Dum format — a house split into three themed makaans, where Bigg Boss himself played the game — to take the trophy at the end of the longest finale telecast in the show's history.",
+  },
+  {
+    name: "Abhishek Kumar",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s17-abhishek-kumar.webp",
+    story:
+      "Abhishek Kumar had the most dramatic arc of any finalist: he was ejected on Day 84 — and brought back the same day. From there he rebuilt his game, reached the finale and finished as first runner-up, behind only Munawar Faruqui.",
+  },
+  {
+    name: "Mannara Chopra",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s17-mannara-chopra.webp",
+    story:
+      "Mannara Chopra reached the final five of a 21-housemate season and finished as second runner-up on finale night, 28 January 2024 — third in the final order, ahead of Ankita Lokhande and Arun Srikanth Mashettey.",
+  },
+  {
+    name: "Ankita Lokhande",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/s17-ankita-lokhande.webp",
+    story:
+      "Ankita Lokhande finished as third runner-up in the Day 105 finale — fourth in the final order of a season that ran 105 days from its 15 October 2023 premiere.",
+  },
+  {
+    name: "Arun Srikanth Mashettey",
+    placing: "4th runner-up",
+    image: "/assets/bb-seasons/s17-arun-mashettey.webp",
+    story:
+      "Arun Srikanth Mashettey completed the final five, finishing as fourth runner-up when the finale order was declared on Day 105, 28 January 2024.",
+  },
+];
+
+const SEASON17_EVICTIONS = [
+  ["Soniya Bansal", 13, "Evicted by housemates"],
+  ["Manasvi Mamgai", 20, "Wild-card entrant"],
+  ["Navid Sole", 37, "Evicted by housemates"],
+  ["Jigna Vora", 41, ""],
+  ["Sunny Arya", 48, "Ejected"],
+  ["Sana Raees Khan", 55, ""],
+  ["Firoza Khan (Khanzaadi)", 62, ""],
+  ["Aishwarya Sharma", 70, "Evicted by the captain"],
+  ["Neil Bhatt", 77, ""],
+  ["Rinku Dhawan", 77, ""],
+  ["Anurag Dobhal", 79, "Evicted by housemates"],
+  ["Aoora", 84, ""],
+  ["Samarth Jurel", 90, ""],
+  ["Ayesha Khan", 98, "Had walked out on Day 77 and returned on Day 78"],
+  ["Isha Malviya", 98, ""],
+  ["Vicky Jain", 101, ""],
+];
+
+const SEASON17_MOMENTS = [
+  {
+    title: "Dil, Dimaag aur Dum",
+    text: "The house was split into three themed makaans — Dil, Dimaag and Dum — and Bigg Boss himself played the game this season, forming alliances and showing favouritism.",
+  },
+  {
+    title: "New rooms, record cameras",
+    text: "The season introduced an Archive Room, where selected housemates could watch house footage, and a Therapy Room in the Dil makaan. With 110 cameras, the house had the highest camera count of any season to that point.",
+  },
+  {
+    title: "Two ejections, one comeback",
+    text: "Sunny Arya was ejected on Day 48. Abhishek Kumar was ejected on Day 84 — and brought back the same day, going on to finish as first runner-up.",
+  },
+  {
+    title: "Karan Johar stepped in",
+    text: "Karan Johar hosted Weekend Ka Vaar in Weeks 7 and 13 in Salman Khan's absence, and a new Sunday segment — Just Chill with Arbaaz & Sohail — also ran this season.",
+  },
+  {
+    title: "The longest finale",
+    text: "The grand finale aired for 6 hours, 35 minutes and 36 seconds — 6 pm to 12:35 am — described as a first in Bigg Boss history.",
+  },
+];
+
+function renderSeason17Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 17 result — Munawar Faruqui won the season",
+      `<p>Bigg Boss 17 — styled <em>Dil, Dimaag aur Dum Ka Game</em> — ran from <strong>15 October 2023</strong> to the finale on <strong>28 January 2024</strong>: 105 days, 21 housemates, hosted by Salman Khan on Colors TV and JioCinema. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Munawar Faruqui"],
+        ["1st runner-up", "Abhishek Kumar"],
+        ["2nd runner-up", "Mannara Chopra"],
+        ["3rd runner-up", "Ankita Lokhande"],
+        ["4th runner-up", "Arun Srikanth Mashettey"],
+      ])}
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 17's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 17 final five",
+      renderSeasonFinalistCards(SEASON17_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 17 eviction order — who left, and when",
+      `<p>Sixteen housemates left before the finale, in this order (from the season's record):</p>
+      ${renderSeasonEvictionTable(SEASON17_EVICTIONS)}
+      <p style="margin-top:1rem;">The finale followed on Day 105: Arun Srikanth Mashettey left as fourth runner-up, then Ankita Lokhande (third runner-up), Mannara Chopra (second runner-up) and Abhishek Kumar (first runner-up), before Munawar Faruqui was declared the winner. Among the finalists, Abhishek Kumar's Day 84 ejection and same-day return stands out in this table's story.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 17 story — the season's defining moments",
+      renderSeasonMoments(SEASON17_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason17Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 17 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 17 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 17 voting closed when the season ended with the finale on 28 January 2024, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 17?</summary>
+        <div class="bb-faq-body">
+          <p>Munawar Faruqui won Bigg Boss 17. The final order was: Abhishek Kumar (first runner-up), Mannara Chopra (second runner-up), Ankita Lokhande (third runner-up) and Arun Srikanth Mashettey (fourth runner-up).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 17 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The five finalists were Munawar Faruqui, Abhishek Kumar, Mannara Chopra, Ankita Lokhande and Arun Srikanth Mashettey. The season ran from 15 October 2023 to 28 January 2024 — 105 days and 21 housemates, hosted by Salman Khan on Colors TV and JioCinema.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 17. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+
+// ---------- Bigg Boss 19 (entry 409) ----------
+
+const SEASON19_FINALISTS = [
+  {
+    name: "Gaurav Khanna",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s19-gaurav-khanna.webp",
+    story:
+      "Gaurav Khanna won Bigg Boss 19 on 7 December 2025, taking the trophy and the ₹50 lakh cash prize at the end of the 105-day Gharwalon Ki Sarkaar season. He topped the final five, ahead of Farrhana Bhatt in the finale order.",
+  },
+  {
+    name: "Farrhana Bhatt",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s19-farrhana-bhatt.webp",
+    story:
+      "Farrhana Bhatt's season began with its sharpest twist: evicted by the housemates on the very first day, she was sent to a secret room instead, re-entered the main house on Day 6 — and went all the way to first runner-up.",
+  },
+  {
+    name: "Pranit More",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s19-pranit-more.webp",
+    story:
+      "Pranit More left the house on Day 70 and returned on Day 75 — and still finished as second runner-up, one of the season's defining comeback stories.",
+  },
+  {
+    name: "Tanya Mittal",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/s19-tanya-mittal.webp",
+    story:
+      "Tanya Mittal finished as third runner-up in the Day 105 finale — fourth in the final order of the 18-housemate season.",
+  },
+  {
+    name: "Amaal Mallik",
+    placing: "4th runner-up",
+    image: "/assets/bb-seasons/s19-amaal-mallik.webp",
+    story:
+      "Amaal Mallik completed the final five, finishing as fourth runner-up when the finale order was declared on 7 December 2025.",
+  },
+];
+
+const SEASON19_EVICTIONS = [
+  ["Nagma Mirajkar", 21, "Double eviction — the first of the season"],
+  ["Natalia Janoszek", 21, "Double eviction"],
+  ["Awez Darbar", 35, ""],
+  ["Zeishan Quadri", 49, ""],
+  ["Baseer Ali", 63, ""],
+  ["Nehal Chudasama", 63, "First evicted on Day 28 into the secret room; re-entered on Day 32"],
+  ["Abhishek Bajaj", 77, "Evicted by the Captain"],
+  ["Neelam Giri", 77, "Evicted by the Captain"],
+  ["Mridul Tiwari", 80, ""],
+  ["Kunickaa Sadanand", 91, ""],
+  ["Shehbaz Badesha", 98, ""],
+  ["Ashnoor Kaur", 98, "Ejected"],
+  ["Malti Chahar", 102, "Last pre-finale eviction"],
+];
+
+const SEASON19_MOMENTS = [
+  {
+    title: "Gharwalon Ki Sarkaar",
+    text: "The season was styled as a parliament — Iss Baar Chalegi Gharwalon Ki Sarkaar — with an Assembly Room, and the housemates collectively holding power.",
+  },
+  {
+    title: "Farrhana's Day 1 secret room",
+    text: "Farrhana Bhatt was evicted by the housemates on the very first day — into a secret room. She re-entered the main house on Day 6 and went on to finish as first runner-up.",
+  },
+  {
+    title: "Fans Ka Faisla",
+    text: "A pre-show public vote decided the final launch-day place: Mridul Tiwari was voted in over Shehbaz Badesha, who then entered later as a wildcard on Day 14.",
+  },
+  {
+    title: "Pranit walked out, came back",
+    text: "Pranit More left the house on Day 70 and returned on Day 75, going on to finish as second runner-up.",
+  },
+  {
+    title: "App Room and a guest host",
+    text: "The App Room was introduced on Day 6, and Rohit Shetty guest-hosted the Weekend Ka Vaar episodes 84–85 in Week 12 in Salman Khan's absence. The season's record also notes it had the most successful debut in the show's history.",
+  },
+];
+
+function renderSeason19Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 19 result — Gaurav Khanna won the season",
+      `<p>Bigg Boss 19 — the <em>Gharwalon Ki Sarkaar</em> parliament season — ran from <strong>24 August 2025</strong> to the finale on <strong>7 December 2025</strong>: 105 days, 18 housemates, hosted by Salman Khan on Colors TV and JioHotstar. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Gaurav Khanna"],
+        ["1st runner-up", "Farrhana Bhatt"],
+        ["2nd runner-up", "Pranit More"],
+        ["3rd runner-up", "Tanya Mittal"],
+        ["4th runner-up", "Amaal Mallik"],
+      ])}
+      <p style="margin-top:1rem;"><strong>The winner's prize:</strong> Gaurav Khanna also took home a ₹50 lakh cash prize, as stated in the season's record and reported across the finale coverage.</p>
+      <p>That result is final. Bigg Boss 19's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 19 final five",
+      renderSeasonFinalistCards(SEASON19_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 19 eviction order — who left, and when",
+      `<p>Thirteen housemates left before the finale, in this order (from the season's record):</p>
+      ${renderSeasonEvictionTable(SEASON19_EVICTIONS)}
+      <p style="margin-top:1rem;">The finale followed on Day 105: Amaal Mallik left as fourth runner-up, then Tanya Mittal (third runner-up), Pranit More (second runner-up) and Farrhana Bhatt (first runner-up), before Gaurav Khanna was declared the winner. Two of the finalists had left and returned mid-season: Farrhana Bhatt (secret room, Day 1 to Day 6) and Pranit More (out on Day 70, back on Day 75).</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 19 story — the season's defining moments",
+      renderSeasonMoments(SEASON19_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason19Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 19 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 19 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 19 voting closed when the season ended with the finale on 7 December 2025, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 19?</summary>
+        <div class="bb-faq-body">
+          <p>Gaurav Khanna won Bigg Boss 19. The final order was: Farrhana Bhatt (first runner-up), Pranit More (second runner-up), Tanya Mittal (third runner-up) and Amaal Mallik (fourth runner-up).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What was the Bigg Boss 19 prize money?</summary>
+        <div class="bb-faq-body">
+          <p>₹50 lakh. The season's record states that Gaurav Khanna also won a ₹50 lakh cash prize, and the same figure was reported across the finale coverage — Indian Express, Moneycontrol, News18, Pinkvilla, Economic Times and Hindustan Times.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 19 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The five finalists were Gaurav Khanna, Farrhana Bhatt, Pranit More, Tanya Mittal and Amaal Mallik. The season ran from 24 August 2025 to 7 December 2025 — 105 days and 18 housemates, hosted by Salman Khan on Colors TV and JioHotstar.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+
 export function renderBiggBossPollPage(poll) {
   if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
   if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
@@ -3354,6 +4106,9 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-20-weekend-ka-vaar-episodes-70-71" ? renderWkvWeek10Sections() : ""}
     ${poll.slug === "bigg-boss-20-voting-week-11" ? renderWeek11VotingSections() : ""}
     ${poll.slug === "who-will-win-bigg-boss-20" ? renderWhoWillWinSections() : ""}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubSections() : ""}
+    ${poll.slug === "bigg-boss-17-voting" ? renderSeason17Sections() : ""}
+    ${poll.slug === "bigg-boss-19-voting" ? renderSeason19Sections() : ""}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
@@ -3376,7 +4131,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : renderFaqSection(poll)}
   </div>
   `;
 }
