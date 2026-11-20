@@ -1436,6 +1436,64 @@ export const polls = [
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
     metaDesc: "Bigg Boss 9 voting: the official result — Prince Narula won, ahead of Rishabh Sinha, Mandana Karimi and Rochelle Rao — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 9? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-8-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-8-voting.jpg",
+    title: "Bigg Boss 8 Voting — Fan Re-Vote Open Poll, Champions, Halla Bol Result & Finalists",
+    h1: "Bigg Boss 8 Voting — Fan Re-Vote, Champions & Finalists",
+    lead: "Bigg Boss 8 voting is closed — and this season's story has a twist no other season has: Bigg Boss 8 itself ended on 3 January 2015 without declaring a winner, crowning its five finalists as Champions instead, and the title was decided a month later in the Bigg Boss Halla Bol finale, where Gautam Gulati won. This page keeps the complete story in one place: the five Champions with their photos, the Halla Bol result, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 8. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 8 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 3 JANUARY 2015 · HALLA BOL FINALE 31 JANUARY 2015",
+    leaderNote: "🏆 FAN RE-VOTE: Gautam Gulati — the winner of the Bigg Boss Halla Bol finale — also leads the fan re-vote as it stands, with 648 votes (28.2%), ahead of Karishma Tanna on 548. Official voting for Bigg Boss 8 is CLOSED: it ended with the Halla Bol finale on 31 January 2015 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 8?",
+    textOptions: [
+      { id: "gautam-gulati", label: "Gautam Gulati", sub: "Winner · Bigg Boss Halla Bol", image: "/assets/bb-seasons/s8-gautam-gulati.webp" },
+      { id: "karishma-tanna", label: "Karishma Tanna", sub: "1st runner-up · Bigg Boss Halla Bol", image: "/assets/bb-seasons/s8-karishma-tanna.webp" },
+      { id: "pritam-singh", label: "Pritam Singh", sub: "2nd runner-up · Bigg Boss Halla Bol", image: "/assets/bb-seasons/s8-pritam-singh.webp" },
+      { id: "dimpy-ganguly", label: "Dimpy Ganguly", sub: "3rd runner-up · Bigg Boss Halla Bol", image: "/assets/bb-seasons/s8-dimpy-ganguly.webp" },
+      { id: "ali-quli-mirza", label: "Ali Quli Mirza", sub: "4th runner-up · Bigg Boss Halla Bol", image: "/assets/bb-seasons/s8-ali-quli-mirza.webp" },
+    ],
+    voteDistribution: {
+      "gautam-gulati": 648,
+      "karishma-tanna": 548,
+      "pritam-singh": 447,
+      "dimpy-ganguly": 384,
+      "ali-quli-mirza": 273,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 8 voting: the season that ended with five Champions and no winner — Gautam Gulati, Karishma Tanna, Pritam Singh, Dimpy Ganguly and Ali Quli Mirza — before Gautam won the Bigg Boss Halla Bol finale — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 8? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-7-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-7-voting.jpg",
+    title: "Bigg Boss 7 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 7 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 7 voting is closed — the season ended on 28 December 2013 with Gauahar Khan lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the four finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 7. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 7 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 28 DECEMBER 2013",
+    leaderNote: "🏆 FAN RE-VOTE: Gauahar Khan — the official winner — also leads the fan re-vote as it stands, with 648 votes (28.2%), ahead of Tanishaa Mukerji on 574. Official voting for Bigg Boss 7 is CLOSED: it ended with the season on 28 December 2013 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 7?",
+    textOptions: [
+      { id: "gauahar-khan", label: "Gauahar Khan", sub: "Winner · Bigg Boss 7", image: "/assets/bb-seasons/s7-gauahar-khan.webp" },
+      { id: "tanishaa-mukerji", label: "Tanishaa Mukerji", sub: "1st runner-up · Bigg Boss 7", image: "/assets/bb-seasons/s7-tanishaa-mukerji.webp" },
+      { id: "ajaz-khan", label: "Ajaz Khan", sub: "2nd runner-up · Bigg Boss 7", image: "/assets/bb-seasons/s7-ajaz-khan.webp" },
+      { id: "sangram-singh", label: "Sangram Singh", sub: "3rd runner-up · Bigg Boss 7", image: "/assets/bb-seasons/s7-sangram-singh.webp" },
+    ],
+    voteDistribution: {
+      "gauahar-khan": 648,
+      "tanishaa-mukerji": 574,
+      "ajaz-khan": 548,
+      "sangram-singh": 530,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 7 voting: the official result — Gauahar Khan won, ahead of Tanishaa Mukerji, Ajaz Khan and Sangram Singh — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 7? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
   }
 ];
 
@@ -1705,6 +1763,8 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-11-voting", "🗳️ Bigg Boss 11 Voting"],
     ["bigg-boss-10-voting", "🗳️ Bigg Boss 10 Voting"],
     ["bigg-boss-9-voting", "🗳️ Bigg Boss 9 Voting"],
+    ["bigg-boss-8-voting", "🗳️ Bigg Boss 8 Voting"],
+    ["bigg-boss-7-voting", "🗳️ Bigg Boss 7 Voting"],
     ["bigg-boss-20-contestants", "👥 18 Contestants Wiki"],
     ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
@@ -3798,6 +3858,7 @@ export function renderBiggBossFinalePage(poll) {
 // (Entries 416+417: Seasons 15 and 14 now carry links too.)
 // (Entries 418+419: Seasons 12 and 11 now carry links too.)
 // (Entries 420+421: Seasons 10 and 9 now carry links too.)
+// (Entries 422+423: Seasons 8 and 7 now carry links too.)
 const VOTING_HUB_SEASONS = [
   { season: 1, years: "2006–07", winner: "Rahul Roy" },
   { season: 2, years: "2008", winner: "Ashutosh Kaushik" },
@@ -3805,12 +3866,13 @@ const VOTING_HUB_SEASONS = [
   { season: 4, years: "2010–11", winner: "Shweta Tiwari" },
   { season: 5, years: "2011–12", winner: "Juhi Parmar" },
   { season: 6, years: "2012–13", winner: "Urvashi Dholakia" },
-  { season: 7, years: "2013", winner: "Gauahar Khan" },
+  { season: 7, years: "2013", winner: "Gauahar Khan", link: "/bigg-boss-7-voting/" },
   {
     season: 8,
     years: "2014–15",
     winner: "Gautam Gulati",
     note: "Season 8 ran into the Bigg Boss Halla Bol extension, where Gautam Gulati was declared the winner on 31 January 2015.",
+    link: "/bigg-boss-8-voting/",
   },
   { season: 9, years: "2015–16", winner: "Prince Narula", link: "/bigg-boss-9-voting/" },
   { season: 10, years: "2016–17", winner: "Manveer Gurjar", link: "/bigg-boss-10-voting/" },
@@ -3878,7 +3940,7 @@ function renderVotingHubSections() {
     storySection(
       "Vote by Season",
       "Bigg Boss voting by season — every season, every winner",
-      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 18, Bigg Boss 17, Bigg Boss 16, Bigg Boss 15, Bigg Boss 14, Bigg Boss 13, Bigg Boss 12, Bigg Boss 11, Bigg Boss 10 and Bigg Boss 9 are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
+      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 18, Bigg Boss 17, Bigg Boss 16, Bigg Boss 15, Bigg Boss 14, Bigg Boss 13, Bigg Boss 12, Bigg Boss 11, Bigg Boss 10, Bigg Boss 9, Bigg Boss 8 and Bigg Boss 7 are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
       <div class="bb-steps-grid">
         <a class="bb-step-card" href="/bigg-boss-20-voting/" style="display:block;text-decoration:none;color:inherit;">
           <div class="bb-step-num">S20</div>
@@ -7037,6 +7099,455 @@ function renderSeason9Faq() {
 }
 
 
+// ---------- Past-season voting pages (entries 422 + 423) ----------
+// Bigg Boss 8 (entry 422) and Bigg Boss 7 (entry 423) fan re-vote
+// pages, plus the hub grid links for Seasons 8 and 7. Every fact
+// below comes from the season research files, verified against
+// the seasons' Wikipedia articles (see the pack's sources.md):
+// S8 facts in ~/workspace/bb-seasons/batch7-8-7/s8/facts.md, S7
+// facts in ~/workspace/bb-seasons/batch7-8-7/s7/facts.md. Season
+// 8 is presented exactly as its record presents it: the season
+// itself declared no winner — it ended on 3 January 2015 with
+// five finalists crowned Champions, and the title was decided in
+// the Bigg Boss Halla Bol finale on 31 January 2015, which
+// Gautam Gulati won. Neither season's Wikipedia coverage states
+// any prize figure of any kind, so no money figure appears on
+// either page (the press-reported figures are not used, and
+// Pritam Singh's Halla Bol finale walk is stated without any
+// amount, because the record states none). Exit days the
+// research files flag as contested (†) follow the files'
+// primary account and are marked † on the pages with a
+// disclosure note, never presented as settled fact. The
+// renderers below reuse the shared season helpers defined with
+// the entry 408/409 pages.
+
+// ---------- Bigg Boss 8 (entry 422) ----------
+
+const SEASON8_FINALISTS = [
+  {
+    name: "Gautam Gulati",
+    placing: "🏆 Winner — Bigg Boss Halla Bol",
+    image: "/assets/bb-seasons/s8-gautam-gulati.webp",
+    story:
+      "Gautam Gulati was one of the five Champions crowned when Bigg Boss 8 ended on 3 January 2015 — and a month later he won the title itself, declared the winner of the Bigg Boss Halla Bol finale on 31 January 2015 ahead of Karishma Tanna. His run had begun with the Secret Society putting him up for the season's first public vote.",
+  },
+  {
+    name: "Karishma Tanna",
+    placing: "1st runner-up — Bigg Boss Halla Bol",
+    image: "/assets/bb-seasons/s8-karishma-tanna.webp",
+    story:
+      "Karishma Tanna was crowned one of the season's five Champions on 3 January 2015 and finished as first runner-up in the Bigg Boss Halla Bol finale on 31 January 2015 — the last housemate standing between Gautam Gulati and the title.",
+  },
+  {
+    name: "Pritam Singh",
+    placing: "2nd runner-up — Bigg Boss Halla Bol",
+    image: "/assets/bb-seasons/s8-pritam-singh.webp",
+    story:
+      "Pritam Singh — one of the three housemates who began the season inside the Secret Society — was crowned a Champion on 3 January 2015. In the Halla Bol finale he left after accepting a money offer put to the remaining finalists, and the record carries him as 'Walked, 2nd runner-up'.",
+  },
+  {
+    name: "Dimpy Ganguly",
+    placing: "3rd runner-up — Bigg Boss Halla Bol",
+    image: "/assets/bb-seasons/s8-dimpy-ganguly.webp",
+    story:
+      "Dimpy Ganguly entered the house as a wild card on Day 47, was crowned one of the five Champions on 3 January 2015, and finished as third runner-up in the Bigg Boss Halla Bol finale on 31 January 2015.",
+  },
+  {
+    name: "Ali Quli Mirza",
+    placing: "4th runner-up — Bigg Boss Halla Bol",
+    image: "/assets/bb-seasons/s8-ali-quli-mirza.webp",
+    story:
+      "Ali Quli Mirza, a wild-card entrant from Day 24, was crowned one of the five Champions on 3 January 2015 and finished as fourth runner-up in the Bigg Boss Halla Bol finale on 31 January 2015.",
+  },
+];
+
+const SEASON8_EVICTIONS = [
+  ["Sukirti Kandpal", 14, "Evicted by public vote"],
+  ["Deepshikha Nagpal", 21, "Evicted by public vote"],
+  ["Natasa Stankovic", 28, "Evicted by public vote"],
+  ["Soni Singh", 35, "Evicted by public vote"],
+  ["Minissha Lamba", 42, "Evicted by public vote"],
+  ["Sushant Divgikar", 49, "Evicted by public vote"],
+  ["Arya Babbar", 56, "Evicted by public vote"],
+  ["Nigaar Khan", 63, "Evicted by public vote; a wild-card entrant from Day 50"],
+  ["Renee Dhyani", 70, "Evicted by public vote; a wild-card entrant from Day 47"],
+  ["Diandra Soares", 84, "Evicted by public vote; she later re-entered as a guest on Day 100, not as a contestant"],
+  ["Praneet Bhat", 90, "Evicted by public vote"],
+  ["Upen Patel", "101†", "Evicted in a midnight eviction combining the public votes of two weeks"],
+  ["Sonali Raut", 104, "Evicted at the season finale. Her full run: the season's first eviction on Day 7, re-entered on Day 11, and stayed to the finale"],
+  ["Puneet Issar", 104, "Evicted at the season finale. His full run: ejected on Day 44, re-entered on Day 46, and stayed to the finale"],
+];
+
+const SEASON8_MOMENTS = [
+  {
+    title: "The Secret Society",
+    text: "On launch night, three housemates — Deepshikha Nagpal, Pritam Singh and Puneet Issar — were installed in a hidden Secret Society next to the plane-crash area: immune from nomination, and holding the power to put housemates up for the first public vote. They chose Sonali Raut and Gautam Gulati. The society was revealed to viewers on Day 3, Puneet was moved out on Day 5, and the other two joined the house on Day 8.",
+  },
+  {
+    title: "An aircraft for a house",
+    text: "The season's house in Lonavala resembled the interior of an aircraft: the housemates initially lived in a 'plane crash' area, while the main house was styled as an Alpine chalet with wood, fur and leather furnishings.",
+  },
+  {
+    title: "Puneet Issar's ejection and return",
+    text: "Puneet Issar was ejected on Day 44 — and re-entered just two days later, on Day 46, going on to reach the season finale, where he was one of the two housemates eliminated on Day 104.",
+  },
+  {
+    title: "Sonali Raut's first-week exit and comeback",
+    text: "Sonali Raut was the season's first eviction, on Day 7 — then re-entered on Day 11 and survived all the way to the Day 104 finale, one of the longest comebacks in the show's history.",
+  },
+  {
+    title: "A finale with no winner",
+    text: "In the fifteenth week Bigg Boss announced a four-week extension — and instead of naming a winner, the 3 January finale crowned five Champions and launched the spin-off Bigg Boss Halla Bol, in which the five Champions faced five Challengers from past seasons (Ajaz Khan, Mahek Chahal, Rahul Mahajan, Sambhavna Seth and Sana Khan) under a new host, Farah Khan.",
+  },
+  {
+    title: "Ajaz Khan's ejection from Halla Bol",
+    text: "The season 7 finalist Ajaz Khan, who had first entered the house on Day 99 ahead of the spin-off, was ejected in Halla Bol's first week after hitting Ali Quli Mirza; the eviction scheduled for that week was then cancelled.",
+  },
+];
+
+function renderSeason8Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 8 result — five Champions, and a Halla Bol winner",
+      `<p>Bigg Boss 8 — styled <em>Bigg Boss 8: Sabki Lagegi Vaat</em> — premiered on <strong>21 September 2014</strong>: 104 days, 19 housemates, hosted by Salman Khan on Colors TV. But its finale, on <strong>3 January 2015</strong>, was like no other season's: instead of declaring a winner, the season crowned its five finalists as <strong>Champions</strong> and carried them into a spin-off, <em>Bigg Boss Halla Bol</em>, where they faced five Challengers from past seasons under a new host, Farah Khan. The five Champions were:</p>
+      ${renderSeasonResultTable([
+        ["Champion", "Gautam Gulati"],
+        ["Champion", "Karishma Tanna"],
+        ["Champion", "Pritam Singh"],
+        ["Champion", "Dimpy Ganguly"],
+        ["Champion", "Ali Quli Mirza"],
+      ])}
+      <p style="margin-top:1rem;">Halla Bol ran through January 2015, and its finale on <strong>31 January 2015</strong> settled the title. The final order was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Gautam Gulati"],
+        ["1st runner-up", "Karishma Tanna"],
+        ["2nd runner-up", "Pritam Singh"],
+        ["3rd runner-up", "Dimpy Ganguly"],
+        ["4th runner-up", "Ali Quli Mirza"],
+      ])}
+      <p style="margin-top:1rem;">The finale's biggest turn came from Pritam Singh: offered money to leave, he accepted and walked, and the record carries him as 'Walked, 2nd runner-up'. So the honest summary of Bigg Boss 8 is this: the season itself produced five Champions and no winner — Gautam Gulati's win belongs to the Halla Bol finale that closed the combined run.</p>
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 8's official voting closed with the Halla Bol finale and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 8 Champions — the final five",
+      renderSeasonFinalistCards(SEASON8_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 8 eviction order — who left, and when",
+      `<p>Fourteen housemates went out across the season, in this order (from the season's record) — the last two at the finale itself, and two of them had more than one stint, as their notes show:</p>
+      ${renderSeasonEvictionTable(SEASON8_EVICTIONS)}
+      <p style="margin-top:1rem;">Days marked † are contested inside the season record: Upen Patel's eviction day is given as Day 101 by the housemates status table, while the nominations table's Week 15 split (Days 102 and 104) does not cleanly reconcile with it — the day shown follows the status table, not settled fact. The finale followed on Day 104 (3 January 2015): Sonali Raut and Puneet Issar were eliminated, and Gautam Gulati, Karishma Tanna, Pritam Singh, Ali Quli Mirza and Dimpy Ganguly were crowned the season's five Champions and carried into Bigg Boss Halla Bol — where, on 31 January 2015, the order was settled: Ali Quli Mirza (fourth runner-up), Dimpy Ganguly (third runner-up), Pritam Singh (walked, second runner-up), Karishma Tanna (first runner-up) and Gautam Gulati the winner. One finale-night press report put Dimpy Ganguly's Halla Bol exit before Ali Quli Mirza's; the order shown follows the season record.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 8 story — the season's defining moments",
+      renderSeasonMoments(SEASON8_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-7-voting/",
+        emoji: "⚖️",
+        title: "Bigg Boss 7 Voting",
+        text: "Gauahar Khan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 7 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-16-voting/",
+        emoji: "🎪",
+        title: "Bigg Boss 16 Voting",
+        text: "MC Stan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 16 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason8Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 8 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 8 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 8 voting closed when the combined run ended with the Bigg Boss Halla Bol finale on 31 January 2015, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 8?</summary>
+        <div class="bb-faq-body">
+          <p>Bigg Boss 8 itself declared no winner: its finale on 3 January 2015 crowned five Champions — Gautam Gulati, Karishma Tanna, Pritam Singh, Ali Quli Mirza and Dimpy Ganguly. The title was decided in the Bigg Boss Halla Bol finale on 31 January 2015, which Gautam Gulati won, ahead of Karishma Tanna (first runner-up), Pritam Singh (second runner-up — he walked out in the finale), Dimpy Ganguly (third runner-up) and Ali Quli Mirza (fourth runner-up).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 8 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The five finalists — crowned the season's Champions — were Gautam Gulati, Karishma Tanna, Pritam Singh, Ali Quli Mirza and Dimpy Ganguly. The season ran from 21 September 2014 to 3 January 2015 — 104 days and 19 housemates, hosted by Salman Khan on Colors TV — and the Champions then played the Bigg Boss Halla Bol spin-off, hosted by Farah Khan, to its finale on 31 January 2015.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 8. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The Champions and the Halla Bol finishing order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+// ---------- Bigg Boss 7 (entry 423) ----------
+
+const SEASON7_FINALISTS = [
+  {
+    name: "Gauahar Khan",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s7-gauahar-khan.webp",
+    story:
+      "Gauahar Khan won Bigg Boss 7 on finale night, 28 December 2013 — after one of the season's strangest runs: she walked out of the house on Day 44, returned the very next day, and went on to lift the trophy ahead of Tanishaa Mukerji.",
+  },
+  {
+    name: "Tanishaa Mukerji",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s7-tanishaa-mukerji.webp",
+    story:
+      "Tanishaa Mukerji finished as first runner-up in the finale on 28 December 2013 — the last housemate standing between Gauahar Khan and the title.",
+  },
+  {
+    name: "Ajaz Khan",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s7-ajaz-khan.webp",
+    story:
+      "Ajaz Khan, a wild-card entrant who joined the season in its middle weeks — first housed in the separate Caravan before entering the main house — finished as second runner-up in the finale on 28 December 2013, ahead of Day 1 entrant Sangram Singh.",
+  },
+  {
+    name: "Sangram Singh",
+    placing: "3rd runner-up",
+    image: "/assets/bb-seasons/s7-sangram-singh.webp",
+    story:
+      "Sangram Singh finished as third runner-up; he was the first of the four finalists eliminated on finale night, 28 December 2013.",
+  },
+];
+
+const SEASON7_EVICTIONS = [
+  ["Hazel Keech", 7, "Evicted by public vote"],
+  ["Rajat Rawail", 14, "Evicted by public vote"],
+  ["Anita Advani", 21, "Evicted by public vote"],
+  ["Ratan Rajput", 28, "Evicted by public vote"],
+  ["Shilpa Saklani", 35, "Evicted by public vote"],
+  ["Vivek Mishra", 38, "Evicted by public vote; a wild-card entrant from Day 32"],
+  ["Asif Azim", 42, "Evicted by public vote; entered on Day 11"],
+  ["Apurva Agnihotri", 49, "Evicted by public vote"],
+  ["Candy Brar", 56, "Evicted by public vote; a wild-card entrant"],
+  ["Pratyusha Banerjee", 63, "Evicted by public vote"],
+  ["Elli Avram", 70, "Evicted by public vote"],
+  ["Sofia Hayat", 84, "Evicted by public vote; entered on Day 45, initially into the Caravan"],
+  ["Kamya Panjabi", 91, "Evicted by public vote"],
+  ["Kushal Tandon", 95, "Evicted by public vote. His full run: ejected on Day 44, re-entered on Day 68, and evicted for good on Day 95"],
+  ["Armaan Kohli", "98†", "Evicted by public vote. His full run: held in the secret room on Days 77–78, ejected on Day 94, re-entered on Day 95, and finally evicted on Day 98†"],
+  ["Andy Kumar", 101, "Evicted by public vote"],
+];
+
+const SEASON7_MOMENTS = [
+  {
+    title: "Heaven and Hell",
+    text: "The house was split in two: a luxurious 'Heaven' side, with the pool, and a 'Hell' side with no running water and no kitchen of its own, whose residents depended on Heaven for food — and the two sides could not cross or share items. On Day 31 the Hell side was demolished and everyone moved into Heaven.",
+  },
+  {
+    title: "The Bigg Boss Warden",
+    text: "A new feature for this season: a warden who monitored the inmates and kept them to time, adding a layer of discipline the house had never had before.",
+  },
+  {
+    title: "Day 44: an ejection and the winner's walk-out",
+    text: "Day 44 brought two exits at once: Kushal Tandon was ejected, and Gauahar Khan walked out on the same day. She returned the very next day, Day 45, and went on to win the season; Kushal was brought back later, on Day 68.",
+  },
+  {
+    title: "The Caravan",
+    text: "Mid-season entrants Ajaz Khan and Candy Brar were first housed in a separate Caravan before joining the main house; Andy Kumar was later sent to the Caravan as a punishment for discussing nominations, and Sofia Hayat also entered through it.",
+  },
+  {
+    title: "A wild card in the final three",
+    text: "Ajaz Khan entered mid-season as a wild card and finished as second runner-up — third place — ahead of Day 1 entrant Sangram Singh: one of the deepest wild-card runs of the show's early years.",
+  },
+];
+
+function renderSeason7Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 7 result — Gauahar Khan won the season",
+      `<p>Bigg Boss 7 — styled <em>Bigg Boss: Jannat Ka Wow Aur Jahannum Ka Aaw</em>, also called <em>Bigg Boss: Saath Saat</em> — ran from <strong>15 September 2013</strong> to the finale on <strong>28 December 2013</strong>: 104 days, 20 housemates, hosted by Salman Khan on Colors TV. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Gauahar Khan"],
+        ["1st runner-up", "Tanishaa Mukerji"],
+        ["2nd runner-up", "Ajaz Khan"],
+        ["3rd runner-up", "Sangram Singh"],
+      ])}
+      <p style="margin-top:1rem;">The winner's own road to the trophy included a walk-out: Gauahar Khan left the house on Day 44 — the same day Kushal Tandon was ejected — and returned the next day, Day 45, to complete her run to the title. On finale night Sangram Singh went out first, then Ajaz Khan, leaving Gauahar to beat Tanishaa Mukerji in the final two.</p>
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 7's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 7 final four",
+      renderSeasonFinalistCards(SEASON7_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 7 eviction order — who left, and when",
+      `<p>Sixteen housemates left before the finale, in this order (from the season's record) — two of them had more than one stint, as their notes show:</p>
+      ${renderSeasonEvictionTable(SEASON7_EVICTIONS)}
+      <p style="margin-top:1rem;">Days marked † are contested inside the season record: Armaan Kohli's final eviction is given as Day 98 by the housemates status table, while his row in the nominations table ends on Day 97 — the day shown follows the status table, not settled fact. The finale followed on Day 104 (28 December 2013): Sangram Singh (third runner-up) and Ajaz Khan (second runner-up) went out first, leaving Gauahar Khan to beat Tanishaa Mukerji (first runner-up) for the title.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 7 story — the season's defining moments",
+      renderSeasonMoments(SEASON7_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-8-voting/",
+        emoji: "👑",
+        title: "Bigg Boss 8 Voting",
+        text: "The season of the five Champions: the official result, the Halla Bol finish, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 8 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-16-voting/",
+        emoji: "🎪",
+        title: "Bigg Boss 16 Voting",
+        text: "MC Stan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 16 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason7Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 7 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 7 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 7 voting closed when the season ended with the finale on 28 December 2013, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 7?</summary>
+        <div class="bb-faq-body">
+          <p>Gauahar Khan won Bigg Boss 7. The final order was: Tanishaa Mukerji (first runner-up), Ajaz Khan (second runner-up — a wild-card entrant) and Sangram Singh (third runner-up).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 7 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The four finalists were Gauahar Khan, Tanishaa Mukerji, Ajaz Khan and Sangram Singh. The season ran from 15 September 2013 to 28 December 2013 — 104 days and 20 housemates, hosted by Salman Khan on Colors TV.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 7. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+
 export function renderBiggBossPollPage(poll) {
   if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
   if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
@@ -7097,6 +7608,8 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-11-voting" ? renderSeason11Sections() : ""}
     ${poll.slug === "bigg-boss-10-voting" ? renderSeason10Sections() : ""}
     ${poll.slug === "bigg-boss-9-voting" ? renderSeason9Sections() : ""}
+    ${poll.slug === "bigg-boss-8-voting" ? renderSeason8Sections() : ""}
+    ${poll.slug === "bigg-boss-7-voting" ? renderSeason7Sections() : ""}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
@@ -7119,7 +7632,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : renderFaqSection(poll)}
   </div>
   `;
 }
