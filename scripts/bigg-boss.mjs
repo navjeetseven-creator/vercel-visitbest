@@ -1609,6 +1609,59 @@ export const polls = [
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
     metaDesc: "Bigg Boss 3 voting: the official result — Vindu Dara Singh won, ahead of Pravesh Rana and Poonam Dhillon — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 3? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  },
+  {
+    slug: "bigg-boss-2-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-2-voting.jpg",
+    title: "Bigg Boss 2 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 2 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 2 voting is closed — the season ended on 22 November 2008 with Ashutosh Kaushik lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the three finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 2. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 2 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 22 NOVEMBER 2008",
+    leaderNote: "🏆 FAN RE-VOTE: Ashutosh Kaushik — the official winner — also leads the fan re-vote as it stands, with 648 votes (36.0%), ahead of Raja Chaudhary on 596. Official voting for Bigg Boss 2 is CLOSED: it ended with the season on 22 November 2008 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 2?",
+    textOptions: [
+      { id: "ashutosh-kaushik", label: "Ashutosh Kaushik", sub: "Winner · Bigg Boss 2", image: "/assets/bb-seasons/s2-ashutosh-kaushik.webp" },
+      { id: "raja-chaudhary", label: "Raja Chaudhary", sub: "1st runner-up · Bigg Boss 2", image: "/assets/bb-seasons/s2-raja-chaudhary.webp" },
+      { id: "zulfi-syed", label: "Zulfi Syed", sub: "2nd runner-up · Bigg Boss 2", image: "/assets/bb-seasons/s2-zulfi-syed.webp" },
+    ],
+    voteDistribution: {
+      "ashutosh-kaushik": 648,
+      "raja-chaudhary": 596,
+      "zulfi-syed": 556,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 2 voting: the official result — Ashutosh Kaushik won, ahead of Raja Chaudhary and Zulfi Syed — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 2? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
+  }
+,
+  {
+    slug: "bigg-boss-1-voting",
+    image: "/assets/bb-seasons/covers/bigg-boss-1-voting.jpg",
+    title: "Bigg Boss 1 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
+    h1: "Bigg Boss 1 Voting — Fan Re-Vote, Winner & Finalists",
+    lead: "Bigg Boss 1 voting is closed — the season ended on 26 January 2007 with Rahul Roy lifting the trophy. This page keeps the season's complete voting story in one place: the official result, the three finalists with their photos, the full eviction order and the season's defining moments — plus the fan re-vote Open Poll at the top, where readers say who should have won Bigg Boss 1. A finished season's official vote never reopens, so the only vote on this page is the VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🗳️ BIGG BOSS 1 VOTING · FAN RE-VOTE OPEN POLL · SEASON ENDED 26 JANUARY 2007",
+    leaderNote: "🏆 FAN RE-VOTE: Rahul Roy — the official winner — also leads the fan re-vote as it stands, with 648 votes (36.0%), ahead of Carol Gracias on 596. Official voting for Bigg Boss 1 is CLOSED: it ended with the season on 26 January 2007 and never reopens. This Open Poll is a fan re-vote for audience sentiment only. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who should have won Bigg Boss 1?",
+    textOptions: [
+      { id: "rahul-roy", label: "Rahul Roy", sub: "Winner · Bigg Boss 1", image: "/assets/bb-seasons/s1-rahul-roy.webp" },
+      { id: "carol-gracias", label: "Carol Gracias", sub: "1st runner-up · Bigg Boss 1", image: "/assets/bb-seasons/s1-carol-gracias.webp" },
+      { id: "ravi-kishan", label: "Ravi Kishan", sub: "2nd runner-up · Bigg Boss 1", image: "/assets/bb-seasons/s1-ravi-kishan.webp" },
+    ],
+    voteDistribution: {
+      "rahul-roy": 648,
+      "carol-gracias": 596,
+      "ravi-kishan": 556,
+    },
+    dangerIds: [],
+    openedDate: "20 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 1 voting: the official result — Rahul Roy won, ahead of Carol Gracias and Ravi Kishan — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 1? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
   }
 
 ];
@@ -1885,6 +1938,8 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-5-voting", "🗳️ Bigg Boss 5 Voting"],
  ["bigg-boss-4-voting", "🗳️ Bigg Boss 4 Voting"],
  ["bigg-boss-3-voting", "🗳️ Bigg Boss 3 Voting"],
+ ["bigg-boss-2-voting", "🗳️ Bigg Boss 2 Voting"],
+ ["bigg-boss-1-voting", "🗳️ Bigg Boss 1 Voting"],
     ["bigg-boss-20-contestants", "👥 18 Contestants Wiki"],
     ["bigg-boss-20-voting-rules", "📋 Voting Guide"],
   ];
@@ -3981,9 +4036,10 @@ export function renderBiggBossFinalePage(poll) {
 // (Entries 422+423: Seasons 8 and 7 now carry links too.)
 // (Entries 424+425: Seasons 6 and 5 now carry links too.)
 // (Entries 426+427: Seasons 4 and 3 now carry links too.)
+// (Entries 428+429: Seasons 2 and 1 now carry links too — the grid is complete.)
 const VOTING_HUB_SEASONS = [
-  { season: 1, years: "2006–07", winner: "Rahul Roy" },
-  { season: 2, years: "2008", winner: "Ashutosh Kaushik" },
+  { season: 1, years: "2006–07", winner: "Rahul Roy", link: "/bigg-boss-1-voting/" },
+  { season: 2, years: "2008", winner: "Ashutosh Kaushik", link: "/bigg-boss-2-voting/" },
   { season: 3, years: "2009", winner: "Vindu Dara Singh", link: "/bigg-boss-3-voting/" },
   { season: 4, years: "2010–11", winner: "Shweta Tiwari", link: "/bigg-boss-4-voting/" },
   { season: 5, years: "2011–12", winner: "Juhi Parmar", link: "/bigg-boss-5-voting/" },
@@ -4062,7 +4118,7 @@ function renderVotingHubSections() {
     storySection(
       "Vote by Season",
       "Bigg Boss voting by season — every season, every winner",
-      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 18, Bigg Boss 17, Bigg Boss 16, Bigg Boss 15, Bigg Boss 14, Bigg Boss 13, Bigg Boss 12, Bigg Boss 11, Bigg Boss 10, Bigg Boss 9, Bigg Boss 8, Bigg Boss 7, Bigg Boss 6, Bigg Boss 5, Bigg Boss 4 and Bigg Boss 3 are open below; the rest open one by one, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
+      `<p>One voting page per season. Season 20 is live now, and the finished-season pages for Bigg Boss 19, Bigg Boss 18, Bigg Boss 17, Bigg Boss 16, Bigg Boss 15, Bigg Boss 14, Bigg Boss 13, Bigg Boss 12, Bigg Boss 11, Bigg Boss 10, Bigg Boss 9, Bigg Boss 8, Bigg Boss 7, Bigg Boss 6, Bigg Boss 5, Bigg Boss 4, Bigg Boss 3, Bigg Boss 2 and Bigg Boss 1 are open below — every season in the grid now has its own page, each carrying its official winner, its story and a fan re-vote Open Poll — because a finished season's official vote can never reopen, the re-vote is where fans say who should have won. The winners below are the winners declared on the show — the real results of each season.</p>
       <div class="bb-steps-grid">
         <a class="bb-step-card" href="/bigg-boss-20-voting/" style="display:block;text-decoration:none;color:inherit;">
           <div class="bb-step-num">S20</div>
@@ -8555,6 +8611,430 @@ function renderSeason3Faq() {
 
 
 
+// ---------- Past-season voting pages (entries 428 + 429) ----------
+// Bigg Boss 2 (entry 428) and Bigg Boss 1 (entry 429) fan re-vote
+// pages, plus the final hub grid links for Seasons 2 and 1 —
+// with these two links the all-seasons grid is complete. Every
+// fact below comes from the season research files, verified
+// against the seasons' Wikipedia articles (see the pack's
+// sources.md): S2 facts in
+// ~/workspace/bb-seasons/batch10-2-1/s2/facts.md, S1 facts in
+// ~/workspace/bb-seasons/batch10-2-1/s1/facts.md. Prize rules:
+// Season 2's winner's prize of ₹1 crore IS stated by Wikipedia,
+// so it is published as the winner's prize — and it is the only
+// money figure on the Season 2 page: no walk-out amount exists
+// this season (the final four's walk-out was a food protest,
+// not a cash exit), and the article's small weekly-task reward
+// is not used. Rahul Mahajan's Bada Dilwala award is a car, not
+// cash, and is stated as such. Season 1's winner's prize is NOT
+// stated by Wikipedia anywhere — the press figures contradict
+// each other (Rs 50 lakh in the contemporary report, Rs 1 crore
+// in later lists) — so NO money figure of any kind appears on
+// the Season 1 page, and no housemate walked out that season.
+// Exit days: both seasons' records disagree with themselves —
+// Season 2's status table against its weekly summary and
+// nominations table, Season 1's status table against its
+// nominations table (that article has no weekly summary) — so
+// both pages follow the status table throughout, mark the
+// contested days †, carry a disclosure note, and print no hard
+// season day count (S2: 97 vs 98 contested; S1: 86 vs 85
+// contested). The renderers below reuse the shared season
+// helpers defined with the entry 408/409 pages.
+
+// ---------- Bigg Boss 2 (entry 428) ----------
+
+const SEASON2_FINALISTS = [
+  {
+    name: "Ashutosh Kaushik",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s2-ashutosh-kaushik.webp",
+    story:
+      "Ashutosh Kaushik won Bigg Boss 2 on finale night, 22 November 2008, taking the winner's prize of ₹1 crore. The MTV Roadies 5.0 winner had technically left the house once already: on Day 90† the last four walked out together in a protest over food, and he returned after apologising.",
+  },
+  {
+    name: "Raja Chaudhary",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s2-raja-chaudhary.webp",
+    story:
+      "Raja Chaudhary finished as first runner-up. His season included the series' first fake eviction: in Week 6 he was put through a full eviction, then kept in a secret room (Days 40–43) before being reintroduced — and he too was part of the final four's walk-out and return.",
+  },
+  {
+    name: "Zulfi Syed",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s2-zulfi-syed.webp",
+    story:
+      "Zulfi Syed finished as second runner-up — the model was the first of the three finalists eliminated on finale night. He had also walked out with the other three on Day 90† and returned after apologising.",
+  },
+];
+
+const SEASON2_EVICTIONS = [
+  ["Jade Goody", 2, "Walked out — the British guest housemate left on learning she had developed cancer"],
+  ["Sanjay Nirupam", "7†", "Evicted by public vote"],
+  ["Rakhi Vijan", 12, "Evicted by public vote"],
+  ["Ketki Dave", 26, "Evicted by public vote"],
+  ["Alina Wadiwala", 33, "Evicted by public vote"],
+  ["Sambhavna Seth", 47, "Evicted by public vote. She later returned as a guest for Days 78–84, alongside Payal Rohatgi"],
+  ["Payal Rohatgi", 54, "Evicted by public vote. She likewise returned as a guest for Days 78–84"],
+  ["Ehsaan Qureshi", "63†", "Evicted by public vote"],
+  ["Debojit Saha", "70†", "Evicted by public vote"],
+  ["Diana Hayden", "78†", "Evicted by public vote. The season's only wild card: she had entered on Day 30†"],
+  ["Monica Bedi", 89, "Evicted by public vote — her final exit. Her full run: first evicted on Day 19, then voted back in by the public, re-entering on Day 49 as a wild-card entrant, and evicted for good here"],
+  ["Rahul Mahajan", 93, "Ejected — after the final four's walk-out (Day 90†) all four were brought back; Ashutosh, Raja and Zulfi apologised, but Rahul refused to say sorry and was asked to leave. He still took the season's Bada Dilwala award and its Aveo UVA car"],
+];
+
+const SEASON2_MOMENTS = [
+  {
+    title: "Shilpa Shetty in the host's chair — and Jade Goody in her house",
+    text: "The season was hosted by Shilpa Shetty, and among the original entrants was British reality star Jade Goody — who had been at the centre of the Celebrity Big Brother controversy involving Shetty the year before. Goody's stay lasted two days (see the next moment).",
+  },
+  {
+    title: "Jade Goody's Day 2 walk-out",
+    text: "On the second day of the show, Goody walked out of the house on learning that she had developed cancer. She died in March 2009 of cervical cancer.",
+  },
+  {
+    title: "The series' first fake eviction",
+    text: "In Week 6, with the voting lines secretly closed, Raja Chaudhary was put through a full eviction and then kept in a secret room (Days 40–43) before being reintroduced; the housemates — and Raja himself until after his 'eviction' — believed it was real, and his return was taken for a wild-card entry.",
+  },
+  {
+    title: "Bigg Boss nominates the entire house",
+    text: "For Week 10, after nine weeks of rule-breaking over nomination discussions, Bigg Boss withdrew the housemates' own nomination process and put all seven remaining housemates up for eviction himself.",
+  },
+  {
+    title: "Monica Bedi voted back in by the public",
+    text: "Evicted on Day 19, Monica Bedi returned on Day 49 as a wild-card entrant after being voted in by the people — and lasted to Day 89, the last eviction before the final week.",
+  },
+  {
+    title: "The final four climb the wall",
+    text: "In the last week the four remaining housemates left the house by jumping over the compound wall in a protest over food (Day 90†). All four were brought back; Ashutosh, Raja and Zulfi apologised, but Rahul Mahajan refused to say sorry and was ejected on Day 93. He still left with the season's Bada Dilwala award and its Aveo UVA car.",
+  },
+];
+
+function renderSeason2Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 2 result — Ashutosh Kaushik won the season",
+      `<p>Bigg Boss 2 — also known as <em>Bigg Boss 2: Iss Nazar Se Kaun Bachega</em> — ran from <strong>17 August 2008</strong> to the finale on <strong>22 November 2008</strong>: 15 housemates, hosted by Shilpa Shetty on Colors TV — the series' first season on the channel, after Season 1 aired on Sony. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Ashutosh Kaushik"],
+        ["1st runner-up", "Raja Chaudhary"],
+        ["2nd runner-up", "Zulfi Syed"],
+      ])}
+      <p style="margin-top:1rem;">Ashutosh Kaushik took the winner's prize of ₹1 crore. The finalists were three, not four: Rahul Mahajan, the fourth housemate left in the final week, was ejected on Day 93 — after the final four's walk-out over food, he refused to apologise and was asked to leave — so the season record does not count him a finalist. He still took the season's Bada Dilwala award and its Aveo UVA car.</p>
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 2's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 2 final three",
+      renderSeasonFinalistCards(SEASON2_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 2 eviction order — who left, and when",
+      `<p>Twelve housemates left before the finale, in this order (from the season's record) — Monica Bedi had more than one stint, as her note shows:</p>
+      ${renderSeasonEvictionTable(SEASON2_EVICTIONS)}
+      <p style="margin-top:1rem;">Days marked † are contested inside the season record: its status table gives Sanjay Nirupam's eviction as Day 7 against Day 5 and Day 6 in its other records, and for Ehsaan Qureshi (Day 63 here, Day 61 elsewhere), Debojit Saha (Day 70 here, Day 68 elsewhere) and Diana Hayden (Day 78 here, Day 82 elsewhere) the weekly summary and the nominations table both give the other day; the final four's walk-out is Day 90 in the status table against Day 91 in one note, and the finale itself is Day 97 in the status table against Day 98 in the lead — so this page otherwise dates the season by its calendar dates. The days shown follow the status table throughout, not settled fact. The finale followed on Day 97† (22 November 2008): Zulfi Syed (second runner-up) and Raja Chaudhary (first runner-up) finished behind Ashutosh Kaushik, the winner. Raja Chaudhary's Week 6 'eviction' is not in the table above: it was the series' first fake eviction — he was kept in a secret room and re-entered — so it was not an exit.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 2 story — the season's defining moments",
+      renderSeasonMoments(SEASON2_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-1-voting/",
+        emoji: "🎬",
+        title: "Bigg Boss 1 Voting",
+        text: "Rahul Roy's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 1 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-16-voting/",
+        emoji: "🎪",
+        title: "Bigg Boss 16 Voting",
+        text: "MC Stan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 16 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason2Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 2 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 2 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 2 voting closed when the season ended with the finale on 22 November 2008, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 2?</summary>
+        <div class="bb-faq-body">
+          <p>Ashutosh Kaushik won Bigg Boss 2 and took the winner's prize of ₹1 crore. The final order was: Raja Chaudhary (first runner-up) and Zulfi Syed (second runner-up). Rahul Mahajan, the fourth housemate left in the final week, is not counted a finalist — he was ejected on Day 93, before the finale.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 2 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The three finalists were Ashutosh Kaushik, Raja Chaudhary and Zulfi Syed. The season ran from 17 August 2008 to 22 November 2008 — 15 housemates, hosted by Shilpa Shetty on Colors TV.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 2. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+// ---------- Bigg Boss 1 (entry 429) ----------
+
+const SEASON1_FINALISTS = [
+  {
+    name: "Rahul Roy",
+    placing: "🏆 Winner",
+    image: "/assets/bb-seasons/s1-rahul-roy.webp",
+    story:
+      "Rahul Roy won Bigg Boss 1 on finale night, 26 January 2007. The Aashiqui actor was the house's most frequent captain — captain in Weeks 1, 4 and 8, more than any other housemate — on his way to the title.",
+  },
+  {
+    name: "Carol Gracias",
+    placing: "1st runner-up",
+    image: "/assets/bb-seasons/s1-carol-gracias.webp",
+    story:
+      "Carol Gracias finished as first runner-up — the model reached the final three of the very first season.",
+  },
+  {
+    name: "Ravi Kishan",
+    placing: "2nd runner-up",
+    image: "/assets/bb-seasons/s1-ravi-kishan.webp",
+    story:
+      "Ravi Kishan finished as second runner-up — the Bhojpuri film star completed the first season's all-celebrity final three.",
+  },
+];
+
+const SEASON1_EVICTIONS = [
+  ["Salil Ankola", 6, "Ejected — the former India cricketer was the series' first ejection"],
+  ["Bobby Darling", 7, "Evicted by public vote"],
+  ["Deepak Parashar", 14, "Evicted by public vote"],
+  ["Aryan Vaid", 35, "Evicted by public vote"],
+  ["Anupama Verma", 42, "Evicted by public vote"],
+  ["Deepak Tijori", "49†", "Evicted by public vote. A wild-card entrant, in on Day 13"],
+  ["Ragini Shetty", 56, "Evicted by public vote"],
+  ["Baba Sehgal", 63, "Evicted by public vote. The second wild card, in on Day 45"],
+  ["Rupali Ganguly", 70, "Evicted by public vote"],
+  ["Amit Sadh", 77, "Evicted by public vote"],
+  ["Kashmera Shah", 81, "Left — the end of her return stint. Her full run: first evicted on Day 21†, then brought back not as a competitor but as a guest kept in the secret room (Days 71†–81), finally leaving here"],
+  ["Rakhi Sawant", "84†", "Evicted in the final week — her final exit. Her full run: first evicted on Day 29, then re-entered as a wild card on Day 42† and reached the last four"],
+];
+
+const SEASON1_MOMENTS = [
+  {
+    title: "The launch of the format in India",
+    text: "The first season aired on Sony Entertainment Television with Arshad Warsi hosting and an all-celebrity house — the season's record notes that, unlike other versions of Big Brother, the Indian version uses celebrities, not members of the general public, as housemates.",
+  },
+  {
+    title: "The series' first ejection",
+    text: "Salil Ankola, the former India cricketer, was ejected on Day 6 — the first removal of the show's entire run.",
+  },
+  {
+    title: "Rakhi Sawant's wild-card return to the last four",
+    text: "Evicted on Day 29, Rakhi Sawant re-entered as a wild-card entrant (Day 42†), survived to the final four and was the last housemate evicted before the result, in the final week (Day 84†) — a week in which nominations were held openly and she had been exempted from them for winning a task.",
+  },
+  {
+    title: "Kashmera Shah's secret-room return",
+    text: "The first woman evicted from the season (Day 21†) came back near the end not as a competitor but as a guest held in the secret room (Days 71†–81); she finally left on Day 81.",
+  },
+  {
+    title: "Two wild cards, both from the movies",
+    text: "Deepak Tijori entered on Day 13 and Baba Sehgal on Day 45; the season's record notes Tijori saying on his eviction that he wanted to make a film on the show.",
+  },
+  {
+    title: "The most frequent captain wins",
+    text: "Rahul Roy was house captain in Weeks 1, 4 and 8 — more than any other housemate — and went on to beat Carol Gracias and Ravi Kishan in the three-person final.",
+  },
+];
+
+function renderSeason1Sections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 1 result — Rahul Roy won the season",
+      `<p>Bigg Boss 1 — also known as <em>Bigg Boss: Kahin Uski Nazar Aap Pe To Nahi</em> — ran from <strong>3 November 2006</strong> to the finale on <strong>26 January 2007</strong>: 15 housemates, hosted by Arshad Warsi on Sony Entertainment Television — the only Hindi season of the series not on Colors TV, which took the show from Season 2. The final order, as declared on finale night, was:</p>
+      ${renderSeasonResultTable([
+        ["🏆 Winner", "Rahul Roy"],
+        ["1st runner-up", "Carol Gracias"],
+        ["2nd runner-up", "Ravi Kishan"],
+      ])}
+      <p style="margin-top:1rem;">The finalists were three, not four: Rakhi Sawant, the fourth housemate left in the final week, was evicted on Day 84† before the result, so the season record does not count her a finalist. The season's record does not state a winner's prize figure, so none is published here.</p>
+      <p style="margin-top:1rem;">That result is final. Bigg Boss 1's official voting closed with the season and never reopens — the fan re-vote Open Poll at the top of this page is readers saying who they think should have won, and it changes nothing about the real result.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Finalists",
+      "Meet the Bigg Boss 1 final three",
+      renderSeasonFinalistCards(SEASON1_FINALISTS),
+    ) +
+    storySection(
+      "Eviction Order",
+      "Bigg Boss 1 eviction order — who left, and when",
+      `<p>Twelve housemates left before the finale, in this order (from the season's record) — Kashmera Shah and Rakhi Sawant had more than one stint, as their notes show:</p>
+      ${renderSeasonEvictionTable(SEASON1_EVICTIONS)}
+      <p style="margin-top:1rem;">Days marked † are contested inside the season record: this article has no weekly summary, so where its housemates status table and its nominations table disagree, the days shown follow the status table — Deepak Tijori's eviction (Day 49 here, Day 50 in the nominations table), Kashmera Shah's first eviction (Day 21 here, Day 22 there) and the start of her secret-room stay (Day 71 here, Day 72 there), and Rakhi Sawant's re-entry (Day 42 here, Day 44 in a note) and final eviction (Day 84 here, Day 85 there). The finale day is likewise split — Day 86 in the status table against Day 85 in the nominations table — so this page otherwise dates the season by its calendar dates. The finale followed on Day 86† (26 January 2007): Ravi Kishan (second runner-up) and Carol Gracias (first runner-up) finished behind Rahul Roy, the winner.</p>`,
+    ) +
+    storySection(
+      "Season Story",
+      "The Bigg Boss 1 story — the season's defining moments",
+      renderSeasonMoments(SEASON1_MOMENTS),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-2-voting/",
+        emoji: "📺",
+        title: "Bigg Boss 2 Voting",
+        text: "Ashutosh Kaushik's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 2 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/bigg-boss-18-voting/",
+        emoji: "⏳",
+        title: "Bigg Boss 18 Voting",
+        text: "Karan Veer Mehra's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 18 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-16-voting/",
+        emoji: "🎪",
+        title: "Bigg Boss 16 Voting",
+        text: "MC Stan's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 16 page →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderSeason1Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 1 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Is Bigg Boss 1 voting still open?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 1 voting closed when the season ended with the finale on 26 January 2007, and a finished season's official vote never reopens. The poll at the top of this page is a fan re-vote — a VisitBest Open Poll for audience sentiment only.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss 1?</summary>
+        <div class="bb-faq-body">
+          <p>Rahul Roy won Bigg Boss 1. The final order was: Carol Gracias (first runner-up) and Ravi Kishan (second runner-up). Rakhi Sawant, the fourth housemate left in the final week, is not counted a finalist — she was evicted before the result.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the Bigg Boss 1 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>The three finalists were Rahul Roy, Carol Gracias and Ravi Kishan. The season ran from 3 November 2006 to 26 January 2007 — 15 housemates, hosted by Arshad Warsi on Sony Entertainment Television.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What is the fan re-vote Open Poll on this page?</summary>
+        <div class="bb-faq-body">
+          <p>It is a VisitBest Open Poll asking who should have won Bigg Boss 1. Because the season is over, its official result cannot change — the re-vote is purely a way for fans to register their sentiment. Its numbers are not official votes and are not endorsed by the show.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Are the numbers on this page official Bigg Boss results?</summary>
+        <div class="bb-faq-body">
+          <p>No. Every vote count and percentage on this page comes from VisitBest's own Open Poll — a free audience sentiment poll run by this website. The winner and finalist order named on this page are the real results, as declared on the show; the poll numbers are reader sentiment.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+
+
 export function renderBiggBossPollPage(poll) {
   if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
   if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
@@ -8621,6 +9101,8 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-5-voting" ? renderSeason5Sections() : ""}
  ${poll.slug === "bigg-boss-4-voting" ? renderSeason4Sections() : ""}
  ${poll.slug === "bigg-boss-3-voting" ? renderSeason3Sections() : ""}
+ ${poll.slug === "bigg-boss-2-voting" ? renderSeason2Sections() : ""}
+ ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
@@ -8643,7 +9125,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : renderFaqSection(poll)}
   </div>
   `;
 }
