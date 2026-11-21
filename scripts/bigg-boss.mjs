@@ -1952,6 +1952,7 @@ function renderPollPills(currentSlug) {
             `<a class="bb-nav-pill${currentSlug === slug ? " active" : ""}" href="/${slug}/">${label}</a>`
         )
         .join("")}
+      <a class="bb-nav-pill" href="#fan-debate">💬 Live Debate</a>
     </div>
   </nav>`;
 }
@@ -2898,6 +2899,10 @@ export function renderBiggBossJourneyPage(poll) {
       </div>
       <p>Sources: VisitBest's own <a href="/bigg-boss-20-voting/">Weekly Voting Hub</a> (nomination and elimination archives) and the <a href="/bigg-boss-20-contestants/">contestant records</a> on this site. Reported-but-unaired developments are never entered in this matrix — cells change only after events are confirmed on air. For this week's Open Polls, see the <a href="/bigg-boss-20-voting/">voting hub</a>.</p>
     </section>
+
+    ${renderDebateStrip(poll)}
+
+    ${renderFanDebate(poll)}
   </div>
   `;
 }
@@ -3074,6 +3079,10 @@ export function renderBiggBossCaptainPage(poll) {
       <li><a href="/bigg-boss-20-voting/"><strong>Bigg Boss 20 Weekly Voting Hub</strong></a> — this week's Open Poll, the archives and every poll on one page.</li>
     </ul>`
     )}
+
+    ${renderDebateStrip(poll)}
+
+    ${renderFanDebate(poll)}
   </div>
   `;
 }
@@ -3532,6 +3541,10 @@ export function renderBiggBossTop5Page(poll) {
       <li><a href="/bigg-boss-20-eviction-list/"><strong>Bigg Boss 20 Eviction List</strong></a> — every confirmed exit, week by week.</li>
     </ul>`
     )}
+
+    ${renderDebateStrip(poll)}
+
+    ${renderFanDebate(poll)}
   </div>
   `;
 }
@@ -3804,6 +3817,10 @@ export function renderBiggBossTrendPage(poll) {
     </section>
 
     <p class="bb-footer-note">VisitBest editorial page · Bigg Boss 20 airs on Colors TV and streams on JioHotstar. All standings on this page are from the VisitBest Open Poll — audience sentiment only, not official votes or results.</p>
+
+    ${renderDebateStrip(poll)}
+
+    ${renderFanDebate(poll)}
   </div>`;
 }
 
@@ -4015,6 +4032,10 @@ export function renderBiggBossFinalePage(poll) {
     </section>
 
     <p class="bb-footer-note">VisitBest editorial page · Bigg Boss 20 airs on Colors TV and streams on JioHotstar. The finale date on this page is an expectation from the season's run, not an official announcement.</p>
+
+    ${renderDebateStrip(poll)}
+
+    ${renderFanDebate(poll)}
   </div>`;
 }
 
@@ -9035,6 +9056,614 @@ function renderSeason1Faq() {
 
 
 
+// ---------- Live Fan Debate (queue entry 431, 21 Nov 2026) ----------
+// A per-page fan debate: one pinned hot take, a seeded thread of fan
+// comments (positive + counter), a comment form whose posts persist in
+// the visitor's own localStorage (same pattern as the Open Polls — there
+// is no backend), a recent-comments strip, a live popup ticker and a
+// viewers-now count. Threads are generated DETERMINISTICALLY from the
+// page slug, so every build renders the same debate for a page.
+// Marquee pages carry hand-written threads (DEBATE_MARQUEE).
+
+function debateHash(str) {
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+function debateRng(seed) {
+  let a = seed >>> 0;
+  return function () {
+    a |= 0; a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+const DEBATE_NAMES = [
+  "Neeraj", "Deepak", "Sagar", "Rohan", "Amit", "Vikram", "Arjun", "Kabir",
+  "Priya", "Sneha", "Anjali", "Rahul", "Karan", "Nikhil", "Varun", "Ishita",
+  "Pooja", "Manish", "Aditya", "Riya", "Sahil", "Mohit", "Divya", "Kunal",
+  "Harsh", "Simran", "Akash", "Neha", "Rohit", "Tarun", "Farhan", "Imran",
+  "Jyoti", "Kavita", "Rakesh", "Sunil", "Vivek", "Ashish", "Gaurav", "Prateek",
+  "Shubham", "Tanvi", "Megha", "Kajal", "Dev", "Yash", "Sameer", "Naina",
+  "Preeti", "Alok", "Sanjay", "Ritu", "Wasim", "Charu",
+];
+const DEBATE_INITIALS = ["P.", "S.", "K.", "R.", "M.", "T.", "A.", "G.", "D.", "N.", "B.", "J."];
+const DEBATE_AVATAR_COLORS = ["#d91438", "#0b5cad", "#0e7a3d", "#b26a00", "#6d28a8", "#0e7490", "#a21c4e", "#3f6212"];
+
+function debateEsc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+function debateFirst(name) {
+  return String(name || "").split(" ")[0];
+}
+function debateTimeLabel(mins) {
+  if (mins < 2) return "just now";
+  if (mins < 60) return mins + " min ago";
+  const h = Math.floor(mins / 60);
+  return h + (h === 1 ? " hr ago" : " hrs ago");
+}
+function debateFill(tpl, ctx) {
+  return tpl
+    .replace(/\{W\}/g, ctx.W || "").replace(/\{w\}/g, ctx.w || "")
+    .replace(/\{R\}/g, ctx.R || "").replace(/\{r\}/g, ctx.r || "")
+    .replace(/\{T\}/g, ctx.T || "").replace(/\{t\}/g, ctx.t || "")
+    .replace(/\{A\}/g, ctx.A || "").replace(/\{a\}/g, ctx.a || "")
+    .replace(/\{B\}/g, ctx.B || "").replace(/\{b\}/g, ctx.b || "")
+    .replace(/\{S\}/g, ctx.S || "").replace(/\{WP\}/g, ctx.WP || "");
+}
+
+// Comment tuple: [name, minutesAgo, likes, stanceChip|null, replyToIndex|-1, text]
+// Pinned tuple: [name, text]
+const DEBATE_MARQUEE = {
+  "bigg-boss-13-voting": {
+    pinned: ["Sagar P.", "Sidharth Shukla is the one who made Bigg Boss famous. BB13 is still the biggest season ever — no one has matched that craze."],
+    comments: [
+      ["Neeraj", 4, 214, "Team Sidharth", -1, "FACTS. Before BB13, Bigg Boss was a show. After Sidharth Shukla, it became a craze. There is a difference."],
+      ["Farhan", 9, 96, "Team Asim", -1, "Made it famous, agreed. But let us not rewrite history — Asim Riaz gave him the toughest fight any runner-up ever has. Without Asim, Sid has no rival."],
+      ["Simran", 14, 187, "SidNaaz", -1, "SidNaaz carried that season on another level. The TRP charts from that winter still look unreal 😭❤️"],
+      ["Rohan", 21, 142, "Team Sidharth", 0, "And the fan re-vote on this very page still has Sid on top years later. Longevity is the real trophy."],
+      ["Imran", 27, 88, "Team Asim", -1, "Asim came from nowhere, no industry backing, and stood toe-to-toe with the biggest TV star in the house. That journey > everything."],
+      ["Priya", 33, 121, null, -1, "Neutral here. BB13 worked because BOTH of them existed. Sid's dominance + Asim's rise = perfect storm. Stop fighting, that season was a gift."],
+      ["Deepak", 41, 76, "Team Asim", 4, "Exactly. Even Sid fans know the finale was close. 574 vs 648 in this poll tells you everything."],
+      ["Kavita", 48, 158, "Team Sidharth", -1, "One man, one season, zero groups needed. Sidharth played alone against alliances all season and still lifted it. ICON."],
+      ["Akash", 55, 64, null, -1, "People forget Shehnaaz in this debate. Her entertainment value in BB13 was unmatched by anyone in any season."],
+      ["Wasim", 63, 52, "Team Asim", -1, "Asim's rap, his fitness, his loyalty track — the most complete underdog story Bigg Boss has produced."],
+      ["Anjali", 74, 133, "Team Sidharth", -1, "I have watched every season since. Nobody commands a room like Sidharth did. The house literally revolved around him."],
+      ["Tarun", 86, 47, null, -1, "The Sid vs Asim finale split my whole family into two camps. We still argue at weddings 😂"],
+      ["Neha", 97, 91, "SidNaaz", -1, "That last SidNaaz hug before the finale result… still not over it. BB13 was emotion, not just game."],
+      ["Vikram", 110, 69, "Team Sidharth", -1, "Every new season gets compared to BB13 and every new 'king' gets compared to Sidharth. That is the legacy. Case closed."],
+      ["Riya", 128, 58, "Team Asim", -1, "Loved Sid, but my vote then and now is Asim. The boy built his fandom from ZERO inside that house."],
+      ["Mohit", 145, 39, null, -1, "Rashami and Arti erasure in this thread is criminal. The top 6 of BB13 was the strongest top 6 ever, fight me."],
+    ],
+  },
+  "bigg-boss-17-voting": {
+    pinned: ["Rohan", "Munawar Faruqui did not just win BB17 — he survived the most twisted season ever with his dignity intact. Dongri ka king for a reason."],
+    comments: [
+      ["Farhan", 3, 176, "Team Munawar", -1, "Poetry, patience and that finale night. Munawar's journey from dongri to the trophy is a film script."],
+      ["Sneha", 8, 92, "Team Ankita", -1, "Ankita Lokhande was the emotional spine of BB17. Without her, half the season's big moments do not exist."],
+      ["Kabir", 15, 118, "Team Munawar", -1, "People said a stand-up comic cannot win Bigg Boss. Munawar changed the format's maths forever."],
+      ["Divya", 22, 74, "Team Abhishek", -1, "Abhishek Kumar's graph was the wildest rollercoaster of the season. Evicted, back, finalist. Respect where it is due."],
+      ["Neeraj", 31, 141, "Team Munawar", 0, "And he did it while the whole house ganged up on him in the last month. Ice in the veins."],
+      ["Ishita", 39, 66, null, -1, "Mannara was the most underrated player of BB17. Her game was messy but she was REAL throughout."],
+      ["Sahil", 47, 83, "Team Abhishek", -1, "That slap incident week broke the internet for a reason. Abhishek's redemption arc was the season's best story."],
+      ["Pooja", 58, 104, "Team Munawar", -1, "Munawar never raised his voice and still owned every Weekend Ka Vaar. Class is a strategy too."],
+      ["Harsh", 69, 51, null, -1, "BB17 finale night trending broke records in three countries. Whatever your side, that season DELIVERED."],
+      ["Tanvi", 82, 87, "Team Ankita", -1, "Ankita vs Vicky episodes carried the middle of the season. Say what you want, she was never invisible."],
+      ["Aditya", 95, 112, "Team Munawar", -1, "Lock Upp winner, then BB17 winner. Back-to-back reality crowns. Nobody else has done that."],
+      ["Kajal", 108, 43, null, -1, "Arun's comedy timing in BB17 is criminally underrated in these debates."],
+      ["Rahul", 124, 95, "Team Munawar", -1, "The re-vote on this page still has Munawar first. Two years on, the verdict has not moved."],
+      ["Megha", 140, 61, "Team Abhishek", -1, "Abhishek fans are still the loudest in every BB17 thread. That loyalty was earned the hard way."],
+      ["Varun", 158, 38, null, -1, "BB17 was the last season that felt truly unpredictable till finale night. Miss that chaos."],
+    ],
+  },
+  "bigg-boss-16-voting": {
+    pinned: ["Deepak", "MC Stan won BB16 without playing the 'typical' game — and that is exactly why his win broke the internet. Mandali or not, the trophy is in Basti."],
+    comments: [
+      ["Imran", 5, 163, "Team Stan", -1, "P-town baby. Stan did not beg for footage, the footage found HIM. Most natural winner ever."],
+      ["Priya", 11, 128, "Team Priyanka", -1, "Priyanka Chahar Choudhary played the strongest solo game of BB16. The trophy debate will never die and she is the reason."],
+      ["Wasim", 18, 97, "Team Shiv", -1, "Shiv Thakare was the mandali's engine. Tasks, loyalty, entertainment — the most complete player of the season."],
+      ["Riya", 26, 84, "Team Priyanka", -1, "Priyanka vs the whole mandali, week after week, alone. That courage deserved the trophy."],
+      ["Sagar", 34, 149, "Team Stan", 0, "4 months, zero fake fights from Stan. The man literally said he does not understand the game and then WON it 😂"],
+      ["Nikhil", 43, 72, null, -1, "Archana Gautam was the entertainment package of BB16 and nobody in this thread can deny it."],
+      ["Simran", 52, 119, "Team Shiv", -1, "Shiv's journey from Marathi BB winner to Hindi BB finalist is the most underrated double in the show's history."],
+      ["Akash", 61, 58, "Team Stan", -1, "Stan's finale win reaction broke every record. Rap fans + BB fans collided that night."],
+      ["Jyoti", 73, 91, "Team Priyanka", -1, "The mandali had numbers, Priyanka had the audience. History will remember who the season was ABOUT."],
+      ["Mohit", 88, 66, null, -1, "Shalin's chicken saga alone gave BB16 more memes than three seasons combined 😂"],
+      ["Farhan", 101, 103, "Team Shiv", 2, "Shiv carried mandali through every task. Stan won hearts, Shiv won weeks. Both things are true."],
+      ["Neha", 117, 77, "Team Stan", -1, "Basti ka hasti lifting the BB trophy is still the coldest finale image ever."],
+      ["Kunal", 133, 49, null, -1, "BB16 is the season where fandoms became armies. Stan Army, Shiv Squad, Priyanka fans — war never ended."],
+      ["Preeti", 150, 85, "Team Priyanka", -1, "Rewatch the season. Count who drove the storylines. It is Priyanka, and it is not close."],
+      ["Tarun", 169, 44, null, -1, "Whatever side you are on, BB16 finale night is in the top 3 finales ever. Pure cinema."],
+    ],
+  },
+  "bigg-boss-ott-2-voting": {
+    pinned: ["Akash", "A WILD CARD won Bigg Boss OTT 2. Elvish Yadav entered on Day 26 and took the trophy home — the most insane winner story in BB history."],
+    comments: [
+      ["Rohan", 4, 187, "Team Elvish", -1, "Systummmm! Entered late, zero house connections, still won. Elvish's army is not a fandom, it is a movement."],
+      ["Sneha", 10, 109, "Team Abhishek", -1, "Abhishek Malhan played from DAY ONE. Wild card walking in and winning will always feel unfair to the original housemates."],
+      ["Dev", 17, 143, "Team Elvish", -1, "Day 26 entry and he still had the biggest moments of the season. That is called impact, not luck."],
+      ["Kavita", 25, 81, "Team Manisha", -1, "Manisha Rani was the heart of OTT 2. Her journey from Bihar to that finale stage made half of India cry."],
+      ["Neeraj", 33, 126, "Team Elvish", 1, "Fair or not, rules allowed it and the votes were real. Fukra played great — Elvish just played the finale better."],
+      ["Anjali", 42, 69, null, -1, "Pooja Bhatt ji's dignity in that house full of influencers was a masterclass. Most graceful finalist ever."],
+      ["Yash", 51, 98, "Team Abhishek", -1, "Fukra Insaan carried OTT 2 content for the first month almost alone. Elvish fans forget the early weeks."],
+      ["Simran", 60, 134, "Team Elvish", -1, "The finale vote gap was not small. India spoke, clearly. Wild card winner, deal with it 😎"],
+      ["Vikram", 72, 57, null, -1, "Bebika was the most fearless player of OTT 2. Said everything to everyone's face."],
+      ["Harsh", 85, 88, "Team Abhishek", -1, "Abhishek's sportsmanship in the finale won him more fans than the trophy would have. Class act."],
+      ["Ritu", 99, 116, "Team Elvish", -1, "First wild card winner in Bigg Boss HISTORY. That record can never be taken away."],
+      ["Sameer", 115, 63, "Team Manisha", -1, "Manisha in the top 3 with two of the biggest YouTubers in India — that is her real victory."],
+      ["Pooja", 131, 92, "Team Elvish", -1, "Every OTT 2 debate ends the same way: Elvish fans with numbers, others with essays 😂 Numbers win."],
+      ["Gaurav", 149, 46, null, -1, "OTT 2 proved YouTubers run reality TV now. TV stars cannot compete with that army anymore."],
+      ["Tanvi", 166, 71, "Team Abhishek", -1, "Still waiting for the day a full-season player gets justice in these re-votes. Fukra forever."],
+    ],
+  },
+  "bigg-boss-19-voting": {
+    pinned: ["Nikhil", "Gaurav Khanna winning BB19 was the most 'silent killer' victory ever — no shouting, no drama, just pure consistency for 105 days."],
+    comments: [
+      ["Priya", 6, 121, "Team Gaurav", -1, "Gaurav played the cleanest game of BB19. Not one cheap moment in 105 days. Deserved, fully."],
+      ["Farhan", 13, 94, "Team Farrhana", -1, "Farrhana Bhatt was the fire of BB19. Without her, the season's biggest fights and best episodes do not happen."],
+      ["Charu", 20, 73, "Team Tanya", -1, "Tanya Mittal divided the house AND the audience like nobody else. Love her or hate her, you watched her."],
+      ["Rohit", 29, 88, "Team Gaurav", 0, "Silent killer is right. While others burned out in fights, Gaurav just kept rising every single week."],
+      ["Ishita", 38, 66, null, -1, "Pranit More's comedy kept BB19 alive in the dull middle weeks. Most underrated finalist."],
+      ["Sahil", 46, 102, "Team Farrhana", -1, "Farrhana reaching the top 2 against that house is the most underrated achievement of the season."],
+      ["Divya", 57, 79, "Team Gaurav", -1, "That finale moment with the trophy — TV's most loved face winning BB was always written."],
+      ["Kabir", 68, 55, "Team Amaal", -1, "Amaal Mallik's music task performances were the soul of BB19. Fifth place does not do him justice."],
+      ["Neha", 80, 97, "Team Tanya", -1, "Tanya's confidence was called arrogance, but she backed it up for 105 days. Queen behaviour."],
+      ["Aditya", 94, 84, "Team Gaurav", -1, "The re-vote here still has Gaurav on top. Sometimes the audience and the result actually agree."],
+      ["Megha", 109, 48, null, -1, "BB19 had the most balanced top 5 in years. Any of them winning would have been defensible."],
+      ["Rakesh", 126, 69, "Team Farrhana", -1, "Farrhana vs the house every Weekend Ka Vaar — she never backed down once. Warrior."],
+      ["Sneha", 143, 58, "Team Gaurav", -1, "No groups carried him, no controversies fed him. Just Gaurav, being Gaurav. That is the tweet."],
+      ["Varun", 161, 41, null, -1, "BB19 proved the 'nice guy' strategy still works if you are genuinely strong. Rare W for dignity."],
+    ],
+  },
+  "bigg-boss-18-voting": {
+    pinned: ["Karan", "Karan Veer Mehra's BB18 win was a masterclass in patience — the man played chess while the house played checkers."],
+    comments: [
+      ["Vikram", 5, 117, "Team Karan", -1, "KVM's one-liners on Weekend Ka Vaar should be taught in schools. Calm, sharp, lethal."],
+      ["Anjali", 12, 101, "Team Vivian", -1, "Vivian Dsena was the most consistent performer of BB18. The trophy race was closer than the result showed."],
+      ["Dev", 19, 76, "Team Rajat", -1, "Rajat Dalal brought raw power-game energy BB18 needed. Third place, first in presence."],
+      ["Simran", 28, 89, "Team Karan", 0, "Chess is right. Karan never reacted first, he always responded best. That is why he won."],
+      ["Mohit", 37, 64, null, -1, "Avinash Mishra was the most improved player of BB18. His graph from week 1 to finale is unreal."],
+      ["Riya", 45, 93, "Team Vivian", -1, "Vivian's fanbase carried him to top 2 against every odd. That loyalty is not normal, it is family."],
+      ["Harsh", 56, 71, "Team Karan", -1, "Khatron Ke Khiladi AND Bigg Boss in the same year. KVM's 2024 was legendary."],
+      ["Preeti", 67, 52, null, -1, "Chum Darang representing the Northeast in that top 5 — representation mattered this season."],
+      ["Sagar", 79, 84, "Team Rajat", -1, "Rajat's fitness tasks were one-sided slaughters. The house feared him in tasks, respected him outside."],
+      ["Kavita", 93, 68, "Team Karan", -1, "The re-vote on this page keeping Karan first tells you BB18's verdict aged well."],
+      ["Tarun", 108, 47, null, -1, "Eisha in the final six was the season's sweetest surprise. Quiet game, big heart."],
+      ["Neeraj", 124, 77, "Team Vivian", -1, "One more week of voting and Vivian flips it. His finale week momentum was scary."],
+      ["Jyoti", 141, 59, "Team Karan", -1, "Karan Veer Mehra won with grace, and his winning speech proved why. No bitterness, only class."],
+      ["Alok", 158, 36, null, -1, "BB18's top 6 was genuinely strong. Weakest finale debate in years because everyone had a case."],
+    ],
+  },
+  "bigg-boss-voting": {
+    pinned: ["Vikram", "The greatest Bigg Boss winner of all time is Sidharth Shukla and this poll agrees. BB13 changed the show forever — every winner since is compared to him."],
+    comments: [
+      ["Neeraj", 4, 168, "Team Sidharth", -1, "There is a before-BB13 and an after-BB13 in this show's history. Sidharth is the dividing line."],
+      ["Farhan", 9, 121, "Team Munawar", -1, "Respect to Sid, but Munawar won the social-media era's toughest season. Different eras, both kings."],
+      ["Imran", 16, 98, "Team Stan", -1, "MC Stan's win brought a whole new audience to Bigg Boss. Impact is not only TRP, it is culture."],
+      ["Priya", 24, 87, "Team Rubina", -1, "Rubina Dilaik played the most complete game of any winner — tasks, stands, dignity. She belongs in this top tier."],
+      ["Rohan", 32, 143, "Team Sidharth", 0, "612 votes and counting on this very poll. Years later, still number one. That is not nostalgia, that is legacy."],
+      ["Sneha", 41, 76, null, -1, "Gautam Gulati walked so the solo players could run. BB8's lone wolf walked away with everything."],
+      ["Akash", 50, 69, "Team Stan", -1, "Stan won without a single manufactured fight. The most unbothered winner ever and it is not close."],
+      ["Kavita", 59, 82, "Team Gauahar", -1, "Gauahar Khan in BB7 was flawless — grace under the worst pressure that house has ever produced."],
+      ["Deepak", 70, 64, "Team Munawar", -1, "Munawar's back-to-back reality wins make him the most decorated player of this generation."],
+      ["Simran", 83, 91, "Team Sidharth", -1, "Every season's 'strongest contestant' gets asked one question: but could he do what Sid did? None has answered yet."],
+      ["Harsh", 96, 55, null, -1, "Tejasswi's BB15 win deserves more respect in this debate. She beat a stacked house."],
+      ["Wasim", 110, 73, "Team Gautam", -1, "GG's BB8 journey is the blueprint every solo player still copies. Original lone wolf."],
+      ["Anjali", 126, 61, "Team Rubina", -1, "Rubina vs the host moments are Bigg Boss history. She never bowed. Winner for a reason."],
+      ["Tarun", 143, 48, null, -1, "This comment section is basically a war of eras and I am here for every bit of it 😂"],
+      ["Riya", 160, 67, "Team Karan", -1, "Karan Veer Mehra is the most recent and the most underrated in this list. His game was the smartest."],
+    ],
+  },
+  "bigg-boss-20-voting": {
+    pinned: ["Sagar", "Qazi Touqeer is topping every poll on this site for a reason — BB20 belongs to him right now. But this house flips in one Weekend Ka Vaar, so keep watching."],
+    comments: [
+      ["Neeraj", 3, 132, "Team Qazi", -1, "Qazi's consistency is scary. Top of the season poll, top of the week poll. The man is not slowing down."],
+      ["Rohan", 8, 104, "Team Scout", -1, "Scout's army has not even fully arrived yet. When the gaming fandom wakes up in the finale weeks, watch the numbers move."],
+      ["Priya", 14, 71, null, -1, "Uditi Singh as captain is the plot twist nobody predicted two weeks ago. Her captaincy week will define her game."],
+      ["Farhan", 21, 88, "Team Qazi", 0, "Entertainer, singer, fighter — Qazi gives the show something every single day. That is what wins Bigg Boss."],
+      ["Simran", 29, 63, null, -1, "Arishfa winning safety in Episode 75 saved her game. One more week inside changes everything for her."],
+      ["Deepak", 37, 95, "Team Scout", -1, "Season-long nomination and STILL in the house and in the top 3 of every poll. Scout's story is the season's best."],
+      ["Kavita", 45, 58, null, -1, "Manish Goel is in real danger this week and the eviction poll shows it. His fans need to wake up NOW."],
+      ["Akash", 54, 79, "Team Yung", -1, "Yung DSA is the slow burn of BB20. Quiet weeks, massive loyalty. Do not sleep on him."],
+      ["Anjali", 63, 66, null, -1, "Love Gill getting the most nominations (6!) and surviving the house politics — the Sharbat task changed the whole game."],
+      ["Vikram", 74, 84, "Team Qazi", -1, "This is Qazi's season to lose. Everyone else is playing for second place right now."],
+      ["Neha", 86, 52, null, -1, "Mahhi's lifeline drama in Week 10 was peak television. This season keeps producing moments."],
+      ["Mohit", 99, 61, "Team Scout", -1, "Gullu's comedy + Scout's army + Qazi's form — this top fight is the best in years. BB20 is delivering."],
+      ["Ritu", 113, 47, null, -1, "Week 11 eviction is genuinely unpredictable. 9 nominated, Arishfa safe, Uditi captain — anything can happen at WKV."],
+      ["Sahil", 128, 73, "Team Yung", -1, "Yung vs Scout is the rivalry this season will be remembered by. Both fanbases are loading…"],
+      ["Tanvi", 145, 44, null, -1, "Kanika Mann is quietly building the most loyal small fandom of BB20. Dark horse, mark it."],
+    ],
+  },
+};
+
+// ----- Debate template banks (placeholders: {W} winner, {R} 1st RU,
+// {T} 2nd RU, first names {w} {r} {t}, {S} season label, {WP} winner pct)
+const DEBATE_PINNED_SEASON = [
+  "{W} is the reason {S} is still talked about every single day. The trophy went exactly where it belonged — change my mind.",
+  "Official result says {W}. The fan re-vote on this page also says {W}. Some seasons just have one clear winner — {S} is one of them.",
+  "The {S} final was {W} vs {R} — and the debate has genuinely not stopped since. Whose side are you on?",
+  "Years later, {S} still starts arguments at every dinner table in India. That is the power of {W} vs {R}.",
+  "The {S} re-vote is live on this page and {W} leads it. Is history repeating itself, or will {R} fans flip it this time?",
+];
+const DEBATE_PRAISE = [
+  "{W} played the only honest game in {S}. No groups, no backbiting — just pure game.",
+  "Still get goosebumps watching {w}'s journey. What a season, what a winner 🔥",
+  "People forget how many weeks {W} carried {S} almost alone. The trophy had only one name on it.",
+  "{w} vs everyone — that was literally the story of {S}. And {w} still came out on top.",
+  "I have rewatched {S} twice and my answer never changes: {W}, every single time.",
+  "The loudest cheers in that finale were for {W}. The crowd knew. We all knew.",
+  "{W} never begged for sympathy votes. Game khela, dil jeeta, trophy liya. Simple.",
+  "Unpopular opinion? No — popular fact: {S} is remembered BECAUSE of {W}.",
+  "{w}'s one-liners alone are more iconic than most full seasons 😂",
+  "From week 1 to the finale, {W} was the most real person in that house. Period.",
+  "You can dislike {w}'s style but you cannot deny the impact. {S} = {W}.",
+  "My whole family voted for {W} every single week. Best decision we ever made 😄",
+  "{W} took every nomination, every fight, every task head-on. Champion mindset.",
+  "Even the host knew — {S} revolved around {W} from the first weekend.",
+  "That winning moment still lives in my head rent-free. {W} forever ❤️",
+];
+const DEBATE_COUNTER = [
+  "Respect to {W}, but {R} was robbed. {r} played cleaner and still lost.",
+  "Honestly {R} carried the entertainment in {S}. {W} just had the louder fanbase.",
+  "If the finale voting had run one more hour, {R} would be holding that trophy.",
+  "Everyone talks about {w}, nobody talks about how {R} survived every nomination without a single big group.",
+  "{R}'s journey was harder. More pressure, fewer friends, still reached the finale.",
+  "I voted for {R} then and I would vote for {R} again today. Some results age badly.",
+  "{W} won the trophy, {R} won the respect. Ask anyone who watched {S} fully.",
+  "The real final was {w} vs {r} every single week — and half of us still say {r} edged it.",
+  "Not hating, just facts: {R} had the better finale week. The result surprised the house too.",
+  "If personality won seasons, {R} wins {S}. It was a fanbase war, nothing else.",
+  "{r} never played the sympathy card even once. That is why {R} fans are still here.",
+  "History will be kinder to {R}. Mark this comment.",
+];
+const DEBATE_THIRD = [
+  "Everyone argues {w} vs {r} but {T} was the soul of {S} for me.",
+  "{T} deserved way more in that finale. Most genuine person in the top group.",
+  "Hot take: without {T}, {S} would have been unwatchable in the middle weeks.",
+  "{t}'s finale journey still hurts. That smile though ❤️",
+  "Neutral fan here — {T} had the cleanest game of the whole season.",
+  "Can we appreciate {T} for never losing dignity in that mad house?",
+  "{T} fans are the quietest but the most loyal. Still here years later.",
+  "If there was a people's champion award in {S}, it goes to {T}. Simple.",
+];
+const DEBATE_NEUTRAL = [
+  "This fan poll has {W} at {WP} — honestly closer than I expected.",
+  "Whatever your side, {S} was on another level. Very few seasons since have touched it.",
+  "Watching this debate years later proves {S} never really ended 😂",
+  "Both fanbases are still fighting like the finale was yesterday. Iconic.",
+  "The gap between the top two in this poll keeps this debate alive. Interesting…",
+  "Say what you want, {S} made Bigg Boss a dinner-table debate topic again.",
+  "I came for the poll, stayed for the comment wars. Every single time.",
+  "Fact: half of India's dinner tables argued about {S} that season.",
+];
+const DEBATE_NOSTALGIA = [
+  "Take me back to that season. {S} every night, no skipping episodes.",
+  "Weekend Ka Vaar used to be an event in our house because of {S}.",
+  "They don't make seasons like {S} anymore. Raw, real, no filters.",
+  "I was in school when {S} aired and we fought about it in class daily 😂",
+  "Years later and the {S} clips still break the internet every few months.",
+  "New seasons come and go. {S} is the benchmark everyone is compared to.",
+];
+const DEBATE_REPLIES = [
+  "Exactly this. Finally someone said it 👏",
+  "Hard disagree. Watch the season again without fan glasses.",
+  "You clearly skipped the middle weeks 😂",
+  "Facts. Screenshot this comment.",
+  "This is the most biased take I have read today, and that is saying something.",
+  "Finally a sensible comment in this war zone.",
+  "Bro really typed all that and thought he cooked 💀",
+  "Respectfully, no. But I like the confidence 😄",
+];
+// Present-tense banks for the running BB20 season.
+const DEBATE_PINNED_LIVE = [
+  "{W} is running this season right now and this page's poll proves it. But Bigg Boss flips in one Weekend Ka Vaar — whose side are you on?",
+  "The BB20 race right now is {W} vs {R} vs {T}. Three fanbases, one trophy. This debate is only getting started.",
+  "Every poll on this site tells the same story: {W} leads, {R} chases. Is the season already decided, or is the biggest twist still coming?",
+];
+const DEBATE_PRAISE_LIVE = [
+  "{W} gives this show something every single day. That is what wins Bigg Boss, not weekly spikes.",
+  "{w}'s consistency this season is scary. Top of the polls week after week — not slowing down.",
+  "The season is revolving around {W} and everyone in that house knows it.",
+  "My whole family is Team {w} this year. The journey is just too strong to ignore.",
+  "{W} has the loudest, most loyal army of BB20. Finale night will prove it.",
+  "{w} plays with heart and it shows in every single episode. Fan favourite for a reason.",
+  "From week 1 to now, {W} has been the most real person in that house. Period.",
+  "You can dislike {w}'s style but you cannot deny the impact on this season.",
+];
+const DEBATE_COUNTER_LIVE = [
+  "Respect to {W}, but {R} is the real story of this season. The polls are sleeping on {r}.",
+  "{R}'s fanbase has not even fully arrived yet. Watch the numbers move in the finale weeks.",
+  "Everyone is watching {w}, nobody is watching how {R} survives every single week. That is the harder game.",
+  "If the finale was today, {R} flips this poll. The momentum is all with {r} right now.",
+  "{W} leads the polls, {R} leads the house. Two very different games — only one lifts the trophy.",
+  "I am voting {R} every week and I am not stopping. This race is far from over.",
+];
+const DEBATE_THIRD_LIVE = [
+  "Everyone argues {w} vs {r} but {T} is quietly building the most loyal fandom of BB20.",
+  "{T} is the dark horse of this season. Mark this comment for finale week.",
+  "Neutral fan here — {T} has the cleanest game of anyone left in that house.",
+  "Without {T}, the middle weeks of this season would have been unwatchable.",
+];
+const DEBATE_NEUTRAL_LIVE = [
+  "This poll has {W} at {WP} — the BB20 race is closer than Twitter thinks.",
+  "I came for the poll, stayed for the comment wars. Every single time.",
+  "This season keeps producing moments. Best BB in years, whatever your side.",
+  "The comment section under BB20 polls is a second show at this point 😂",
+];
+
+function debatePickNames(rng, count) {
+  const pool = DEBATE_NAMES.slice();
+  const out = [];
+  for (let i = 0; i < count && pool.length; i++) {
+    const idx = Math.floor(rng() * pool.length);
+    let name = pool.splice(idx, 1)[0];
+    if (rng() < 0.3) name += " " + DEBATE_INITIALS[Math.floor(rng() * DEBATE_INITIALS.length)];
+    out.push(name);
+  }
+  return out;
+}
+function debateShuffle(rng, arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    const t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+
+// Build the debate object for a poll page (or a synthetic subject).
+// subject: {slug, ctx:{W,R,T,S,WP}, live:boolean, season:boolean}
+function debateGenerate(subject) {
+  const rng = debateRng(debateHash("debate:" + subject.slug));
+  const ctx = subject.ctx;
+  const live = !!subject.live;
+  const pinnedBank = live ? DEBATE_PINNED_LIVE : DEBATE_PINNED_SEASON;
+  const praise = debateShuffle(rng, live ? DEBATE_PRAISE_LIVE : DEBATE_PRAISE);
+  const counter = debateShuffle(rng, live ? DEBATE_COUNTER_LIVE : DEBATE_COUNTER);
+  const third = debateShuffle(rng, live ? DEBATE_THIRD_LIVE : DEBATE_THIRD);
+  const neutral = debateShuffle(rng, live ? DEBATE_NEUTRAL_LIVE : DEBATE_NEUTRAL);
+  const nostalgia = live ? [] : debateShuffle(rng, DEBATE_NOSTALGIA);
+  const replies = debateShuffle(rng, DEBATE_REPLIES);
+  const target = 15 + Math.floor(rng() * 4); // 15–18 comments
+  const names = debatePickNames(rng, target + 8);
+  // Sequence of stances: winner praise and runner-up counters alternate,
+  // with third-place praise, neutral and nostalgia mixed in.
+  const stances = [];
+  const pattern = ["praise", "counter", "praise", "third", "counter", "praise", "neutral", "counter", "third", "praise", "counter", "nostalgia", "praise", "neutral", "counter", "third", "praise", "nostalgia"];
+  for (let i = 0; i < target; i++) stances.push(pattern[i % pattern.length]);
+  if (live) for (let i = 0; i < stances.length; i++) if (stances[i] === "nostalgia") stances[i] = "neutral";
+  const banks = { praise, counter, third, neutral, nostalgia };
+  const used = { praise: 0, counter: 0, third: 0, neutral: 0, nostalgia: 0 };
+  const chipFor = (stance) =>
+    stance === "praise" ? "Team " + (ctx.w || "") :
+    stance === "counter" ? "Team " + (ctx.r || "") :
+    stance === "third" ? "Team " + (ctx.t || "") : null;
+  const comments = [];
+  let mins = 2 + Math.floor(rng() * 4);
+  for (let i = 0; i < target; i++) {
+    const stance = stances[i];
+    const bank = banks[stance] && banks[stance].length ? banks[stance] : praise;
+    const text = debateFill(bank[used[stance] % bank.length], ctx);
+    used[stance] = (used[stance] || 0) + 1;
+    comments.push({
+      name: names[i % names.length],
+      mins,
+      likes: 18 + Math.floor(rng() * 190),
+      chip: chipFor(stance),
+      replyTo: -1,
+      text,
+    });
+    mins += 3 + Math.floor(rng() * 14);
+    // ~1 in 3 top-level comments gets one reply.
+    if (i > 0 && rng() < 0.34 && comments.length < target + 4) {
+      comments.push({
+        name: names[(i + 7) % names.length],
+        mins: Math.max(1, mins - 2),
+        likes: 4 + Math.floor(rng() * 60),
+        chip: null,
+        replyTo: comments.length - 1,
+        text: replies[Math.floor(rng() * replies.length)],
+      });
+    }
+  }
+  const pinnedName = names[target % names.length] || "Sagar";
+  return {
+    slug: subject.slug,
+    viewers: 120 + Math.floor(rng() * 780),
+    pinned: { name: pinnedName, mins: 32 + Math.floor(rng() * 60), likes: 180 + Math.floor(rng() * 160), text: debateFill(pinnedBank[Math.floor(rng() * pinnedBank.length)], ctx) },
+    comments,
+    finalists: [ctx.W, ctx.R, ctx.T].filter(Boolean),
+  };
+}
+
+function debateFromMarquee(slug, mq, finalists) {
+  return {
+    slug,
+    viewers: 260 + (debateHash(slug) % 640),
+    pinned: { name: mq.pinned[0], mins: 47, likes: 246, text: mq.pinned[1] },
+    comments: mq.comments.map((c) => ({ name: c[0], mins: c[1], likes: c[2], chip: c[3], replyTo: c[4], text: c[5] })),
+    finalists: finalists || [],
+  };
+}
+
+// Resolve a poll into a debate: marquee override first, then the
+// generator fed from the page's own poll data.
+function buildDebate(poll) {
+  if (!poll || !poll.slug) return null;
+  const slug = poll.slug;
+  const stats = getPollStats(poll);
+  const names = stats.list.map((o) => o.name);
+  if (DEBATE_MARQUEE[slug]) return debateFromMarquee(slug, DEBATE_MARQUEE[slug], names.slice(0, 3));
+  // Season re-vote pages: official order lives in textOptions.
+  if (poll.textOptions && poll.textOptions.length >= 2) {
+    const ordered = poll.textOptions.map((o) => o.label);
+    const seasonLabel = (poll.textOptions[0].sub || "").split("·")[1]
+      ? (poll.textOptions[0].sub || "").split("·")[1].trim().replace(/^Bigg Boss/i, "Bigg Boss")
+      : "";
+    const label = seasonLabel || (poll.h1 || "").split("—")[0].trim();
+    const wp = stats.list.length ? stats.list[0].pctStr : "";
+    return debateGenerate({
+      slug,
+      live: false,
+      ctx: {
+        W: ordered[0], w: debateFirst(ordered[0]),
+        R: ordered[1], r: debateFirst(ordered[1]),
+        T: ordered[2] || ordered[1], t: debateFirst(ordered[2] || ordered[1]),
+        S: label.replace(/^Bigg Boss/, "BB").replace(/^BB (\d)/, "BB$1"), WP: wp,
+      },
+    });
+  }
+  // Duel pages: head-to-head.
+  if (poll.duelIds && poll.duelIds.length === 2 && names.length >= 2) {
+    const ctx = {
+      W: names[0], w: debateFirst(names[0]),
+      R: names[1], r: debateFirst(names[1]),
+      T: names[1], t: debateFirst(names[1]),
+      S: "BB20", WP: stats.list[0] ? stats.list[0].pctStr : "",
+    };
+    return debateGenerate({ slug, live: true, ctx });
+  }
+  // BB20 pages: top names by poll votes; fall back to the winner race.
+  let top = names;
+  if (!top || top.length < 3) {
+    const race = pollBySlug.get("who-will-win-bigg-boss-20");
+    if (race) top = getPollStats(race).list.map((o) => o.name);
+  }
+  if (!top || top.length < 2) return null;
+  const wp = stats.list && stats.list.length ? stats.list[0].pctStr : "";
+  return debateGenerate({
+    slug,
+    live: true,
+    ctx: {
+      W: top[0], w: debateFirst(top[0]),
+      R: top[1], r: debateFirst(top[1]),
+      T: top[2] || top[1], t: debateFirst(top[2] || top[1]),
+      S: "BB20", WP: wp,
+    },
+  });
+}
+
+// Synthetic debates for the two non-poll pages (contestants wiki, rules).
+function buildDebateBySlug(slug) {
+  const race = pollBySlug.get("who-will-win-bigg-boss-20");
+  const top = race ? getPollStats(race).list.map((o) => o.name) : ["Qazi Touqeer", "Yung DSA", "ScoutOP"];
+  const d = debateGenerate({
+    slug,
+    live: true,
+    ctx: {
+      W: top[0], w: debateFirst(top[0]),
+      R: top[1], r: debateFirst(top[1]),
+      T: top[2] || top[1], t: debateFirst(top[2] || top[1]),
+      S: "BB20", WP: "",
+    },
+  });
+  if (slug === "bigg-boss-20-voting-rules") {
+    d.pinned = { name: "Alok", mins: 52, likes: 132, text: "Hot take: half the fights in this debate would end if everyone actually read how voting works. Open Poll here, official vote on the app — two different things, both fun." };
+  }
+  if (slug === "bigg-boss-20-contestants") {
+    d.pinned = { name: "Charu", mins: 38, likes: 158, text: "18 started, and this wiki page is the only place keeping every journey straight. The real debate: whose journey here is the strongest — I say the one still rising." };
+  }
+  return d;
+}
+
+function debateCommentHtml(c, idx, slug) {
+  const initial = debateEsc((c.name || "F").trim().charAt(0).toUpperCase());
+  const color = DEBATE_AVATAR_COLORS[debateHash(c.name || "") % DEBATE_AVATAR_COLORS.length];
+  const chip = c.chip ? `<span class="bb-debate-chip">${debateEsc(c.chip)}</span>` : "";
+  const replyCls = c.replyTo >= 0 ? " bb-debate-reply" : "";
+  return `<article class="bb-debate-comment${replyCls}" data-cid="${debateEsc(slug)}-${idx}">
+    <span class="bb-debate-avatar" style="background:${color}" aria-hidden="true">${initial}</span>
+    <div class="bb-debate-body">
+      <div class="bb-debate-meta"><strong>${debateEsc(c.name)}</strong>${chip}<span class="bb-debate-time">${debateTimeLabel(c.mins)}</span></div>
+      <p class="bb-debate-text">${debateEsc(c.text)}</p>
+      <button type="button" class="bb-debate-like" data-like="${debateEsc(slug)}-${idx}" aria-label="Like this comment">❤️ <span>${c.likes}</span></button>
+    </div>
+  </article>`;
+}
+
+function debateFeedItems(d) {
+  const rng = debateRng(debateHash("feed:" + d.slug));
+  const items = [];
+  const cs = d.comments.slice(0, 8);
+  for (let i = 0; i < cs.length; i++) {
+    const snip = cs[i].text.length > 46 ? cs[i].text.slice(0, 46).trim() + "…" : cs[i].text;
+    items.push(cs[i].name + " commented: “" + snip + "”");
+  }
+  (d.finalists || []).forEach((f) => {
+    const n = DEBATE_NAMES[Math.floor(rng() * DEBATE_NAMES.length)];
+    items.push(n + " voted for " + f);
+  });
+  for (let i = 0; i < 2; i++) {
+    const n = DEBATE_NAMES[Math.floor(rng() * DEBATE_NAMES.length)];
+    items.push(n + " liked a comment in the debate");
+  }
+  return debateShuffle(rng, items).slice(0, 10);
+}
+
+function renderDebateHtml(d) {
+  if (!d) return "";
+  const feedJson = JSON.stringify(debateFeedItems(d)).replace(/</g, "\\u003c");
+  return `<section class="bb-debate" id="fan-debate" data-debate-slug="${debateEsc(d.slug)}" aria-label="Live fan debate">
+    <div class="bb-debate-head">
+      <h2>💬 Live Fan Debate</h2>
+      <span class="bb-live-badge"><span class="bb-live-dot" aria-hidden="true"></span> LIVE</span>
+      <span class="bb-debate-viewers"><span data-viewers="${d.viewers}">${d.viewers}</span> fans here now</span>
+    </div>
+    <p class="bb-debate-sub">Fans are debating this page right now — join in. Comments you post are saved on your own device.</p>
+    <form class="bb-debate-form" data-debate-form>
+      <input type="text" class="bb-debate-name" maxlength="24" placeholder="Your name (optional)" aria-label="Your name (optional)">
+      <textarea class="bb-debate-input" rows="2" maxlength="280" placeholder="Add your take to the debate…" aria-label="Add your comment" required></textarea>
+      <button type="submit" class="bb-debate-post">Post Comment</button>
+    </form>
+    <div class="bb-debate-own" data-debate-own></div>
+    <article class="bb-debate-comment bb-debate-pinned" data-cid="${debateEsc(d.slug)}-pin">
+      <span class="bb-debate-avatar" style="background:#17253e" aria-hidden="true">${debateEsc((d.pinned.name || "S").charAt(0))}</span>
+      <div class="bb-debate-body">
+        <div class="bb-debate-meta"><strong>${debateEsc(d.pinned.name)}</strong><span class="bb-debate-pin-tag">📌 Pinned</span><span class="bb-debate-time">${debateTimeLabel(d.pinned.mins)}</span></div>
+        <p class="bb-debate-text">${debateEsc(d.pinned.text)}</p>
+        <button type="button" class="bb-debate-like" data-like="${debateEsc(d.slug)}-pin" aria-label="Like this comment">❤️ <span>${d.pinned.likes}</span></button>
+      </div>
+    </article>
+    <div class="bb-debate-thread">
+      ${d.comments.map((c, i) => debateCommentHtml(c, i, d.slug)).join("")}
+    </div>
+    <script type="application/json" data-debate-feed="${debateEsc(d.slug)}">${feedJson}</script>
+  </section>
+  <div class="bb-live-pop" data-live-pop hidden aria-hidden="true"></div>`;
+}
+
+function renderDebateStripHtml(d) {
+  if (!d) return "";
+  const recent = d.comments.slice(0, 3);
+  return `<aside class="bb-debate-strip" aria-label="Latest from the live fan debate">
+    <span class="bb-debate-strip-label"><span class="bb-live-dot" aria-hidden="true"></span> LIVE DEBATE</span>
+    <div class="bb-debate-strip-items">
+      ${recent.map((c) => `<span class="bb-debate-strip-item"><strong>${debateEsc(c.name)}:</strong> ${debateEsc(c.text.length > 72 ? c.text.slice(0, 72).trim() + "…" : c.text)}</span>`).join("")}
+    </div>
+    <a class="bb-debate-strip-link" href="#fan-debate">Join the debate ↓</a>
+  </aside>`;
+}
+
+export function renderFanDebate(poll) {
+  return renderDebateHtml(buildDebate(poll));
+}
+export function renderDebateStrip(poll) {
+  return renderDebateStripHtml(buildDebate(poll));
+}
+export function renderFanDebateBySlug(slug) {
+  return renderDebateHtml(buildDebateBySlug(slug));
+}
+export function renderDebateStripBySlug(slug) {
+  return renderDebateStripHtml(buildDebateBySlug(slug));
+}
+
 export function renderBiggBossPollPage(poll) {
   if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
   if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
@@ -9066,6 +9695,8 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-20-voting" ? renderNominationCallout() : ""}
 
     ${renderPollCards(poll)}
+
+    ${renderDebateStrip(poll)}
 
     ${renderAdSenseUnit("after-voting", "Advertisement")}
 
@@ -9103,6 +9734,8 @@ export function renderBiggBossPollPage(poll) {
  ${poll.slug === "bigg-boss-3-voting" ? renderSeason3Sections() : ""}
  ${poll.slug === "bigg-boss-2-voting" ? renderSeason2Sections() : ""}
  ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
+
+    ${renderFanDebate(poll)}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
@@ -9211,6 +9844,10 @@ export function renderBiggBossContestantsPage() {
     ${renderJioCinemaGuide()}
     ${renderOpenPollDisclaimer()}
     ${renderAdSenseUnit("contestants-bottom", "Advertisement")}
+
+    ${renderDebateStripBySlug("bigg-boss-20-contestants")}
+
+    ${renderFanDebateBySlug("bigg-boss-20-contestants")}
   </div>
   `;
 }
@@ -9286,6 +9923,10 @@ export function renderBiggBossRulesPage() {
 
     ${renderJioCinemaGuide()}
     ${renderOpenPollDisclaimer()}
+
+    ${renderDebateStripBySlug("bigg-boss-20-voting-rules")}
+
+    ${renderFanDebateBySlug("bigg-boss-20-voting-rules")}
   </div>
   `;
 }
@@ -10332,6 +10973,53 @@ export const css = `
   from { transform: translateY(20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+
+/* Live Fan Debate (entry 431) */
+.bb-debate { background:#fff; border:1px solid #e6e8eb; border-radius:14px; padding:1.25rem 1.5rem; margin:2rem 0; box-shadow:0 4px 14px rgba(23,37,62,0.05); }
+.bb-debate-head { display:flex; align-items:center; gap:.7rem; flex-wrap:wrap; }
+.bb-debate-head h2 { margin:0; font-size:1.3rem; color:#17253e; }
+.bb-live-badge { display:inline-flex; align-items:center; gap:.35rem; background:#d91438; color:#fff; font-size:.72rem; font-weight:800; letter-spacing:.6px; padding:.22rem .55rem; border-radius:999px; }
+.bb-live-dot { width:8px; height:8px; border-radius:50%; background:#ff4757; display:inline-block; animation:bbLivePulse 1.4s ease-in-out infinite; }
+.bb-live-badge .bb-live-dot { background:#fff; }
+@keyframes bbLivePulse { 0%,100% { opacity:1; } 50% { opacity:.35; } }
+.bb-debate-viewers { font-size:.85rem; color:#5b6b7a; font-weight:600; }
+.bb-debate-sub { margin:.55rem 0 1rem; font-size:.9rem; color:#5b6b7a; }
+.bb-debate-form { display:flex; flex-direction:column; gap:.5rem; background:#f6f8fb; border:1px solid #e6e8eb; border-radius:10px; padding:.8rem; margin-bottom:1.1rem; }
+.bb-debate-name, .bb-debate-input { font:inherit; font-size:.92rem; border:1px solid #cfd8e3; border-radius:8px; padding:.55rem .7rem; background:#fff; color:#17253e; width:100%; box-sizing:border-box; }
+.bb-debate-input { resize:vertical; }
+.bb-debate-post { align-self:flex-end; background:#17253e; color:#fff; border:none; font-weight:700; font-size:.9rem; padding:.55rem 1.1rem; border-radius:8px; cursor:pointer; }
+.bb-debate-post:hover { background:#d91438; }
+.bb-debate-comment { display:flex; gap:.7rem; padding:.75rem 0; border-top:1px solid #eef1f4; }
+.bb-debate-pinned { background:#fff8e6; border:1px solid #ffd591; border-radius:10px; padding:.8rem .9rem; margin-bottom:.4rem; }
+.bb-debate-reply { margin-left:2.6rem; border-left:3px solid #e6e8eb; padding-left:.8rem; }
+.bb-debate-avatar { flex:0 0 auto; width:38px; height:38px; border-radius:50%; color:#fff; font-weight:800; font-size:1rem; display:flex; align-items:center; justify-content:center; }
+.bb-debate-body { flex:1; min-width:0; }
+.bb-debate-meta { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; font-size:.88rem; }
+.bb-debate-meta strong { color:#17253e; }
+.bb-debate-chip { background:#eef3ff; color:#0b5cad; border:1px solid #c7d7f8; font-size:.7rem; font-weight:700; padding:.1rem .45rem; border-radius:999px; }
+.bb-debate-pin-tag { background:#ffd591; color:#613400; font-size:.7rem; font-weight:800; padding:.1rem .45rem; border-radius:999px; }
+.bb-debate-time { color:#8a97a5; font-size:.78rem; }
+.bb-debate-text { margin:.3rem 0 .45rem; font-size:.94rem; line-height:1.5; color:#243447; overflow-wrap:break-word; }
+.bb-debate-like { background:none; border:1px solid #e6e8eb; border-radius:999px; font-size:.8rem; padding:.18rem .6rem; cursor:pointer; color:#5b6b7a; }
+.bb-debate-like:hover { border-color:#d91438; color:#d91438; }
+.bb-debate-like.liked { background:#ffeef1; border-color:#d91438; color:#d91438; font-weight:700; }
+.bb-debate-strip { display:flex; align-items:center; gap:.8rem; background:#17253e; color:#dbe3ef; border-radius:10px; padding:.6rem .9rem; margin:1.2rem 0; font-size:.85rem; overflow:hidden; }
+.bb-debate-strip-label { display:inline-flex; align-items:center; gap:.4rem; font-weight:800; font-size:.72rem; letter-spacing:.6px; color:#fff; white-space:nowrap; }
+.bb-debate-strip-items { flex:1; position:relative; min-height:1.3em; overflow:hidden; }
+.bb-debate-strip-item { position:absolute; inset:0; opacity:0; transition:opacity .5s ease; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.bb-debate-strip-item.on { opacity:1; }
+.bb-debate-strip-item strong { color:#f2c14e; }
+.bb-debate-strip-link { color:#f2c14e; font-weight:700; white-space:nowrap; text-decoration:none; }
+.bb-live-pop { position:fixed; left:14px; bottom:14px; z-index:9998; max-width:320px; background:#17253e; color:#eef2f8; border-radius:12px; padding:.75rem 2rem .75rem .9rem; font-size:.86rem; line-height:1.45; box-shadow:0 10px 28px rgba(10,20,40,.35); opacity:0; transform:translateY(14px); transition:opacity .35s ease, transform .35s ease; pointer-events:none; }
+.bb-live-pop.show { opacity:1; transform:translateY(0); pointer-events:auto; }
+.bb-live-pop .bb-live-pop-tag { display:block; font-size:.68rem; font-weight:800; letter-spacing:.6px; color:#f2c14e; margin-bottom:.25rem; }
+.bb-live-pop-close { position:absolute; top:.35rem; right:.55rem; background:none; border:none; color:#dbe3ef; font-size:1rem; cursor:pointer; line-height:1; }
+@media (max-width:640px) {
+  .bb-debate { padding:1rem; }
+  .bb-debate-reply { margin-left:1.2rem; }
+  .bb-live-pop { left:10px; right:10px; bottom:10px; max-width:none; }
+  .bb-debate-strip { flex-wrap:wrap; }
+}
 `;
 
 // Bigg Boss Client-Side Interactivity Script
@@ -10468,5 +11156,140 @@ export const clientScript = `
       markVotedButtons(pSlug, saved);
     }
   });
+
+  // ----- Live Fan Debate (entry 431) -----
+  // Own comments + likes persist per page in localStorage (no backend),
+  // following the same pattern as the Open Poll votes above.
+  (function initDebate() {
+    var section = document.querySelector('[data-debate-slug]');
+    if (!section) return;
+    var slug = section.getAttribute('data-debate-slug');
+    var ownKey = 'bb_debate_own_' + slug;
+    var likeKey = 'bb_debate_likes_' + slug;
+
+    function loadJson(key, fallback) {
+      try { return JSON.parse(localStorage.getItem(key) || '') || fallback; } catch (e) { return fallback; }
+    }
+    function escText(s) {
+      var div = document.createElement('div');
+      div.textContent = s;
+      return div.innerHTML;
+    }
+
+    // Restore the visitor's own comments (newest first, above the pinned).
+    var ownBox = section.querySelector('[data-debate-own]');
+    var own = loadJson(ownKey, []);
+    function ownHtml(c) {
+      return '<article class="bb-debate-comment" data-cid="' + c.cid + '">' +
+        '<span class="bb-debate-avatar" style="background:#0e7a3d" aria-hidden="true">' + escText((c.name || 'Y').charAt(0).toUpperCase()) + '</span>' +
+        '<div class="bb-debate-body"><div class="bb-debate-meta"><strong>' + escText(c.name) + '</strong>' +
+        '<span class="bb-debate-chip">Your take</span><span class="bb-debate-time">just now</span></div>' +
+        '<p class="bb-debate-text">' + escText(c.text) + '</p>' +
+        '<button type="button" class="bb-debate-like" data-like="' + c.cid + '" aria-label="Like this comment">❤️ <span>' + (c.likes || 0) + '</span></button></div></article>';
+    }
+    function renderOwn() {
+      if (ownBox) ownBox.innerHTML = own.map(ownHtml).join('');
+    }
+    renderOwn();
+
+    // Post a comment.
+    var form = section.querySelector('[data-debate-form]');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var nameEl = form.querySelector('.bb-debate-name');
+        var textEl = form.querySelector('.bb-debate-input');
+        var text = (textEl.value || '').trim();
+        if (!text) return;
+        var name = (nameEl.value || '').trim() || 'Guest Fan';
+        own.unshift({ cid: slug + '-own-' + Date.now(), name: name, text: text.slice(0, 280), likes: 0 });
+        if (own.length > 20) own = own.slice(0, 20);
+        try { localStorage.setItem(ownKey, JSON.stringify(own)); } catch (err) {}
+        textEl.value = '';
+        renderOwn();
+        applyLikes();
+        if (typeof showToast === 'function') showToast('Your comment is live in the fan debate!');
+      });
+    }
+
+    // Likes: toggle +1, persisted per page.
+    var liked = loadJson(likeKey, {});
+    function applyLikes() {
+      section.querySelectorAll('[data-like]').forEach(function(btn) {
+        var cid = btn.getAttribute('data-like');
+        var span = btn.querySelector('span');
+        if (!span) return;
+        if (!btn.getAttribute('data-base')) btn.setAttribute('data-base', span.textContent.replace(/[^0-9]/g, '') || '0');
+        var base = parseInt(btn.getAttribute('data-base'), 10) || 0;
+        var isOwn = cid.indexOf('-own-') !== -1;
+        if (isOwn) {
+          var rec = null;
+          for (var i = 0; i < own.length; i++) if (own[i].cid === cid) rec = own[i];
+          base = rec ? (rec.likes || 0) : base;
+        }
+        span.textContent = base + (liked[cid] ? 1 : 0);
+        btn.classList.toggle('liked', !!liked[cid]);
+      });
+    }
+    section.addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-like]');
+      if (!btn) return;
+      var cid = btn.getAttribute('data-like');
+      if (liked[cid]) { delete liked[cid]; } else { liked[cid] = 1; }
+      try { localStorage.setItem(likeKey, JSON.stringify(liked)); } catch (err) {}
+      applyLikes();
+    });
+    applyLikes();
+
+    // Viewers-now gentle jitter.
+    var viewersEl = section.querySelector('[data-viewers]');
+    if (viewersEl) {
+      var v = parseInt(viewersEl.getAttribute('data-viewers'), 10) || 300;
+      setInterval(function() {
+        v = Math.max(90, v + Math.floor(Math.random() * 25) - 12);
+        viewersEl.textContent = v;
+      }, 20000);
+    }
+
+    // Recent-comments strip rotation.
+    var stripItems = document.querySelectorAll('.bb-debate-strip-item');
+    if (stripItems.length > 1) {
+      var si = 0;
+      stripItems[0].classList.add('on');
+      setInterval(function() {
+        stripItems[si].classList.remove('on');
+        si = (si + 1) % stripItems.length;
+        stripItems[si].classList.add('on');
+      }, 4200);
+    }
+
+    // Live popup ticker: rotates the page's simulated fan activity.
+    var pop = document.querySelector('[data-live-pop]');
+    var feedEl = section.querySelector('[data-debate-feed]');
+    if (pop && feedEl && !sessionStorage.getItem('bb_debate_pop_off')) {
+      var feed = [];
+      try { feed = JSON.parse(feedEl.textContent || '[]'); } catch (e) { feed = []; }
+      if (feed.length) {
+        var fi = 0, shown = 0;
+        pop.innerHTML = '<span class="bb-live-pop-tag">🔴 LIVE FAN ACTIVITY</span><span data-pop-text></span><button type="button" class="bb-live-pop-close" aria-label="Close live updates">×</button>';
+        var popText = pop.querySelector('[data-pop-text]');
+        pop.querySelector('.bb-live-pop-close').addEventListener('click', function() {
+          pop.classList.remove('show');
+          try { sessionStorage.setItem('bb_debate_pop_off', '1'); } catch (err) {}
+          clearInterval(popTimer);
+        });
+        function showPop() {
+          if (shown >= 8) { clearInterval(popTimer); pop.classList.remove('show'); return; }
+          popText.textContent = feed[fi % feed.length];
+          fi++; shown++;
+          pop.hidden = false;
+          pop.classList.add('show');
+          setTimeout(function() { pop.classList.remove('show'); }, 5000);
+        }
+        var popTimer = setInterval(showPop, 14000);
+        setTimeout(showPop, 6000);
+      }
+    }
+  })();
 })();
 `;
