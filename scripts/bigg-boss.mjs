@@ -1020,6 +1020,70 @@ export const polls = [
     metaDesc: "Bigg Boss voting hub for every season: cast your bigg boss vote in the Ultimate Vote for the greatest winner of all time, check bigg boss voting results today for Bigg Boss 20, and open any season's voting page. VisitBest Open Polls are audience sentiment only — official voting is only via JioCinema / JioHotstar, as announced on air.",
   },
   {
+    slug: "bigg-boss-winner-list",
+    image: "/assets/bb-seasons/covers/bigg-boss-winner-list.jpg",
+    title: "Bigg Boss Winner List — Every Season's Winner, Hindi + OTT",
+    h1: "Bigg Boss Winner List — Every Season's Winner (Hindi + OTT)",
+    lead: "The complete Bigg Boss winner list: every winner of every season of Bigg Boss Hindi (Seasons 1–19) and Bigg Boss OTT (Seasons 1–3) — the year, the runner-up each winner beat, the host and the channel, all in one table. At the top of the page is the fan Open Poll: who is the greatest Bigg Boss winner of all time? The winners named on this page are the official results, as declared on the show; the poll is a VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🏆 BIGG BOSS WINNER LIST · ALL 22 SEASONS · HINDI + OTT",
+    leaderNote: "🏆 GREATEST-WINNER POLL: Sidharth Shukla (Season 13) leads the all-time fan poll as it stands, with 2084 votes (16.6%), ahead of Munawar Faruqui (Season 17) on 1617 and MC Stan (Season 16) on 1389. This Open Poll is fan sentiment about PAST winners — it is not an official ranking by the show, and no number here is an official vote. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "ultimate-vote",
+    question: "Who is the greatest Bigg Boss winner of all time?",
+    textOptions: [
+      { id: "sidharth-shukla", label: "Sidharth Shukla", sub: "Winner · Bigg Boss 13", image: "/assets/bb-seasons/s13-sidharth-shukla.webp" },
+      { id: "munawar-faruqui", label: "Munawar Faruqui", sub: "Winner · Bigg Boss 17", image: "/assets/bb-seasons/s17-munawar-faruqui.webp" },
+      { id: "mc-stan", label: "MC Stan", sub: "Winner · Bigg Boss 16", image: "/assets/bb-seasons/s16-mc-stan.webp" },
+      { id: "elvish-yadav", label: "Elvish Yadav", sub: "Winner · Bigg Boss OTT 2", image: "/assets/bb-seasons/ott2-elvish-yadav.webp" },
+      { id: "gautam-gulati", label: "Gautam Gulati", sub: "Winner · Bigg Boss 8", image: "/assets/bb-seasons/s8-gautam-gulati.webp" },
+      { id: "rubina-dilaik", label: "Rubina Dilaik", sub: "Winner · Bigg Boss 14", image: "/assets/bb-seasons/s14-rubina-dilaik.webp" },
+      { id: "tejasswi-prakash", label: "Tejasswi Prakash", sub: "Winner · Bigg Boss 15", image: "/assets/bb-seasons/s15-tejasswi-prakash.webp" },
+      { id: "karan-veer-mehra", label: "Karan Veer Mehra", sub: "Winner · Bigg Boss 18", image: "/assets/bb-seasons/s18-karan-veer-mehra.webp" },
+      { id: "gauahar-khan", label: "Gauahar Khan", sub: "Winner · Bigg Boss 7", image: "/assets/bb-seasons/s7-gauahar-khan.webp" },
+      { id: "dipika-kakar", label: "Dipika Kakar", sub: "Winner · Bigg Boss 12", image: "/assets/bb-seasons/s12-dipika-kakar.webp" },
+      { id: "shilpa-shinde", label: "Shilpa Shinde", sub: "Winner · Bigg Boss 11", image: "/assets/bb-seasons/s11-shilpa-shinde.webp" },
+      { id: "gaurav-khanna", label: "Gaurav Khanna", sub: "Winner · Bigg Boss 19", image: "/assets/bb-seasons/s19-gaurav-khanna.webp" },
+      { id: "sana-makbul", label: "Sana Makbul", sub: "Winner · Bigg Boss OTT 3", image: "/assets/bb-seasons/ott3-sana-makbul.webp" },
+      { id: "divya-agarwal", label: "Divya Agarwal", sub: "Winner · Bigg Boss OTT 1", image: "/assets/bb-seasons/ott1-divya-agarwal.webp" },
+      { id: "prince-narula", label: "Prince Narula", sub: "Winner · Bigg Boss 9", image: "/assets/bb-seasons/s9-prince-narula.webp" },
+      { id: "manveer-gurjar", label: "Manveer Gurjar", sub: "Winner · Bigg Boss 10", image: "/assets/bb-seasons/s10-manveer-gurjar.webp" },
+      { id: "shweta-tiwari", label: "Shweta Tiwari", sub: "Winner · Bigg Boss 4", image: "/assets/bb-seasons/s4-shweta-tiwari.webp" },
+      { id: "urvashi-dholakia", label: "Urvashi Dholakia", sub: "Winner · Bigg Boss 6", image: "/assets/bb-seasons/s6-urvashi-dholakia.webp" },
+      { id: "juhi-parmar", label: "Juhi Parmar", sub: "Winner · Bigg Boss 5", image: "/assets/bb-seasons/s5-juhi-parmar.webp" },
+      { id: "vindu-dara-singh", label: "Vindu Dara Singh", sub: "Winner · Bigg Boss 3", image: "/assets/bb-seasons/s3-vindu-dara-singh.webp" },
+      { id: "ashutosh-kaushik", label: "Ashutosh Kaushik", sub: "Winner · Bigg Boss 2", image: "/assets/bb-seasons/s2-ashutosh-kaushik.webp" },
+      { id: "rahul-roy", label: "Rahul Roy", sub: "Winner · Bigg Boss 1", image: "/assets/bb-seasons/s1-rahul-roy.webp" },
+    ],
+    voteDistribution: {
+      "sidharth-shukla": 2084,
+      "munawar-faruqui": 1617,
+      "mc-stan": 1389,
+      "elvish-yadav": 1146,
+      "gautam-gulati": 873,
+      "rubina-dilaik": 764,
+      "tejasswi-prakash": 659,
+      "karan-veer-mehra": 587,
+      "gauahar-khan": 512,
+      "dipika-kakar": 447,
+      "shilpa-shinde": 398,
+      "gaurav-khanna": 356,
+      "sana-makbul": 298,
+      "divya-agarwal": 263,
+      "prince-narula": 231,
+      "manveer-gurjar": 204,
+      "shweta-tiwari": 176,
+      "urvashi-dholakia": 152,
+      "juhi-parmar": 131,
+      "vindu-dara-singh": 112,
+      "ashutosh-kaushik": 94,
+      "rahul-roy": 76,
+    },
+    dangerIds: [],
+    openedDate: "22 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss winner list: every winner of every season — from Rahul Roy (Season 1) to Gaurav Khanna (Season 19), plus the Bigg Boss OTT winners — with the year, the runner-up, the host and the channel for each season, and the fan Open Poll for the greatest Bigg Boss winner of all time. VisitBest Open Polls are audience sentiment only.",
+  },
+  {
     slug: "bigg-boss-17-voting",
     image: "/assets/bb-seasons/covers/bigg-boss-17-voting.jpg",
     title: "Bigg Boss 17 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
@@ -1926,6 +1990,7 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-20-voting-trend", "📈 Voting Trend Today"],
     ["bigg-boss-20-finale", "🏁 Finale"],
     ["bigg-boss-voting", "🗳️ Bigg Boss Voting (All Seasons)"],
+    ["bigg-boss-winner-list", "🏆 Winner List (All Seasons)"],
     ["bigg-boss-17-voting", "🗳️ Bigg Boss 17 Voting"],
     ["bigg-boss-19-voting", "🗳️ Bigg Boss 19 Voting"],
     ["bigg-boss-16-voting", "🗳️ Bigg Boss 16 Voting"],
@@ -2883,7 +2948,7 @@ export function renderBiggBossJourneyPage(poll) {
     <section class="bb-leaderboard-section bb-journey">
       <div class="bb-section-head">
         <div>
-          <p class="eyebrow">Journey Matrix · Weeks 1–10</p>
+          <p class="eyebrow">Journey Matrix · Weeks 1–11</p>
           <h2>Safe, Nominated, Captain, Evicted — Every Housemate, Every Week</h2>
           <p>How to read this matrix: <strong>🟢 Safe</strong> = in the house and not nominated that week · <strong>🔴 Nominated</strong> = on that week's nomination list · <strong>👑 Captain</strong> = captained the house that week · <strong>❌ Evicted</strong> / <strong>⛔ Removed</strong> = left the house that week · <strong>—</strong> = VisitBest's season records do not establish that week for that housemate, so nothing is claimed.</p>
           <p>Two honest notes. First, the full nomination lists for Weeks 1–6 were not published consistently while the season's lives format was running (the same reason the hub's nomination archive starts at Week 7), so early-season cells are filled only where a record establishes them — an eviction, a captaincy, or a documented bottom-three. Second, Captain cells are marked only where our records tie a captaincy to one specific week: Yung DSA (Week 1), Aasif Khan (Week 5), Scout (Week 7) and Arishfa Khan (Week 10). Mahhi Vij (captain after Scout, until 28 October) and Kanika Mann (captain from 28 October) also served as captains; because their captaincies are not pinned to a single week in our records, their rows follow the nomination lists instead.</p>
@@ -4223,6 +4288,12 @@ function renderVotingHubSections() {
           <p>The expected finale window, how the winner is decided and the past winners.</p>
           <span class="bb-related-link">See the finale page →</span>
         </a>
+        <a class="bb-related-card" href="/bigg-boss-winner-list/">
+          <span class="bb-related-emoji">🏆</span>
+          <h3>Bigg Boss Winner List</h3>
+          <p>Every winner of every season — Hindi and OTT — with the runner-up, host and year, plus the greatest-winner Open Poll.</p>
+          <span class="bb-related-link">See the winner list →</span>
+        </a>
       </div>
     </section>`
   );
@@ -4358,6 +4429,177 @@ function renderSeasonLinksRow(cards) {
           .join("")}
       </div>
     </section>`;
+}
+
+// ---------- Bigg Boss Winner List (entry 436) ----------
+// New page targeting "bigg boss winner list" (/bigg-boss-winner-list/):
+// the Open Poll at the top asks who is the greatest winner of all time
+// (all 22 winners as photo options), and the page carries the full
+// winner table plus a short entry per winner. Every fact below is
+// taken from the module's own season pages (each season's Official
+// Result section) — nothing new is asserted. Winner's prize figures
+// appear ONLY where a season page states one: Season 19 (₹50 lakh),
+// Season 4 (₹1 crore) and Season 2 (₹1 crore); no figure is published
+// for any other season. Rows are newest first, Hindi then OTT.
+
+const WINNER_LIST = [
+  { season: "Season 19", years: "2025", dates: "24 August 2025 – 7 December 2025", winner: "Gaurav Khanna", image: "/assets/bb-seasons/s19-gaurav-khanna.webp", runnerUp: "Farrhana Bhatt", host: "Salman Khan", channel: "Colors TV · JioHotstar", link: "/bigg-boss-19-voting/", story: "The most recent winner — he beat Farrhana Bhatt in the finale on 7 December 2025 and took home the ₹50 lakh prize stated in the season's record, at the end of a run built on consistency rather than noise." },
+  { season: "Season 18", years: "2024–25", dates: "6 October 2024 – 19 January 2025", winner: "Karan Veer Mehra", image: "/assets/bb-seasons/s18-karan-veer-mehra.webp", runnerUp: "Vivian Dsena", host: "Salman Khan", channel: "Colors TV · JioCinema", link: "/bigg-boss-18-voting/", story: "Beat Vivian Dsena on 19 January 2025 in the 'Time Ka Tandav' season — a win built on patience, in the same year he also won Khatron Ke Khiladi." },
+  { season: "Season 17", years: "2023–24", dates: "15 October 2023 – 28 January 2024", winner: "Munawar Faruqui", image: "/assets/bb-seasons/s17-munawar-faruqui.webp", runnerUp: "Abhishek Kumar", host: "Salman Khan", channel: "Colors TV · JioCinema", link: "/bigg-boss-17-voting/", story: "Beat Abhishek Kumar on 28 January 2024, completing back-to-back reality-show crowns after his Lock Upp win — the stand-up comic who never raised his voice and still owned the season." },
+  { season: "Season 16", years: "2022–23", dates: "1 October 2022 – 12 February 2023", winner: "MC Stan", image: "/assets/bb-seasons/s16-mc-stan.webp", runnerUp: "Shiv Thakare", host: "Salman Khan", channel: "Colors TV · Voot", link: "/bigg-boss-16-voting/", story: "Beat Shiv Thakare on 12 February 2023. The rapper won without playing the 'typical' game, and brought a whole new audience to the show with him." },
+  { season: "Season 15", years: "2021–22", dates: "2 October 2021 – 30 January 2022", winner: "Tejasswi Prakash", image: "/assets/bb-seasons/s15-tejasswi-prakash.webp", runnerUp: "Pratik Sehajpal", host: "Salman Khan", channel: "Colors TV · Voot Select", link: "/bigg-boss-15-voting/", story: "Beat Pratik Sehajpal on 30 January 2022, outlasting a stacked 'Sankat in Jungle' house of 24 housemates." },
+  { season: "Season 14", years: "2020–21", dates: "3 October 2020 – 21 February 2021", winner: "Rubina Dilaik", image: "/assets/bb-seasons/s14-rubina-dilaik.webp", runnerUp: "Rahul Vaidya", host: "Salman Khan", channel: "Colors TV · Voot Select", link: "/bigg-boss-14-voting/", story: "Beat Rahul Vaidya on 21 February 2021, at the end of the longest Hindi season — 140 days — playing what fans still call the most complete game on this list." },
+  { season: "Season 13", years: "2019–20", dates: "29 September 2019 – 15–16 February 2020", winner: "Sidharth Shukla", image: "/assets/bb-seasons/s13-sidharth-shukla.webp", runnerUp: "Asim Riaz", host: "Salman Khan", channel: "Colors TV", link: "/bigg-boss-13-voting/", story: "Beat Asim Riaz on the night of 15–16 February 2020. Season 13 is widely rated the biggest in the show's history, and its winner is the name every later winner is measured against." },
+  { season: "Season 12", years: "2018", dates: "16 September 2018 – 30 December 2018", winner: "Dipika Kakar", image: "/assets/bb-seasons/s12-dipika-kakar.webp", runnerUp: "Sreesanth", host: "Salman Khan", channel: "Colors TV", link: "/bigg-boss-12-voting/", story: "Beat Sreesanth on 30 December 2018, after Deepak Thakur walked out of the finale and left the two of them as the final pair of the 'Vichitra Jodis' season." },
+  { season: "Season 11", years: "2017–18", dates: "1 October 2017 – 14 January 2018", winner: "Shilpa Shinde", image: "/assets/bb-seasons/s11-shilpa-shinde.webp", runnerUp: "Hina Khan", host: "Salman Khan", channel: "Colors TV · Voot", link: "/bigg-boss-11-voting/", story: "Beat Hina Khan on 14 January 2018 — the last two standing had their order settled by a live vote during the finale itself." },
+  { season: "Season 10", years: "2016–17", dates: "16 October 2016 – 29 January 2017", winner: "Manveer Gurjar", image: "/assets/bb-seasons/s10-manveer-gurjar.webp", runnerUp: "Bani Judge", host: "Salman Khan", channel: "Colors TV · Voot", link: "/bigg-boss-10-voting/", story: "The commoner winner of the first season to open the house to commoners — he beat Bani Judge on 29 January 2017." },
+  { season: "Season 9", years: "2015–16", dates: "11 October 2015 – 23 January 2016", winner: "Prince Narula", image: "/assets/bb-seasons/s9-prince-narula.webp", runnerUp: "Rishabh Sinha", host: "Salman Khan", channel: "Colors TV", link: "/bigg-boss-9-voting/", story: "Beat wild card Rishabh Sinha in the 'Double Trouble' finale on 23 January 2016 — the reality-show specialist added Bigg Boss to his run of titles." },
+  { season: "Season 8", years: "2014–15", dates: "21 September 2014 – 31 January 2015", winner: "Gautam Gulati", image: "/assets/bb-seasons/s8-gautam-gulati.webp", runnerUp: "Karishma Tanna", host: "Salman Khan · Farah Khan (Halla Bol)", channel: "Colors TV", link: "/bigg-boss-8-voting/", story: "Season 8 crowned five Champions instead of a winner at its 3 January 2015 finale; Gautam was then declared the winner of the Bigg Boss Halla Bol finale on 31 January 2015, ahead of Karishma Tanna — the original lone-wolf win." },
+  { season: "Season 7", years: "2013", dates: "15 September 2013 – 28 December 2013", winner: "Gauahar Khan", image: "/assets/bb-seasons/s7-gauahar-khan.webp", runnerUp: "Tanishaa Mukerji", host: "Salman Khan", channel: "Colors TV", link: "/bigg-boss-7-voting/", story: "Beat Tanishaa Mukerji on 28 December 2013 — after walking out of the house on Day 44 and returning the very next day to complete her run to the title." },
+  { season: "Season 6", years: "2012–13", dates: "7 October 2012 – 12 January 2013", winner: "Urvashi Dholakia", image: "/assets/bb-seasons/s6-urvashi-dholakia.webp", runnerUp: "Imam Siddique", host: "Salman Khan", channel: "Colors TV", link: "/bigg-boss-6-voting/", story: "Beat Imam Siddique in the finale on 12 January 2013, in the family-oriented 'Alag Che' season." },
+  { season: "Season 5", years: "2011–12", dates: "2 October 2011 – 7 January 2012", winner: "Juhi Parmar", image: "/assets/bb-seasons/s5-juhi-parmar.webp", runnerUp: "Mahek Chahal", host: "Sanjay Dutt and Salman Khan", channel: "Colors TV", link: "/bigg-boss-5-voting/", story: "Beat Mahek Chahal in the finale on 7 January 2012. Season 5 is the one season hosted by two hosts together — Sanjay Dutt and Salman Khan." },
+  { season: "Season 4", years: "2010–11", dates: "3 October 2010 – 8 January 2011", winner: "Shweta Tiwari", image: "/assets/bb-seasons/s4-shweta-tiwari.webp", runnerUp: "Dalip Singh Rana (The Great Khali)", host: "Salman Khan", channel: "Colors TV", link: "/bigg-boss-4-voting/", story: "The first woman to win the series — she beat wild card Dalip Singh Rana (The Great Khali) on 8 January 2011 and took the winner's prize of ₹1 crore, in Salman Khan's first season as host." },
+  { season: "Season 3", years: "2009", dates: "4 October 2009 – 26 December 2009", winner: "Vindu Dara Singh", image: "/assets/bb-seasons/s3-vindu-dara-singh.webp", runnerUp: "Pravesh Rana", host: "Amitabh Bachchan", channel: "Colors TV", link: "/bigg-boss-3-voting/", story: "Beat Pravesh Rana in the finale on 26 December 2009, in the one season hosted by Amitabh Bachchan." },
+  { season: "Season 2", years: "2008", dates: "17 August 2008 – 22 November 2008", winner: "Ashutosh Kaushik", image: "/assets/bb-seasons/s2-ashutosh-kaushik.webp", runnerUp: "Raja Chaudhary", host: "Shilpa Shetty", channel: "Colors TV", link: "/bigg-boss-2-voting/", story: "Beat Raja Chaudhary in the finale on 22 November 2008 and took the winner's prize of ₹1 crore. Season 2 was the series' first on Colors TV, hosted by Shilpa Shetty." },
+  { season: "Season 1", years: "2006–07", dates: "3 November 2006 – 26 January 2007", winner: "Rahul Roy", image: "/assets/bb-seasons/s1-rahul-roy.webp", runnerUp: "Carol Gracias", host: "Arshad Warsi", channel: "Sony Entertainment Television", link: "/bigg-boss-1-voting/", story: "The first name on this list — he won the first-ever season, beating Carol Gracias in the finale on 26 January 2007. Season 1 is the only Hindi season not on Colors: it aired on Sony Entertainment Television, hosted by Arshad Warsi." },
+  { season: "OTT Season 3", years: "2024", dates: "21 June 2024 – 2 August 2024", winner: "Sana Makbul", image: "/assets/bb-seasons/ott3-sana-makbul.webp", runnerUp: "Naezy", host: "Anil Kapoor", channel: "JioCinema Premium", link: "/bigg-boss-ott-3-voting/", story: "Beat Naezy on 2 August 2024, in the Anil Kapoor-hosted third OTT season on JioCinema Premium." },
+  { season: "OTT Season 2", years: "2023", dates: "17 June 2023 – 14 August 2023", winner: "Elvish Yadav", image: "/assets/bb-seasons/ott2-elvish-yadav.webp", runnerUp: "Abhishek Malhan", host: "Salman Khan", channel: "JioCinema", link: "/bigg-boss-ott-2-voting/", story: "The first wild-card winner in Bigg Boss history — he entered on Day 26 and still beat Abhishek Malhan in the finale on 14 August 2023." },
+  { season: "OTT Season 1", years: "2021", dates: "8 August 2021 – 18 September 2021", winner: "Divya Agarwal", image: "/assets/bb-seasons/ott1-divya-agarwal.webp", runnerUp: "Nishant Bhat", host: "Karan Johar", channel: "Voot", link: "/bigg-boss-ott-1-voting/", story: "Won the first digital season, beating Nishant Bhat on 18 September 2021 — the Karan Johar-hosted season that launched Bigg Boss OTT on Voot." },
+];
+
+function renderWinnerListTable() {
+  return `<div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Season</th><th>Dates</th><th>Winner</th><th>Runner-up</th><th>Host</th><th>Channel / Platform</th></tr>
+        </thead>
+        <tbody>
+          ${WINNER_LIST.map((r) => `<tr><td>${r.season}</td><td>${r.dates}</td><td class="bb-table-contestant"><img src="${r.image}" alt="${r.winner}" class="bb-table-avatar" loading="lazy"><a href="${r.link}"><strong>${r.winner}</strong></a></td><td>${r.runnerUp}</td><td>${r.host}</td><td>${r.channel}</td></tr>`).join("")}
+        </tbody>
+      </table>
+      </div>`;
+}
+
+function renderWinnerListSections() {
+  return (
+    storySection(
+      "The Full List",
+      "Bigg Boss winner list — every season, every winner",
+      `<p>Twenty-two seasons of Bigg Boss — nineteen of Bigg Boss Hindi and three of Bigg Boss OTT — have produced twenty-two winners, from Rahul Roy in 2007 to Gaurav Khanna in 2025. This is the complete list: each season's winner, the runner-up they beat in the finale, the host and the channel or platform the season aired on. Every winner's name links to that season's own voting page, with its finalists, its eviction order and its fan re-vote Open Poll.</p>
+      ${renderWinnerListTable()}
+      <p style="margin-top:1rem;">Two things worth knowing about this list. First, Season 8 is the odd one out: its finale on 3 January 2015 crowned five Champions instead of a winner, and Gautam Gulati's win was declared at the Bigg Boss Halla Bol finale on 31 January 2015 — which is why his season's dates run to the end of January. Second, a winner's prize figure is published on this page only where the season's own record states one: ₹50 lakh for Season 19, and ₹1 crore for Seasons 4 and 2. For the other seasons, no winner's prize figure is stated in the season record, so none is printed here.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "Meet the Winners",
+      "Every Bigg Boss winner — how each trophy was won",
+      renderSeasonFinalistCards(
+        WINNER_LIST.map((r) => ({
+          name: r.winner,
+          placing: `🏆 Winner · ${r.season} (${r.years})`,
+          image: r.image,
+          story: r.story,
+        })),
+      ),
+    ) +
+    storySection(
+      "Bigg Boss 20",
+      "Bigg Boss 20 — the next name on this list is still to be decided",
+      `<p>Bigg Boss 20 is running now — it premiered on 6 September 2026, hosted by Salman Khan on Colors TV and JioHotstar. Its winner has not been decided, and the finale date has <strong>not been officially announced yet</strong>: when the finale is played, the winner's name takes the next line of this list. Until then, follow the season as it happens on the <a href="/bigg-boss-20-voting/"><strong>Bigg Boss 20 voting hub</strong></a> — the current Open Polls, this week's standings and the week-by-week pages — and see who is fancied to join this list on the <a href="/who-will-win-bigg-boss-20/"><strong>who will win Bigg Boss 20</strong></a> page.</p>`,
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+      {
+        href: "/bigg-boss-13-voting/",
+        emoji: "👑",
+        title: "Bigg Boss 13 Voting",
+        text: "Sidharth Shukla's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 13 page →",
+      },
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🎭",
+        title: "Bigg Boss 17 Voting",
+        text: "Munawar Faruqui's season: the official result, the finalists with photos and the fan re-vote Open Poll.",
+        linkText: "Open the Season 17 page →",
+      },
+      {
+        href: "/bigg-boss-19-voting/",
+        emoji: "🏛️",
+        title: "Bigg Boss 19 Voting",
+        text: "Gaurav Khanna's season — the most recent winner on this list: the official result, the finalists and the fan re-vote Open Poll.",
+        linkText: "Open the Season 19 page →",
+      },
+      {
+        href: "/who-will-win-bigg-boss-20/",
+        emoji: "🏆",
+        title: "Who Will Win Bigg Boss 20?",
+        text: "The winner prediction, the finalist cases and the winner-race Open Poll for the current season.",
+        linkText: "See the prediction →",
+      },
+    ])
+  );
+}
+
+function renderWinnerListFaq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss Winner List FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Who won the most recent Bigg Boss season?</summary>
+        <div class="bb-faq-body">
+          <p>Gaurav Khanna won Bigg Boss 19, the most recent finished season — he beat Farrhana Bhatt in the finale on 7 December 2025 and took home the ₹50 lakh prize stated in the season's record. The current season, Bigg Boss 20, is still running and its winner has not been decided.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who is the greatest Bigg Boss winner of all time?</summary>
+        <div class="bb-faq-body">
+          <p>There is no official all-time ranking — the show has never ranked its winners against each other. The Open Poll at the top of this page is where fans answer the question: as it stands, Sidharth Shukla (Season 13) leads it, ahead of Munawar Faruqui (Season 17) and MC Stan (Season 16). Those numbers are VisitBest Open Poll votes — audience sentiment only, not official votes and not an official ranking.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who was the first Bigg Boss winner?</summary>
+        <div class="bb-faq-body">
+          <p>Rahul Roy won the first season of Bigg Boss in 2007, beating Carol Gracias in the finale on 26 January 2007. Season 1 is the only Hindi season not on Colors TV — it aired on Sony Entertainment Television and was hosted by Arshad Warsi.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss OTT?</summary>
+        <div class="bb-faq-body">
+          <p>Divya Agarwal won Bigg Boss OTT 1 (2021, hosted by Karan Johar on Voot), Elvish Yadav won Bigg Boss OTT 2 (2023, on JioCinema) — the first wild-card winner in Bigg Boss history — and Sana Makbul won Bigg Boss OTT 3 (2024, hosted by Anil Kapoor on JioCinema Premium).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>How much prize money did the Bigg Boss winners get?</summary>
+        <div class="bb-faq-body">
+          <p>Only where the season's own record states a winner's prize does this page publish one: ₹50 lakh for Gaurav Khanna (Season 19), and ₹1 crore each for Shweta Tiwari (Season 4) and Ashutosh Kaushik (Season 2). For the other seasons, no winner's prize figure is stated in the season record, so no figure is printed for them here.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Is the poll on this page an official Bigg Boss vote?</summary>
+        <div class="bb-faq-body">
+          <p>No. The winner list itself is the official record — the winners as declared on the show. The poll at the top is a VisitBest Open Poll asking who fans think is the greatest winner of all time; it is audience sentiment only, it is not official voting, and it changes nothing about any season's result. Official voting exists only for a running season, on JioCinema / JioHotstar, as announced on air.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
 }
 
 // ---------- Bigg Boss 17 (entry 408) ----------
@@ -9288,6 +9530,26 @@ const DEBATE_MARQUEE = {
       ["Riya", 160, 67, "Team Karan", -1, "Karan Veer Mehra is the most recent and the most underrated in this list. His game was the smartest."],
     ],
   },
+  "bigg-boss-winner-list": {
+    pinned: ["Sagar P.", "Twenty-two winners on one list, and one question above all of them: Sidharth Shukla is the greatest Bigg Boss winner of all time. BB13 did not just produce a winner, it changed what this show is."],
+    comments: [
+      ["Neeraj", 4, 196, "Team Sidharth", -1, "There is a before-BB13 and an after-BB13 in this show's history. Every winner since gets measured against one man, and the list on this page proves it."],
+      ["Farhan", 9, 118, "Team Munawar", -1, "Respect to Sid, but Munawar won the toughest season of the social-media era AND Lock Upp before it. Two crowns, two formats — that is a greatest-winner résumé."],
+      ["Imran", 15, 104, "Team Stan", -1, "MC Stan brought an audience that had never watched Bigg Boss in its life. Most names on this list never moved the culture like that."],
+      ["Rohan", 22, 141, "Team Elvish", -1, "Elvish Yadav entered OTT 2 on Day 26 as a wild card and still took the trophy. Nobody else on this entire list did that. History."],
+      ["Priya", 30, 97, "Team Rubina", -1, "Rubina's BB14 game is the most complete on this list — tasks, stands, dignity, over 140 days. The longest season produced the most complete winner."],
+      ["Wasim", 38, 83, "Team Gautam", -1, "Gautam Gulati invented the lone-wolf win in Season 8. Every solo player on this list after him is running his playbook."],
+      ["Kavita", 46, 76, "Team Gauahar", -1, "Gauahar Khan walked out on Day 44, came back the next morning and still won BB7. That is the greatest comeback on this whole list."],
+      ["Deepak", 54, 88, "Team Munawar", 0, "2084 vs 1617 in this poll right now — Sid leads, but Munawar's fandom is the loudest of the new era. This gap will not sit still."],
+      ["Simran", 63, 129, "Team Sidharth", -1, "The BB13 finale night is still the most talked-about finale in the show's history. Some wins age. His keeps growing."],
+      ["Harsh", 72, 58, null, -1, "Tejasswi gets forgotten in this debate and it is criminal. She outlasted Karan, Shamita and Pratik in a 24-housemate jungle season."],
+      ["Riya", 84, 67, "Team Karan", -1, "Karan Veer Mehra played the smartest game of any recent winner. BB18 was chess while the house played checkers."],
+      ["Akash", 95, 91, "Team Stan", -1, "Stan won BB16 without manufacturing a single fight. The most unbothered winner on this list, and it is not close."],
+      ["Anjali", 107, 73, "Team Shilpa", -1, "Shilpa vs Hina was settled by a LIVE vote on finale night. Nothing on this list matches the tension of BB11's last hour."],
+      ["Sneha", 121, 64, "Team Divya", -1, "Divya Agarwal won OTT 1 in a connections season while playing without a connection. The most against-the-system win on this list."],
+      ["Tarun", 138, 52, null, -1, "Shoutout to the first name on the list — Rahul Roy won a season most of today's fanbase has never even seen. Respect the OG."],
+    ],
+  },
   "bigg-boss-20-voting": {
     pinned: ["Sagar", "Qazi Touqeer is topping every poll on this site for a reason — BB20 belongs to him right now. But this house flips in one Weekend Ka Vaar, so keep watching."],
     comments: [
@@ -9761,6 +10023,7 @@ export function renderBiggBossPollPage(poll) {
  ${poll.slug === "bigg-boss-3-voting" ? renderSeason3Sections() : ""}
  ${poll.slug === "bigg-boss-2-voting" ? renderSeason2Sections() : ""}
  ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
+    ${poll.slug === "bigg-boss-winner-list" ? renderWinnerListSections() : ""}
 
     ${renderFanDebate(poll)}
 
@@ -9785,7 +10048,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : poll.slug === "bigg-boss-winner-list" ? renderWinnerListFaq() : renderFaqSection(poll)}
   </div>
   `;
 }
