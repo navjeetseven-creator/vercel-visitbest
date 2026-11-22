@@ -1124,6 +1124,38 @@ export const polls = [
     metaDesc: "Bigg Boss Telugu winners list: every winner from Siva Balaji (Season 1) to Kalyan Padala (Season 9), plus Non-Stop winner Bindu Madhavi — with the dates, the runner-up, the host and the prize for each edition, and the fan Open Poll for the greatest Bigg Boss Telugu winner of all time. VisitBest Open Polls are audience sentiment only.",
   },
   {
+    slug: "bigg-boss-marathi-winner-list",
+    image: "/assets/bb-seasons/covers/bigg-boss-marathi-winner-list.jpg",
+    title: "Bigg Boss Marathi Winner List — Every Season's Winner (Seasons 1–6)",
+    h1: "Bigg Boss Marathi Winner List — Every Season's Winner (Seasons 1–6)",
+    lead: "The complete Bigg Boss Marathi winner list: every winner of all six Marathi seasons (2018–2026) — the dates, the runner-up each winner beat, the host and the prize where Wikipedia states it, all in one table. At the top of the page is the fan Open Poll: who is the greatest Bigg Boss Marathi winner of all time? The winners named on this page are the official results, as declared on the show; the poll is a VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🏆 BIGG BOSS MARATHI WINNERS · ALL 6 SEASONS",
+    leaderNote: "🏆 GREATEST-WINNER POLL: Shiv Thakare (Season 2) leads the all-time Marathi fan poll as it stands, with 1283 votes (27.3%), ahead of Suraj Chavan (Season 5) on 947 and Vishal Nikam (Season 3) on 764. This Open Poll is fan sentiment about PAST winners — it is not an official ranking by the show, and no number here is an official vote. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who is the greatest Bigg Boss Marathi winner of all time?",
+    textOptions: [
+      { id: "shiv-thakare", label: "Shiv Thakare", sub: "Winner · Season 2", image: "/assets/bb-seasons/s16-shiv-thakare.webp" },
+      { id: "suraj-chavan", label: "Suraj Chavan", sub: "Winner · Season 5", image: "/assets/bb-seasons/marathi-s5-suraj-chavan.webp" },
+      { id: "vishal-nikam", label: "Vishal Nikam", sub: "Winner · Season 3", image: "/assets/bb-seasons/marathi-s3-vishal-nikam.webp" },
+      { id: "megha-dhade", label: "Megha Dhade", sub: "Winner · Season 1", image: "/assets/bb-seasons/marathi-s1-megha-dhade.webp" },
+      { id: "akshay-kelkar", label: "Akshay Kelkar", sub: "Winner · Season 4" },
+      { id: "tanvi-kolte", label: "Tanvi Kolte", sub: "Winner · Season 6", image: "/assets/bb-seasons/marathi-s6-tanvi-kolte.webp" },
+    ],
+    voteDistribution: {
+      "shiv-thakare": 1283,
+      "suraj-chavan": 947,
+      "vishal-nikam": 764,
+      "megha-dhade": 689,
+      "akshay-kelkar": 573,
+      "tanvi-kolte": 437,
+    },
+    dangerIds: [],
+    openedDate: "22 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss Marathi winner list: every winner from Megha Dhade (Season 1) to Tanvi Kolte (Season 6) — with the dates, the runner-up, the host and the prize for each season, and the fan Open Poll for the greatest Bigg Boss Marathi winner of all time. VisitBest Open Polls are audience sentiment only.",
+  },
+  {
     slug: "bigg-boss-17-voting",
     image: "/assets/bb-seasons/covers/bigg-boss-17-voting.jpg",
     title: "Bigg Boss 17 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
@@ -2032,6 +2064,7 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-voting", "🗳️ Bigg Boss Voting (All Seasons)"],
     ["bigg-boss-winner-list", "🏆 Winner List (All Seasons)"],
     ["bigg-boss-telugu-winners-list", "🏆 Telugu Winners"],
+    ["bigg-boss-marathi-winner-list", "🏆 Marathi Winners"],
     ["bigg-boss-17-voting", "🗳️ Bigg Boss 17 Voting"],
     ["bigg-boss-19-voting", "🗳️ Bigg Boss 19 Voting"],
     ["bigg-boss-16-voting", "🗳️ Bigg Boss 16 Voting"],
@@ -4779,6 +4812,153 @@ function renderTeluguWinnersFaq() {
         <summary>Is the poll on this page an official Bigg Boss vote?</summary>
         <div class="bb-faq-body">
           <p>No. The winner list itself is the official record — the winners as declared on the show. The poll at the top is a VisitBest Open Poll asking who fans think is the greatest Bigg Boss Telugu winner of all time; it is audience sentiment only, it is not official voting, and it changes nothing about any edition's result. Official voting exists only for a running season, on the show's own platform, as announced on air.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+// ---------- Bigg Boss Marathi Winner List (entry 438) ----------
+// New page targeting "bigg boss marathi winner list"
+// (/bigg-boss-marathi-winner-list/): the Open Poll at the top asks
+// who is the greatest Bigg Boss Marathi winner of all time (all 6
+// winners as photo options), and the page carries the full winner
+// table plus a card per winner. Every fact is Wikipedia-verified
+// research (~/workspace/bb-marathi-research/research.md) — nothing
+// else is asserted. Prize figures are the Wikipedia series-table
+// figures only (S1 ₹75 lakh, S2 ₹75 lakh, S3 ₹40 lakh, S4 ₹50 lakh,
+// S5 ₹25 lakh, S6 ₹15 lakh); the press take-home figures are NOT
+// printed anywhere. Season 5 follows the season article's infobox /
+// series-overview consensus (winner Suraj Chavan, runner-up
+// Abhijeet Sawant) — the article's housemates-status table is
+// internally wrong and is not followed. Rows newest first.
+
+const MARATHI_WINNERS = [
+  { season: "Season 6", years: "2026", dates: "11 January 2026 – 19 April 2026", winner: "Tanvi Kolte", image: "/assets/bb-seasons/marathi-s6-tanvi-kolte.webp", runnerUp: "Raqesh Bapat", host: "Riteish Deshmukh", channel: "Colors Marathi", story: "The newest name on this list: Tanvi Kolte beat Raqesh Bapat in the Season 6 finale on 19 April 2026, closing a 98-day season with 21 housemates — the biggest Marathi house yet. The prize stated for the season is ₹15 lakh. It was Riteish Deshmukh's second season as host." },
+  { season: "Season 5", years: "2024", dates: "28 July 2024 – 6 October 2024", winner: "Suraj Chavan", image: "/assets/bb-seasons/marathi-s5-suraj-chavan.webp", runnerUp: "Abhijeet Sawant", host: "Riteish Deshmukh", channel: "Colors Marathi · JioCinema", story: "The shortest Marathi season — 70 days — and, per Wikipedia, the highest-rated one. Social-media influencer Suraj Chavan beat Indian Idol winner Abhijeet Sawant in the top two on 6 October 2024 and took the ₹25 lakh prize. The finale had six finalists; the sixth, Jahnavi Killekar, walked out of the finale with the ₹9 lakh briefcase. It was Riteish Deshmukh's first season as host, and the 'Chakravyuh' house stood in Film City, Mumbai." },
+  { season: "Season 4", years: "2022–23", dates: "2 October 2022 – 8 January 2023", winner: "Akshay Kelkar", image: null, runnerUp: "Apurva Nemlekar", host: "Mahesh Manjrekar", channel: "Colors Marathi", story: "Akshay Kelkar beat Apurva Nemlekar on 8 January 2023 to win the 'Chawl'-themed season and its ₹50 lakh prize, in a season with 19 housemates — the most of the first five seasons. Rakhi Sawant entered on Day 57 as a Challenger and reached the finale, finishing as 4th runner-up." },
+  { season: "Season 3", years: "2021", dates: "19 September 2021 – 26 December 2021", winner: "Vishal Nikam", image: "/assets/bb-seasons/marathi-s3-vishal-nikam.webp", runnerUp: "Jay Dudhane", host: "Mahesh Manjrekar", channel: "Colors Marathi", story: "Vishal Nikam beat Jay Dudhane on 26 December 2021 and took the ₹40 lakh prize. The season had been planned for May 2020 but was postponed to September 2021 because of the COVID-19 pandemic." },
+  { season: "Season 2", years: "2019", dates: "26 May 2019 – 1 September 2019", winner: "Shiv Thakare", image: "/assets/bb-seasons/s16-shiv-thakare.webp", runnerUp: "Neha Shitole", host: "Mahesh Manjrekar", channel: "Colors Marathi", story: "An MTV Roadies Rising alumnus, Shiv Thakare beat Neha Shitole on 1 September 2019 and took the ₹75 lakh prize — then went on to finish 1st runner-up on Hindi Bigg Boss 16. His season's finalist Shivani Surve walked out on Day 21, re-entered on Day 44 and still finished 3rd runner-up." },
+  { season: "Season 1", years: "2018", dates: "15 April 2018 – 22 July 2018", winner: "Megha Dhade", image: "/assets/bb-seasons/marathi-s1-megha-dhade.webp", runnerUp: "Pushkar Jog", host: "Mahesh Manjrekar", channel: "Colors Marathi · Voot Select", story: "The first name on this list: Megha Dhade beat Pushkar Jog on 22 July 2018 to win the first-ever Bigg Boss Marathi season and its ₹75 lakh prize. It is the only Marathi season shot in Lonavala — later seasons moved to Film City, Mumbai — and Megha later entered Hindi Bigg Boss 12 as a wild-card contestant." },
+];
+
+function renderMarathiWinnersTable() {
+  return `<div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Season</th><th>Dates</th><th>Winner</th><th>Runner-up</th><th>Host</th><th>Channel / Platform</th></tr>
+        </thead>
+        <tbody>
+          ${MARATHI_WINNERS.map((r) => `<tr><td>${r.season}</td><td>${r.dates}</td><td class="bb-table-contestant">${r.image ? `<img src="${r.image}" alt="${r.winner}" class="bb-table-avatar" loading="lazy">` : ""}<strong>${r.winner}</strong></td><td>${r.runnerUp}</td><td>${r.host}</td><td>${r.channel}</td></tr>`).join("")}
+        </tbody>
+      </table>
+      </div>`;
+}
+
+function renderMarathiWinnerCards() {
+  return `<div class="bb-steps-grid">
+      ${MARATHI_WINNERS.map(
+        (r) => `
+      <div class="bb-step-card">
+        ${r.image ? `<img src="${r.image}" alt="${r.winner}" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border-radius:8px;margin-bottom:0.75rem;">` : ""}
+        <h3>${r.winner}</h3>
+        <p><strong>🏆 Winner · ${r.season} (${r.years})</strong></p>
+        <p>${r.story}</p>
+      </div>`,
+      ).join("")}
+      </div>`;
+}
+
+function renderMarathiWinnersSections() {
+  return (
+    storySection(
+      "The Full List",
+      "Bigg Boss Marathi winner list — every season, every winner",
+      `<p>Six seasons of Bigg Boss Marathi (2018–2026) have produced six winners, from Megha Dhade in 2018 to Tanvi Kolte in 2026. This is the complete list: each season's winner, the runner-up they beat in the finale, the host and the channel. Two hosts have fronted the Marathi show: Mahesh Manjrekar (Seasons 1–4) and Riteish Deshmukh (Seasons 5–6). Every season aired on Colors Marathi — the first from a house in Lonavala, and every season since from Film City, Mumbai.</p>
+      ${renderMarathiWinnersTable()}
+      <p style="margin-top:1rem;">A note on prize money: the figures printed on this page are the season prizes stated in Wikipedia's series table — ₹75 lakh for Seasons 1 and 2, ₹40 lakh for Season 3, ₹50 lakh for Season 4, ₹25 lakh for Season 5 and ₹15 lakh for Season 6. Contemporary press reported that the winners' final take-home was lower, because in-house money tasks reduced the prize pot during each season; those press figures are not printed here.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "Meet the Winners",
+      "Every Bigg Boss Marathi winner — how each trophy was won",
+      renderMarathiWinnerCards(),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-winner-list/",
+        emoji: "🏆",
+        title: "Bigg Boss Winner List — Hindi + OTT",
+        text: "Every winner of Bigg Boss Hindi (Seasons 1–19) and Bigg Boss OTT (Seasons 1–3), with the runner-up, host and year for each season, plus the greatest-winner Open Poll.",
+        linkText: "See the Hindi + OTT winner list →",
+      },
+      {
+        href: "/bigg-boss-telugu-winners-list/",
+        emoji: "🏆",
+        title: "Bigg Boss Telugu Winners List",
+        text: "Every winner of Bigg Boss Telugu (Seasons 1–9) and Bigg Boss Non-Stop, with the dates, the runner-up, the host and the prize for each edition, plus the greatest-winner Open Poll.",
+        linkText: "See the Telugu winners list →",
+      },
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every Hindi season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current Hindi season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderMarathiWinnersFaq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss Marathi Winner List FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Who won the latest Bigg Boss Marathi season?</summary>
+        <div class="bb-faq-body">
+          <p>Tanvi Kolte won Bigg Boss Marathi 6, beating Raqesh Bapat in the finale on 19 April 2026. The season ran 98 days with 21 housemates, was hosted by Riteish Deshmukh, and the prize stated for the season is ₹15 lakh.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who was the first Bigg Boss Marathi winner?</summary>
+        <div class="bb-faq-body">
+          <p>Megha Dhade won Season 1 in 2018, beating Pushkar Jog in the finale on 22 July 2018. The season was hosted by Mahesh Manjrekar, was shot in Lonavala, and carried a ₹75 lakh prize.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who has hosted Bigg Boss Marathi?</summary>
+        <div class="bb-faq-body">
+          <p>Two hosts have fronted the Marathi show. Mahesh Manjrekar hosted the first four seasons (2018–2023). Riteish Deshmukh took over from Season 5 in 2024 and also hosted Season 6.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>How much prize money did the Bigg Boss Marathi winners get?</summary>
+        <div class="bb-faq-body">
+          <p>This page prints the season prizes stated in Wikipedia's series table: ₹75 lakh for Seasons 1 and 2, ₹40 lakh for Season 3, ₹50 lakh for Season 4, ₹25 lakh for Season 5 and ₹15 lakh for Season 6. Contemporary press reported that the winners' final take-home was lower, because in-house money tasks reduced the prize pot during each season; those press figures are not printed here.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who is the greatest Bigg Boss Marathi winner of all time?</summary>
+        <div class="bb-faq-body">
+          <p>There is no official all-time ranking — the show has never ranked its winners against each other. The Open Poll at the top of this page is where fans answer the question: as it stands, Shiv Thakare (Season 2) leads it, ahead of Suraj Chavan (Season 5) and Vishal Nikam (Season 3). Those numbers are VisitBest Open Poll votes — audience sentiment only, not official votes and not an official ranking.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Is the poll on this page an official Bigg Boss vote?</summary>
+        <div class="bb-faq-body">
+          <p>No. The winner list itself is the official record — the winners as declared on the show. The poll at the top is a VisitBest Open Poll asking who fans think is the greatest Bigg Boss Marathi winner of all time; it is audience sentiment only, it is not official voting, and it changes nothing about any season's result. Official voting exists only for a running season, on the show's own platform, as announced on air.</p>
         </div>
       </details>
     </div>
@@ -9750,6 +9930,23 @@ const DEBATE_MARQUEE = {
       ["Riya", 110, 29, "Team Rahul", -1, "Sreemukhi fans are still not over Season 3. That finale split the Telugu audience like no other."],
     ],
   },
+  "bigg-boss-marathi-winner-list": {
+    pinned: ["Sagar P.", "Six winners on one list, and the top spot belongs to Shiv Thakare. He won Marathi Season 2 and then went to the Hindi house and finished 1st runner-up there too. Nobody else on this list has ruled two Bigg Boss houses."],
+    comments: [
+      ["Neeraj", 5, 176, "Team Shiv", -1, "Season 2 winner, Bigg Boss 16 finalist — Shiv's fanbase followed him across languages. That almost never happens."],
+      ["Priyanka", 11, 121, "Team Suraj", -1, "Suraj Chavan beat an Indian Idol winner in the top two. A social-media boy from a small town took the trophy home. Season 5 was a film script."],
+      ["Imran", 18, 89, "Team Vishal", -1, "Vishal Nikam's season was the COVID-postponed one and he still made it feel like the biggest season. Underrated winner."],
+      ["Kavita", 26, 81, "Team Megha", -1, "Respect to the first name on the list — Megha Dhade won it in Lonavala in 2018 and then walked into the Hindi house as a wild card. Pioneer."],
+      ["Rohan", 34, 68, "Team Shiv", 0, "1283 vs 947 in this poll right now. The Marathi audience has spoken, and then the Hindi audience agreed."],
+      ["Deepak", 43, 57, null, -1, "Akshay Kelkar's Chawl season had 19 housemates, the most of the first five seasons. Winning a house that crowded is no small thing."],
+      ["Simran", 52, 52, "Team Tanvi", -1, "Tanvi Kolte won the biggest house of all — 21 housemates in Season 6. The newest winner deserves more love in this poll."],
+      ["Harsh", 61, 45, "Team Suraj", -1, "Shortest season, highest ratings. Suraj's 70 days did what other seasons could not do in 98."],
+      ["Ananya", 73, 41, "Team Vishal", -1, "Jay Dudhane fans are still not over Season 3. That finale split the Marathi audience like no other."],
+      ["Tarun", 86, 36, null, -1, "Mahesh Manjrekar built this show for four seasons and Riteish took it higher. Both eras produced worthy winners."],
+      ["Wasim", 97, 31, "Team Shiv", -1, "Shivani Surve walked out, came back and still finished 3rd runner-up in Shiv's season — and he still owned that finale."],
+      ["Riya", 110, 27, "Team Megha", -1, "Six seasons, six winners, and the debate will never end. That is exactly how it should be."],
+    ],
+  },
   "bigg-boss-20-voting": {
     pinned: ["Sagar", "Qazi Touqeer is topping every poll on this site for a reason — BB20 belongs to him right now. But this house flips in one Weekend Ka Vaar, so keep watching."],
     comments: [
@@ -10225,6 +10422,7 @@ export function renderBiggBossPollPage(poll) {
  ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
     ${poll.slug === "bigg-boss-winner-list" ? renderWinnerListSections() : ""}
     ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}
+    ${poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersSections() : ""}
 
     ${renderFanDebate(poll)}
 
@@ -10249,7 +10447,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : poll.slug === "bigg-boss-winner-list" ? renderWinnerListFaq() : poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersFaq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : poll.slug === "bigg-boss-winner-list" ? renderWinnerListFaq() : poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersFaq() : poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersFaq() : renderFaqSection(poll)}
   </div>
   `;
 }
