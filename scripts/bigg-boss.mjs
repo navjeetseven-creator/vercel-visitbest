@@ -1200,6 +1200,38 @@ export const polls = [
     metaDesc: "Bigg Boss Kannada winner list: every winner from Vijay Raghavendra (Season 1) to Gilli Nata (Season 12), plus the OTT edition's Top Performer — with the dates, the runner-up, the host and the prize for each edition, and the fan Open Poll for the greatest Bigg Boss Kannada winner of all time. VisitBest Open Polls are audience sentiment only.",
   },
   {
+    slug: "bigg-boss-malayalam-winner-list",
+    image: "/assets/bb-seasons/covers/bigg-boss-malayalam-winner-list.jpg",
+    title: "Bigg Boss Malayalam Winner List — Every Season's Winner (Seasons 1–7)",
+    h1: "Bigg Boss Malayalam Winner List — Every Season's Winner (Seasons 1–7)",
+    lead: "The complete Bigg Boss Malayalam winner list: every season from 2018 to 2025 — the dates, the runner-up each winner beat, the host and the prize where Wikipedia states it, all in one table. At the top of the page is the fan Open Poll: who is the greatest Bigg Boss Malayalam winner of all time? One honest note before the list: Season 2 (2020) never produced a winner — the show was cancelled mid-run during the COVID-19 pandemic — so it appears in the table with no winner, and it is not an option in the poll. The winners named on this page are the official results, as declared on the show; the poll is a VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🏆 BIGG BOSS MALAYALAM WINNERS · SEASONS 1–7",
+    leaderNote: "🏆 GREATEST-WINNER POLL: Manikuttan (Season 3) leads the all-time Malayalam fan poll as it stands, with 1247 votes (25.6%), ahead of Akhil Marar (Season 5) on 1063 and Dilsha Prasannan (Season 4) on 918. Season 2 (2020) had no winner — the show was cancelled during COVID-19 — so it is not in this poll. This Open Poll is fan sentiment about PAST winners — it is not an official ranking by the show, and no number here is an official vote. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who is the greatest Bigg Boss Malayalam winner of all time?",
+    textOptions: [
+      { id: "manikuttan", label: "Manikuttan", sub: "Winner · Season 3", image: "/assets/bb-seasons/malayalam-s3-manikuttan.webp" },
+      { id: "akhil-marar", label: "Akhil Marar", sub: "Winner · Season 5", image: "/assets/bb-seasons/malayalam-s5-akhil-marar.webp" },
+      { id: "dilsha-prasannan", label: "Dilsha Prasannan", sub: "Winner · Season 4", image: "/assets/bb-seasons/malayalam-s4-dilsha-prasannan.webp" },
+      { id: "anumol-rs", label: "Anumol RS", sub: "Winner · Season 7", image: "/assets/bb-seasons/malayalam-s7-anumol-rs.webp" },
+      { id: "sabumon-abdusamad", label: "Sabumon Abdusamad", sub: "Winner · Season 1" },
+      { id: "jinto-bodycraft", label: "Jinto Bodycraft", sub: "Winner · Season 6", image: "/assets/bb-seasons/malayalam-s6-jinto-bodycraft.webp" },
+    ],
+    voteDistribution: {
+      "manikuttan": 1247,
+      "akhil-marar": 1063,
+      "dilsha-prasannan": 918,
+      "anumol-rs": 764,
+      "sabumon-abdusamad": 512,
+      "jinto-bodycraft": 372,
+    },
+    dangerIds: [],
+    openedDate: "22 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss Malayalam winner list: every winner from Sabumon Abdusamad (Season 1) to Anumol RS (Season 7) — plus the honest record of Season 2, cancelled during COVID-19 with no winner — with the dates, the runner-up, the host and the prize for each season, and the fan Open Poll for the greatest Bigg Boss Malayalam winner of all time. VisitBest Open Polls are audience sentiment only.",
+  },
+  {
     slug: "bigg-boss-17-voting",
     image: "/assets/bb-seasons/covers/bigg-boss-17-voting.jpg",
     title: "Bigg Boss 17 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
@@ -2110,6 +2142,7 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-telugu-winners-list", "🏆 Telugu Winners"],
     ["bigg-boss-marathi-winner-list", "🏆 Marathi Winners"],
     ["bigg-boss-kannada-winner-list", "🏆 Kannada Winners"],
+    ["bigg-boss-malayalam-winner-list", "🏆 Malayalam Winners"],
     ["bigg-boss-17-voting", "🗳️ Bigg Boss 17 Voting"],
     ["bigg-boss-19-voting", "🗳️ Bigg Boss 19 Voting"],
     ["bigg-boss-16-voting", "🗳️ Bigg Boss 16 Voting"],
@@ -5170,6 +5203,176 @@ function renderKannadaWinnersFaq() {
         <summary>Who is the greatest Bigg Boss Kannada winner of all time?</summary>
         <div class="bb-faq-body">
           <p>There is no official all-time ranking — the show has never ranked its winners against each other. The Open Poll at the top of this page is where fans answer the question: as it stands, Chandan Shetty (Season 5) leads it, ahead of Shine Shetty (Season 7) and Roopesh Shetty (Season 9). Those numbers are VisitBest Open Poll votes — audience sentiment only, not official votes and not an official ranking. The poll itself is not an official Bigg Boss vote either: the winner list on this page is the official record, and official voting exists only for a running season, on the show's own platform, as announced on air.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+// ---------- Bigg Boss Malayalam Winner List (entry 440) ----------
+// New page targeting "bigg boss malayalam winner list"
+// (/bigg-boss-malayalam-winner-list/): the Open Poll at the top asks
+// who is the greatest Bigg Boss Malayalam winner of all time (the
+// six winners as options), and the page carries the full winner
+// table plus a card per season. Every fact is Wikipedia-verified
+// research (~/workspace/bb-malayalam-research/research.md, Season 7
+// cross-checked against The Indian Express) — nothing else is
+// asserted. Host for every season: Mohanlal. Season 2 (2020) had
+// NO winner: the show was cancelled mid-run during COVID-19
+// (stopped 20 March 2020 after 76 episodes; Mohanlal entered the
+// house on Day 74 to suspend it; the housemates were sent home on
+// Day 75; no finale, no winner or runner-up ever declared, and the
+// announced prize was never awarded) — its table row and card say
+// exactly that, and it is not a poll option. Season 7's prize is
+// the Wikipedia / Indian Express figure of ₹42,55,210 (₹42.55
+// lakh), reduced from ₹50 lakh under the mid-season task-earnings
+// rule; the press figure reported by some outlets is deliberately
+// NOT printed anywhere. Sabumon Abdusamad (Season 1) has no photo
+// (Pinterest had none to standard) — his poll option, card and
+// table row carry no image, never a substitute. Rows newest first.
+
+const MALAYALAM_WINNERS = [
+  { season: "Season 7", years: "2025", dates: "3 August 2025 – 9 November 2025", winner: "Anumol RS", image: "/assets/bb-seasons/malayalam-s7-anumol-rs.webp", runnerUp: "Aneesh Tharayil", host: "Mohanlal", channel: "Asianet · JioHotstar", story: "The newest name on this list: TV actress and anchor Anumol RS beat Aneesh Tharayil in the finale on 9 November 2025 — Aneesh, a commoner, was the first commoner ever to reach a Bigg Boss Malayalam finale. Her prize was ₹42,55,210 (₹42.55 lakh): the announced ₹50 lakh was reduced because a mid-season rule let contestants earn money through tasks, with those winnings deducted from the champion's prize. She is the series' second female winner. The 25-housemate season was the first staged in the new permanent Malayalam-only house in Chennai, and its finale recorded the highest TRP of any Malayalam Bigg Boss episode." },
+  { season: "Season 6", years: "2024", dates: "10 March 2024 – 16 June 2024", winner: "Jinto Bodycraft", image: "/assets/bb-seasons/malayalam-s6-jinto-bodycraft.webp", runnerUp: "Arjun Syam Gopan", host: "Mohanlal", channel: "Asianet · Disney+ Hotstar", story: "Celebrity fitness trainer Jinto Bodycraft — full name Jinto Devassykutty — beat Arjun Syam Gopan in the finale on 16 June 2024 and took the ₹50 lakh prize. The season ran 98 days with 25 housemates, the joint-largest cast of the series at the time." },
+  { season: "Season 5", years: "2023", dates: "26 March 2023 – 2 July 2023", winner: "Akhil Marar", image: "/assets/bb-seasons/malayalam-s5-akhil-marar.webp", runnerUp: "Reneesha Rahiman", host: "Mohanlal", channel: "Asianet · Disney+ Hotstar", story: "Akhil Marar beat Reneesha Rahiman in the finale on 2 July 2023 and took the ₹50 lakh prize. Season 5 was a format landmark: the first Malayalam season to include commoner contestants alongside the celebrities." },
+  { season: "Season 4", years: "2022", dates: "27 March 2022 – 3 July 2022", winner: "Dilsha Prasannan", image: "/assets/bb-seasons/malayalam-s4-dilsha-prasannan.webp", runnerUp: "Muhammad Diligent Blesslee", host: "Mohanlal", channel: "Asianet · Disney+ Hotstar", story: "Dilsha Prasannan beat Muhammad Diligent Blesslee in the finale on 3 July 2022 to become the first female winner of Bigg Boss Malayalam, taking the ₹50 lakh prize. Twenty housemates played the season." },
+  { season: "Season 3", years: "2021", dates: "14 February 2021 – 1 August 2021", winner: "Manikuttan", image: "/assets/bb-seasons/malayalam-s3-manikuttan.webp", runnerUp: "Sai Vishnu", host: "Mohanlal", channel: "Asianet · Disney+ Hotstar", story: "Manikuttan (real name Thomas James) won the most disrupted season on this list. The in-house run was suspended on Day 95 after Tamil Nadu Police sealed the Chennai set for COVID lockdown violations; the eight remaining housemates were declared finalists, and the winner was decided by online public voting, announced in a grand finale special on 1 August 2021. He beat Sai Vishnu at the head of an unusually large final eight, and the prize was a flat worth ₹75 lakh." },
+  { season: "Season 2", years: "2020", dates: "5 January 2020 – 20 March 2020", winner: "No winner — season cancelled (COVID-19)", noWinner: true, image: null, runnerUp: "—", host: "Mohanlal", channel: "Asianet · Hotstar", story: "Season 2 is the empty chair on this list. The season premiered on 5 January 2020, but as the COVID-19 pandemic spread, production was suspended: host Mohanlal entered the house on Day 74 to suspend the show, and on Day 75 the remaining housemates were sent home. The show stopped on 20 March 2020 after 76 episodes. No finale was ever held, and no winner or runner-up was ever declared — Wikipedia's record of the season lists the winner as 'Nil'. The announced prize, a flat worth ₹50 lakh plus the trophy, was never awarded. The season's biggest controversy before the shutdown was the ejection of Rajith Kumar on Day 65 after the chilli-paste incident with Reshma." },
+  { season: "Season 1", years: "2018", dates: "24 June 2018 – 30 September 2018", winner: "Sabumon Abdusamad", image: null, runnerUp: "Pearle Maaney", host: "Mohanlal", channel: "Asianet · Hotstar", story: "The first name on this list: Sabumon Abdusamad beat Pearle Maaney in the finale on 30 September 2018 to win the debut season of Bigg Boss Malayalam and its ₹1 crore prize — still the largest prize on this page. The season ran 98 days with 18 housemates; its 2nd runner-up, Shiyas Kareem, had entered as a wild card." },
+];
+
+function renderMalayalamWinnersTable() {
+  return `<div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Season</th><th>Dates</th><th>Winner</th><th>Runner-up</th><th>Host</th><th>Channel / Platform</th></tr>
+        </thead>
+        <tbody>
+          ${MALAYALAM_WINNERS.map((r) => `<tr><td>${r.season}</td><td>${r.dates}</td><td class="bb-table-contestant">${r.image ? `<img src="${r.image}" alt="${r.winner}" class="bb-table-avatar" loading="lazy">` : ""}<strong>${r.winner}</strong></td><td>${r.runnerUp}</td><td>${r.host}</td><td>${r.channel}</td></tr>`).join("")}
+        </tbody>
+      </table>
+      </div>`;
+}
+
+function renderMalayalamWinnerCards() {
+  return `<div class="bb-steps-grid">
+      ${MALAYALAM_WINNERS.map(
+        (r) => `
+      <div class="bb-step-card">
+        ${r.image ? `<img src="${r.image}" alt="${r.winner}" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border-radius:8px;margin-bottom:0.75rem;">` : ""}
+        <h3>${r.winner}</h3>
+        <p><strong>${r.noWinner ? "🚫 No winner — season cancelled" : "🏆 Winner"} · ${r.season} (${r.years})</strong></p>
+        <p>${r.story}</p>
+      </div>`,
+      ).join("")}
+      </div>`;
+}
+
+function renderMalayalamWinnersSections() {
+  return (
+    storySection(
+      "The Full List",
+      "Bigg Boss Malayalam winner list — every season, every winner",
+      `<p>Seven seasons of Bigg Boss Malayalam (2018–2025) have produced six winners, from Sabumon Abdusamad in 2018 to Anumol RS in 2025. This is the complete list: each season's winner, the runner-up they beat in the finale, the host and the channel or platform. One man has hosted every single season: Mohanlal. Every season aired on Asianet. Season 2 stands apart — it was cancelled during the COVID-19 pandemic with no winner, and its row below records that honestly rather than filling the gap.</p>
+      ${renderMalayalamWinnersTable()}
+      <p style="margin-top:1rem;">A note on prize money — the figures printed on this page are the ones Wikipedia states: Season 1's winner took ₹1 crore, Season 3's a flat worth ₹75 lakh, and Seasons 4, 5 and 6 carried ₹50 lakh each. Season 7's prize was ₹42,55,210 (₹42.55 lakh): the announced ₹50 lakh was reduced because a mid-season rule let contestants earn money through tasks, with those winnings deducted from the champion's prize — The Indian Express's finale coverage confirms the same figure. Season 2's announced prize was never awarded, because the season was cancelled before any finale.</p>
+      <p style="margin-top:1rem;">A note on Season 2: the season premiered on 5 January 2020 and stopped on 20 March 2020, after 76 episodes, as the COVID-19 pandemic shut production down. Mohanlal entered the house on Day 74 to suspend the show, and the housemates were sent home on Day 75. No winner or runner-up was ever declared, which is why Season 2 appears in the table with no winner and is not one of the options in the Open Poll above.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "Meet the Winners",
+      "Every Bigg Boss Malayalam winner — season by season",
+      renderMalayalamWinnerCards(),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-winner-list/",
+        emoji: "🏆",
+        title: "Bigg Boss Winner List — Hindi + OTT",
+        text: "Every winner of Bigg Boss Hindi (Seasons 1–19) and Bigg Boss OTT (Seasons 1–3), with the runner-up, host and year for each season, plus the greatest-winner Open Poll.",
+        linkText: "See the Hindi + OTT winner list →",
+      },
+      {
+        href: "/bigg-boss-telugu-winners-list/",
+        emoji: "🏆",
+        title: "Bigg Boss Telugu Winners List",
+        text: "Every winner of Bigg Boss Telugu (Seasons 1–9) and Bigg Boss Non-Stop, with the dates, the runner-up, the host and the prize for each edition, plus the greatest-winner Open Poll.",
+        linkText: "See the Telugu winners list →",
+      },
+      {
+        href: "/bigg-boss-marathi-winner-list/",
+        emoji: "🏆",
+        title: "Bigg Boss Marathi Winner List",
+        text: "Every winner of Bigg Boss Marathi (Seasons 1–6), with the dates, the runner-up, the host and the prize for each season, plus the greatest-winner Open Poll.",
+        linkText: "See the Marathi winner list →",
+      },
+      {
+        href: "/bigg-boss-kannada-winner-list/",
+        emoji: "🏆",
+        title: "Bigg Boss Kannada Winner List",
+        text: "Every winner of Bigg Boss Kannada (Seasons 1–12) plus the OTT edition's Top Performer, with the dates, the runner-up, the host and the prize for each edition, plus the greatest-winner Open Poll.",
+        linkText: "See the Kannada winner list →",
+      },
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every Hindi season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current Hindi season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderMalayalamWinnersFaq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss Malayalam Winner List FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Who won the latest Bigg Boss Malayalam season?</summary>
+        <div class="bb-faq-body">
+          <p>Anumol RS won Bigg Boss Malayalam 7, beating Aneesh Tharayil in the finale on 9 November 2025. Her prize was ₹42,55,210 (₹42.55 lakh) — the announced ₹50 lakh reduced under a mid-season task-earnings rule — and she is the series' second female winner.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss Malayalam Season 2?</summary>
+        <div class="bb-faq-body">
+          <p>Nobody. Season 2 (2020) was cancelled during the COVID-19 pandemic: the show stopped on 20 March 2020 after 76 episodes, host Mohanlal entered the house on Day 74 to suspend it, and the remaining housemates were sent home on Day 75. No finale was held and no winner or runner-up was ever declared, and the announced prize was never awarded.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who was the first Bigg Boss Malayalam winner?</summary>
+        <div class="bb-faq-body">
+          <p>Sabumon Abdusamad won Season 1 in 2018, beating Pearle Maaney in the finale on 30 September 2018. The season aired on Asianet, ran 98 days with 18 housemates, and carried a ₹1 crore prize — still the largest on this list.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who has hosted Bigg Boss Malayalam?</summary>
+        <div class="bb-faq-body">
+          <p>Mohanlal has hosted every season of Bigg Boss Malayalam — all seven seasons, from the debut in 2018 to Season 7 in 2025. No other host has fronted the Malayalam edition.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>How much prize money did the Bigg Boss Malayalam winners get?</summary>
+        <div class="bb-faq-body">
+          <p>The figures Wikipedia states: ₹1 crore for Season 1, a flat worth ₹75 lakh for Season 3, and ₹50 lakh each for Seasons 4, 5 and 6. Season 7's winner received ₹42,55,210 (₹42.55 lakh), because the announced ₹50 lakh prize was reduced by what contestants had earned through mid-season tasks. Season 2's announced prize was never awarded — the season was cancelled before a finale.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who is the greatest Bigg Boss Malayalam winner of all time?</summary>
+        <div class="bb-faq-body">
+          <p>There is no official all-time ranking — the show has never ranked its winners against each other. The Open Poll at the top of this page is where fans answer the question: as it stands, Manikuttan (Season 3) leads it, ahead of Akhil Marar (Season 5) and Dilsha Prasannan (Season 4). Those numbers are VisitBest Open Poll votes — audience sentiment only, not official votes and not an official ranking. The poll itself is not an official Bigg Boss vote either: the winner list on this page is the official record, and official voting exists only for a running season, on the show's own platform, as announced on air.</p>
         </div>
       </details>
     </div>
@@ -10175,6 +10378,23 @@ const DEBATE_MARQUEE = {
       ["Riya", 110, 26, "Team Vijay", -1, "Twelve winners, one Top Performer, one host. Kannada fans will argue this list forever, and that is exactly how it should be."],
     ],
   },
+  "bigg-boss-malayalam-winner-list": {
+    pinned: ["Sagar P.", "Seven seasons, six winners, one empty chair — and for me the greatest is still Manikuttan. His Season 3 was suspended mid-run, the set was sealed, and he still came back and won the crown through public voting in a final of eight. That is the hardest trophy on this list."],
+    comments: [
+      ["Neeraj", 5, 171, "Team Manikuttan", -1, "Season 3 had everything against it — COVID, a sealed set, a finale held months later — and Manikuttan still topped the vote. He leads this poll for a reason."],
+      ["Priyanka", 11, 142, "Team Akhil", -1, "Akhil Marar owned Season 5 from the first week. First season with commoners in the house and he still stood above everyone."],
+      ["Imran", 18, 98, "Team Dilsha", -1, "Dilsha Prasannan was the first woman to win this show, in Season 4. That barrier-breaking win deserves more votes than it gets."],
+      ["Kavita", 26, 87, "Team Anumol", -1, "Anumol RS won the newest season and beat a commoner finalist who had the whole state behind him. Second female winner, and the biggest finale TRP the show has ever had."],
+      ["Rohan", 34, 73, "Team Manikuttan", 0, "1247 vs 1063 in this poll right now. Manikuttan vs Akhil is the real Malayalam debate and it is not that close."],
+      ["Deepak", 43, 64, null, -1, "Respect to Sabumon Abdusamad, the first name on this list. Season 1 in 2018, and a ₹1 crore prize that no later season has matched."],
+      ["Simran", 52, 56, "Team Jinto", -1, "Jinto Bodycraft won the biggest house of all — 25 housemates in Season 6 — and he is last in this poll? Fitness trainer deserved better."],
+      ["Harsh", 61, 48, null, -1, "Nobody talks about Season 2 because it never finished. 76 episodes, then Mohanlal walked in and sent everyone home. The strangest season in Bigg Boss history, any language."],
+      ["Ananya", 73, 43, "Team Dilsha", -1, "Dilsha in Season 4, Anumol in Season 7 — two of the last four winners are women. This show's winner list is more balanced than most."],
+      ["Tarun", 86, 38, null, -1, "Seven seasons and Mohanlal has hosted every one of them. The winners changed, the host never did."],
+      ["Wasim", 97, 31, "Team Sabumon", -1, "Sabumon won when the prize was ₹1 crore. Everyone since has won less money for the same trophy. The original champion for me."],
+      ["Riya", 110, 27, "Team Anumol", -1, "Six winners, one cancelled season, one host. Malayalam fans will argue this list forever, and that is exactly how it should be."],
+    ],
+  },
   "bigg-boss-20-voting": {
     pinned: ["Sagar", "Qazi Touqeer is topping every poll on this site for a reason — BB20 belongs to him right now. But this house flips in one Weekend Ka Vaar, so keep watching."],
     comments: [
@@ -10652,6 +10872,7 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}
     ${poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersSections() : ""}
     ${poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersSections() : ""}
+    ${poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersSections() : ""}
 
     ${renderFanDebate(poll)}
 
@@ -10676,7 +10897,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : poll.slug === "bigg-boss-winner-list" ? renderWinnerListFaq() : poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersFaq() : poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersFaq() : poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersFaq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : poll.slug === "bigg-boss-winner-list" ? renderWinnerListFaq() : poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersFaq() : poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersFaq() : poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersFaq() : poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersFaq() : renderFaqSection(poll)}
   </div>
   `;
 }
