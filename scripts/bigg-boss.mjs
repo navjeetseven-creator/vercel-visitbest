@@ -693,7 +693,7 @@ export const polls = [
     image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
     title: "Who Should Be the Next Captain of Bigg Boss 20? — Open Poll",
     h1: "Who Should Be the Next Captain of Bigg Boss 20? (Open Poll)",
-    lead: "Arishfa Khan's time as captain has ended: she was removed as captain in Episode 67 (aired 11 November), which announced a new captaincy task — but Episode 68 (aired 12 November) called that task off after Scout pushed Yung DSA during it. No successor has been named. If the choice were yours, who should lead the house next? Vote for one of the ten other housemates below. Open Poll — for audience sentiment only; the show's own process decides the real captain.",
+    lead: "Arishfa Khan's time as captain has ended: she was removed as captain in Episode 67 (aired 11 November), which announced a new captaincy task — but Episode 68 (aired 12 November) called that task off after Scout pushed Yung DSA during it. The house then had no captain until Uditi Singh won the captaincy task in Episode 74 (18 November) — she is the current captain. This poll opened on 12 November, while the house was without a captain; who should be captain after Uditi, if the choice were yours? Vote for one of the ten housemates below — the poll's original list, which still includes Manish Goel, who has since left on medical grounds. Open Poll — for audience sentiment only; the show's own process decides the real captain.",
     heroBadge: "👑 NEXT CAPTAIN · OPEN POLL",
     leaderNote: "This Open Poll opened on 12 November 2026 — standings update as readers vote in this poll. [VisitBest Open Poll votes — not official votes.]",
     pollType: "captain",
@@ -713,20 +713,20 @@ export const polls = [
     dangerIds: [],
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
-    metaDesc: "Who should be the next captain of Bigg Boss 20? With Arishfa Khan removed as captain in Episode 67 and the new-captain task called off in Episode 68, vote for Gullu, Qazi Touqeer, Yung DSA, Kanika Mann, Love Gill, Scout, Aamrapali Dubey, Mahhi Vij, Uditi Singh or Manish Goel in the VisitBest Open Poll. Audience sentiment only.",
+    metaDesc: "Who should be the next captain of Bigg Boss 20? Uditi Singh is the current captain (won the captaincy task in Episode 74, 18 November 2026). This Open Poll opened on 12 November 2026, after Arishfa Khan was removed as captain in Episode 67 and the replacement task was called off in Episode 68 — vote for who should lead the house after Uditi. Audience sentiment only.",
   },
   {
     slug: "bigg-boss-20-contestant-journey",
     image: "/assets/bb20-new/covers/bigg-boss-20-contestants.jpg",
     title: "Bigg Boss 20 Contestant Journey: Week-by-Week Safe, Nominated, Captain & Evicted Matrix",
     h1: "Bigg Boss 20 Contestant Journey — Week by Week",
-    lead: "Every housemate's season at a glance: who was safe, who was nominated, who captained the house and who went home, week by week from Week 1 to Week 10. The matrix is built only from VisitBest's own season records — the nomination and elimination archives and contestant records kept on this site. Where those records do not establish a week for a housemate, the cell is left blank rather than guessed. Updated weekly.",
-    heroBadge: "🗓️ CONTESTANT JOURNEY · WEEKS 1–10",
-    leaderNote: "The journey matrix is updated weekly from VisitBest's own nomination and elimination archives; the Week 10 eviction is added only after it is confirmed on air at Weekend Ka Vaar.",
+    lead: "Every housemate's season at a glance: who was safe, who was nominated, who captained the house and who went home, week by week from Week 1 to Week 11. The matrix is built only from VisitBest's own season records — the nomination and elimination archives and contestant records kept on this site. Where those records do not establish a week for a housemate, the cell is left blank rather than guessed. Updated weekly.",
+    heroBadge: "🗓️ CONTESTANT JOURNEY · WEEKS 1–11",
+    leaderNote: "The journey matrix is updated weekly from VisitBest's own nomination and elimination archives. Weeks 10 and 11 are now included: both ended with no vote eviction, and Manish Goel's Week 11 medical exit is recorded.",
     pollType: "journey",
     voteDistribution: {},
     dangerIds: [],
-    metaDesc: "Bigg Boss 20 contestant journey matrix: week-by-week Safe, Nominated, Captain and Evicted status for all 18 housemates across Weeks 1–10, built from VisitBest's own season archives. Updated weekly.",
+    metaDesc: "Bigg Boss 20 contestant journey matrix: week-by-week Safe, Nominated, Captain and Evicted status for all 18 housemates across Weeks 1–11, built from VisitBest's own season archives. Updated weekly.",
   },
   {
     slug: "bigg-boss-20-scout-vs-kaashvi",
@@ -827,7 +827,7 @@ export const polls = [
     image: "/assets/bb20-new/covers/bigg-boss-20-contestants.jpg",
     title: "Bigg Boss 20 Eviction List: Every Eliminated Contestant, Week by Week — Open Poll",
     h1: "Bigg Boss 20 Eviction List: Who Has Left the House So Far? (Open Poll)",
-    lead: "Ten weeks in, six housemates have been evicted from Bigg Boss 20 and one more was removed — while four weeks ended with no eviction at all, because this season's lives format lets the week's lowest-voted housemate lose a lifeline instead of leaving. This page is the complete, confirmed eviction list, week by week: who left, who only lost a lifeline, and who is still in the house. It is updated after every Weekend Ka Vaar. Then vote in the Open Poll on the exit that shocked you most. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
+    lead: "Eleven weeks in, six housemates have been evicted from Bigg Boss 20, one more was removed and one left on medical grounds — while five weeks ended with no eviction at all, because this season's lives format lets the week's lowest-voted housemate lose a lifeline instead of leaving. This page is the complete, confirmed eviction list, week by week: who left, who only lost a lifeline, and who is still in the house. It is updated after every Weekend Ka Vaar. Then vote in the Open Poll on the exit that shocked you most. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
     heroBadge: "🚪 EVICTION LIST · SEASON TRACKER · OPEN POLL",
     leaderNote: "This Open Poll opened on 16 November 2026 — standings update as readers vote in this poll. Every exit it asks about is confirmed on air. The list below was last updated after Episode 71 (15 November 2026). [VisitBest Open Poll votes — not official votes.]",
     pollType: "eviction",
@@ -2791,13 +2791,13 @@ function renderYungScoutPunishments() {
 function renderNextCaptainExplainer() {
   return storySection(
     "Why This Poll, Why Now",
-    "Arishfa's captaincy has ended — the new-captain task was called off in Episode 68",
-    `<p>Episode 67 (aired 11 November) announced a new captaincy task — but Episode 68 (aired 12 November) called it off after Scout pushed Yung DSA during the task, so the house still has no captain.</p>
-    <p>Arishfa was removed as captain in Episode 67 (aired 11 November). No new captain has been named, and this page does not present one as chosen.</p>
+    "Arishfa's captaincy ended in Episode 67 — Uditi Singh is the captain now",
+    `<p>Episode 67 (aired 11 November) announced a new captaincy task — but Episode 68 (aired 12 November) called it off after Scout pushed Yung DSA during the task, so the house had no captain until Episode 74.</p>
+    <p>Arishfa was removed as captain in Episode 67 (aired 11 November). Uditi Singh then won the new captaincy task in Episode 74 (18 November) and is the current captain — this poll, opened on 12 November while the house was without one, now asks who should be captain after her.</p>
     <div class="bb-disclaimer-box" style="background:#fff8e6; border:1px solid #ffd591; padding:0.6rem 1rem; border-radius:8px; font-size:0.85rem; margin-top:0.6rem; color:#873800;">
           ℹ️ <strong>One name to weigh carefully:</strong> Scout is <strong>barred from captaincy</strong>, as announced by Bigg Boss in Episode 68 after the captaincy-task clash with Yung DSA (see <a href="/bigg-boss-20-yung-vs-scout/">Yung vs Scout</a>). He cannot become captain again this season — keep it in mind as you vote.
         </div>
-    <p>The ten names in the poll below are the ten housemates other than Arishfa. Pick the one you would hand the captaincy to.</p>`
+    <p>The ten names in the poll below are the ten housemates other than Arishfa, as the poll opened on 12 November — the list still includes Manish Goel, who has since left the house on medical grounds, and Uditi Singh, who has since become captain. Pick the one you would hand the captaincy to next.</p>`
   );
 }
 
@@ -2819,26 +2819,26 @@ function renderNextCaptainExplainer() {
 // not pin their captaincies to one specific week, so their rows follow
 // the nomination lists and the page text says so.
 export const journeyMatrix = {
-  weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  weeks: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
   rows: {
-    "gullu": ["na", "na", "na", "na", "na", "na", "nominated", "nominated", "safe", "nominated"],
-    "qazi-touqeer": ["na", "na", "na", "na", "na", "na", "safe", "safe", "safe", "nominated"],
-    "scout": ["na", "na", "na", "na", "na", "na", "captain", "nominated", "nominated", "nominated"],
-    "mary-kom": ["na", "na", "na", "na", "na", "nominated", "evicted", "na", "na", "na"],
-    "yung-dsa": ["captain", "na", "na", "na", "na", "na", "safe", "safe", "safe", "nominated"],
-    "kanika-mann": ["na", "na", "na", "na", "na", "na", "safe", "nominated", "safe", "nominated"],
-    "amrapali-dubey": ["na", "na", "na", "na", "na", "na", "nominated", "nominated", "nominated", "nominated"],
-    "aasif-khan": ["na", "na", "na", "na", "captain", "na", "safe", "evicted", "na", "na"],
-    "mahhi-vij": ["na", "na", "na", "na", "na", "na", "safe", "safe", "nominated", "nominated"],
-    "arishfa-khan": ["na", "na", "na", "na", "na", "na", "nominated", "safe", "nominated", "captain"],
-    "aman-gandhi": ["na", "na", "na", "na", "nominated", "evicted", "na", "na", "na", "na"],
-    "rohed-khan": ["na", "evicted", "na", "na", "na", "na", "na", "na", "na", "na"],
-    "isha-rikhi": ["na", "na", "evicted", "na", "na", "na", "na", "na", "na", "na"],
-    "love-gill": ["na", "na", "na", "na", "na", "na", "nominated", "nominated", "safe", "nominated"],
-    "rhiti-tiwari": ["na", "na", "na", "evicted", "na", "na", "na", "na", "na", "na"],
-    "uditi-singh": ["nominated", "na", "na", "na", "na", "nominated", "nominated", "safe", "nominated", "nominated"],
-    "manish-goel": ["na", "na", "na", "na", "na", "na", "nominated", "safe", "nominated", "nominated"],
-    "nakul-dhull": ["na", "na", "na", "na", "na", "removed", "na", "na", "na", "na"],
+    "gullu": ["na", "na", "na", "na", "na", "na", "nominated", "nominated", "safe", "nominated", "nominated"],
+    "qazi-touqeer": ["na", "na", "na", "na", "na", "na", "safe", "safe", "safe", "nominated", "nominated"],
+    "scout": ["na", "na", "na", "na", "na", "na", "captain", "nominated", "nominated", "nominated", "nominated"],
+    "mary-kom": ["na", "na", "na", "na", "na", "nominated", "evicted", "na", "na", "na", "na"],
+    "yung-dsa": ["captain", "na", "na", "na", "na", "na", "safe", "safe", "safe", "nominated", "nominated"],
+    "kanika-mann": ["na", "na", "na", "na", "na", "na", "safe", "nominated", "safe", "nominated", "nominated"],
+    "amrapali-dubey": ["na", "na", "na", "na", "na", "na", "nominated", "nominated", "nominated", "nominated", "nominated"],
+    "aasif-khan": ["na", "na", "na", "na", "captain", "na", "safe", "evicted", "na", "na", "na"],
+    "mahhi-vij": ["na", "na", "na", "na", "na", "na", "safe", "safe", "nominated", "nominated", "nominated"],
+    "arishfa-khan": ["na", "na", "na", "na", "na", "na", "nominated", "safe", "nominated", "captain", "safe"],
+    "aman-gandhi": ["na", "na", "na", "na", "nominated", "evicted", "na", "na", "na", "na", "na"],
+    "rohed-khan": ["na", "evicted", "na", "na", "na", "na", "na", "na", "na", "na", "na"],
+    "isha-rikhi": ["na", "na", "evicted", "na", "na", "na", "na", "na", "na", "na", "na"],
+    "love-gill": ["na", "na", "na", "na", "na", "na", "nominated", "nominated", "safe", "nominated", "nominated"],
+    "rhiti-tiwari": ["na", "na", "na", "evicted", "na", "na", "na", "na", "na", "na", "na"],
+    "uditi-singh": ["nominated", "na", "na", "na", "na", "nominated", "nominated", "safe", "nominated", "nominated", "captain"],
+    "manish-goel": ["na", "na", "na", "na", "na", "na", "nominated", "safe", "nominated", "nominated", "left"],
+    "nakul-dhull": ["na", "na", "na", "na", "na", "removed", "na", "na", "na", "na", "na"],
   },
 };
 
@@ -2848,6 +2848,7 @@ const JOURNEY_CELL_LABELS = {
   captain: "👑 Captain",
   evicted: "❌ Evicted",
   removed: "⛔ Removed",
+  left: "⬅️ Left the house",
   na: "—",
 };
 
@@ -2858,7 +2859,7 @@ function journeyCurrentStatus(c) {
   if (c.captain) return "In house · Captain (Week 11)";
   if (c.exCaptain) return "In house · Ex-captain (removed Ep 67, 11 Nov)";
   if (c.seasonNominated) return "In house · Nominated for the rest of the season (Ep 68)";
-  if (c.nominated) return "In house · Nominated (Week 10)";
+  if (c.nominated) return "In house · Nominated (Week 11)";
   return "In house";
 }
 
@@ -2886,7 +2887,7 @@ export function renderBiggBossJourneyPage(poll) {
           <h2>Safe, Nominated, Captain, Evicted — Every Housemate, Every Week</h2>
           <p>How to read this matrix: <strong>🟢 Safe</strong> = in the house and not nominated that week · <strong>🔴 Nominated</strong> = on that week's nomination list · <strong>👑 Captain</strong> = captained the house that week · <strong>❌ Evicted</strong> / <strong>⛔ Removed</strong> = left the house that week · <strong>—</strong> = VisitBest's season records do not establish that week for that housemate, so nothing is claimed.</p>
           <p>Two honest notes. First, the full nomination lists for Weeks 1–6 were not published consistently while the season's lives format was running (the same reason the hub's nomination archive starts at Week 7), so early-season cells are filled only where a record establishes them — an eviction, a captaincy, or a documented bottom-three. Second, Captain cells are marked only where our records tie a captaincy to one specific week: Yung DSA (Week 1), Aasif Khan (Week 5), Scout (Week 7) and Arishfa Khan (Week 10). Mahhi Vij (captain after Scout, until 28 October) and Kanika Mann (captain from 28 October) also served as captains; because their captaincies are not pinned to a single week in our records, their rows follow the nomination lists instead.</p>
-          <p>Manish Goel and Nakul Dhull entered as wild cards in Week 5, so their earlier weeks are blank by definition. The Week 10 eviction, due at Weekend Ka Vaar (14–15 November), will be added only after it is confirmed on air. This page is updated weekly.</p>
+          <p>Manish Goel and Nakul Dhull entered as wild cards in Week 5, so their earlier weeks are blank by definition. Week 10 ended with no eviction, and Week 11 also ended with no vote eviction — Manish Goel left on medical grounds (severe leg injury) at the Weekend Ka Vaar of 21 November 2026. This page is updated weekly.</p>
         </div>
       </div>
       <div class="table-scroll">
