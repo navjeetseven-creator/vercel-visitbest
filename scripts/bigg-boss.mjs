@@ -849,7 +849,7 @@ export const polls = [
     image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
     title: "Bigg Boss 20 Week 11 Voting – Nominees Open Poll (Sharbat Task Nominations)",
     h1: "Bigg Boss 20 Week 11 Voting — Nominees Open Poll",
-    lead: "Week 11: ten of the eleven housemates are nominated after the Sharbat Nomination Task in Episode 72 (16 November 2026) — only Uditi Singh escaped. This VisitBest Open Poll covers only this week's 10 nominees and opened on 17 November 2026. Open Poll — for audience sentiment only; it does not decide evictions.",
+    lead: "Week 11: ten of the eleven housemates were nominated after the Sharbat Nomination Task in Episode 72 (16 November 2026) — only Uditi Singh escaped — and Arishfa Khan then won safety in Episode 75, leaving nine in the vote. The Week 11 result is now known: no vote eviction took place — Manish Goel left on medical grounds (severe leg injury), and Mahhi Vij is safe. This VisitBest Open Poll covered this week's nominees and opened on 17 November 2026. Open Poll — for audience sentiment only; it does not decide evictions.",
     heroBadge: "🗳️ WEEK 11 NOMINEES POLL · OPEN POLL",
     leaderNote: "The Week 11 nominees poll opened on 17 November 2026 — standings update as readers vote in this poll. [VisitBest Open Poll votes — not official votes.]",
     pollType: "weekly",
@@ -872,7 +872,7 @@ export const polls = [
     openedDate: "17 NOVEMBER 2026",
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
-    metaDesc: "Bigg Boss 20 Week 11 Open Poll: ten of eleven housemates nominated after the Sharbat task in Episode 72 — only Uditi Singh escaped. Back Amrapali, Arishfa, Gullu, Kanika, Love, Mahhi, Manish, Qazi, Scout or Yung in the VisitBest nominees-only Open Poll — audience sentiment only; official voting is only via JioCinema / JioHotstar as announced on air.",
+    metaDesc: "Bigg Boss 20 Week 11 Open Poll: ten of eleven housemates nominated after the Sharbat task in Episode 72 — only Uditi Singh escaped. Back Amrapali, Arishfa, Gullu, Kanika, Love, Mahhi, Qazi, Scout or Yung in the VisitBest nominees-only Open Poll — audience sentiment only; official voting is only via JioCinema / JioHotstar as announced on air.",
   },
   {
     slug: "bigg-boss-20-eviction-prediction-week-11",
@@ -932,12 +932,12 @@ export const polls = [
     title: "Bigg Boss 20 Top 5 Contestants: The Current Top 5, Ranked & Explained",
     h1: "Bigg Boss 20 Top 5 Contestants — The Current Top 5",
     lead: "Ten housemates remain in Bigg Boss 20, and five have pulled away from the pack. This is VisitBest's current top 5 — Qazi Touqeer, Yung DSA, ScoutOP, Arishfa Khan and Kanika Mann — ranked on game impact, survival record and audience sentiment: why each of them is here, how their journey has run, and what could still stop them. The full house list is below, so you can see who is just outside the five and why. This ranking is VisitBest's editorial assessment — it is not a poll result, it is not official, The Week 11 result is now known: no vote eviction took place — Manish Goel left on medical grounds (severe leg injury), and Mahhi Vij is safe. The newest change in the house: Uditi Singh became captain in Episode 74 (18 November 2026).",
-    heroBadge: "🔝 CURRENT TOP 5 · UPDATED 19 NOVEMBER 2026",
+    heroBadge: "🔝 CURRENT TOP 5 · UPDATED 21 NOVEMBER 2026",
     leaderNote: "Editorial ranking — updated 21 November 2026, after the Week 11 result (no vote eviction; Manish Goel left on medical grounds, Mahhi Vij safe). The top 5 itself is unchanged since Episode 74 (18 November 2026) confirmed Uditi Singh as the house's new captain. VisitBest's top 5 is an editorial assessment based on game impact, survival record and Open Poll audience sentiment; it is not a poll result and not official.",
     pollType: "top5",
     voteDistribution: {},
     dangerIds: [],
-    metaDesc: "Bigg Boss 20 top 5 contestants: Qazi Touqeer, Yung DSA, ScoutOP, Arishfa Khan and Kanika Mann — why each is in the current top 5, their journey so far, what could stop them, and the full list of the 11 housemates still in the house, including new captain Uditi Singh.",
+    metaDesc: "Bigg Boss 20 top 5 contestants: Qazi Touqeer, Yung DSA, ScoutOP, Arishfa Khan and Kanika Mann — why each is in the current top 5, their journey so far, what could stop them, and the full list of the 10 housemates still in the house, including new captain Uditi Singh.",
   },
   {
     slug: "bigg-boss-20-voting-trend",
@@ -965,7 +965,7 @@ export const polls = [
     badge: "BIGG BOSS 20",
     title: "Bigg Boss 20 Finale Date — Expected Window, Finalist Race & How the Finale Works",
     h1: "Bigg Boss 20 Finale — Date, Finalists & How the Winner Is Decided",
-    heroBadge: "🏁 BIGG BOSS 20 FINALE · DATE NOT ANNOUNCED YET · UPDATED 19 NOVEMBER 2026",
+    heroBadge: "🏁 BIGG BOSS 20 FINALE · DATE NOT ANNOUNCED YET · UPDATED 21 NOVEMBER 2026",
     lead:
       "The Bigg Boss 20 finale date has NOT been officially announced yet — as of Saturday 21 November 2026, neither Colors TV nor the makers have confirmed a date. On the season's own arithmetic the finale is expected in late December 2026, but that is an expectation, not a confirmation. This page tracks what is actually known: how the finale works, the road from ten housemates to the finalists, the finalist race as it stands, and the recent past winners the new champion will join.",
     leaderNote:
@@ -2027,7 +2027,7 @@ function renderNominationCallout() {
       <h2>🔴 Bigg Boss 20 Week 11 Nominations — Open Poll</h2>
     </div>
     <p class="bb-nom-list-text">
-      <strong>9 contestants are nominated this week — everyone except Uditi Singh and Arishfa Khan:</strong><br>
+      <strong>9 contestants were nominated in Week 11 — everyone except Uditi Singh and Arishfa Khan:</strong><br>
       <span class="bb-nom-names">Amrapali Dubey • Gullu (Kushal Tanwar) • Kanika Mann • Love Gill • Mahhi Vij • Manish Goel • Qazi Touqeer • ScoutOP • Yung DSA</span>
     </p>
     <div class="bb-nom-safe-bar">
@@ -3231,8 +3231,8 @@ function renderEvictionListSections() {
   return (
     storySection(
       "Quick Answer",
-      "The count so far: 6 evictions, 1 removal, 4 no-eviction weeks",
-      `<p>Bigg Boss 20 began with 18 housemates on 6 September 2026. Ten weeks in, <strong>11 are still in the house</strong>. Six have been evicted on the public vote — Rohed Khan, Isha Rikhi, Rhiti Tiwari, Aman Gandhi, MC Mary Kom and Aasif Khan — and one, wild card Nakul Dhull, was removed in Week 6 for breaking house rules, which the show records as a removal, not an eviction.</p>
+      "The count so far: 6 evictions, 1 removal, 1 medical exit, 5 no-eviction weeks",
+      `<p>Bigg Boss 20 began with 18 housemates on 6 September 2026. Eleven weeks in, <strong>10 are still in the house</strong>. Six have been evicted on the public vote — Rohed Khan, Isha Rikhi, Rhiti Tiwari, Aman Gandhi, MC Mary Kom and Aasif Khan — and one, wild card Nakul Dhull, was removed in Week 6 for breaking house rules, which the show records as a removal, not an eviction.</p>
     <p>The latest week is the twist: <strong>Week 10 ended with no eviction</strong> (Episode 71, 15 November). Mahhi Vij received the fewest votes but survived on her extra lifeline. The full week-by-week record is below — every row confirmed on air.</p>`
     ) +
     storySection(
@@ -3411,7 +3411,7 @@ function renderWhoWillWinSections() {
       "Keep Reading",
       "More Bigg Boss 20 pages",
       `<ul>
-      <li><a href="/bigg-boss-20-top-5-contestants/"><strong>Bigg Boss 20 Top 5 Contestants</strong></a> — the same five ranked as the current top 5, with their journeys, what could stop them, and the full list of the 11 housemates still in the house.</li>
+      <li><a href="/bigg-boss-20-top-5-contestants/"><strong>Bigg Boss 20 Top 5 Contestants</strong></a> — the same five ranked as the current top 5, with their journeys, what could stop them, and the full list of the 10 housemates still in the house.</li>
       <li><a href="/bigg-boss-20-voting/"><strong>Bigg Boss 20 Weekly Voting Hub</strong></a> — this week's Open Poll, the trend snapshot and the week-by-week archives.</li>
       <li><a href="/bigg-boss-20-voting-week-11/"><strong>Week 11 Voting</strong></a> — the nominees-only Open Poll for the Sharbat task week.</li>
       <li><a href="/bigg-boss-20-eviction-list/"><strong>Bigg Boss 20 Eviction List</strong></a> — every confirmed exit, week by week.</li>
@@ -3516,11 +3516,11 @@ export function renderBiggBossTop5Page(poll) {
       <div class="bb-section-head">
         <div>
           <p class="eyebrow">The Full House</p>
-          <h2>All 11 housemates still in Bigg Boss 20</h2>
-          <p>The top 5 above, and the six just outside it — including the house's new captain. Week 11's result is still to come, at the Weekend Ka Vaar of 21–22 November 2026.</p>
+          <h2>All 10 housemates still in Bigg Boss 20</h2>
+          <p>The top 5 above, and the five just outside it — including the house's new captain. Week 11's result is now known: no vote eviction took place — Manish Goel left on medical grounds (severe leg injury), and Mahhi Vij is safe.</p>
         </div>
       </div>
-      ${renderPortraitStrip(["gullu", "uditi-singh", "love-gill", "mahhi-vij", "amrapali-dubey", "manish-goel"])}
+      ${renderPortraitStrip(["gullu", "uditi-singh", "love-gill", "mahhi-vij", "amrapali-dubey"])}
       <div class="table-scroll">
         <table class="bb-leaderboard-table">
           <thead>
@@ -3532,11 +3532,10 @@ export function renderBiggBossTop5Page(poll) {
             <tr><td><strong>Love Gill</strong></td><td>Just outside · Nominated (Week 11)</td><td>The Fans Ka Faisla entrant drew the most nominations in Week 11 (6) — the house's clearest target. In Episode 74, her rule break in the captaincy task, entering the circle a second time, got the task dismissed and handed Uditi the captaincy. Her season runs through the Scout storyline, which brings attention and risk in equal measure.</td></tr>
             <tr><td><strong>Mahhi Vij</strong></td><td>Just outside · Nominated (Week 11)</td><td>An ex-captain — chosen by Qazi on 23 October, then voted out of the captaincy 6–5 on 28 October. In Week 10 she received the fewest votes and stayed by giving up her extra lifeline. Experienced and connected, but the audience signal is the weakest of the season's survivors.</td></tr>
             <tr><td><strong>Aamrapali Dubey</strong></td><td>Just outside · Nominated (Week 11)</td><td>The Bhojpuri superstar carries the season's most loyal regional audience, and she keeps surviving — nominated in Weeks 7, 8, 9, 10 and now 11. Her recent game has been quieter than the five above her.</td></tr>
-            <tr><td><strong>Manish Goel</strong></td><td>Just outside · Nominated (Week 11)</td><td>The season's first wild card (Week 5) and its oldest housemate, with a television career of three decades. He has had to build bonds from zero against groups formed over five weeks — and the pre-air reports of his Week 10 eviction were contradicted by the aired episode.</td></tr>
           </tbody>
         </table>
       </div>
-      <p>Already out: Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4), Aman Gandhi (Week 6), MC Mary Kom (Week 7) and Aasif Khan (Week 8) were evicted, and wild card Nakul Dhull was removed in Week 6 — the week-by-week record is on the <a href="/bigg-boss-20-eviction-list/">Eviction List</a>.</p>
+      <p>Already out: Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4), Aman Gandhi (Week 6), MC Mary Kom (Week 7) and Aasif Khan (Week 8) were evicted, and wild card Nakul Dhull was removed in Week 6. Manish Goel left in Week 11 on medical grounds (severe leg injury) — not an eviction. The week-by-week record is on the <a href="/bigg-boss-20-eviction-list/">Eviction List</a>.</p>
     </section>
 
     ${storySection(
@@ -3849,7 +3848,7 @@ export function renderBiggBossTrendPage(poll) {
 
 export function renderBiggBossFinalePage(poll) {
   const finalistIds = ["qazi-touqeer", "yung-dsa", "scout", "arishfa-khan", "kanika-mann"];
-  const otherIds = ["gullu", "uditi-singh", "love-gill", "mahhi-vij", "amrapali-dubey", "manish-goel"];
+  const otherIds = ["gullu", "uditi-singh", "love-gill", "mahhi-vij", "amrapali-dubey"];
   const cases = {
     "qazi-touqeer": "VisitBest's predicted winner — the season's entertainer-in-chief and the Open Poll's season leader.",
     "yung-dsa": "The predicted runner-up — the late surge, the loyalty stands, the house's conscience.",
@@ -3948,16 +3947,16 @@ export function renderBiggBossFinalePage(poll) {
 
     ${storySection(
       "From Here to the Finale",
-      "The road from here — eleven left, six exits to a top 5",
+      "The road from here — ten left, five exits to a top 5",
       `<p>Ten housemates remain in the house. The Week 11 result is now known: no vote eviction took place — Manish Goel left on medical grounds (severe leg injury), and Mahhi Vij is safe. Nine housemates were in the Week 11 vote after Arishfa Khan won immunity in Episode 75; only the captain, Uditi Singh, was never nominated.</p>
-      <p>A top-5 finale means six more housemates must leave after this week. On the expected late-December window there are roughly four to five eviction weekends left — fewer weekends than the exits needed — so double evictions and mid-week evictions are the usual pattern the show uses to get the house down in time. Twists can change that arithmetic at any point, and one housemate's road is already fixed: ScoutOP is nominated every remaining week under his Episode 68 punishment, so his survival runs through the public vote every single week.</p>
+      <p>A top-5 finale means five more housemates must leave after this week. On the expected late-December window there are roughly four to five eviction weekends left — about as many weekends as the exits needed — so the usual pattern of one eviction most weekends, with the odd double or mid-week eviction, should get the house down in time. Twists can change that arithmetic at any point, and one housemate's road is already fixed: ScoutOP is nominated every remaining week under his Episode 68 punishment, so his survival runs through the public vote every single week.</p>
       <p>Track who has already gone on the <a href="/bigg-boss-20-eviction-list/">eviction list</a>, and the week-by-week picture on the <a href="/bigg-boss-20-voting/">voting hub</a>.</p>`,
     )}
 
     <section class="bb-section leaderboard-section">
       <div class="bb-section-head">
         <span class="bb-section-eyebrow">The Finalist Race</span>
-        <h2>The predicted final five — and the six chasing them</h2>
+        <h2>The predicted final five — and the five chasing them</h2>
         <p class="bb-section-sub">VisitBest's predicted finishing order, from the Top 5 Contestants page. It is an editorial prediction, updated as the season moves — not the confirmed finalist list.</p>
       </div>
       <div class="bb-leaderboard-wrap">
@@ -3969,7 +3968,7 @@ export function renderBiggBossFinalePage(poll) {
           </tbody>
         </table>
       </div>
-      <p class="bb-small">The other six still in the race — any of them can break into the five with one big week:</p>
+      <p class="bb-small">The other five still in the race — any of them can break into the five with one big week:</p>
       ${renderPortraitStrip(otherIds)}
       <p class="bb-small">Read the full cases on <a href="/who-will-win-bigg-boss-20/">Who Will Win Bigg Boss 20</a> and <a href="/bigg-boss-20-top-5-contestants/">Bigg Boss 20 Top 5 Contestants</a>.</p>
     </section>
