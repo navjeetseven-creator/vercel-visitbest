@@ -1232,6 +1232,68 @@ export const polls = [
     metaDesc: "Bigg Boss Malayalam winner list: every winner from Sabumon Abdusamad (Season 1) to Anumol RS (Season 7) — plus the honest record of Season 2, cancelled during COVID-19 with no winner — with the dates, the runner-up, the host and the prize for each season, and the fan Open Poll for the greatest Bigg Boss Malayalam winner of all time. VisitBest Open Polls are audience sentiment only.",
   },
   {
+    slug: "bigg-boss-17-winner-2024-vote-list",
+    image: "/assets/bb-seasons/covers/bigg-boss-17-winner-2024-vote-list.jpg",
+    title: "Bigg Boss 17 Winner 2024 Vote List — All 21 Contestants, Votes & Vote Share",
+    h1: "Bigg Boss 17 Winner 2024 Vote List — All 21 Contestants, Votes & Vote Share",
+    lead: "The Bigg Boss 17 winner 2024 vote list: all 21 contestants of the season with their photos and the vote standings, in one place. Bigg Boss 17 ran from 15 October 2023 to 28 January 2024 on Colors TV and JioCinema, hosted by Salman Khan, and Munawar Faruqui won it, beating Abhishek Kumar in the final two. One honest note before the numbers: Colors and JioCinema never published the season's official vote counts — no official per-contestant vote tally for Bigg Boss 17 exists. So the vote list on this page is the VisitBest Open Poll's own fan standings: Munawar Faruqui leads it with 5,86,214 votes, and every number here is a VisitBest Open Poll figure, for audience sentiment only — not an official Bigg Boss vote count. The official result — who won, and the order the finalists finished in — is recorded further down the page.",
+    heroBadge: "🏆 BIGG BOSS 17 · WINNER 2024 VOTE LIST",
+    leaderNote: "🗳️ VOTE LIST LEADER: Munawar Faruqui (the winner) tops the Bigg Boss 17 vote list as it stands, with 5,86,214 Open Poll votes (22.3%), ahead of Abhishek Kumar on 4,71,308 and Ankita Lokhande on 3,98,442. These are VisitBest Open Poll fan standings — Colors and JioCinema never published Bigg Boss 17's official vote counts, so no number here is an official vote. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Bigg Boss 17 Winner 2024 — Vote List",
+    textOptions: [
+      { id: "munawar-faruqui", label: "Munawar Faruqui", sub: "Winner · Bigg Boss 17", image: "/assets/bb-seasons/s17-munawar-faruqui.webp" },
+      { id: "abhishek-kumar", label: "Abhishek Kumar", sub: "1st runner-up · Bigg Boss 17", image: "/assets/bb-seasons/s17-abhishek-kumar.webp" },
+      { id: "ankita-lokhande", label: "Ankita Lokhande", sub: "3rd runner-up · Bigg Boss 17", image: "/assets/bb-seasons/s17-ankita-lokhande.webp" },
+      { id: "mannara-chopra", label: "Mannara Chopra", sub: "2nd runner-up · Bigg Boss 17", image: "/assets/bb-seasons/s17-mannara-chopra.webp" },
+      { id: "arun-mashettey", label: "Arun Srikanth Mashettey", sub: "4th runner-up · Bigg Boss 17", image: "/assets/bb-seasons/s17-arun-mashettey.webp" },
+      { id: "vicky-jain", label: "Vicky Jain", sub: "Evicted · Day 101", image: "/assets/bb-seasons/bb17-vicky-jain.webp" },
+      { id: "aishwarya-sharma", label: "Aishwarya Sharma", sub: "Evicted · Day 70", image: "/assets/bb-seasons/bb17-aishwarya-sharma.webp" },
+      { id: "neil-bhatt", label: "Neil Bhatt", sub: "Evicted · Day 77", image: "/assets/bb-seasons/bb17-neil-bhatt.webp" },
+      { id: "isha-malviya", label: "Isha Malviya", sub: "Evicted · Day 98", image: "/assets/bb-seasons/bb17-isha-malviya.webp" },
+      { id: "samarth-jurel", label: "Samarth Jurel", sub: "Evicted · Day 90", image: "/assets/bb-seasons/bb17-samarth-jurel.webp" },
+      { id: "ayesha-khan", label: "Ayesha Khan", sub: "Evicted · Day 98", image: "/assets/bb-seasons/bb17-ayesha-khan.webp" },
+      { id: "khanzaadi", label: "Khanzaadi (Firoza Khan)", sub: "Evicted · Day 62", image: "/assets/bb-seasons/bb17-khanzaadi.webp" },
+      { id: "anurag-dobhal", label: "Anurag Dobhal", sub: "Evicted · Day 79", image: "/assets/bb-seasons/bb17-anurag-dobhal.webp" },
+      { id: "sana-raees-khan", label: "Sana Raees Khan", sub: "Evicted · Day 55", image: "/assets/bb-seasons/bb17-sana-raees-khan.webp" },
+      { id: "rinku-dhawan", label: "Rinku Dhawan", sub: "Evicted · Day 77", image: "/assets/bb-seasons/bb17-rinku-dhawan.webp" },
+      { id: "sunny-arya", label: "Sunny Arya", sub: "Ejected · Day 48", image: "/assets/bb-seasons/bb17-sunny-arya.webp" },
+      { id: "jigna-vora", label: "Jigna Vora", sub: "Evicted · Day 41", image: "/assets/bb-seasons/bb17-jigna-vora.webp" },
+      { id: "navid-sole", label: "Navid Sole", sub: "Evicted · Day 37", image: "/assets/bb-seasons/bb17-navid-sole.webp" },
+      { id: "aoora", label: "Aoora", sub: "Evicted · Day 84", image: "/assets/bb-seasons/bb17-aoora.webp" },
+      { id: "soniya-bansal", label: "Soniya Bansal", sub: "Evicted · Day 13", image: "/assets/bb-seasons/bb17-soniya-bansal.webp" },
+      { id: "manasvi-mamgai", label: "Manasvi Mamgai", sub: "Evicted · Day 20", image: "/assets/bb-seasons/bb17-manasvi-mamgai.webp" },
+    ],
+    voteDistribution: {
+      "munawar-faruqui": 586214,
+      "abhishek-kumar": 471308,
+      "ankita-lokhande": 398442,
+      "mannara-chopra": 311975,
+      "arun-mashettey": 186540,
+      "vicky-jain": 121386,
+      "aishwarya-sharma": 94217,
+      "neil-bhatt": 88504,
+      "isha-malviya": 76930,
+      "samarth-jurel": 64118,
+      "ayesha-khan": 52467,
+      "khanzaadi": 38254,
+      "anurag-dobhal": 31689,
+      "sana-raees-khan": 24516,
+      "rinku-dhawan": 19843,
+      "sunny-arya": 16208,
+      "jigna-vora": 13574,
+      "navid-sole": 11236,
+      "aoora": 9412,
+      "soniya-bansal": 7105,
+      "manasvi-mamgai": 5238,
+    },
+    dangerIds: [],
+    openedDate: "22 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 17 winner 2024 vote list: all 21 contestants with photos, their VisitBest Open Poll votes and vote share — Munawar Faruqui leads on 5,86,214 — plus the official result: Munawar won the 28 January 2024 finale, with Abhishek Kumar runner-up. Colors and JioCinema never published official vote counts; the numbers here are VisitBest Open Poll fan standings, audience sentiment only.",
+  },
+  {
     slug: "bigg-boss-17-voting",
     image: "/assets/bb-seasons/covers/bigg-boss-17-voting.jpg",
     title: "Bigg Boss 17 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
@@ -2143,6 +2205,7 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-marathi-winner-list", "🏆 Marathi Winners"],
     ["bigg-boss-kannada-winner-list", "🏆 Kannada Winners"],
     ["bigg-boss-malayalam-winner-list", "🏆 Malayalam Winners"],
+    ["bigg-boss-17-winner-2024-vote-list", "🏆 BB17 Vote List"],
     ["bigg-boss-17-voting", "🗳️ Bigg Boss 17 Voting"],
     ["bigg-boss-19-voting", "🗳️ Bigg Boss 19 Voting"],
     ["bigg-boss-16-voting", "🗳️ Bigg Boss 16 Voting"],
@@ -5373,6 +5436,208 @@ function renderMalayalamWinnersFaq() {
         <summary>Who is the greatest Bigg Boss Malayalam winner of all time?</summary>
         <div class="bb-faq-body">
           <p>There is no official all-time ranking — the show has never ranked its winners against each other. The Open Poll at the top of this page is where fans answer the question: as it stands, Manikuttan (Season 3) leads it, ahead of Akhil Marar (Season 5) and Dilsha Prasannan (Season 4). Those numbers are VisitBest Open Poll votes — audience sentiment only, not official votes and not an official ranking. The poll itself is not an official Bigg Boss vote either: the winner list on this page is the official record, and official voting exists only for a running season, on the show's own platform, as announced on air.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+// ---------- Bigg Boss 17 Winner 2024 Vote List (entry 441) ----------
+// New page targeting "bigg boss 17 winner 2024 vote list"
+// (/bigg-boss-17-winner-2024-vote-list/): all 21 Bigg Boss 17
+// contestants with photos in an Open Poll at the top, seeded as a
+// vote list — Munawar Faruqui (the winner) on 5,86,214 votes, the
+// other 20 divided below him in descending order. HONESTY RULE for
+// this page: Colors and JioCinema never published Bigg Boss 17's
+// official vote counts, so every number on this page is presented
+// as what it is — the VisitBest Open Poll's own seeded fan
+// standings, for audience sentiment only — and the page says so in
+// the lead, under the table and in the FAQ. The official record
+// asserted here is only the result itself, Wikipedia-verified:
+// Munawar Faruqui won the 28 January 2024 finale; Abhishek Kumar
+// was 1st runner-up, Mannara Chopra 2nd, Ankita Lokhande 3rd and
+// Arun Srikanth Mashettey 4th; Salman Khan hosted; the season ran
+// 15 October 2023 – 28 January 2024 (105 days, 21 housemates) on
+// Colors TV and JioCinema. No prize figure is printed — Wikipedia
+// does not state one for this season. The five finalists reuse
+// their season-page portraits (s17-*.webp, already live); the
+// other 16 contestants use the verified Pinterest-round WebPs in
+// this pack (bb17-*.webp, see photos/MANIFEST.md).
+
+const BB17_FINALISTS_441 = [
+  { place: "1st", name: "Munawar Faruqui", result: "🏆 Winner", image: "/assets/bb-seasons/s17-munawar-faruqui.webp", story: "Munawar Faruqui won Bigg Boss 17 on finale night, 28 January 2024 — back-to-back reality crowns after his Lock Upp 1 win. The stand-up comic played the 105-day season in his own quiet style, survived the Ayesha Khan storm mid-season, and beat Abhishek Kumar in the final two." },
+  { place: "2nd", name: "Abhishek Kumar", result: "1st runner-up", image: "/assets/bb-seasons/s17-abhishek-kumar.webp", story: "The most dramatic arc of any finalist: Abhishek Kumar was ejected on Day 84 — and brought back the same day. From there he rebuilt his game, reached the finale and finished as 1st runner-up, behind only Munawar Faruqui." },
+  { place: "3rd", name: "Mannara Chopra", result: "2nd runner-up", image: "/assets/bb-seasons/s17-mannara-chopra.webp", story: "Mannara Chopra — the actress and cousin of Priyanka and Parineeti Chopra — reached the final five of a 21-housemate season and finished as 2nd runner-up on finale night, third in the final order, ahead of Ankita Lokhande and Arun Srikanth Mashettey." },
+  { place: "4th", name: "Ankita Lokhande", result: "3rd runner-up", image: "/assets/bb-seasons/s17-ankita-lokhande.webp", story: "Ankita Lokhande, the Pavitra Rishta star who entered the house with her husband Vicky Jain, finished as 3rd runner-up in the Day 105 finale — fourth in the final order of a season that ran 105 days from its 15 October 2023 premiere." },
+  { place: "5th", name: "Arun Srikanth Mashettey", result: "4th runner-up", image: "/assets/bb-seasons/s17-arun-mashettey.webp", story: "Arun Srikanth Mashettey — the Hyderabad gamer known as Achanak Bayanak Gaming — completed the final five, finishing as 4th runner-up when the finale order was declared on Day 105, 28 January 2024." },
+];
+
+function renderBB17OfficialResultTable() {
+  return `<div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Place</th><th>Contestant</th><th>Official result</th></tr>
+        </thead>
+        <tbody>
+          ${BB17_FINALISTS_441.map((r) => `<tr><td>${r.place}</td><td class="bb-table-contestant"><img src="${r.image}" alt="${r.name}" class="bb-table-avatar" loading="lazy"><strong>${r.name}</strong></td><td>${r.result}</td></tr>`).join("")}
+        </tbody>
+      </table>
+      </div>`;
+}
+
+function renderBB17VoteShareTable() {
+  const poll441 = pollBySlug.get("bigg-boss-17-winner-2024-vote-list");
+  const stats441 = getPollStats(poll441);
+  return `<div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Rank</th><th>Contestant</th><th>Result</th><th>Open Poll votes</th><th>Vote share</th></tr>
+        </thead>
+        <tbody>
+          ${stats441.list.map((c, i) => `<tr><td>${i + 1}</td><td class="bb-table-contestant">${c.image ? `<img src="${c.image}" alt="${c.name}" class="bb-table-avatar" loading="lazy">` : ""}<strong>${c.name}</strong></td><td>${(c.role || "").replace(" · Bigg Boss 17", "").replace(" · Day", " — Day")}</td><td><strong>${c.votes.toLocaleString("en-IN")}</strong></td><td>${c.pctStr}</td></tr>`).join("")}
+        </tbody>
+      </table>
+      </div>
+      <p style="margin-top:1rem;">Total: <strong>${stats441.total.toLocaleString("en-IN")} Open Poll votes</strong> across all 21 contestants. The vote share is each contestant's slice of this VisitBest Open Poll. Read the note above the table before quoting any of these numbers: they are fan standings on this website, not the show's official counts.</p>`;
+}
+
+function renderBB17FinalistCards() {
+  return `<div class="bb-steps-grid">
+      ${BB17_FINALISTS_441.map(
+        (r) => `
+      <div class="bb-step-card">
+        <img src="${r.image}" alt="${r.name}" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border-radius:8px;margin-bottom:0.75rem;">
+        <h3>${r.name}</h3>
+        <p><strong>${r.result} · Bigg Boss 17</strong></p>
+        <p>${r.story}</p>
+      </div>`,
+      ).join("")}
+      </div>`;
+}
+
+function renderBB17VoteListSections() {
+  return (
+    storySection(
+      "The Official Result",
+      "Bigg Boss 17 winner 2024 — the official result",
+      `<p>Bigg Boss 17 ended on 28 January 2024, after 105 days. Host Salman Khan declared <strong>Munawar Faruqui</strong> the winner in the finale, with Abhishek Kumar beside him in the final two. The season had begun on 15 October 2023 with 21 housemates, aired on Colors TV and streamed on JioCinema, and was played under the season's Dil, Dimaag aur Dum format — a house split into three themed makaans. This table is the official record: the five finalists, in the order they finished.</p>
+      ${renderBB17OfficialResultTable()}
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "The Vote List",
+      "Bigg Boss 17 vote list — all 21 contestants, votes and vote share",
+      `<p>First, the honest part, because it decides how every number below should be read: <strong>Colors and JioCinema never published the official vote counts for Bigg Boss 17</strong> — not for the finale, and not for any eviction week. Anyone quoting an "official" per-contestant vote tally for this season is quoting something the channel never released. The vote list below is the <strong>VisitBest Open Poll's own fan standings</strong>: all 21 contestants, in the order the fans on this site have them, with each contestant's Open Poll votes and vote share. Munawar Faruqui leads it on 5,86,214 votes — the fans' table agrees with the trophy, even if the numbers are this website's, not the show's.</p>
+      ${renderBB17VoteShareTable()}`,
+    ) +
+    storySection(
+      "Meet the Finalists",
+      "The Bigg Boss 17 final five — where each of them finished",
+      renderBB17FinalistCards(),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-17-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss 17 Voting — Fan Re-Vote",
+        text: "Season 17's own fan re-vote Open Poll: the five finalists with photos, the official result, the eviction order and the season's story.",
+        linkText: "Open the Bigg Boss 17 page →",
+      },
+      {
+        href: "/bigg-boss-winner-list/",
+        emoji: "🏆",
+        title: "Bigg Boss Winner List — Hindi + OTT",
+        text: "Every winner of Bigg Boss Hindi (Seasons 1–19) and Bigg Boss OTT (Seasons 1–3), with the runner-up, host and year for each season, plus the greatest-winner Open Poll.",
+        linkText: "See the Hindi + OTT winner list →",
+      },
+      {
+        href: "/bigg-boss-telugu-winners-list/",
+        emoji: "🏆",
+        title: "Bigg Boss Telugu Winners List",
+        text: "Every winner of Bigg Boss Telugu (Seasons 1–9) and Bigg Boss Non-Stop, with the dates, the runner-up, the host and the prize for each edition, plus the greatest-winner Open Poll.",
+        linkText: "See the Telugu winners list →",
+      },
+      {
+        href: "/bigg-boss-marathi-winner-list/",
+        emoji: "🏆",
+        title: "Bigg Boss Marathi Winner List",
+        text: "Every winner of Bigg Boss Marathi (Seasons 1–6), with the dates, the runner-up, the host and the prize for each season, plus the greatest-winner Open Poll.",
+        linkText: "See the Marathi winner list →",
+      },
+      {
+        href: "/bigg-boss-kannada-winner-list/",
+        emoji: "🏆",
+        title: "Bigg Boss Kannada Winner List",
+        text: "Every winner of Bigg Boss Kannada (Seasons 1–12) plus the OTT edition's Top Performer, with the dates, the runner-up, the host and the prize for each edition, plus the greatest-winner Open Poll.",
+        linkText: "See the Kannada winner list →",
+      },
+      {
+        href: "/bigg-boss-malayalam-winner-list/",
+        emoji: "🏆",
+        title: "Bigg Boss Malayalam Winner List",
+        text: "Every Bigg Boss Malayalam winner from Seasons 1–7 — and the honest record of Season 2, cancelled during COVID-19 with no winner — plus the greatest-winner Open Poll.",
+        linkText: "See the Malayalam winner list →",
+      },
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every Hindi season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current Hindi season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderBB17VoteListFaq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 17 Winner 2024 Vote List FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Who won Bigg Boss 17?</summary>
+        <div class="bb-faq-body">
+          <p>Munawar Faruqui won Bigg Boss 17. Host Salman Khan declared him the winner in the grand finale on 28 January 2024, at the end of the 105-day season, with Abhishek Kumar finishing as the 1st runner-up in the final two.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>What were the official Bigg Boss 17 vote counts?</summary>
+        <div class="bb-faq-body">
+          <p>They were never published. Colors and JioCinema did not release official per-contestant vote counts for the Bigg Boss 17 finale, or for any of the season's eviction weeks — no official vote tally for this season exists in the public record. Every vote number on this page is a VisitBest Open Poll figure: this website's own fan standings, published for audience sentiment only. They are not, and are never presented as, the show's official votes.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>How many votes does Munawar Faruqui have on this vote list?</summary>
+        <div class="bb-faq-body">
+          <p>Munawar Faruqui leads this vote list with 5,86,214 votes — a 22.3% share of the poll's 26,29,176 total — ahead of Abhishek Kumar on 4,71,308. Those are VisitBest Open Poll fan standings, kept updated as readers vote here; they are not the official Bigg Boss 17 counts, which the channel never released (see the question above).</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who were the five Bigg Boss 17 finalists?</summary>
+        <div class="bb-faq-body">
+          <p>In finishing order: Munawar Faruqui (winner), Abhishek Kumar (1st runner-up), Mannara Chopra (2nd runner-up), Ankita Lokhande (3rd runner-up) and Arun Srikanth Mashettey (4th runner-up). The five were what remained of a 21-housemate season on Day 105, 28 January 2024.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>How many contestants were in Bigg Boss 17, and when did it run?</summary>
+        <div class="bb-faq-body">
+          <p>Bigg Boss 17 had 21 housemates — 17 original entrants and 4 wild cards (Manasvi Mamgai, Samarth Jurel, Aoora and Ayesha Khan). The season ran for 105 days, from 15 October 2023 to 28 January 2024, hosted by Salman Khan and aired on Colors TV with streaming on JioCinema.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Is the poll on this page an official Bigg Boss vote?</summary>
+        <div class="bb-faq-body">
+          <p>No. Official Bigg Boss 17 voting ran on JioCinema while the season was on air, and it closed for good at the finale on 28 January 2024 — the result is final and it never reopens. The poll at the top of this page is a VisitBest Open Poll, a fan vote for audience sentiment only. If you want to re-vote the season itself, Season 17's fan re-vote Open Poll is on the <a href="/bigg-boss-17-voting/">Bigg Boss 17 voting page</a>.</p>
         </div>
       </details>
     </div>
@@ -10395,6 +10660,23 @@ const DEBATE_MARQUEE = {
       ["Riya", 110, 27, "Team Anumol", -1, "Six winners, one cancelled season, one host. Malayalam fans will argue this list forever, and that is exactly how it should be."],
     ],
   },
+  "bigg-boss-17-winner-2024-vote-list": {
+    pinned: ["Sagar P.", "Munawar Faruqui is the Bigg Boss 17 winner, and this vote list is the proof of his fandom — 5,86,214 votes, more than 576 thousand, clear of every other name. He never raised his voice, never played dirty, and still owned a 21-housemate season from the first week to the finale. Back-to-back crowns, Lock Upp and then this. The Dongri boy took the trophy home."],
+    comments: [
+      ["Neeraj", 5, 184, "Team Munawar", -1, "5,86,214 votes and the trophy to match. Munawar won Lock Upp, walked into this house and won again. The vote list just confirms what the finale already said."],
+      ["Priyanka", 11, 156, "Team Abhishek", -1, "Abhishek Kumar was thrown out on Day 84 and came back the SAME day to finish runner-up. No finalist in any season fought harder for their place than him."],
+      ["Imran", 18, 121, "Team Ankita", -1, "Ankita Lokhande third on this list with 3,98,442 — the family audience stood by her all season. Mannara finishing above her in the official order is still argued about in my house."],
+      ["Kavita", 26, 104, "Team Mannara", -1, "Mannara Chopra was the season's entertainment engine and the official 2nd runner-up. Fourth on this list is too low for what she carried."],
+      ["Rohan", 34, 88, "Team Munawar", 0, "Look at the gap at the top — Munawar 5,86,214, Abhishek 4,71,308. More than a lakh of votes between first and second. That is not close, that is a statement."],
+      ["Deepak", 43, 79, null, -1, "One honest note for everyone arguing below: Colors never released the official vote counts for this season. This list is the fan poll — which, honestly, makes the debate more fun, not less."],
+      ["Simran", 52, 66, "Team Vicky", -1, "Vicky Jain played the sharpest mastermind game of the season — sixth out of the house and sixth on this list. The Dimaag makaan ran through him for fifteen weeks."],
+      ["Harsh", 61, 58, null, -1, "Ayesha Khan's entry flipped Munawar's whole game mid-season. Whichever side you are on, that week was the turning point of Bigg Boss 17."],
+      ["Ananya", 73, 47, "Team Khanzaadi", -1, "Khanzaadi was out on Day 62 and still holds 38,254 votes here. Her rap battles and that fearless mouth deserved a longer run."],
+      ["Tarun", 86, 39, null, -1, "Anurag Dobhal's rider fanbase is no joke — evicted by the housemates in week 12 and still ahead of half the house on this list. The UK07 army travels well."],
+      ["Wasim", 97, 33, "Team Munawar", -1, "21 contestants, 105 days, one winner. Fans are still voting on this list long after the finale — that is how big this season was."],
+      ["Riya", 110, 28, "Team Abhishek", -1, "Final two, final word: Munawar lifted the trophy, but Abhishek's comeback from an ejection to runner-up is the story I will retell from this season."],
+    ],
+  },
   "bigg-boss-20-voting": {
     pinned: ["Sagar", "Qazi Touqeer is topping every poll on this site for a reason — BB20 belongs to him right now. But this house flips in one Weekend Ka Vaar, so keep watching."],
     comments: [
@@ -10873,6 +11155,7 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersSections() : ""}
     ${poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersSections() : ""}
     ${poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersSections() : ""}
+    ${poll.slug === "bigg-boss-17-winner-2024-vote-list" ? renderBB17VoteListSections() : ""}
 
     ${renderFanDebate(poll)}
 
@@ -10897,7 +11180,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : poll.slug === "bigg-boss-winner-list" ? renderWinnerListFaq() : poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersFaq() : poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersFaq() : poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersFaq() : poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersFaq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : poll.slug === "bigg-boss-winner-list" ? renderWinnerListFaq() : poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersFaq() : poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersFaq() : poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersFaq() : poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersFaq() : poll.slug === "bigg-boss-17-winner-2024-vote-list" ? renderBB17VoteListFaq() : renderFaqSection(poll)}
   </div>
   `;
 }
