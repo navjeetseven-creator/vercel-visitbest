@@ -1084,6 +1084,46 @@ export const polls = [
     metaDesc: "Bigg Boss winner list: every winner of every season — from Rahul Roy (Season 1) to Gaurav Khanna (Season 19), plus the Bigg Boss OTT winners — with the year, the runner-up, the host and the channel for each season, and the fan Open Poll for the greatest Bigg Boss winner of all time. VisitBest Open Polls are audience sentiment only.",
   },
   {
+    slug: "bigg-boss-telugu-winners-list",
+    image: "/assets/bb-seasons/covers/bigg-boss-telugu-winners-list.jpg",
+    title: "Bigg Boss Telugu Winners List — Every Season's Winner + Non-Stop",
+    h1: "Bigg Boss Telugu Winners List — Every Season's Winner (Seasons 1–9 + Non-Stop)",
+    lead: "The complete Bigg Boss Telugu winner list: every winner of all nine Telugu seasons (2017–2025) and of Bigg Boss Non-Stop, the OTT edition — the dates, the runner-up each winner beat, the host and the prize where Wikipedia states it, all in one table. At the top of the page is the fan Open Poll: who is the greatest Bigg Boss Telugu winner of all time? The winners named on this page are the official results, as declared on the show; the poll is a VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🏆 BIGG BOSS TELUGU WINNERS · ALL 10 EDITIONS",
+    leaderNote: "🏆 GREATEST-WINNER POLL: Kaushal Manda (Season 2) leads the all-time Telugu fan poll as it stands, with 1847 votes (23.4%), ahead of Rahul Sipligunj (Season 3) on 1263 and L. V. Revanth (Season 6) on 1024. This Open Poll is fan sentiment about PAST winners — it is not an official ranking by the show, and no number here is an official vote. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who is the greatest Bigg Boss Telugu winner of all time?",
+    textOptions: [
+      { id: "kaushal-manda", label: "Kaushal Manda", sub: "Winner · Season 2", image: "/assets/bb-seasons/telugu-s2-kaushal-manda.webp" },
+      { id: "rahul-sipligunj", label: "Rahul Sipligunj", sub: "Winner · Season 3", image: "/assets/bb-seasons/telugu-s3-rahul-sipligunj.webp" },
+      { id: "l-v-revanth", label: "L. V. Revanth", sub: "Winner · Season 6", image: "/assets/bb-seasons/telugu-s6-revanth.webp" },
+      { id: "abijeet-duddala", label: "Abijeet Duddala", sub: "Winner · Season 4", image: "/assets/bb-seasons/telugu-s4-abijeet-duddala.webp" },
+      { id: "bindu-madhavi", label: "Bindu Madhavi", sub: "Winner · Non-Stop (OTT)", image: "/assets/bb-seasons/telugu-ns-bindu-madhavi.webp" },
+      { id: "vj-sunny", label: "VJ Sunny", sub: "Winner · Season 5", image: "/assets/bb-seasons/telugu-s5-vj-sunny.webp" },
+      { id: "nikhil-maliyakkal", label: "Nikhil Maliyakkal", sub: "Winner · Season 8", image: "/assets/bb-seasons/telugu-s8-nikhil-maliyakkal.webp" },
+      { id: "siva-balaji", label: "Siva Balaji", sub: "Winner · Season 1", image: "/assets/bb-seasons/telugu-s1-siva-balaji.webp" },
+      { id: "pallavi-prashanth", label: "Pallavi Prashanth", sub: "Winner · Season 7", image: "/assets/bb-seasons/telugu-s7-pallavi-prashanth.webp" },
+      { id: "kalyan-padala", label: "Kalyan Padala", sub: "Winner · Season 9", image: "/assets/bb-seasons/telugu-s9-kalyan-padala.webp" },
+    ],
+    voteDistribution: {
+      "kaushal-manda": 1847,
+      "rahul-sipligunj": 1263,
+      "l-v-revanth": 1024,
+      "abijeet-duddala": 863,
+      "bindu-madhavi": 731,
+      "vj-sunny": 618,
+      "nikhil-maliyakkal": 492,
+      "siva-balaji": 417,
+      "pallavi-prashanth": 356,
+      "kalyan-padala": 287,
+    },
+    dangerIds: [],
+    openedDate: "22 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss Telugu winners list: every winner from Siva Balaji (Season 1) to Kalyan Padala (Season 9), plus Non-Stop winner Bindu Madhavi — with the dates, the runner-up, the host and the prize for each edition, and the fan Open Poll for the greatest Bigg Boss Telugu winner of all time. VisitBest Open Polls are audience sentiment only.",
+  },
+  {
     slug: "bigg-boss-17-voting",
     image: "/assets/bb-seasons/covers/bigg-boss-17-voting.jpg",
     title: "Bigg Boss 17 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
@@ -1991,6 +2031,7 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-20-finale", "🏁 Finale"],
     ["bigg-boss-voting", "🗳️ Bigg Boss Voting (All Seasons)"],
     ["bigg-boss-winner-list", "🏆 Winner List (All Seasons)"],
+    ["bigg-boss-telugu-winners-list", "🏆 Telugu Winners"],
     ["bigg-boss-17-voting", "🗳️ Bigg Boss 17 Voting"],
     ["bigg-boss-19-voting", "🗳️ Bigg Boss 19 Voting"],
     ["bigg-boss-16-voting", "🗳️ Bigg Boss 16 Voting"],
@@ -4596,6 +4637,148 @@ function renderWinnerListFaq() {
         <summary>Is the poll on this page an official Bigg Boss vote?</summary>
         <div class="bb-faq-body">
           <p>No. The winner list itself is the official record — the winners as declared on the show. The poll at the top is a VisitBest Open Poll asking who fans think is the greatest winner of all time; it is audience sentiment only, it is not official voting, and it changes nothing about any season's result. Official voting exists only for a running season, on JioCinema / JioHotstar, as announced on air.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+// ---------- Bigg Boss Telugu Winners List (entry 437) ----------
+// New page targeting "bigg boss telugu winners list"
+// (/bigg-boss-telugu-winners-list/): the Open Poll at the top asks who
+// is the greatest Bigg Boss Telugu winner of all time (all 10 winners
+// as photo options), and the page carries the full winner table plus
+// a card per winner. Every fact is Wikipedia-verified research
+// (~/workspace/bb-telugu-research/research.md) — nothing else is
+// asserted. Prize figures follow the research file's rules: stated
+// for S1/S2/S3 (₹50 lakh), S4 (₹25 lakh + bike), S5 (₹50 lakh + bike
+// + ₹25 lakh plot), S8 (₹55 lakh + car), S9 (₹35 lakh) and Non-Stop
+// (₹40 lakh); S6 is printed WITH its suitcase context; S7 gets NO
+// figure because Wikipedia contradicts itself on it. Rows newest first.
+
+const TELUGU_WINNERS = [
+  { season: "Season 9", years: "2025", dates: "7 September 2025 – 21 December 2025", winner: "Kalyan Padala", image: "/assets/bb-seasons/telugu-s9-kalyan-padala.webp", runnerUp: "Thanuja Puttaswamy", host: "Nagarjuna", channel: "Star Maa · JioHotstar", story: "The newest name on this list — and a first. An Indian Army soldier who entered through the Bigg Boss Agnipariksha digital pre-show, Kalyan Padala beat Thanuja Puttaswamy on 21 December 2025 to become the first commoner ever to win the main Telugu series. The 'Ranarangam' season ran two houses — one for celebrities and one for commoners — and he took home the ₹35 lakh prize." },
+  { season: "Season 8", years: "2024", dates: "1 September 2024 – 15 December 2024", winner: "Nikhil Maliyakkal", image: "/assets/bb-seasons/telugu-s8-nikhil-maliyakkal.webp", runnerUp: "Gautham Krishna", host: "Nagarjuna", channel: "Star Maa · Disney+ Hotstar", story: "Won the 'Limitless' season on 15 December 2024, beating wild-card entrant Gautham Krishna. Season 8 began with a zero cash prize and no captaincy or immunity — the housemates built the prize pot up through tasks until it reached ₹55 lakh, plus a car." },
+  { season: "Season 7", years: "2023", dates: "3 September 2023 – 17 December 2023", winner: "Pallavi Prashanth", image: "/assets/bb-seasons/telugu-s7-pallavi-prashanth.webp", runnerUp: "Amardeep Chowdary", host: "Nagarjuna", channel: "Star Maa · Disney+ Hotstar", story: "A farmer and YouTuber who entered as a commoner, Pallavi Prashanth beat Amardeep Chowdary on 17 December 2023 to win the 'Ulta Pulta' season — a season with six finalists, one more than usual, including wild-card entrant Ambati Arjun." },
+  { season: "Season 6", years: "2022", dates: "4 September 2022 – 18 December 2022", winner: "L. V. Revanth", image: "/assets/bb-seasons/telugu-s6-revanth.webp", runnerUp: "Shrihan Shaik", host: "Nagarjuna", channel: "Star Maa · Disney+ Hotstar", story: "The suitcase finale — a first for Bigg Boss. On 18 December 2022, runner-up Shrihan Shaik accepted a money suitcase raised to ₹40 lakh and walked out of the finale, leaving L. V. Revanth to be declared the winner with ₹10 lakh in cash — after which host Nagarjuna revealed that Shrihan had actually received more public votes. Still the most debated finale on this list." },
+  { season: "Non-Stop (OTT)", years: "2022", dates: "26 February 2022 – 21 May 2022", winner: "Bindu Madhavi", image: "/assets/bb-seasons/telugu-ns-bindu-madhavi.webp", runnerUp: "Akhil Sarthak", host: "Nagarjuna", channel: "Disney+ Hotstar", story: "The winner of Bigg Boss Non-Stop, the first and so far only Telugu OTT edition — a Disney+ Hotstar exclusive run on a 'Warriors vs Challengers' theme, with returning ex-housemates against newcomers. Bindu Madhavi entered as a Challenger and beat Akhil Sarthak on 21 May 2022 to become the first female winner of any Telugu edition, taking the ₹40 lakh prize. Akhil had also been Season 4's runner-up — and Non-Stop's seven finalists are the most of any Telugu edition." },
+  { season: "Season 5", years: "2021", dates: "5 September 2021 – 19 December 2021", winner: "VJ Sunny", image: "/assets/bb-seasons/telugu-s5-vj-sunny.webp", runnerUp: "Shanmukh Jaswanth", host: "Nagarjuna", channel: "Star Maa · Disney+ Hotstar", story: "Beat Shanmukh Jaswanth on 19 December 2021, in a season whose launch was delayed by the second wave of COVID-19. His prize package is the richest on this list: ₹50 lakh, plus a bike and a plot worth ₹25 lakh." },
+  { season: "Season 4", years: "2020", dates: "6 September 2020 – 20 December 2020", winner: "Abijeet Duddala", image: "/assets/bb-seasons/telugu-s4-abijeet-duddala.webp", runnerUp: "Akhil Sarthak", host: "Nagarjuna", channel: "Star Maa · Disney+ Hotstar", story: "Beat Akhil Sarthak on 20 December 2020 and took ₹25 lakh plus a bike, in a season whose launch was delayed by the COVID-19 pandemic. The Season 4 finale set a viewership record of 21.7 TVR in the Telugu states." },
+  { season: "Season 3", years: "2019", dates: "21 July 2019 – 3 November 2019", winner: "Rahul Sipligunj", image: "/assets/bb-seasons/telugu-s3-rahul-sipligunj.webp", runnerUp: "Sreemukhi", host: "Nagarjuna", channel: "Star Maa · Disney+ Hotstar", story: "Beat Sreemukhi on 3 November 2019 in Nagarjuna's first season as host. The finale's 18.29 TVR was, at the time, the highest rating achieved by any edition of the Indian Bigg Boss franchise." },
+  { season: "Season 2", years: "2018", dates: "10 June 2018 – 30 September 2018", winner: "Kaushal Manda", image: "/assets/bb-seasons/telugu-s2-kaushal-manda.webp", runnerUp: "Geetha Madhuri", host: "Nani", channel: "Star Maa · Disney+ Hotstar", story: "The winner of the longest Telugu season — 112 days — and of the first season to include commoners alongside celebrities. His fan following, the 'Kaushal Army', became the biggest fan phenomenon the Telugu show has seen. He beat Geetha Madhuri on 30 September 2018 and took the ₹50 lakh prize, in the one season hosted by Nani." },
+  { season: "Season 1", years: "2017", dates: "16 July 2017 – 24 September 2017", winner: "Siva Balaji", image: "/assets/bb-seasons/telugu-s1-siva-balaji.webp", runnerUp: "Aadarsh Balakrishna", host: "Jr NTR", channel: "Star Maa · Disney+ Hotstar", story: "The first name on this list: Siva Balaji beat Aadarsh Balakrishna on 24 September 2017 to win the first-ever Bigg Boss Telugu season and its ₹50 lakh prize. The season was Jr NTR's television debut as host, and its house stood in Lonavala — every later season has used Annapurna Studios, Hyderabad." },
+];
+
+function renderTeluguWinnersTable() {
+  return `<div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Season</th><th>Dates</th><th>Winner</th><th>Runner-up</th><th>Host</th><th>Channel / Platform</th></tr>
+        </thead>
+        <tbody>
+          ${TELUGU_WINNERS.map((r) => `<tr><td>${r.season}</td><td>${r.dates}</td><td class="bb-table-contestant">${r.image ? `<img src="${r.image}" alt="${r.winner}" class="bb-table-avatar" loading="lazy">` : ""}<strong>${r.winner}</strong></td><td>${r.runnerUp}</td><td>${r.host}</td><td>${r.channel}</td></tr>`).join("")}
+        </tbody>
+      </table>
+      </div>`;
+}
+
+function renderTeluguWinnerCards() {
+  return `<div class="bb-steps-grid">
+      ${TELUGU_WINNERS.map(
+        (r) => `
+      <div class="bb-step-card">
+        ${r.image ? `<img src="${r.image}" alt="${r.winner}" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border-radius:8px;margin-bottom:0.75rem;">` : ""}
+        <h3>${r.winner}</h3>
+        <p><strong>🏆 Winner · ${r.season} (${r.years})</strong></p>
+        <p>${r.story}</p>
+      </div>`,
+      ).join("")}
+      </div>`;
+}
+
+function renderTeluguWinnersSections() {
+  return (
+    storySection(
+      "The Full List",
+      "Bigg Boss Telugu winner list — every season, every winner",
+      `<p>Ten editions of Bigg Boss Telugu — nine seasons on Star Maa (2017–2025) and one OTT edition, Bigg Boss Non-Stop — have produced ten winners, from Siva Balaji in 2017 to Kalyan Padala in 2025. This is the complete list: each edition's winner, the runner-up they beat in the finale, the host and the channel or platform. Three hosts have fronted the Telugu show: Jr NTR (Season 1), Nani (Season 2) and Nagarjuna (Season 3 onwards, and Non-Stop). The TV seasons air on Star Maa and stream on Disney+ Hotstar, now JioHotstar; Non-Stop was a streaming exclusive.</p>
+      ${renderTeluguWinnersTable()}
+      <p style="margin-top:1rem;">A note on prize money: a figure is printed on this page only where Wikipedia states one — ₹50 lakh for Seasons 1, 2 and 3; ₹25 lakh plus a bike for Season 4; ₹50 lakh plus a bike and a plot worth ₹25 lakh for Season 5; ₹55 lakh plus a car for Season 8; ₹35 lakh for Season 9; and ₹40 lakh for Non-Stop. Season 6 is the special case explained in its entry below: the winner's cash was ₹10 lakh, because the runner-up walked out of the finale with the ₹40 lakh suitcase. For Season 7, Wikipedia's own pages give two different prize figures, so no figure is printed for that season.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "Meet the Winners",
+      "Every Bigg Boss Telugu winner — how each trophy was won",
+      renderTeluguWinnerCards(),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-winner-list/",
+        emoji: "🏆",
+        title: "Bigg Boss Winner List — Hindi + OTT",
+        text: "Every winner of Bigg Boss Hindi (Seasons 1–19) and Bigg Boss OTT (Seasons 1–3), with the runner-up, host and year for each season, plus the greatest-winner Open Poll.",
+        linkText: "See the Hindi + OTT winner list →",
+      },
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every Hindi season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current Hindi season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderTeluguWinnersFaq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss Telugu Winners List FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Who won the latest Bigg Boss Telugu season?</summary>
+        <div class="bb-faq-body">
+          <p>Kalyan Padala won Bigg Boss Telugu 9, beating Thanuja Puttaswamy in the finale on 21 December 2025. An Indian Army soldier who entered through the Bigg Boss Agnipariksha digital pre-show, he is the first commoner to win the main Telugu series. The prize stated for the season is ₹35 lakh.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who was the first Bigg Boss Telugu winner?</summary>
+        <div class="bb-faq-body">
+          <p>Siva Balaji won Season 1 in 2017, beating Aadarsh Balakrishna in the finale on 24 September 2017. The season was hosted by Jr NTR — his television debut as host — and carried a ₹50 lakh prize.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who won Bigg Boss Non-Stop?</summary>
+        <div class="bb-faq-body">
+          <p>Bindu Madhavi won Bigg Boss Non-Stop (2022), the Telugu OTT edition on Disney+ Hotstar, beating Akhil Sarthak in the finale on 21 May 2022. She was the first female winner of any Telugu edition, and the prize stated for the edition is ₹40 lakh.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>How much prize money did the Bigg Boss Telugu winners get?</summary>
+        <div class="bb-faq-body">
+          <p>It varies by season, and this page prints a figure only where Wikipedia states one: ₹50 lakh for Seasons 1, 2 and 3; ₹25 lakh plus a bike for Season 4; ₹50 lakh plus a bike and a plot worth ₹25 lakh for Season 5; ₹55 lakh plus a car for Season 8; ₹35 lakh for Season 9; and ₹40 lakh for Non-Stop. Season 6's winner took ₹10 lakh in cash after the runner-up walked out of the finale with the ₹40 lakh suitcase. For Season 7, Wikipedia's own pages give two different figures, so no figure is printed for that season.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who is the greatest Bigg Boss Telugu winner of all time?</summary>
+        <div class="bb-faq-body">
+          <p>There is no official all-time ranking — the show has never ranked its winners against each other. The Open Poll at the top of this page is where fans answer the question: as it stands, Kaushal Manda (Season 2) leads it, ahead of Rahul Sipligunj (Season 3) and L. V. Revanth (Season 6). Those numbers are VisitBest Open Poll votes — audience sentiment only, not official votes and not an official ranking.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Is the poll on this page an official Bigg Boss vote?</summary>
+        <div class="bb-faq-body">
+          <p>No. The winner list itself is the official record — the winners as declared on the show. The poll at the top is a VisitBest Open Poll asking who fans think is the greatest Bigg Boss Telugu winner of all time; it is audience sentiment only, it is not official voting, and it changes nothing about any edition's result. Official voting exists only for a running season, on the show's own platform, as announced on air.</p>
         </div>
       </details>
     </div>
@@ -9550,6 +9733,23 @@ const DEBATE_MARQUEE = {
       ["Tarun", 138, 52, null, -1, "Shoutout to the first name on the list — Rahul Roy won a season most of today's fanbase has never even seen. Respect the OG."],
     ],
   },
+  "bigg-boss-telugu-winners-list": {
+    pinned: ["Sagar P.", "Ten winners on one list, and the top spot is not even a debate: Kaushal Manda is the greatest Bigg Boss Telugu winner of all time. The Kaushal Army was not a fan club, it was a movement."],
+    comments: [
+      ["Neeraj", 5, 187, "Team Kaushal", -1, "Season 2 ran 112 days and one man's fandom carried the whole show. Nobody before or since has had an army like that."],
+      ["Priyanka", 11, 132, "Team Rahul", -1, "Rahul Sipligunj's Season 3 finale rating was a franchise record at the time. Kaushal had the loudest fans, Rahul had the biggest night."],
+      ["Imran", 18, 96, "Team Revanth", -1, "Revanth won a finale where the runner-up literally took the ₹40 lakh suitcase and walked — and the host then said the runner-up had MORE votes. Most dramatic win on this list, no contest."],
+      ["Kavita", 26, 88, "Team Bindu", -1, "Bindu Madhavi is the only woman on this entire list and she won the toughest format — Warriors vs Challengers. Put some respect on the Non-Stop winner."],
+      ["Rohan", 34, 74, "Team Kaushal", 0, "1847 vs 1263 in this poll right now. The Army is older now but it still shows up. Some fanbases never retire."],
+      ["Deepak", 43, 63, null, -1, "Kalyan Padala deserves more love here. A soldier, a commoner, walked in through a pre-show and won the main series. That is the hardest route anyone on this list took."],
+      ["Simran", 52, 57, "Team Abijeet", -1, "Abijeet's Season 4 finale did 21.7 TVR. Twenty-one point seven. The most-watched crowning on this list."],
+      ["Harsh", 61, 49, "Team Sunny", -1, "VJ Sunny took the richest package on the list — cash, a bike AND a plot. Quiet game, loud result."],
+      ["Ananya", 73, 44, "Team Pallavi", -1, "Pallavi Prashanth was a farmer with a YouTube channel and he beat the celebrities at their own game. Ulta Pulta indeed."],
+      ["Tarun", 86, 38, null, -1, "Respect to the first name on the list — Siva Balaji won it when the show itself was an experiment, with Jr NTR hosting from a house in Lonavala."],
+      ["Wasim", 97, 35, "Team Nikhil", -1, "Nikhil's season started with a prize pot of ZERO and the housemates built it to ₹55 lakh. He did not just win a prize, he won a prize the house earned."],
+      ["Riya", 110, 29, "Team Rahul", -1, "Sreemukhi fans are still not over Season 3. That finale split the Telugu audience like no other."],
+    ],
+  },
   "bigg-boss-20-voting": {
     pinned: ["Sagar", "Qazi Touqeer is topping every poll on this site for a reason — BB20 belongs to him right now. But this house flips in one Weekend Ka Vaar, so keep watching."],
     comments: [
@@ -10024,6 +10224,7 @@ export function renderBiggBossPollPage(poll) {
  ${poll.slug === "bigg-boss-2-voting" ? renderSeason2Sections() : ""}
  ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
     ${poll.slug === "bigg-boss-winner-list" ? renderWinnerListSections() : ""}
+    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}
 
     ${renderFanDebate(poll)}
 
@@ -10048,7 +10249,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : poll.slug === "bigg-boss-winner-list" ? renderWinnerListFaq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : poll.slug === "bigg-boss-winner-list" ? renderWinnerListFaq() : poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersFaq() : renderFaqSection(poll)}
   </div>
   `;
 }
