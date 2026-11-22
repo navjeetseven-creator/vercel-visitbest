@@ -1156,6 +1156,50 @@ export const polls = [
     metaDesc: "Bigg Boss Marathi winner list: every winner from Megha Dhade (Season 1) to Tanvi Kolte (Season 6) — with the dates, the runner-up, the host and the prize for each season, and the fan Open Poll for the greatest Bigg Boss Marathi winner of all time. VisitBest Open Polls are audience sentiment only.",
   },
   {
+    slug: "bigg-boss-kannada-winner-list",
+    image: "/assets/bb-seasons/covers/bigg-boss-kannada-winner-list.jpg",
+    title: "Bigg Boss Kannada Winner List — Every Season's Winner (Seasons 1–12 + OTT)",
+    h1: "Bigg Boss Kannada Winner List — Every Season's Winner (Seasons 1–12 + OTT)",
+    lead: "The complete Bigg Boss Kannada winner list: every winner of all twelve TV seasons (2013–2026) plus the 2022 OTT edition — the dates, the runner-up each winner beat, the host and the prize where Wikipedia states it, all in one table. At the top of the page is the fan Open Poll: who is the greatest Bigg Boss Kannada winner of all time? One honest note: the OTT edition never crowned a conventional winner — Wikipedia records its top finisher as its 'Top Performer', and this page follows that label. The winners named on this page are the official results, as declared on the show; the poll is a VisitBest Open Poll, for audience sentiment only.",
+    heroBadge: "🏆 BIGG BOSS KANNADA WINNERS · ALL 13 EDITIONS",
+    leaderNote: "🏆 GREATEST-WINNER POLL: Chandan Shetty (Season 5) leads the all-time Kannada fan poll as it stands, with 1547 votes (18.4%), ahead of Shine Shetty (Season 7) on 1389 and Roopesh Shetty (Season 9) on 1124. This Open Poll is fan sentiment about PAST winners — it is not an official ranking by the show, and no number here is an official vote. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "season-revote",
+    question: "Who is the greatest Bigg Boss Kannada winner of all time?",
+    textOptions: [
+      { id: "chandan-shetty", label: "Chandan Shetty", sub: "Winner · Season 5", image: "/assets/bb-seasons/kannada-s5-chandan-shetty.webp" },
+      { id: "shine-shetty", label: "Shine Shetty", sub: "Winner · Season 7" },
+      { id: "roopesh-shetty", label: "Roopesh Shetty", sub: "Winner · Season 9 · also OTT Top Performer", image: "/assets/bb-seasons/kannada-s9-roopesh-shetty.webp" },
+      { id: "gilli-nata", label: "Gilli Nata", sub: "Winner · Season 12", image: "/assets/bb-seasons/kannada-s12-gilli-nata.webp" },
+      { id: "vijay-raghavendra", label: "Vijay Raghavendra", sub: "Winner · Season 1", image: "/assets/bb-seasons/kannada-s1-vijay-raghavendra.webp" },
+      { id: "pratham", label: "Pratham", sub: "Winner · Season 4" },
+      { id: "manju-pavagada", label: "Manju Pavagada", sub: "Winner · Season 8" },
+      { id: "karthik-mahesh", label: "Karthik Mahesh", sub: "Winner · Season 10" },
+      { id: "akul-balaji", label: "Akul Balaji", sub: "Winner · Season 2", image: "/assets/bb-seasons/kannada-s2-akul-balaji.webp" },
+      { id: "shashi-kumar", label: "Shashi Kumar", sub: "Winner · Season 6" },
+      { id: "shruti", label: "Shruti", sub: "Winner · Season 3", image: "/assets/bb-seasons/kannada-s3-shruti.webp" },
+      { id: "hanumantha-lamani", label: "Hanumantha Lamani", sub: "Winner · Season 11", image: "/assets/bb-seasons/kannada-s11-hanumantha-lamani.webp" },
+    ],
+    voteDistribution: {
+      "chandan-shetty": 1547,
+      "shine-shetty": 1389,
+      "roopesh-shetty": 1124,
+      "gilli-nata": 968,
+      "vijay-raghavendra": 743,
+      "pratham": 587,
+      "manju-pavagada": 512,
+      "karthik-mahesh": 436,
+      "akul-balaji": 358,
+      "shashi-kumar": 291,
+      "shruti": 243,
+      "hanumantha-lamani": 187,
+    },
+    dangerIds: [],
+    openedDate: "22 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss Kannada winner list: every winner from Vijay Raghavendra (Season 1) to Gilli Nata (Season 12), plus the OTT edition's Top Performer — with the dates, the runner-up, the host and the prize for each edition, and the fan Open Poll for the greatest Bigg Boss Kannada winner of all time. VisitBest Open Polls are audience sentiment only.",
+  },
+  {
     slug: "bigg-boss-17-voting",
     image: "/assets/bb-seasons/covers/bigg-boss-17-voting.jpg",
     title: "Bigg Boss 17 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
@@ -2065,6 +2109,7 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-winner-list", "🏆 Winner List (All Seasons)"],
     ["bigg-boss-telugu-winners-list", "🏆 Telugu Winners"],
     ["bigg-boss-marathi-winner-list", "🏆 Marathi Winners"],
+    ["bigg-boss-kannada-winner-list", "🏆 Kannada Winners"],
     ["bigg-boss-17-voting", "🗳️ Bigg Boss 17 Voting"],
     ["bigg-boss-19-voting", "🗳️ Bigg Boss 19 Voting"],
     ["bigg-boss-16-voting", "🗳️ Bigg Boss 16 Voting"],
@@ -4959,6 +5004,172 @@ function renderMarathiWinnersFaq() {
         <summary>Is the poll on this page an official Bigg Boss vote?</summary>
         <div class="bb-faq-body">
           <p>No. The winner list itself is the official record — the winners as declared on the show. The poll at the top is a VisitBest Open Poll asking who fans think is the greatest Bigg Boss Marathi winner of all time; it is audience sentiment only, it is not official voting, and it changes nothing about any season's result. Official voting exists only for a running season, on the show's own platform, as announced on air.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
+// ---------- Bigg Boss Kannada Winner List (entry 439) ----------
+// New page targeting "bigg boss kannada winner list"
+// (/bigg-boss-kannada-winner-list/): the Open Poll at the top asks
+// who is the greatest Bigg Boss Kannada winner of all time (the 12
+// TV winners as options), and the page carries the full winner
+// table plus a card per edition. Every fact is Wikipedia-verified
+// research (~/workspace/bb-kannada-research/research.md) — nothing
+// else is asserted. Prize: Wikipedia's series overview states
+// ₹50 lakh for every TV season (S1–S12); S10's winner also received
+// a Maruti Suzuki Brezza and a Bounce Infinity electric scooter,
+// and S12's winner a Maruti Suzuki Victoris. The OTT edition
+// (2022) did NOT crown a conventional winner: Wikipedia records
+// Roopesh Shetty as its "Top Performer" and Rakesh Adiga, Saanya
+// Iyer and Aryavardhan Guruji as "Champions", with no 1st
+// runner-up — the OTT row and card follow that wording exactly and
+// never call him the OTT winner. Day counts follow the season
+// articles where Wikipedia's own figures differ, as the research
+// file directs. Rows newest first.
+
+const KANNADA_WINNERS = [
+  { season: "Season 12", years: "2025–26", dates: "28 September 2025 – 18 January 2026", winner: "Gilli Nata", image: "/assets/bb-seasons/kannada-s12-gilli-nata.webp", runnerUp: "Rakshita Shetty", host: "Kichcha Sudeepa", channel: "Colors Kannada · JioHotstar", story: "The newest name on this list: Gilli Nata (real name Nataraj) beat Rakshita Shetty on 18 January 2026, closing a 112-day season with 24 housemates — the biggest Kannada house yet — and a six-man finale. He took the ₹50 lakh prize plus a Maruti Suzuki Victoris car. The season was briefly suspended on 8 October 2025 after a Karnataka State Pollution Control Board closure notice, and resumed the very next day. It was Kichcha Sudeepa's twelfth consecutive season as host." },
+  { season: "Season 11", years: "2024–25", dates: "29 September 2024 – 26 January 2025", winner: "Hanumantha Lamani", image: "/assets/bb-seasons/kannada-s11-hanumantha-lamani.webp", runnerUp: "Trivikram", host: "Kichcha Sudeepa", channel: "Colors Kannada · JioCinema", story: "A shepherd and folk singer who entered on Day 21 as a wild card, Hanumantha Lamani beat Trivikram on 26 January 2025 to become the first wild-card entrant ever to win Bigg Boss Kannada. At 120 days it is the longest Kannada season, and he took the ₹50 lakh prize. Sudeepa had announced this would be his last season as host — then reversed the decision and returned for Season 12." },
+  { season: "Season 10", years: "2023–24", dates: "8 October 2023 – 28 January 2024", winner: "Karthik Mahesh", image: null, runnerUp: "Drone Prathap", host: "Kichcha Sudeepa", channel: "Colors Kannada · JioCinema", story: "Karthik Mahesh beat Drone Prathap on 28 January 2024 in the first Kannada season to end with a top-six grand finale. The premiere used a public-vote twist: viewers voted contestants into the house, two of the 21 listed names were rejected on Day 1, and 19 actually played. The 112-day season's prize was ₹50 lakh plus a Maruti Suzuki Brezza and a Bounce Infinity electric scooter." },
+  { season: "Season 9", years: "2022", dates: "24 September 2022 – 31 December 2022", winner: "Roopesh Shetty", image: "/assets/bb-seasons/kannada-s9-roopesh-shetty.webp", runnerUp: "Rakesh Adiga", host: "Kichcha Sudeepa", channel: "Colors Kannada · Voot Select", story: "Roopesh Shetty beat Rakesh Adiga on 31 December 2022 — the same top two as the OTT edition weeks earlier, where Roopesh had finished as its Top Performer and Rakesh as a Champion. He is the only person on this list to top both Kannada editions. The 98-day cast mixed five returning ex-housemates with the OTT edition's top four, and the prize was ₹50 lakh." },
+  { season: "OTT Season 1", years: "2022", dates: "6 August 2022 – 16 September 2022", winner: "Roopesh Shetty", winnerNote: "Top Performer", placing: "Top Performer", image: "/assets/bb-seasons/kannada-s9-roopesh-shetty.webp", runnerUp: "—", host: "Kichcha Sudeepa", channel: "Voot", story: "This edition did not crown a conventional winner, so this page does not call Roopesh Shetty its winner: Wikipedia's official label for him is 'Top Performer'. Rakesh Adiga, Saanya Iyer and Aryavardhan Guruji were named 'Champions', there was no 1st runner-up, and all four qualified directly into Season 9 — where Roopesh won the TV title and Rakesh finished second again. The 42-day season was digital-only on Voot, with no TV broadcast, and carried a ₹5 lakh prize. Press coverage often calls Roopesh the OTT winner; this page follows Wikipedia's label." },
+  { season: "Season 8", years: "2021", dates: "28 February 2021 – 8 August 2021", winner: "Manju Pavagada", image: null, runnerUp: "Aravind KP", host: "Kichcha Sudeepa", channel: "Colors Kannada", story: "The only season split in two by COVID-19: it premiered on 28 February 2021, was suspended on 8 May, and resumed on 23 June as 'Bigg Boss Second Innings', with 12 non-evicted housemates returning. Manju Pavagada beat Aravind KP in the finale on 8 August 2021, after 117 days in total across the two innings, and took the ₹50 lakh prize." },
+  { season: "Season 7", years: "2019–20", dates: "13 October 2019 – 2 February 2020", winner: "Shine Shetty", image: null, runnerUp: "Kuri Prathap", host: "Kichcha Sudeepa", channel: "Colors Kannada", story: "Shine Shetty beat Kuri Prathap on 2 February 2020, closing a 112-day season with 20 housemates and taking the ₹50 lakh prize. One of its finalists, Deepika Das (3rd runner-up), returned in Season 9 and finished 2nd runner-up all over again." },
+  { season: "Season 6", years: "2018–19", dates: "21 October 2018 – 27 January 2019", winner: "Shashi Kumar", image: null, runnerUp: "Naveen Sajju", host: "Kichcha Sudeepa", channel: "Colors Super", story: "Shashi Kumar beat Naveen Sajju on 27 January 2019. The season opened with a split cast — nine celebrities and nine commoners — plus two wild cards who entered on Day 54. It ran 98 days with 20 housemates, and the prize was ₹50 lakh." },
+  { season: "Season 5", years: "2017–18", dates: "15 October 2017 – 28 January 2018", winner: "Chandan Shetty", image: "/assets/bb-seasons/kannada-s5-chandan-shetty.webp", runnerUp: "Diwakar", host: "Kichcha Sudeepa", channel: "Colors Super", story: "Rapper Chandan Shetty beat Diwakar on 28 January 2018 in the first season to include auditioned commoners alongside celebrities. The season ran 105 days with 20 housemates, and the prize was ₹50 lakh." },
+  { season: "Season 4", years: "2016–17", dates: "9 October 2016 – 29 January 2017", winner: "Pratham", image: null, runnerUp: "Kirik Keerthi", host: "Kichcha Sudeepa", channel: "Colors Kannada", story: "Pratham beat Kirik Keerthi on 29 January 2017. The season was extended by two weeks mid-run, taking it to 112 days, and it was the first Kannada season broadcast in HD. The prize was ₹50 lakh." },
+  { season: "Season 3", years: "2015–16", dates: "25 October 2015 – 31 January 2016", winner: "Shruti", image: "/assets/bb-seasons/kannada-s3-shruti.webp", runnerUp: "Chandan Kumar", host: "Kichcha Sudeepa", channel: "Colors Kannada", story: "Shruti beat Chandan Kumar on 31 January 2016 in the first season staged in Bengaluru, at Innovative Film City, instead of Lonavala. The season ran 98 days with 18 housemates, and the prize was ₹50 lakh." },
+  { season: "Season 2", years: "2014", dates: "29 June 2014 – 5 October 2014", winner: "Akul Balaji", image: "/assets/bb-seasons/kannada-s2-akul-balaji.webp", runnerUp: "Srujan Lokesh", host: "Kichcha Sudeepa", channel: "Asianet Suvarna", story: "Akul Balaji beat Srujan Lokesh on 5 October 2014 in a 98-day season with 15 housemates, still based in the Lonavala house. This is the season that introduced the captaincy concept to the Kannada edition, and the prize was ₹50 lakh." },
+  { season: "Season 1", years: "2013", dates: "24 March 2013 – 30 June 2013", winner: "Vijay Raghavendra", image: "/assets/bb-seasons/kannada-s1-vijay-raghavendra.webp", runnerUp: "Arun Sagar", host: "Kichcha Sudeepa", channel: "ETV Kannada", story: "The first name on this list: Vijay Raghavendra beat Arun Sagar on 30 June 2013 to win the debut season of Bigg Boss Kannada and its ₹50 lakh prize. The 98-day season, with 15 housemates, was shot in the Lonavala house." },
+];
+
+function renderKannadaWinnersTable() {
+  return `<div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Season</th><th>Dates</th><th>Winner</th><th>Runner-up</th><th>Host</th><th>Channel / Platform</th></tr>
+        </thead>
+        <tbody>
+          ${KANNADA_WINNERS.map((r) => `<tr><td>${r.season}</td><td>${r.dates}</td><td class="bb-table-contestant">${r.image ? `<img src="${r.image}" alt="${r.winner}" class="bb-table-avatar" loading="lazy">` : ""}<strong>${r.winner}</strong>${r.winnerNote ? ` (${r.winnerNote})` : ""}</td><td>${r.runnerUp}</td><td>${r.host}</td><td>${r.channel}</td></tr>`).join("")}
+        </tbody>
+      </table>
+      </div>`;
+}
+
+function renderKannadaWinnerCards() {
+  return `<div class="bb-steps-grid">
+      ${KANNADA_WINNERS.map(
+        (r) => `
+      <div class="bb-step-card">
+        ${r.image ? `<img src="${r.image}" alt="${r.winner}" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border-radius:8px;margin-bottom:0.75rem;">` : ""}
+        <h3>${r.winner}</h3>
+        <p><strong>${r.placing === "Top Performer" ? "⭐ Top Performer" : "🏆 Winner"} · ${r.season} (${r.years})</strong></p>
+        <p>${r.story}</p>
+      </div>`,
+      ).join("")}
+      </div>`;
+}
+
+function renderKannadaWinnersSections() {
+  return (
+    storySection(
+      "The Full List",
+      "Bigg Boss Kannada winner list — every season, every winner",
+      `<p>Thirteen editions of Bigg Boss Kannada — twelve TV seasons (2013–2026) and one OTT season (2022) — have produced twelve winners and one OTT 'Top Performer', from Vijay Raghavendra in 2013 to Gilli Nata in 2026. This is the complete list: each edition's winner, the runner-up they beat in the finale, the host and the channel or platform. One man has hosted every single edition, TV and OTT: Kichcha Sudeepa. The first two seasons came from the Lonavala house; from Season 3 onwards the show has been staged in Bengaluru, at Innovative Film City.</p>
+      ${renderKannadaWinnersTable()}
+      <p style="margin-top:1rem;">A note on prize money: Wikipedia's series overview states a ₹50 lakh prize for every TV season, Seasons 1–12. Season 10's winner also received a Maruti Suzuki Brezza and a Bounce Infinity electric scooter, and Season 12's winner also received a Maruti Suzuki Victoris car. The OTT edition carried a ₹5 lakh prize. One press report put Season 9's prize higher than ₹50 lakh; Wikipedia states ₹50 lakh, and that is the figure printed here.</p>
+      <p style="margin-top:1rem;">A note on the OTT row: the 2022 OTT edition never declared a winner and a runner-up. Wikipedia records Roopesh Shetty as its 'Top Performer' and Rakesh Adiga, Saanya Iyer and Aryavardhan Guruji as its 'Champions' — all four qualified directly into Season 9 — so the OTT row follows that wording, with no runner-up.</p>
+      ${HUB_DISCLAIMER_BOX}`,
+    ) +
+    storySection(
+      "Meet the Winners",
+      "Every Bigg Boss Kannada winner — how each trophy was won",
+      renderKannadaWinnerCards(),
+    ) +
+    renderSeasonLinksRow([
+      {
+        href: "/bigg-boss-winner-list/",
+        emoji: "🏆",
+        title: "Bigg Boss Winner List — Hindi + OTT",
+        text: "Every winner of Bigg Boss Hindi (Seasons 1–19) and Bigg Boss OTT (Seasons 1–3), with the runner-up, host and year for each season, plus the greatest-winner Open Poll.",
+        linkText: "See the Hindi + OTT winner list →",
+      },
+      {
+        href: "/bigg-boss-telugu-winners-list/",
+        emoji: "🏆",
+        title: "Bigg Boss Telugu Winners List",
+        text: "Every winner of Bigg Boss Telugu (Seasons 1–9) and Bigg Boss Non-Stop, with the dates, the runner-up, the host and the prize for each edition, plus the greatest-winner Open Poll.",
+        linkText: "See the Telugu winners list →",
+      },
+      {
+        href: "/bigg-boss-marathi-winner-list/",
+        emoji: "🏆",
+        title: "Bigg Boss Marathi Winner List",
+        text: "Every winner of Bigg Boss Marathi (Seasons 1–6), with the dates, the runner-up, the host and the prize for each season, plus the greatest-winner Open Poll.",
+        linkText: "See the Marathi winner list →",
+      },
+      {
+        href: "/bigg-boss-voting/",
+        emoji: "🗳️",
+        title: "Bigg Boss Voting — All Seasons",
+        text: "Every Hindi season's voting in one place: the Ultimate Vote for the greatest winner of all time, today's Bigg Boss 20 standings and the season grid.",
+        linkText: "Open the all-seasons hub →",
+      },
+      {
+        href: "/bigg-boss-20-voting/",
+        emoji: "🔥",
+        title: "Bigg Boss 20 Voting Hub",
+        text: "The current Hindi season's Open Polls, this week's nominee panel, the prediction scorecard and the archives.",
+        linkText: "Open the Bigg Boss 20 hub →",
+      },
+    ])
+  );
+}
+
+function renderKannadaWinnersFaq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss Kannada Winner List FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Who won the latest Bigg Boss Kannada season?</summary>
+        <div class="bb-faq-body">
+          <p>Gilli Nata (real name Nataraj) won Bigg Boss Kannada 12, beating Rakshita Shetty in the finale on 18 January 2026. The season ran 112 days with 24 housemates, was hosted by Kichcha Sudeepa — his twelfth consecutive season — and the prize was ₹50 lakh plus a Maruti Suzuki Victoris car.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who was the first Bigg Boss Kannada winner?</summary>
+        <div class="bb-faq-body">
+          <p>Vijay Raghavendra won Season 1 in 2013, beating Arun Sagar in the finale on 30 June 2013. The season aired on ETV Kannada, was shot in the Lonavala house, and carried a ₹50 lakh prize.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who has hosted Bigg Boss Kannada?</summary>
+        <div class="bb-faq-body">
+          <p>Kichcha Sudeepa has hosted every edition of Bigg Boss Kannada — all twelve TV seasons and the OTT season. He announced after Season 11 that he would step down, then reversed the decision and returned to host Season 12.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Why does the OTT row say "Top Performer" instead of "Winner"?</summary>
+        <div class="bb-faq-body">
+          <p>Because the 2022 OTT edition did not crown a conventional winner and runner-up. Wikipedia's record of that edition lists Roopesh Shetty as its 'Top Performer' and Rakesh Adiga, Saanya Iyer and Aryavardhan Guruji as its 'Champions', with no 1st runner-up; all four qualified directly into Season 9, where Roopesh won and Rakesh finished second again. Press coverage often calls Roopesh Shetty the OTT winner, but this page follows Wikipedia's own label.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>How much prize money did the Bigg Boss Kannada winners get?</summary>
+        <div class="bb-faq-body">
+          <p>Wikipedia's series overview states ₹50 lakh for every TV season, Seasons 1–12. Season 10's winner also received a Maruti Suzuki Brezza and a Bounce Infinity electric scooter, and Season 12's winner also received a Maruti Suzuki Victoris car. The OTT edition's prize was ₹5 lakh. A press report put Season 9's prize higher; Wikipedia states ₹50 lakh, and that is the figure printed here.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who is the greatest Bigg Boss Kannada winner of all time?</summary>
+        <div class="bb-faq-body">
+          <p>There is no official all-time ranking — the show has never ranked its winners against each other. The Open Poll at the top of this page is where fans answer the question: as it stands, Chandan Shetty (Season 5) leads it, ahead of Shine Shetty (Season 7) and Roopesh Shetty (Season 9). Those numbers are VisitBest Open Poll votes — audience sentiment only, not official votes and not an official ranking. The poll itself is not an official Bigg Boss vote either: the winner list on this page is the official record, and official voting exists only for a running season, on the show's own platform, as announced on air.</p>
         </div>
       </details>
     </div>
@@ -9947,6 +10158,23 @@ const DEBATE_MARQUEE = {
       ["Riya", 110, 27, "Team Megha", -1, "Six seasons, six winners, and the debate will never end. That is exactly how it should be."],
     ],
   },
+  "bigg-boss-kannada-winner-list": {
+    pinned: ["Sagar P.", "Thirteen editions, one host, twelve winners — and for me the greatest is still Chandan Shetty. A rapper walked into the Season 5 house, with commoners auditioned in for the first time, and owned that season from the first week to the trophy."],
+    comments: [
+      ["Neeraj", 5, 168, "Team Chandan", -1, "Season 5 changed the show — commoners came in through auditions and Chandan still stood tallest. That is why he leads this poll."],
+      ["Priyanka", 11, 139, "Team Shine", -1, "Shine Shetty's Season 7 run is the most complete game on this list. 112 days and he never looked like losing the finale."],
+      ["Imran", 18, 96, "Team Roopesh", -1, "Roopesh Shetty topped the OTT edition and then won Season 9 back-to-back, with the same runner-up both times. Nobody in any language has done that."],
+      ["Kavita", 26, 84, "Team Gilli", -1, "Gilli Nata survived the biggest house of all — 24 housemates in Season 12 — and a season that was shut down for a day and restarted. Newest winner, toughest road."],
+      ["Rohan", 34, 71, "Team Chandan", 0, "1547 vs 1389 in this poll right now. Chandan vs Shine is the real Kannada debate and it is close."],
+      ["Deepak", 43, 63, null, -1, "Respect to Vijay Raghavendra, the first name on this list. Season 1 in the Lonavala house started everything in 2013."],
+      ["Simran", 52, 55, "Team Hanumantha", -1, "A shepherd and folk singer entered as a wild card on Day 21 and won Season 11. Hanumantha Lamani's story is the best story on this whole list."],
+      ["Harsh", 61, 47, "Team Manju", -1, "Manju Pavagada won a season that COVID broke into two innings. Coming back after a suspension and still winning takes something extra."],
+      ["Ananya", 73, 42, "Team Pratham", -1, "Pratham's Season 4 ran 112 days after a mid-season extension and he still outlasted everyone. Underrated winner."],
+      ["Tarun", 86, 37, null, -1, "Thirteen editions and Kichcha Sudeepa has hosted every one of them. The winners changed, the host never did."],
+      ["Wasim", 97, 30, "Team Roopesh", -1, "The OTT label says Top Performer, not winner — and then he went and won the real thing in Season 9 anyway. Debate settled."],
+      ["Riya", 110, 26, "Team Vijay", -1, "Twelve winners, one Top Performer, one host. Kannada fans will argue this list forever, and that is exactly how it should be."],
+    ],
+  },
   "bigg-boss-20-voting": {
     pinned: ["Sagar", "Qazi Touqeer is topping every poll on this site for a reason — BB20 belongs to him right now. But this house flips in one Weekend Ka Vaar, so keep watching."],
     comments: [
@@ -10423,6 +10651,7 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-winner-list" ? renderWinnerListSections() : ""}
     ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}
     ${poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersSections() : ""}
+    ${poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersSections() : ""}
 
     ${renderFanDebate(poll)}
 
@@ -10447,7 +10676,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : poll.slug === "bigg-boss-winner-list" ? renderWinnerListFaq() : poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersFaq() : poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersFaq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : poll.slug === "bigg-boss-winner-list" ? renderWinnerListFaq() : poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersFaq() : poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersFaq() : poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersFaq() : renderFaqSection(poll)}
   </div>
   `;
 }
