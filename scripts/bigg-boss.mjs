@@ -875,6 +875,36 @@ export const polls = [
     metaDesc: "Bigg Boss 20 Week 11 Open Poll: ten of eleven housemates nominated after the Sharbat task in Episode 72 — only Uditi Singh escaped. Back Amrapali, Arishfa, Gullu, Kanika, Love, Mahhi, Qazi, Scout or Yung in the VisitBest nominees-only Open Poll — audience sentiment only; official voting is only via JioCinema / JioHotstar as announced on air.",
   },
   {
+    slug: "bigg-boss-20-voting-week-12",
+    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    title: "Bigg Boss 20 Week 12 Voting – Open Poll (Nominations Announced Tonight, Episode 79)",
+    h1: "Bigg Boss 20 Week 12 Voting — Who Are You Backing to Stay Safe? (Open Poll)",
+    lead: "Week 12 starts with ten housemates still in the Bigg Boss 20 house — and its nominations have NOT been announced yet. The Week 12 nomination task airs in Episode 79 tonight, Monday 23 November 2026 (JioHotstar 9:00 PM IST / Colors 10:30 PM IST), and this page will be updated with the confirmed nominees right after the episode. One nomination is already certain: ScoutOP is nominated for the rest of the season under his Episode 68 punishments, so he is on the Week 12 list whatever tonight's task decides. Until the list is out, this Open Poll asks the question fans are actually arguing about — of the ten housemates left, who are you backing to stay safe this week? Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
+    heroBadge: "🗳️ WEEK 12 · NOMINATIONS TONIGHT · OPEN POLL",
+    leaderNote: "The Week 12 Open Poll opened on 23 November 2026, ahead of the nominations — standings update as readers vote in this poll. The Week 12 nominations are announced tonight in Episode 79 (Monday 23 November 2026), and this page will be updated with the confirmed nominees right after the episode. Until then, the only confirmed Week 12 nomination is ScoutOP, nominated for the rest of the season under his Episode 68 punishments. [VisitBest Open Poll votes — not official votes.]",
+    pollType: "weekly",
+    optionIds: ["amrapali-dubey", "arishfa-khan", "gullu", "kanika-mann", "love-gill", "mahhi-vij", "qazi-touqeer", "scout", "uditi-singh", "yung-dsa"],
+    voteDistribution: {
+      "qazi-touqeer": 437,
+      scout: 389,
+      gullu: 356,
+      "yung-dsa": 327,
+      "arishfa-khan": 284,
+      "kanika-mann": 253,
+      "love-gill": 229,
+      "mahhi-vij": 207,
+      "amrapali-dubey": 176,
+      "uditi-singh": 148,
+    },
+    dangerIds: [],
+    embedEyebrow: "This Week's Poll · Week 12 · Nominations Tonight",
+    embedIntro: "Week 12's nominations are announced in Episode 79 tonight (Monday 23 November 2026), so this Open Poll covers all ten housemates still in the house: who are you backing to stay safe this week? It opened on 23 November 2026, ahead of the nominations, and this page updates with the confirmed nominees right after the episode. The one nomination already confirmed is ScoutOP's — he is nominated for the rest of the season (Episode 68).",
+    openedDate: "23 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss 20 Week 12 Open Poll: the nominations are announced tonight in Episode 79 (Monday 23 November 2026) — only ScoutOP is confirmed nominated so far, for the rest of the season. Back the ten housemates still in the house in the VisitBest Open Poll — audience sentiment only; official voting is only via JioCinema / JioHotstar as announced on air.",
+  },
+  {
     slug: "bigg-boss-20-eviction-prediction-week-11",
     image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
     title: "Who Will Be Evicted in Week 11? Bigg Boss 20 Eviction Prediction Poll — Open Poll",
@@ -2195,6 +2225,7 @@ function renderPollPills(currentSlug) {
     ["bigg-boss-20-scout-shaves-head", "✂️ Scout Shaves His Head"],
     ["bigg-boss-20-weekend-ka-vaar-episodes-70-71", "📺 Weekend Ka Vaar 70–71"],
     ["bigg-boss-20-voting-week-11", "🗳️ Week 11 Voting"],
+    ["bigg-boss-20-voting-week-12", "🗳️ Week 12 Voting"],
     ["who-will-win-bigg-boss-20", "🏆 Who Will Win BB20?"],
     ["bigg-boss-20-top-5-contestants", "🔝 Top 5 Contestants"],
     ["bigg-boss-20-voting-trend", "📈 Voting Trend Today"],
@@ -2451,7 +2482,7 @@ function renderEmbeddedPoll(poll) {
           <div class="bb-card" data-contestant-id="${c.id}">
             <div class="bb-card-badge-row">
               <span class="bb-rank-tag">#${idx + 1}</span>
-              ${c.captain ? '<span class="bb-safe-captain-pill">🟢 SAFE – CAPTAIN</span>' : poll.slug === "bigg-boss-20-voting-week-11" && c.id === "arishfa-khan" ? '<span class="bb-safe-pill">🟢 SAFE — IMMUNITY WON IN EP 75</span>' : (poll.optionIds ? poll.optionIds.includes(c.id) : c.nominated) ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : '<span class="bb-safe-pill">🟢 SAFE</span>'}
+              ${c.captain ? '<span class="bb-safe-captain-pill">🟢 SAFE – CAPTAIN</span>' : poll.slug === "bigg-boss-20-voting-week-11" && c.id === "arishfa-khan" ? '<span class="bb-safe-pill">🟢 SAFE — IMMUNITY WON IN EP 75</span>' : poll.slug === "bigg-boss-20-voting-week-12" && c.id === "scout" ? '<span class="bb-nom-pill">🔴 NOMINATED — REST OF SEASON</span>' : poll.slug === "bigg-boss-20-voting-week-12" ? '<span class="bb-safe-pill">🟡 NOMINATIONS TONIGHT</span>' : (poll.optionIds ? poll.optionIds.includes(c.id) : c.nominated) ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : '<span class="bb-safe-pill">🟢 SAFE</span>'}
             </div>
             ${(poll.textOnlyIds || []).includes(c.id) ? "" : `<div class="bb-card-media">
               ${c.image ? `<img src="${c.image}" alt="${c.name} Bigg Boss 20" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${c.name}">Photo coming soon</span>`}
@@ -2637,7 +2668,7 @@ function renderPollCards(poll) {
           <div class="bb-card ${idx < 4 ? "bb-top-card" : ""}" data-contestant-id="${c.id}">
             <div class="bb-card-badge-row">
               <span class="bb-rank-tag">${idx === 0 ? "🥇 #1 🔥 LEADING" : idx === 1 ? "🥈 #2 ⚡ CLOSE BEHIND" : idx === 2 ? "🥉 #3 👑 POPULAR" : idx === 3 ? "4️⃣ #4 🎤 TOP TIER" : "#" + (idx + 1)}</span>
-              ${c.removed ? '<span class="bb-nom-pill">⛔ REMOVED</span>' : c.status === "reported-evicted" ? '<span class="bb-nom-pill">🟠 REPORTED EVICTED (UNCONFIRMED)</span>' : c.evicted ? '<span class="bb-nom-pill">❌ EVICTED</span>' : c.left ? '<span class="bb-nom-pill">⬅️ LEFT THE HOUSE — MEDICAL EXIT</span>' : c.captain ? '<span class="bb-safe-captain-pill">🟢 SAFE – CAPTAIN</span>' : (poll.optionIds ? poll.optionIds.includes(c.id) : c.nominated) ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : '<span class="bb-safe-pill">🟢 SAFE</span>'}
+              ${c.removed ? '<span class="bb-nom-pill">⛔ REMOVED</span>' : c.status === "reported-evicted" ? '<span class="bb-nom-pill">🟠 REPORTED EVICTED (UNCONFIRMED)</span>' : c.evicted ? '<span class="bb-nom-pill">❌ EVICTED</span>' : c.left ? '<span class="bb-nom-pill">⬅️ LEFT THE HOUSE — MEDICAL EXIT</span>' : c.captain ? '<span class="bb-safe-captain-pill">🟢 SAFE – CAPTAIN</span>' : poll.slug === "bigg-boss-20-voting-week-12" && c.id === "scout" ? '<span class="bb-nom-pill">🔴 NOMINATED — REST OF SEASON</span>' : poll.slug === "bigg-boss-20-voting-week-12" ? '<span class="bb-safe-pill">🟡 NOMINATIONS TONIGHT</span>' : (poll.optionIds ? poll.optionIds.includes(c.id) : c.nominated) ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : '<span class="bb-safe-pill">🟢 SAFE</span>'}
             </div>
             <div class="bb-card-media">
               ${c.image && !(poll.textOnlyIds || []).includes(c.id) ? `<img src="${c.image}" alt="${c.name} Bigg Boss 20" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${c.name}">Photo coming soon</span>`}
@@ -3611,6 +3642,114 @@ function renderWeek11VotingSections() {
   );
 }
 
+function renderWeek12VotingSections() {
+  return (
+    storySection(
+      "Quick Answer",
+      "Week 12 nominations — announced tonight in Episode 79",
+      `<p><strong>The Week 12 nominations have not been announced yet.</strong> Ten housemates are still in the Bigg Boss 20 house, and the Week 12 nomination task airs in <strong>Episode 79 tonight, Monday 23 November 2026</strong> (JioHotstar 9:00 PM IST / Colors 10:30 PM IST). This page will be updated with the confirmed nominees right after the episode.</p>
+    <p><strong>The one nomination already confirmed:</strong> ScoutOP. Under the punishments announced in Episode 68, he is nominated for the rest of the season — so whatever tonight's task decides, his name is already on the Week 12 list. No other Week 12 nomination is confirmed, and none will be reported here until it is announced on air.</p>
+    <p><strong>Where Week 11 left the house:</strong> no vote eviction — Manish Goel left on medical grounds (severe leg injury), Mahhi Vij is safe, and Uditi Singh is the house captain (Episode 74).</p>
+    ${renderPortraitStrip(["scout"])}`
+    ) +
+    storySection(
+      "Still in the House",
+      "The 10 housemates going into Week 12",
+      `<p>Ten housemates remain. Until tonight's task, only ScoutOP's nomination is confirmed — every other housemate below is in the house and waiting on Episode 79:</p>
+    ${renderPortraitStrip(["amrapali-dubey", "arishfa-khan", "gullu", "kanika-mann", "love-gill", "mahhi-vij", "qazi-touqeer", "scout", "uditi-singh", "yung-dsa"])}
+    <div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Housemate</th><th>Week 12 status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Aamrapali Dubey</strong></td><td>In the house. Nominated in Week 11 and survived it; her Week 12 nomination is decided in tonight's task.</td></tr>
+          <tr><td><strong>Arishfa Khan</strong></td><td>In the house. Won safety in the Episode 75 immunity task after being nominated in Week 11; Week 12 is decided tonight.</td></tr>
+          <tr><td><strong>Gullu (Kushal Tanwar)</strong></td><td>In the house. Nominated in Week 11; Week 12 decided tonight.</td></tr>
+          <tr><td><strong>Kanika Mann</strong></td><td>In the house. Nominated in Week 11; Week 12 decided tonight.</td></tr>
+          <tr><td><strong>Love Gill</strong></td><td>In the house. Drew the most nominations (6) in the Week 11 Sharbat task; Week 12 decided tonight.</td></tr>
+          <tr><td><strong>Mahhi Vij</strong></td><td>In the house. Safe in Week 11 — no vote eviction took place; Week 12 decided tonight.</td></tr>
+          <tr><td><strong>Qazi Touqeer</strong></td><td>In the house. Nominated in Week 11; Week 12 decided tonight.</td></tr>
+          <tr><td><strong>ScoutOP</strong></td><td><strong>Nominated — for the rest of the season</strong> under his Episode 68 punishments. The one confirmed Week 12 nomination.</td></tr>
+          <tr><td><strong>Uditi Singh</strong></td><td>In the house — and the house captain (won the captaincy task in Episode 74). Her Week 12 nomination is decided in tonight's task.</td></tr>
+          <tr><td><strong>Yung DSA</strong></td><td>In the house. Nominated in Week 11; Week 12 decided tonight.</td></tr>
+        </tbody>
+      </table>
+    </div>`
+    ) +
+    storySection(
+      "How Week 11 Ended",
+      "No eviction, a medical exit, and a captain in place",
+      `<p>Week 11's nominations came from the Sharbat Nomination Task in Episode 72 (16 November 2026): ten of the eleven housemates were nominated and only Uditi Singh escaped. Arishfa Khan then won safety in the Episode 75 team immunity task (19 November 2026), leaving nine in the vote.</p>
+    <p>At the Weekend Ka Vaar (Episode 76, Saturday 21 November 2026) there was <strong>no vote eviction</strong>. Manish Goel left the house on medical grounds, after a severe leg injury — Salman Khan clarified on air that the departure was about his health, not about low votes. Mahhi Vij, who had been in the danger conversation all week, is safe. Ten housemates went into Week 12, with Uditi Singh — captain since Episode 74 — running the house.</p>`
+    ) +
+    storySection(
+      "What Happens Next",
+      "Nominations tonight, then the Week 12 vote",
+      `<p><strong>Tonight:</strong> the Week 12 nomination task airs in Episode 79 (Monday 23 November 2026 — JioHotstar 9:00 PM IST / Colors 10:30 PM IST). The moment the nominations are confirmed on air, this page is updated with the full list — until then, treat any Week 12 nomination list published elsewhere as unconfirmed.</p>
+    <p><strong>After that:</strong> the nominated housemates face the official public vote, opened by the show only on JioCinema / JioHotstar inside the window announced on air, and the week ends at the next Weekend Ka Vaar. The Open Poll at the top of this page stays open throughout — it is audience sentiment only and does not decide who is nominated or evicted.</p>`
+    ) +
+    storySection(
+      "Keep Reading",
+      "More Bigg Boss 20 pages",
+      `<ul>
+      <li><a href="/bigg-boss-20-voting/"><strong>Bigg Boss 20 Weekly Voting Hub</strong></a> — the season Open Poll, this week's panel and the week-by-week archives.</li>
+      <li><a href="/bigg-boss-20-voting-week-11/"><strong>Week 11 Voting</strong></a> — last week's nominees Open Poll and how the Sharbat task week ended.</li>
+      <li><a href="/bigg-boss-20-eviction-list/"><strong>Bigg Boss 20 Eviction List</strong></a> — every confirmed exit of the season, week by week.</li>
+    </ul>`
+    )
+  );
+}
+
+function renderWeek12Faq() {
+  const poll = pollBySlug.get("bigg-boss-20-voting-week-12");
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss 20 Week 12 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Have the Week 12 nominations been announced?</summary>
+        <div class="bb-faq-body">
+          <p>Not yet — they are announced in Episode 79 tonight (Monday 23 November 2026, on JioHotstar at 9:00 PM IST and Colors at 10:30 PM IST), and this page is updated right after the episode with the confirmed list.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who is already nominated in Week 12?</summary>
+        <div class="bb-faq-body">
+          <p>Only ScoutOP. Bigg Boss announced in Episode 68 that he is nominated for the rest of the season, so his place on the Week 12 list is already confirmed. Every other Week 12 nomination is decided in tonight's Episode 79 task — no other name is confirmed, and this page does not guess.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who is currently leading the Week 12 Open Poll?</summary>
+        <div class="bb-faq-body">
+          <p>${poll.leaderNote} This is Open Poll audience sentiment only — it is not official voting and does not decide evictions.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>How does official Bigg Boss 20 voting work, and how is it different from the VisitBest poll?</summary>
+        <div class="bb-faq-body">
+          <p>Official voting, where opened by the show, is only through the official platform — JioCinema / JioHotstar — as announced on Colors TV / JioHotstar during the episode, under the rules and limits shown there. The VisitBest Open Poll is separate: it is an opinion poll for audience sentiment only, it is not official voting, and it does not decide nominations or evictions.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>How did Week 11 end?</summary>
+        <div class="bb-faq-body">
+          <p>With no vote eviction. At the Weekend Ka Vaar of 21 November 2026, Manish Goel left the house on medical grounds (severe leg injury) — Salman Khan clarified on air that it was his health, not low votes — and Mahhi Vij is safe. Ten housemates remain.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>When will this page be updated?</summary>
+        <div class="bb-faq-body">
+          <p>Tonight, right after Episode 79 airs and the Week 12 nominations are confirmed on air. The confirmed nominees will replace the pre-nomination framing on this page; the Open Poll stays open.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
 function renderWhoWillWinSections() {
   const qazi = contestantById.get("qazi-touqeer");
   const yung = contestantById.get("yung-dsa");
@@ -4478,6 +4617,12 @@ function renderVotingHubSections() {
           <h3>Bigg Boss 20 Voting Hub</h3>
           <p>The season Open Poll, this week's panel, the prediction scorecard and the archives.</p>
           <span class="bb-related-link">Open the hub →</span>
+        </a>
+        <a class="bb-related-card" href="/bigg-boss-20-voting-week-12/">
+          <span class="bb-related-emoji">🗳️</span>
+          <h3>Week 12 Voting</h3>
+          <p>The Week 12 Open Poll — nominations are announced tonight in Episode 79, and the page updates right after.</p>
+          <span class="bb-related-link">Open the Week 12 page →</span>
         </a>
         <a class="bb-related-card" href="/bigg-boss-20-voting-trend/">
           <span class="bb-related-emoji">📈</span>
@@ -10697,6 +10842,25 @@ const DEBATE_MARQUEE = {
       ["Tanvi", 145, 44, null, -1, "Kanika Mann is quietly building the most loyal small fandom of BB20. Dark horse, mark it."],
     ],
   },
+  "bigg-boss-20-voting-week-12": {
+    pinned: ["Rohan", "Nomination night is the real Weekend Ka Vaar. Tonight's list decides Week 12 — and ScoutOP is already on it without even playing the task. Who joins him?"],
+    comments: [
+      ["Neeraj", 5, 118, "Team Scout", -1, "ScoutOP has been nominated since Episode 68 and he is STILL here. Season-long nomination and the man refuses to leave. Respect."],
+      ["Priya", 11, 87, null, -1, "Uditi's first full week as captain. How tonight's nomination task runs will tell us whether Episode 74 changed her game or not."],
+      ["Farhan", 18, 64, "Team Mahhi", -1, "Mahhi survived Week 10 on a lifeline and Week 11 ended with no eviction at all. Luck or game? Either way, she is still standing."],
+      ["Deepak", 26, 92, "Team Scout", 0, "And he cannot hide behind the task either — Scout is already nominated, so every other name on tonight's list is fresh drama."],
+      ["Simran", 34, 58, null, -1, "Arishfa won safety in Episode 75 last week. This week there is no immunity result yet — she is back in the same boat as everyone else."],
+      ["Rahul", 43, 73, "Team Gullu", -1, "My prediction for tonight: the house gangs up on the strong players. Qazi, Gullu and Yung fans should be ready to vote this week."],
+      ["Kavita", 52, 49, null, -1, "Manish leaving on medical grounds changed the whole maths of this house. Ten left, and every nomination from here is a finale-week move."],
+      ["Akash", 61, 81, "Team Yung", -1, "Yung vs Scout on the nomination list together again? This season keeps writing the same rivalry in new ways."],
+      ["Anjali", 70, 55, null, -1, "Kanika keeps landing in nominations and keeps surviving them. Quietly the most battle-tested player left in the house."],
+      ["Vikram", 84, 67, "Team Qazi", -1, "Qazi leads every poll on this site. If the house nominates him tonight, his fans will treat it like a finale vote."],
+      ["Neha", 97, 43, null, -1, "Love Gill drew the most nominations in the Sharbat task. Tonight will show whether the house still sees her as the easy name."],
+      ["Mohit", 110, 71, "Team Scout", -1, "Imagine being nominated for the REST OF THE SEASON and still being top two in the backing poll. Scout's army is built different."],
+      ["Ritu", 126, 38, null, -1, "Ten housemates, one confirmed nomination, and a task tonight that can put anyone on the list. Best week of the season loading…"],
+      ["Sahil", 141, 52, "Team Yung", -1, "Whoever gets nominated tonight, the eviction vote after it is where the real war starts. Saving my votes."],
+    ],
+  },
 };
 
 // ----- Debate template banks (placeholders: {W} winner, {R} 1st RU,
@@ -11125,7 +11289,7 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-20-eviction-list" ? renderEvictionListSections() : ""}
     ${poll.slug === "bigg-boss-20-scout-shaves-head" ? renderScoutHeadShaveSections() : ""}
     ${poll.slug === "bigg-boss-20-weekend-ka-vaar-episodes-70-71" ? renderWkvWeek10Sections() : ""}
-    ${poll.slug === "bigg-boss-20-voting-week-11" ? renderWeek11VotingSections() : ""}
+    ${poll.slug === "bigg-boss-20-voting-week-11" ? renderWeek11VotingSections() : ""}${poll.slug === "bigg-boss-20-voting-week-12" ? renderWeek12VotingSections() : ""}
     ${poll.slug === "who-will-win-bigg-boss-20" ? renderWhoWillWinSections() : ""}
     ${poll.slug === "bigg-boss-voting" ? renderVotingHubSections() : ""}
     ${poll.slug === "bigg-boss-17-voting" ? renderSeason17Sections() : ""}
@@ -11180,7 +11344,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : poll.slug === "bigg-boss-winner-list" ? renderWinnerListFaq() : poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersFaq() : poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersFaq() : poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersFaq() : poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersFaq() : poll.slug === "bigg-boss-17-winner-2024-vote-list" ? renderBB17VoteListFaq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : poll.slug === "bigg-boss-winner-list" ? renderWinnerListFaq() : poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersFaq() : poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersFaq() : poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersFaq() : poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersFaq() : poll.slug === "bigg-boss-17-winner-2024-vote-list" ? renderBB17VoteListFaq() : poll.slug === "bigg-boss-20-voting-week-12" ? renderWeek12Faq() : renderFaqSection(poll)}
   </div>
   `;
 }
