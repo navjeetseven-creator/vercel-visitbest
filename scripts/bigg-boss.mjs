@@ -877,32 +877,28 @@ export const polls = [
   {
     slug: "bigg-boss-20-voting-week-12",
     image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
-    title: "Bigg Boss 20 Week 12 Voting – Open Poll (Nominations Not Yet Announced)",
-    h1: "Bigg Boss 20 Week 12 Voting — Who Are You Backing to Stay Safe? (Open Poll)",
-    lead: "Week 12 starts with ten housemates still in the Bigg Boss 20 house — and its nominations have NOT been announced yet. Episode 79 on Monday 23 November 2026 held no nomination task — it was the BB 20 Show entertainment task, and the house won 84% of its ration on the performances. The Week 12 nominations are still to be announced, and this page will be updated with the confirmed nominees once they are announced on air. One nomination is already certain: ScoutOP is nominated for the rest of the season under his Episode 68 punishments, so he is on the Week 12 list whatever the nomination task decides. Until the list is out, this Open Poll asks the question fans are actually arguing about — of the ten housemates left, who are you backing to stay safe this week? Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
-    heroBadge: "🗳️ WEEK 12 · NOMINATIONS AWAITED · OPEN POLL",
-    leaderNote: "The Week 12 Open Poll opened on 23 November 2026, ahead of the nominations — standings update as readers vote in this poll. Episode 79 (Monday 23 November 2026) held no nomination task — it was the BB 20 Show entertainment task, and the house won 84% of its ration. The Week 12 nominations are still to be announced, and this page will be updated with the confirmed nominees once they are announced on air. Until then, the only confirmed Week 12 nomination is ScoutOP, nominated for the rest of the season under his Episode 68 punishments. [VisitBest Open Poll votes — not official votes.]",
+    title: "Bigg Boss 20 Week 12 Voting – Nominees Open Poll (Episode 80 Nominations)",
+    h1: "Bigg Boss 20 Week 12 Voting — Nominees Open Poll",
+    lead: "Week 12: six of the ten housemates still in the Bigg Boss 20 house were nominated in the nomination task in Episode 80 (Tuesday 24 November 2026) — ScoutOP, Love Gill, Kanika Mann, Gullu, Mahhi Vij and Aamrapali Dubey. ScoutOP was already nominated for the rest of the season under his Episode 68 punishments, and like captain Uditi Singh he did not take part in the task. Yung DSA, Arishfa Khan, Qazi Touqeer and captain Uditi Singh are safe this week. The list landed a day later than first expected — Episode 79 (Monday 23 November 2026) held no nomination task. This VisitBest Open Poll covers this week's six nominees: who are you backing to survive the Week 12 vote? Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
+    heroBadge: "🗳️ WEEK 12 · NOMINATIONS ANNOUNCED · OPEN POLL",
+    leaderNote: "The Week 12 nominees Open Poll opened on 23 November 2026, ahead of the nominations, covering all ten housemates; it now covers the six confirmed nominees only — standings update as readers vote in this poll. The nominations were announced in Episode 80 (Tuesday 24 November 2026): ScoutOP, Love Gill, Kanika Mann, Gullu, Mahhi Vij and Aamrapali Dubey are nominated, and Yung DSA, Arishfa Khan, Qazi Touqeer and captain Uditi Singh are safe. ScoutOP was already nominated for the rest of the season under his Episode 68 punishments. [VisitBest Open Poll votes — not official votes.]",
     pollType: "weekly",
-    optionIds: ["amrapali-dubey", "arishfa-khan", "gullu", "kanika-mann", "love-gill", "mahhi-vij", "qazi-touqeer", "scout", "uditi-singh", "yung-dsa"],
+    optionIds: ["amrapali-dubey", "gullu", "kanika-mann", "love-gill", "mahhi-vij", "scout"],
     voteDistribution: {
-      "qazi-touqeer": 437,
       scout: 389,
       gullu: 356,
-      "yung-dsa": 327,
-      "arishfa-khan": 284,
       "kanika-mann": 253,
       "love-gill": 229,
       "mahhi-vij": 207,
       "amrapali-dubey": 176,
-      "uditi-singh": 148,
     },
     dangerIds: [],
-    embedEyebrow: "This Week's Poll · Week 12 · Nominations Awaited",
-    embedIntro: "Week 12's nominations have not been announced yet — Episode 79 (Monday 23 November 2026) held no nomination task, so this Open Poll covers all ten housemates still in the house: who are you backing to stay safe this week? It opened on 23 November 2026, ahead of the nominations, and this page updates with the confirmed nominees once they are announced on air. The one nomination already confirmed is ScoutOP's — he is nominated for the rest of the season (Episode 68).",
+    embedEyebrow: "This Week's Poll · Week 12 · Nominees Only",
+    embedIntro: "This week's Open Poll is restricted to the six housemates nominated in Week 12 — ScoutOP, Love Gill, Kanika Mann, Gullu, Mahhi Vij and Aamrapali Dubey, nominated in the Episode 80 task (Tuesday 24 November 2026). Yung DSA, Arishfa Khan, Qazi Touqeer and captain Uditi Singh are safe this week and are not on the list. The poll opened on 23 November 2026, ahead of the nominations, and now covers the confirmed nominees only.",
     openedDate: "23 NOVEMBER 2026",
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
-    metaDesc: "Bigg Boss 20 Week 12 Open Poll: Episode 79 (Monday 23 November 2026) held no nomination task, so the nominations are still to be announced — only ScoutOP is confirmed nominated so far, for the rest of the season. Back the ten housemates still in the house in the VisitBest Open Poll — audience sentiment only; official voting is only via JioCinema / JioHotstar as announced on air.",
+    metaDesc: "Bigg Boss 20 Week 12 Open Poll: six housemates nominated in Episode 80 (Tuesday 24 November 2026) — ScoutOP, Love Gill, Kanika Mann, Gullu, Mahhi Vij and Aamrapali Dubey. Back your favourite in the VisitBest nominees Open Poll — audience sentiment only; official voting is only via JioCinema / JioHotstar as announced on air.",
   },
   {
     slug: "bigg-boss-20-eviction-prediction-week-11",
@@ -2482,7 +2478,7 @@ function renderEmbeddedPoll(poll) {
           <div class="bb-card" data-contestant-id="${c.id}">
             <div class="bb-card-badge-row">
               <span class="bb-rank-tag">#${idx + 1}</span>
-              ${c.captain ? '<span class="bb-safe-captain-pill">🟢 SAFE – CAPTAIN</span>' : poll.slug === "bigg-boss-20-voting-week-11" && c.id === "arishfa-khan" ? '<span class="bb-safe-pill">🟢 SAFE — IMMUNITY WON IN EP 75</span>' : poll.slug === "bigg-boss-20-voting-week-12" && c.id === "scout" ? '<span class="bb-nom-pill">🔴 NOMINATED — REST OF SEASON</span>' : poll.slug === "bigg-boss-20-voting-week-12" ? '<span class="bb-safe-pill">🟡 NOMINATIONS AWAITED</span>' : (poll.optionIds ? poll.optionIds.includes(c.id) : c.nominated) ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : '<span class="bb-safe-pill">🟢 SAFE</span>'}
+              ${c.captain ? '<span class="bb-safe-captain-pill">🟢 SAFE – CAPTAIN</span>' : poll.slug === "bigg-boss-20-voting-week-11" && c.id === "arishfa-khan" ? '<span class="bb-safe-pill">🟢 SAFE — IMMUNITY WON IN EP 75</span>' : poll.slug === "bigg-boss-20-voting-week-12" && c.id === "scout" ? '<span class="bb-nom-pill">🔴 NOMINATED — REST OF SEASON</span>' : poll.slug === "bigg-boss-20-voting-week-12" && ["amrapali-dubey", "gullu", "kanika-mann", "love-gill", "mahhi-vij"].includes(c.id) ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : poll.slug === "bigg-boss-20-voting-week-12" ? '<span class="bb-safe-pill">🟢 SAFE</span>' : (poll.optionIds ? poll.optionIds.includes(c.id) : c.nominated) ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : '<span class="bb-safe-pill">🟢 SAFE</span>'}
             </div>
             ${(poll.textOnlyIds || []).includes(c.id) ? "" : `<div class="bb-card-media">
               ${c.image ? `<img src="${c.image}" alt="${c.name} Bigg Boss 20" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${c.name}">Photo coming soon</span>`}
@@ -2668,7 +2664,7 @@ function renderPollCards(poll) {
           <div class="bb-card ${idx < 4 ? "bb-top-card" : ""}" data-contestant-id="${c.id}">
             <div class="bb-card-badge-row">
               <span class="bb-rank-tag">${idx === 0 ? "🥇 #1 🔥 LEADING" : idx === 1 ? "🥈 #2 ⚡ CLOSE BEHIND" : idx === 2 ? "🥉 #3 👑 POPULAR" : idx === 3 ? "4️⃣ #4 🎤 TOP TIER" : "#" + (idx + 1)}</span>
-              ${c.removed ? '<span class="bb-nom-pill">⛔ REMOVED</span>' : c.status === "reported-evicted" ? '<span class="bb-nom-pill">🟠 REPORTED EVICTED (UNCONFIRMED)</span>' : c.evicted ? '<span class="bb-nom-pill">❌ EVICTED</span>' : c.left ? '<span class="bb-nom-pill">⬅️ LEFT THE HOUSE — MEDICAL EXIT</span>' : c.captain ? '<span class="bb-safe-captain-pill">🟢 SAFE – CAPTAIN</span>' : poll.slug === "bigg-boss-20-voting-week-12" && c.id === "scout" ? '<span class="bb-nom-pill">🔴 NOMINATED — REST OF SEASON</span>' : poll.slug === "bigg-boss-20-voting-week-12" ? '<span class="bb-safe-pill">🟡 NOMINATIONS AWAITED</span>' : (poll.optionIds ? poll.optionIds.includes(c.id) : c.nominated) ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : '<span class="bb-safe-pill">🟢 SAFE</span>'}
+              ${c.removed ? '<span class="bb-nom-pill">⛔ REMOVED</span>' : c.status === "reported-evicted" ? '<span class="bb-nom-pill">🟠 REPORTED EVICTED (UNCONFIRMED)</span>' : c.evicted ? '<span class="bb-nom-pill">❌ EVICTED</span>' : c.left ? '<span class="bb-nom-pill">⬅️ LEFT THE HOUSE — MEDICAL EXIT</span>' : c.captain ? '<span class="bb-safe-captain-pill">🟢 SAFE – CAPTAIN</span>' : poll.slug === "bigg-boss-20-voting-week-12" && c.id === "scout" ? '<span class="bb-nom-pill">🔴 NOMINATED — REST OF SEASON</span>' : poll.slug === "bigg-boss-20-voting-week-12" && ["amrapali-dubey", "gullu", "kanika-mann", "love-gill", "mahhi-vij"].includes(c.id) ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : poll.slug === "bigg-boss-20-voting-week-12" ? '<span class="bb-safe-pill">🟢 SAFE</span>' : (poll.optionIds ? poll.optionIds.includes(c.id) : c.nominated) ? '<span class="bb-nom-pill">🔴 NOMINATED</span>' : '<span class="bb-safe-pill">🟢 SAFE</span>'}
             </div>
             <div class="bb-card-media">
               ${c.image && !(poll.textOnlyIds || []).includes(c.id) ? `<img src="${c.image}" alt="${c.name} Bigg Boss 20" loading="lazy" decoding="async">` : `<span class="bb-img-placeholder" aria-label="No photo yet for ${c.name}">Photo coming soon</span>`}
@@ -3646,16 +3642,16 @@ function renderWeek12VotingSections() {
   return (
     storySection(
       "Quick Answer",
-      "Week 12 nominations — not announced yet",
-      `<p><strong>The Week 12 nominations have not been announced yet.</strong> Ten housemates are still in the Bigg Boss 20 house. <strong>Episode 79, Monday 23 November 2026,</strong> held no nomination task — it was the BB 20 Show entertainment task, and the house won 84% of its ration on the performances. The Week 12 nominations are still to be announced, and this page will be updated with the confirmed nominees once they are announced on air.</p>
-    <p><strong>The one nomination already confirmed:</strong> ScoutOP. Under the punishments announced in Episode 68, he is nominated for the rest of the season — so whatever the nomination task decides, his name is already on the Week 12 list. No other Week 12 nomination is confirmed, and none will be reported here until it is announced on air.</p>
+      "Week 12 nominations — announced in Episode 80",
+      `<p><strong>The Week 12 nominations were announced in Episode 80, Tuesday 24 November 2026.</strong> Six of the ten housemates still in the Bigg Boss 20 house are nominated this week: <strong>ScoutOP, Love Gill, Kanika Mann, Gullu, Mahhi Vij and Aamrapali Dubey</strong>. Yung DSA, Arishfa Khan, Qazi Touqeer and captain Uditi Singh are safe.</p>
+    <p><strong>ScoutOP was already on the list:</strong> under the punishments announced in Episode 68, he is nominated for the rest of the season — and like the captain, he did not take part in the Episode 80 nomination task. Episode 79 (Monday 23 November 2026) had held no nomination task, which is why the confirmed list arrived a day later than first expected.</p>
     <p><strong>Where Week 11 left the house:</strong> no vote eviction — Manish Goel left on medical grounds (severe leg injury), Mahhi Vij is safe, and Uditi Singh is the house captain (Episode 74).</p>
-    ${renderPortraitStrip(["scout"])}`
+    ${renderPortraitStrip(["scout", "love-gill", "kanika-mann", "gullu", "mahhi-vij", "amrapali-dubey"])}`
     ) +
     storySection(
       "Still in the House",
       "The 10 housemates going into Week 12",
-      `<p>Ten housemates remain. Only ScoutOP's nomination is confirmed — every other housemate below is in the house and waiting on the nomination task, which Episode 79 did not hold:</p>
+      `<p>Ten housemates remain. The Week 12 nominations were announced in Episode 80 (Tuesday 24 November 2026) — six housemates are nominated and four are safe:</p>
     ${renderPortraitStrip(["amrapali-dubey", "arishfa-khan", "gullu", "kanika-mann", "love-gill", "mahhi-vij", "qazi-touqeer", "scout", "uditi-singh", "yung-dsa"])}
     <div class="table-scroll">
       <table class="bb-leaderboard-table">
@@ -3663,16 +3659,16 @@ function renderWeek12VotingSections() {
           <tr><th>Housemate</th><th>Week 12 status</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>Aamrapali Dubey</strong></td><td>In the house. Nominated in Week 11 and survived it; her Week 12 nomination is still to be announced.</td></tr>
-          <tr><td><strong>Arishfa Khan</strong></td><td>In the house. Won safety in the Episode 75 immunity task after being nominated in Week 11; Week 12 nomination still to be announced.</td></tr>
-          <tr><td><strong>Gullu (Kushal Tanwar)</strong></td><td>In the house. Nominated in Week 11; Week 12 nomination still to be announced.</td></tr>
-          <tr><td><strong>Kanika Mann</strong></td><td>In the house. Nominated in Week 11; Week 12 nomination still to be announced.</td></tr>
-          <tr><td><strong>Love Gill</strong></td><td>In the house. Drew the most nominations (6) in the Week 11 Sharbat task; Week 12 nomination still to be announced.</td></tr>
-          <tr><td><strong>Mahhi Vij</strong></td><td>In the house. Safe in Week 11 — no vote eviction took place; Week 12 nomination still to be announced.</td></tr>
-          <tr><td><strong>Qazi Touqeer</strong></td><td>In the house. Nominated in Week 11; Week 12 nomination still to be announced.</td></tr>
-          <tr><td><strong>ScoutOP</strong></td><td><strong>Nominated — for the rest of the season</strong> under his Episode 68 punishments. The one confirmed Week 12 nomination.</td></tr>
-          <tr><td><strong>Uditi Singh</strong></td><td>In the house — and the house captain (won the captaincy task in Episode 74). Her Week 12 nomination is still to be announced.</td></tr>
-          <tr><td><strong>Yung DSA</strong></td><td>In the house. Nominated in Week 11; Week 12 nomination still to be announced.</td></tr>
+          <tr><td><strong>Aamrapali Dubey</strong></td><td>In the house — <strong>nominated in Week 12</strong> (Episode 80 task). She was also nominated in Week 11 and survived it.</td></tr>
+          <tr><td><strong>Arishfa Khan</strong></td><td>In the house — <strong>safe in Week 12</strong>. She won safety in the Episode 75 immunity task after being nominated in Week 11.</td></tr>
+          <tr><td><strong>Gullu (Kushal Tanwar)</strong></td><td>In the house — <strong>nominated in Week 12</strong> (Episode 80 task). He was also nominated in Week 11.</td></tr>
+          <tr><td><strong>Kanika Mann</strong></td><td>In the house — <strong>nominated in Week 12</strong> (Episode 80 task). She was also nominated in Week 11.</td></tr>
+          <tr><td><strong>Love Gill</strong></td><td>In the house — <strong>nominated in Week 12</strong> (Episode 80 task). In Week 11's Sharbat task he drew the most nominations (6).</td></tr>
+          <tr><td><strong>Mahhi Vij</strong></td><td>In the house — <strong>nominated in Week 12</strong> (Episode 80 task). She was safe in Week 11, when no vote eviction took place.</td></tr>
+          <tr><td><strong>Qazi Touqeer</strong></td><td>In the house — <strong>safe in Week 12</strong>. He was nominated in Week 11.</td></tr>
+          <tr><td><strong>ScoutOP</strong></td><td><strong>Nominated — for the rest of the season</strong> under his Episode 68 punishments, so he was on the Week 12 list without playing the Episode 80 task.</td></tr>
+          <tr><td><strong>Uditi Singh</strong></td><td>In the house — the house captain (won the captaincy task in Episode 74), and <strong>safe in Week 12</strong>. As captain, she did not take part in the nomination task.</td></tr>
+          <tr><td><strong>Yung DSA</strong></td><td>In the house — <strong>safe in Week 12</strong>. He was nominated in Week 11.</td></tr>
         </tbody>
       </table>
     </div>`
@@ -3685,8 +3681,8 @@ function renderWeek12VotingSections() {
     ) +
     storySection(
       "What Happens Next",
-      "Nominations still to come, then the Week 12 vote",
-      `<p><strong>Still to come:</strong> Episode 79 (Monday 23 November 2026) held no nomination task — it was the BB 20 Show entertainment task, and the house won 84% of its ration. The moment the nominations are confirmed on air in a coming episode, this page is updated with the full list — until then, treat any Week 12 nomination list published elsewhere as unconfirmed.</p>
+      "The Week 12 vote, then Weekend Ka Vaar",
+      `<p><strong>The nominations are in:</strong> Episode 80 (Tuesday 24 November 2026) held the Week 12 nomination task, a day after Episode 79 passed with no nomination task at all. Six housemates — ScoutOP, Love Gill, Kanika Mann, Gullu, Mahhi Vij and Aamrapali Dubey — now face the Week 12 vote, and this page carries the confirmed list.</p>
     <p><strong>After that:</strong> the nominated housemates face the official public vote, opened by the show only on JioCinema / JioHotstar inside the window announced on air, and the week ends at the next Weekend Ka Vaar. The Open Poll at the top of this page stays open throughout — it is audience sentiment only and does not decide who is nominated or evicted.</p>`
     ) +
     storySection(
@@ -3713,13 +3709,13 @@ function renderWeek12Faq() {
       <details class="bb-faq-item" open>
         <summary>Have the Week 12 nominations been announced?</summary>
         <div class="bb-faq-body">
-          <p>Not yet. Episode 79 (Monday 23 November 2026) held no nomination task — it was the BB 20 Show entertainment task, and the house won 84% of its ration. This page is updated once the nominations are confirmed on air in a coming episode.</p>
+          <p>Yes — they were announced in Episode 80 on Tuesday 24 November 2026. Six housemates are nominated in Week 12: ScoutOP, Love Gill, Kanika Mann, Gullu, Mahhi Vij and Aamrapali Dubey. Yung DSA, Arishfa Khan, Qazi Touqeer and captain Uditi Singh are safe. Episode 79 (Monday 23 November 2026) had held no nomination task, so the confirmed list arrived a day later than first expected.</p>
         </div>
       </details>
       <details class="bb-faq-item">
-        <summary>Who is already nominated in Week 12?</summary>
+        <summary>Who is nominated in Week 12?</summary>
         <div class="bb-faq-body">
-          <p>Only ScoutOP. Bigg Boss announced in Episode 68 that he is nominated for the rest of the season, so his place on the Week 12 list is already confirmed. Every other Week 12 nomination is decided in the nomination task, which Episode 79 did not hold — no other name is confirmed, and this page does not guess.</p>
+          <p>Six housemates: ScoutOP, Love Gill, Kanika Mann, Gullu, Mahhi Vij and Aamrapali Dubey. ScoutOP's place was settled first — Bigg Boss announced in Episode 68 that he is nominated for the rest of the season — and the other five were nominated in the Episode 80 task. ScoutOP, like captain Uditi Singh, did not take part in the task itself.</p>
         </div>
       </details>
       <details class="bb-faq-item">
@@ -3743,7 +3739,7 @@ function renderWeek12Faq() {
       <details class="bb-faq-item">
         <summary>When will this page be updated?</summary>
         <div class="bb-faq-body">
-          <p>Once the Week 12 nominations are confirmed on air in a coming episode. The confirmed nominees will replace the pre-nomination framing on this page; the Open Poll stays open.</p>
+          <p>It already has been: this page was updated with the confirmed nominees once they were announced in Episode 80 (Tuesday 24 November 2026). It will be updated again with the Week 12 result once that is confirmed on air; the Open Poll stays open.</p>
         </div>
       </details>
     </div>
@@ -4621,7 +4617,7 @@ function renderVotingHubSections() {
         <a class="bb-related-card" href="/bigg-boss-20-voting-week-12/">
           <span class="bb-related-emoji">🗳️</span>
           <h3>Week 12 Voting</h3>
-          <p>The Week 12 Open Poll — nominations are still to be announced (Episode 79 held no nomination task), and the page updates once they are confirmed on air.</p>
+          <p>The Week 12 Open Poll — six housemates were nominated in Episode 80 (ScoutOP, Love Gill, Kanika Mann, Gullu, Mahhi Vij and Aamrapali Dubey), and the poll now covers the nominees.</p>
           <span class="bb-related-link">Open the Week 12 page →</span>
         </a>
         <a class="bb-related-card" href="/bigg-boss-20-voting-trend/">
