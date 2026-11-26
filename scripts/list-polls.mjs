@@ -1148,6 +1148,65 @@ const trSections = `
 <p>Honourable mentions: Tuba Büyüküstün, nominated for an International Emmy for <em>20 Dakika</em> and still leading films in 2026; Fahriye Evcen, the <em>Çalıkuşu</em> and <em>Alparslan</em> star; and Sinem Kobal, a leading lady since her teens.</p>
 `;
 
+const ruSections = `
+<p>Russian cinema has produced some of the most striking screen faces in the world, and its leading ladies move between Moscow premieres, European festivals and Hollywood sets. This ranking weighs the complete package: a face the camera loves, the defining roles, the major honours and where each career stands today. Every fact and date below comes from the actress's own published profile, and where a filmography has gone quiet, the profile says so plainly.</p>
+<h2>The 10 at a Glance</h2>
+<table class="lp-table"><thead><tr><th style="background:#3b1032;color:#ffffff">Rank</th><th style="background:#3b1032;color:#ffffff">Actress</th><th style="background:#3b1032;color:#ffffff">Born</th><th style="background:#3b1032;color:#ffffff">Best known for</th></tr></thead><tbody>
+<tr><td>1</td><td>Svetlana Khodchenkova</td><td>21 January 1983, Moscow</td><td>The Wolverine; Tinker Tailor Soldier Spy</td></tr>
+<tr><td>2</td><td>Yulia Peresild</td><td>5 September 1984, Pskov</td><td>The Challenge; Battle for Sevastopol</td></tr>
+<tr><td>3</td><td>Yuliya Snigir</td><td>2 June 1983, Donskoy</td><td>The Master and Margarita; The New Pope</td></tr>
+<tr><td>4</td><td>Sasha Luss</td><td>6 June 1992, Magadan</td><td>Anna; Valerian</td></tr>
+<tr><td>5</td><td>Lyubov Aksyonova</td><td>15 March 1990, Moscow</td><td>Major Grom: Plague Doctor; Coma</td></tr>
+<tr><td>6</td><td>Elizaveta Boyarskaya</td><td>20 December 1985, Leningrad (now Saint Petersburg)</td><td>The Admiral; Anna Karenina</td></tr>
+<tr><td>7</td><td>Anna Chipovskaya</td><td>16 June 1987, Moscow</td><td>The Thaw; The Poet</td></tr>
+<tr><td>8</td><td>Aglaya Tarasova</td><td>18 April 1994, Saint Petersburg</td><td>Ice; Ice 2</td></tr>
+<tr><td>9</td><td>Kristina Asmus</td><td>14 April 1988, Korolyov</td><td>Interns; Text</td></tr>
+<tr><td>10</td><td>Stasya Miloslavskaya</td><td>4 May 1995, Moscow</td><td>The Bull; In From the Cold</td></tr>
+</tbody></table>
+<figure class="lp-figure"><img src="/assets/ru-actresses/ru-by-the-numbers.webp" alt="Russian cinema by the numbers infographic" loading="lazy"><figcaption class="lp-caption">Russian cinema, by the numbers.</figcaption></figure>
+<h2>1. Svetlana Khodchenkova</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ru-actresses/svetlana-khodchenkova-1.webp" alt="Svetlana Khodchenkova portrait" loading="lazy"><figcaption class="lp-caption">Svetlana Khodchenkova in a black suit on the red carpet.</figcaption></figure><figure class="lp-figure"><img src="/assets/ru-actresses/svetlana-khodchenkova-2.webp" alt="Svetlana Khodchenkova portrait" loading="lazy"><figcaption class="lp-caption">Svetlana Khodchenkova at the Yaga premiere.</figcaption></figure></div>
+<p><strong>Born:</strong> 21 January 1983, Moscow. <strong>Signature roles:</strong> Viper in <em>The Wolverine</em> (2013), opposite Hugh Jackman; Irina in <em>Tinker Tailor Soldier Spy</em> (2011); the leading role of Irina the Greek in <em>Viking</em> (2016); the fencer Aleksandra Pokrovskaya in <em>On the Edge</em> (2020). <strong>Honours:</strong> Honored Artist of the Russian Federation (2018); a Nika Award nomination for Best Actress for her debut, <em>Bless the Woman</em>; Best Actress at the Polish Film Festival (2008) for <em>Little Moscow</em>. <strong>Now:</strong> her latest film is <em>The Wizard of the Emerald City</em> (2025); her television work currently ends in 2023.</p>
+<h2>2. Yulia Peresild</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ru-actresses/yulia-peresild-1.webp" alt="Yulia Peresild portrait" loading="lazy"><figcaption class="lp-caption">Yulia Peresild in a black Tegin gown on the red carpet.</figcaption></figure><figure class="lp-figure"><img src="/assets/ru-actresses/yulia-peresild-2.webp" alt="Yulia Peresild portrait" loading="lazy"><figcaption class="lp-caption">Yulia Peresild at the Golden Eagle Awards.</figcaption></figure></div>
+<p><strong>Born:</strong> 5 September 1984, Pskov. <strong>Signature roles:</strong> the sniper Lyudmila Pavlichenko in <em>Battle for Sevastopol</em> (2015); Zhenya Belyaeva in <em>The Challenge</em> (2023), filmed aboard the International Space Station in October 2021 — which made her, as her profile states, the first professional actress to act in outer space. <strong>Honours:</strong> Golden Eagle Awards for <em>The Edge</em> (2010) and <em>Battle for Sevastopol</em> (2016), Best Actress at the Beijing and BRICS festivals (2015), the State Prize of the Russian Federation (2023) and the title Merited Artist of the Russian Federation (2018). <strong>Now:</strong> two films in 2025 and two more listed for 2026 — one of the busiest careers on this list.</p>
+<h2>3. Yuliya Snigir</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ru-actresses/yuliya-snigir-1.webp" alt="Yuliya Snigir portrait" loading="lazy"><figcaption class="lp-caption">2024 — Yuliya Snigir at The Master and Margarita premiere.</figcaption></figure><figure class="lp-figure"><img src="/assets/ru-actresses/yuliya-snigir-2.webp" alt="Yuliya Snigir portrait" loading="lazy"><figcaption class="lp-caption">Yuliya Snigir with a Golden Eagle award statuette.</figcaption></figure></div>
+<p><strong>Born:</strong> 2 June 1983, Donskoy, Tula Oblast; she was discovered through modelling while studying English philology. <strong>Signature roles:</strong> Irina in <em>A Good Day to Die Hard</em> (2013), opposite Bruce Willis; the title role in the series <em>Catherine the Great</em> (2015); Ewa Novak in <em>The New Pope</em> (2020); Margarita in <em>The Master and Margarita</em> (2024). <strong>Honours:</strong> in 2024 she won the Nika Award for Best Actress — her profile states the win without naming the work it was for, so none is claimed here. <strong>Now:</strong> her latest credits are from 2024; no 2025 or 2026 credit is listed.</p>
+<h2>4. Sasha Luss</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ru-actresses/sasha-luss-1.webp" alt="Sasha Luss portrait" loading="lazy"><figcaption class="lp-caption">2024 — Sasha Luss at the amfAR Gala in Cannes.</figcaption></figure><figure class="lp-figure"><img src="/assets/ru-actresses/sasha-luss-2.webp" alt="Sasha Luss portrait" loading="lazy"><figcaption class="lp-caption">2023 — Sasha Luss at the amfAR Gala in Cannes.</figcaption></figure></div>
+<p><strong>Born:</strong> 6 June 1992, Magadan; a fashion model from her teens, cast by Karl Lagerfeld for Chanel. <strong>Signature roles:</strong> the title role of Anna Poliatova in Luc Besson's <em>Anna</em> (2019), the role she is best known for; Princess Lihö-Minaa in <em>Valerian and the City of a Thousand Planets</em> (2017). <strong>Honours:</strong> her profile states no acting award; her one listed honour is a modelling title, Glamour Russia's Model of the Year (2013), and it is recorded here as exactly that. <strong>Now:</strong> three films in 2024, with another listed for 2026 and a role in the <em>Tomb Raider</em> series to come.</p>
+<h2>5. Lyubov Aksyonova</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ru-actresses/lyubov-aksyonova-1.webp" alt="Lyubov Aksyonova portrait" loading="lazy"><figcaption class="lp-caption">Lyubov Aksyonova in a studio portrait.</figcaption></figure><figure class="lp-figure"><img src="/assets/ru-actresses/lyubov-aksyonova-2.webp" alt="Lyubov Aksyonova portrait" loading="lazy"><figcaption class="lp-caption">Lyubov Aksyonova in a black suit at a premiere.</figcaption></figure></div>
+<p><strong>Born:</strong> 15 March 1990, Moscow. <strong>Signature roles:</strong> the journalist Yulia Pchyolkina in <em>Major Grom: Plague Doctor</em> (2021); Fly in <em>Coma</em> (2020); Dunya Raskolnikova in the series <em>Crime and Punishment</em> (2024). <strong>Honours:</strong> her profile states no awards, and none are claimed here — her standing rests on the roles, and on momentum. <strong>Now:</strong> the strongest current slate on this list: a <em>Major Grom</em> sequel, the film <em>Hater</em> and two series are all listed for 2026.</p>
+<h2>6. Elizaveta Boyarskaya</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ru-actresses/elizaveta-boyarskaya-1.webp" alt="Elizaveta Boyarskaya portrait" loading="lazy"><figcaption class="lp-caption">Elizaveta Boyarskaya in a TOUS jewellery portrait.</figcaption></figure><figure class="lp-figure"><img src="/assets/ru-actresses/elizaveta-boyarskaya-2.webp" alt="Elizaveta Boyarskaya portrait" loading="lazy"><figcaption class="lp-caption">Elizaveta Boyarskaya on the red carpet.</figcaption></figure></div>
+<p><strong>Born:</strong> 20 December 1985, Leningrad, now Saint Petersburg; the daughter of actors Mikhail Boyarsky and Larisa Luppian, and a leading lady of the Maly Drama Theatre since 2006. <strong>Signature roles:</strong> Anna Timiryova in <em>The Admiral</em> (2008); the title role in <em>Anna Karenina</em> (2016); Catherine II in the series <em>Catherine the Great</em> (2023). <strong>Honours:</strong> Honored Artist of the Russian Federation (2018), the one honour her profile states. <strong>Now:</strong> her listed filmography currently ends in 2023, after a gap back to 2018; this ranking rests on two decades of defining roles.</p>
+<h2>7. Anna Chipovskaya</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ru-actresses/anna-chipovskaya-1.webp" alt="Anna Chipovskaya portrait" loading="lazy"><figcaption class="lp-caption">Anna Chipovskaya at a CTC event.</figcaption></figure><figure class="lp-figure"><img src="/assets/ru-actresses/anna-chipovskaya-2.webp" alt="Anna Chipovskaya portrait" loading="lazy"><figcaption class="lp-caption">Anna Chipovskaya in a grey suit.</figcaption></figure></div>
+<p><strong>Born:</strong> 16 June 1987, Moscow; the daughter of actress Olga Chipovskaya and jazz musician Boris Frumkin. <strong>Signature roles:</strong> Maryana in <em>The Thaw</em> (2013), the series that made her popular; Darya Bulavina in <em>The Road to Calvary</em> (2017); Yelizaveta Vorontsova in <em>The Poet</em> (2025). <strong>Honours:</strong> a Golden Eagle nomination for Best Actress on Television for <em>The Thaw</em> — a nomination, not a win, and the only honour her profile states. <strong>Now:</strong> current on film with <em>The Poet</em> (2025); her television work ends in 2020.</p>
+<h2>8. Aglaya Tarasova</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ru-actresses/aglaya-tarasova-1.webp" alt="Aglaya Tarasova portrait" loading="lazy"><figcaption class="lp-caption">Aglaya Tarasova in a green suit.</figcaption></figure><figure class="lp-figure"><img src="/assets/ru-actresses/aglaya-tarasova-2.webp" alt="Aglaya Tarasova portrait" loading="lazy"><figcaption class="lp-caption">Aglaya Tarasova in a red jacket.</figcaption></figure></div>
+<p><strong>Born:</strong> 18 April 1994, Saint Petersburg; born Darya Tarasova, the daughter of actress Kseniya Rappoport, she holds Russian and Israeli citizenship. <strong>Signature roles:</strong> the injured figure skater Nadya Lapshina in <em>Ice</em> (2018) and <em>Ice 2</em> (2020), the role she is best known for; Sofya in the sitcom <em>Interns</em>. <strong>Honours:</strong> the Golden Eagle Award for the best female movie role (2019), for <em>Ice</em>. <strong>Now:</strong> her film work currently ends with <em>Serf 2</em> (2024). Her profile also records that in September 2025 she was detained at Domodedovo Airport on a drug-smuggling charge and in November 2025 received a three-year suspended sentence and a fine; it is part of her current public record and is stated here for completeness.</p>
+<h2>9. Kristina Asmus</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ru-actresses/kristina-asmus-1.webp" alt="Kristina Asmus portrait" loading="lazy"><figcaption class="lp-caption">Kristina Asmus in a checked dress.</figcaption></figure><figure class="lp-figure"><img src="/assets/ru-actresses/kristina-asmus-2.webp" alt="Kristina Asmus portrait" loading="lazy"><figcaption class="lp-caption">Kristina Asmus with her short blonde pixie cut.</figcaption></figure></div>
+<p><strong>Born:</strong> 14 April 1988, Korolyov, Moscow Oblast; a former gymnast who now works at the Yermolova Theatre. <strong>Signature roles:</strong> Varya Chernous in the medical sitcom <em>Interns</em> (2010–2016), her best-known role; Galya in the war film <em>The Dawns Here Are Quiet</em> (2015); Nina in <em>Text</em> (2019). <strong>Honours:</strong> no film-award win is stated in her profile; it records magazine titles — Maxim's sexiest Russian woman of 2010, Glamour's TV Actress of the Year (2011) and a Fashion People Award (2013). <strong>Now:</strong> her filmography currently ends in 2024; her stated current work is on stage.</p>
+<h2>10. Stasya Miloslavskaya</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ru-actresses/stasya-miloslavskaya-1.webp" alt="Stasya Miloslavskaya portrait" loading="lazy"><figcaption class="lp-caption">Stasya Miloslavskaya in a tulle gown.</figcaption></figure><figure class="lp-figure"><img src="/assets/ru-actresses/stasya-miloslavskaya-2.webp" alt="Stasya Miloslavskaya portrait" loading="lazy"><figcaption class="lp-caption">2024 — Stasya Miloslavskaya in an O'STIN campaign photo.</figcaption></figure></div>
+<p><strong>Born:</strong> 4 May 1995, Moscow; born Anastasia Miloslavskaya, the youngest actress on this list, and a member of the Moscow Pushkin Drama Theatre. <strong>Signature roles:</strong> Tanya in <em>The Bull</em> (2019); the young Jenny in the Netflix series <em>In From the Cold</em> (2022); Anna in <em>Krasavitsa</em> (2025). <strong>Honours:</strong> a Golden Eagle nomination for <em>The Bull</em> — a nomination, not a win, as her profile states it. <strong>Now:</strong> current, with <em>Krasavitsa</em> in 2025 and <em>Chuzhie dengi</em> listed for 2026.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>Who is the most beautiful Russian actress?</h3>
+<p>Beauty is a matter of opinion, which is why this page carries an Open Poll. Svetlana Khodchenkova currently leads it — the face Western audiences know best, from <em>The Wolverine</em> and <em>Tinker Tailor Soldier Spy</em>.</p>
+<h3>Which Russian actress has filmed in space?</h3>
+<p>Yulia Peresild. For <em>The Challenge</em> (2023) she filmed aboard the International Space Station in October 2021, which her profile records as a first for a professional actress.</p>
+<h3>Which of the ten have worked in Hollywood films?</h3>
+<p>Three at studio level: Svetlana Khodchenkova (Viper in <em>The Wolverine</em>, and <em>Tinker Tailor Soldier Spy</em>), Yuliya Snigir (opposite Bruce Willis in <em>A Good Day to Die Hard</em>) and Sasha Luss (the lead of Luc Besson's <em>Anna</em>). Stasya Miloslavskaya has also appeared in a Netflix series, <em>In From the Cold</em>.</p>
+<h3>Are all ten actresses Russian?</h3>
+<p>Yes — all ten were born in Russia (several in the Soviet era, in Moscow, Saint Petersburg, Pskov, Magadan and elsewhere). Aglaya Tarasova also holds Israeli citizenship, as her profile records.</p>
+<h3>Who just missed the list?</h3>
+<p>Honourable mention: Ravshana Kurkova, the Uzbek-born Russian actress of <em>About Love</em> and <em>The White Crow</em>. Her listed filmography currently ends in 2021, which is the only reason she sits outside the ten.</p>
+`;
+
 export const listPolls = [
   {
     slug: "most-beautiful-90s-hong-kong-actresses",
@@ -1376,6 +1435,44 @@ export const listPolls = [
     buttonLabel: "VOTE IN OPEN POLL",
     metaDesc: "Top 10 most beautiful Turkish actresses — Hande Erçel, Demet Özdemir, Serenay Sarıkaya and more, in recent photos, with an Open Poll for audience sentiment only.",
     sectionsHtml: trSections,
+  },
+  {
+    slug: "most-beautiful-russian-actresses",
+    image: "/assets/ru-actresses/ru-cover.webp",
+    title: "Top 10 Most Beautiful Russian Actresses",
+    h1: "Top 10 Most Beautiful Russian Actresses",
+    lead: "From the woman who played Viper opposite Hugh Jackman to the actress who filmed in orbit aboard the space station, these are the ten Russian actresses who define their cinema's screen beauty right now — all in recent photographs, and it opens with a reader Open Poll on who stands first. Every standing in that poll is audience sentiment only.",
+    heroBadge: "🗳️ OPEN POLL · RUSSIAN CINEMA'S LEADING LADIES",
+    leaderNote: "🔥 OPEN POLL LEADER: Svetlana Khodchenkova leads the VisitBest Open Poll as it stands, with 2,612 votes (19.4%), ahead of Yulia Peresild on 2,348. These are VisitBest Open Poll standings — for audience sentiment only, not an official vote of any kind.",
+    question: "Who is the most beautiful Russian actress?",
+    textOptions: [
+      { id: "svetlana-khodchenkova", label: "Svetlana Khodchenkova", sub: "The Wolverine · Viking", image: "/assets/ru-actresses/svetlana-khodchenkova-1.webp" },
+      { id: "yulia-peresild", label: "Yulia Peresild", sub: "The Challenge · Battle for Sevastopol", image: "/assets/ru-actresses/yulia-peresild-1.webp" },
+      { id: "yuliya-snigir", label: "Yuliya Snigir", sub: "The Master and Margarita · The New Pope", image: "/assets/ru-actresses/yuliya-snigir-1.webp" },
+      { id: "sasha-luss", label: "Sasha Luss", sub: "Anna · Valerian", image: "/assets/ru-actresses/sasha-luss-1.webp" },
+      { id: "lyubov-aksyonova", label: "Lyubov Aksyonova", sub: "Major Grom · Coma", image: "/assets/ru-actresses/lyubov-aksyonova-1.webp" },
+      { id: "elizaveta-boyarskaya", label: "Elizaveta Boyarskaya", sub: "The Admiral · Anna Karenina", image: "/assets/ru-actresses/elizaveta-boyarskaya-1.webp" },
+      { id: "anna-chipovskaya", label: "Anna Chipovskaya", sub: "The Thaw · The Poet", image: "/assets/ru-actresses/anna-chipovskaya-1.webp" },
+      { id: "aglaya-tarasova", label: "Aglaya Tarasova", sub: "Ice · Ice 2", image: "/assets/ru-actresses/aglaya-tarasova-1.webp" },
+      { id: "kristina-asmus", label: "Kristina Asmus", sub: "Interns · Text", image: "/assets/ru-actresses/kristina-asmus-1.webp" },
+      { id: "stasya-miloslavskaya", label: "Stasya Miloslavskaya", sub: "The Bull · In From the Cold", image: "/assets/ru-actresses/stasya-miloslavskaya-1.webp" },
+    ],
+    voteDistribution: {
+      "svetlana-khodchenkova": 2612,
+      "yulia-peresild": 2348,
+      "yuliya-snigir": 1976,
+      "sasha-luss": 1583,
+      "lyubov-aksyonova": 1296,
+      "elizaveta-boyarskaya": 1084,
+      "anna-chipovskaya": 872,
+      "aglaya-tarasova": 714,
+      "kristina-asmus": 563,
+      "stasya-miloslavskaya": 421,
+    },
+    openedDate: "26 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    metaDesc: "Top 10 most beautiful Russian actresses — Svetlana Khodchenkova, Yulia Peresild, Yuliya Snigir and more, in recent photos, with an Open Poll for audience sentiment only.",
+    sectionsHtml: ruSections,
   },
 ];
 
