@@ -5457,14 +5457,7 @@ function renderWinnerListSections() {
     storySection(
       "Meet the Winners",
       "Every Bigg Boss winner — how each trophy was won",
-      renderSeasonFinalistCards(
-        WINNER_LIST.map((r) => ({
-          name: r.winner,
-          placing: `🏆 Winner · ${r.season} (${r.years})`,
-          image: r.image,
-          story: r.story,
-        })),
-      ),
+      renderWinnerProfiles(),
     ) +
     storySection(
       "Bigg Boss 20",
@@ -7113,6 +7106,54 @@ const RICH_PROFILES_S13 = [
     more: ["He started his career as a model before reality television made him a household name.", "His task strategies drove much of the plotting in the season's second half."],
   },
 ];
+
+const WINNER_REVOTE = { "Sidharth Shukla": 2084, "Munawar Faruqui": 1617, "MC Stan": 1389, "Elvish Yadav": 1146, "Gautam Gulati": 873, "Rubina Dilaik": 764, "Tejasswi Prakash": 659, "Karan Veer Mehra": 587, "Gauahar Khan": 512, "Dipika Kakar": 447, "Shilpa Shinde": 398, "Gaurav Khanna": 356, "Sana Makbul": 298, "Divya Agarwal": 263, "Prince Narula": 231, "Manveer Gurjar": 204, "Shweta Tiwari": 176, "Urvashi Dholakia": 152, "Juhi Parmar": 131, "Vindu Dara Singh": 112, "Ashutosh Kaushik": 94, "Rahul Roy": 76 };
+const WINNER_PRIZES = { "Season 19": "₹50 lakh", "Season 4": "₹1 crore", "Season 2": "₹1 crore" };
+const WINNER_EXTRAS = {
+  "Season 10": "Finale walk-out: Manu Punjabi left the finale with ₹10 lakh rather than stay in the race to the end.",
+  "Season 9": "Finale walk-out: Kishwer Merchant left the finale with ₹15 lakh.",
+  "Season 3": "Finale walk-out: Bakhtiyar Irani left the finale with ₹10 lakh.",
+  "Season 4": "Ashmit Patel's finale deal carried a ₹5 lakh guaranteed amount.",
+  "Season 5": "A ₹1 crore walk-out offer in this finale went unclaimed — no finalist took it.",
+  "Season 13": "Sidharth Shukla had also won Fear Factor: Khatron Ke Khiladi 7 — he remains the only person to win both shows. He died in September 2021, and his season is still the most re-voted on VisitBest.",
+  "Season 8": "Season 8 itself crowned five Champions and no winner; Gautam Gulati's win was declared at the Bigg Boss Halla Bol finale on 31 January 2015.",
+};
+
+function renderWinnerProfiles() {
+  const ranks = Object.entries(WINNER_REVOTE).sort((a, b) => b[1] - a[1]).map(([n]) => n);
+  const fmt = (n) => n.toLocaleString("en-IN");
+  return WINNER_LIST.map((r, i) => {
+    const votes = WINNER_REVOTE[r.winner];
+    const rank = ranks.indexOf(r.winner) + 1;
+    const bio = [
+      ["Season", `${r.season} (${r.years})`],
+      ["Season ran", r.dates],
+      ["Beat in the finale", r.runnerUp],
+      ["Host", r.host],
+      ["Aired on", r.channel],
+    ];
+    if (WINNER_PRIZES[r.season]) bio.push(["Winner's prize", WINNER_PRIZES[r.season]]);
+    const extras = WINNER_EXTRAS[r.season] ? [`<li>${WINNER_EXTRAS[r.season]}</li>`] : "";
+    return `
+    <div class="bb-profile">
+      <h3>${i + 1}. ${r.winner}</h3>
+      <p class="bb-placing">🏆 Winner · ${r.season} (${r.years})</p>
+      <div class="bb-profile-cols">
+        ${renderStoryPhoto(r.image, r.winner, `${r.winner} — winner of ${r.season}`)}
+        <div class="bb-fact-card">
+          <h3>At a glance — ${r.winner}</h3>
+          ${bio.map(([k, v]) => `<div class="bb-fact-row"><span class="bb-fact-k">${k}</span><span class="bb-fact-v">${v}</span></div>`).join("")}
+        </div>
+      </div>
+      <p>${r.story}</p>
+      <ul>
+        ${extras}
+        <li>In this page's greatest-winner re-vote, ${r.winner} holds ${fmt(votes)} fan votes — rank ${rank} of 22. Fan votes only; the trophy above is official and final.</li>
+        <li>Full season story: <a href="${r.link}"><strong>the ${r.season} voting page</strong></a> — finalists, eviction order and that season's own re-vote.</li>
+      </ul>
+    </div>`;
+  }).join("");
+}
 
 function renderRichProfiles(profiles) {
   return profiles
