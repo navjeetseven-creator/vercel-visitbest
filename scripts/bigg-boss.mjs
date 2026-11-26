@@ -3805,6 +3805,39 @@ function renderWeek11VotingSections() {
   );
 }
 
+function renderSeasonStorySection(poll) {
+  const row = WINNER_LIST.find((w) => w.link === `/${poll.slug}/`);
+  if (!row) return "";
+  const walkouts = {
+    "bigg-boss-10-voting": "Finale walk-out: Manu Punjabi left the finale with ₹10 lakh rather than stay in the race.",
+    "bigg-boss-9-voting": "Finale walk-out: Kishwer Merchant left the finale with ₹15 lakh.",
+    "bigg-boss-3-voting": "Finale walk-out: Bakhtiyar Irani left the finale with ₹10 lakh.",
+    "bigg-boss-4-voting": "Ashmit Patel's finale deal carried a ₹5 lakh guaranteed amount.",
+    "bigg-boss-5-voting": "A ₹1 crore walk-out offer in the finale went unclaimed — no one took it.",
+  };
+  const top = Object.entries(poll.voteDistribution || {}).sort((a, b) => b[1] - a[1])[0];
+  const topLabel = top ? ((poll.textOptions || []).find((o) => o.id === top[0]) || {}).label || top[0] : "";
+  const fmt = (n) => n.toLocaleString("en-IN");
+  return storySection(
+    "The Season in Short",
+    `${row.season} — how it ended`,
+    `<p>${row.story}</p>
+    <div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <tbody>
+          <tr><td><strong>Winner</strong></td><td>${row.winner}</td></tr>
+          <tr><td><strong>Runner-up</strong></td><td>${row.runnerUp}</td></tr>
+          <tr><td><strong>Season ran</strong></td><td>${row.dates}</td></tr>
+          <tr><td><strong>Host</strong></td><td>${row.host}</td></tr>
+          <tr><td><strong>Aired on</strong></td><td>${row.channel}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    ${walkouts[poll.slug] ? `<p style="margin-top:1rem;">${walkouts[poll.slug]}</p>` : ""}
+    ${top ? `<p style="margin-top:1rem;">In this page's fan re-vote, <strong>${topLabel}</strong> currently leads on ${fmt(top[1])} fan votes. That is audience sentiment only — the official result in the table above is final, and official voting for this season is closed.</p>` : ""}`
+  );
+}
+
 function renderSeasonContextSections(poll) {
   const S = {
     "bigg-boss-20-voting-week-10": () => storySection(
@@ -11774,7 +11807,7 @@ export function renderBiggBossPollPage(poll) {
  ${poll.slug === "bigg-boss-2-voting" ? renderSeason2Sections() : ""}
  ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
     ${poll.slug === "bigg-boss-winner-list" ? renderWinnerListSections() : ""}
-    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderSeasonContextSections(poll)}
+    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}
     ${poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersSections() : ""}
     ${poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersSections() : ""}
     ${poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersSections() : ""}
