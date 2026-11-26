@@ -5419,6 +5419,60 @@ function renderVotingHubFaq() {
 // on the Season 17 page — none is Wikipedia-verified for that season. The
 // Season 19 prize (₹50 lakh) IS stated by Wikipedia and is included.
 
+function renderSeasonProfiles(finalists, slug) {
+  const poll = pollBySlug.get(slug);
+  const row = WINNER_LIST.find((r) => r.link === `/${slug}/`);
+  const fmt = (n) => n.toLocaleString("en-IN");
+  const votesByLabel = {};
+  if (poll && poll.textOptions) {
+    for (const o of poll.textOptions) votesByLabel[o.label] = (poll.voteDistribution || {})[o.id] || 0;
+  }
+  const ranked = [...finalists].sort((a, b) => (votesByLabel[b.name] || 0) - (votesByLabel[a.name] || 0));
+  const rankOf = (name) => ranked.findIndex((f) => f.name === name) + 1;
+  return finalists
+    .map((f, i) => {
+      const isWinner = f.placing.includes("Winner");
+      const isRU = f.placing.includes("1st runner-up");
+      const votes = votesByLabel[f.name];
+      const bio = [];
+      if (row && isWinner) {
+        bio.push(["Season", `${row.season} (${row.years})`], ["Season ran", row.dates], ["Beat in the finale", row.runnerUp], ["Host", row.host], ["Aired on", row.channel]);
+        if (WINNER_PRIZES[row.season]) bio.push(["Winner's prize", WINNER_PRIZES[row.season]]);
+      } else if (row && isRU) {
+        bio.push(["Season", `${row.season} (${row.years})`], ["Season ran", row.dates], ["Lost the finale to", row.winner], ["Host", row.host], ["Aired on", row.channel]);
+      } else {
+        bio.push(["Finish", f.placing]);
+        if (row) bio.push(["Season", `${row.season} (${row.years})`]);
+      }
+      if (votes) bio.push(["Fan re-vote on this page", `${fmt(votes)} votes — rank ${rankOf(f.name)} of ${finalists.length}`]);
+      const bullets = [];
+      if (isWinner && row && WINNER_EXTRAS[row.season]) bullets.push(WINNER_EXTRAS[row.season]);
+      if (isWinner && row && row.season === "Season 8") bullets.push("Season 8 first crowned five Champions; Gautam Gulati's win was declared at the Bigg Boss Halla Bol finale on 31 January 2015.");
+      const bulletHtml = bullets.length ? `<ul>${bullets.map((b) => `<li>${b}</li>`).join("")}</ul>` : "";
+      const now = votes
+        ? isWinner
+          ? `The trophy is official and final. In this page's fan re-vote, ${f.name} holds ${fmt(votes)} votes — audience sentiment only.`
+          : `In this page's fan re-vote, ${f.name} holds ${fmt(votes)} votes (rank ${rankOf(f.name)} of ${finalists.length}) — audience sentiment only; the official finish stands as recorded.`
+        : `The official finish stands as recorded; the fan re-vote at the top of this page is audience sentiment only.`;
+      return `
+    <div class="bb-profile">
+      <h3>${i + 1}. ${f.name}</h3>
+      <p class="bb-placing">${f.placing}</p>
+      <div class="bb-profile-cols">
+        ${f.image ? renderStoryPhoto(f.image, f.name, `${f.name} — ${f.placing}`) : ""}
+        <div class="bb-fact-card">
+          <h3>At a glance — ${f.name}</h3>
+          ${bio.map(([k, v]) => `<div class="bb-fact-row"><span class="bb-fact-k">${k}</span><span class="bb-fact-v">${v}</span></div>`).join("")}
+        </div>
+      </div>
+      <p>${f.story}</p>
+      ${bulletHtml}
+      <p class="bb-nowline"><strong>Fan re-vote:</strong> ${now}</p>
+    </div>`;
+    })
+    .join("");
+}
+
 function renderSeasonFinalistCards(finalists) {
   return `<div class="bb-steps-grid">
       ${finalists
@@ -6777,7 +6831,7 @@ function renderSeason17Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 17 final five",
-      renderSeasonFinalistCards(SEASON17_FINALISTS),
+      renderSeasonProfiles(SEASON17_FINALISTS, "bigg-boss-17-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -6959,7 +7013,7 @@ function renderSeason19Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 19 final five",
-      renderSeasonFinalistCards(SEASON19_FINALISTS),
+      renderSeasonProfiles(SEASON19_FINALISTS, "bigg-boss-19-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -7156,7 +7210,7 @@ function renderSeason16Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 16 final five",
-      renderSeasonFinalistCards(SEASON16_FINALISTS),
+      renderSeasonProfiles(SEASON16_FINALISTS, "bigg-boss-16-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -7723,7 +7777,7 @@ function renderSeason18Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 18 final six",
-      renderSeasonFinalistCards(SEASON18_FINALISTS),
+      renderSeasonProfiles(SEASON18_FINALISTS, "bigg-boss-18-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -7934,7 +7988,7 @@ function renderOtt1Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss OTT 1 final five",
-      renderSeasonFinalistCards(OTT1_FINALISTS),
+      renderSeasonProfiles(OTT1_FINALISTS, "bigg-boss-ott-1-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -8132,7 +8186,7 @@ function renderOtt2Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss OTT 2 final five",
-      renderSeasonFinalistCards(OTT2_FINALISTS),
+      renderSeasonProfiles(OTT2_FINALISTS, "bigg-boss-ott-2-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -8346,7 +8400,7 @@ function renderOtt3Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss OTT 3 final five",
-      renderSeasonFinalistCards(OTT3_FINALISTS),
+      renderSeasonProfiles(OTT3_FINALISTS, "bigg-boss-ott-3-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -8590,7 +8644,7 @@ function renderSeason15Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 15 final six",
-      renderSeasonFinalistCards(SEASON15_FINALISTS),
+      renderSeasonProfiles(SEASON15_FINALISTS, "bigg-boss-15-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -8807,7 +8861,7 @@ function renderSeason14Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 14 final five",
-      renderSeasonFinalistCards(SEASON14_FINALISTS),
+      renderSeasonProfiles(SEASON14_FINALISTS, "bigg-boss-14-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -9041,7 +9095,7 @@ function renderSeason12Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 12 final five",
-      renderSeasonFinalistCards(SEASON12_FINALISTS),
+      renderSeasonProfiles(SEASON12_FINALISTS, "bigg-boss-12-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -9244,7 +9298,7 @@ function renderSeason11Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 11 final four",
-      renderSeasonFinalistCards(SEASON11_FINALISTS),
+      renderSeasonProfiles(SEASON11_FINALISTS, "bigg-boss-11-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -9469,7 +9523,7 @@ function renderSeason10Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 10 final four",
-      renderSeasonFinalistCards(SEASON10_FINALISTS),
+      renderSeasonProfiles(SEASON10_FINALISTS, "bigg-boss-10-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -9673,7 +9727,7 @@ function renderSeason9Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 9 final four",
-      renderSeasonFinalistCards(SEASON9_FINALISTS),
+      renderSeasonProfiles(SEASON9_FINALISTS, "bigg-boss-9-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -9918,7 +9972,7 @@ function renderSeason8Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 8 Champions — the final five",
-      renderSeasonFinalistCards(SEASON8_FINALISTS),
+      renderSeasonProfiles(SEASON8_FINALISTS, "bigg-boss-8-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -10122,7 +10176,7 @@ function renderSeason7Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 7 final four",
-      renderSeasonFinalistCards(SEASON7_FINALISTS),
+      renderSeasonProfiles(SEASON7_FINALISTS, "bigg-boss-7-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -10362,7 +10416,7 @@ function renderSeason6Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 6 final five",
-      renderSeasonFinalistCards(SEASON6_FINALISTS),
+      renderSeasonProfiles(SEASON6_FINALISTS, "bigg-boss-6-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -10575,7 +10629,7 @@ function renderSeason5Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 5 final five",
-      renderSeasonFinalistCards(SEASON5_FINALISTS),
+      renderSeasonProfiles(SEASON5_FINALISTS, "bigg-boss-5-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -10810,7 +10864,7 @@ function renderSeason4Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 4 final four",
-      renderSeasonFinalistCards(SEASON4_FINALISTS),
+      renderSeasonProfiles(SEASON4_FINALISTS, "bigg-boss-4-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -11006,7 +11060,7 @@ function renderSeason3Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 3 final three",
-      renderSeasonFinalistCards(SEASON3_FINALISTS),
+      renderSeasonProfiles(SEASON3_FINALISTS, "bigg-boss-3-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -11234,7 +11288,7 @@ function renderSeason2Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 2 final three",
-      renderSeasonFinalistCards(SEASON2_FINALISTS),
+      renderSeasonProfiles(SEASON2_FINALISTS, "bigg-boss-2-voting"),
     ) +
     storySection(
       "Eviction Order",
@@ -11430,7 +11484,7 @@ function renderSeason1Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 1 final three",
-      renderSeasonFinalistCards(SEASON1_FINALISTS),
+      renderSeasonProfiles(SEASON1_FINALISTS, "bigg-boss-1-voting"),
     ) +
     storySection(
       "Eviction Order",
