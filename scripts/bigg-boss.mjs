@@ -1061,7 +1061,7 @@ export const polls = [
     metaTitle: "Bigg Boss 20 Finale Date — Expected Window & Finalist Race | VisitBest",
     metaDesc:
       "Bigg Boss 20 finale date: not officially announced yet. The expected window from the season's run, how the finale works, the road to the top 5 and the finalist race — updated 21 November 2026.",
-    updatedLabel: "Updated 21 November 2026 · Finale date not announced yet",
+    updatedLabel: "Updated 26 November 2026 · Finale date not announced yet",
     options: [],
     voteDistribution: {},
   },
@@ -3960,6 +3960,51 @@ function renderCaptainHistorySection() {
   );
 }
 
+function renderFinaleProfilesSection() {
+  const five = ["qazi-touqeer", "yung-dsa", "scout", "arishfa-khan", "kanika-mann"];
+  const chasing = ["uditi-singh", "gullu", "mahhi-vij", "love-gill", "amrapali-dubey"];
+  const profiles = five
+    .map((id, i) => {
+      const c = contestantById.get(id);
+      if (!c) return "";
+      const bio = [["Known for", c.role], ["From", c.city]];
+      if (c.age) bio.push(["Age", String(c.age)]);
+      bio.push(["Week 12 status", (WEEK12_STATUS[id] || ["In the house"])[0]]);
+      const bullets = [c.highlight, c.trend].filter(Boolean).map((b) => `<li>${b}</li>`).join("");
+      return `
+    <div class="bb-profile">
+      <h3>${i + 1}. ${c.name}</h3>
+      <p class="bb-placing">Predicted finalist — ${i + 1} of 5</p>
+      <div class="bb-profile-cols">
+        ${renderStoryPhoto(c.image, c.name, `${c.name} — predicted Bigg Boss 20 finalist`)}
+        <div class="bb-fact-card">
+          <h3>At a glance — ${c.alias || c.name}</h3>
+          ${bio.map(([k, v]) => `<div class="bb-fact-row"><span class="bb-fact-k">${k}</span><span class="bb-fact-v">${v}</span></div>`).join("")}
+        </div>
+      </div>
+      <p>${c.bio}</p>
+      <ul>${bullets}</ul>
+      <p class="bb-nowline"><strong>The case:</strong> ${WINNER_CASE[id] || ""}</p>
+    </div>`;
+    })
+    .join("");
+  const chasingRows = chasing
+    .map((id) => {
+      const c = contestantById.get(id);
+      if (!c) return "";
+      return `<tr><td><strong>${c.name}</strong></td><td>${c.role}</td><td>${(WEEK12_STATUS[id] || ["In the house"])[0]}</td></tr>`;
+    })
+    .join("");
+  const table = `
+    <div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead><tr><th>Housemate</th><th>Known for</th><th>Week 12 status</th></tr></thead>
+        <tbody>${chasingRows}</tbody>
+      </table>
+    </div>`;
+  return storySection("The Finalist Race", "The predicted final five — in profile", `<p>Predictions sharpen after the Week 12 nominations (Episode 80, 24 November 2026): two of the predicted five — Scout and Kanika Mann — are nominated this week, while Qazi Touqeer, Yung DSA and Arishfa Khan are safe. Here are the five in profile, and the five chasing them.</p>` + profiles + `<h3>The five chasing them</h3>` + table + `<p style="margin-top:1rem;">One of the chasing five is the captain, Uditi Singh — safe this week, but captaincy has never yet carried anyone to this trophy on its own. The full case for each candidate is on <a href="/who-will-win-bigg-boss-20/">the who-will-win page</a>.</p>`);
+}
+
 function renderFinaleRoadSection() {
   return storySection(
     "The Road Here",
@@ -5141,6 +5186,8 @@ export function renderBiggBossFinalePage(poll) {
     ${renderDebateStrip(poll)}
 
     ${renderFinaleRoadSection()}
+
+    ${renderFinaleProfilesSection()}
 
     ${renderFactCards(poll)}${renderFanDebate(poll)}
   </div>`;
