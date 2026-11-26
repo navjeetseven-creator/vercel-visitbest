@@ -72,7 +72,7 @@ const hkSections = `
 </section>
 
 <section class="lp-article lp-profile" id="maggie-cheung">
-  <h2>1. Maggie Cheung</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">20 September 1964</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">Center Stage (1991)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Won Best Actress at Berlin for Center Stage (1991) and at Cannes for Clean (2004)</p></div></div>
+  <h2>1. Maggie Cheung</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">20 September 1964</p></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><p class="lp-bio-v">British Hong Kong</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">Center Stage (1991)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Won Best Actress at Berlin for Center Stage (1991) and at Cannes for Clean (2004)</p></div></div>
   <div class="lp-pair">
     <figure class="lp-shot">
       <img src="/assets/hk-actresses/maggie-cheung-then.webp" alt="Maggie Cheung in In the Mood for Love, at the height of her fame" loading="lazy">
@@ -91,7 +91,7 @@ const hkSections = `
 </section>
 
 <section class="lp-article lp-profile" id="brigitte-lin">
-  <h2>2. Brigitte Lin</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">3 November 1954</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">Dongfang Bubai in Swordsman II (1992)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Time magazine listed her Swordsman II performance among the ten greatest in cinema history</p></div></div>
+  <h2>2. Brigitte Lin</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">3 November 1954</p></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><p class="lp-bio-v">Sanchong, Taiwan</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">Dongfang Bubai in Swordsman II (1992)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Time magazine listed her Swordsman II performance among the ten greatest in cinema history</p></div></div>
   <div class="lp-pair">
     <figure class="lp-shot">
       <img src="/assets/hk-actresses/brigitte-lin-then.webp" alt="Brigitte Lin in her early screen career" loading="lazy">
@@ -110,7 +110,7 @@ const hkSections = `
 </section>
 
 <section class="lp-article lp-profile" id="joey-wong">
-  <h2>3. Joey Wong</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">31 January 1967</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">Nip Siu-sin in A Chinese Ghost Story (1987)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Joey Wong was one of the "Four Flowers" of Hong Kong cinema, and her fame rests on one of the most beloved performances of the era: the gentle ghost Nip Siu-sin in the A Chinese Ghost Story series (1987–1991).</p></div></div>
+  <h2>3. Joey Wong</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">31 January 1967</p></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><p class="lp-bio-v">Taipei, Taiwan</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">Nip Siu-sin in A Chinese Ghost Story (1987)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Joey Wong was one of the "Four Flowers" of Hong Kong cinema, and her fame rests on one of the most beloved performances of the era: the gentle ghost Nip Siu-sin in the A Chinese Ghost Story series (1987–1991).</p></div></div>
   <div class="lp-pair">
     <figure class="lp-shot">
       <img src="/assets/hk-actresses/joey-wong-then.webp" alt="Joey Wong as Nip Siu-sin in A Chinese Ghost Story" loading="lazy">
@@ -129,7 +129,7 @@ const hkSections = `
 </section>
 
 <section class="lp-article lp-profile" id="michele-reis">
-  <h2>4. Michele Reis</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">20 June 1970</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">The Killer's Agent in Fallen Angels (1995)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Michele Reis arrived with two crowns — Miss Hong Kong and the first Miss Chinese International, both in 1988 — and then proved she could act.</p></div></div>
+  <h2>4. Michele Reis</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">20 June 1970</p></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><p class="lp-bio-v">Portuguese Macau</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">The Killer's Agent in Fallen Angels (1995)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Michele Reis arrived with two crowns — Miss Hong Kong and the first Miss Chinese International, both in 1988 — and then proved she could act.</p></div></div>
   <div class="lp-pair">
     <figure class="lp-shot">
       <img src="/assets/hk-actresses/michele-reis-then.webp" alt="Michele Reis in a 1990s portrait" loading="lazy">
@@ -148,7 +148,7 @@ const hkSections = `
 </section>
 
 <section class="lp-article lp-profile" id="rosamund-kwan">
-  <h2>5. Rosamund Kwan</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">24 September 1962</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">Thirteenth Aunt in Once Upon a Time in China (1991)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Rosamund Kwan, daughter of Shaw Brothers actor Kwan Shan, became the romantic heart of the Once Upon a Time in China series (1991–1997) as Thirteenth Aunt, opposite Jet Li's Wong Fei-hung.</p></div></div>
+  <h2>5. Rosamund Kwan</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">24 September 1962</p></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><p class="lp-bio-v">British Hong Kong</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">Thirteenth Aunt in Once Upon a Time in China (1991)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Rosamund Kwan, daughter of Shaw Brothers actor Kwan Shan, became the romantic heart of the Once Upon a Time in China series (1991–1997) as Thirteenth Aunt, opposite Jet Li's Wong Fei-hung.</p></div></div>
   <div class="lp-pair">
     <figure class="lp-shot">
       <img src="/assets/hk-actresses/rosamund-kwan-then.webp" alt="Rosamund Kwan as Thirteenth Aunt in Once Upon a Time in China" loading="lazy">
@@ -167,7 +167,7 @@ const hkSections = `
 </section>
 
 <section class="lp-article lp-profile" id="athena-chu">
-  <h2>6. Athena Chu</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">25 October 1971</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">Zixia Fairy in A Chinese Odyssey (1995)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Athena Chu debuted in Fight Back to School II (1992), earning a Hong Kong Film Award Best New Performer nomination, and then landed the role she will always be named for: Zixia Fairy in Stephen Chow's A Chinese Odyssey Part One: Pandora's Box and Part Two: Cinderella (both 1995).</p></div></div>
+  <h2>6. Athena Chu</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">25 October 1971</p></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><p class="lp-bio-v">Kowloon, Hong Kong</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">Zixia Fairy in A Chinese Odyssey (1995)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Athena Chu debuted in Fight Back to School II (1992), earning a Hong Kong Film Award Best New Performer nomination, and then landed the role she will always be named for: Zixia Fairy in Stephen Chow's A Chinese Odyssey Part One: Pandora's Box and Part Two: Cinderella (both 1995).</p></div></div>
   <div class="lp-pair">
     <figure class="lp-shot">
       <img src="/assets/hk-actresses/athena-chu-then.webp" alt="Athena Chu as Zixia Fairy in A Chinese Odyssey" loading="lazy">
@@ -186,7 +186,7 @@ const hkSections = `
 </section>
 
 <section class="lp-article lp-profile" id="sharla-cheung">
-  <h2>7. Sharla Cheung</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">1967 or 1968</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">Stephen Chow's leading lady in God of Gamblers II (1990) and Royal Tramp (1992)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Sharla Cheung was Stephen Chow's most frequent leading lady, appearing with him in more than ten films between 1988 and 1994: All for the Winner (1990), God of Gamblers II (1990), Fight Back to School (1991), Royal Tramp (1992), King of Beggars (1992) and Hail the Judge (1994) among them.</p></div></div>
+  <h2>7. Sharla Cheung</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">1967 or 1968</p></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><p class="lp-bio-v">Shanghai, China</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">Stephen Chow's leading lady in God of Gamblers II (1990) and Royal Tramp (1992)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Sharla Cheung was Stephen Chow's most frequent leading lady, appearing with him in more than ten films between 1988 and 1994: All for the Winner (1990), God of Gamblers II (1990), Fight Back to School (1991), Royal Tramp (1992), King of Beggars (1992) and Hail the Judge (1994) among them.</p></div></div>
   <div class="lp-pair">
     <figure class="lp-shot">
       <img src="/assets/hk-actresses/sharla-cheung-then.webp" alt="Sharla Cheung in a 1990s portrait" loading="lazy">
@@ -205,7 +205,7 @@ const hkSections = `
 </section>
 
 <section class="lp-article lp-profile" id="chingmy-yau">
-  <h2>8. Chingmy Yau</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">16 May 1968</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">Naked Killer (1992)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Chingmy Yau was the bold face of early-90s Hong Kong cinema.</p></div></div>
+  <h2>8. Chingmy Yau</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">16 May 1968</p></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><p class="lp-bio-v">British Hong Kong</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">Naked Killer (1992)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Chingmy Yau was the bold face of early-90s Hong Kong cinema.</p></div></div>
   <div class="lp-pair">
     <figure class="lp-shot">
       <img src="/assets/hk-actresses/chingmy-yau-then.webp" alt="Chingmy Yau in a 1990s portrait" loading="lazy">
@@ -224,7 +224,7 @@ const hkSections = `
 </section>
 
 <section class="lp-article lp-profile" id="gigi-lai">
-  <h2>9. Gigi Lai</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">1 October 1971</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">Smartie in Young and Dangerous (1996)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Hong Kong media nicknamed Gigi Lai the "Goddess of Beauty", and the name stuck for three decades.</p></div></div>
+  <h2>9. Gigi Lai</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">1 October 1971</p></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><p class="lp-bio-v">British Hong Kong</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">Smartie in Young and Dangerous (1996)</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Hong Kong media nicknamed Gigi Lai the "Goddess of Beauty", and the name stuck for three decades.</p></div></div>
   <div class="lp-pair">
     <figure class="lp-shot">
       <img src="/assets/hk-actresses/gigi-lai-then.webp" alt="Gigi Lai in a 1990s glamour portrait" loading="lazy">
@@ -243,7 +243,7 @@ const hkSections = `
 </section>
 
 <section class="lp-article lp-profile" id="vivian-chow">
-  <h2>10. Vivian Chow</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">10 November 1967</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">The Greed of Man (1992), and the original "Jade Girl" image</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Vivian Chow was first a Cantopop singer, and the era's defining "Jade Girl" idol — the wholesome, long-haired image a generation grew up with.</p></div></div>
+  <h2>10. Vivian Chow</h2><div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><p class="lp-bio-v">10 November 1967</p></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><p class="lp-bio-v">Hong Kong</p></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><p class="lp-bio-v">The Greed of Man (1992), and the original "Jade Girl" image</p></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><p class="lp-bio-v">Vivian Chow was first a Cantopop singer, and the era's defining "Jade Girl" idol — the wholesome, long-haired image a generation grew up with.</p></div></div>
   <div class="lp-pair">
     <figure class="lp-shot">
       <img src="/assets/hk-actresses/vivian-chow-then.webp" alt="Vivian Chow in an early-1990s portrait" loading="lazy">
@@ -255,7 +255,7 @@ const hkSections = `
     </figure>
   </div>
   <p>Vivian Chow was first a Cantopop singer, and the era's defining "Jade Girl" idol — the wholesome, long-haired image a generation grew up with. Her best-known acting role was on television, in the TVB classic The Greed of Man (1992), while her 90s film roles were mostly supporting parts, including The Perfect Match (1991) and The Kung Fu Scholar (1994). She closes this list because no account of 90s Hong Kong beauty is complete without her, even if her fame was built on stage and TV as much as on film.</p>
-  <ul class="lp-facts"><li>Semi-retired from the late 1990s, when she moved to Vancouver, she returned part-time from 2004: comeback concerts at the Hong Kong Coliseum in 2006 and the "Deep V.25" concert in 2011, a film role in Café.</li><li>Waiting.</li><li>Love (2014), and steady charity work.</li><li>Reports in 2025 spoke of tour preparation and new music — the Jade Girl, still singing.</li></ul>
+  <p>Semi-retired from the late 1990s, when she moved to Vancouver, she returned part-time from 2004: comeback concerts at the Hong Kong Coliseum in 2006 and the “Deep V.25” concert in 2011, a film role in <em>Café. Waiting. Love</em> (2014), and steady charity work. Reports in 2025 spoke of tour preparation and new music — the Jade Girl, still singing.</p>
 
   <p style="margin:14px 0 6px"><strong>More to know:</strong></p>
   <ul class="lp-facts"><li>Among her mostly supporting 90s film roles was Girls Without Tomorrow 1992 (1992), alongside The Perfect Match and The Kung Fu Scholar.</li></ul>
@@ -2302,6 +2302,9 @@ export const css = `
   .lp-rownums{font-size:.8rem}
   .lp-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
 }
+
+/* entry 465: frame lock — beats the global .prose figure img rule */
+.lp-article .lp-pair .lp-shot img,.lp-article .lp-pair .lp-figure img,.lp-article .lp-figure img{width:100% !important;height:auto !important;aspect-ratio:4/5;object-fit:contain !important;background:#f3e9f0}
 `;
 
 // ---------------------------------------------------------------------------
