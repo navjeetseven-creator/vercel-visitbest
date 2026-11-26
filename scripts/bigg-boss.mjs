@@ -11240,6 +11240,17 @@ export function renderDebateStripBySlug(slug) {
   return renderDebateStripHtml(buildDebateBySlug(slug));
 }
 
+
+function renderFactCards(poll) {
+  if (!poll.factCards || !poll.factCards.length) return "";
+  return `<section class="bb-leaderboard-section bb-facts-section">
+    <div class="bb-section-head"><div><p class="eyebrow">Key Facts</p><h2>${poll.factCardsTitle || "Key facts — at a glance"}</h2></div></div>
+    <div class="bb-fact-grid">
+      ${poll.factCards.map((c) => `<div class="bb-fact-card"><h3>${c.name}</h3>${c.rows.map(([k, v]) => `<div class="bb-fact-row"><span class="bb-fact-k">${k}</span><span class="bb-fact-v">${v}</span></div>`).join("")}</div>`).join("")}
+    </div>
+  </section>`;
+}
+
 export function renderBiggBossPollPage(poll) {
   if (poll.pollType === "journey") return renderBiggBossJourneyPage(poll);
   if (poll.pollType === "captain-page") return renderBiggBossCaptainPage(poll);
@@ -11317,7 +11328,7 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersSections() : ""}
     ${poll.slug === "bigg-boss-17-winner-2024-vote-list" ? renderBB17VoteListSections() : ""}
 
-    ${renderFanDebate(poll)}
+    ${renderFactCards(poll)}${renderFanDebate(poll)}
 
     ${renderAdSenseUnit("top", "Sponsored / Advertisement")}
 
@@ -12604,6 +12615,18 @@ export const css = `
   .bb-live-pop { left:10px; right:10px; bottom:10px; max-width:none; }
   .bb-debate-strip { flex-wrap:wrap; }
 }
+
+/* BB format programme (entry 469): uniform content photo frames + fact cards.
+   Poll cards and debate blocks are deliberately NOT touched. */
+.bb-step-card img { aspect-ratio: 4/5; object-fit: contain; background: #f3e9f0; width: 100%; }
+.bb-story-photo img { max-height: 560px; object-fit: contain; background: #f3e9f0; }
+.bb-fact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.85rem; margin: 1.1rem 0 0.4rem; }
+.bb-fact-card { background: #fff7fb; border: 1px solid #e9cfe0; border-left: 5px solid #c9a227; border-radius: 12px; padding: 0.9rem 1rem; }
+.bb-fact-card h3 { margin: 0 0 0.55rem; font-size: 1.02rem; color: #3b1032; }
+.bb-fact-row { display: flex; gap: 0.5rem; padding: 0.3rem 0; border-top: 1px dashed #e9cfe0; font-size: 0.92rem; line-height: 1.45; }
+.bb-fact-row:first-of-type { border-top: none; }
+.bb-fact-k { flex: 0 0 42%; font-weight: 700; color: #7a4a12; }
+.bb-fact-v { flex: 1; color: #2b2b2b; }
 `;
 
 // Bigg Boss Client-Side Interactivity Script
