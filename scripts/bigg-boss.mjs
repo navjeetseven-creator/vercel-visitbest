@@ -2088,7 +2088,27 @@ export const polls = [
     buttonLabel: "VOTE IN OPEN POLL",
     buttonIcon: "🗳️",
     metaDesc: "Bigg Boss 1 voting: the official result — Rahul Roy won, ahead of Carol Gracias and Ravi Kishan — plus the finalists, the eviction order and the fan re-vote Open Poll: who should have won Bigg Boss 1? Official voting for the season is closed; VisitBest Open Polls are audience sentiment only.",
-  }
+  },
+  {
+    slug: "bigg-boss-telugu-10-voting",
+    image: "/assets/bb-telugu10/cover.jpg",
+    title: "Bigg Boss Telugu 10 Voting — Week 12 Nominees, Open Poll & How to Vote",
+    h1: "Bigg Boss Telugu 10 Voting — Week 12",
+    lead: "Week 12 of Bigg Boss Telugu 10 (Dasavatharam) puts seven housemates in the danger zone: Varshini Sounderajan, Temper Vamsi, Debjani Modak, Ramakrishna Koyya, Auto Ram Prasad, Mukesh Gowda and Thrigun. Captain Aman Masud is safe. Vote in the VisitBest Open Poll below — and use the official JioHotstar app or missed-call numbers for the vote that actually counts.",
+    heroBadge: "BIGG BOSS TELUGU 10 · WEEK 12 · VOTING OPEN",
+    leaderNote: "Open Poll leader right now: Mukesh Gowda — fan votes only, never the official result",
+    pollType: "telugu-weekly",
+    question: "Who should stay in the Bigg Boss Telugu 10 house?",
+    textOptions: [{"id": "mukesh-gowda", "label": "Mukesh Gowda", "sub": "Actor · Guppedantha Manasu", "image": "/assets/bb-telugu10/mukesh-gowda.webp"}, {"id": "thrigun", "label": "Thrigun", "sub": "Actor · Katha · PSV Garuda Vega", "image": "/assets/bb-telugu10/thrigun.webp"}, {"id": "varshini-sounderajan", "label": "Varshini Sounderajan", "sub": "Actress & TV presenter", "image": "/assets/bb-telugu10/varshini-sounderajan.webp"}, {"id": "debjani-modak", "label": "Debjani Modak", "sub": "Actress · Rasathi · Vaanathai Pola", "image": "/assets/bb-telugu10/debjani-modak.webp"}, {"id": "auto-ram-prasad", "label": "Auto Ram Prasad", "sub": "Comedian · Jabardasth", "image": "/assets/bb-telugu10/auto-ram-prasad.webp"}, {"id": "temper-vamsi", "label": "Temper Vamsi", "sub": "Actor", "image": "/assets/bb-telugu10/temper-vamsi.webp"}, {"id": "ramakrishna-koyya", "label": "Ramakrishna Koyya", "sub": "Content creator · Wildfire wildcard"}],
+    voteDistribution: {"mukesh-gowda": 512, "thrigun": 468, "varshini-sounderajan": 342, "debjani-modak": 318, "auto-ram-prasad": 276, "temper-vamsi": 214, "ramakrishna-koyya": 187},
+    dangerIds: [],
+    openedDate: "26 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    buttonIcon: "🗳️",
+    metaDesc: "Bigg Boss Telugu 10 voting, Week 12: the 7 nominees (Varshini Sounderajan, Temper Vamsi, Debjani Modak, Ramakrishna Koyya, Auto Ram Prasad, Mukesh Gowda, Thrigun), the VisitBest Open Poll, official JioHotstar voting steps, missed-call numbers and the voting window (Mon 10:30 pm – Fri 11:59 pm IST). Captain Aman Masud is safe.",
+    factCardsTitle: "Week 12 — key facts",
+    factCards: [{"name": "🗳️ Week 12 at a glance", "rows": [["Nominated (7)", "Varshini · Temper Vamsi · Debjani · Ramakrishna · Auto Ram Prasad · Mukesh Gowda · Thrigun"], ["Captain (safe)", "Aman Masud"], ["Also safe", "Naresh · Shiva Kumar · Sudheer Reddy"], ["Voting window", "Monday 10:30 pm – Friday 11:59 pm IST"], ["Official vote", "JioHotstar app or missed call"]]}, {"name": "📺 The season at a glance", "rows": [["Season", "Bigg Boss Telugu 10 — Dasavatharam"], ["Host", "Akkineni Nagarjuna (8th season in a row)"], ["Premiered", "6 September 2026"], ["Watch on", "Star Maa · JioHotstar (24×7 live stream)"], ["Housemates left", "11 of 23"], ["Last eviction", "Neethu Nataraj — Week 11 (Day 77)"]]}],
+  },
 
 ];
 
@@ -3756,6 +3776,120 @@ function renderWeek11VotingSections() {
   );
 }
 
+function renderTelugu10Sections() {
+  return (
+    storySection(
+      "Quick Answer",
+      "Week 12 nominations — the seven in the danger zone",
+      `<p><strong>Seven housemates are nominated in Week 12 of Bigg Boss Telugu 10:</strong> Varshini Sounderajan, Temper Vamsi, Debjani Modak, Ramakrishna Koyya, Auto Ram Prasad, Mukesh Gowda and Thrigun. The nominations were settled in the Week 12 nomination round as the week began on Monday 23 November 2026.</p>
+    <p><strong>Captain Aman Masud is safe</strong> — the captain does not face the vote this week. Naresh, Shiva Kumar and Sudheer Reddy are the other safe housemates: eleven of the season's twenty-three housemates are still in the house.</p>
+    <div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Nominee</th><th>Known for</th><th>Entered</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Varshini Sounderajan</strong></td><td>Actress and television presenter; supporting role in the web series Pelli Gola</td><td>Day 1</td></tr>
+          <tr><td><strong>Temper Vamsi</strong></td><td>Actor, known for supporting and negative roles</td><td>Day 1</td></tr>
+          <tr><td><strong>Debjani Modak</strong></td><td>Bengali actress; television dramas Rasathi, Vaanathai Pola and Ennenno Janmala Bandham</td><td>Day 1</td></tr>
+          <tr><td><strong>Ramakrishna Koyya</strong></td><td>Content creator; entered as a Wildfire wildcard</td><td>Day 35</td></tr>
+          <tr><td><strong>Auto Ram Prasad</strong></td><td>Actor and comedian, best known for the comedy show Jabardasth</td><td>Day 1</td></tr>
+          <tr><td><strong>Mukesh Gowda</strong></td><td>Actor; the television drama Guppedantha Manasu</td><td>Day 1</td></tr>
+          <tr><td><strong>Thrigun</strong></td><td>Tamil actor; Katha, PSV Garuda Vega and Chennai Love Story</td><td>Day 1</td></tr>
+        </tbody>
+      </table>
+    </div>`
+    ) +
+    storySection(
+      "How Official Voting Works",
+      "Vote on the JioHotstar app or by missed call",
+      `<p>The Open Poll on this page is a VisitBest fan poll — it shows audience sentiment only and does not count. <strong>The official vote is on the JioHotstar app or by missed call</strong>, and it is open from <strong>Monday 10:30 pm to Friday 11:59 pm IST</strong> each week:</p>
+    <ul>
+      <li><strong>JioHotstar app:</strong> log in, open the Bigg Boss Telugu 10 page and press Vote now (in the app, not the website). One vote a day per login.</li>
+      <li><strong>Missed call:</strong> give a missed call to your nominee's own number. One vote a day per phone number.</li>
+    </ul>
+    <div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Nominee</th><th>Missed-call number</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Debjani Modak</strong></td><td>72888 78561</td></tr>
+          <tr><td><strong>Thrigun</strong></td><td>72888 78562</td></tr>
+          <tr><td><strong>Auto Ram Prasad</strong></td><td>72888 78567</td></tr>
+          <tr><td><strong>Temper Vamsi</strong></td><td>72888 78569</td></tr>
+          <tr><td><strong>Varshini Sounderajan</strong></td><td>72888 78574</td></tr>
+          <tr><td><strong>Mukesh Gowda</strong></td><td>72888 78576</td></tr>
+          <tr><td><strong>Ramakrishna Koyya</strong></td><td>Not yet published in the voting terms — vote for him in the JioHotstar app</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Voting is free; only your network's data charges apply. JioStar does not publish official vote counts — the weekend episode announces who is safe and who leaves.</p>`
+    ) +
+    storySection(
+      "Safe This Week",
+      "Captain Aman Masud and the housemates not facing the vote",
+      `<p><strong>Aman Masud</strong> — actor and model, who came through the Agnipariksha 2 pre-show as a commoner — is the house captain for Week 12 and is safe from eviction. Three more housemates are safe this week:</p>
+    <ul>
+      <li><strong>Naresh</strong> — comedian, best known for Jabardasth.</li>
+      <li><strong>Shiva Kumar Marihal</strong> — actor (Mounaraagam, Ninnu Kori, Koilamma); a Wildfire wildcard who entered on Day 35.</li>
+      <li><strong>Sudheer Reddy</strong> — anchor and digital creator.</li>
+    </ul>
+    <p>Eleven housemates remain in the house in Week 12: the seven nominees and the four safe housemates above.</p>
+    ${renderStoryPhoto("/assets/bb-telugu10/aman-masud.webp", "Aman Masud, captain of the Bigg Boss Telugu 10 house in Week 12", "Aman Masud — house captain in Week 12, safe from this week's vote.")}`
+    ) +
+    storySection(
+      "Season So Far",
+      "Dasavatharam: twenty-three entered, eleven remain",
+      `<p>Bigg Boss Telugu 10 — titled <strong>Dasavatharam</strong> — premiered on <strong>6 September 2026</strong> on Star Maa and JioHotstar, with <strong>Akkineni Nagarjuna</strong> hosting for the eighth season in a row. Sixteen housemates entered on Day 1 (ten celebrities and six commoners chosen through the Agnipariksha 2 pre-show), two wildcards followed on Day 19 and five Wildfire housemates on Day 35 — twenty-three in all.</p>
+    <p><strong>Last week (Week 11), choreographer Neethu Nataraj was evicted</strong> on Day 77 by the public vote. The exits before her include Swetha Naidu (Day 70), Rohit Naidu (Day 56), folk singer Jhansi (Day 55), Shalini Damera and Dakshi Guthikonda (Day 49), Apoorva Tungaturthy and Charan Mahadev (Day 35), Srishti Vyakaranam (Day 28), Krishnudu (Day 14) and Chaitra Rai (Day 5); Mithilesh Reddy walked out on Day 21 with a ₹15 lakh cash offer.</p>
+    <p>Curious how the earlier Telugu seasons ended? See the <a href="/bigg-boss-telugu-winners-list/"><strong>Bigg Boss Telugu winners list</strong></a> — every winner from Siva Balaji (Season 1) to Kalyan Padala (Season 9), plus the Non-Stop OTT edition.</p>`
+    )
+  );
+}
+
+function renderTelugu10Faq() {
+  return `<section class="bb-faq-section">
+    <div class="bb-section-head">
+      <p class="eyebrow">Frequently Asked Questions</p>
+      <h2>Bigg Boss Telugu 10 Voting FAQs</h2>
+    </div>
+
+    <div class="bb-faq-grid">
+      <details class="bb-faq-item" open>
+        <summary>Who is nominated in Week 12 of Bigg Boss Telugu 10?</summary>
+        <div class="bb-faq-body">
+          <p>Seven housemates: Varshini Sounderajan, Temper Vamsi, Debjani Modak, Ramakrishna Koyya, Auto Ram Prasad, Mukesh Gowda and Thrigun. Captain Aman Masud is safe, as are Naresh, Shiva Kumar and Sudheer Reddy.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>How do I vote officially for Bigg Boss Telugu 10?</summary>
+        <div class="bb-faq-body">
+          <p>In the JioHotstar app: log in, open the Bigg Boss Telugu 10 page and press Vote now — one vote a day per login. Or give a missed call to your nominee's own number — one vote a day per phone number. The missed-call numbers are listed in the voting section above.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>When does Week 12 voting close?</summary>
+        <div class="bb-faq-body">
+          <p>Official voting runs from Monday 10:30 pm to Friday 11:59 pm IST each week, so the Week 12 window closes on Friday night. The weekend episode with Nagarjuna then announces who is safe and who is evicted.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Who was evicted last week?</summary>
+        <div class="bb-faq-body">
+          <p>Choreographer Neethu Nataraj was evicted in Week 11, on Day 77, by the public vote.</p>
+        </div>
+      </details>
+      <details class="bb-faq-item">
+        <summary>Is the poll on this page the official vote?</summary>
+        <div class="bb-faq-body">
+          <p>No. The VisitBest Open Poll is a fan poll for audience sentiment only — it does not count towards the result and VisitBest is not connected to the show. Official voting happens only on the JioHotstar app or by missed call, as described above.</p>
+        </div>
+      </details>
+    </div>
+  </section>`;
+}
+
 function renderWeek12VotingSections() {
   return (
     storySection(
@@ -5131,6 +5265,12 @@ function renderTeluguWinnerCards() {
 
 function renderTeluguWinnersSections() {
   return (
+    storySection(
+      "This Season",
+      "Bigg Boss Telugu 10 is running now — vote in Week 12",
+      `<p><strong>The tenth Telugu season, Dasavatharam, is on air now</strong> — hosted by Nagarjuna on Star Maa and JioHotstar. Week 12 has seven nominees in the danger zone, and captain Aman Masud is safe. See the full nominee list, cast your vote in the Open Poll and find the official JioHotstar and missed-call voting details on the season's voting page.</p>
+      <p><a href="/bigg-boss-telugu-10-voting/"><strong>Open the Bigg Boss Telugu 10 voting page →</strong></a></p>`
+    ) +
     storySection(
       "The Full List",
       "Bigg Boss Telugu winner list — every season, every winner",
@@ -11378,7 +11518,7 @@ export function renderBiggBossPollPage(poll) {
   return `
   <div class="container bb-page">
     <div class="bb-breadcrumbs">
-      <a href="/">Home</a> / <a href="/bigg-boss-20-guide/">Bigg Boss 20</a> / <span>${poll.h1}</span>
+      ${poll.slug === "bigg-boss-telugu-10-voting" ? `<a href="/">Home</a> / <a href="/bigg-boss-telugu-winners-list/">Bigg Boss Telugu</a> / <span>${poll.h1}</span>` : `<a href="/">Home</a> / <a href="/bigg-boss-20-guide/">Bigg Boss 20</a> / <span>${poll.h1}</span>`}
     </div>
 
     ${renderPollPills(poll.slug)}
@@ -11440,7 +11580,7 @@ export function renderBiggBossPollPage(poll) {
  ${poll.slug === "bigg-boss-2-voting" ? renderSeason2Sections() : ""}
  ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
     ${poll.slug === "bigg-boss-winner-list" ? renderWinnerListSections() : ""}
-    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}
+    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}
     ${poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersSections() : ""}
     ${poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersSections() : ""}
     ${poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersSections() : ""}
@@ -11469,7 +11609,7 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderAdSenseUnit("bottom", "Advertisement")}
 
-    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : poll.slug === "bigg-boss-winner-list" ? renderWinnerListFaq() : poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersFaq() : poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersFaq() : poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersFaq() : poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersFaq() : poll.slug === "bigg-boss-17-winner-2024-vote-list" ? renderBB17VoteListFaq() : poll.slug === "bigg-boss-20-voting-week-12" ? renderWeek12Faq() : renderFaqSection(poll)}
+    ${poll.slug === "bigg-boss-voting" ? renderVotingHubFaq() : poll.slug === "bigg-boss-17-voting" ? renderSeason17Faq() : poll.slug === "bigg-boss-19-voting" ? renderSeason19Faq() : poll.slug === "bigg-boss-16-voting" ? renderSeason16Faq() : poll.slug === "bigg-boss-13-voting" ? renderSeason13Faq() : poll.slug === "bigg-boss-18-voting" ? renderSeason18Faq() : poll.slug === "bigg-boss-ott-1-voting" ? renderOtt1Faq() : poll.slug === "bigg-boss-ott-2-voting" ? renderOtt2Faq() : poll.slug === "bigg-boss-ott-3-voting" ? renderOtt3Faq() : poll.slug === "bigg-boss-15-voting" ? renderSeason15Faq() : poll.slug === "bigg-boss-14-voting" ? renderSeason14Faq() : poll.slug === "bigg-boss-12-voting" ? renderSeason12Faq() : poll.slug === "bigg-boss-11-voting" ? renderSeason11Faq() : poll.slug === "bigg-boss-10-voting" ? renderSeason10Faq() : poll.slug === "bigg-boss-9-voting" ? renderSeason9Faq() : poll.slug === "bigg-boss-8-voting" ? renderSeason8Faq() : poll.slug === "bigg-boss-7-voting" ? renderSeason7Faq() : poll.slug === "bigg-boss-6-voting" ? renderSeason6Faq() : poll.slug === "bigg-boss-5-voting" ? renderSeason5Faq() : poll.slug === "bigg-boss-4-voting" ? renderSeason4Faq() : poll.slug === "bigg-boss-3-voting" ? renderSeason3Faq() : poll.slug === "bigg-boss-2-voting" ? renderSeason2Faq() : poll.slug === "bigg-boss-1-voting" ? renderSeason1Faq() : poll.slug === "bigg-boss-winner-list" ? renderWinnerListFaq() : poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersFaq() : poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersFaq() : poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersFaq() : poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersFaq() : poll.slug === "bigg-boss-17-winner-2024-vote-list" ? renderBB17VoteListFaq() : poll.slug === "bigg-boss-20-voting-week-12" ? renderWeek12Faq() : poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Faq() : renderFaqSection(poll)}
   </div>
   `;
 }
