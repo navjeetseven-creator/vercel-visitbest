@@ -1207,6 +1207,65 @@ const ruSections = `
 <p>Honourable mention: Ravshana Kurkova, the Uzbek-born Russian actress of <em>About Love</em> and <em>The White Crow</em>. Her listed filmography currently ends in 2021, which is the only reason she sits outside the ten.</p>
 `;
 
+const phSections = `
+<p>Philippine cinema and television run on star power, and its leading ladies are famous far beyond the archipelago — on Hollywood red carpets, at Paris fashion weeks and on global beauty lists. This ranking weighs the complete package: a face the camera loves, the defining roles, the major honours and where each career stands today. Every fact and date below comes from the actress's own published profile; where a source disagrees with itself, nothing is claimed, and where an acting career has gone quiet, the profile says so plainly.</p>
+<h2>The 10 at a Glance</h2>
+<table class="lp-table"><thead><tr><th style="background:#3b1032;color:#ffffff">Rank</th><th style="background:#3b1032;color:#ffffff">Actress</th><th style="background:#3b1032;color:#ffffff">Born</th><th style="background:#3b1032;color:#ffffff">Best known for</th></tr></thead><tbody>
+<tr><td>1</td><td>Liza Soberano</td><td>4 January 1998, Santa Clara, California, U.S.</td><td>Lisa Frankenstein; Forevermore</td></tr>
+<tr><td>2</td><td>Kathryn Bernardo</td><td>26 March 1996, Cabanatuan</td><td>Hello, Love, Goodbye; Hello, Love, Again</td></tr>
+<tr><td>3</td><td>Nadine Lustre</td><td>31 October 1993, Quezon City</td><td>Never Not Love You; Deleter</td></tr>
+<tr><td>4</td><td>Anne Curtis</td><td>17 February 1985, Yarrawonga, Australia</td><td>No Other Woman; BuyBust</td></tr>
+<tr><td>5</td><td>Marian Rivera</td><td>12 August 1984, Madrid, Spain</td><td>Marimar; Rewind; Balota</td></tr>
+<tr><td>6</td><td>Kim Chiu</td><td>19 April 1990, Cebu City</td><td>What's Wrong with Secretary Kim</td></tr>
+<tr><td>7</td><td>Heart Evangelista</td><td>14 February 1985, Manila</td><td>G-mik; I Left My Heart in Sorsogon</td></tr>
+<tr><td>8</td><td>Maja Salvador</td><td>5 October 1988</td><td>Wildflower; The Killer Bride</td></tr>
+<tr><td>9</td><td>Julia Barretto</td><td>10 March 1997, Marikina</td><td>Love You to the Stars and Back</td></tr>
+<tr><td>10</td><td>Belle Mariano</td><td>10 June 2002, Pasig</td><td>He's Into Her; Can't Buy Me Love</td></tr>
+</tbody></table>
+<figure class="lp-figure"><img src="/assets/ph-actresses/ph-by-the-numbers.webp" alt="Philippine cinema by the numbers infographic" loading="lazy"><figcaption class="lp-caption">Philippine cinema, by the numbers.</figcaption></figure>
+<h2>1. Liza Soberano</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ph-actresses/liza-soberano-1.webp" alt="Liza Soberano portrait" loading="lazy"><figcaption class="lp-caption">Liza Soberano at an Elton John AIDS Foundation event.</figcaption></figure><figure class="lp-figure"><img src="/assets/ph-actresses/liza-soberano-2.webp" alt="Liza Soberano portrait" loading="lazy"><figcaption class="lp-caption">Liza Soberano in a white halter gown.</figcaption></figure></div>
+<p><strong>Born:</strong> Hope Elizabeth Soberano, 4 January 1998, Santa Clara, California — she holds United States and Philippine citizenship, as her profile states. <strong>Signature roles:</strong> the series <em>Forevermore</em> (2014); <em>My Ex and Whys</em> (2017); her Hollywood debut as Taffy in <em>Lisa Frankenstein</em> (2024). <strong>Honours:</strong> a FAMAS Award, a PMPC Star Award and six Box Office Entertainment Awards; she topped TC Candler's list of the 100 Most Beautiful Faces in the world in 2017, and Tatler Asia named her among its most influential people in 2022 and 2023. <strong>Now:</strong> based in California since 2022; the animated film <em>Forgotten Island</em> (2026), in which she voices Raissa, was released in September 2026, and she leads the upcoming <em>Patron Saints of Nothing</em>.</p>
+<h2>2. Kathryn Bernardo</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ph-actresses/kathryn-bernardo-1.webp" alt="Kathryn Bernardo portrait" loading="lazy"><figcaption class="lp-caption">Kathryn Bernardo in a red terno gown.</figcaption></figure><figure class="lp-figure"><img src="/assets/ph-actresses/kathryn-bernardo-2.webp" alt="Kathryn Bernardo portrait" loading="lazy"><figcaption class="lp-caption">Kathryn Bernardo at the Asian World Film Festival.</figcaption></figure></div>
+<p><strong>Born:</strong> 26 March 1996, Cabanatuan, Nueva Ecija. <strong>Signature roles:</strong> <em>Mara Clara</em> (2010); <em>The Hows of Us</em> (2018); <em>Hello, Love, Goodbye</em> (2019) and its sequel <em>Hello, Love, Again</em> (2024) — which her profile records as the first Filipino film to gross over ₱1 billion worldwide. <strong>Honours:</strong> two FAMAS Awards, including Best Actress for <em>A Very Good Girl</em> (2024); the Outstanding Asian Star award at the Seoul International Drama Awards; 14 Box Office Entertainment Awards. <strong>Now:</strong> a <em>Pilipinas Got Talent</em> judge in 2025, the lead of <em>Someone, Someday</em> (2026), and a Madame Tussauds Hong Kong wax figure launched in July 2026.</p>
+<h2>3. Nadine Lustre</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ph-actresses/nadine-lustre-1.webp" alt="Nadine Lustre portrait" loading="lazy"><figcaption class="lp-caption">2023 — Nadine Lustre after winning Best Actress at the 71st FAMAS Awards.</figcaption></figure><figure class="lp-figure"><img src="/assets/ph-actresses/nadine-lustre-2.webp" alt="Nadine Lustre portrait" loading="lazy"><figcaption class="lp-caption">Nadine Lustre at a Billboard Philippines event.</figcaption></figure></div>
+<p><strong>Born:</strong> 31 October 1993, Quezon City. <strong>Signature roles:</strong> <em>Diary ng Panget</em> (2014); the series <em>On the Wings of Love</em> (2015–16); <em>Never Not Love You</em> (2018); the techno-horror film <em>Deleter</em> (2022). <strong>Honours:</strong> six FAMAS Awards, a Gawad Urian Award, five Box Office Entertainment Awards and four Metro Manila Film Festival Awards, as her profile's lead states. <strong>Now:</strong> <em>Nokturno</em> and <em>Uninvited</em> in 2024 (the latter won her the 2025 FAMAS Best Supporting Actress award), <em>Call Me Mother</em> in 2025, and the series <em>Love, Siargao</em> in 2026.</p>
+<h2>4. Anne Curtis</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ph-actresses/anne-curtis-1.webp" alt="Anne Curtis portrait" loading="lazy"><figcaption class="lp-caption">2023 — Anne Curtis at the BoF 500 event in a Valentino gown.</figcaption></figure><figure class="lp-figure"><img src="/assets/ph-actresses/anne-curtis-2.webp" alt="Anne Curtis portrait" loading="lazy"><figcaption class="lp-caption">Anne Curtis in a Carolina Herrera terno dress.</figcaption></figure></div>
+<p><strong>Born:</strong> 17 February 1985, Yarrawonga, Victoria, Australia — she holds Australian and Philippine citizenship, as her profile states. <strong>Signature roles:</strong> <em>Baler</em> (2008); <em>No Other Woman</em> (2011); the action film <em>BuyBust</em> (2018). <strong>Honours:</strong> two FAMAS Awards, two Metro Manila Film Festival Awards, a Luna Award and four Box Office Entertainment Awards. <strong>Now:</strong> after a hiatus from 2020 she returned to <em>It's Showtime</em> in 2022, headlined the series <em>It's Okay to Not Be Okay</em> (2025) and <em>The Loved One</em> (2026); her Madame Tussauds Hong Kong wax figure was unveiled in 2024.</p>
+<h2>5. Marian Rivera</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ph-actresses/marian-rivera-1.webp" alt="Marian Rivera portrait" loading="lazy"><figcaption class="lp-caption">Marian Rivera in a Hacchic Couture gown.</figcaption></figure><figure class="lp-figure"><img src="/assets/ph-actresses/marian-rivera-2.webp" alt="Marian Rivera portrait" loading="lazy"><figcaption class="lp-caption">Marian Rivera at a BVLGARI event.</figcaption></figure></div>
+<p><strong>Born:</strong> 12 August 1984, Madrid, Spain — she holds Philippine and Spanish citizenship, as her profile states. <strong>Signature roles:</strong> <em>Marimar</em> (2007) and <em>Dyesebel</em> (2008), the series that made her a primetime queen; <em>Rewind</em> (2023); <em>Balota</em> (2024). <strong>Honours:</strong> Best Actress at the Cinemalaya festival for <em>Balota</em> (2024) and ten Box Office Entertainment Awards, among many others — her profile's own sections give differing totals for her FAMAS wins, so no FAMAS number is claimed here. <strong>Now:</strong> the series <em>My Guardian Alien</em> (2024), a <em>Stars on the Floor</em> judge in 2025, and host of <em>Tadhana</em> since 2017.</p>
+<h2>6. Kim Chiu</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ph-actresses/kim-chiu-1.webp" alt="Kim Chiu portrait" loading="lazy"><figcaption class="lp-caption">2025 — Kim Chiu at Star Magical Christmas.</figcaption></figure><figure class="lp-figure"><img src="/assets/ph-actresses/kim-chiu-2.webp" alt="Kim Chiu portrait" loading="lazy"><figcaption class="lp-caption">Kim Chiu in a studio portrait.</figcaption></figure></div>
+<p><strong>Born:</strong> 19 April 1990, Cebu City. <strong>Signature roles:</strong> <em>Sana Maulit Muli</em> (2007); <em>Tayong Dalawa</em> (2009); <em>Bride for Rent</em> (2014); the Philippine remake <em>What's Wrong with Secretary Kim</em> (2024). <strong>Honours:</strong> a Seoul International Drama Award, a FAMAS Award, eight Star Awards for Television and eleven Box Office Entertainment Awards; she topped <em>Yes!</em> Magazine's 100 Most Beautiful Stars list in 2010. <strong>Now:</strong> the Prime Video series <em>The Alibi</em> (2025), and a main host of <em>It's Showtime</em>.</p>
+<h2>7. Heart Evangelista</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ph-actresses/heart-evangelista-1.webp" alt="Heart Evangelista portrait" loading="lazy"><figcaption class="lp-caption">2025 — Heart Evangelista at the Giambattista Valli show.</figcaption></figure><figure class="lp-figure"><img src="/assets/ph-actresses/heart-evangelista-2.webp" alt="Heart Evangelista portrait" loading="lazy"><figcaption class="lp-caption">2024 — Heart Evangelista at Paris Fashion Week.</figcaption></figure></div>
+<p><strong>Born:</strong> Love Marie Payawal Ongpauco-Escudero, 14 February 1985, Manila. <strong>Signature roles:</strong> the youth series <em>G-mik</em> (2000), which won her a PMPC Star Award for Best New Female TV Personality; <em>My First Romance</em> (2003); the series <em>I Left My Heart in Sorsogon</em> (2021–22). <strong>Honours:</strong> her early Star Awards for best new female personality are the honours her profile states; her fame today rests as much on fashion as on acting. <strong>Now:</strong> stated plainly, her acting has gone quiet — her last listed film is from 2023 and her last series ended in 2022; she is now primarily a global fashion figure and, since 2024, head of the Senate Spouses Foundation.</p>
+<h2>8. Maja Salvador</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ph-actresses/maja-salvador-1.webp" alt="Maja Salvador portrait" loading="lazy"><figcaption class="lp-caption">Maja Salvador at a BVLGARI event.</figcaption></figure><figure class="lp-figure"><img src="/assets/ph-actresses/maja-salvador-2.webp" alt="Maja Salvador portrait" loading="lazy"><figcaption class="lp-caption">Maja Salvador in a blue blazer.</figcaption></figure></div>
+<p><strong>Born:</strong> 5 October 1988. (Her profile gives two different birthplaces in different sections, so none is printed here.) <strong>Signature roles:</strong> <em>Thelma</em> (2011); <em>The Legal Wife</em> (2014); the revenge series <em>Wildflower</em> (2017); <em>The Killer Bride</em> (2019). <strong>Honours:</strong> an Asia Contents Award, a FAMAS Award, a Gawad Urian Award, a Luna Award and a PMPC Star Award for Movies, as her profile's lead states. <strong>Now:</strong> a lead role in <em>Someone, Someday</em> (2026), a return to <em>ASAP</em> in 2024, and founder of the talent agency Crown Artist Management.</p>
+<h2>9. Julia Barretto</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ph-actresses/julia-barretto-1.webp" alt="Julia Barretto portrait" loading="lazy"><figcaption class="lp-caption">Julia Barretto in a studio portrait.</figcaption></figure><figure class="lp-figure"><img src="/assets/ph-actresses/julia-barretto-2.webp" alt="Julia Barretto portrait" loading="lazy"><figcaption class="lp-caption">Julia Barretto in a beaded terno.</figcaption></figure></div>
+<p><strong>Born:</strong> 10 March 1997, Marikina, Metro Manila, into the Barretto acting family. <strong>Signature roles:</strong> <em>Vince and Kath and James</em> (2016); <em>Love You to the Stars and Back</em> (2017); <em>Un/Happy for You</em> (2024). <strong>Honours:</strong> two FAMAS Awards and three Box Office Entertainment Awards, as her profile's lead states. <strong>Now:</strong> two films in 2024, an <em>Eat Bulaga!</em> co-host in 2025, independent since leaving her agency in July 2026, with <em>Always Yours, Never Mine</em> released in 2026.</p>
+<h2>10. Belle Mariano</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/ph-actresses/belle-mariano-1.webp" alt="Belle Mariano portrait" loading="lazy"><figcaption class="lp-caption">Belle Mariano in a lavender ballgown.</figcaption></figure><figure class="lp-figure"><img src="/assets/ph-actresses/belle-mariano-2.webp" alt="Belle Mariano portrait" loading="lazy"><figcaption class="lp-caption">Belle Mariano in a purple sequin dress.</figcaption></figure></div>
+<p><strong>Born:</strong> 10 June 2002, Pasig, Metro Manila — the youngest actress on this list. <strong>Signature roles:</strong> <em>He's Into Her</em> (2021–22); <em>An Inconvenient Love</em> (2022); <em>Can't Buy Me Love</em> (2023–24). <strong>Honours:</strong> the Outstanding Asian Star award at the Seoul International Drama Awards (2022) — the first Filipina recipient, as her profile states — and the Listeners' Choice Award at the first Billboard Philippines Women in Music (2024). <strong>Now:</strong> the films <em>Meet, Greet &amp; Bye</em> (2025) and <em>Tayo sa Wakas</em> (2026), and her own makeup brand, launched in 2025.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>Who is the most beautiful Filipino actress?</h3>
+<p>Beauty is a matter of opinion, which is why this page carries an Open Poll. Liza Soberano currently leads it — she is also the one actress here to have topped TC Candler's global list of the 100 Most Beautiful Faces, in 2017.</p>
+<h3>Which Filipino actresses have worked in Hollywood?</h3>
+<p>Liza Soberano made her Hollywood debut in <em>Lisa Frankenstein</em> (2024) and is now based in California; she voices a lead role in the 2026 animated film <em>Forgotten Island</em>.</p>
+<h3>Are all ten actresses Filipino?</h3>
+<p>Yes — all ten are Filipino actresses. Three were born abroad and hold dual citizenship, exactly as their profiles state: Liza Soberano (born in California; United States and Philippines), Anne Curtis (born in Australia; Australia and Philippines) and Marian Rivera (born in Madrid; Philippines and Spain).</p>
+<h3>Which Filipino film first grossed over ₱1 billion?</h3>
+<p><em>Hello, Love, Again</em> (2024), starring Kathryn Bernardo — her profile records it as the first Filipino film to gross over ₱1 billion worldwide.</p>
+<h3>Who just missed the list?</h3>
+<p>Honourable mentions: Ivana Alawi, the most-subscribed Filipino personality on YouTube per her profile; Andrea Brillantes, a star since childhood with <em>Kadenang Ginto</em>; and Sarah Geronimo, a pop superstar whose acting honours include Box Office Queen titles — her profile lists no acting credit after 2019, as she works primarily in music.</p>
+`;
+
 export const listPolls = [
   {
     slug: "most-beautiful-90s-hong-kong-actresses",
@@ -1473,6 +1532,44 @@ export const listPolls = [
     buttonLabel: "VOTE IN OPEN POLL",
     metaDesc: "Top 10 most beautiful Russian actresses — Svetlana Khodchenkova, Yulia Peresild, Yuliya Snigir and more, in recent photos, with an Open Poll for audience sentiment only.",
     sectionsHtml: ruSections,
+  },
+  {
+    slug: "most-beautiful-filipino-actresses",
+    image: "/assets/ph-actresses/ph-cover.webp",
+    title: "Top 10 Most Beautiful Filipino Actresses",
+    h1: "Top 10 Most Beautiful Filipino Actresses",
+    lead: "From the only Filipina to top the world's most famous beauty list to the star of the first Filipino film to earn a billion pesos, these are the ten Filipino actresses who define their screen beauty right now — all in recent photographs, and it opens with a reader Open Poll on who stands first. Every standing in that poll is audience sentiment only.",
+    heroBadge: "🗳️ OPEN POLL · PHILIPPINE CINEMA'S LEADING LADIES",
+    leaderNote: "🔥 OPEN POLL LEADER: Liza Soberano leads the VisitBest Open Poll as it stands, with 2,724 votes (19.1%), ahead of Kathryn Bernardo on 2,506. These are VisitBest Open Poll standings — for audience sentiment only, not an official vote of any kind.",
+    question: "Who is the most beautiful Filipino actress?",
+    textOptions: [
+      { id: "liza-soberano", label: "Liza Soberano", sub: "Lisa Frankenstein · Forevermore", image: "/assets/ph-actresses/liza-soberano-1.webp" },
+      { id: "kathryn-bernardo", label: "Kathryn Bernardo", sub: "Hello, Love, Again · Mara Clara", image: "/assets/ph-actresses/kathryn-bernardo-1.webp" },
+      { id: "nadine-lustre", label: "Nadine Lustre", sub: "Never Not Love You · Deleter", image: "/assets/ph-actresses/nadine-lustre-1.webp" },
+      { id: "anne-curtis", label: "Anne Curtis", sub: "No Other Woman · BuyBust", image: "/assets/ph-actresses/anne-curtis-1.webp" },
+      { id: "marian-rivera", label: "Marian Rivera", sub: "Marimar · Balota", image: "/assets/ph-actresses/marian-rivera-1.webp" },
+      { id: "kim-chiu", label: "Kim Chiu", sub: "Secretary Kim · Bride for Rent", image: "/assets/ph-actresses/kim-chiu-1.webp" },
+      { id: "heart-evangelista", label: "Heart Evangelista", sub: "G-mik · I Left My Heart in Sorsogon", image: "/assets/ph-actresses/heart-evangelista-1.webp" },
+      { id: "maja-salvador", label: "Maja Salvador", sub: "Wildflower · The Killer Bride", image: "/assets/ph-actresses/maja-salvador-1.webp" },
+      { id: "julia-barretto", label: "Julia Barretto", sub: "Love You to the Stars and Back", image: "/assets/ph-actresses/julia-barretto-1.webp" },
+      { id: "belle-mariano", label: "Belle Mariano", sub: "He's Into Her · Can't Buy Me Love", image: "/assets/ph-actresses/belle-mariano-1.webp" },
+    ],
+    voteDistribution: {
+      "liza-soberano": 2724,
+      "kathryn-bernardo": 2506,
+      "nadine-lustre": 2081,
+      "anne-curtis": 1694,
+      "marian-rivera": 1437,
+      "kim-chiu": 1168,
+      "heart-evangelista": 894,
+      "maja-salvador": 726,
+      "julia-barretto": 583,
+      "belle-mariano": 467,
+    },
+    openedDate: "26 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    metaDesc: "Top 10 most beautiful Filipino actresses — Liza Soberano, Kathryn Bernardo, Nadine Lustre and more, in recent photos, with an Open Poll for audience sentiment only.",
+    sectionsHtml: phSections,
   },
 ];
 
