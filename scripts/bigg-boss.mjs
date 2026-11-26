@@ -1014,8 +1014,8 @@ export const polls = [
     title: "Bigg Boss 20 Top 5 Contestants: The Current Top 5, Ranked & Explained",
     h1: "Bigg Boss 20 Top 5 Contestants — The Current Top 5",
     lead: "Ten housemates remain in Bigg Boss 20, and five have pulled away from the pack. This is VisitBest's current top 5 — Qazi Touqeer, Yung DSA, ScoutOP, Arishfa Khan and Kanika Mann — ranked on game impact, survival record and audience sentiment: why each of them is here, how their journey has run, and what could still stop them. The full house list is below, so you can see who is just outside the five and why. This ranking is VisitBest's editorial assessment — it is not a poll result, it is not official, The Week 11 result is now known: no vote eviction took place — Manish Goel left on medical grounds (severe leg injury), and Mahhi Vij is safe. The newest change in the house: Uditi Singh became captain in Episode 74 (18 November 2026).",
-    heroBadge: "🔝 CURRENT TOP 5 · UPDATED 21 NOVEMBER 2026",
-    leaderNote: "Editorial ranking — updated 21 November 2026, after the Week 11 result (no vote eviction; Manish Goel left on medical grounds, Mahhi Vij safe). The top 5 itself is unchanged since Episode 74 (18 November 2026) confirmed Uditi Singh as the house's new captain. VisitBest's top 5 is an editorial assessment based on game impact, survival record and Open Poll audience sentiment; it is not a poll result and not official.",
+    heroBadge: "🔝 CURRENT TOP 5 · UPDATED 26 NOVEMBER 2026",
+    leaderNote: "Editorial ranking — updated 26 November 2026, after the Week 12 nominations were announced in Episode 80 (24 November 2026). Two of the five — Scout and Kanika Mann — are nominated this week; Qazi Touqeer, Yung DSA and Arishfa Khan are safe. The top 5 itself is unchanged since Episode 74 (18 November 2026) confirmed Uditi Singh as the house's new captain. VisitBest's top 5 is an editorial assessment based on game impact, survival record and Open Poll audience sentiment; it is not a poll result and not official.",
     pollType: "top5",
     voteDistribution: {},
     dangerIds: [],
@@ -4485,7 +4485,16 @@ function renderWhoWillWinSections() {
   );
 }
 
-export function renderBiggBossTop5Page(poll) {
+export function renderTop5FactCard(id) {
+  const c = contestantById.get(id);
+  if (!c) return "";
+  const rows = [["Known for", c.role], ["From", c.city]];
+  if (c.age) rows.push(["Age", String(c.age)]);
+  rows.push(["Week 12 status", (WEEK12_STATUS[id] || ["In the house"])[0]]);
+  return `<div class="bb-fact-card"><h3>At a glance — ${c.alias || c.name}</h3>${rows.map(([k, v]) => `<div class="bb-fact-row"><span class="bb-fact-k">${k}</span><span class="bb-fact-v">${v}</span></div>`).join("")}</div>`;
+}
+
+function renderBiggBossTop5Page(poll) {
   const qazi = contestantById.get("qazi-touqeer");
   const yung = contestantById.get("yung-dsa");
   const scout = contestantById.get("scout");
@@ -4536,6 +4545,7 @@ export function renderBiggBossTop5Page(poll) {
       "Top 5 · #1",
       "Qazi Touqeer",
       `${renderStoryPhoto(qazi.image, "Qazi Touqeer, number 1 in the current Bigg Boss 20 top 5", "Qazi Touqeer — #1 in the current top 5.")}
+    ${renderTop5FactCard("qazi-touqeer")}
     <p><strong>Why he is in the top 5.</strong> Qazi is the house's entertainment centre — a Fame Gurukul-winning singer whose music runs through daily house life (Episode 74 showed him teaching Arishfa to sing) — and he plays his own game: in the first two weeks he refused the plan Yung and Scout brought him, choosing to play alone. He has taken the season's clear-eyed stands, apologised when a remark of his hurt Aasif Khan, and used his 23 October captaincy-task win to make Mahhi Vij captain instead of himself. He also leads VisitBest's season cumulative Open Poll standings — audience sentiment, not official votes, but the broadest read of who the audience is watching.</p>
     <p><strong>The journey so far.</strong> The nostalgia story of the season — a 2005 reality winner back on national television 21 years later — became its centre: a defining friendship with Mahhi that cracked in Episode 47, a running clash with Scout, nominations survived in the whole-house Week 10 and again in Week 11's Sharbat task.</p>
     <p><strong>What could stop him.</strong> An emotional fracture in the final weeks, replayed at Weekend Ka Vaar; and the gap between broad sentiment and an organised finale vote — Scout's and Arishfa's fanbases are built to out-work a soft lead.</p>`
@@ -4545,6 +4555,7 @@ export function renderBiggBossTop5Page(poll) {
       "Top 5 · #2",
       "Yung DSA",
       `${renderStoryPhoto(yung.image, "Yung DSA, number 2 in the current Bigg Boss 20 top 5", "Yung DSA — #2 in the current top 5.")}
+    ${renderTop5FactCard("yung-dsa")}
     <p><strong>Why he is in the top 5.</strong> Yung won the season's first captaincy, through the Week 1 2X Room round, and has been its loyalty player ever since: in Episode 67 he took a stand for Love Gill when Scout would not, and nominated Mahhi Vij and Qazi Touqeer in the same episode — big names, not safe ones. His gully-rap voice brings the house its youngest audience.</p>
     <p><strong>The journey so far.</strong> Knocked out of the 23 October captaincy race; pushed by Scout in Episode 68's captaincy task, where he declared the friendship over; cleared the air with Scout in Episode 69; nominated in Weeks 10 and 11.</p>
     <p><strong>What could stop him.</strong> His game runs hot — one physical flashpoint too many would end it — and in the cumulative Open Poll standings he trails Qazi, Scout and Gullu, so he needs the loudest final month of the five.</p>`
@@ -4554,6 +4565,7 @@ export function renderBiggBossTop5Page(poll) {
       "Top 5 · #3",
       "ScoutOP",
       `${renderStoryPhoto(scout.image, "ScoutOP, number 3 in the current Bigg Boss 20 top 5", "ScoutOP — #3 in the current top 5.")}
+    ${renderTop5FactCard("scout")}
     <p><strong>Why he is in the top 5.</strong> Scout brings the house's biggest single fandom — he is one of India's biggest gaming creators — plus a Week 7 captaincy and the season's most viral moment, the Episode 69 head-shave. His storyline with Love Gill and his fiancée Kaashvi Hiranandani, whose engagement he revealed at the Episode 71 Weekend Ka Vaar, is the show's biggest outside story.</p>
     <p><strong>The journey so far.</strong> A running clash with Qazi from the early weeks; captain in Week 7; nominated directly by captain Arishfa in Episode 66; punished on air in Episode 68 — nominated for the rest of the season and barred from captaincy — after pushing Yung in the captaincy task; shaved his head in Episode 69; grilled by Salman across Weekend Ka Vaar 70–71.</p>
     <p><strong>What could stop him.</strong> The handicap itself: he faces every remaining public vote with no captaincy protection available to him, ever. Survival to the finale week is his whole game now.</p>`
@@ -4563,6 +4575,7 @@ export function renderBiggBossTop5Page(poll) {
       "Top 5 · #4",
       "Arishfa Khan",
       `${renderStoryPhoto(arishfa.image, "Arishfa Khan, number 4 in the current Bigg Boss 20 top 5", "Arishfa Khan — #4 in the current top 5.")}
+    ${renderTop5FactCard("arishfa-khan")}
     <p><strong>Why she is in the top 5.</strong> The house chose her itself: Week 10 captain by a unanimous housemate vote in Episode 61. At 23 she is the youngest housemate, carries its biggest digital following (more than 29 million on Instagram), and has fought all season against being dismissed as 'bacchi'. In Episode 74 she was sanchalak of the second captaincy task — the game still runs through her.</p>
     <p><strong>The journey so far.</strong> A child artist who rebuilt herself as a social-media star; nominated in Week 7; central to the Episode 47 flashpoint that cracked the Mahhi–Qazi friendship; captain in Week 10; removed as captain in Episode 67; nominated again in Week 11.</p>
     <p><strong>What could stop her.</strong> Readers currently expect her to be at risk — she leads the Week 11 eviction-prediction Open Poll on the hub, which records expectation, not results — and the Week 11 vote is the first test of whether her following converts when it matters.</p>`
@@ -4572,6 +4585,7 @@ export function renderBiggBossTop5Page(poll) {
       "Top 5 · #5",
       "Kanika Mann",
       `${renderStoryPhoto(kanika.image, "Kanika Mann, number 5 in the current Bigg Boss 20 top 5", "Kanika Mann — #5 in the current top 5.")}
+    ${renderTop5FactCard("kanika-mann")}
     <p><strong>Why she is in the top 5.</strong> The season's first entrant — first through the door on premiere night, 6 September — and an ex-captain who used power decisively, including a captain's nomination of Mahhi Vij in Episode 58. She says the costly thing out loud: in Episode 67 she critiqued Mahhi's parenting during a task, to her face. Salman Khan praised her game in Week 5's Weekend Ka Vaar coverage.</p>
     <p><strong>The journey so far.</strong> A law graduate (LL.M., Panjab University) who chose acting over her father's opposition; entered with a 'Puppet Master' power over later entrants; captain from 28 October; part of the Episode 47 conversation that fed the season's biggest storyline; nominated in Weeks 8, 10 and 11.</p>
     <p><strong>What could stop her.</strong> Perception, on two fronts at once: Salman schooled her on both days of Weekend Ka Vaar 70–71, and the patang task named her three times as flying too high. If the house and the host keep reading her as overplaying, her edit — and her votes — cool fast.</p>`
