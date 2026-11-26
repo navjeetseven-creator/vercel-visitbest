@@ -12,6 +12,13 @@ import {
   css as bbCss,
   clientScript as bbClient,
 } from "./bigg-boss.mjs";
+import {
+  listPolls,
+  renderListPollPage,
+  listPollSchema,
+  css as listPollCss,
+  clientScript as listPollClient,
+} from "./list-polls.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourceDir = path.join(root, "content", "source");
@@ -224,6 +231,7 @@ for (const item of businessCategories) addRoute(urlFor(item.slug, "/business-cat
 for (const item of businessLocations) addRoute(urlFor(item.slug, "/business-location"), { title: item.name, type: "archive" });
 for (const item of calculatorPages) addRoute(urlFor(item.slug), { title: item.title, type: "calculator" });
 for (const item of bbPolls) addRoute(urlFor(item.slug), { title: item.title, type: "poll" });
+for (const item of listPolls) addRoute(urlFor(item.slug), { title: item.title, type: "article" });
 addRoute(urlFor("bigg-boss-20-contestants"), { title: "Bigg Boss 20 Contestants List with Photos, Age, Bio & Journey So Far", type: "page" });
 addRoute(urlFor("bigg-boss-20-voting-rules"), { title: "Bigg Boss 20 Voting Rules & Timings — How Official Voting Works", type: "page" });
 addRoute(urlFor("hottest-chinese-actors"), { title: "Hottest Chinese Actors in 2026: Top 25 Most Attractive & Popular C-Drama Stars", type: "article", dateModified: "2026-10-06" });
@@ -1201,6 +1209,20 @@ for (const poll of bbPolls) {
   await writeRoute(urlFor(poll.slug), html);
 }
 
+for (const poll of listPolls) {
+  const body = `${renderListPollPage(poll)}<style>${listPollCss}</style><script>${listPollClient}</script>`;
+  const html = renderPage({
+    title: `${poll.title} - VisitBest`,
+    description: poll.metaDesc,
+    canonical: urlFor(poll.slug),
+    currentPath: urlFor(poll.slug),
+    body,
+    schema: listPollSchema(poll),
+    image: poll.image || null,
+  });
+  await writeRoute(urlFor(poll.slug), html);
+}
+
 const bbContestantsBody = `${renderBiggBossContestantsPage()}<style>${bbCss}</style><script>${bbClient}</script>`;
 await writeRoute(urlFor("bigg-boss-20-contestants"), renderPage({
   title: "Bigg Boss 20 Contestants List with Photos, Age, Bio & Journey So Far - VisitBest",
@@ -1234,6 +1256,7 @@ const searchIndex = [
   ...business.map((item) => ({ title: decodeEntities(item.title?.rendered), summary: truncate(item.excerpt?.rendered || item.content?.rendered), href: urlFor(item.slug, "/business"), category: taxonomyLabel(item, "business_category")[0] || "Business" })),
   ...calculatorPages.map((item) => ({ title: item.title, summary: item.meta, href: urlFor(item.slug), category: "Calculator" })),
   ...bbPolls.map((item) => ({ title: item.h1, summary: item.metaDesc, href: urlFor(item.slug), category: "Bigg Boss 20" })),
+  ...listPolls.map((item) => ({ title: item.h1, summary: item.metaDesc, href: urlFor(item.slug), category: "Entertainment" })),
   { title: "Bigg Boss 20 Contestants List with Photos & Bio", summary: "Complete list of all 18 Bigg Boss Season 20 contestants with photos, bios and journey so far.", href: urlFor("bigg-boss-20-contestants"), category: "Bigg Boss 20" },
   { title: "Bigg Boss 20 Voting Rules & Timings", summary: "How official Bigg Boss 20 voting works on JioCinema / JioHotstar — rules and timings.", href: urlFor("bigg-boss-20-voting-rules"), category: "Bigg Boss 20" },
   ...(contentPackManifest.pages || []).map((p) => ({
