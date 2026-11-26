@@ -5419,9 +5419,68 @@ function renderVotingHubFaq() {
 // on the Season 17 page — none is Wikipedia-verified for that season. The
 // Season 19 prize (₹50 lakh) IS stated by Wikipedia and is included.
 
+function renderRegionalWinnerProfiles(rows, slug) {
+  const poll = pollBySlug.get(slug);
+  const fmt = (n) => n.toLocaleString("en-IN");
+  const votesByLabel = {};
+  if (poll && poll.textOptions) {
+    for (const o of poll.textOptions) votesByLabel[o.label] = (poll.voteDistribution || {})[o.id] || 0;
+  }
+  const ranked = [...rows].filter((r) => !r.noWinner).sort((a, b) => (votesByLabel[b.winner] || 0) - (votesByLabel[a.winner] || 0));
+  const rankOf = (name) => ranked.findIndex((r) => r.winner === name) + 1;
+  return rows
+    .map((r, i) => {
+      if (r.noWinner) {
+        return `
+    <div class="bb-profile">
+      <h3>${i + 1}. ${r.season} — no winner</h3>
+      <p class="bb-placing">${r.winner}</p>
+      <div class="bb-fact-card">
+        <h3>At a glance — ${r.season}</h3>
+        <div class="bb-fact-row"><span class="bb-fact-k">Season ran</span><span class="bb-fact-v">${r.dates}</span></div>
+        <div class="bb-fact-row"><span class="bb-fact-k">Host</span><span class="bb-fact-v">${r.host}</span></div>
+        <div class="bb-fact-row"><span class="bb-fact-k">Aired on</span><span class="bb-fact-v">${r.channel}</span></div>
+      </div>
+      <p>${r.story}</p>
+    </div>`;
+      }
+      const votes = votesByLabel[r.winner];
+      const bio = [
+        ["Season", `${r.season} (${r.years})`],
+        ["Season ran", r.dates],
+        ["Beat in the finale", r.runnerUp],
+        ["Host", r.host],
+        ["Aired on", r.channel],
+      ];
+      if (votes) bio.push(["Fan re-vote on this page", `${fmt(votes)} votes — rank ${rankOf(r.winner)} of ${ranked.length}`]);
+      const noPhoto = r.image
+        ? ""
+        : `<ul><li>No verified photo of ${r.winner} is published on VisitBest — we never substitute another person's picture.</li></ul>`;
+      const now = votes
+        ? `In this page's greatest-winner re-vote, ${r.winner} holds ${fmt(votes)} votes — rank ${rankOf(r.winner)} of ${ranked.length}. Fan votes only; the trophy above is official and final.`
+        : `The trophy above is official and final; the re-vote at the top of this page is audience sentiment only.`;
+      return `
+    <div class="bb-profile">
+      <h3>${i + 1}. ${r.winner}</h3>
+      <p class="bb-placing">🏆 Winner · ${r.season} (${r.years})</p>
+      <div class="bb-profile-cols">
+        ${r.image ? renderStoryPhoto(r.image, r.winner, `${r.winner} — winner of ${r.season}`) : ""}
+        <div class="bb-fact-card">
+          <h3>At a glance — ${r.winner}</h3>
+          ${bio.map(([k, v]) => `<div class="bb-fact-row"><span class="bb-fact-k">${k}</span><span class="bb-fact-v">${v}</span></div>`).join("")}
+        </div>
+      </div>
+      <p>${r.story}</p>
+      ${noPhoto}
+      <p class="bb-nowline"><strong>Fan re-vote:</strong> ${now}</p>
+    </div>`;
+    })
+    .join("");
+}
+
 function renderSeasonProfiles(finalists, slug) {
   const poll = pollBySlug.get(slug);
-  const row = WINNER_LIST.find((r) => r.link === `/${slug}/`);
+  const row = WINNER_LIST.find((r) => r.link === `/${slug}/`) || WINNER_LIST.find((r) => finalists.some((f) => f.placing.includes("Winner") && f.name === r.winner));
   const fmt = (n) => n.toLocaleString("en-IN");
   const votesByLabel = {};
   if (poll && poll.textOptions) {
@@ -5969,7 +6028,7 @@ function renderTeluguWinnersSections() {
     storySection(
       "Meet the Winners",
       "Every Bigg Boss Telugu winner — how each trophy was won",
-      renderTeluguWinnerCards(),
+      renderRegionalWinnerProfiles(TELUGU_WINNERS, "bigg-boss-telugu-winners-list"),
     ) +
     renderSeasonLinksRow([
       {
@@ -6109,7 +6168,7 @@ function renderMarathiWinnersSections() {
     storySection(
       "Meet the Winners",
       "Every Bigg Boss Marathi winner — how each trophy was won",
-      renderMarathiWinnerCards(),
+      renderRegionalWinnerProfiles(MARATHI_WINNERS, "bigg-boss-marathi-winner-list"),
     ) +
     renderSeasonLinksRow([
       {
@@ -6268,7 +6327,7 @@ function renderKannadaWinnersSections() {
     storySection(
       "Meet the Winners",
       "Every Bigg Boss Kannada winner — how each trophy was won",
-      renderKannadaWinnerCards(),
+      renderRegionalWinnerProfiles(KANNADA_WINNERS, "bigg-boss-kannada-winner-list"),
     ) +
     renderSeasonLinksRow([
       {
@@ -6431,7 +6490,7 @@ function renderMalayalamWinnersSections() {
     storySection(
       "Meet the Winners",
       "Every Bigg Boss Malayalam winner — season by season",
-      renderMalayalamWinnerCards(),
+      renderRegionalWinnerProfiles(MALAYALAM_WINNERS, "bigg-boss-malayalam-winner-list"),
     ) +
     renderSeasonLinksRow([
       {
@@ -6619,7 +6678,7 @@ function renderBB17VoteListSections() {
     storySection(
       "Meet the Finalists",
       "The Bigg Boss 17 final five — where each of them finished",
-      renderBB17FinalistCards(),
+      renderSeasonProfiles(SEASON17_FINALISTS, "bigg-boss-17-winner-2024-vote-list"),
     ) +
     renderSeasonLinksRow([
       {
