@@ -305,6 +305,8 @@ export const contestantById = new Map(contestants.map((c) => [c.id, c]));
 export const polls = [
   {
     slug: "bigg-boss-20-voting",
+    factCardsTitle: "Bigg Boss 20 — key facts",
+    factCards: [{"name": "🏠 The house right now", "rows": [["Week", "12"], ["Housemates left", "10"], ["Captain", "Uditi Singh"], ["Exits so far", "6 evictions · 1 removal · 1 medical exit"], ["Open Poll leader", "Qazi Touqeer (fan votes)"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
     title: "Bigg Boss 20 Voting – Week 11 Open Poll, Weekly Voting Hub & Audience Sentiment",
     h1: "Bigg Boss 20 Voting – Week 11 Open Poll & Voting Hub",
@@ -333,6 +335,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-voting-week-10",
+    factCardsTitle: "Week 10 — key facts",
+    factCards: [{"name": "🗳️ Week 10 at a glance", "rows": [["Eviction", "None — Week 10 was a no-eviction week"], ["Captain that week", "Arishfa Khan (removed from captaincy in Episode 67)"], ["Open Poll leader", "Gullu (fan votes)"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-voting-week-10.jpg",
     title: "Bigg Boss 20 Week 10 Voting – Nominees Open Poll (Whole House Nominated)",
     h1: "Bigg Boss 20 Week 10 Voting — Nominees Open Poll",
@@ -362,6 +366,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-eviction-prediction-week-10",
+    factCardsTitle: "Week 10 prediction — key facts",
+    factCards: [{"name": "🔮 Prediction vs result", "rows": [["Readers’ prediction topper", "Uditi Singh"], ["Actual result", "No eviction in Week 10"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-eviction-prediction-week-10.jpg",
     title: "Who Will Be Evicted in Week 10? Bigg Boss 20 Eviction Prediction Poll — Open Poll",
     h1: "Who Will Be Evicted in Week 10? (Eviction Prediction — Open Poll)",
@@ -391,6 +397,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-winner-prediction",
+    factCardsTitle: "Winner prediction — key facts",
+    factCards: [{"name": "🏆 The prediction at a glance", "rows": [["Open Poll leader", "Qazi Touqeer (fan votes)"], ["Second", "ScoutOP"], ["Status", "Season running — Week 12, 10 housemates left"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-winner-prediction.jpg",
     title: "Who Will Win Bigg Boss 20? Winner Prediction Poll & Finale Odds — Open Poll",
     h1: "Who Will Win Bigg Boss 20? Finale Winner Prediction (Open Poll)",
@@ -421,6 +429,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-best-contestant",
+    factCardsTitle: "Best contestant — key facts",
+    factCards: [{"name": "⭐ The vote at a glance", "rows": [["Open Poll leader", "ScoutOP (fan votes)"], ["Second", "Gullu"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-best-contestant.jpg",
     title: "Best Contestant of Bigg Boss 20 Poll – Strategic Mastermind & Top Player — Open Poll",
     h1: "Who is the Best Contestant of Bigg Boss 20? (Open Poll)",
@@ -451,6 +461,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-joker-of-the-house",
+    factCardsTitle: "Joker of the house — key facts",
+    factCards: [{"name": "🃏 The vote at a glance", "rows": [["Open Poll leader", "Aman Gandhi (fan votes)"], ["Note", "Aman was evicted in Week 6 — this poll is pure fan sentiment"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-joker-of-the-house.jpg",
     title: "Who is the Joker of Bigg Boss 20? Most Fake & Over-Dramatic Contestant Poll — Open Poll",
     h1: "Who is the Joker of Bigg Boss 20? (Most Dramatic / Fake) (Open Poll)",
@@ -481,6 +493,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-who-is-boss",
+    factCardsTitle: "Who is boss — key facts",
+    factCards: [{"name": "👑 The vote at a glance", "rows": [["Open Poll leader", "MC Mary Kom (fan votes)"], ["Note", "Mary Kom was evicted in Week 7 — this poll is pure fan sentiment"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-who-is-boss.jpg",
     title: "Who is the Real Boss of Bigg Boss 20? Dominant Leader & Authority Poll — Open Poll",
     h1: "Who is the Real Boss of the Bigg Boss 20 House? (Open Poll)",
@@ -511,6 +525,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-entertainer",
+    factCardsTitle: "Entertainer — key facts",
+    factCards: [{"name": "🎭 The vote at a glance", "rows": [["Open Poll leader", "Gullu (fan votes)"], ["Second", "Qazi Touqeer"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-entertainer.jpg",
     title: "Biggest Entertainer of Bigg Boss 20 Poll – 24/7 Comedy & Viral Moments — Open Poll",
     h1: "Who is the Biggest Entertainer of Bigg Boss 20? (Open Poll)",
@@ -542,6 +558,8 @@ export const polls = [
   // Head to Head Duels
   {
     slug: "bigg-boss-20-gullu-vs-qazi",
+    factCardsTitle: "The duel — key facts",
+    factCards: [{"name": "⚔️ Gullu vs Qazi", "rows": [["Open Poll leader", "Gullu (fan votes)"], ["Status", "Both in the house"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-gullu-vs-qazi.jpg",
     title: "Gullu vs Qazi Touqeer: Bigg Boss 20 Mega Rivalry Poll – Who Deserves More Votes? — Open Poll",
     h1: "Gullu vs Qazi Touqeer: The Ultimate Mega Duel (Open Poll)",
@@ -558,6 +576,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-scout-vs-gullu",
+    factCardsTitle: "The duel — key facts",
+    factCards: [{"name": "⚔️ Scout vs Gullu", "rows": [["Open Poll leader", "ScoutOP (fan votes)"], ["Status", "Both in the house"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-scout-vs-gullu.jpg",
     title: "Scout vs Gullu: Gaming Fandom vs Comedy Army – Bigg Boss 20 Fan Clash — Open Poll",
     h1: "Scout vs Gullu: Gaming Titans vs Comedy Fandom (Open Poll)",
@@ -574,6 +594,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-qazi-vs-scout",
+    factCardsTitle: "The duel — key facts",
+    factCards: [{"name": "⚔️ Qazi vs Scout", "rows": [["Open Poll leader", "Qazi Touqeer (fan votes)"], ["Status", "Both in the house"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-qazi-vs-scout.jpg",
     title: "Qazi Touqeer vs Scout: Who Deserves the Bigg Boss 20 Finale Spot? — Open Poll",
     h1: "Qazi Touqeer vs Scout: The Finale Clash (Open Poll)",
@@ -590,6 +612,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-gullu-vs-yung",
+    factCardsTitle: "The duel — key facts",
+    factCards: [{"name": "⚔️ Gullu vs Yung", "rows": [["Open Poll leader", "Gullu (fan votes)"], ["Status", "Both in the house"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-gullu-vs-yung.jpg",
     title: "Gullu vs Yung DSA: Street Comedy vs Gully Rap – Bigg Boss 20 Faceoff — Open Poll",
     h1: "Gullu vs Yung DSA: Comedy vs Gully Rap (Open Poll)",
@@ -606,6 +630,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-mary-kom-vs-gullu",
+    factCardsTitle: "The duel — key facts",
+    factCards: [{"name": "⚔️ Mary Kom vs Gullu", "rows": [["Open Poll leader", "MC Mary Kom (fan votes)"], ["Status", "Mary Kom was evicted in Week 7; Gullu is in the house"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-mary-kom-vs-gullu.jpg",
     title: "Mary Kom vs Gullu: Champion Dignity vs Comedy Chaos – Bigg Boss 20 Poll — Open Poll",
     h1: "Mary Kom vs Gullu: Powerhouse vs Entertainer (Open Poll)",
@@ -622,6 +648,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-kanika-vs-mahhi",
+    factCardsTitle: "The duel — key facts",
+    factCards: [{"name": "⚔️ Kanika vs Mahhi", "rows": [["Open Poll leader", "Kanika Mann (fan votes)"], ["Status", "Both in the house"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-kanika-vs-mahhi.jpg",
     title: "Kanika Mann vs Mahhi Vij: TV Queens Faceoff – Bigg Boss 20 Popularity Battle — Open Poll",
     h1: "Kanika Mann vs Mahhi Vij: Battle of Television Queens (Open Poll)",
@@ -638,6 +666,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-scout-love-story",
+    factCardsTitle: "Scout & Love — key facts",
+    factCards: [{"name": "💬 The story at a glance", "rows": [["ScoutOP", "In the house"], ["Love Gill", "In the house"], ["Top reader view", "“Just friendship — a brother-sister bond” (Open Poll)"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-scout-love-story.jpg",
     title: "Scout and Love Gill in Bigg Boss 20: The Bond, the Kaashvi Question & the Fallout — Open Poll",
     h1: "Scout and Love Gill: The Bond, the Kaashvi Question and the Fallout (Open Poll)",
@@ -665,6 +695,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-yung-vs-scout",
+    factCardsTitle: "Yung vs Scout — key facts",
+    factCards: [{"name": "💬 The clash at a glance", "rows": [["Yung DSA", "In the house"], ["ScoutOP", "In the house"], ["Top reader view", "“Scout — he got physical” (Open Poll)"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-yung-vs-scout.jpg",
     title: "Yung DSA vs Scout: The Captaincy-Task Clash in Bigg Boss 20 (Episode 68) — Open Poll",
     h1: "Yung DSA vs Scout: The Captaincy-Task Clash (Open Poll)",
@@ -690,6 +722,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-next-captain-poll",
+    factCardsTitle: "Captaincy — key facts",
+    factCards: [{"name": "🎖️ Captaincy at a glance", "rows": [["Current captain", "Uditi Singh (from Episode 74)"], ["First captain", "Yung DSA (Week 1)"], ["Barred", "ScoutOP is barred from captaincy for the season (Episode 68)"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-next-captain-poll.jpg",
     title: "Who Should Be the Next Captain of Bigg Boss 20? — Open Poll",
     h1: "Who Should Be the Next Captain of Bigg Boss 20? (Open Poll)",
@@ -717,6 +751,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-contestant-journey",
+    factCardsTitle: "Journeys — key facts",
+    factCards: [{"name": "🛤️ The season at a glance", "rows": [["Housemates who entered", "18"], ["Still in the house", "10"], ["Out", "8 — 6 evicted, 1 removed, 1 medical exit"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-contestant-journey.jpg",
     title: "Bigg Boss 20 Contestant Journey: Week-by-Week Safe, Nominated, Captain & Evicted Matrix",
     h1: "Bigg Boss 20 Contestant Journey — Week by Week",
@@ -730,6 +766,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-scout-vs-kaashvi",
+    factCardsTitle: "Scout & Kaashvi — key facts",
+    factCards: [{"name": "💬 At a glance", "rows": [["ScoutOP", "In the house"], ["Kaashvi Hiranandani", "Outside the house — Scout’s partner"], ["Top reader view", "“They sort it out after the show” (Open Poll)"]]}],
     image: "/assets/bb20-new/photos/scout-kaashvi-couple.webp",
     title: "Scout vs Kaashvi: The Breakup Story So Far in Bigg Boss 20 — Open Poll",
     h1: "Scout vs Kaashvi: The Breakup Story So Far (Open Poll)",
@@ -757,6 +795,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-captain",
+    factCardsTitle: "Captains — key facts",
+    factCards: [{"name": "🎖️ Captaincy at a glance", "rows": [["Captains so far", "7"], ["First captain", "Yung DSA (Week 1)"], ["Current captain", "Uditi Singh (from Episode 74)"], ["Note", "ScoutOP captained in Week 7 and is now barred from captaincy (Episode 68)"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-captain.jpg",
     title: "Who Is the Current Captain of Bigg Boss 20? — Captain History & Next Captain",
     h1: "Who Is the Current Captain of Bigg Boss 20?",
@@ -770,6 +810,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-weekend-ka-vaar-episodes-70-71",
+    factCardsTitle: "Weekend Ka Vaar — key facts",
+    factCards: [{"name": "📺 Episodes 70–71 at a glance", "rows": [["Weekend", "Week 10’s Weekend Ka Vaar"], ["Eviction", "None that weekend"], ["Top reader pick", "“The no-eviction twist” (Open Poll)"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-weekend-ka-vaar-episodes-70-71.jpg",
     title: "Bigg Boss 20 Weekend Ka Vaar (Episodes 70–71): No Eviction, Mahhi Vij Loses a Lifeline — Full Highlights & Open Poll",
     h1: "Weekend Ka Vaar, Episodes 70–71: No Eviction — Mahhi Vij Saved by Her Lifeline (Open Poll)",
@@ -797,6 +839,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-scout-shaves-head",
+    factCardsTitle: "Scout shaves his head — key facts",
+    factCards: [{"name": "💬 At a glance", "rows": [["Who", "ScoutOP"], ["What happened", "Scout shaved his head inside the house"], ["Top reader view", "“An emotional outburst” (Open Poll)"]]}],
     image: "/assets/bb20-new/photos/scout-alone-house.webp",
     title: "Scout Shaved His Head in Bigg Boss 20: The Viral Bald Moment and the Full Story — Open Poll",
     h1: "Scout Shaves His Head: The Viral Bald Moment and the Full Story (Open Poll)",
@@ -824,6 +868,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-eviction-list",
+    factCardsTitle: "Evictions — key facts",
+    factCards: [{"name": "🚪 The exits at a glance", "rows": [["Evictions (6)", "Rohed (Wk 2) · Isha (Wk 3) · Rhiti (Wk 4) · Aman (Wk 6) · Mary Kom (Wk 7) · Aasif (Wk 8)"], ["Removed", "Nakul Dhull — Week 6"], ["Medical exit", "Manish Goel — Week 11"], ["No-eviction weeks", "1, 5, 9, 10, 11"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-eviction-list.jpg",
     title: "Bigg Boss 20 Eviction List: Every Eliminated Contestant, Week by Week — Open Poll",
     h1: "Bigg Boss 20 Eviction List: Who Has Left the House So Far? (Open Poll)",
@@ -846,6 +892,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-voting-week-11",
+    factCardsTitle: "Week 11 — key facts",
+    factCards: [{"name": "🗳️ Week 11 at a glance", "rows": [["Eviction", "None — no vote eviction in Week 11"], ["Exit", "Manish Goel — left on medical grounds (severe leg injury)"], ["Mahhi Vij", "Safe"], ["Open Poll leader", "Qazi Touqeer (fan votes)"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-voting-week-11.jpg",
     title: "Bigg Boss 20 Week 11 Voting – Nominees Open Poll (Sharbat Task Nominations)",
     h1: "Bigg Boss 20 Week 11 Voting — Nominees Open Poll",
@@ -876,6 +924,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-voting-week-12",
+    factCardsTitle: "Week 12 — key facts",
+    factCards: [{"name": "🗳️ Week 12 at a glance", "rows": [["Nominated (6)", "ScoutOP · Love Gill · Kanika Mann · Gullu · Mahhi Vij · Aamrapali Dubey"], ["Safe (4)", "Yung DSA · Arishfa Khan · Qazi Touqeer · Uditi Singh"], ["Captain", "Uditi Singh"], ["Open Poll leader", "ScoutOP (fan votes)"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-voting-week-12.jpg",
     title: "Bigg Boss 20 Week 12 Voting – Nominees Open Poll (Episode 80 Nominations)",
     h1: "Bigg Boss 20 Week 12 Voting — Nominees Open Poll",
@@ -902,6 +952,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-eviction-prediction-week-11",
+    factCardsTitle: "Week 11 prediction — key facts",
+    factCards: [{"name": "🔮 Prediction vs result", "rows": [["Actual result", "No eviction — Manish Goel left on medical grounds"], ["Mahhi Vij", "Safe — she was not evicted"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-eviction-prediction-week-11.jpg",
     title: "Who Will Be Evicted in Week 11? Bigg Boss 20 Eviction Prediction Poll — Open Poll",
     h1: "Who Will Be Evicted in Week 11? (Eviction Prediction — Open Poll)",
@@ -931,6 +983,8 @@ export const polls = [
   },
   {
     slug: "who-will-win-bigg-boss-20",
+    factCardsTitle: "Who will win — key facts",
+    factCards: [{"name": "🏆 The race at a glance", "rows": [["Open Poll leader", "Qazi Touqeer (fan votes)"], ["Second", "Yung DSA"], ["Status", "Week 12 — 10 housemates left"]]}],
     image: "/assets/bb20-new/covers/who-will-win-bigg-boss-20.jpg",
     title: "Who Will Win Bigg Boss 20? Winner Prediction, Top 5 Finalists & Open Poll",
     h1: "Who Will Win Bigg Boss 20? (Winner Prediction — Open Poll)",
@@ -954,6 +1008,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-top-5-contestants",
+    factCardsTitle: "Top 5 — key facts",
+    factCards: [{"name": "🏅 At a glance", "rows": [["Based on", "Open Poll standings — fan votes only"], ["Status", "Week 12 — 10 housemates left"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-20-top-5-contestants.jpg",
     title: "Bigg Boss 20 Top 5 Contestants: The Current Top 5, Ranked & Explained",
     h1: "Bigg Boss 20 Top 5 Contestants — The Current Top 5",
@@ -967,6 +1023,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-voting-trend",
+    factCardsTitle: "Voting trend — key facts",
+    factCards: [{"name": "📈 At a glance", "rows": [["What this page tracks", "How the Open Poll standings have moved week to week"], ["Status", "Week 12 — 10 housemates left"]]}],
     pollType: "trend",
     badge: "BIGG BOSS 20",
     title: "Bigg Boss 20 Voting Trend Today — Open Poll Standings (Audience Sentiment)",
@@ -987,6 +1045,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-finale",
+    factCardsTitle: "Finale — key facts",
+    factCards: [{"name": "🏁 At a glance", "rows": [["Status", "Season still running — Week 12"], ["Housemates left", "10"], ["Finale date", "Not yet announced by the channel"]]}],
     pollType: "finale",
     badge: "BIGG BOSS 20",
     title: "Bigg Boss 20 Finale Date — Expected Window, Finalist Race & How the Finale Works",
@@ -1007,6 +1067,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-voting",
+    factCardsTitle: "All seasons — key facts",
+    factCards: [{"name": "📋 The hub at a glance", "rows": [["Season pages", "22 — Hindi Seasons 1–19 + OTT 1–3"], ["Winner lists", "6 — Hindi, Telugu, Marathi, Kannada, Malayalam + the BB17 vote list"], ["Ultimate fan vote leader", "Sidharth Shukla (Open Poll)"], ["Currently running", "Bigg Boss 20 — Week 12"]]}],
     image: "/assets/bb20-new/covers/bigg-boss-voting.jpg",
     title: "Bigg Boss Voting — All Seasons Hub, Ultimate Winner Poll & Voting Results Today",
     h1: "Bigg Boss Voting — All Seasons Voting Hub & Ultimate Winner Poll",
@@ -3277,7 +3339,7 @@ export function renderBiggBossJourneyPage(poll) {
 
     ${renderDebateStrip(poll)}
 
-    ${renderFanDebate(poll)}
+    ${renderFactCards(poll)}${renderFanDebate(poll)}
   </div>
   `;
 }
@@ -3461,7 +3523,7 @@ export function renderBiggBossCaptainPage(poll) {
 
     ${renderDebateStrip(poll)}
 
-    ${renderFanDebate(poll)}
+    ${renderFactCards(poll)}${renderFanDebate(poll)}
   </div>
   `;
 }
@@ -4034,7 +4096,7 @@ export function renderBiggBossTop5Page(poll) {
 
     ${renderDebateStrip(poll)}
 
-    ${renderFanDebate(poll)}
+    ${renderFactCards(poll)}${renderFanDebate(poll)}
   </div>
   `;
 }
@@ -4314,7 +4376,7 @@ export function renderBiggBossTrendPage(poll) {
 
     ${renderDebateStrip(poll)}
 
-    ${renderFanDebate(poll)}
+    ${renderFactCards(poll)}${renderFanDebate(poll)}
   </div>`;
 }
 
@@ -4533,7 +4595,7 @@ export function renderBiggBossFinalePage(poll) {
 
     ${renderDebateStrip(poll)}
 
-    ${renderFanDebate(poll)}
+    ${renderFactCards(poll)}${renderFanDebate(poll)}
   </div>`;
 }
 
