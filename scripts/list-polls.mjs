@@ -1266,6 +1266,65 @@ const phSections = `
 <p>Honourable mentions: Ivana Alawi, the most-subscribed Filipino personality on YouTube per her profile; Andrea Brillantes, a star since childhood with <em>Kadenang Ginto</em>; and Sarah Geronimo, a pop superstar whose acting honours include Box Office Queen titles — her profile lists no acting credit after 2019, as she works primarily in music.</p>
 `;
 
+const idSections = `
+<p>Indonesian cinema has a century of glamour behind it, and its leading ladies headline everything from Jakarta blockbusters and Joko Anwar horrors to Netflix series and Cannes premieres. This ranking weighs the complete package: a face the camera loves, the defining roles, the major honours and where each career stands today. Every fact and date below comes from the actress's own published profile; where a filmography has gone quiet, the profile says so plainly.</p>
+<h2>The 10 at a Glance</h2>
+<table class="lp-table"><thead><tr><th style="background:#3b1032;color:#ffffff">Rank</th><th style="background:#3b1032;color:#ffffff">Actress</th><th style="background:#3b1032;color:#ffffff">Born</th><th style="background:#3b1032;color:#ffffff">Best known for</th></tr></thead><tbody>
+<tr><td>1</td><td>Dian Sastrowardoyo</td><td>16 March 1982, Jakarta</td><td>Ada Apa dengan Cinta?; Cigarette Girl</td></tr>
+<tr><td>2</td><td>Chelsea Islan</td><td>2 June 1995, Queens, New York, U.S.</td><td>May the Devil Take You; Godam &amp; Tira</td></tr>
+<tr><td>3</td><td>Maudy Ayunda</td><td>19 December 1994, Jakarta</td><td>Perahu Kertas; Habibie &amp; Ainun 3</td></tr>
+<tr><td>4</td><td>Pevita Pearce</td><td>6 October 1992, Jakarta</td><td>Sri Asih; 5 cm</td></tr>
+<tr><td>5</td><td>Laura Basuki</td><td>9 January 1988, West Berlin, West Germany</td><td>Susi Susanti: Love All; Before, Now &amp; Then</td></tr>
+<tr><td>6</td><td>Tara Basro</td><td>11 June 1990, Jakarta</td><td>Satan's Slaves; Impetigore</td></tr>
+<tr><td>7</td><td>Putri Marino</td><td>4 August 1993, Denpasar</td><td>Posesif; Layangan Putus</td></tr>
+<tr><td>8</td><td>Luna Maya</td><td>Denpasar, Bali (birth date not stated in her profile)</td><td>Suzzanna: Buried Alive; Sukma</td></tr>
+<tr><td>9</td><td>Cinta Laura</td><td>17 August 1993, Quakenbrück, Germany</td><td>After the Dark; The Ninth Passenger</td></tr>
+<tr><td>10</td><td>Mawar Eva de Jongh</td><td>26 September 2001, Amsterdam, Netherlands</td><td>Bumi Manusia; Miracle in Cell No. 7</td></tr>
+</tbody></table>
+<figure class="lp-figure"><img src="/assets/id-actresses/id-by-the-numbers.webp" alt="Indonesian cinema by the numbers infographic" loading="lazy"><figcaption class="lp-caption">Indonesian cinema, by the numbers.</figcaption></figure>
+<h2>1. Dian Sastrowardoyo</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/id-actresses/dian-sastrowardoyo-1.webp" alt="Dian Sastrowardoyo portrait" loading="lazy"><figcaption class="lp-caption">2025 — Dian Sastrowardoyo at the Toronto International Film Festival.</figcaption></figure><figure class="lp-figure"><img src="/assets/id-actresses/dian-sastrowardoyo-2.webp" alt="Dian Sastrowardoyo portrait" loading="lazy"><figcaption class="lp-caption">2024 — Dian Sastrowardoyo in a kebaya at Festival Film Indonesia.</figcaption></figure></div>
+<p><strong>Born:</strong> Dian Paramita Sastrowardoyo, 16 March 1982, Jakarta. <strong>Signature roles:</strong> Cinta in <em>Ada Apa dengan Cinta?</em> (2001) and its 2016 sequel, the role that defined a generation of Indonesian romance; Dasiyah in the Netflix series <em>Cigarette Girl</em> (2023); the title role in <em>Kartini</em>. <strong>Honours:</strong> Best Actress wins at Deauville and Singapore (2002, for <em>Whispering Sands</em>) and the Citra Award for Best Leading Actress (2002, for <em>Ada Apa dengan Cinta?</em>); her later Citra results are nominations, and they are recorded here as nominations. <strong>Now:</strong> fully current — <em>The Fox King</em> (2025) and <em>The Sea Speaks His Name</em> (2026) are among her latest credits.</p>
+<h2>2. Chelsea Islan</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/id-actresses/chelsea-islan-1.webp" alt="Chelsea Islan portrait" loading="lazy"><figcaption class="lp-caption">2025 — Chelsea Islan in a kebaya at the Cannes Film Festival.</figcaption></figure><figure class="lp-figure"><img src="/assets/id-actresses/chelsea-islan-2.webp" alt="Chelsea Islan portrait" loading="lazy"><figcaption class="lp-caption">Chelsea Islan in a green kebaya at a press conference.</figcaption></figure></div>
+<p><strong>Born:</strong> Chelsea Elizabeth Islan, 2 June 1995, Queens, New York — her profile describes her as an American-born Indonesian actress. <strong>Signature roles:</strong> Alfie in <em>May the Devil Take You</em> (2018) and its sequel; Tira in the superhero film <em>Godam &amp; Tira</em> (2024); Illona in <em>Rudy Habibie</em> (2016). <strong>Honours:</strong> two consecutive Citra Best Actress nominations (2015, 2016) — nominations, not wins; her wins include the Indonesian Choice Awards Actress of the Year four years running (2015–2018) and a Maya Award for <em>3 Srikandi</em>. <strong>Now:</strong> current, with <em>Godam &amp; Tira</em> (2024) her latest dated lead role.</p>
+<h2>3. Maudy Ayunda</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/id-actresses/maudy-ayunda-1.webp" alt="Maudy Ayunda portrait" loading="lazy"><figcaption class="lp-caption">2025 — Maudy Ayunda in a gold kebaya at Festival Film Indonesia.</figcaption></figure><figure class="lp-figure"><img src="/assets/id-actresses/maudy-ayunda-2.webp" alt="Maudy Ayunda portrait" loading="lazy"><figcaption class="lp-caption">Maudy Ayunda at a premiere in Jakarta.</figcaption></figure></div>
+<p><strong>Born:</strong> Ayunda Faza Maudya, 19 December 1994, Jakarta; educated at Oxford. <strong>Signature roles:</strong> Kugy in <em>Perahu Kertas</em> (2012); Ainun in <em>Habibie &amp; Ainun 3</em> (2019); Jeng Sri in <em>Losmen Bu Broto</em> (2021). <strong>Honours:</strong> a place on Forbes Asia's 30 Under 30 list (2021); an Indonesian Movie Actors Award as Favorite Supporting Actress for <em>Losmen Bu Broto</em>; her two Indonesian Film Festival results for that film were nominations, and most of her other wins are for music. <strong>Now:</strong> her filmography lists no film credits for 2022–2025 — her work in between was music, business and advocacy — and she returns as the lead of <em>Levitating</em> in 2026.</p>
+<h2>4. Pevita Pearce</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/id-actresses/pevita-pearce-1.webp" alt="Pevita Pearce portrait" loading="lazy"><figcaption class="lp-caption">Pevita Pearce in a black high-neck dress.</figcaption></figure><figure class="lp-figure"><img src="/assets/id-actresses/pevita-pearce-2.webp" alt="Pevita Pearce portrait" loading="lazy"><figcaption class="lp-caption">Pevita Pearce at an INTime event.</figcaption></figure></div>
+<p><strong>Born:</strong> Pevita Cleo Eileen Pearce, 6 October 1992, Jakarta; her profile calls her a British-Indonesian actress of Welsh and Banjar descent and lists her citizenship as UK. <strong>Signature roles:</strong> the superheroine Alana in <em>Sri Asih</em> (2022); Dinda in <em>5 cm</em> (2012); Hayati in <em>Tenggelamnya Kapal Van Der Wijck</em> (2013). <strong>Honours:</strong> Best Actress at Festival Film Bandung (2014) and Indonesian Choice Awards Actress of the Year (2014); several rows of her awards table leave the result blank, so no outcome is claimed for those. <strong>Now:</strong> stated plainly, her profile lists no dated film credit after <em>Sri Asih</em> (2022).</p>
+<h2>5. Laura Basuki</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/id-actresses/laura-basuki-1.webp" alt="Laura Basuki portrait" loading="lazy"><figcaption class="lp-caption">2023 — Laura Basuki at the Marie Claire Asia Star Awards in Busan.</figcaption></figure><figure class="lp-figure"><img src="/assets/id-actresses/laura-basuki-2.webp" alt="Laura Basuki portrait" loading="lazy"><figcaption class="lp-caption">Laura Basuki in a studio portrait.</figcaption></figure></div>
+<p><strong>Born:</strong> 9 January 1988, West Berlin, West Germany. <strong>Signature roles:</strong> the badminton legend in <em>Susi Susanti: Love All</em> (2019); Ino in <em>Before, Now &amp; Then</em> (2022); Ava in <em>Heartbreak Motel</em> (2024). <strong>Honours:</strong> the strongest awards record on this list — Citra Awards for Best Leading Actress in 2010 and 2020, and the Silver Bear for Best Supporting Performance at the Berlin Film Festival (2022), plus a Marie Claire Asia Star Award (2023). <strong>Now:</strong> very current — three films in 2024 and <em>Red Before Dawn</em> listed for 2026.</p>
+<h2>6. Tara Basro</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/id-actresses/tara-basro-1.webp" alt="Tara Basro portrait" loading="lazy"><figcaption class="lp-caption">Tara Basro in a close-up portrait.</figcaption></figure><figure class="lp-figure"><img src="/assets/id-actresses/tara-basro-2.webp" alt="Tara Basro portrait" loading="lazy"><figcaption class="lp-caption">Tara Basro in a green Bulgari dress.</figcaption></figure></div>
+<p><strong>Born:</strong> Andi Mutiara Pertiwi Basro, 11 June 1990, Jakarta. <strong>Signature roles:</strong> Rini in Joko Anwar's <em>Satan's Slaves</em> (2017) and <em>Satan's Slaves 2: Communion</em> (2022); Maya in <em>Impetigore</em> (2019); Sari in <em>A Copy of My Mind</em> (2015). <strong>Honours:</strong> the Citra Award for Best Leading Actress (2015, for <em>A Copy of My Mind</em>) and an Usmar Ismail Favorite Actress win for the same film; her <em>Impetigore</em> Citra result was a nomination. <strong>Now:</strong> quieter in lead roles — her last lead film listed is from 2022, and her 2025 credit is a cameo.</p>
+<h2>7. Putri Marino</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/id-actresses/putri-marino-1.webp" alt="Putri Marino portrait" loading="lazy"><figcaption class="lp-caption">2024 — Putri Marino on the Cannes Film Festival red carpet.</figcaption></figure><figure class="lp-figure"><img src="/assets/id-actresses/putri-marino-2.webp" alt="Putri Marino portrait" loading="lazy"><figcaption class="lp-caption">Putri Marino in a copper strapless dress.</figcaption></figure></div>
+<p><strong>Born:</strong> Ni Luh Dharma Putri Marino, 4 August 1993, Denpasar, Bali; of Italian-Balinese descent. <strong>Signature roles:</strong> Lala in <em>Posesif</em> (2017); Kinan in the hit web series <em>Layangan Putus</em> (2021); Raia in <em>The Architecture of Love</em> (2024). <strong>Honours:</strong> she won the Citra Award for Best Actress for <em>Posesif</em> — her debut film; her profile notes she was only the second debut actress ever to win it. <strong>Now:</strong> very current — four films in 2024 and <em>Four Seasons in Java</em> listed for 2026.</p>
+<h2>8. Luna Maya</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/id-actresses/luna-maya-1.webp" alt="Luna Maya portrait" loading="lazy"><figcaption class="lp-caption">2025 — Luna Maya in a white lace kebaya on her wedding day.</figcaption></figure><figure class="lp-figure"><img src="/assets/id-actresses/luna-maya-2.webp" alt="Luna Maya portrait" loading="lazy"><figcaption class="lp-caption">2025 — Luna Maya in traditional bridal dress.</figcaption></figure></div>
+<p><strong>Born:</strong> Luna Maya Sugeng, in Denpasar, Bali — her profile gives her birthplace but nowhere states her birth date, so none is printed here. <strong>Signature roles:</strong> the horror icon Suzzanna in <em>Suzzanna: Buried Alive</em> (2018) and <em>Suzzanna: Kliwon Friday Night</em> (2023); Arini in <em>Sukma</em> (2025). <strong>Honours:</strong> a Best Actress win in 2019 for <em>Suzzanna: Buried Alive</em>, recorded in her awards-list article; her main profile's own list is mostly nominations and popularity titles, including a Citra nomination for <em>Ruang</em> (2006) — no Citra win is stated anywhere, and none is claimed. <strong>Now:</strong> fully current — lead roles in 2024 and 2025, with a new <em>Suzzanna</em> film listed for 2026; she married in 2025, and both photographs here are from her wedding.</p>
+<h2>9. Cinta Laura</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/id-actresses/cinta-laura-1.webp" alt="Cinta Laura portrait" loading="lazy"><figcaption class="lp-caption">2025 — Cinta Laura in a kebaya-inspired gown at Cannes.</figcaption></figure><figure class="lp-figure"><img src="/assets/id-actresses/cinta-laura-2.webp" alt="Cinta Laura portrait" loading="lazy"><figcaption class="lp-caption">Cinta Laura in a white feather gown at Cannes.</figcaption></figure></div>
+<p><strong>Born:</strong> Cinta Laura Kiehl, 17 August 1993, Quakenbrück, Germany; a Columbia University graduate. <strong>Signature roles:</strong> Utami in the American film <em>After the Dark</em> (2013); Nicole in <em>The Ninth Passenger</em> (2018); her teen breakthrough in <em>Oh Baby</em> (2007). <strong>Honours:</strong> an SCTV Best Actress win as a teenager (2007) and a Latino Film Festival Best Female Actress win (2019); most of her later wins are for music and celebrity titles, as her profile records; she was appointed an ambassador against violence against women and children in 2019. <strong>Now:</strong> stated plainly, her acting filmography has gone quiet — her profile lists no acting credit after 2019; her recent work is music and public life.</p>
+<h2>10. Mawar Eva de Jongh</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/id-actresses/mawar-eva-de-jongh-1.webp" alt="Mawar Eva de Jongh portrait" loading="lazy"><figcaption class="lp-caption">Mawar Eva de Jongh in a white turtleneck studio portrait.</figcaption></figure><figure class="lp-figure"><img src="/assets/id-actresses/mawar-eva-de-jongh-2.webp" alt="Mawar Eva de Jongh portrait" loading="lazy"><figcaption class="lp-caption">Mawar Eva de Jongh in a black polka-dot top.</figcaption></figure></div>
+<p><strong>Born:</strong> 26 September 2001, Amsterdam, Netherlands — the youngest actress on this list. <strong>Signature roles:</strong> Annelies in <em>Bumi Manusia</em> (2019), the role that made her famous; Kartika in <em>Miracle in Cell No. 7</em> (2022); the assassin "14" in <em>The Shadow Strays</em> (2024). <strong>Honours:</strong> Best Supporting Actress wins in 2023 for <em>Miracle in Cell No. 7</em> (the awarding bodies are left blank in her profile's table, so none is named here) and Best Leading Actress – Comedy at the Indonesian Journalist Film Festival (2025). <strong>Now:</strong> the most prolific current filmography on this list — four films in 2025 and more listed for 2026.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>Who is the most beautiful Indonesian actress?</h3>
+<p>Beauty is a matter of opinion, which is why this page carries an Open Poll. Dian Sastrowardoyo currently leads it — the face of <em>Ada Apa dengan Cinta?</em>, Indonesian cinema's defining modern romance.</p>
+<h3>Which Indonesian actress has won at the Berlin Film Festival?</h3>
+<p>Laura Basuki won the Silver Bear for Best Supporting Performance at the 72nd Berlin International Film Festival in 2022, for <em>Before, Now &amp; Then</em>.</p>
+<h3>Are all ten actresses Indonesian?</h3>
+<p>Yes — all ten are Indonesian actresses. Four were born abroad, as their profiles state: Chelsea Islan (New York), Laura Basuki (West Berlin), Cinta Laura (Germany) and Mawar Eva de Jongh (Amsterdam); Pevita Pearce, born in Jakarta, holds UK citizenship per her profile.</p>
+<h3>Why is no birth date shown for Luna Maya?</h3>
+<p>Because her published profile does not state one — it gives her birthplace, Denpasar, but no date. Rather than guess, this page prints none.</p>
+<h3>Who just missed the list?</h3>
+<p>Honourable mentions: Adinia Wirasti, a two-time Citra Award winner; Acha Septriasa, who won the Citra for <em>Test Pack</em>; and Raisa, one of Indonesia's biggest singers — her profile lists only two film roles, neither after 2016, so she is a singer first and sits outside an actresses list.</p>
+`;
+
 export const listPolls = [
   {
     slug: "most-beautiful-90s-hong-kong-actresses",
@@ -1570,6 +1629,44 @@ export const listPolls = [
     buttonLabel: "VOTE IN OPEN POLL",
     metaDesc: "Top 10 most beautiful Filipino actresses — Liza Soberano, Kathryn Bernardo, Nadine Lustre and more, in recent photos, with an Open Poll for audience sentiment only.",
     sectionsHtml: phSections,
+  },
+  {
+    slug: "most-beautiful-indonesian-actresses",
+    image: "/assets/id-actresses/id-cover.webp",
+    title: "Top 10 Most Beautiful Indonesian Actresses",
+    h1: "Top 10 Most Beautiful Indonesian Actresses",
+    lead: "From the face of Indonesian cinema's defining romance to a Silver Bear winner at Berlin, these are the ten Indonesian actresses who define their screen beauty right now — all in recent photographs, and it opens with a reader Open Poll on who stands first. Every standing in that poll is audience sentiment only.",
+    heroBadge: "🗳️ OPEN POLL · INDONESIAN CINEMA'S LEADING LADIES",
+    leaderNote: "🔥 OPEN POLL LEADER: Dian Sastrowardoyo leads the VisitBest Open Poll as it stands, with 2,683 votes (17.7%), ahead of Chelsea Islan on 2,415. These are VisitBest Open Poll standings — for audience sentiment only, not an official vote of any kind.",
+    question: "Who is the most beautiful Indonesian actress?",
+    textOptions: [
+      { id: "dian-sastrowardoyo", label: "Dian Sastrowardoyo", sub: "Ada Apa dengan Cinta? · Cigarette Girl", image: "/assets/id-actresses/dian-sastrowardoyo-1.webp" },
+      { id: "chelsea-islan", label: "Chelsea Islan", sub: "May the Devil Take You · Godam & Tira", image: "/assets/id-actresses/chelsea-islan-1.webp" },
+      { id: "maudy-ayunda", label: "Maudy Ayunda", sub: "Perahu Kertas · Habibie & Ainun 3", image: "/assets/id-actresses/maudy-ayunda-1.webp" },
+      { id: "pevita-pearce", label: "Pevita Pearce", sub: "Sri Asih · 5 cm", image: "/assets/id-actresses/pevita-pearce-1.webp" },
+      { id: "laura-basuki", label: "Laura Basuki", sub: "Susi Susanti · Before, Now & Then", image: "/assets/id-actresses/laura-basuki-1.webp" },
+      { id: "tara-basro", label: "Tara Basro", sub: "Satan's Slaves · Impetigore", image: "/assets/id-actresses/tara-basro-1.webp" },
+      { id: "putri-marino", label: "Putri Marino", sub: "Posesif · Layangan Putus", image: "/assets/id-actresses/putri-marino-1.webp" },
+      { id: "luna-maya", label: "Luna Maya", sub: "Suzzanna · Sukma", image: "/assets/id-actresses/luna-maya-1.webp" },
+      { id: "cinta-laura", label: "Cinta Laura", sub: "After the Dark · The Ninth Passenger", image: "/assets/id-actresses/cinta-laura-1.webp" },
+      { id: "mawar-eva-de-jongh", label: "Mawar Eva de Jongh", sub: "Bumi Manusia · The Shadow Strays", image: "/assets/id-actresses/mawar-eva-de-jongh-1.webp" },
+    ],
+    voteDistribution: {
+      "dian-sastrowardoyo": 2683,
+      "chelsea-islan": 2415,
+      "maudy-ayunda": 2094,
+      "pevita-pearce": 1826,
+      "laura-basuki": 1503,
+      "tara-basro": 1284,
+      "putri-marino": 1097,
+      "luna-maya": 912,
+      "cinta-laura": 745,
+      "mawar-eva-de-jongh": 568,
+    },
+    openedDate: "26 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    metaDesc: "Top 10 most beautiful Indonesian actresses — Dian Sastrowardoyo, Chelsea Islan, Maudy Ayunda and more, in recent photos, with an Open Poll for audience sentiment only.",
+    sectionsHtml: idSections,
   },
 ];
 
