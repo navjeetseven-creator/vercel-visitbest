@@ -3321,7 +3321,105 @@ export const WEEK12_STATUS = {
   "uditi-singh": ["Captain — safe in Week 12", "The current captain (since Episode 74) — safe in Week 12 on the captain's immunity."],
 };
 
-function renderStillStandingSection() {
+function renderRegistryProfiles(ids) {
+  return ids
+    .map((id, i) => {
+      const c = contestantById.get(id);
+      if (!c) return "";
+      const inHouse = WEEK12_STATUS[id];
+      const cap = captainHistory.find((h) => h.id === id);
+      const placing = inHouse
+        ? inHouse[0]
+        : c.status === "evicted"
+          ? `Evicted — Week ${c.evictedWeek}`
+          : c.status === "removed"
+            ? "Removed from the house — Week 6"
+            : id === "manish-goel"
+              ? "Left the house — medical exit (Week 11)"
+              : c.status;
+      const bio = [
+        ["Role", c.role],
+        ["Age", String(c.age)],
+        ["From", c.city],
+        ["Status", placing],
+      ];
+      if (cap) bio.push(["Captaincy", cap.when]);
+      const now = inHouse
+        ? inHouse[1]
+        : c.status === "evicted"
+          ? `${c.name} is out of the house (Week ${c.evictedWeek}) — this profile is their season record, and the Open Poll on this page is fan sentiment only.`
+          : c.status === "removed"
+            ? `${c.name} was removed from the house in Week 6 — this profile is their season record, and the Open Poll on this page is fan sentiment only.`
+            : `${c.name} left the house in Week 11 on medical grounds — this profile is their season record, and the Open Poll on this page is fan sentiment only.`;
+      return `
+    <div class="bb-profile">
+      <h3>${i + 1}. ${c.name}</h3>
+      <p class="bb-placing">${placing}</p>
+      <div class="bb-profile-cols">
+        ${renderStoryPhoto(c.image, c.name, `${c.name} — ${c.role}`)}
+        <div class="bb-fact-card">
+          <h3>At a glance — ${c.name}</h3>
+          ${bio.map(([k, v]) => `<div class="bb-fact-row"><span class="bb-fact-k">${k}</span><span class="bb-fact-v">${v}</span></div>`).join("")}
+        </div>
+      </div>
+      <p>${c.longBio}</p>
+      <ul><li>${c.highlight}</li>${c.trend ? `<li>${c.trend}</li>` : ""}</ul>
+      <p class="bb-nowline"><strong>Now:</strong> ${now}</p>
+    </div>`;
+    })
+    .join("");
+}
+
+function renderRegistryProfilesSection(eyebrow, heading, ids) {
+  return storySection(eyebrow, heading, renderRegistryProfiles(ids));
+}
+
+function kaashviProfileBlock() {
+  return `
+    <div class="bb-profile">
+      <h3>Kaashvi Hiranandani</h3>
+      <p class="bb-placing">Gaming creator (KaashPlays) — not a housemate</p>
+      <div class="bb-fact-card">
+        <h3>At a glance — Kaashvi Hiranandani</h3>
+        <div class="bb-fact-row"><span class="bb-fact-k">Known as</span><span class="bb-fact-v">KaashPlays — gaming streamer and content creator</span></div>
+        <div class="bb-fact-row"><span class="bb-fact-k">Born</span><span class="bb-fact-v">28 April 1997, Mumbai</span></div>
+        <div class="bb-fact-row"><span class="bb-fact-k">Background</span><span class="bb-fact-v">Finance graduate who switched to gaming full-time</span></div>
+        <div class="bb-fact-row"><span class="bb-fact-k">Honour</span><span class="bb-fact-v">Female Streamer of the Year — Indian Gaming Awards 2022</span></div>
+      </div>
+      <p>Kaashvi Hiranandani is Scout's girlfriend of about three years and one of India's best-known gaming creators in her own right. She is not a housemate — she appeared in the launch week when the show aired Scout's emotional video call with her — but her name has run through this season's story ever since the Scout–Love Gill angle began, which is why she stands at the centre of the two pages this profile appears on.</p>
+      <ul><li>No photo of Kaashvi is published on VisitBest — she is not a contestant and no verified portrait of hers sits in the show's photo record here, so this profile runs without one rather than with the wrong face.</li></ul>
+      <p class="bb-nowline"><strong>Now:</strong> Outside the house, Kaashvi has kept her own counsel in public while the rumours run — the Open Poll at the top of this page is readers' sentiment about how this plays out, nothing more.</p>
+    </div>`;
+}
+
+function renderDuelProfilesSection(poll) {
+  if (poll.pollType !== "duel") return "";
+  const ids = poll.duelIds || [];
+  if (ids.length < 2) return "";
+  return storySection(
+    "The Two Housemates",
+    "Meet the two — full profiles",
+    renderRegistryProfiles(ids),
+  );
+}
+
+function renderScoutKaashviProfiles() {
+  return storySection(
+    "The Two People",
+    "Scout and Kaashvi — the full profiles",
+    renderRegistryProfiles(["scout"]) + kaashviProfileBlock(),
+  );
+}
+
+function renderLoveStoryProfiles() {
+  return storySection(
+    "The People in This Story",
+    "Scout, Love Gill and Kaashvi — the full profiles",
+    renderRegistryProfiles(["scout", "love-gill"]) + kaashviProfileBlock(),
+  );
+}
+
+function renderStillStandingSection(eyebrow = "Still Standing", heading = "The ten still standing — Week 12") {
   const order = ["uditi-singh", "scout", "qazi-touqeer", "yung-dsa", "arishfa-khan", "kanika-mann", "mahhi-vij", "gullu", "love-gill", "amrapali-dubey"];
   const profiles = order
     .map((id, i) => {
@@ -3349,7 +3447,7 @@ function renderStillStandingSection() {
     </div>`;
     })
     .join("");
-  return storySection("Still Standing", "The ten still standing — Week 12", `<p>Eighteen housemates have played this season; these ten are still in the house. Six of them are nominated in Week 12, three are safe, and one wears the captain's badge.</p>` + profiles);
+  return storySection(eyebrow, heading, `<p>Eighteen housemates have played this season; these ten are still in the house. Six of them are nominated in Week 12, three are safe, and one wears the captain's badge.</p>` + profiles);
 }
 
 function renderJourneyStorySection() {
@@ -12436,10 +12534,10 @@ export function renderBiggBossPollPage(poll) {
 
     ${renderLeaderboard(poll)}
 
-    ${poll.slug === "bigg-boss-20-scout-love-story" ? renderScoutLoveSections() : ""}
-    ${poll.slug === "bigg-boss-20-yung-vs-scout" ? renderYungScoutSections() : ""}
+    ${poll.slug === "bigg-boss-20-scout-love-story" ? renderScoutLoveSections() : ""}${poll.slug === "bigg-boss-20-scout-love-story" ? renderLoveStoryProfiles() : ""}
+    ${poll.slug === "bigg-boss-20-yung-vs-scout" ? renderYungScoutSections() : ""}${poll.slug === "bigg-boss-20-yung-vs-scout" ? renderRegistryProfilesSection("The Two Housemates", "Yung DSA and ScoutOP — the full profiles", ["yung-dsa", "scout"]) : ""}
     ${poll.slug === "bigg-boss-20-next-captain-poll" ? renderNextCaptainExplainer() : ""}
-    ${poll.slug === "bigg-boss-20-scout-vs-kaashvi" ? renderScoutKaashviSections() : ""}
+    ${poll.slug === "bigg-boss-20-scout-vs-kaashvi" ? renderScoutKaashviSections() : ""}${poll.slug === "bigg-boss-20-scout-vs-kaashvi" ? renderScoutKaashviProfiles() : ""}
     ${poll.slug === "bigg-boss-20-eviction-list" ? renderEvictionListSections() : ""}
     ${poll.slug === "bigg-boss-20-scout-shaves-head" ? renderScoutHeadShaveSections() : ""}
     ${poll.slug === "bigg-boss-20-weekend-ka-vaar-episodes-70-71" ? renderWkvWeek10Sections() : ""}
@@ -12469,7 +12567,7 @@ export function renderBiggBossPollPage(poll) {
  ${poll.slug === "bigg-boss-2-voting" ? renderSeason2Sections() : ""}
  ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
     ${poll.slug === "bigg-boss-winner-list" ? renderWinnerListSections() : ""}
-    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}${renderBb20RemainderSections(poll)}${renderWinnerListReadingSections(poll)}${renderHubSeasonProfiles(poll)}${renderWeek12Sections(poll)}${renderWhoWillWinProfiles(poll)}
+    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderDuelProfilesSection(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}${renderBb20RemainderSections(poll)}${renderWinnerListReadingSections(poll)}${renderHubSeasonProfiles(poll)}${renderWeek12Sections(poll)}${renderWhoWillWinProfiles(poll)}
     ${poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersSections() : ""}
     ${poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersSections() : ""}
     ${poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersSections() : ""}
@@ -12486,7 +12584,7 @@ export function renderBiggBossPollPage(poll) {
     ${poll.slug === "bigg-boss-20-voting" ? renderEmbeddedPoll(pollBySlug.get("bigg-boss-20-eviction-prediction-week-11")) : ""}
     ${poll.slug === "bigg-boss-20-voting" ? renderPredictionScorecard() : ""}
     ${poll.slug === "bigg-boss-20-voting" ? renderTrendSnapshot() : ""}
-    ${poll.slug === "bigg-boss-20-voting" ? renderSeasonArchive() : ""}
+    ${poll.slug === "bigg-boss-20-voting" ? renderSeasonArchive() : ""}${poll.slug === "bigg-boss-20-voting" ? renderStillStandingSection("Still Standing", "Bigg Boss 20 — the ten still standing in Week 12") : ""}
 
     ${poll.slug === "bigg-boss-20-yung-vs-scout" ? renderYungScoutPunishments() : ""}
 
