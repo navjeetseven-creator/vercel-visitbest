@@ -680,6 +680,216 @@ const cnSections = `
 </section>
 `;
 
+const krSections = `
+<section class="lp-article">
+  <h2>The women who carried the Korean wave</h2>
+  <p>Korean drama is now a global industry, and its leading actresses are recognised from Seoul to São Paulo. This list ranks the ten South Korean actresses who combine that reach with the roles and honours that define it — including all three members of "The Troika", the trio Korean media have treated for two decades as the country's benchmark of screen beauty.</p>
+  <p>Every photograph is recent, and every woman here has a new credit in 2025 or 2026. The ranking weighs current prominence, signature roles and honours; the Open Poll at the top of the page lets readers cast their own vote.</p>
+  <figure class="lp-wide">
+    <img src="/assets/kr-actresses/by-the-numbers.webp" alt="Infographic: K-drama royalty by the numbers — three of The Troika, three Grand Prize holders, all ten working in 2025 or 2026" loading="lazy">
+    <figcaption>The honours behind the list, counted.</figcaption>
+  </figure>
+</section>
+
+<section class="lp-article">
+  <h2>The list at a glance</h2>
+  <div class="lp-tablewrap">
+  <table class="lp-table">
+    <thead><tr><th style="background:#3b1032;color:#ffffff">Name</th><th style="background:#3b1032;color:#ffffff">Born</th><th style="background:#3b1032;color:#ffffff">Signature role</th><th style="background:#3b1032;color:#ffffff">Where she is now</th></tr></thead>
+    <tbody>
+      <tr><td>Song Hye-kyo</td><td>22 November 1981, Daegu</td><td>Kang Mo-yeon in Descendants of the Sun (2016)</td><td>Dark Nuns (2025); Netflix's Tantara (2026)</td></tr>
+      <tr><td>Kim Ji-won</td><td>19 October 1992, Seoul</td><td>Hong Hae-in in Queen of Tears (2024)</td><td>Doctor X: Mafia in White (2026)</td></tr>
+      <tr><td>Han So-hee</td><td>18 November 1993, Ulsan</td><td>Yu Na-bi in Nevertheless (2021)</td><td>Project Y and The Intern remake (2026)</td></tr>
+      <tr><td>IU</td><td>16 May 1993, Seoul</td><td>Jang Man-wol in Hotel del Luna (2019)</td><td>When Life Gives You Tangerines (2025); Perfect Crown (2026)</td></tr>
+      <tr><td>Bae Suzy</td><td>10 October 1994, Gwangju</td><td>Go Hye-mi in Dream High (2011)</td><td>Genie, Make a Wish (2025)</td></tr>
+      <tr><td>Kim Tae-hee</td><td>29 March 1980, Ulsan</td><td>Han Seo-jin in Iris (2009)</td><td>Butterfly (2025)</td></tr>
+      <tr><td>Jun Ji-hyun</td><td>30 October 1981, Seoul</td><td>Cheon Song-yi in My Love from the Star (2013)</td><td>Tempest (2025); filming Colony</td></tr>
+      <tr><td>Seo Ye-ji</td><td>6 April 1990, Seoul</td><td>Ko Moon-young in It's Okay to Not Be Okay (2020)</td><td>SNL Korea (2025); stage debut (2026)</td></tr>
+      <tr><td>Park Shin-hye</td><td>18 February 1990, Gwangju</td><td>Cha Eun-sang in The Heirs (2013)</td><td>Undercover Miss Hong (2026)</td></tr>
+      <tr><td>Kim Da-mi</td><td>9 April 1995, Seoul</td><td>Jo Yi-seo in Itaewon Class (2020)</td><td>Nine Puzzles and The Great Flood (2025)</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Birth dates, roles and honours are as stated in each actress's Wikipedia profile, checked in November 2026. One small honesty note sits in Song Hye-kyo's profile below: her birth was registered late, so some listings show a different date.</p>
+</section>
+
+<section class="lp-article lp-profile" id="song-hye-kyo">
+  <h2>1. Song Hye-kyo</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/song-hye-kyo-1.webp" alt="Song Hye-kyo in a beige pleated gown at the Met Gala 2025" loading="lazy">
+      <figcaption><span class="lp-when">2025</span> Song Hye-kyo at the Met Gala.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/song-hye-kyo-2.webp" alt="Song Hye-kyo making a finger heart at the 61st Baeksang Arts Awards" loading="lazy">
+      <figcaption><span class="lp-when">2025</span> Song Hye-kyo at the 61st Baeksang Arts Awards.</figcaption>
+    </figure>
+  </div>
+  <p>Song Hye-kyo has been a star for a quarter of a century: Autumn in My Heart (2000) and Full House (2004) made her a pioneer of the Korean wave, and Descendants of the Sun (2016) made her its global face, winning her the Grand Prize at both the KBS Drama Awards and the APAN Star Awards.</p>
+  <p>Her reinvention in The Glory (2022–2023) won her Best Actress – Television at the Baeksang Arts Awards, and she followed it with the film Dark Nuns (2025) and the lead in Netflix's Tantara (2026). She is one of "The Troika" — Tae-Hye-Ji — the three actresses Korean media treat as the country's enduring standard of beauty. Her birth date is listed here as 22 November 1981; it was registered late, as 26 February 1982, after she was ill as an infant, which is why some sources differ.</p>
+</section>
+
+<section class="lp-article lp-profile" id="kim-ji-won">
+  <h2>2. Kim Ji-won</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/kim-ji-won-1.webp" alt="Kim Ji-won in a navy strapless gown at Bvlgari's Eclettica event in Seoul" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Kim Ji-won at Bvlgari's Eclettica event in Seoul.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/kim-ji-won-2.webp" alt="Kim Ji-won in a black off-shoulder gown with a statement necklace" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Kim Ji-won at the same Bvlgari event.</figcaption>
+    </figure>
+  </div>
+  <p>Kim Ji-won, born in Seoul in 1992, climbed the classic way — standout supporting roles in The Heirs (2013) and Descendants of the Sun (2016), then leads in Fight for My Way (2017) and My Liberation Notes (2022) — before Queen of Tears (2024) became tvN's highest-rated drama of its time and made her one of the most sought-after actresses in Korea.</p>
+  <p>Her honours include Excellence Awards at the KBS Drama Awards in consecutive years, Best Supporting Actress at the APAN Star Awards, and the Prime Minister's Commendation at the 2025 Korean Popular Culture and Arts Awards. She leads Doctor X: Mafia in White in 2026.</p>
+</section>
+
+<section class="lp-article lp-profile" id="han-so-hee">
+  <h2>3. Han So-hee</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/han-so-hee-1.webp" alt="Han So-hee in a white strapless gown at Cannes 2025" loading="lazy">
+      <figcaption><span class="lp-when">2025</span> Han So-hee on the Cannes red carpet.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/han-so-hee-2.webp" alt="Han So-hee in a peach gown at the Toronto International Film Festival 2025" loading="lazy">
+      <figcaption><span class="lp-when">2025</span> Han So-hee at TIFF, for the Project Y premiere.</figcaption>
+    </figure>
+  </div>
+  <p>Han So-hee — born Lee So-hee in Ulsan in 1993 — broke through as the other woman in The World of the Married (2020), then headlined Nevertheless and the action series My Name in a single year (2021), and carried Gyeongseong Creature (2023–2024) for Netflix.</p>
+  <p>Her record so far is nomination-heavy at the major ceremonies — Baeksang nominations for Best New Actress and Best Actress — alongside Asia Artist Awards wins for Rookie of the Year and Best Artist. Her film work is expanding fast: Project Y premiered at Toronto in 2025 ahead of its January 2026 release, and the Korean remake of The Intern followed in September 2026.</p>
+</section>
+
+<section class="lp-article lp-profile" id="iu">
+  <h2>4. IU</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/iu-1.webp" alt="IU in a grey patterned strapless gown at the Asia Artist Awards 2025" loading="lazy">
+      <figcaption><span class="lp-when">2025</span> IU at the Asia Artist Awards.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/iu-2.webp" alt="IU waving in the same gown at the Asia Artist Awards 2025" loading="lazy">
+      <figcaption><span class="lp-when">2025</span> IU at the same ceremony.</figcaption>
+    </figure>
+  </div>
+  <p>IU — born Lee Ji-eun in Seoul in 1993 — is first and foremost one of Korea's most decorated singers, and this list counts only her acting. That acting career stands on its own: Dream High (2011) as a teenager, then Jang Man-wol in Hotel del Luna (2019) and a widely praised turn in My Mister (2018), which brought her first Baeksang Best Actress nomination.</p>
+  <p>When Life Gives You Tangerines (2025) took her acting honours to the top level — Best Actress at the Blue Dragon Series Awards and the Grand Prize (Daesang) at the APAN Star Awards — and she followed it with Perfect Crown in April 2026.</p>
+</section>
+
+<section class="lp-article lp-profile" id="bae-suzy">
+  <h2>5. Bae Suzy</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/bae-suzy-1.webp" alt="Bae Suzy waving in a black and silver sequinned gown at the 61st Baeksang Arts Awards" loading="lazy">
+      <figcaption><span class="lp-when">2025</span> Bae Suzy at the 61st Baeksang Arts Awards.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/bae-suzy-2.webp" alt="Bae Suzy in a light pink strapless gown at the Baeksang Arts Awards" loading="lazy">
+      <figcaption><span class="lp-when">2026</span> Bae Suzy at the 62nd Baeksang Arts Awards.</figcaption>
+    </figure>
+  </div>
+  <p>Bae Suzy, born in Gwangju in 1994, debuted as an idol and crossed straight into acting: Dream High (2011), then Architecture 101 (2012), which won her the Baeksang Best New Actress award and fixed her in Korean culture as the "Nation's First Love". She was the first Korean female celebrity to win rookie awards across singing, drama, film and variety.</p>
+  <p>Gu Family Book (2013) and While You Were Sleeping (2017) led to the darker leads of Anna (2022) and Doona! (2023). She starred in the film Wonderland (2024) and the Netflix series Genie, Make a Wish (2025).</p>
+</section>
+
+<section class="lp-article lp-profile" id="kim-tae-hee">
+  <h2>6. Kim Tae-hee</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/kim-tae-hee-1.webp" alt="Kim Tae-hee in a white one-shoulder top in a studio portrait" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Kim Tae-hee in a studio portrait.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/kim-tae-hee-2.webp" alt="Kim Tae-hee in a black mini dress at the Butterfly premiere in New York" loading="lazy">
+      <figcaption><span class="lp-when">2025</span> Kim Tae-hee at the Butterfly premiere, New York.</figcaption>
+    </figure>
+  </div>
+  <p>Kim Tae-hee, born in Ulsan in 1980, is the "Tae" of Tae-Hye-Ji — and her profile states plainly that she is considered one of South Korea's most beautiful actresses. Stairway to Heaven (2003), Love Story in Harvard (2004) and Iris (2009) built that standing; Yong-pal (2015) brought her Top Excellence awards at both the Korea Drama Awards and the SBS Drama Awards.</p>
+  <p>She works selectively now: Hi Bye, Mama! (2020), Lies Hidden in My Garden (2023) and the series Butterfly (2025) are her recent credits. On a list about beauty and presence, her place is not in doubt.</p>
+</section>
+
+<section class="lp-article lp-profile" id="jun-ji-hyun">
+  <h2>7. Jun Ji-hyun</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/jun-ji-hyun-1.webp" alt="Jun Ji-hyun in a pale pink strapless gown at Piaget Watches and Wonders 2025" loading="lazy">
+      <figcaption><span class="lp-when">2025</span> Jun Ji-hyun at Piaget's Watches &amp; Wonders event.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/jun-ji-hyun-2.webp" alt="Jun Ji-hyun in a blue sequined gown at a Piaget exhibition in Beijing" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Jun Ji-hyun at Piaget's exhibition in Beijing.</figcaption>
+    </figure>
+  </div>
+  <p>Jun Ji-hyun — born Wang Ji-hyun in Seoul in 1981, also known as Gianna Jun — is the "Ji" of Tae-Hye-Ji. My Sassy Girl (2001) made her a film icon across Asia; My Love from the Star (2013–2014) did it again on television a decade later, winning her the Grand Prize at both the Baeksang Arts Awards and the SBS Drama Awards.</p>
+  <p>She has two Grand Bell Best Actress trophies, for My Sassy Girl and Assassination (2015). She works at her own pace: after Jirisan (2021) came Tempest (2025), the film Colony — her first film in a decade — and her own agency, Peachy, launched in 2025.</p>
+</section>
+
+<section class="lp-article lp-profile" id="seo-ye-ji">
+  <h2>8. Seo Ye-ji</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/seo-ye-ji-1.webp" alt="Seo Ye-ji in a grey cardigan making a cheek-heart pose at a Seoul event" loading="lazy">
+      <figcaption><span class="lp-when">2024</span> Seo Ye-ji at a collection launch in Seoul, October 2024.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/seo-ye-ji-2.webp" alt="Seo Ye-ji in a white blouse and red skirt at the NARS anniversary event" loading="lazy">
+      <figcaption><span class="lp-when">2024</span> Seo Ye-ji at NARS' 30th anniversary event, August 2024.</figcaption>
+    </figure>
+  </div>
+  <p>Seo Ye-ji, born in Seoul in 1990, built her name on intense performances — Save Me (2017), Lawless Lawyer (2018) — before Ko Moon-young in It's Okay to Not Be Okay (2020) became one of the most imitated characters in K-drama, winning her APAN Excellence and Popular Star awards and the Baeksang award for Most Popular Actress.</p>
+  <p>Her path since has been unusual, and this list states it plainly: after Eve (2022) she took a long break from television drama. Her return has come through variety (SNL Korea, 2025), a stage debut in January 2026, and a horror film, Geumwoldo, billed for 2027 as her big-screen comeback.</p>
+</section>
+
+<section class="lp-article lp-profile" id="park-shin-hye">
+  <h2>9. Park Shin-hye</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/park-shin-hye-1.webp" alt="Park Shin-hye in a purple ball gown at the 2024 SBS Drama Awards" loading="lazy">
+      <figcaption><span class="lp-when">2024</span> Park Shin-hye at the SBS Drama Awards.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/park-shin-hye-2.webp" alt="Park Shin-hye in a black one-shoulder sequined gown on a red carpet" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Park Shin-hye on the red carpet.</figcaption>
+    </figure>
+  </div>
+  <p>Park Shin-hye, born in Gwangju in 1990, grew up as one of K-drama's most reliable leads: You're Beautiful (2009), The Heirs (2013), Pinocchio (2014), Doctors (2016) and Memories of the Alhambra (2018), alongside the film Miracle in Cell No. 7 (2013), which won her a film critics' Best Supporting Actress award.</p>
+  <p>Her honours include the Baeksang award for Most Popular Actress in film and the Prime Minister's Commendation at the Korea Popular Culture Awards. She led two series in 2024 — Doctor Slump and The Judge from Hell — and the tvN drama Undercover Miss Hong in January 2026.</p>
+</section>
+
+<section class="lp-article lp-profile" id="kim-da-mi">
+  <h2>10. Kim Da-mi</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/kim-da-mi-1.webp" alt="Kim Da-mi in a pink lace dress on the Seoul Awards red carpet" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Kim Da-mi on the Seoul Awards red carpet.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/kr-actresses/kim-da-mi-2.webp" alt="Kim Da-mi in a black peplum dress at the A Hundred Memories press event" loading="lazy">
+      <figcaption><span class="lp-when">2025</span> Kim Da-mi at the A Hundred Memories press event, September 2025.</figcaption>
+    </figure>
+  </div>
+  <p>Kim Da-mi, born in Seoul in 1995, arrived with a sweep: The Witch: Part 1. The Subversion (2018) won her Best New Actress at the Blue Dragon, Grand Bell and Buil film awards and more, and Itaewon Class (2020) repeated the trick on television with the Baeksang Best New Actress award.</p>
+  <p>Our Beloved Summer (2021–2022) and Soulmate (2023) confirmed her range, and 2025 was her busiest year yet — the Disney+ thriller Nine Puzzles, the JTBC series A Hundred Memories and the Netflix film The Great Flood.</p>
+</section>
+
+<section class="lp-article">
+  <h2>Questions readers ask</h2>
+  <h3>Who are "The Troika" — Tae-Hye-Ji?</h3>
+  <p>Kim Tae-hee, Song Hye-kyo and Jun Ji-hyun — the syllables Tae, Hye and Ji form the nickname. Korean media have grouped the three for two decades as the country's defining screen beauties, and all three are on this list. Kim Tae-hee's profile states that she is considered one of South Korea's most beautiful actresses.</p>
+  <h3>Why is Song Hye-kyo's birth date different on some sites?</h3>
+  <p>She was born on 22 November 1981 in Daegu, but her birth was registered late — as 26 February 1982 — because she was ill as an infant. This page uses the birth date itself, 22 November 1981, and says why the other date exists.</p>
+  <h3>Is IU an actress or a singer?</h3>
+  <p>Primarily a singer — one of Korea's most awarded — who also acts. This list counts her acting only: Hotel del Luna, My Mister, When Life Gives You Tangerines and Perfect Crown, and the acting honours those brought her.</p>
+  <h3>Who just missed the list?</h3>
+  <p>Shin Min-a, Park Bo-young and Kim Go-eun were the closest calls — Shin Min-a led Karma (2025) and The Remarried Empress (2026), Park Bo-young played twins in Our Unwritten Seoul (2025), and Kim Go-eun won Best Actress at both the Baeksang and Blue Dragon awards for Exhuma (2024). Any of them could make the next edition.</p>
+  <h3>Is the Open Poll an official result?</h3>
+  <p>No. The Open Poll at the top of this page is a VisitBest reader poll with seeded starting figures, for audience sentiment only. It is not connected to the Baeksang Arts Awards or any other body — the official honours mentioned here are reported from each actress's profile.</p>
+  <h3>Where do the facts and photographs come from?</h3>
+  <p>Birth dates, roles and honours are drawn from each actress's Wikipedia profile, checked in November 2026. The photographs are recent red-carpet, festival and awards portraits sourced from Pinterest; every one was checked against a known reference portrait before use.</p>
+</section>
+`;
+
 export const listPolls = [
   {
     slug: "most-beautiful-90s-hong-kong-actresses",
@@ -795,7 +1005,46 @@ export const listPolls = [
     metaDesc: "Top 10 most beautiful Chinese actresses — Liu Yifei, Dilraba Dilmurat, Yang Mi and more, in recent photos, with an Open Poll for audience sentiment only.",
     sectionsHtml: cnSections,
   },
+  {
+    slug: "most-beautiful-south-korean-actresses",
+    image: "/assets/kr-actresses/cover.webp",
+    title: "Top 10 Most Beautiful South Korean Actresses",
+    h1: "Top 10 Most Beautiful South Korean Actresses",
+    lead: "Korean drama conquered the world's screens, and these are the women who front it — all three members of the famous Tae-Hye-Ji troika among them. This list ranks the ten South Korean actresses who define K-drama beauty right now, every one photographed recently and every one with a new credit in 2025 or 2026, and it opens with a reader Open Poll on who stands first. Every standing in that poll is audience sentiment only.",
+    heroBadge: "🗳️ OPEN POLL · K-DRAMA ROYALTY",
+    leaderNote: "🔥 OPEN POLL LEADER: Song Hye-kyo leads the VisitBest Open Poll as it stands, with 2,412 votes (18.8%), ahead of Kim Ji-won on 2,186. These are VisitBest Open Poll standings — for audience sentiment only, not an official vote of any kind.",
+    question: "Who is the most beautiful South Korean actress?",
+    textOptions: [
+      { id: "song-hye-kyo", label: "Song Hye-kyo", sub: "Descendants of the Sun · The Glory", image: "/assets/kr-actresses/song-hye-kyo-1.webp" },
+      { id: "kim-ji-won", label: "Kim Ji-won", sub: "Queen of Tears · My Liberation Notes", image: "/assets/kr-actresses/kim-ji-won-1.webp" },
+      { id: "han-so-hee", label: "Han So-hee", sub: "Nevertheless · My Name", image: "/assets/kr-actresses/han-so-hee-1.webp" },
+      { id: "iu", label: "IU", sub: "Hotel del Luna · When Life Gives You Tangerines", image: "/assets/kr-actresses/iu-1.webp" },
+      { id: "bae-suzy", label: "Bae Suzy", sub: "Anna · Doona!", image: "/assets/kr-actresses/bae-suzy-1.webp" },
+      { id: "kim-tae-hee", label: "Kim Tae-hee", sub: "Iris · Yong-pal", image: "/assets/kr-actresses/kim-tae-hee-1.webp" },
+      { id: "jun-ji-hyun", label: "Jun Ji-hyun", sub: "My Love from the Star · My Sassy Girl", image: "/assets/kr-actresses/jun-ji-hyun-1.webp" },
+      { id: "seo-ye-ji", label: "Seo Ye-ji", sub: "It's Okay to Not Be Okay · Eve", image: "/assets/kr-actresses/seo-ye-ji-1.webp" },
+      { id: "park-shin-hye", label: "Park Shin-hye", sub: "The Heirs · Doctors", image: "/assets/kr-actresses/park-shin-hye-1.webp" },
+      { id: "kim-da-mi", label: "Kim Da-mi", sub: "Itaewon Class · Our Beloved Summer", image: "/assets/kr-actresses/kim-da-mi-1.webp" },
+    ],
+    voteDistribution: {
+      "song-hye-kyo": 2412,
+      "kim-ji-won": 2186,
+      "han-so-hee": 1764,
+      "iu": 1593,
+      "bae-suzy": 1287,
+      "kim-tae-hee": 1024,
+      "jun-ji-hyun": 918,
+      "seo-ye-ji": 687,
+      "park-shin-hye": 542,
+      "kim-da-mi": 434,
+    },
+    openedDate: "26 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    metaDesc: "Top 10 most beautiful South Korean actresses — Song Hye-kyo, Kim Ji-won, Han So-hee, IU and more, in recent photos, with an Open Poll for audience sentiment only.",
+    sectionsHtml: krSections,
+  },
 ];
+
 
 
 
