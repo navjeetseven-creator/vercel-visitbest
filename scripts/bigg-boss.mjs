@@ -3776,6 +3776,99 @@ function renderWeek11VotingSections() {
   );
 }
 
+function renderSeasonContextSections(poll) {
+  const S = {
+    "bigg-boss-20-voting-week-10": () => storySection(
+      "What Happened",
+      "Week 10 ended with no eviction",
+      `<p>Week 10 put almost the whole house in the danger zone — every housemate was nominated except Arishfa Khan. When the Weekend Ka Vaar result came, <strong>nobody went home</strong>: Week 10 is one of the season's five no-eviction weeks (Weeks 1, 5, 9, 10 and 11).</p>
+    <ul>
+      <li><strong>Mahhi Vij received the fewest votes</strong> in Week 10 — and was saved by her lifeline, so she stayed in the house.</li>
+      <li>This support poll's own readers backed Gullu (412 fan votes), ScoutOP (388) and Qazi Touqeer (356) the most that week.</li>
+      <li>The season tally after Week 10: six evictions, one removal and five no-eviction weeks, with the medical exit still to come in Week 11.</li>
+    </ul>
+    <p>See how the house looks now on the <a href="/bigg-boss-20-voting-week-12/"><strong>Week 12 voting page</strong></a>.</p>`
+    ),
+    "bigg-boss-20-eviction-prediction-week-10": () => storySection(
+      "Prediction vs Reality",
+      "What actually happened in Week 10",
+      `<p>This page asked who readers <em>expected</em> to go home in Week 10. The top expectations were Uditi Singh (402 fan votes), Manish Goel (358) and Aamrapali Dubey (311). <strong>None of them left</strong> — Week 10 ended with no eviction at all.</p>
+    <ul>
+      <li>Mahhi Vij got the fewest votes that week and was saved by her lifeline.</li>
+      <li>Manish Goel's story ended a week later, in Week 11 — on medical grounds, not by votes.</li>
+      <li>Uditi Singh went the other way entirely: she became house captain in Episode 74 and is safe in Week 12.</li>
+    </ul>
+    <p>A reminder of why this poll carries its label: it records reader expectation only — it is not a forecast and it does not decide anything.</p>`
+    ),
+    "bigg-boss-20-eviction-prediction-week-11": () => storySection(
+      "Prediction vs Reality",
+      "What actually happened in Week 11",
+      `<p>Readers expected Manish Goel (342 fan votes) to be evicted in Week 11, ahead of Aamrapali Dubey (296) and Mahhi Vij (251). Manish did leave the house that week — <strong>but not by votes</strong>: he exited on medical grounds with a severe leg injury after about 40 days, and Salman Khan clarified on air that it was health, not a vote result.</p>
+    <ul>
+      <li>Week 11 had <strong>no vote eviction</strong> — Mahhi Vij was safe and stayed.</li>
+      <li>Arishfa Khan, nominated in Episode 72, won safety in the Episode 75 immunity task.</li>
+      <li>Ten housemates remained after Week 11; the Week 12 nominations followed in Episode 80.</li>
+    </ul>
+    <p>This poll records reader expectation only — Week 11 is the clearest example of why expectation and outcome are different things.</p>`
+    ),
+    "bigg-boss-20-joker-of-the-house": () => storySection(
+      "Reading This Poll",
+      "The drama award nobody wants to win",
+      `<p>This is the house's negative-hype poll: the "Joker" title goes to whoever fans think brings the most theatrics — loud fights, over-the-top reactions and drama for the cameras. Leading it is not a compliment, and the standings show it:</p>
+    <ul>
+      <li><strong>Aman Gandhi</strong> tops the poll with 3,10,500 fan votes (36.6%).</li>
+      <li><strong>Rohed Khan</strong> is second on 2,11,600 — he was the season's Week 2 eviction, but his dramatic weeks still define this category.</li>
+      <li><strong>Love Gill</strong> is third on 1,04,700 — still in the house and nominated in Week 12.</li>
+    </ul>
+    <p>For the positive version of this argument, see the <a href="/bigg-boss-20-entertainer/"><strong>Biggest Entertainer poll</strong></a> — same drama, very different verdict.</p>`
+    ),
+    "bigg-boss-20-who-is-boss": () => storySection(
+      "Reading This Poll",
+      "Who really runs the house?",
+      `<p>Fans have put Olympic legend <strong>MC Mary Kom</strong> on top of this poll (3,95,200 fan votes) — she is not a housemate, but her authority clearly looms large over the season's imagination. Behind her come two actual housemates: <strong>ScoutOP</strong> (3,15,800) and <strong>Gullu</strong> (2,14,900).</p>
+    <ul>
+      <li>In the real house, the boss's chair is the <strong>captaincy</strong> — the captain runs tasks, duties and discipline for the week.</li>
+      <li>The current captain is <strong>Uditi Singh</strong> (since Episode 74), safe in Week 12.</li>
+      <li>ScoutOP can never sit in that chair this season: his Episode 68 punishment barred him from the captaincy — which makes his second place here purely a fan-power ranking.</li>
+    </ul>`
+    ),
+    "bigg-boss-20-best-contestant": () => storySection(
+      "Reading This Poll",
+      "What \u201cbest\u201d has meant this season",
+      `<p><strong>ScoutOP</strong> dominates this poll with 4,52,000 fan votes (38.5%), ahead of <strong>Gullu</strong> (3,07,800) and <strong>MC Mary Kom</strong> (2,12,600) — a legend fans keep voting into these lists even though she is not a housemate.</p>
+    <ul>
+      <li><strong>ScoutOP's case:</strong> the biggest fanbase in the house, surviving a season-long nomination (Episode 68) with no captaincy route.</li>
+      <li><strong>Gullu's case:</strong> the entertainment engine — nominated in Weeks 11 and 12 and still the house's loudest presence.</li>
+      <li>Both men are nominated in Week 12, so this argument is being settled live, one week at a time.</li>
+    </ul>`
+    ),
+    "bigg-boss-20-entertainer": () => storySection(
+      "Reading This Poll",
+      "A near-tie at the top",
+      `<p>This is the closest big poll of the season: <strong>Gullu</strong> on 3,68,000 fan votes and <strong>Qazi Touqeer</strong> on 3,62,300 — barely 5,700 votes apart — with <strong>Yung DSA</strong> third on 1,84,000.</p>
+    <ul>
+      <li><strong>Gullu</strong> entertains with comedy and chaos — and is nominated in Week 12.</li>
+      <li><strong>Qazi Touqeer</strong> entertains with music — the house's emotional moments usually have his voice under them. He is safe in Week 12.</li>
+      <li><strong>Yung DSA</strong> brings the rap battles — also safe in Week 12.</li>
+    </ul>
+    <p>Comedy versus music is the season's defining taste split; this poll is where it gets counted.</p>`
+    ),
+    "bigg-boss-20-winner-prediction": () => storySection(
+      "Reading This Poll",
+      "The finale race, as fans see it",
+      `<p>With ten housemates left, fans put <strong>Qazi Touqeer</strong> in front for the trophy (3,84,100 fan votes), chased by <strong>ScoutOP</strong> (3,43,200) and <strong>Gullu</strong> (2,91,000).</p>
+    <ul>
+      <li><strong>Qazi Touqeer</strong> — safe in Week 12, the all-rounder's pick.</li>
+      <li><strong>ScoutOP</strong> — nominated in Week 12 under his season-long nomination; his fanbase treats every week like a final.</li>
+      <li><strong>Gullu</strong> — nominated in Week 12; the entertainment pick.</li>
+    </ul>
+    <p>This is a prediction poll — audience sentiment only. The official result comes only from the show's own voting, and VisitBest never presents fan numbers as official votes.</p>`
+    ),
+  };
+  const f = S[poll.slug];
+  return f ? f() : "";
+}
+
 function renderDuelSections(poll) {
   const D = {
     "bigg-boss-20-scout-vs-gullu": {
@@ -11652,7 +11745,7 @@ export function renderBiggBossPollPage(poll) {
  ${poll.slug === "bigg-boss-2-voting" ? renderSeason2Sections() : ""}
  ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
     ${poll.slug === "bigg-boss-winner-list" ? renderWinnerListSections() : ""}
-    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}
+    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderSeasonContextSections(poll)}
     ${poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersSections() : ""}
     ${poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersSections() : ""}
     ${poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersSections() : ""}
