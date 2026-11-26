@@ -1047,6 +1047,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-winner-list",
+    factCardsTitle: "Winner list — key facts",
+    factCards: [{"name": "📋 The list at a glance", "rows": [["Editions covered", "22 — 19 Hindi seasons + 3 OTT seasons"], ["First winner", "Rahul Roy — Season 1 (2007)"], ["Latest winner", "Gaurav Khanna — Season 19 (2025)"], ["Hosts over the years", "Arshad Warsi (S1) · Shilpa Shetty (S2) · Amitabh Bachchan (S3) · Salman Khan (S4 onwards; Sanjay Dutt co-hosted S5)"]]}, {"name": "💰 Prize money", "rows": [["Printed only where stated", "A prize figure appears on this page only where the season’s own record states one"], ["Season 19", "₹50 lakh"], ["Season 4", "₹1 crore"], ["Season 2", "₹1 crore"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-winner-list.jpg",
     title: "Bigg Boss Winner List — Every Season's Winner, Hindi + OTT",
     h1: "Bigg Boss Winner List — Every Season's Winner (Hindi + OTT)",
@@ -1111,6 +1113,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-telugu-winners-list",
+    factCardsTitle: "Telugu winner list — key facts",
+    factCards: [{"name": "📋 The list at a glance", "rows": [["Editions covered", "10 — Seasons 1–9 + Non-Stop (OTT)"], ["First winner", "Siva Balaji — Season 1"], ["Latest winner", "Kalyan Padala — Season 9"], ["Biggest fan favourite", "Kaushal Manda — Season 2 winner"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-telugu-winners-list.jpg",
     title: "Bigg Boss Telugu Winners List — Every Season's Winner + Non-Stop",
     h1: "Bigg Boss Telugu Winners List — Every Season's Winner (Seasons 1–9 + Non-Stop)",
@@ -1151,6 +1155,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-marathi-winner-list",
+    factCardsTitle: "Marathi winner list — key facts",
+    factCards: [{"name": "📋 The list at a glance", "rows": [["Seasons covered", "6 — 2018 to 2026"], ["First winner", "Megha Dhade — Season 1"], ["Latest winner", "Tanvi Kolte — Season 6 (2026)"], ["Hosts", "Mahesh Manjrekar (Seasons 1–4) · Riteish Deshmukh (Seasons 5–6)"], ["Channel", "Colors Marathi"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-marathi-winner-list.jpg",
     title: "Bigg Boss Marathi Winner List — Every Season's Winner (Seasons 1–6)",
     h1: "Bigg Boss Marathi Winner List — Every Season's Winner (Seasons 1–6)",
@@ -1183,6 +1189,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-kannada-winner-list",
+    factCardsTitle: "Kannada winner list — key facts",
+    factCards: [{"name": "📋 The list at a glance", "rows": [["Editions covered", "13 — Seasons 1–12 + 1 OTT season"], ["First winner", "Vijay Raghavendra — Season 1"], ["Latest winner", "Gilli Nata — Season 12"], ["OTT note", "Roopesh Shetty is the OTT season’s Top Performer — not a titled winner"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-kannada-winner-list.jpg",
     title: "Bigg Boss Kannada Winner List — Every Season's Winner (Seasons 1–12 + OTT)",
     h1: "Bigg Boss Kannada Winner List — Every Season's Winner (Seasons 1–12 + OTT)",
@@ -1227,6 +1235,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-malayalam-winner-list",
+    factCardsTitle: "Malayalam winner list — key facts",
+    factCards: [{"name": "📋 The list at a glance", "rows": [["Seasons covered", "7"], ["First winner", "Sabumon Abdusamad — Season 1"], ["Latest winner", "Anumol RS — Season 7"], ["Season 2", "No winner — the season was cancelled during COVID-19"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-malayalam-winner-list.jpg",
     title: "Bigg Boss Malayalam Winner List — Every Season's Winner (Seasons 1–7)",
     h1: "Bigg Boss Malayalam Winner List — Every Season's Winner (Seasons 1–7)",
@@ -1259,6 +1269,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-17-winner-2024-vote-list",
+    factCardsTitle: "Bigg Boss 17 — key facts",
+    factCards: [{"name": "🏆 Munawar Faruqui", "rows": [["Result", "Winner — Bigg Boss 17"], ["Runner-up", "Abhishek Kumar"], ["Finale", "28 January 2024"], ["Contestants on this page", "All 21 housemates, with photos"]]}, {"name": "🗳️ About the numbers", "rows": [["Official counts", "Colors and JioCinema never published official vote counts for the finale"], ["The numbers here", "VisitBest Open Poll fan standings — audience sentiment only"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-17-winner-2024-vote-list.jpg",
     title: "Bigg Boss 17 Winner 2024 Vote List — All 21 Contestants, Votes & Vote Share",
     h1: "Bigg Boss 17 Winner 2024 Vote List — All 21 Contestants, Votes & Vote Share",
