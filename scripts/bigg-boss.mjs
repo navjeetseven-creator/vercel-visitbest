@@ -12299,8 +12299,8 @@ export function renderBiggBossContestantsPage() {
       ? '<span class="bb-wiki-nom">LEFT THE HOUSE — MEDICAL EXIT (WEEK 11)</span>'
       : c.captain
       ? '<span class="bb-wiki-safe">CAPTAIN</span>'
-      : c.nominated
-      ? '<span class="bb-wiki-nom">NOMINATED — WEEK 7</span>'
+      : ["scout", "love-gill", "kanika-mann", "gullu", "mahhi-vij", "amrapali-dubey"].includes(c.id)
+      ? '<span class="bb-wiki-nom">NOMINATED — WEEK 12</span>'
       : '<span class="bb-wiki-safe">IN THE HOUSE</span>';
   return `
   <div class="container bb-page">
@@ -12311,9 +12311,9 @@ export function renderBiggBossContestantsPage() {
     ${renderPollPills("bigg-boss-20-contestants")}
 
     <header class="bb-hero-section">
-      <div class="bb-hero-badge">👥 FULL ROSTER · 18 HOUSEMATES (16 ORIGINALS + 2 WILD CARDS) · UPDATED WEEK 7</div>
+      <div class="bb-hero-badge">👥 FULL ROSTER · 18 HOUSEMATES (16 ORIGINALS + 2 WILD CARDS) · UPDATED WEEK 12</div>
       <h1 class="bb-hero-title">Bigg Boss 20 Contestants List with Photos, Age, Bio & Journey So Far</h1>
-      <p class="bb-hero-lead">Complete, updated directory of every Bigg Boss Season 20 housemate — all 16 originals plus wild cards Manish Goel and Nakul Dhull — with corrected ages where they can be verified, what each housemate was known for before the show, how their journey has actually gone up to 26 October 2026, and whether they are still in the house. Where a date of birth could not be reliably verified, we say so rather than guessing.</p>
+      <p class="bb-hero-lead">Complete, updated directory of every Bigg Boss Season 20 housemate — all 16 originals plus wild cards Manish Goel and Nakul Dhull — with corrected ages where they can be verified, what each housemate was known for before the show, how their journey has actually gone up to Week 12 (late November 2026), and whether they are still in the house. Where a date of birth could not be reliably verified, we say so rather than guessing.</p>
     </header>
 
     ${bbCoverFigure("/assets/bb20-new/covers/bigg-boss-20-contestants.jpg", "Bigg Boss 20 contestants cover")}
@@ -12321,12 +12321,26 @@ export function renderBiggBossContestantsPage() {
     <section class="bb-status-summary">
       <h2>At a glance — who is still in?</h2>
       <ul>
-        <li><strong>Still in the house (at 26 Oct, after the Week 8 nominations):</strong> Gullu (Kushal Tanwar), Qazi Touqeer, Tanmay 'Scout' Singh, Yung DSA, Kanika Mann, Aamrapali Dubey, Aasif Khan, Mahhi Vij (current captain), Arishfa Khan, Love Gill, Uditi Singh, Manish Goel (wild card)</li>
-        <li><strong>Evicted:</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4, mid-week), Aman Gandhi (Week 6), MC Mary Kom (Week 7, confirmed on air 24 October)</li>
-        <li><strong>Removed by Bigg Boss:</strong> Nakul Dhull (wild card, Week 6, after a reported physical altercation with Gullu)</li>
-        <li><strong>Nominated — Week 8:</strong> Gullu (Kushal Tanwar), Kanika Mann, Tanmay 'Scout' Singh, Aasif Khan, Love Gill, Aamrapali Dubey</li>
-        <li><strong>Captain:</strong> Mahhi Vij, from 23 October — Qazi Touqeer won the captaincy task round and chose her. Scout was the previous captain.</li>
+        <li><strong>Still in the house (Week 12 — ten remain):</strong> Uditi Singh (captain), Tanmay 'Scout' Singh, Qazi Touqeer, Yung DSA, Arishfa Khan, Kanika Mann, Mahhi Vij, Gullu (Kushal Tanwar), Love Gill, Aamrapali Dubey</li>
+        <li><strong>Evicted (six):</strong> Rohed Khan (Week 2), Isha Rikhi (Week 3), Rhiti Tiwari (Week 4), Aman Gandhi (Week 6), MC Mary Kom (Week 7), Aasif Khan (Week 8)</li>
+        <li><strong>Removed by Bigg Boss:</strong> Nakul Dhull (wild card, Week 6)</li>
+        <li><strong>Left on medical grounds:</strong> Manish Goel (wild card, Week 11 — a severe leg injury; not a vote eviction)</li>
+        <li><strong>Nominated — Week 12:</strong> Scout, Love Gill, Kanika Mann, Gullu, Mahhi Vij, Aamrapali Dubey</li>
+        <li><strong>Captain:</strong> Uditi Singh, since Episode 74 (18 November 2026). Seven housemates have captained this season — the full record is on <a href="/bigg-boss-20-captain/">the captain page</a>.</li>
       </ul>
+    </section>
+
+    <section class="bb-status-summary">
+      <h2>All 18 housemates at a glance</h2>
+      <div class="table-scroll">
+        <table class="bb-leaderboard-table">
+          <thead><tr><th>Housemate</th><th>Known for</th><th>Status — Week 12</th></tr></thead>
+          <tbody>
+            ${contestants.map((c) => `<tr><td><strong>${c.name}</strong></td><td>${c.role}</td><td>${c.removed ? "Removed — Week 6" : c.left ? "Left — medical exit, Week 11" : c.evicted ? `Evicted — Week ${c.evictedWeek}` : c.captain ? "In the house — captain" : ["scout", "love-gill", "kanika-mann", "gullu", "mahhi-vij", "amrapali-dubey"].includes(c.id) ? "In the house — nominated, Week 12" : "In the house — safe, Week 12"}</td></tr>`).join("")}
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:1rem;">Full profiles for everyone still playing are on <a href="/bigg-boss-20-contestant-journey/">the contestant journey page</a>; this week's vote is on <a href="/bigg-boss-20-voting-week-12/">the Week 12 voting page</a>.</p>
     </section>
 
     ${renderOpenPollDisclaimer()}
