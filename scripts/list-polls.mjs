@@ -472,6 +472,214 @@ const auSections = `
 </section>
 `;
 
+const cnSections = `
+<section class="lp-article">
+  <h2>The faces of the world's biggest drama industry</h2>
+  <p>China's screen industry is enormous, and its leading actresses are famous on a scale few Western stars ever reach — a hit Chinese drama can be watched by hundreds of millions of people. This list ranks the ten Chinese actresses who combine that fame with the roles, honours and presence audiences remember, and every photograph is a recent one: this is a list about who they are now.</p>
+  <p>The ranking weighs current prominence, signature roles and honours. Four of the ten have been crowned Golden Eagle Goddess — the China TV Golden Eagle Awards' public-voted honour — and the two most recent CMG Actress of the Year winners both appear. Cast your own vote in the Open Poll at the top of the page.</p>
+  <figure class="lp-wide">
+    <img src="/assets/cn-actresses/by-the-numbers.webp" alt="Infographic: China's screen queens by the numbers — four Golden Eagle Goddesses, three New Four Dan actresses, two back-to-back CMG Actress of the Year winners" loading="lazy">
+    <figcaption>The honours behind the list, counted.</figcaption>
+  </figure>
+</section>
+
+<section class="lp-article">
+  <h2>The list at a glance</h2>
+  <div class="lp-tablewrap">
+  <table class="lp-table">
+    <thead><tr><th style="background:#3b1032;color:#ffffff">Name</th><th style="background:#3b1032;color:#ffffff">Born</th><th style="background:#3b1032;color:#ffffff">Signature role</th><th style="background:#3b1032;color:#ffffff">Where she is now</th></tr></thead>
+    <tbody>
+      <tr><td>Liu Yifei</td><td>25 August 1987, Wuhan</td><td>Hua Mulan in Mulan (2020)</td><td>The Tale of Rose (2024); CMG Actress of the Year 2025</td></tr>
+      <tr><td>Dilraba Dilmurat</td><td>3 June 1992, Ürümqi</td><td>Qiao Jingjing in You Are My Glory (2021)</td><td>Sword Rose (2025); Love Beyond the Grave (2026)</td></tr>
+      <tr><td>Yang Mi</td><td>12 September 1986, Beijing</td><td>Bai Qian in Eternal Love (2017)</td><td>This Thriving Land — CMG Actress of the Year 2026</td></tr>
+      <tr><td>Zhao Liying</td><td>16 October 1987, Langfang</td><td>Sheng Minglan in The Story of Minglan (2018)</td><td>The Legend of Shen Li (2024); The Dream Maker (2026)</td></tr>
+      <tr><td>Yang Zi</td><td>6 November 1992, Beijing</td><td>Jin Mi in Ashes of Love (2018)</td><td>Flourished Peony (2025); Born to Be Alive (2026)</td></tr>
+      <tr><td>Zhao Lusi</td><td>9 November 1998, Chengdu</td><td>Sang Zhi in Hidden Love (2023)</td><td>Love's Ambition (2025)</td></tr>
+      <tr><td>Liu Shishi</td><td>10 March 1987, Beijing</td><td>Ma'ertai Ruoxi in Scarlet Heart (2011)</td><td>Kill My Sins and Love in Pavilion (2025)</td></tr>
+      <tr><td>Tang Yan</td><td>6 December 1983, Shanghai</td><td>Miss Wang in Blossoms Shanghai (2023)</td><td>Blossoms Shanghai remains her most recent major credit</td></tr>
+      <tr><td>Bai Lu</td><td>23 September 1994, Changzhou</td><td>Li Susu in Till the End of the Moon (2023)</td><td>Moonlight Mystique, Northward and Feud (2025)</td></tr>
+      <tr><td>Yu Shuxin</td><td>18 December 1995, Shanghai</td><td>Xiao Lanhua in Love Between Fairy and Devil (2022)</td><td>Ski into Love and Speed and Love (2025)</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>One honest note: Liu Yifei was born in Wuhan and built her career in Chinese film and television, but she moved to the United States as a child and has held US citizenship since 2002 — her profile below says so plainly. Dates and honours are as stated in each actress's Wikipedia profile, checked in November 2026.</p>
+</section>
+
+<section class="lp-article lp-profile" id="liu-yifei">
+  <h2>1. Liu Yifei</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/liu-yifei-1.webp" alt="Liu Yifei in a gold beaded gown at the BVLGARI Polychroma event in Taormina, May 2025" loading="lazy">
+      <figcaption><span class="lp-when">2025</span> Liu Yifei at BVLGARI's Polychroma event in Taormina, Sicily.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/liu-yifei-2.webp" alt="Liu Yifei in a pale blue beaded gown at the same BVLGARI event" loading="lazy">
+      <figcaption><span class="lp-when">2025</span> Liu Yifei at the same event, the following evening.</figcaption>
+    </figure>
+  </div>
+  <p>Born in Wuhan in 1987, Liu Yifei — also known as Crystal Liu — was a star in China while still a teenager: Wang Yuyan in Demi-Gods and Semi-Devils (2003), Zhao Ling'er in Chinese Paladin (2005) and Xiaolongnü in The Return of the Condor Heroes (2006) made her the defining face of a generation of wuxia drama. The world met her as Hua Mulan in Disney's Mulan (2020).</p>
+  <p>Her recent years belong to television: A Dream of Splendor (2022), Meet Yourself (2023) and The Tale of Rose (2024), with Best Actress wins at the Macau International Television Festival for the first two of those and Actress of the Year at the 2025 CMG Annual Chinese TV Drama Ceremony. One fact stated plainly: she moved to the US as a child and has held US citizenship since 2002; she is on this list as a Chinese-born actress whose career was made in Chinese screen drama.</p>
+</section>
+
+<section class="lp-article lp-profile" id="dilraba-dilmurat">
+  <h2>2. Dilraba Dilmurat</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/dilraba-dilmurat-1.webp" alt="Dilraba Dilmurat in a black one-shoulder gown with an embellished skirt" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Dilraba Dilmurat in a black one-shoulder gown.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/dilraba-dilmurat-2.webp" alt="Dilraba Dilmurat in a gold and black mosaic sequin gown" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Dilraba Dilmurat in a gold mosaic sequin gown.</figcaption>
+    </figure>
+  </div>
+  <p>Dilraba Dilmurat, born in Ürümqi in 1992, is an ethnic Uyghur actress whose rise tracks modern Chinese television itself: Bai Fengjiu in Eternal Love (2017) and its sequel, the lead in Pretty Li Huizhen (2017), Li Changge in The Long Ballad (2021) and Qiao Jingjing in You Are My Glory (2021).</p>
+  <p>Pretty Li Huizhen won her the Best Actress award at the China TV Golden Eagle Awards, and in 2018 she was crowned Golden Eagle Goddess at the Golden Eagle TV Art Festival. She remains at the top of the industry — Sword Rose and Love on the Turquoise Land in 2025, Love Beyond the Grave in 2026 — with a shelf of brand endorsements that reflects her commercial reach.</p>
+</section>
+
+<section class="lp-article lp-profile" id="yang-mi">
+  <h2>3. Yang Mi</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/yang-mi-1.webp" alt="Yang Mi in a red strapless gown on a red carpet" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Yang Mi in a red strapless gown on the red carpet.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/yang-mi-2.webp" alt="Yang Mi in a black tulle gown at Harper's Bazaar Icons 2025" loading="lazy">
+      <figcaption><span class="lp-when">2025</span> Yang Mi at Harper's Bazaar Icons, May 2025.</figcaption>
+    </figure>
+  </div>
+  <p>Beijing-born Yang Mi, born in 1986, has been famous for so long that Chinese media named her among the New Four Dan actresses twice, in 2009 and again in 2013. Palace (2011) made her a television star, the Tiny Times films made her a film one, and Bai Qian in Eternal Love (2017) became one of the most-watched performances in Chinese drama history.</p>
+  <p>She has kept reinventing the career since: the drama Baby (2018) earned her a Silver Shell Best Actress nomination at San Sebastián, and in 2026 This Thriving Land won her Actress of the Year at the CMG Annual Chinese TV Drama Ceremony — her first Best Actress title in nearly 14 years, as her profile notes. Recent films include She's Got No Name (2024) and The Lychee Road (2025).</p>
+</section>
+
+<section class="lp-article lp-profile" id="zhao-liying">
+  <h2>4. Zhao Liying</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/zhao-liying-1.webp" alt="Zhao Liying in a silver-to-gold ombre sequin gown" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Zhao Liying in a silver-to-gold ombre gown.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/zhao-liying-2.webp" alt="Zhao Liying waving in a gold gown at the Asian Film Awards" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Zhao Liying at the Asian Film Awards.</figcaption>
+    </figure>
+  </div>
+  <p>Zhao Liying, also known as Zanilia Zhao, was born in Langfang in 1987 and built her stardom role by role: Legend of Lu Zhen (2013), Hua Qiangu in The Journey of Flower (2015), Chu Qiao in Princess Agents (2017) and Sheng Minglan in The Story of Minglan (2018) — a run of hits few actresses anywhere can match.</p>
+  <p>The honours match the ratings: Outstanding Actress at the Flying Apsaras Awards for Wild Bloom (2022), the Golden Eagle Audience's Choice award twice, Golden Eagle Goddess in 2014, and Best Supporting Actress at the Hundred Flowers Awards for the film Article 20 (2024). She headlined The Legend of Shen Li (2024) and a string of 2024–2025 films, with The Dream Maker following in 2026.</p>
+</section>
+
+<section class="lp-article lp-profile" id="yang-zi">
+  <h2>5. Yang Zi</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/yang-zi-1.webp" alt="Yang Zi in a metallic gold ruffled gown on a red carpet" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Yang Zi in a metallic gold ruffled gown.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/yang-zi-2.webp" alt="Yang Zi in a mint-green lace gown at Tencent Video All Star Night 2025" loading="lazy">
+      <figcaption><span class="lp-when">2025</span> Yang Zi at Tencent Video All Star Night.</figcaption>
+    </figure>
+  </div>
+  <p>Yang Zi, also known as Andy Yang, was born in Beijing in 1992 and grew up on screen — Chinese audiences first knew her as Xia Xue in the sitcom Home with Kids (2005–2006). She rebuilt that childhood fame into an adult career with Ode to Joy (2016), Jin Mi in Ashes of Love (2018) and Tong Nian in Go Go Squid! (2019).</p>
+  <p>Her recent work has brought the industry's serious recognition: she won the Magnolia Award for Best Actress at the Shanghai Television Festival for Born to Be Alive, after three consecutive nominations at that festival — a first for an actress there. Flourished Peony (2025) and Born to Be Alive (2026) lead her current run.</p>
+</section>
+
+<section class="lp-article lp-profile" id="zhao-lusi">
+  <h2>6. Zhao Lusi</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/zhao-lusi-1.webp" alt="Zhao Lusi in a peach sequined gown on a red carpet" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Zhao Lusi in a peach sequined gown.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/zhao-lusi-2.webp" alt="Zhao Lusi in a white dress at WeTV 2024" loading="lazy">
+      <figcaption><span class="lp-when">2024</span> Zhao Lusi at WeTV's 2024 event.</figcaption>
+    </figure>
+  </div>
+  <p>Zhao Lusi, also known as Rosy Zhao, was born in Chengdu in 1998 and is the youngest actress on this list. The Romance of Tiger and Rose (2020) made her a star, Who Rules the World and Love Like the Galaxy (both 2022) made her a leading lady, and Sang Zhi in Hidden Love (2023) became a word-of-mouth hit far beyond China.</p>
+  <p>Her honours include the Asian Star Prize at the Seoul International Drama Awards for The Long Ballad. After a health break that paused her work in late 2024, she returned in 2025, headlining Love's Ambition following The Story of Pearl Girl (2024).</p>
+</section>
+
+<section class="lp-article lp-profile" id="liu-shishi">
+  <h2>7. Liu Shishi</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/liu-shishi-1.webp" alt="Liu Shishi holding an award at iQiyi Screaming Night, December 2024" loading="lazy">
+      <figcaption><span class="lp-when">2024</span> Liu Shishi at iQiyi Screaming Night, December 2024.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/liu-shishi-2.webp" alt="Liu Shishi in a light blue gown holding an award and flowers" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Liu Shishi with an award, in a light blue gown.</figcaption>
+    </figure>
+  </div>
+  <p>Liu Shishi, also known as Cecilia Liu, was born in Beijing in 1987. Ma'ertai Ruoxi in Scarlet Heart (2011) made her one of the most beloved actresses in China — the role won her Most Popular Actress at the Shanghai Television Festival — and Chinese Paladin 3 (2009) and The Imperial Doctress (2016) frame a career built on period drama.</p>
+  <p>She was crowned Golden Eagle Goddess in 2012 and named among the new Four Dan actresses of her era. After a quieter period she returned to leading roles with A Journey to Love (2023), then Kill My Sins and Love in Pavilion in 2025.</p>
+</section>
+
+<section class="lp-article lp-profile" id="tang-yan">
+  <h2>8. Tang Yan</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/tang-yan-1.webp" alt="Tang Yan in a black sequin gown at Tencent Video All Star Night" loading="lazy">
+      <figcaption><span class="lp-when">2025</span> Tang Yan at Tencent Video All Star Night, January 2025.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/tang-yan-2.webp" alt="Tang Yan in a black and gold ballgown on a red carpet" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Tang Yan in a black-and-gold ballgown.</figcaption>
+    </figure>
+  </div>
+  <p>Tang Yan, known internationally as Tiffany Tang, was born in Shanghai in 1983. Zi Xuan in Chinese Paladin 3 (2009) began her rise; My Sunshine (2015) and The Princess Weiyoung (2016) made her one of the most bankable television actresses of her decade, with Huading Best Actress awards for both, and she was crowned Golden Eagle Goddess in 2016.</p>
+  <p>Her most recent major credit is also one of her most prestigious: Miss Wang in Blossoms Shanghai (2023), Wong Kar-wai's first television series. She works selectively now, which is why this list places her on the strength of a career that defined an era of Chinese television.</p>
+</section>
+
+<section class="lp-article lp-profile" id="bai-lu">
+  <h2>9. Bai Lu</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/bai-lu-1.webp" alt="Bai Lu in a cream sequined gown holding a gold award" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Bai Lu holding one of her popularity awards.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/bai-lu-2.webp" alt="Bai Lu in a white and silver strapless gown holding an award" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Bai Lu in a white-and-silver strapless gown.</figcaption>
+    </figure>
+  </div>
+  <p>Bai Lu — born Bai Mengyan in Changzhou in 1994 — is one of the hardest-working leads in Chinese drama: The Legends (2019), Love Is Sweet (2020), One and Only (2021) and a double turn in Till the End of the Moon (2023) and Story of Kunning Palace (2023) built her a devoted audience.</p>
+  <p>Her awards shelf is built on popularity honours from iQiyi's carnivals and the Golden Angel Awards, plus a Huading Best Actress nomination for One and Only. In 2025 alone she led Moonlight Mystique, Northward and Feud, and in 2026 she left her agency of ten years to establish her own studio.</p>
+</section>
+
+<section class="lp-article lp-profile" id="yu-shuxin">
+  <h2>10. Yu Shuxin</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/yu-shuxin-1.webp" alt="Yu Shuxin in a white ruffled gown holding a microphone and an award" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Yu Shuxin accepting an award in a white ruffled gown.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/cn-actresses/yu-shuxin-2.webp" alt="Yu Shuxin with red hair in a black and gold metallic dress at a YSL Beauté event" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Yu Shuxin at a YSL Beauté event.</figcaption>
+    </figure>
+  </div>
+  <p>Yu Shuxin, known internationally as Esther Yu, was born in Shanghai in 1995 and first found fame through the idol show Youth With You 2, as a member of the project group The9. Acting made her a star in her own right: Find Yourself (2020), then Xiao Lanhua — Orchid — in Love Between Fairy and Devil (2022), one of the decade's most loved fantasy dramas.</p>
+  <p>My Journey to You (2023) and Love Game in Eastern Fantasy (2024) brought her Most Influential and Most Popular TV Actress honours at iQiyi and Tencent's year-end events. Ski into Love and Speed and Love kept her leading through 2025.</p>
+</section>
+
+<section class="lp-article">
+  <h2>Questions readers ask</h2>
+  <h3>Is Liu Yifei Chinese or American?</h3>
+  <p>Both descriptions appear in her profile, so here is the plain version: she was born in Wuhan, China, in 1987, moved to the United States as a child, and has held US citizenship since 2002. Her acting career — from Chinese Paladin to Mulan to her recent television hits — was built in Chinese film and drama, which is why she belongs on this list, with the citizenship fact stated openly.</p>
+  <h3>What is a Golden Eagle Goddess?</h3>
+  <p>At each China Golden Eagle TV Art Festival, one actress is crowned Golden Eagle Goddess — a public-facing honour tied to the Golden Eagle Awards, China's national television awards. Four women on this list have held the title: Liu Shishi (2012), Zhao Liying (2014), Tang Yan (2016) and Dilraba Dilmurat (2018).</p>
+  <h3>Who just missed the list?</h3>
+  <p>Zhou Ye, Zhang Jingyi and Guan Xiaotong were the closest calls — Zhou Ye leads Legend of the Female General (2025), Zhang Jingyi broke out globally in Lighter and Princess (2022), and Guan Xiaotong has been a leading actress since her teens. Any of them could make the next edition.</p>
+  <h3>Is the Open Poll an official result?</h3>
+  <p>No. The Open Poll at the top of this page is a VisitBest reader poll with seeded starting figures, for audience sentiment only. It is not connected to the Golden Eagle Awards, CMG or any other body — the official honours mentioned here are reported from each actress's profile.</p>
+  <h3>Where do the facts and photographs come from?</h3>
+  <p>Birth dates, roles and honours are drawn from each actress's Wikipedia profile, checked in November 2026. The photographs are recent red-carpet, gala and festival portraits sourced from Pinterest; every one was checked against a known reference portrait before use.</p>
+</section>
+`;
+
 export const listPolls = [
   {
     slug: "most-beautiful-90s-hong-kong-actresses",
@@ -549,7 +757,46 @@ export const listPolls = [
     metaDesc: "Top 10 most beautiful Australian actresses — Margot Robbie, Nicole Kidman, Cate Blanchett and more, in recent photos, with an Open Poll for audience sentiment only.",
     sectionsHtml: auSections,
   },
+  {
+    slug: "most-beautiful-chinese-actresses",
+    image: "/assets/cn-actresses/cover.webp",
+    title: "Top 10 Most Beautiful Chinese Actresses",
+    h1: "Top 10 Most Beautiful Chinese Actresses",
+    lead: "Chinese drama reaches audiences in the hundreds of millions, and its leading ladies are stars on a scale few industries can match. This list ranks the ten Chinese actresses who define its screen beauty right now — four Golden Eagle Goddesses among them — every one in a recent photograph, and it opens with a reader Open Poll on who stands first. Every standing in that poll is audience sentiment only.",
+    heroBadge: "🗳️ OPEN POLL · CHINESE SCREEN ICONS",
+    leaderNote: "🔥 OPEN POLL LEADER: Liu Yifei leads the VisitBest Open Poll as it stands, with 2,286 votes (19.6%), ahead of Dilraba Dilmurat on 2,041. These are VisitBest Open Poll standings — for audience sentiment only, not an official vote of any kind.",
+    question: "Who is the most beautiful Chinese actress?",
+    textOptions: [
+      { id: "liu-yifei", label: "Liu Yifei", sub: "Mulan · A Dream of Splendor", image: "/assets/cn-actresses/liu-yifei-1.webp" },
+      { id: "dilraba-dilmurat", label: "Dilraba Dilmurat", sub: "You Are My Glory · Eternal Love", image: "/assets/cn-actresses/dilraba-dilmurat-1.webp" },
+      { id: "yang-mi", label: "Yang Mi", sub: "Eternal Love · Palace", image: "/assets/cn-actresses/yang-mi-1.webp" },
+      { id: "zhao-liying", label: "Zhao Liying", sub: "The Story of Minglan · Princess Agents", image: "/assets/cn-actresses/zhao-liying-1.webp" },
+      { id: "yang-zi", label: "Yang Zi", sub: "Ashes of Love · Go Go Squid!", image: "/assets/cn-actresses/yang-zi-1.webp" },
+      { id: "zhao-lusi", label: "Zhao Lusi", sub: "Hidden Love · Love Like the Galaxy", image: "/assets/cn-actresses/zhao-lusi-1.webp" },
+      { id: "liu-shishi", label: "Liu Shishi", sub: "Scarlet Heart · A Journey to Love", image: "/assets/cn-actresses/liu-shishi-1.webp" },
+      { id: "tang-yan", label: "Tang Yan", sub: "Blossoms Shanghai · The Princess Weiyoung", image: "/assets/cn-actresses/tang-yan-1.webp" },
+      { id: "bai-lu", label: "Bai Lu", sub: "Till the End of the Moon · One and Only", image: "/assets/cn-actresses/bai-lu-1.webp" },
+      { id: "yu-shuxin", label: "Yu Shuxin", sub: "Love Between Fairy and Devil", image: "/assets/cn-actresses/yu-shuxin-1.webp" },
+    ],
+    voteDistribution: {
+      "liu-yifei": 2286,
+      "dilraba-dilmurat": 2041,
+      "yang-mi": 1672,
+      "zhao-liying": 1518,
+      "yang-zi": 1104,
+      "zhao-lusi": 986,
+      "liu-shishi": 724,
+      "tang-yan": 512,
+      "bai-lu": 438,
+      "yu-shuxin": 372,
+    },
+    openedDate: "26 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    metaDesc: "Top 10 most beautiful Chinese actresses — Liu Yifei, Dilraba Dilmurat, Yang Mi and more, in recent photos, with an Open Poll for audience sentiment only.",
+    sectionsHtml: cnSections,
+  },
 ];
+
 
 
 // ---------------------------------------------------------------------------
