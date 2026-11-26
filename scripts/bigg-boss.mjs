@@ -5487,6 +5487,37 @@ function renderWinnerListTable() {
       </div>`;
 }
 
+function renderHubSeasonProfiles(poll) {
+  if (poll.slug !== "bigg-boss-voting") return "";
+  const cards = WINNER_LIST.map((r, i) => {
+    const bio = [
+      ["Winner", r.winner],
+      ["Runner-up", r.runnerUp],
+      ["Season ran", r.dates],
+      ["Host", r.host],
+      ["Aired on", r.channel],
+    ];
+    return `
+    <div class="bb-profile">
+      <h3>${i + 1}. ${r.season} — ${r.winner}</h3>
+      <p class="bb-placing">🏆 Winner · ${r.season} (${r.years})</p>
+      <div class="bb-profile-cols">
+        ${renderStoryPhoto(r.image, r.winner, `${r.winner} — winner of ${r.season}`)}
+        <div class="bb-fact-card">
+          <h3>At a glance — ${r.season}</h3>
+          ${bio.map(([k, v]) => `<div class="bb-fact-row"><span class="bb-fact-k">${k}</span><span class="bb-fact-v">${v}</span></div>`).join("")}
+        </div>
+      </div>
+      <p>${r.story}</p>
+      <ul>
+        <li>Vote in this season's own fan re-vote and read its full story: <a href="${r.link}"><strong>the ${r.season} voting page</strong></a>.</li>
+        <li>Every winner side by side: <a href="/bigg-boss-winner-list/"><strong>the Bigg Boss winner list</strong></a>.</li>
+      </ul>
+    </div>`;
+  }).join("");
+  return storySection("Every Season", "Every Bigg Boss season in short — the winners' wall", `<p>Twenty-two completed editions of Bigg Boss Hindi and OTT, each with its winner, the finalist they beat, and the shape of their season. Bigg Boss 20 is still being played — its winner joins this wall when the season ends.</p>` + cards);
+}
+
 function renderWinnerListReadingSections(poll) {
   const S = {
     "bigg-boss-winner-list": () => storySection(
@@ -12163,7 +12194,7 @@ export function renderBiggBossPollPage(poll) {
  ${poll.slug === "bigg-boss-2-voting" ? renderSeason2Sections() : ""}
  ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
     ${poll.slug === "bigg-boss-winner-list" ? renderWinnerListSections() : ""}
-    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}${renderBb20RemainderSections(poll)}${renderWinnerListReadingSections(poll)}
+    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}${renderBb20RemainderSections(poll)}${renderWinnerListReadingSections(poll)}${renderHubSeasonProfiles(poll)}
     ${poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersSections() : ""}
     ${poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersSections() : ""}
     ${poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersSections() : ""}
