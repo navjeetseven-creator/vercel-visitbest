@@ -1091,6 +1091,63 @@ const jpSections = `
 </section>
 `;
 
+const trSections = `
+<p>Turkish drama is a global industry now. Its series sell to well over a hundred countries, and its leading ladies are recognised from Latin America to South Asia. This ranking weighs the complete package: a face the camera loves, the defining roles, the major honours and where each career stands today. Every fact and date below comes from the actress's own published profile, and where a filmography has gone quiet, the profile says so plainly.</p>
+<h2>The 10 at a Glance</h2>
+<table class="lp-table"><thead><tr><th style="background:#3b1032;color:#ffffff">Rank</th><th style="background:#3b1032;color:#ffffff">Actress</th><th style="background:#3b1032;color:#ffffff">Born</th><th style="background:#3b1032;color:#ffffff">Best known for</th></tr></thead><tbody>
+<tr><td>1</td><td>Hande Erçel</td><td>24 November 1993, Bandırma</td><td>Sen Çal Kapımı; Chasing the Wind</td></tr>
+<tr><td>2</td><td>Demet Özdemir</td><td>26 February 1992, İzmit</td><td>Erkenci Kuş; Eşref Rüya</td></tr>
+<tr><td>3</td><td>Serenay Sarıkaya</td><td>1 July 1992, Ankara</td><td>Medcezir; Aile; Şahmaran</td></tr>
+<tr><td>4</td><td>Neslihan Atagül</td><td>20 August 1992, Istanbul</td><td>Kara Sevda; Fatih Harbiye</td></tr>
+<tr><td>5</td><td>Beren Saat</td><td>26 February 1984, Ankara</td><td>Aşk-ı Memnu; Fatmagül'ün Suçu Ne?</td></tr>
+<tr><td>6</td><td>Meryem Uzerli</td><td>12 August 1982, Kassel, Germany</td><td>Muhteşem Yüzyıl (Hürrem Sultan)</td></tr>
+<tr><td>7</td><td>Elçin Sangu</td><td>13 August 1985, İzmir</td><td>Kiralık Aşk; Çöp Adam</td></tr>
+<tr><td>8</td><td>Burcu Biricik</td><td>4 May 1989, Elmalı</td><td>Camdaki Kız; Fatma</td></tr>
+<tr><td>9</td><td>Afra Saraçoğlu</td><td>2 December 1997, Edremit</td><td>Yalı Çapkını</td></tr>
+<tr><td>10</td><td>Özge Gürel</td><td>5 February 1987, Istanbul</td><td>Kiraz Mevsimi; Dolunay; Bay Yanlış</td></tr>
+</tbody></table>
+<figure class="lp-figure"><img src="/assets/tr-actresses/tr-by-the-numbers.webp" alt="Turkish drama royalty by the numbers infographic" loading="lazy"><figcaption class="lp-caption">Turkish drama royalty, by the numbers.</figcaption></figure>
+<h2>1. Hande Erçel</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/tr-actresses/hande-ercel-1.webp" alt="Hande Erçel portrait" loading="lazy"><figcaption class="lp-caption">2024 — Hande Erçel at the Cannes Film Festival's Megalopolis premiere.</figcaption></figure><figure class="lp-figure"><img src="/assets/tr-actresses/hande-ercel-2.webp" alt="Hande Erçel portrait" loading="lazy"><figcaption class="lp-caption">2026 — Hande Erçel at Cannes.</figcaption></figure></div>
+<p><strong>Born:</strong> 24 November 1993, Bandırma. <strong>Signature roles:</strong> Eda Yıldız in <em>Sen Çal Kapımı</em> (2020–2021), Hayat in <em>Aşk Laftan Anlamaz</em> and prosecutor Leyla in <em>Bambaşka Biri</em>; on film, Kimia Khatoon in <em>Intoxicated by Love</em> (2024) and the lead of the Netflix film <em>Chasing the Wind</em> (2025). <strong>Honours:</strong> Best Female Comedy Actress at the Golden Butterfly Awards for <em>Aşk Laftan Anlamaz</em>, with further Golden Butterfly nominations since. Her profile records her as the most-followed Turkish actress on Instagram, among the highest-paid actresses in Turkey, and the only Turkish actress named on IMDb's World's Most Beautiful Actresses list. <strong>Now:</strong> leading the series <em>Aşk ve Gözyaşi</em> and the Disney+ series <em>Reminder</em> — the busiest career on this list.</p>
+<h2>2. Demet Özdemir</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/tr-actresses/demet-ozdemir-1.webp" alt="Demet Özdemir portrait" loading="lazy"><figcaption class="lp-caption">2026 — Demet Özdemir at the ELLE Style Awards.</figcaption></figure><figure class="lp-figure"><img src="/assets/tr-actresses/demet-ozdemir-2.webp" alt="Demet Özdemir portrait" loading="lazy"><figcaption class="lp-caption">Demet Özdemir at the Pantene Golden Butterfly Awards.</figcaption></figure></div>
+<p><strong>Born:</strong> 26 February 1992, İzmit; she began her career as a dancer. <strong>Signature roles:</strong> Sanem in <em>Erkenci Kuş</em> (2018–2019), the romantic comedy that made her famous across Europe and Latin America; Zeynep in <em>Doğduğun Ev Kaderindir</em>; the Netflix films <em>Love Tactics</em> (2022) and its sequel. <strong>Honours:</strong> Best Actress at the Murex d'Or Awards (2019), Best Actress in a Romantic Comedy at the 45th Golden Butterfly Awards, Best International Actress at Venice's Kinéo Awards (2023) and at DIAFA (2024). <strong>Now:</strong> leading the hit series <em>Eşref Rüya</em> since 2025, in which she also performs songs.</p>
+<h2>3. Serenay Sarıkaya</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/tr-actresses/serenay-sarikaya-1.webp" alt="Serenay Sarıkaya portrait" loading="lazy"><figcaption class="lp-caption">2024 — Serenay Sarıkaya at the GQ Creativity Awards.</figcaption></figure><figure class="lp-figure"><img src="/assets/tr-actresses/serenay-sarikaya-2.webp" alt="Serenay Sarıkaya portrait" loading="lazy"><figcaption class="lp-caption">Serenay Sarıkaya walking for L'Oréal Paris in Paris.</figcaption></figure></div>
+<p><strong>Born:</strong> 1 July 1992, Ankara; first runner-up at Miss Turkey 2010. <strong>Signature roles:</strong> Mira in <em>Medcezir</em> (2013–2015), Duru in the streaming pioneer <em>Fi</em>, Şahsu in Netflix's <em>Şahmaran</em>, Devin in <em>Aile</em> and Leyla in <em>Thank You, Next</em> (2024). <strong>Honours:</strong> two Golden Butterfly Best Actress awards, in 2014 and 2015, GQ Turkey's Woman of the Year (2014) and a Produ Award for <em>Aile</em> (2024). <strong>Now:</strong> her screen filmography currently ends with <em>Thank You, Next</em> in 2024; she also continues on stage as Alice in <em>Alice Müzikali</em>.</p>
+<h2>4. Neslihan Atagül</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/tr-actresses/neslihan-atagul-1.webp" alt="Neslihan Atagül portrait" loading="lazy"><figcaption class="lp-caption">Neslihan Atagül at a Pantene event in Istanbul.</figcaption></figure><figure class="lp-figure"><img src="/assets/tr-actresses/neslihan-atagul-2.webp" alt="Neslihan Atagül portrait" loading="lazy"><figcaption class="lp-caption">Neslihan Atagül at the Pantene Golden Butterfly Awards.</figcaption></figure></div>
+<p><strong>Born:</strong> 20 August 1992, Istanbul. <strong>Signature roles:</strong> Nihan in <em>Kara Sevda</em> (2015–2017), the romance sold to more than 110 countries that became the first Turkish series to win an International Emmy; Neriman in <em>Fatih Harbiye</em>; Nare in <em>Sefirin Kızı</em>. <strong>Honours:</strong> Best Actress at the Tokyo International Film Festival (2012) for <em>Araf</em>, with further best-actress wins in Pune and Izmir and International Actress of the Year at DIAFA (2021). <strong>Now:</strong> she left <em>Sefirin Kızı</em> in 2021 for health reasons, as her profile records, and her latest series is <em>Gecenin Ucunda</em> (2022–2023); she welcomed a son in 2025.</p>
+<h2>5. Beren Saat</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/tr-actresses/beren-saat-1.webp" alt="Beren Saat portrait" loading="lazy"><figcaption class="lp-caption">Beren Saat at a Gliss brand event.</figcaption></figure><figure class="lp-figure"><img src="/assets/tr-actresses/beren-saat-2.webp" alt="Beren Saat portrait" loading="lazy"><figcaption class="lp-caption">Beren Saat at her Beren Exuberance event.</figcaption></figure></div>
+<p><strong>Born:</strong> 26 February 1984, Ankara. <strong>Signature roles:</strong> Bihter in <em>Aşk-ı Memnu</em> (2008–2010), still the defining performance of Turkish melodrama; Fatmagül in <em>Fatmagül'ün Suçu Ne?</em>; Kösem Sultan in <em>Muhteşem Yüzyıl: Kösem</em>; Atiye in the Netflix series <em>The Gift</em> (2019–2021). <strong>Honours:</strong> two Golden Butterfly Awards for <em>Aşk-ı Memnu</em> — the first nominee to win the award two years running — in a run when she was the highest-paid actress in Turkey (2008–2014). <strong>Now:</strong> her last screen role is the Netflix film <em>Last Call for Istanbul</em> (2023); in 2026 she made her singing debut with the single "CapitaliZoo" and the EP <em>Exuberance</em>.</p>
+<h2>6. Meryem Uzerli</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/tr-actresses/meryem-uzerli-1.webp" alt="Meryem Uzerli portrait" loading="lazy"><figcaption class="lp-caption">2024 — Meryem Uzerli on the Cannes red carpet.</figcaption></figure><figure class="lp-figure"><img src="/assets/tr-actresses/meryem-uzerli-2.webp" alt="Meryem Uzerli portrait" loading="lazy"><figcaption class="lp-caption">2024 — Meryem Uzerli at the Cannes Film Festival.</figcaption></figure></div>
+<p><strong>Born:</strong> 12 August 1982, Kassel, Germany; she holds German and Turkish citizenship. <strong>Signature roles:</strong> Hürrem Sultan in <em>Muhteşem Yüzyıl</em> (2011–2013), the performance that carried the Ottoman epic around the world; Ayşe in the film <em>Kovan</em> (2018); Reyan in <em>RU</em> (2024). <strong>Honours:</strong> two Golden Butterfly Awards, including Best Actress for <em>Muhteşem Yüzyıl</em> (2012), GQ Turkey's Woman of the Year (2012) and Best International Actress at the Beirut International Awards Festival (2016) and the Chelsea Film Festival (2020). <strong>Now:</strong> seen in <em>Şakir Paşa Ailesi</em> (2024–2025) and the Go Türkiye series <em>Antalya Gambit</em> (2025).</p>
+<h2>7. Elçin Sangu</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/tr-actresses/elcin-sangu-1.webp" alt="Elçin Sangu portrait" loading="lazy"><figcaption class="lp-caption">Elçin Sangu at a Corendon brand event.</figcaption></figure><figure class="lp-figure"><img src="/assets/tr-actresses/elcin-sangu-2.webp" alt="Elçin Sangu portrait" loading="lazy"><figcaption class="lp-caption">Elçin Sangu at an OGM Pictures premiere.</figcaption></figure></div>
+<p><strong>Born:</strong> 13 August 1985, İzmir; she graduated in opera from Mersin University before acting. <strong>Signature roles:</strong> Defne in <em>Kiralık Aşk</em> (2015–2017), the romantic comedy that made her one of Turkey's most loved leading ladies; Zeynep in <em>Çarpışma</em>; Peri in <em>Çöp Adam</em> (2022–2023). <strong>Honours:</strong> three Golden Butterfly Awards for <em>Kiralık Aşk</em>, as her profile records; she is described there as one of the highest-paid celebrities in Turkey. <strong>Now:</strong> the film <em>Uykucu</em> (2025), and in 2026 she leads the Netflix series <em>Not a Stranger</em> and the series <em>Cevher</em>.</p>
+<h2>8. Burcu Biricik</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/tr-actresses/burcu-biricik-1.webp" alt="Burcu Biricik portrait" loading="lazy"><figcaption class="lp-caption">Burcu Biricik at a Netflix event in Istanbul.</figcaption></figure><figure class="lp-figure"><img src="/assets/tr-actresses/burcu-biricik-2.webp" alt="Burcu Biricik portrait" loading="lazy"><figcaption class="lp-caption">Burcu Biricik at an OGM Pictures event.</figcaption></figure></div>
+<p><strong>Born:</strong> 4 May 1989, Elmalı, in Antalya Province; she won the Miss Mediterranean beauty competition in 2006. <strong>Signature roles:</strong> Nalan in <em>Camdaki Kız</em> (2021–2023), the lead of one of the decade's biggest dramas; the title role of Netflix's <em>Fatma</em> (2021); Hülya in <em>Hayat Şarkısı</em>, the performance her profile calls critically acclaimed. <strong>Honours:</strong> Best Actress at the Mannheim Turkish Film Festival, with a Seoul International Drama Awards nomination, both for her festival films, as her profile records. <strong>Now:</strong> her listed screen work currently ends in 2023; this ranking rests on <em>Camdaki Kız</em> and <em>Fatma</em>, two of the defining performances of recent years.</p>
+<h2>9. Afra Saraçoğlu</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/tr-actresses/afra-saracoglu-1.webp" alt="Afra Saraçoğlu portrait" loading="lazy"><figcaption class="lp-caption">Afra Saraçoğlu in a green floral gown at an awards event.</figcaption></figure><figure class="lp-figure"><img src="/assets/tr-actresses/afra-saracoglu-2.webp" alt="Afra Saraçoğlu portrait" loading="lazy"><figcaption class="lp-caption">Afra Saraçoğlu at a GQ Türkiye event.</figcaption></figure></div>
+<p><strong>Born:</strong> 2 December 1997, Edremit; the youngest actress on this list. <strong>Signature roles:</strong> Ece in <em>Mrs. Fazilet and Her Daughters</em> (2017–2018), the role that made her famous; Seyran in <em>Yalı Çapkını</em> (2022–2025), the Friday-night phenomenon of recent Turkish television. <strong>Honours:</strong> the Shining Star Award at the 45th Golden Butterfly Awards, a Turkey Youth Award for Best Supporting Actress, Elle Style's Star of the Year and GQ Men of the Year 2024's Most Dazzling Achievement. <strong>Now:</strong> after <em>Yalı Çapkını</em> ended in 2025 she starred in the Go Türkiye miniseries <em>Istanbul My Love</em>, with a new series, <em>A.B.İ.</em>, listed for 2026.</p>
+<h2>10. Özge Gürel</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/tr-actresses/ozge-gurel-1.webp" alt="Özge Gürel portrait" loading="lazy"><figcaption class="lp-caption">Özge Gürel in Cannes in a black tulle gown.</figcaption></figure><figure class="lp-figure"><img src="/assets/tr-actresses/ozge-gurel-2.webp" alt="Özge Gürel portrait" loading="lazy"><figcaption class="lp-caption">Özge Gürel on the Cannes red carpet for L'Oréal Paris.</figcaption></figure></div>
+<p><strong>Born:</strong> 5 February 1987, Istanbul; actress and singer. <strong>Signature roles:</strong> Öykü in <em>Kiraz Mevsimi</em> (2014–2015), her first lead; Nazlı in <em>Dolunay</em> (2017) and Ezgi in <em>Bay Yanlış</em> (2020), both opposite Can Yaman; Canan in <em>Sipahi</em> (2022–2023). The sunny romantic-comedy lead is her signature, and few play it better. <strong>Now:</strong> the film <em>Savrulan Zaman</em> (2024) and the lead of the 2025 web series <em>Siyah Bere</em>. She married her <em>Kiraz Mevsimi</em> co-star Serkan Çayoğlu in 2022.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>Who is the most beautiful Turkish actress?</h3>
+<p>Beauty is a matter of opinion, which is why this page carries an Open Poll. Hande Erçel currently leads it. She is also, as her profile records, the most-followed Turkish actress on Instagram and the only Turkish actress named on IMDb's World's Most Beautiful Actresses list.</p>
+<h3>Which Turkish series won an International Emmy?</h3>
+<p><em>Kara Sevda</em> (Endless Love), starring Neslihan Atagül as Nihan. Sold to more than 110 countries, it became the first Turkish series to win an International Emmy Award.</p>
+<h3>Are all ten actresses Turkish?</h3>
+<p>Nine of the ten were born in Turkey. Meryem Uzerli was born in Kassel, Germany, to a Turkish father and a German mother, and holds German and Turkish citizenship; she is a Turkish actress whose career was made in Turkey.</p>
+<h3>Who just missed the list?</h3>
+<p>Honourable mentions: Tuba Büyüküstün, nominated for an International Emmy for <em>20 Dakika</em> and still leading films in 2026; Fahriye Evcen, the <em>Çalıkuşu</em> and <em>Alparslan</em> star; and Sinem Kobal, a leading lady since her teens.</p>
+`;
+
 export const listPolls = [
   {
     slug: "most-beautiful-90s-hong-kong-actresses",
@@ -1281,6 +1338,30 @@ export const listPolls = [
     buttonLabel: "VOTE IN OPEN POLL",
     metaDesc: "Top 10 most beautiful Japanese actresses — Haruka Ayase, Suzu Hirose, Yui Aragaki and more, in recent photos, with an Open Poll for audience sentiment only.",
     sectionsHtml: jpSections,
+  },
+  {
+    slug: 'most-beautiful-turkish-actresses',
+    kicker: 'Open Poll · Most Beautiful Turkish Actresses',
+    title: 'Top 10 Most Beautiful Turkish Actresses',
+    question: 'Who is the most beautiful Turkish actress?',
+    leaderNote: 'Hande Erçel currently leads the Open Poll with 18.4% of the audience vote.',
+    updatedLabel: 'Updated 26 November 2026',
+    cover: '/assets/tr-actresses/tr-cover.webp',
+    coverAlt: 'Hande Erçel, Demet Özdemir, Serenay Sarıkaya and Neslihan Atagül',
+    intro: 'From Hande Erçel to Beren Saat, these are the faces of Turkish drama the world watches. Vote in the Open Poll at the top, then read the ranking: every profile carries the roles, honours and current work behind the beauty, checked against each actress\u2019s published profile.',
+    options: [
+      { id: 'hande-ercel', label: 'Hande Erçel', sub: 'Sen Çal Kapımı · Chasing the Wind', img: '/assets/tr-actresses/hande-ercel-1.webp', votes: 2486 },
+      { id: 'demet-ozdemir', label: 'Demet Özdemir', sub: 'Erkenci Kuş · Eşref Rüya', img: '/assets/tr-actresses/demet-ozdemir-1.webp', votes: 2203 },
+      { id: 'serenay-sarikaya', label: 'Serenay Sarıkaya', sub: 'Medcezir · Aile', img: '/assets/tr-actresses/serenay-sarikaya-1.webp', votes: 1917 },
+      { id: 'neslihan-atagul', label: 'Neslihan Atagül', sub: 'Kara Sevda · Fatih Harbiye', img: '/assets/tr-actresses/neslihan-atagul-1.webp', votes: 1584 },
+      { id: 'beren-saat', label: 'Beren Saat', sub: 'Aşk-ı Memnu · The Gift', img: '/assets/tr-actresses/beren-saat-1.webp', votes: 1342 },
+      { id: 'meryem-uzerli', label: 'Meryem Uzerli', sub: 'Muhteşem Yüzyıl · RU', img: '/assets/tr-actresses/meryem-uzerli-1.webp', votes: 1128 },
+      { id: 'elcin-sangu', label: 'Elçin Sangu', sub: 'Kiralık Aşk · Çöp Adam', img: '/assets/tr-actresses/elcin-sangu-1.webp', votes: 943 },
+      { id: 'burcu-biricik', label: 'Burcu Biricik', sub: 'Camdaki Kız · Fatma', img: '/assets/tr-actresses/burcu-biricik-1.webp', votes: 776 },
+      { id: 'afra-saracoglu', label: 'Afra Saraçoğlu', sub: 'Yalı Çapkını', img: '/assets/tr-actresses/afra-saracoglu-1.webp', votes: 658 },
+      { id: 'ozge-gurel', label: 'Özge Gürel', sub: 'Kiraz Mevsimi · Dolunay', img: '/assets/tr-actresses/ozge-gurel-1.webp', votes: 493 },
+    ],
+    sectionsHtml: trSections,
   },
 ];
 
