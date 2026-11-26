@@ -333,7 +333,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-voting-week-10",
-    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    image: "/assets/bb20-new/covers/bigg-boss-20-voting-week-10.jpg",
     title: "Bigg Boss 20 Week 10 Voting – Nominees Open Poll (Whole House Nominated)",
     h1: "Bigg Boss 20 Week 10 Voting — Nominees Open Poll",
     lead: "Week 10: the whole house is nominated except Arishfa Khan. This VisitBest Open Poll covers only this week's 10 nominees and opened on 11 November 2026. Open Poll — for audience sentiment only; it does not decide evictions.",
@@ -362,7 +362,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-eviction-prediction-week-10",
-    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    image: "/assets/bb20-new/covers/bigg-boss-20-eviction-prediction-week-10.jpg",
     title: "Who Will Be Evicted in Week 10? Bigg Boss 20 Eviction Prediction Poll — Open Poll",
     h1: "Who Will Be Evicted in Week 10? (Eviction Prediction — Open Poll)",
     lead: "A different question from the support poll: not who you back, but who you think is going home at this week's Weekend Ka Vaar. This Open Poll records reader expectation only — it is not a VisitBest forecast, it carries no insider information, and it does not decide evictions.",
@@ -638,7 +638,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-scout-love-story",
-    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    image: "/assets/bb20-new/covers/bigg-boss-20-scout-love-story.jpg",
     title: "Scout and Love Gill in Bigg Boss 20: The Bond, the Kaashvi Question & the Fallout — Open Poll",
     h1: "Scout and Love Gill: The Bond, the Kaashvi Question and the Fallout (Open Poll)",
     lead: "It is the friendship everyone outside the house is talking about. Scout (Tanmay 'Scout' Singh — ScoutOP, the gaming star) and Love Gill (Lovepreet Kaur 'Love' Gill) describe their bond as brother-sister. But a Weekend Ka Vaar appearance by Scout's girlfriend Kaashvi Hiranandani, a 'homebreaker' remark revealed in Episode 66 and a fall-out in Episode 67 have put that bond under strain. This page pulls the story so far together — what is confirmed, and what is only reported — and then asks readers what they make of it. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
@@ -665,7 +665,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-yung-vs-scout",
-    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    image: "/assets/bb20-new/covers/bigg-boss-20-yung-vs-scout.jpg",
     title: "Yung DSA vs Scout: The Captaincy-Task Clash in Bigg Boss 20 (Episode 68) — Open Poll",
     h1: "Yung DSA vs Scout: The Captaincy-Task Clash (Open Poll)",
     lead: "Episode 68 (aired 12 November 2026) showed the captaincy task turning physical between Yung DSA and Scout: a burnt family photograph, a push, a friendship declared over — and Bigg Boss announcing punishments for Scout, including a season-long nomination and a captaincy ban. Read what happened, then vote in the Open Poll on who was more at fault. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
@@ -690,7 +690,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-next-captain-poll",
-    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    image: "/assets/bb20-new/covers/bigg-boss-20-next-captain-poll.jpg",
     title: "Who Should Be the Next Captain of Bigg Boss 20? — Open Poll",
     h1: "Who Should Be the Next Captain of Bigg Boss 20? (Open Poll)",
     lead: "Arishfa Khan's time as captain has ended: she was removed as captain in Episode 67 (aired 11 November), which announced a new captaincy task — but Episode 68 (aired 12 November) called that task off after Scout pushed Yung DSA during it. The house then had no captain until Uditi Singh won the captaincy task in Episode 74 (18 November) — she is the current captain. This poll opened on 12 November, while the house was without a captain; who should be captain after Uditi, if the choice were yours? Vote for one of the ten housemates below — the poll's original list, which still includes Manish Goel, who has since left on medical grounds. Open Poll — for audience sentiment only; the show's own process decides the real captain.",
@@ -717,7 +717,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-contestant-journey",
-    image: "/assets/bb20-new/covers/bigg-boss-20-contestants.jpg",
+    image: "/assets/bb20-new/covers/bigg-boss-20-contestant-journey.jpg",
     title: "Bigg Boss 20 Contestant Journey: Week-by-Week Safe, Nominated, Captain & Evicted Matrix",
     h1: "Bigg Boss 20 Contestant Journey — Week by Week",
     lead: "Every housemate's season at a glance: who was safe, who was nominated, who captained the house and who went home, week by week from Week 1 to Week 11. The matrix is built only from VisitBest's own season records — the nomination and elimination archives and contestant records kept on this site. Where those records do not establish a week for a housemate, the cell is left blank rather than guessed. Updated weekly.",
@@ -757,7 +757,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-captain",
-    image: "/assets/bb20-new/covers/bigg-boss-20-contestants.jpg",
+    image: "/assets/bb20-new/covers/bigg-boss-20-captain.jpg",
     title: "Who Is the Current Captain of Bigg Boss 20? — Captain History & Next Captain",
     h1: "Who Is the Current Captain of Bigg Boss 20?",
     lead: "Uditi Singh is the current captain of Bigg Boss 20 — she won the captaincy task in Episode 74 (18 November 2026). She succeeds Arishfa Khan, the Week 10 captain, who was removed in Episode 67 (11 November); the replacement task was called off in Episode 68 (12 November) after the Scout–Yung clash, and the house had no captain until Episode 74. This is a living page — it is refreshed when a new captain is confirmed on air. Below: the quick answer, every captain this season, what the captain gets, and what happens next.",
@@ -770,7 +770,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-weekend-ka-vaar-episodes-70-71",
-    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    image: "/assets/bb20-new/covers/bigg-boss-20-weekend-ka-vaar-episodes-70-71.jpg",
     title: "Bigg Boss 20 Weekend Ka Vaar (Episodes 70–71): No Eviction, Mahhi Vij Loses a Lifeline — Full Highlights & Open Poll",
     h1: "Weekend Ka Vaar, Episodes 70–71: No Eviction — Mahhi Vij Saved by Her Lifeline (Open Poll)",
     lead: "Two nights, and one result the whole house waited for: nobody went home. At the Weekend Ka Vaar of 14–15 November 2026 (Episodes 70 and 71), Salman Khan announced that Week 10 would end without an eviction — Mahhi Vij received the fewest votes but survived on her extra lifeline, and Manish Goel stays in the house, so the pre-air reports of his eviction were wrong. Across the weekend Salman also grilled Scout over the Yung DSA push and the head-shave, schooled Kanika Mann on both days, questioned Love Gill's game, and ran the patang task. Here is the whole weekend, day by day — then vote in the Open Poll on its biggest talking point. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
@@ -824,7 +824,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-eviction-list",
-    image: "/assets/bb20-new/covers/bigg-boss-20-contestants.jpg",
+    image: "/assets/bb20-new/covers/bigg-boss-20-eviction-list.jpg",
     title: "Bigg Boss 20 Eviction List: Every Eliminated Contestant, Week by Week — Open Poll",
     h1: "Bigg Boss 20 Eviction List: Who Has Left the House So Far? (Open Poll)",
     lead: "Eleven weeks in, six housemates have been evicted from Bigg Boss 20, one more was removed and one left on medical grounds — while five weeks ended with no eviction at all, because this season's lives format lets the week's lowest-voted housemate lose a lifeline instead of leaving. This page is the complete, confirmed eviction list, week by week: who left, who only lost a lifeline, and who is still in the house. It is updated after every Weekend Ka Vaar. Then vote in the Open Poll on the exit that shocked you most. Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
@@ -846,7 +846,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-voting-week-11",
-    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    image: "/assets/bb20-new/covers/bigg-boss-20-voting-week-11.jpg",
     title: "Bigg Boss 20 Week 11 Voting – Nominees Open Poll (Sharbat Task Nominations)",
     h1: "Bigg Boss 20 Week 11 Voting — Nominees Open Poll",
     lead: "Week 11: ten of the eleven housemates were nominated after the Sharbat Nomination Task in Episode 72 (16 November 2026) — only Uditi Singh escaped — and Arishfa Khan then won safety in Episode 75, leaving nine in the vote. The Week 11 result is now known: no vote eviction took place — Manish Goel left on medical grounds (severe leg injury), and Mahhi Vij is safe. This VisitBest Open Poll covered this week's nominees and opened on 17 November 2026. Open Poll — for audience sentiment only; it does not decide evictions.",
@@ -876,7 +876,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-voting-week-12",
-    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    image: "/assets/bb20-new/covers/bigg-boss-20-voting-week-12.jpg",
     title: "Bigg Boss 20 Week 12 Voting – Nominees Open Poll (Episode 80 Nominations)",
     h1: "Bigg Boss 20 Week 12 Voting — Nominees Open Poll",
     lead: "Week 12: six of the ten housemates still in the Bigg Boss 20 house were nominated in the nomination task in Episode 80 (Tuesday 24 November 2026) — ScoutOP, Love Gill, Kanika Mann, Gullu, Mahhi Vij and Aamrapali Dubey. ScoutOP was already nominated for the rest of the season under his Episode 68 punishments, and like captain Uditi Singh he did not take part in the task. Yung DSA, Arishfa Khan, Qazi Touqeer and captain Uditi Singh are safe this week. The list landed a day later than first expected — Episode 79 (Monday 23 November 2026) held no nomination task. This VisitBest Open Poll covers this week's six nominees: who are you backing to survive the Week 12 vote? Open Poll — for audience sentiment only; it does not decide nominations or evictions.",
@@ -902,7 +902,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-eviction-prediction-week-11",
-    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    image: "/assets/bb20-new/covers/bigg-boss-20-eviction-prediction-week-11.jpg",
     title: "Who Will Be Evicted in Week 11? Bigg Boss 20 Eviction Prediction Poll — Open Poll",
     h1: "Who Will Be Evicted in Week 11? (Eviction Prediction — Open Poll)",
     lead: "A different question from the support poll: not who you back, but who you think is going home at this week's Weekend Ka Vaar (21–22 November 2026). Arishfa Khan is not an option here: she was nominated in Episode 72 but won safety in the Episode 75 team immunity task (19 November 2026), so she cannot be evicted this week. This Open Poll records reader expectation only — it is not a VisitBest forecast, it carries no insider information, and it does not decide evictions.",
@@ -931,7 +931,7 @@ export const polls = [
   },
   {
     slug: "who-will-win-bigg-boss-20",
-    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    image: "/assets/bb20-new/covers/who-will-win-bigg-boss-20.jpg",
     title: "Who Will Win Bigg Boss 20? Winner Prediction, Top 5 Finalists & Open Poll",
     h1: "Who Will Win Bigg Boss 20? (Winner Prediction — Open Poll)",
     lead: "Ten housemates are left. The Week 11 result is now known — no vote eviction took place: Manish Goel left on medical grounds (severe leg injury), and Mahhi Vij is safe — and the race to the finale is taking shape. VisitBest's prediction, on the game so far: Qazi Touqeer to win Bigg Boss 20, Yung DSA as his chief rival, then ScoutOP, Arishfa Khan and Kanika Mann. Below is the case for each of the five — their game, their survival record and their honest weaknesses — and the Open Poll, where readers are backing the same five. This page is a prediction based on the season so far and on VisitBest's own Open Poll trend; it is not a result, and no number on it is an official vote. Open Poll — for audience sentiment only; it does not decide evictions.",
@@ -954,7 +954,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-20-top-5-contestants",
-    image: "/assets/bb20-new/covers/bigg-boss-20-contestants.jpg",
+    image: "/assets/bb20-new/covers/bigg-boss-20-top-5-contestants.jpg",
     title: "Bigg Boss 20 Top 5 Contestants: The Current Top 5, Ranked & Explained",
     h1: "Bigg Boss 20 Top 5 Contestants — The Current Top 5",
     lead: "Ten housemates remain in Bigg Boss 20, and five have pulled away from the pack. This is VisitBest's current top 5 — Qazi Touqeer, Yung DSA, ScoutOP, Arishfa Khan and Kanika Mann — ranked on game impact, survival record and audience sentiment: why each of them is here, how their journey has run, and what could still stop them. The full house list is below, so you can see who is just outside the five and why. This ranking is VisitBest's editorial assessment — it is not a poll result, it is not official, The Week 11 result is now known: no vote eviction took place — Manish Goel left on medical grounds (severe leg injury), and Mahhi Vij is safe. The newest change in the house: Uditi Singh became captain in Episode 74 (18 November 2026).",
@@ -976,7 +976,7 @@ export const polls = [
       "This page reports the standings of VisitBest's own Bigg Boss 20 Open Polls as they stand today, Saturday 21 November 2026: the Week 11 nominees poll, the season-long audience sentiment poll and the winner-race poll. Week 11 ended at the Weekend Ka Vaar of 21 November 2026 with no vote eviction: Manish Goel left the house on medical grounds after a severe leg injury, and Mahhi Vij stayed safe. These are audience sentiment standings only — they are NOT official votes and NOT official results. The official vote happens only on JioCinema / JioHotstar, as announced on air. To cast your own Open Poll vote, use the voting hub or the Week 11 voting page — this trend page reports the numbers, it does not collect votes.",
     leaderNote:
       "📈 TODAY'S TREND (21 November 2026): Qazi Touqeer leads all three Open Poll reads — the Week 11 nominees poll (421 votes), the season sentiment standings (1,38,500) and the winner-race poll (742). [VisitBest Open Poll votes — not official votes.]",
-    coverImage: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    coverImage: "/assets/bb20-new/covers/bigg-boss-20-voting-trend.jpg",
     coverAlt: "Bigg Boss 20 voting trend today — VisitBest Open Poll standings cover",
     metaTitle: "Bigg Boss 20 Voting Trend Today — Open Poll Standings | VisitBest",
     metaDesc:
@@ -996,7 +996,7 @@ export const polls = [
       "The Bigg Boss 20 finale date has NOT been officially announced yet — as of Saturday 21 November 2026, neither Colors TV nor the makers have confirmed a date. On the season's own arithmetic the finale is expected in late December 2026, but that is an expectation, not a confirmation. This page tracks what is actually known: how the finale works, the road from ten housemates to the finalists, the finalist race as it stands, and the recent past winners the new champion will join.",
     leaderNote:
       "🏁 FINALE DATE: not officially announced as of 21 November 2026. Expected window on the season's arithmetic: late December 2026 — expected, not confirmed. This page will be updated the day the makers announce the date.",
-    coverImage: "/assets/bb20-new/covers/bigg-boss-20-winner-prediction.jpg",
+    coverImage: "/assets/bb20-new/covers/bigg-boss-20-finale.jpg",
     coverAlt: "Bigg Boss 20 finale — date, finalists and how the winner is decided cover",
     metaTitle: "Bigg Boss 20 Finale Date — Expected Window & Finalist Race | VisitBest",
     metaDesc:
@@ -1007,7 +1007,7 @@ export const polls = [
   },
   {
     slug: "bigg-boss-voting",
-    image: "/assets/bb20-new/covers/bigg-boss-20-voting.jpg",
+    image: "/assets/bb20-new/covers/bigg-boss-voting.jpg",
     title: "Bigg Boss Voting — All Seasons Hub, Ultimate Winner Poll & Voting Results Today",
     h1: "Bigg Boss Voting — All Seasons Voting Hub & Ultimate Winner Poll",
     lead: "Every Bigg Boss season's voting in one place. Bigg Boss 20 is live now — its Open Polls, today's standings and week-by-week pages are all linked from this hub. For the finished seasons, official voting is closed for good, so this page carries the Bigg Boss Ultimate Vote: a fan Open Poll asking who is the greatest Bigg Boss winner of all time, with a voting page for every season on the way below. Official voting, where a season is running, is only via JioCinema / JioHotstar, as announced on air.",
