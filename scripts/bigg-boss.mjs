@@ -3572,6 +3572,8 @@ export function renderBiggBossCaptainPage(poll) {
 
     ${renderDebateStrip(poll)}
 
+    ${renderCaptainHistorySection()}
+
     ${renderFactCards(poll)}${renderFanDebate(poll)}
   </div>
   `;
@@ -3802,6 +3804,83 @@ function renderWeek11VotingSections() {
       "The Week 11 result — now known",
       `<p>No one left the house in Episode 72. The Week 11 result is now known: no vote eviction took place — Manish Goel left on medical grounds (severe leg injury), and Mahhi Vij is safe. The <a href="/bigg-boss-20-voting/">Weekly Voting Hub</a> tracks the confirmed picture, and its eviction-prediction Open Poll records who readers expected to go. The <a href="/bigg-boss-20-eviction-list/">Eviction List</a> carries the season's week-by-week record, and the <a href="/bigg-boss-20-weekend-ka-vaar-episodes-70-71/">Weekend Ka Vaar Episodes 70–71 page</a> covers how Week 10 ended with no eviction.</p>`
     )
+  );
+}
+
+function renderBb20RemainderSections(poll) {
+  const S = {
+    "bigg-boss-20-next-captain-poll": () => storySection(
+      "Captaincy Story",
+      "The captain's chair so far this season",
+      `<p>The chair has moved fast this season. <strong>Yung DSA</strong> was the Week 1 captain, <strong>Aasif Khan</strong> held it in Week 5 and <strong>Scout</strong> in Week 7. <strong>Mahhi Vij</strong> and <strong>Kanika Mann</strong> followed, <strong>Arishfa Khan</strong> captained in Week 10 — and was removed as captain in Episode 67 — and <strong>Uditi Singh</strong> has been captain since Episode 74, safe through Week 12.</p>
+    <ul>
+      <li>One housemate can never take the chair again this season: <strong>ScoutOP</strong>, barred from the captaincy by his Episode 68 punishment.</li>
+      <li>The captain's real power is practical: running tasks and duties, and safety from that week's vote.</li>
+      <li>This poll asks who <em>should</em> be next — the actual captain is decided inside the house, never by fan votes.</li>
+    </ul>`
+    ),
+    "bigg-boss-20-voting-week-11": () => storySection(
+      "What Happened Next",
+      "Week 11's ending, and the Week 12 that followed",
+      `<p>Week 11 closed without a vote eviction: <strong>Manish Goel left on medical grounds</strong> (severe leg injury), and Salman Khan clarified on air that it was health, not low votes. Mahhi Vij — heavily nominated this week — was safe.</p>
+    <ul>
+      <li>Ten housemates went into Week 12; the nominations were announced in Episode 80 (Tuesday 24 November 2026).</li>
+      <li>Week 12 nominees: ScoutOP, Love Gill, Kanika Mann, Gullu, Mahhi Vij and Aamrapali Dubey — with Yung DSA, Arishfa Khan, Qazi Touqeer and captain Uditi Singh safe.</li>
+      <li>Arishfa's Week 11 arc completed itself here too: nominated in Episode 72, she won safety in the Episode 75 immunity task.</li>
+    </ul>
+    <p>Vote in the current week on the <a href="/bigg-boss-20-voting-week-12/"><strong>Week 12 voting page</strong></a>.</p>`
+    ),
+    "bigg-boss-voting": () => storySection(
+      "Beyond Hindi",
+      "The regional seasons have their own pages",
+      `<p>The Bigg Boss family is bigger than the Hindi show. <strong>Bigg Boss Telugu 10</strong> is on air now — Nagarjuna hosting Star Maa and JioHotstar's Dasavatharam season — and its Week 12 vote is live on VisitBest:</p>
+    <ul>
+      <li><a href="/bigg-boss-telugu-10-voting/"><strong>Bigg Boss Telugu 10 voting (Week 12)</strong></a> — the seven nominees, the Open Poll and the official JioHotstar and missed-call details.</li>
+      <li><a href="/bigg-boss-telugu-winners-list/"><strong>Bigg Boss Telugu winners list</strong></a> — every Telugu winner, Season 1 to Season 9 plus Non-Stop.</li>
+      <li>Winner lists also exist for <a href="/bigg-boss-marathi-winner-list/">Marathi</a>, <a href="/bigg-boss-kannada-winner-list/">Kannada</a> and <a href="/bigg-boss-malayalam-winner-list/">Malayalam</a> — each with its own greatest-winner Open Poll.</li>
+    </ul>`
+    ),
+  };
+  const f = S[poll.slug];
+  return f ? f() : "";
+}
+
+function renderCaptainHistorySection() {
+  return storySection(
+    "Captaincy Record",
+    "Every captain of Bigg Boss 20 so far",
+    `<div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>When</th><th>Captain</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Week 1</td><td><strong>Yung DSA</strong></td><td>The season's first captain</td></tr>
+          <tr><td>Week 5</td><td><strong>Aasif Khan</strong></td><td>Evicted later, in Week 8</td></tr>
+          <tr><td>Week 7</td><td><strong>Scout</strong></td><td>Barred from the captaincy from Episode 68 — for the rest of the season</td></tr>
+          <tr><td>After Scout</td><td><strong>Mahhi Vij</strong></td><td>Served as captain until 28 October (records do not pin her term to one week)</td></tr>
+          <tr><td>From 28 October</td><td><strong>Kanika Mann</strong></td><td>Took over the chair from Mahhi Vij</td></tr>
+          <tr><td>Week 10</td><td><strong>Arishfa Khan</strong></td><td>Removed as captain in Episode 67</td></tr>
+          <tr><td>Since Episode 74</td><td><strong>Uditi Singh</strong></td><td>The current captain — safe in Week 12</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:1rem;">The captain runs the house for the week — tasks, duties and discipline — and does not face that week's vote. Whoever holds the chair in the finale weeks holds real power.</p>`
+  );
+}
+
+function renderFinaleRoadSection() {
+  return storySection(
+    "The Road Here",
+    "How the finale field was cut to ten",
+    `<p>Eighteen housemates have played this season — sixteen from the start and two Week 5 wild cards, Manish Goel and Nakul Dhull. The road to the finale has already removed eight of them:</p>
+    <ul>
+      <li><strong>Six evictions:</strong> Rohed Khan (Week 2), Isha (Week 3), Rhiti (Week 4), Aman (Week 6), Mary (Week 7) and Aasif Khan (Week 8).</li>
+      <li><strong>One removal:</strong> Nakul Dhull (Week 6).</li>
+      <li><strong>One medical exit:</strong> Manish Goel (Week 11, severe leg injury).</li>
+      <li><strong>Five weeks with no eviction at all:</strong> Weeks 1, 5, 9, 10 and 11 — this season keeps its housemates longer than most.</li>
+    </ul>
+    <p>Ten remain, and every one of them has survived at least one public vote or a no-eviction reprieve. The finale date itself is the show's to announce — this page tracks the expectation, never an official announcement.</p>`
   );
 }
 
@@ -4955,6 +5034,8 @@ export function renderBiggBossFinalePage(poll) {
     <p class="bb-footer-note">VisitBest editorial page · Bigg Boss 20 airs on Colors TV and streams on JioHotstar. The finale date on this page is an expectation from the season's run, not an official announcement.</p>
 
     ${renderDebateStrip(poll)}
+
+    ${renderFinaleRoadSection()}
 
     ${renderFactCards(poll)}${renderFanDebate(poll)}
   </div>`;
@@ -11807,7 +11888,7 @@ export function renderBiggBossPollPage(poll) {
  ${poll.slug === "bigg-boss-2-voting" ? renderSeason2Sections() : ""}
  ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
     ${poll.slug === "bigg-boss-winner-list" ? renderWinnerListSections() : ""}
-    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}
+    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}${renderBb20RemainderSections(poll)}
     ${poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersSections() : ""}
     ${poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersSections() : ""}
     ${poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersSections() : ""}
