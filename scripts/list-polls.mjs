@@ -50,7 +50,7 @@ const hkSections = `
   <h2>The list at a glance</h2>
   <div class="lp-tablewrap">
   <table class="lp-table">
-    <thead><tr><th>Name</th><th>Born</th><th>Signature 90s role</th><th>Where she is now</th></tr></thead>
+    <thead><tr><th style="background:#3b1032;color:#ffffff">Name</th><th style="background:#3b1032;color:#ffffff">Born</th><th style="background:#3b1032;color:#ffffff">Signature 90s role</th><th style="background:#3b1032;color:#ffffff">Where she is now</th></tr></thead>
     <tbody>
       <tr><td>Maggie Cheung</td><td>20 September 1964</td><td>Center Stage (1991)</td><td>Stepped back from acting; UNICEF ambassador; occasional public appearances</td></tr>
       <tr><td>Brigitte Lin</td><td>3 November 1954</td><td>Dongfang Bubai in Swordsman II (1992)</td><td>Retired since 1994; essay writer; Golden Horse Lifetime Achievement Award in 2023</td></tr>
@@ -472,7 +472,7 @@ export const css = `
 .lp-article p{line-height:1.75;margin:0 0 14px;font-size:1rem;color:#382a36}
 .lp-tablewrap{overflow-x:auto;margin:0 0 18px}
 .lp-table{width:100%;border-collapse:collapse;font-size:.93rem;background:#fff}
-.lp-table th{background:#3b1032;color:#fff;text-align:left;padding:10px 12px}
+.lp-table th{background:#3b1032 !important;color:#fff !important;text-align:left;padding:10px 12px}
 .lp-table td{border-bottom:1px solid #e6d7e1;padding:9px 12px;vertical-align:top;line-height:1.5}
 .lp-table tr:nth-child(even) td{background:#faf4f8}
 .lp-wide{margin:18px 0}
