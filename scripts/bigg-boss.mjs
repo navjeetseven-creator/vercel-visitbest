@@ -3308,7 +3308,34 @@ function journeyCurrentStatus(c) {
   return "In house";
 }
 
-export function renderBiggBossJourneyPage(poll) {
+export function renderJourneyStorySection() {
+  return storySection(
+    "Season Story",
+    "The season so far — eighteen entered, ten remain",
+    `<p>Bigg Boss 20 began with sixteen housemates, and two wild cards — Manish Goel and Nakul Dhull — joined in Week 5, taking the total to eighteen. Twelve weeks in, <strong>ten housemates remain</strong>, and the exits tell the season's story: six evictions, one removal and one medical exit, across five weeks in which nobody went home at all (Weeks 1, 5, 9, 10 and 11).</p>
+    <div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Week</th><th>Who left</th><th>How</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Week 2</td><td><strong>Rohed Khan</strong></td><td>Evicted</td></tr>
+          <tr><td>Week 3</td><td><strong>Isha</strong></td><td>Evicted</td></tr>
+          <tr><td>Week 4</td><td><strong>Rhiti</strong></td><td>Evicted</td></tr>
+          <tr><td>Week 6</td><td><strong>Aman</strong></td><td>Evicted</td></tr>
+          <tr><td>Week 6</td><td><strong>Nakul Dhull</strong></td><td>Removed</td></tr>
+          <tr><td>Week 7</td><td><strong>Mary</strong></td><td>Evicted</td></tr>
+          <tr><td>Week 8</td><td><strong>Aasif Khan</strong></td><td>Evicted</td></tr>
+          <tr><td>Week 11</td><td><strong>Manish Goel</strong></td><td>Medical exit — severe leg injury (not a vote eviction)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:1rem;"><strong>The captaincy thread:</strong> Yung DSA (Week 1), Aasif Khan (Week 5) and Scout (Week 7) held the chair early; Mahhi Vij and Kanika Mann followed; Arishfa Khan captained in Week 10; and <strong>Uditi Singh</strong> has been captain since Episode 74. The season's harshest twist sits inside that thread: in Episode 68, ScoutOP was punished with nomination for the rest of the season and a bar on the captaincy — he has played every week since then with no safety net.</p>
+    <p><strong>Where the matrix stops:</strong> it covers Weeks 1–11. Week 12 is live now — ScoutOP, Love Gill, Kanika Mann, Gullu, Mahhi Vij and Aamrapali Dubey are nominated, with Uditi Singh safe as captain — on the <a href="/bigg-boss-20-voting-week-12/"><strong>Week 12 voting page</strong></a>.</p>`
+  );
+}
+
+function renderBiggBossJourneyPage(poll) {
   return `
   <div class="container bb-page">
     <div class="bb-breadcrumbs">
@@ -3356,6 +3383,8 @@ export function renderBiggBossJourneyPage(poll) {
       </div>
       <p>Sources: VisitBest's own <a href="/bigg-boss-20-voting/">Weekly Voting Hub</a> (nomination and elimination archives) and the <a href="/bigg-boss-20-contestants/">contestant records</a> on this site. Reported-but-unaired developments are never entered in this matrix — cells change only after events are confirmed on air. For this week's Open Polls, see the <a href="/bigg-boss-20-voting/">voting hub</a>.</p>
     </section>
+
+    ${renderJourneyStorySection()}
 
     ${renderDebateStrip(poll)}
 
