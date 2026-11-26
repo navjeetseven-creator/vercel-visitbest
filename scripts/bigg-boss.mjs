@@ -3572,6 +3572,8 @@ export function renderBiggBossCaptainPage(poll) {
 
     ${renderDebateStrip(poll)}
 
+    ${renderCaptainProfilesSection()}
+
     ${renderCaptainHistorySection()}
 
     ${renderFactCards(poll)}${renderFanDebate(poll)}
@@ -3843,6 +3845,49 @@ function renderBb20RemainderSections(poll) {
   };
   const f = S[poll.slug];
   return f ? f() : "";
+}
+
+const CAPTAIN_NOW = {
+  "yung-dsa": "Still in the house — safe in Week 12 (not nominated).",
+  "aasif-khan": "Evicted in Week 8 — his captaincy is a Week 5 chapter of a finished run.",
+  "scout": "Still in the house — nominated in Week 12, and barred from the captaincy for the rest of the season by his Episode 68 punishment.",
+  "mahhi-vij": "Still in the house — nominated in Week 12.",
+  "kanika-mann": "Still in the house — nominated in Week 12.",
+  "arishfa-khan": "Still in the house — safe in Week 12; she won her Week 11 safety in the Episode 75 immunity task.",
+  "uditi-singh": "The current captain — safe in Week 12 on the captain's immunity.",
+};
+
+function renderCaptainProfilesSection() {
+  const profiles = captainHistory
+    .map((h, i) => {
+      const c = contestantById[h.id] || contestants.find((x) => x.id === h.id);
+      if (!c) return "";
+      const bio = [
+        ["Known for", c.role],
+        ["From", c.city],
+      ];
+      if (c.age) bio.push(["Age", String(c.age)]);
+      bio.push(["Captaincy", h.when]);
+      bio.push(["Status now", c.status === "in-house" ? "In the house" : c.status === "evicted" ? `Evicted — Week ${c.evictedWeek}` : c.status]);
+      const bullets = [h.note, c.highlight].filter(Boolean).map((b) => `<li>${b}</li>`).join("");
+      return `
+    <div class="bb-profile">
+      <h3>${i + 1}. ${c.name}</h3>
+      <p class="bb-placing">Captain · ${h.when}</p>
+      <div class="bb-profile-cols">
+        ${renderStoryPhoto(c.image, c.name, `${c.name} — captain, ${h.when}`)}
+        <div class="bb-fact-card">
+          <h3>At a glance — ${c.alias || c.name}</h3>
+          ${bio.map(([k, v]) => `<div class="bb-fact-row"><span class="bb-fact-k">${k}</span><span class="bb-fact-v">${v}</span></div>`).join("")}
+        </div>
+      </div>
+      <p>${c.bio}</p>
+      <ul>${bullets}</ul>
+      <p class="bb-nowline"><strong>Now:</strong> ${CAPTAIN_NOW[h.id] || ""}</p>
+    </div>`;
+    })
+    .join("");
+  return storySection("The Captains", "Meet the seven captains of Bigg Boss 20", profiles);
 }
 
 function renderCaptainHistorySection() {
