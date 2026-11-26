@@ -5496,6 +5496,49 @@ const WEEK12_DANGER = {
   "amrapali-dubey": "Lowest in this page's fan poll of the six — on fan numbers alone, the most exposed nominee this week. Fan numbers are not the official vote.",
 };
 
+const WINNER_CASE = {
+  "qazi-touqeer": "The prediction — this page's fan poll leader and the season's most complete player: a reality icon with a singer's fanbase and a game built on bonds.",
+  "yung-dsa": "The chief rival — the Week 1 captain whose gully-rap fanbase votes in blocks.",
+  "scout": "The fandom giant with the heaviest handicap — nominated for the rest of the season since Episode 68, so every single week is a survival vote for him.",
+  "arishfa-khan": "The house's own choice — the youngest housemate, a Week 10 captain, with the biggest social following of anyone left.",
+  "kanika-mann": "The season's first entrant — a law graduate turned TV star who has already worn the captain's badge.",
+};
+
+function renderWhoWillWinProfiles(poll) {
+  if (poll.slug !== "who-will-win-bigg-boss-20") return "";
+  const order = ["qazi-touqeer", "yung-dsa", "scout", "arishfa-khan", "kanika-mann"];
+  const fmt = (n) => n.toLocaleString("en-IN");
+  const total = order.reduce((s, id) => s + ((poll.voteDistribution || {})[id] || 0), 0);
+  const profiles = order
+    .map((id, i) => {
+      const c = contestants.find((x) => x.id === id);
+      if (!c) return "";
+      const votes = (poll.voteDistribution || {})[id] || 0;
+      const bio = [["Known for", c.role], ["From", c.city]];
+      if (c.age) bio.push(["Age", String(c.age)]);
+      bio.push(["Fan votes on this page", `${fmt(votes)} (${total ? ((votes / total) * 100).toFixed(1) : "0"}%)`]);
+      bio.push(["Week 12 status", (WEEK12_STATUS[id] || ["In the house"])[0]]);
+      const bullets = [c.highlight, c.trend].filter(Boolean).map((b) => `<li>${b}</li>`).join("");
+      return `
+    <div class="bb-profile">
+      <h3>${i + 1}. ${c.name}</h3>
+      <p class="bb-placing">Winner candidate — fan rank ${i + 1} of 5</p>
+      <div class="bb-profile-cols">
+        ${renderStoryPhoto(c.image, c.name, `${c.name} — Bigg Boss 20 winner candidate`)}
+        <div class="bb-fact-card">
+          <h3>At a glance — ${c.alias || c.name}</h3>
+          ${bio.map(([k, v]) => `<div class="bb-fact-row"><span class="bb-fact-k">${k}</span><span class="bb-fact-v">${v}</span></div>`).join("")}
+        </div>
+      </div>
+      <p>${c.bio}</p>
+      <ul>${bullets}</ul>
+      <p class="bb-nowline"><strong>The case:</strong> ${WINNER_CASE[id] || ""}</p>
+    </div>`;
+    })
+    .join("");
+  return storySection("The Candidates", "The five winner candidates — in profile", `<p>Five housemates top this page's winner poll. Here they are in profile — who they are, what their season has looked like, and the case for each of them lifting the trophy.</p>` + profiles);
+}
+
 function renderWeek12Sections(poll) {
   if (poll.slug !== "bigg-boss-20-voting-week-12") return "";
   const order = ["scout", "gullu", "kanika-mann", "love-gill", "mahhi-vij", "amrapali-dubey"];
@@ -12252,7 +12295,7 @@ export function renderBiggBossPollPage(poll) {
  ${poll.slug === "bigg-boss-2-voting" ? renderSeason2Sections() : ""}
  ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
     ${poll.slug === "bigg-boss-winner-list" ? renderWinnerListSections() : ""}
-    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}${renderBb20RemainderSections(poll)}${renderWinnerListReadingSections(poll)}${renderHubSeasonProfiles(poll)}${renderWeek12Sections(poll)}
+    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}${renderBb20RemainderSections(poll)}${renderWinnerListReadingSections(poll)}${renderHubSeasonProfiles(poll)}${renderWeek12Sections(poll)}${renderWhoWillWinProfiles(poll)}
     ${poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersSections() : ""}
     ${poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersSections() : ""}
     ${poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersSections() : ""}
