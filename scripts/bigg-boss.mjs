@@ -5396,6 +5396,54 @@ function renderWinnerListTable() {
       </div>`;
 }
 
+function renderWinnerListReadingSections(poll) {
+  const S = {
+    "bigg-boss-winner-list": () => storySection(
+      "Reading This List",
+      "Twenty-two winners, four hosting eras",
+      `<p>This list spans the whole Hindi journey — from Rahul Roy winning the first season in 2007 to Gaurav Khanna in Season 19 (2025). The hosting chair tells the eras apart:</p>
+    <ul>
+      <li><strong>Arshad Warsi</strong> hosted Season 1 (on Sony TV), <strong>Shilpa Shetty</strong> Season 2 and <strong>Amitabh Bachchan</strong> Season 3.</li>
+      <li><strong>Salman Khan</strong> has hosted from Season 4 onwards — with Sanjay Dutt co-hosting Season 5 alongside him.</li>
+      <li>The three OTT seasons sit at the end of the list: Divya Agarwal, Elvish Yadav and Sana Makbul.</li>
+    </ul>
+    <p>In this page's greatest-winner re-vote, <strong>Sidharth Shukla</strong> (Season 13) leads on 2,084 fan votes — fitting for the season widely rated the biggest in the show's history. Fan votes only; every official result in the table is final.</p>`
+    ),
+    "bigg-boss-telugu-winners-list": () => storySection(
+      "Reading This List",
+      "Ten editions, three hosts",
+      `<p>The Telugu list runs from Siva Balaji (Season 1, 2017) to Kalyan Padala (Season 9, 2025), plus the Non-Stop OTT edition. Three hosts have fronted it: <strong>Jr NTR</strong> (Season 1), <strong>Nani</strong> (Season 2) and <strong>Nagarjuna</strong> (Season 3 onwards, and Non-Stop).</p>
+    <p>In this page's re-vote, the leader is not the newest winner but <strong>Kaushal Manda</strong> (Season 2) on 1,847 fan votes — a measure of how long a strong season stays alive in fan memory. The current season is not on this list yet: <a href="/bigg-boss-telugu-10-voting/"><strong>Bigg Boss Telugu 10</strong></a> is still being played.</p>`
+    ),
+    "bigg-boss-marathi-winner-list": () => storySection(
+      "Reading This List",
+      "Six seasons, two hosting eras",
+      `<p>The Marathi list runs from Megha Dhade (Season 1, 2018) to Tanvi Kolte (Season 6, 2026), all on Colors Marathi. <strong>Mahesh Manjrekar</strong> hosted Seasons 1–4; <strong>Riteish Deshmukh</strong> took over for Seasons 5–6.</p>
+    <p>In this page's re-vote, <strong>Shiv Thakare</strong> (Season 2) leads on 1,283 fan votes. One honest note: Season 4 winner Akshay Kelkar's card on this page carries no photo — no verified portrait of him could be sourced, and a wrong face is worse than none.</p>`
+    ),
+    "bigg-boss-kannada-winner-list": () => storySection(
+      "Reading This List",
+      "Thirteen editions — and one title that is not a win",
+      `<p>The Kannada list covers twelve TV seasons plus one OTT season, from Vijay Raghavendra (Season 1) to Gilli Nata (Season 12). One entry needs its honest label: <strong>Roopesh Shetty</strong> is the OTT season's Top Performer — a title this page records as such, not as a winner.</p>
+    <p>In this page's re-vote, <strong>Chandan Shetty</strong> leads on 1,547 fan votes. A few winners on this page are photo-less: where no verified portrait could be sourced, the card stays empty rather than carry the wrong face.</p>`
+    ),
+    "bigg-boss-malayalam-winner-list": () => storySection(
+      "Reading This List",
+      "Seven seasons — including the one with no winner",
+      `<p>The Malayalam list runs from Sabumon Abdusamad (Season 1) to Anumol RS (Season 7). Its most unusual line is Season 2: <strong>no winner</strong> — the season was cancelled during COVID-19, and this page says so plainly instead of inventing a result.</p>
+    <p>In this page's re-vote, <strong>Manikuttan</strong> leads on 1,247 fan votes. Season 7's prize, where the record states one, was ₹42.55 lakh for Anumol RS.</p>`
+    ),
+    "bigg-boss-17-winner-2024-vote-list": () => storySection(
+      "Reading This Page",
+      "The season the fans keep re-counting",
+      `<p>Bigg Boss 17 ended on 28 January 2024 with <strong>Munawar Faruqui</strong> beating Abhishek Kumar. Colors and JioCinema never published official finale vote counts — so the numbers on this page are the VisitBest Open Poll's fan standings, all 21 contestants included, and they are labelled as audience sentiment only.</p>
+    <p>Munawar's fan total here — 5,86,214 — is the largest on any VisitBest poll, which says more about his fanbase's stamina than about January 2024. The official result is the trophy; everything else is this page's long-running fan argument.</p>`
+    ),
+  };
+  const f = S[poll.slug];
+  return f ? f() : "";
+}
+
 function renderWinnerListSections() {
   return (
     storySection(
@@ -11888,7 +11936,7 @@ export function renderBiggBossPollPage(poll) {
  ${poll.slug === "bigg-boss-2-voting" ? renderSeason2Sections() : ""}
  ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
     ${poll.slug === "bigg-boss-winner-list" ? renderWinnerListSections() : ""}
-    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}${renderBb20RemainderSections(poll)}
+    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}${renderBb20RemainderSections(poll)}${renderWinnerListReadingSections(poll)}
     ${poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersSections() : ""}
     ${poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersSections() : ""}
     ${poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersSections() : ""}
