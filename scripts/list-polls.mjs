@@ -890,6 +890,207 @@ const krSections = `
 </section>
 `;
 
+const jpSections = `
+<section class="lp-article">
+  <h2>The faces of the Japanese screen</h2>
+  <p>Japanese cinema and television run on a star system all of their own — morning-drama heroines become national sweethearts, and a Kore-eda film can define a generation of actresses at once. This list ranks the ten Japanese actresses who define screen beauty in Japan right now, from a woman once named the most beautiful face in the country to the current generation's Cannes regulars.</p>
+  <p>Every photograph is recent, and the ranking weighs signature roles, honours and current work. Two of the ten work under stage names, and three of them once played sisters in the same film — the details are in the profiles. The Open Poll at the top of the page lets readers cast their own vote.</p>
+  <figure class="lp-wide">
+    <img src="/assets/jp-actresses/by-the-numbers.webp" alt="Infographic: Japan's screen queens by the numbers — seven Japan Academy Newcomer winners, three Our Little Sister sisters, four Asadora leads" loading="lazy">
+    <figcaption>The honours and connections behind the list, counted.</figcaption>
+  </figure>
+</section>
+
+<section class="lp-article">
+  <h2>The list at a glance</h2>
+  <div class="lp-tablewrap">
+  <table class="lp-table">
+    <thead><tr><th style="background:#3b1032;color:#ffffff">Name</th><th style="background:#3b1032;color:#ffffff">Born</th><th style="background:#3b1032;color:#ffffff">Signature role</th><th style="background:#3b1032;color:#ffffff">Where she is now</th></tr></thead>
+    <tbody>
+      <tr><td>Haruka Ayase</td><td>24 March 1985, Hiroshima</td><td>Sachiko in Our Little Sister (2015)</td><td>Three lead films in 2026, including Kore-eda's Sheep in the Box</td></tr>
+      <tr><td>Suzu Hirose</td><td>19 June 1998, Shizuoka</td><td>Chihaya in the Chihayafuru trilogy (2016–2018)</td><td>A Pale View of Hills (2025); You, Like a Star (2026)</td></tr>
+      <tr><td>Yui Aragaki</td><td>11 June 1988, Naha, Okinawa</td><td>Mikuri in The Full-Time Wife Escapist (2016)</td><td>Worlds Apart (2024); works selectively</td></tr>
+      <tr><td>Kanna Hashimoto</td><td>3 February 1999, Fukuoka</td><td>Kagura in Gintama (2017)</td><td>Asadora Omusubi heroine; Kingdom 5 (2026)</td></tr>
+      <tr><td>Minami Hamabe</td><td>29 August 2000, Ishikawa</td><td>Noriko in Godzilla Minus One (2023)</td><td>Godzilla Minus Zero (2026); Taiga drama Brothers in Arms</td></tr>
+      <tr><td>Satomi Ishihara</td><td>24 December 1986, Tokyo</td><td>Mikoto Misumi in Unnatural (2018)</td><td>Missing (2024); Politica Lupin (2026)</td></tr>
+      <tr><td>Keiko Kitagawa</td><td>22 August 1986, Kobe</td><td>Isabella in The Promised Neverland (2020)</td><td>Night Flower (2025) — Hochi and ELLE Best Actress</td></tr>
+      <tr><td>Masami Nagasawa</td><td>3 June 1987, Iwata, Shizuoka</td><td>Dako in The Confidence Man JP (2019–2022)</td><td>Dollhouse and Hokusai's Daughter (2025)</td></tr>
+      <tr><td>Mio Imada</td><td>5 March 1997, Fukuoka</td><td>Miyo in As Long as We Both Shall Live (2023)</td><td>Asadora Anpan heroine (2025); Merry Berry Love (2026)</td></tr>
+      <tr><td>Nana Komatsu</td><td>16 February 1996, Tokyo</td><td>Kanako in The World of Kanako (2014)</td><td>Exit 8 at Cannes (2025); Chanel ambassador</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Birth dates, roles and honours are as stated in each actress's Wikipedia profile, checked in November 2026. Japanese names are given in the order those profiles use; two entries work under stage names, and their birth names are noted in their profiles.</p>
+</section>
+
+<section class="lp-article lp-profile" id="ayase-haruka">
+  <h2>1. Haruka Ayase</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/ayase-haruka-1.webp" alt="Ayase Haruka in an orange dress at a red-carpet appearance" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Ayase Haruka in orange at a red-carpet appearance.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/ayase-haruka-2.webp" alt="Ayase Haruka in a white dress, studio portrait" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Ayase Haruka in a white-dress studio portrait.</figcaption>
+    </figure>
+  </div>
+  <p>Haruka Ayase, born Aya Tademaru, has been at the top of Japanese beauty rankings for so long that her Wikipedia profile records her being named the most beautiful face in Japan in 2018. Her range is the real story: the beloved eldest sister Sachiko in Hirokazu Kore-eda’s Our Little Sister (2015), the Taiga drama lead in Yae’s Sakura, and hit series from Hotaru no Hikari to Heaven and Hell: Soul Exchange.</p>
+  <p>Her honours include Best Actress at the Blue Ribbon Awards (Oppai Volleyball), the Mainichi Film Awards and the Yokohama Film Festival (both for Our Little Sister), and the Hochi Film Award for The Legend and Butterfly and Revolver Lily (2023). She is busier than ever: 2026 brings three lead films, including Sheep in the Box, which reunites her with Kore-eda.</p>
+</section>
+<section class="lp-article lp-profile" id="hirose-suzu">
+  <h2>2. Suzu Hirose</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/hirose-suzu-1.webp" alt="Hirose Suzu in a pale pink one-shoulder gown at a brand event" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Hirose Suzu in a pale pink gown at a d program brand event.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/hirose-suzu-2.webp" alt="Hirose Suzu in a black sequinned gown waving" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Hirose Suzu in a black sequinned gown, waving at an event.</figcaption>
+    </figure>
+  </div>
+  <p>Suzu Hirose broke through at seventeen as the youngest of the four sisters in Our Little Sister (2015), winning Newcomer of the Year at the Japan Academy Film Prize, then headlined the Chihayafuru trilogy and became the heroine of Natsuzora, NHK’s 100th Asadora morning drama. The Third Murder (2017) added a Japan Academy Best Supporting Actress prize while she was still a teenager.</p>
+  <p>She is now the defining actress of her generation in Japan: A Pale View of Hills (2025) took her to Cannes and brought Best Actress honours at the Yokohama Film Festival and the Nikkan Sports Film Awards, and 2026 brings the lead in You, Like a Star and Netflix’s Human Vapor.</p>
+</section>
+<section class="lp-article lp-profile" id="aragaki-yui">
+  <h2>3. Yui Aragaki</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/aragaki-yui-1.webp" alt="Aragaki Yui in a black pantsuit at the Tokyo International Film Festival 2023" loading="lazy">
+      <figcaption><span class="lp-when">2023</span> Aragaki Yui at the 36th Tokyo International Film Festival.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/aragaki-yui-2.webp" alt="Aragaki Yui laughing on stage, holding a microphone" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Aragaki Yui laughing on stage at a film event.</figcaption>
+    </figure>
+  </div>
+  <p>Yui Aragaki — "Gakki" to a whole country — became a star with Sky of Love (2007), spent a decade as Dr Shiraishi in Code Blue, and then fronted The Full-Time Wife Escapist (2016), whose ending "koi dance" went viral across Japan; she won Best Actress at the Blue Ribbon Awards for Mixed Doubles (2017). She married her Escapist co-star Gen Hoshino in 2021.</p>
+  <p>She works selectively now: (Ab)normal Desire (2023) brought her a Japanese Movie Critics Best Supporting Actress award, and she led Worlds Apart in 2024. Her profile lists no new acting credits for 2025 or 2026, and in October 2026 she and Hoshino announced the birth of their first child — a quieter chapter, stated here exactly as her record shows it.</p>
+</section>
+<section class="lp-article lp-profile" id="hashimoto-kanna">
+  <h2>4. Kanna Hashimoto</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/hashimoto-kanna-1.webp" alt="Hashimoto Kanna in a black gown with a large bow on the red carpet" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Hashimoto Kanna in a black gown with a bow on the red carpet.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/hashimoto-kanna-2.webp" alt="Hashimoto Kanna in a pink ruffled dress, making a peace sign" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Hashimoto Kanna in a pink ruffled dress.</figcaption>
+    </figure>
+  </div>
+  <p>Kanna Hashimoto was a Fukuoka idol when a fan’s photograph of her performing went viral in 2013 and made her famous overnight. She converted that fame into a real acting career: Kagura in the Gintama films, the lead in Kaguya-sama: Love Is War, and a running role in the Kingdom film series, alongside a Japan Academy Newcomer Award for Sailor Suit and Machine Gun: Graduation.</p>
+  <p>She carried the Asadora Omusubi (2024–2025) as its heroine, hosted NHK’s Kōhaku Uta Gassen three years running, and returns in Kingdom 5: The Clash of Souls in 2026, with two more lead dramas the same year.</p>
+</section>
+<section class="lp-article lp-profile" id="hamabe-minami">
+  <h2>5. Minami Hamabe</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/hamabe-minami-1.webp" alt="Hamabe Minami in a white dress at a jewellery event" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Hamabe Minami in white at a high-jewellery event.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/hamabe-minami-2.webp" alt="Hamabe Minami in a paisley gown on stage" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Hamabe Minami in a paisley gown, her name on the backdrop behind her.</figcaption>
+    </figure>
+  </div>
+  <p>Minami Hamabe won the New Generation Award at the Toho Cinderella Audition as a child and broke through leading Let Me Eat Your Pancreas (2017), which brought her Newcomer of the Year at the Japan Academy Prize. Kakegurui made her a fan favourite, and the Asadora Ranman put her in Japan’s flagship morning slot.</p>
+  <p>Her 2023 double of Godzilla Minus One and Shin Kamen Rider won her Best Supporting Actress at the Blue Ribbon Awards and a Japan Academy Best Actress nomination. In 2026 she reprises Noriko in Godzilla Minus Zero and joins the Taiga drama Brothers in Arms.</p>
+</section>
+<section class="lp-article lp-profile" id="ishihara-satomi">
+  <h2>6. Satomi Ishihara</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/ishihara-satomi-1.webp" alt="Ishihara Satomi in a black off-shoulder dress, smiling" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Ishihara Satomi in a black off-shoulder dress.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/ishihara-satomi-2.webp" alt="Ishihara Satomi in a black velvet gown at the Harry Winston Nagoya event" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Ishihara Satomi at the Harry Winston renewal event in Nagoya.</figcaption>
+    </figure>
+  </div>
+  <p>Satomi Ishihara, born Kuniko Ishigami, debuted as a lead at sixteen in Kimi wa Petto and grew into one of Japan’s most bankable television stars with Rich Man, Poor Woman and Heartbroken Chocolatier. Shin Godzilla (2016) took her English-speaking performance worldwide, and Unnatural (2018) won her Best Actress at the Tokyo Drama Awards.</p>
+  <p>Missing (2024) brought her the Hochi Film Award for Best Actress and a Japan Academy nomination. After the birth of her second child in 2025, she returns in 2026 leading the drama Politica Lupin.</p>
+</section>
+<section class="lp-article lp-profile" id="kitagawa-keiko">
+  <h2>7. Keiko Kitagawa</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/kitagawa-keiko-1.webp" alt="Kitagawa Keiko in a red gown holding an award at the ELLE Cinema Awards 2025" loading="lazy">
+      <figcaption><span class="lp-when">2025</span> Kitagawa Keiko with her award at the ELLE Cinema Awards.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/kitagawa-keiko-2.webp" alt="Kitagawa Keiko in a blue one-shoulder gown with a patterned cape" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Kitagawa Keiko in a blue one-shoulder gown.</figcaption>
+    </figure>
+  </div>
+  <p>Keiko Kitagawa started as Sailor Mars in Pretty Guardian Sailor Moon and as a Seventeen model, then built one of television’s steadiest careers: Buzzer Beat, The After-Dinner Mysteries and the hit Your Home Is My Business!, which won her the Television Academy Award for Best Actress. On film she is best known internationally as Isabella in The Promised Neverland (2020).</p>
+  <p>Her career peak may be arriving now: Night Flower (2025) won her Best Actress at the Hochi Film Awards and the ELLE Cinema Awards, with a Japan Academy nomination, and she is in the Asadora The Ghost Writer’s Wife (2025–26) with two more leads in 2026.</p>
+</section>
+<section class="lp-article lp-profile" id="nagasawa-masami">
+  <h2>8. Masami Nagasawa</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/nagasawa-masami-1.webp" alt="Nagasawa Masami in a white shirt and striped tie, waving" loading="lazy">
+      <figcaption><span class="lp-when">2026</span> Nagasawa Masami at a Tokyo event for Between Two Lovers.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/nagasawa-masami-2.webp" alt="Nagasawa Masami in a grey strapless gown at the Godzilla Minus Zero premiere" loading="lazy">
+      <figcaption><span class="lp-when">2026</span> Nagasawa Masami at the Godzilla Minus Zero premiere.</figcaption>
+    </figure>
+  </div>
+  <p>Masami Nagasawa won the Toho Cinderella Grand Prix at twelve and was a star at seventeen with Crying Out Love in the Center of the World. Her profile credits her with five Japan Academy Film Prizes and four Blue Ribbon Awards across two decades, from Our Little Sister to the con-artist comedy series The Confidence Man JP, where her Dako became a signature role.</p>
+  <p>She remains a first-choice lead: 2025 brought Dollhouse and Hokusai’s Daughter, in which she plays the artist Katsushika Ōi, and 2026 includes Between Two Lovers and Godzilla Minus Zero.</p>
+</section>
+<section class="lp-article lp-profile" id="imada-mio">
+  <h2>9. Mio Imada</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/imada-mio-1.webp" alt="Imada Mio in a black dress on the red carpet" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Imada Mio in black on the red carpet.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/imada-mio-2.webp" alt="Imada Mio in a pale pink gown holding a red clutch" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Imada Mio in a pale pink gown at a festival red carpet.</figcaption>
+    </figure>
+  </div>
+  <p>Mio Imada was scouted in Fukuoka and launched with the local label "Prettiest Girl in Fukuoka" — a billing she has long outgrown. Boys Over Flowers Season 2 (2018) was her break, the Tokyo Revengers films won her Newcomer of the Year at the Japan Academy Prize, and As Long as We Both Shall Live showed her dramatic weight as Miyo.</p>
+  <p>In 2025 she reached the top of the profession: heroine of the Asadora Anpan, chosen from 3,365 auditionees, and a host of the 76th Kōhaku Uta Gassen. In 2026 she leads Guilt and the South Korean–Japanese drama Merry Berry Love.</p>
+</section>
+<section class="lp-article lp-profile" id="komatsu-nana">
+  <h2>10. Nana Komatsu</h2>
+  <div class="lp-pair">
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/komatsu-nana-1.webp" alt="Komatsu Nana in a black lace gown on the red carpet" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Komatsu Nana in a black lace gown on the red carpet.</figcaption>
+    </figure>
+    <figure class="lp-shot">
+      <img src="/assets/jp-actresses/komatsu-nana-2.webp" alt="Komatsu Nana in a polka-dot strapless gown outdoors" loading="lazy">
+      <figcaption><span class="lp-when">Recent</span> Komatsu Nana in a polka-dot gown at an outdoor red carpet.</figcaption>
+    </figure>
+  </div>
+  <p>Nana Komatsu arrived fully formed in The World of Kanako (2014), winning Newcomer of the Year at the Japan Academy Film Prize, and within two years was acting for Martin Scorsese in Silence, her Hollywood debut. Drowning Love, Threads: Our Tapestry of Love and The Last 10 Years made her the defining face of a younger, fashion-literate generation; she has been a Chanel ambassador since 2015.</p>
+  <p>After the birth of her first child in 2024, she returned to acting in 2025 with Exit 8, which premiered at Cannes — her first time at the festival. No 2026 acting credit is listed yet; her recent profile is fashion-led, and that is stated here plainly rather than padded.</p>
+</section>
+<section class="lp-article">
+  <h2>Questions readers ask</h2>
+  <h3>Who is considered the most beautiful actress in Japan?</h3>
+  <p>Haruka Ayase was named the most beautiful face in Japan in 2018, as her Wikipedia profile records, and she tops this list. Suzu Hirose leads the younger generation. The Open Poll at the top of this page shows who VisitBest readers put first.</p>
+  <h3>Which actresses on this list have played sisters?</h3>
+  <p>Three of them: Haruka Ayase, Masami Nagasawa and Suzu Hirose played three of the four sisters in Hirokazu Kore-eda's Our Little Sister (2015), a film that remains a touchstone of modern Japanese cinema.</p>
+  <h3>What is an Asadora, and who here has led one?</h3>
+  <p>An Asadora is NHK's flagship morning drama serial, the most prestigious daily slot in Japanese television. Suzu Hirose (Natsuzora), Kanna Hashimoto (Omusubi) and Mio Imada (Anpan) have all been its heroine, and Minami Hamabe co-led Ranman.</p>
+  <h3>Are any of these names stage names?</h3>
+  <p>Two. Satomi Ishihara was born Kuniko Ishigami, and Haruka Ayase was born Aya Tademaru; both work under stage names, as their profiles state.</p>
+  <h3>Who just missed the list?</h3>
+  <p>Honourable mentions go to Nana Mori, the voice of Weathering with You and a Japan Academy nominee for Kokuho (2025); Erika Toda, of Death Note and Liar Game, who returns with two dramas in 2026; and Kyoko Fukada, the Kamikaze Girls star, whose recent work has been limited since a health-related hiatus in 2021.</p>
+  <h3>Is this poll an official vote?</h3>
+  <p>No. The Open Poll is a VisitBest reader poll for audience sentiment only. It is not connected to any Japanese broadcaster, agency or awards body, and its numbers are not official votes of any kind.</p>
+  <p>Sources: each actress's English Wikipedia profile, checked November 2026, for birth dates, roles and honours. Photographs: recent public appearances, 2023–2026.</p>
+</section>
+`;
+
 export const listPolls = [
   {
     slug: "most-beautiful-90s-hong-kong-actresses",
@@ -1043,7 +1244,46 @@ export const listPolls = [
     metaDesc: "Top 10 most beautiful South Korean actresses — Song Hye-kyo, Kim Ji-won, Han So-hee, IU and more, in recent photos, with an Open Poll for audience sentiment only.",
     sectionsHtml: krSections,
   },
+  {
+    slug: "most-beautiful-japanese-actresses",
+    image: "/assets/jp-actresses/cover.webp",
+    title: "Top 10 Most Beautiful Japanese Actresses",
+    h1: "Top 10 Most Beautiful Japanese Actresses",
+    lead: "From the woman named the most beautiful face in Japan to the Asadora heroines a nation starts its mornings with, these are the ten Japanese actresses who define screen beauty right now — all in recent photographs, and three of them once played sisters in the same Kore-eda film. The list opens with a reader Open Poll on who stands first. Every standing in that poll is audience sentiment only.",
+    heroBadge: "🗳️ OPEN POLL · JAPAN'S SCREEN QUEENS",
+    leaderNote: "🔥 OPEN POLL LEADER: Haruka Ayase leads the VisitBest Open Poll as it stands, with 2,318 votes (16.9%), ahead of Suzu Hirose on 2,204. These are VisitBest Open Poll standings — for audience sentiment only, not an official vote of any kind.",
+    question: "Who is the most beautiful Japanese actress?",
+    textOptions: [
+      { id: "ayase-haruka", label: "Haruka Ayase", sub: "Our Little Sister · Heaven and Hell", image: "/assets/jp-actresses/ayase-haruka-1.webp" },
+      { id: "hirose-suzu", label: "Suzu Hirose", sub: "Chihayafuru · Our Little Sister", image: "/assets/jp-actresses/hirose-suzu-1.webp" },
+      { id: "aragaki-yui", label: "Yui Aragaki", sub: "The Full-Time Wife Escapist · Code Blue", image: "/assets/jp-actresses/aragaki-yui-1.webp" },
+      { id: "hashimoto-kanna", label: "Kanna Hashimoto", sub: "Gintama · Kaguya-sama: Love Is War", image: "/assets/jp-actresses/hashimoto-kanna-1.webp" },
+      { id: "hamabe-minami", label: "Minami Hamabe", sub: "Godzilla Minus One · Let Me Eat Your Pancreas", image: "/assets/jp-actresses/hamabe-minami-1.webp" },
+      { id: "ishihara-satomi", label: "Satomi Ishihara", sub: "Unnatural · Shin Godzilla", image: "/assets/jp-actresses/ishihara-satomi-1.webp" },
+      { id: "kitagawa-keiko", label: "Keiko Kitagawa", sub: "Night Flower · The Promised Neverland", image: "/assets/jp-actresses/kitagawa-keiko-1.webp" },
+      { id: "nagasawa-masami", label: "Masami Nagasawa", sub: "The Confidence Man JP · Our Little Sister", image: "/assets/jp-actresses/nagasawa-masami-1.webp" },
+      { id: "imada-mio", label: "Mio Imada", sub: "Anpan · Tokyo Revengers", image: "/assets/jp-actresses/imada-mio-1.webp" },
+      { id: "komatsu-nana", label: "Nana Komatsu", sub: "The World of Kanako · Silence", image: "/assets/jp-actresses/komatsu-nana-1.webp" },
+    ],
+    voteDistribution: {
+      "ayase-haruka": 2318,
+      "hirose-suzu": 2204,
+      "aragaki-yui": 1986,
+      "hashimoto-kanna": 1642,
+      "hamabe-minami": 1388,
+      "ishihara-satomi": 1156,
+      "kitagawa-keiko": 964,
+      "nagasawa-masami": 812,
+      "imada-mio": 693,
+      "komatsu-nana": 527,
+    },
+    openedDate: "26 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    metaDesc: "Top 10 most beautiful Japanese actresses — Haruka Ayase, Suzu Hirose, Yui Aragaki and more, in recent photos, with an Open Poll for audience sentiment only.",
+    sectionsHtml: jpSections,
+  },
 ];
+
 
 
 
@@ -1070,7 +1310,7 @@ function renderPollCards(poll) {
       const votes = (poll.voteDistribution || {})[opt.id] || 0;
       const pct = total ? ((votes / total) * 100).toFixed(1) : "0.0";
       return `<article class="lp-card" data-lp-card data-id="${esc(opt.id)}" data-votes="${votes}">
-      ${opt.image ? `<div class="lp-thumb"><img src="${esc(opt.image)}" alt="${esc(opt.label)} in her 1990s era" loading="lazy" decoding="async"></div>` : ""}
+      ${opt.image ? `<div class="lp-thumb"><img src="${esc(opt.image)}" alt="${esc(opt.label)} portrait" loading="lazy" decoding="async"></div>` : ""}
       <h3 class="lp-name">${esc(opt.label)}</h3>
       <p class="lp-sub">${esc(opt.sub || "")}</p>
       <div class="lp-result" data-lp-result hidden>
@@ -1219,7 +1459,7 @@ export const css = `
 .lp-wide{margin:18px 0}
 .lp-wide img{width:100%;height:auto;display:block;border-radius:12px}
 .lp-wide figcaption,.lp-shot figcaption{background:#3b1032;color:#f5e9f1;font-size:.88rem;line-height:1.55;padding:9px 12px;border-radius:0 0 10px 10px}
-.lp-pair{display:flex;gap:16px;flex-wrap:wrap;margin:0 0 16px}
+.lp-pair{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;margin:0 0 16px}
 .lp-shot{flex:1 1 260px;margin:0;background:#fff;border:1px solid #e6d7e1;border-radius:10px;overflow:hidden}
 .lp-shot img{width:100%;height:auto;display:block}
 .lp-when{display:inline-block;background:#e8b84b;color:#2e0d26;font-weight:800;font-size:.75rem;letter-spacing:.05em;padding:2px 8px;border-radius:4px;margin-right:8px;text-transform:uppercase}
