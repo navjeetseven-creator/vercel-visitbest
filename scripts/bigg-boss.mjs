@@ -5487,6 +5487,64 @@ function renderWinnerListTable() {
       </div>`;
 }
 
+const WEEK12_DANGER = {
+  "scout": "Nominated for the rest of the season by his Episode 68 punishment — every week is a public vote for him now. His shield is the fan vote itself: he leads this page's nominees poll.",
+  "gullu": "Second in this page's fan poll — a strong public base is his protection this week.",
+  "kanika-mann": "The ex-captain who used a captain's power to nominate Mahhi directly in Episode 58 now faces the vote herself.",
+  "love-gill": "Mid-table in the fan poll — neither the safest nor the most exposed of the six.",
+  "mahhi-vij": "The season's great survivor: fewest votes in Week 10, saved by her lifeline; no eviction in Week 11. She has lived in the danger zone longer than anyone.",
+  "amrapali-dubey": "Lowest in this page's fan poll of the six — on fan numbers alone, the most exposed nominee this week. Fan numbers are not the official vote.",
+};
+
+function renderWeek12Sections(poll) {
+  if (poll.slug !== "bigg-boss-20-voting-week-12") return "";
+  const order = ["scout", "gullu", "kanika-mann", "love-gill", "mahhi-vij", "amrapali-dubey"];
+  const fmt = (n) => n.toLocaleString("en-IN");
+  const profiles = order
+    .map((id, i) => {
+      const c = contestants.find((x) => x.id === id);
+      if (!c) return "";
+      const votes = (poll.voteDistribution || {})[id];
+      const bio = [["Known for", c.role], ["From", c.city]];
+      if (c.age) bio.push(["Age", String(c.age)]);
+      bio.push(["Week 12 status", "Nominated"]);
+      if (votes) bio.push(["Fan votes on this page", fmt(votes)]);
+      const bullets = [c.highlight, c.trend].filter(Boolean).map((b) => `<li>${b}</li>`).join("");
+      return `
+    <div class="bb-profile">
+      <h3>${i + 1}. ${c.name}</h3>
+      <p class="bb-placing">Nominated — Week 12</p>
+      <div class="bb-profile-cols">
+        ${renderStoryPhoto(c.image, c.name, `${c.name} — nominated in Week 12`)}
+        <div class="bb-fact-card">
+          <h3>At a glance — ${c.alias || c.name}</h3>
+          ${bio.map(([k, v]) => `<div class="bb-fact-row"><span class="bb-fact-k">${k}</span><span class="bb-fact-v">${v}</span></div>`).join("")}
+        </div>
+      </div>
+      <p>${c.bio}</p>
+      <ul>${bullets}</ul>
+      <p class="bb-nowline"><strong>The danger:</strong> ${WEEK12_DANGER[id] || ""}</p>
+    </div>`;
+    })
+    .join("");
+  const safeTable = `
+    <div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead><tr><th>Housemate</th><th>Why they are safe</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Uditi Singh</strong></td><td>The captain — safe on the captain's immunity this week</td></tr>
+          <tr><td><strong>Yung DSA</strong></td><td>Not nominated in Week 12</td></tr>
+          <tr><td><strong>Arishfa Khan</strong></td><td>Not nominated — she won her Week 11 safety in the Episode 75 immunity task</td></tr>
+          <tr><td><strong>Qazi Touqeer</strong></td><td>Not nominated in Week 12</td></tr>
+        </tbody>
+      </table>
+    </div>`;
+  return (
+    storySection("The Nominees", "Meet the Week 12 nominees — six profiles", `<p>Six housemates face the Week 12 public vote, announced in Episode 80 (Tuesday 24 November 2026). Here is each nominee's season so far — and what puts them in danger.</p>` + profiles) +
+    storySection("Safe This Week", "Safe in Week 12 — the other four", safeTable + `<p style="margin-top:1rem;">Four housemates watch this vote from safety. The eviction result comes at Weekend Ka Vaar — and this page will record it once it is confirmed on air and reported by two sources.</p>`)
+  );
+}
+
 function renderHubSeasonProfiles(poll) {
   if (poll.slug !== "bigg-boss-voting") return "";
   const cards = WINNER_LIST.map((r, i) => {
@@ -12194,7 +12252,7 @@ export function renderBiggBossPollPage(poll) {
  ${poll.slug === "bigg-boss-2-voting" ? renderSeason2Sections() : ""}
  ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
     ${poll.slug === "bigg-boss-winner-list" ? renderWinnerListSections() : ""}
-    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}${renderBb20RemainderSections(poll)}${renderWinnerListReadingSections(poll)}${renderHubSeasonProfiles(poll)}
+    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}${renderBb20RemainderSections(poll)}${renderWinnerListReadingSections(poll)}${renderHubSeasonProfiles(poll)}${renderWeek12Sections(poll)}
     ${poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersSections() : ""}
     ${poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersSections() : ""}
     ${poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersSections() : ""}
