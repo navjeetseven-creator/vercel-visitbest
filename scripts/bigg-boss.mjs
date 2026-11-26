@@ -7063,6 +7063,81 @@ const SEASON13_MOMENTS = [
   },
 ];
 
+const RICH_PROFILES_S13 = [
+  {
+    name: "Sidharth Shukla", placing: "🏆 Winner", image: "/assets/bb-seasons/s13-sidharth-shukla.webp",
+    bio: [["Born", "12 December 1980"], ["Birthplace", "Bombay (now Mumbai), Maharashtra"], ["Known for", "Balika Vadhu, Dil Se Dil Tak, Broken But Beautiful 3"], ["Bigg Boss 13 finish", "Winner — finale night of 15–16 February 2020"], ["Standout fact", "The only person to win both Bigg Boss and Fear Factor: Khatron Ke Khiladi (Season 7)"]],
+    journey: "Sidharth Shukla won Bigg Boss 13 in the finale on the night of 15–16 February 2020. His season included a mid-season hospital break — he was out of the house from Day 71 to Day 79 — and he returned to go on and win the season.",
+    bullets: ["His breakthrough role was Shivraj Shekhar in Balika Vadhu, which made him one of Hindi TV's biggest leading men.", "He made his film debut in Humpty Sharma Ki Dulhania (2014) and had earlier won Fear Factor: Khatron Ke Khiladi 7.", "His last major screen role was the web series Broken But Beautiful 3 (2021)."],
+    now: "Sidharth Shukla died on 2 September 2021, aged 40, after a heart attack. His Bigg Boss 13 win is the most re-voted result on VisitBest — this page's re-vote stands at 11,840 fan votes and counting.",
+    more: ["He was an interior-design graduate (Rachana Sansad, Mumbai) who started out as a model.", "His rivalry with Asim Riaz and his bond with Shehnaaz Gill were the season's two defining threads."],
+  },
+  {
+    name: "Asim Riaz", placing: "1st runner-up", image: "/assets/bb-seasons/s13-asim-riaz.webp",
+    bio: [["Born", "13 July 1993"], ["Birthplace", "Jammu, Jammu and Kashmir"], ["Known for", "Modelling campaigns (Blackberrys, Numero Uno, B'lue) and his own rap singles"], ["Bigg Boss 13 finish", "1st runner-up"], ["Standout fact", "Entered the house as a little-known model and finished one place from the trophy"]],
+    journey: "Asim Riaz finished as first runner-up in the finale, behind only Sidharth Shukla. Their rivalry defined the season — in Week 13, Rohit Shetty entered the house to sort out the differences between the two.",
+    bullets: ["Before Bigg Boss he was a working model and had a small role in the film Main Tera Hero (2014).", "After the show he appeared in hit music videos and launched his own rap career with Back to Start (2021).", "He returned to reality TV on Fear Factor: Khatron Ke Khiladi 14 in 2024."],
+    now: "In 2025 he was one of the four team leaders on Amazon MX Player's fitness competition Battleground, and he continues to release his own music.",
+    more: ["His elder brother Umar Riaz later contested Bigg Boss 15 — the family has two Bigg Boss finalists-week players.", "His father, Riaz Ahmed Choudhary, is a retired Jammu and Kashmir government official."],
+  },
+  {
+    name: "Shehnaaz Gill", placing: "2nd runner-up", image: "/assets/bb-seasons/s13-shehnaaz-gill.webp",
+    bio: [["Born", "27 January 1994"], ["Birthplace", "Chandigarh — raised in Punjab"], ["Known for", "Honsla Rakh, Kisi Ka Bhai Kisi Ki Jaan, Thank You For Coming"], ["Bigg Boss 13 finish", "2nd runner-up"], ["Standout fact", "The season's breakout star — she entered as a Punjabi music-video face and left as a national celebrity"]],
+    journey: "Shehnaaz Gill reached the final six of a 21-contestant season and finished as second runner-up in the finale on the night of 15–16 February 2020 — third in the final order, ahead of Rashami Desai, Arti Singh and Paras Chhabra.",
+    bullets: ["She began her career with the 2015 music video Shiv Di Kitaab and made her Punjabi film debut in Kala Shah Kala (2019).", "She was ranked in the Times Top 20 Most Desirable Women on TV in both 2019 (13th) and 2020 (11th).", "She is also a singer, with her own singles alongside her acting work."],
+    now: "After Bigg Boss she headlined the Punjabi hit Honsla Rakh (2021) opposite Diljit Dosanjh, made her Hindi film debut in Kisi Ka Bhai Kisi Ki Jaan (2023) and appeared in Thank You For Coming (2023).",
+    more: ["She holds a B.Com degree from Lovely Professional University, Phagwara.", "Fans know her by her nickname, Sana."],
+  },
+  {
+    name: "Rashami Desai", placing: "3rd runner-up", image: "/assets/bb-seasons/s13-rashami-desai.webp",
+    bio: [["Born", "13 February 1986 (born Shivani Desai)"], ["Birthplace", "Nagaon, Assam — raised in Mumbai"], ["Known for", "Uttaran (Tapasya), Dil Se Dil Tak"], ["Bigg Boss 13 finish", "3rd runner-up"], ["Standout fact", "Evicted on Day 35, re-entered on Day 39 — and still reached the final six"]],
+    journey: "Rashami Desai finished as third runner-up — after being evicted on Day 35 in the season's triple eviction and re-entering on Day 39.",
+    bullets: ["Her role as Tapasya in Uttaran (2009–2014) won her the ITA Award for Best Actress (Popular) and the Indian Telly Award for Best Actress in a Negative Role in 2010.", "She made her Hindi TV debut with Raavan (2006), after starting out in regional-language films.", "A reality-show veteran before Bigg Boss: Jhalak Dikhhla Jaa 5, Fear Factor: Khatron Ke Khiladi 6 and Nach Baliye 7."],
+    now: "She returned to the Bigg Boss house as a contestant in Bigg Boss 15 (2021–22) and has since worked across television and OTT, including the web series Tandoor.",
+    more: ["She played Shorvori in Dil Se Dil Tak opposite Sidharth Shukla — the two met again inside the Bigg Boss 13 house.", "She is counted among Hindi television's highest-paid actresses of her generation."],
+  },
+  {
+    name: "Arti Singh", placing: "4th runner-up", image: "/assets/bb-seasons/s13-arti-singh.webp",
+    bio: [["Born", "5 April 1985 (born Arti Sharma)"], ["Birthplace", "Lucknow, Uttar Pradesh"], ["Known for", "Parichay, Maayka, Waaris"], ["Bigg Boss 13 finish", "4th runner-up"], ["Standout fact", "Reached the final six of a 21-contestant season as one of its steadiest, least theatrical players"]],
+    journey: "Arti Singh finished as fourth runner-up in the finale — fifth in the final order of the season's six finalists.",
+    bullets: ["She made her television debut in Maayka (2007), playing Soni.", "She is best recognised as Seema in Parichay — Nayee Zindagi Kay Sapno Ka, and has also appeared in Uttaran, Waaris and Udaan.", "She played the season largely on her own terms, without a fixed alliance carrying her."],
+    now: "She married Navi Mumbai businessman Dipak Chauhan on 25 April 2024.",
+    more: ["She is the younger sister of comedian Krushna Abhishek and a niece of actor Govinda.", "She lost her mother when she was just 37 days old and was raised in Lucknow."],
+  },
+  {
+    name: "Paras Chhabra", placing: "5th runner-up — walked in the finale", image: "/assets/bb-seasons/s13-paras-chhabra.webp",
+    bio: [["Born", "11 July 1990"], ["Known for", "Winning MTV Splitsvilla 5"], ["Bigg Boss 13 finish", "Walked during the finale — 5th runner-up"], ["Standout fact", "The only finalist who chose the money over the race — he left the finale with the ₹10 lakh cash prize"]],
+    journey: "Paras Chhabra is recorded in the season's table as 'Walked, 5th runner-up': he left during the finale itself, before the last placings were declared, taking the ₹10 lakh walk-out prize.",
+    bullets: ["He won MTV Splitsvilla 5 in 2012 with Akanksha Popli and returned for Splitsvilla 8 in 2015.", "His acting credits include Badho Bahu and Aarambh.", "The Indian Express described him as a 'king of reality shows' for how he turned games inside the Bigg Boss house."],
+    now: "He went straight from the Bigg Boss 13 finale into Mujhse Shaadi Karoge (2020) — the offer reached him while he was still inside the house.",
+    more: ["He started his career as a model before reality television made him a household name.", "His task strategies drove much of the plotting in the season's second half."],
+  },
+];
+
+function renderRichProfiles(profiles) {
+  return profiles
+    .map(
+      (p, i) => `
+    <div class="bb-profile">
+      <h3>${i + 1}. ${p.name}</h3>
+      <p class="bb-placing">${p.placing}</p>
+      <div class="bb-profile-cols">
+        ${renderStoryPhoto(p.image, p.name, `${p.name} — ${p.placing} of Bigg Boss 13`)}
+        <div class="bb-fact-card">
+          <h3>At a glance — ${p.name}</h3>
+          ${p.bio.map(([k, v]) => `<div class="bb-fact-row"><span class="bb-fact-k">${k}</span><span class="bb-fact-v">${v}</span></div>`).join("")}
+        </div>
+      </div>
+      <p>${p.journey}</p>
+      <ul>${p.bullets.map((b) => `<li>${b}</li>`).join("")}</ul>
+      <p class="bb-nowline"><strong>Now:</strong> ${p.now}</p>
+      <p style="margin:0.4rem 0 0.2rem;"><strong>More to know:</strong></p>
+      <ul>${p.more.map((b) => `<li>${b}</li>`).join("")}</ul>
+    </div>`
+    )
+    .join("");
+}
+
 function renderSeason13Sections() {
   return (
     storySection(
@@ -7083,7 +7158,27 @@ function renderSeason13Sections() {
     storySection(
       "The Finalists",
       "Meet the Bigg Boss 13 final six",
-      renderSeasonFinalistCards(SEASON13_FINALISTS),
+      renderRichProfiles(RICH_PROFILES_S13),
+    ) +
+    storySection(
+      "At a Glance",
+      "The Bigg Boss 13 final six at a glance",
+      `<div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th>Finalist</th><th>Official finish</th><th>Fan re-vote on this page</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Sidharth Shukla</strong></td><td>🏆 Winner</td><td>3,753</td></tr>
+          <tr><td><strong>Asim Riaz</strong></td><td>1st runner-up</td><td>2,844</td></tr>
+          <tr><td><strong>Shehnaaz Gill</strong></td><td>2nd runner-up</td><td>2,386</td></tr>
+          <tr><td><strong>Rashami Desai</strong></td><td>3rd runner-up</td><td>1,303</td></tr>
+          <tr><td><strong>Arti Singh</strong></td><td>4th runner-up</td><td>829</td></tr>
+          <tr><td><strong>Paras Chhabra</strong></td><td>Walked in the finale — 5th runner-up</td><td>725</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="margin-top:1rem;">The fan re-vote column is this page's Open Poll — 11,840 fan votes, audience sentiment only. The official finish column is final: Sidharth Shukla won Bigg Boss 13 on the night of 15–16 February 2020.</p>`
     ) +
     storySection(
       "Eviction Order",
@@ -13241,6 +13336,16 @@ export const css = `
 .bb-fact-row:first-of-type { border-top: none; }
 .bb-fact-k { flex: 0 0 42%; font-weight: 700; color: #7a4a12; }
 .bb-fact-v { flex: 1; color: #2b2b2b; }
+.bb-profile { border-top: 2px solid #e9cfe0; padding-top: 1.25rem; margin-top: 1.25rem; }
+.bb-profile:first-of-type { border-top: none; padding-top: 0.2rem; margin-top: 0.3rem; }
+.bb-profile h3 { font-size: 1.32rem; color: #3b1032; margin: 0 0 0.15rem; }
+.bb-profile .bb-placing { color: #7a4a12; font-weight: 700; margin: 0 0 0.7rem; font-size: 0.98rem; }
+.bb-profile-cols { display: grid; grid-template-columns: minmax(0, 290px) 1fr; gap: 1.1rem; align-items: start; margin-bottom: 0.4rem; }
+@media (max-width: 640px) { .bb-profile-cols { grid-template-columns: 1fr; } }
+.bb-profile-cols .bb-story-photo { margin: 0 !important; }
+.bb-profile-cols .bb-fact-card h3 { font-size: 1.02rem; }
+.bb-profile ul { margin: 0.35rem 0 0.85rem 1.15rem; line-height: 1.55; }
+.bb-profile .bb-nowline { background: #fff7fb; border-left: 4px solid #c9a227; padding: 0.65rem 0.95rem; border-radius: 0 10px 10px 0; margin: 0.75rem 0; line-height: 1.55; }
 `;
 
 // Bigg Boss Client-Side Interactivity Script
