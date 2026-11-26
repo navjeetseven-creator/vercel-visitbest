@@ -3392,6 +3392,34 @@ function kaashviProfileBlock() {
     </div>`;
 }
 
+const BB20_PROFILE_HOOKS = {
+  "bigg-boss-20-voting-week-10": { eyebrow: "The Ballot", heading: "Week 10 — the ten on the ballot, profiled", mode: "options" },
+  "bigg-boss-20-voting-week-11": { eyebrow: "The Ballot", heading: "Week 11 — the ten on the ballot, profiled", mode: "options" },
+  "bigg-boss-20-eviction-prediction-week-10": { eyebrow: "The Ballot", heading: "Week 10 prediction — the ten on the ballot, profiled", mode: "options" },
+  "bigg-boss-20-eviction-prediction-week-11": { eyebrow: "The Ballot", heading: "Week 11 prediction — the nine on the ballot, profiled", mode: "options" },
+  "bigg-boss-20-next-captain-poll": { eyebrow: "The Candidates", heading: "The captaincy candidates, profiled", mode: "options" },
+  "bigg-boss-20-winner-prediction": { eyebrow: "The Contenders", heading: "The eight leading contenders on this poll, profiled", mode: "top", n: 8 },
+  "bigg-boss-20-best-contestant": { eyebrow: "The Contenders", heading: "The six leading names on this poll, profiled", mode: "top", n: 6 },
+  "bigg-boss-20-joker-of-the-house": { eyebrow: "The Contenders", heading: "The six leading names on this poll, profiled", mode: "top", n: 6 },
+  "bigg-boss-20-who-is-boss": { eyebrow: "The Contenders", heading: "The six leading names on this poll, profiled", mode: "top", n: 6 },
+  "bigg-boss-20-entertainer": { eyebrow: "The Contenders", heading: "The six leading names on this poll, profiled", mode: "top", n: 6 },
+  "bigg-boss-20-voting-trend": { eyebrow: "The Names in the Trend", heading: "The five contenders the trend is about, profiled", mode: "fixed", ids: ["qazi-touqeer", "yung-dsa", "scout", "arishfa-khan", "kanika-mann"] },
+  "bigg-boss-20-eviction-list": { eyebrow: "The Departed", heading: "The eight who have left — their season profiles", mode: "fixed", ids: ["rohed-khan", "isha-rikhi", "rhiti-tiwari", "aman-gandhi", "nakul-dhull", "mary-kom", "aasif-khan", "manish-goel"] },
+  "bigg-boss-20-weekend-ka-vaar-episodes-70-71": { eyebrow: "The People in These Episodes", heading: "Scout, Love, Kanika and Arishfa — the full profiles", mode: "fixed", ids: ["scout", "love-gill", "kanika-mann", "arishfa-khan"] },
+  "bigg-boss-20-scout-shaves-head": { eyebrow: "The People in This Moment", heading: "Scout and the housemates around that night, profiled", mode: "fixed", ids: ["scout", "love-gill", "amrapali-dubey", "kanika-mann"] },
+};
+
+function renderBB20ProfileHook(poll) {
+  const cfg = BB20_PROFILE_HOOKS[poll.slug];
+  if (!cfg) return "";
+  let ids = [];
+  if (cfg.mode === "options") ids = (poll.optionIds || []).map((id) => (id === "amrapali-dubey" ? "amrapali-dubey" : id));
+  else if (cfg.mode === "top") ids = Object.keys(poll.voteDistribution || {}).sort((a, b) => poll.voteDistribution[b] - poll.voteDistribution[a]).slice(0, cfg.n);
+  else ids = cfg.ids;
+  if (!ids.length) return "";
+  return storySection(cfg.eyebrow, cfg.heading, renderRegistryProfiles(ids));
+}
+
 function renderDuelProfilesSection(poll) {
   if (poll.pollType !== "duel") return "";
   const ids = poll.duelIds || [];
@@ -4987,6 +5015,8 @@ export function renderBiggBossTrendPage(poll) {
       <p><strong>The captain's paradox.</strong> Uditi Singh runs the house but sits last among the current housemates in the season sentiment table (${fmt(uditiSeason.votes)} votes, ${uditiSeason.pctStr}). Captaincy is won in tasks inside the house; sentiment is won with the audience outside it. She is also the only housemate completely safe this week.</p>
       <p><strong>No invented movement.</strong> VisitBest does not publish day-by-day movement for these polls. What you see is the standings as they stand on 21 November 2026, read from the polls themselves. This page is refreshed as the polls move and re-dated when it is.</p>`,
     )}
+
+    ${renderBB20ProfileHook(poll)}
 
     ${storySection(
       "The Official Vote",
@@ -12567,7 +12597,7 @@ export function renderBiggBossPollPage(poll) {
  ${poll.slug === "bigg-boss-2-voting" ? renderSeason2Sections() : ""}
  ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
     ${poll.slug === "bigg-boss-winner-list" ? renderWinnerListSections() : ""}
-    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderDuelProfilesSection(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}${renderBb20RemainderSections(poll)}${renderWinnerListReadingSections(poll)}${renderHubSeasonProfiles(poll)}${renderWeek12Sections(poll)}${renderWhoWillWinProfiles(poll)}
+    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderDuelProfilesSection(poll)}${renderBB20ProfileHook(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}${renderBb20RemainderSections(poll)}${renderWinnerListReadingSections(poll)}${renderHubSeasonProfiles(poll)}${renderWeek12Sections(poll)}${renderWhoWillWinProfiles(poll)}
     ${poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersSections() : ""}
     ${poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersSections() : ""}
     ${poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersSections() : ""}
