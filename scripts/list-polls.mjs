@@ -1715,6 +1715,150 @@ const itSections = `
 <p>Birth dates, roles and honours are drawn from each actress's Wikipedia profile, checked in November 2026. The photographs are recent red-carpet, festival and awards portraits sourced from Pinterest; every one was checked against a known reference portrait before use.</p>
 `;
 
+const esSections = `
+<h2>About This Ranking</h2>
+<p>Spanish cinema runs on two engines at once: the auteur tradition of the Almodóvar era, and a streaming generation whose faces are known on every continent. This list holds both. Penélope Cruz, Elena Anaya and Paz Vega carried Spanish acting to Hollywood and back; Úrsula Corberó and Ester Expósito became global names through Money Heist and Élite without leaving Madrid. Between them, the ten women here hold seven Goya Award wins and the only Academy Award ever won by a Spanish actress.</p>
+<p>Every fact below comes from each actress’s English Wikipedia profile, read firsthand. Where a profile is loose with its own record, this page follows the detailed accolades rather than the headline, and says so. Two inclusions need a plain word up front: Ana de Armas was born in Havana and is a Cuban-Spanish-American actress who holds Spanish citizenship through her Spanish grandparents; and Elsa Pataky’s profile presents her as a Spanish-Romanian model and actress, with no acting awards recorded. Both are stated exactly as their profiles state them.</p>
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/es-by-the-numbers.webp" alt="Spanish cinema by the numbers" loading="lazy"></span><figcaption class="lp-caption">The list in numbers: seven Goya wins, one historic Oscar, three Goya Best Actress winners.</figcaption></figure>
+<h2>1. Penélope Cruz</h2>
+<div class="lp-pair">
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/penelope-cruz-1.webp" alt="Penélope Cruz at the Governors Awards" loading="lazy"></span><figcaption class="lp-caption">Penélope Cruz at the Governors Awards in Hollywood, November 2026.</figcaption></figure>
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/penelope-cruz-2.webp" alt="Penélope Cruz at Cannes" loading="lazy"></span><figcaption class="lp-caption">Penélope Cruz at the Cannes Film Festival.</figcaption></figure>
+</div>
+<div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><span class="lp-bio-v">28 April 1974</span></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><span class="lp-bio-v">Alcobendas, Spain</span></div><div class="lp-bio-row"><span class="lp-bio-k">Birth name</span><span class="lp-bio-v">Penélope Cruz Sánchez</span></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><span class="lp-bio-v">Raimunda in Volver (2006)</span></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><span class="lp-bio-v">The first, and to date only, Spanish actress to win an Academy Award</span></div></div>
+<p>Cruz broke through as Silvia in Jamón Jamón (1992) and became the defining Spanish actress of her generation: Raimunda in Volver (2006), María Elena in Vicky Cristina Barcelona (2008), Janis in Parallel Mothers (2021), and Donatella Versace in The Assassination of Gianni Versace (2018) on television.</p>
+<p><strong>Honours:</strong></p>
+<ul class="lp-facts"><li>Academy Award WIN, Best Supporting Actress, for Vicky Cristina Barcelona; nominations for Volver, Nine and Parallel Mothers</li><li>BAFTA Award win for Vicky Cristina Barcelona</li><li>Three Goya Award wins, from fourteen Goya nominations in total</li><li>Cannes Best Actress win (shared) for Volver, and the Volpi Cup for Parallel Mothers</li><li>David di Donatello win for Don’t Move</li></ul>
+<p><strong>Now:</strong> fully current: Ferrari (2023), The Invite (2026) and La bola negra, which premiered at Cannes in 2026; in November 2026 she was announced as lead and producer of Patricia.</p>
+<p><strong>More to know:</strong></p>
+<ul class="lp-facts"><li>She was the first Spanish actress ever nominated for the Best Actress Oscar, for Volver</li><li>Her profile’s headline mentions a Grammy; the detail is a Latin Grammy, for a 2024 music video, and that is how it is recorded here</li><li>An Emmy nomination came for playing Donatella Versace</li></ul>
+<h2>2. Ana de Armas</h2>
+<div class="lp-pair">
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/ana-de-armas-1.webp" alt="Ana de Armas at the BAFTA Film Awards" loading="lazy"></span><figcaption class="lp-caption">Ana de Armas at the BAFTA Film Awards, 2023.</figcaption></figure>
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/ana-de-armas-2.webp" alt="Ana de Armas at the Ghosted premiere" loading="lazy"></span><figcaption class="lp-caption">Ana de Armas at the Ghosted premiere in New York, 2023.</figcaption></figure>
+</div>
+<div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><span class="lp-bio-v">30 April 1988</span></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><span class="lp-bio-v">Havana, Cuba</span></div><div class="lp-bio-row"><span class="lp-bio-k">Birth name</span><span class="lp-bio-v">Ana Celia de Armas Caso</span></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><span class="lp-bio-v">Marilyn Monroe in Blonde (2022)</span></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><span class="lp-bio-v">The first Cuban nominated for the Best Actress Academy Award</span></div></div>
+<p>De Armas was born in Havana, held Spanish citizenship through her Spanish maternal grandparents, and moved to Madrid at 18, breaking through as Carolina in the Spanish series El Internado (2007–2010). Hollywood followed: Joi in Blade Runner 2049 (2017), Marta Cabrera in Knives Out (2019), Paloma in No Time to Die (2021), Marilyn Monroe in Blonde (2022) and Eve Macarro in Ballerina (2025). Her profile describes her as a Cuban-Spanish-American actress holding Cuban, Spanish and American citizenship, and this list includes her on that stated basis.</p>
+<p><strong>Honours:</strong></p>
+<ul class="lp-facts"><li>Academy Award nomination, Best Actress, for Blonde</li><li>BAFTA and Golden Globe nominations for Blonde, and a further Globe nomination for Knives Out</li><li>Saturn Award WIN, Best Supporting Actress, for Knives Out</li><li>No Oscar, BAFTA or Golden Globe win is recorded, and none is claimed here</li></ul>
+<p><strong>Now:</strong> fully current, leading Ballerina (2025) after Eden (2024).</p>
+<p><strong>More to know:</strong></p>
+<ul class="lp-facts"><li>Her Spanish years came first: six seasons of El Internado made her a star in Spain before Hollywood</li><li>The Blonde nomination made her the first Cuban nominated in the Best Actress category</li></ul>
+<h2>3. Úrsula Corberó</h2>
+<div class="lp-pair">
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/ursula-corbero-1.webp" alt="Úrsula Corberó at the Premios Platino" loading="lazy"></span><figcaption class="lp-caption">Úrsula Corberó at the Premios Platino, 2025.</figcaption></figure>
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/ursula-corbero-2.webp" alt="Úrsula Corberó at Venice" loading="lazy"></span><figcaption class="lp-caption">Úrsula Corberó at the Venice Film Festival.</figcaption></figure>
+</div>
+<div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><span class="lp-bio-v">11 August 1989</span></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><span class="lp-bio-v">Sant Pere de Vilamajor, Barcelona, Spain</span></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><span class="lp-bio-v">Tokyo in Money Heist (2017–2021)</span></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><span class="lp-bio-v">Won the Ondas Award for playing a real-life police officer in Burning Body</span></div></div>
+<p>Corberó grew up on Spanish television, as Ruth Gómez in Física o Química (2008–2010) and Margarita de Austria in Isabel (2014), before Money Heist made her Tokyo one of the most recognised faces on the planet. She played the Baroness in Snake Eyes (2021) and Rosa Peral in Burning Body (2023).</p>
+<p><strong>Honours:</strong></p>
+<ul class="lp-facts"><li>ATV Award win, Best Actress, for Money Heist</li><li>Ondas Award win, Best Actress in a TV Series, for Burning Body</li><li>Best Actress prize at the Havana Film Festival for Kill the Jockey</li><li>Premios Feroz nomination for Money Heist; no Goya record is stated in her profile</li></ul>
+<p><strong>Now:</strong> fully current: Kill the Jockey competed at Venice in 2024, The Day of the Jackal followed the same year, and she is set to lead Jaume Balagueró’s There’s Someone in the Garden, shooting from November 2026.</p>
+<p><strong>More to know:</strong></p>
+<ul class="lp-facts"><li>Money Heist’s Tokyo is the role that carried her from Spanish TV to global fame</li><li>She gave birth to her first child in February 2026, as her profile records</li></ul>
+<h2>4. Blanca Suárez</h2>
+<div class="lp-pair">
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/blanca-suarez-1.webp" alt="Blanca Suárez at the Málaga premiere of La huella del mal" loading="lazy"></span><figcaption class="lp-caption">Blanca Suárez at the Málaga premiere of La huella del mal.</figcaption></figure>
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/blanca-suarez-2.webp" alt="Blanca Suárez at the Fotogramas de Plata awards" loading="lazy"></span><figcaption class="lp-caption">Blanca Suárez at the Fotogramas de Plata awards, 2025.</figcaption></figure>
+</div>
+<div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><span class="lp-bio-v">21 October 1988</span></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><span class="lp-bio-v">Madrid, Spain</span></div><div class="lp-bio-row"><span class="lp-bio-k">Birth name</span><span class="lp-bio-v">Blanca Martínez Suárez</span></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><span class="lp-bio-v">Lidia Aguilar in Cable Girls (2017–2020)</span></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><span class="lp-bio-v">Received the Trophée Chopard for Female Revelation of the Year at Cannes in 2013</span></div></div>
+<p>Suárez came up through two Spanish TV hits, The Boarding School (2007–2010) and The Boat (2011–2013), stepped into Almodóvar’s The Skin I Live In (2011) as Norma, and led Netflix’s first Spanish original series, Cable Girls, as Lidia Aguilar.</p>
+<p><strong>Honours:</strong></p>
+<ul class="lp-facts"><li>Goya Award NOMINATION, Best New Actress, for The Skin I Live In; no Goya win is recorded</li><li>Fotogramas de Plata wins for The Boarding School and The Boat</li><li>Ondas Award win for The Boat</li><li>Premios Feroz nomination for My Big Night</li></ul>
+<p><strong>Now:</strong> current: Me he hecho viral (2023) and the Netflix hospital drama Breathless (2024), in which she plays a doctor.</p>
+<p><strong>More to know:</strong></p>
+<ul class="lp-facts"><li>Cable Girls made her the face of Netflix’s arrival in Spain</li><li>Her Cannes Trophée Chopard marked her out internationally at 24</li></ul>
+<h2>5. Ester Expósito</h2>
+<div class="lp-pair">
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/ester-exposito-1.webp" alt="Ester Expósito at the Goya Awards 2025" loading="lazy"></span><figcaption class="lp-caption">Ester Expósito at the Goya Awards, 2025.</figcaption></figure>
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/ester-exposito-2.webp" alt="Ester Expósito at Venice" loading="lazy"></span><figcaption class="lp-caption">Ester Expósito at the Venice Film Festival.</figcaption></figure>
+</div>
+<div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><span class="lp-bio-v">26 January 2000</span></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><span class="lp-bio-v">Madrid, Spain</span></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><span class="lp-bio-v">Carla Rosón in Élite (2018–2021)</span></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><span class="lp-bio-v">Named Most Promising Talent at the Monte-Carlo Television Festival in 2026</span></div></div>
+<p>Expósito’s profile presents her simply as a Spanish actress, best known for starring as Carla Rosón Caleruega in Élite. She followed it with Cayetana Aldama in Someone Has to Die (2020), the lead of the horror film Venus (2022) and Bandidos (2024–2025).</p>
+<p><strong>Honours:</strong></p>
+<ul class="lp-facts"><li>Golden Nymph Award for Most Promising Talent, Monte-Carlo Television Festival (2026), as stated in her profile</li><li>Best Actress wins at the Madrid Theater Awards in 2013 and 2015, in youth theatre</li><li>Her profile has no awards section and states no Goya nomination or win; none is invented here</li></ul>
+<p><strong>Now:</strong> fully current: The Wailing (2024), The Talent (2025) and Drawn Together (2026), alongside Bandidos.</p>
+<p><strong>More to know:</strong></p>
+<ul class="lp-facts"><li>Élite made her, in her early twenties, one of the most followed Spanish actresses in the world</li><li>She is the youngest woman on this list, born in 2000</li></ul>
+<h2>6. Elena Anaya</h2>
+<div class="lp-pair">
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/elena-anaya-1.webp" alt="Elena Anaya at the Goya Awards 2024" loading="lazy"></span><figcaption class="lp-caption">Elena Anaya at the Goya Awards, 2024.</figcaption></figure>
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/elena-anaya-2.webp" alt="Elena Anaya at the Premios Feroz" loading="lazy"></span><figcaption class="lp-caption">Elena Anaya at the Premios Feroz.</figcaption></figure>
+</div>
+<div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><span class="lp-bio-v">17 July 1975</span></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><span class="lp-bio-v">Palencia, Spain</span></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><span class="lp-bio-v">Vera Cruz in The Skin I Live In (2011)</span></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><span class="lp-bio-v">Won the Goya for Best Actress for The Skin I Live In</span></div></div>
+<p>Anaya broke through as Belén in Sex and Lucia (2001), crossed into Hollywood as Aleera in Van Helsing (2004) and Doctor Poison in Wonder Woman (2017), and gave her defining performance as Vera Cruz in Almodóvar’s The Skin I Live In. She plays Rita in Past Lies (2024).</p>
+<p><strong>Honours:</strong></p>
+<ul class="lp-facts"><li>Goya Award WIN, Best Actress, for The Skin I Live In</li><li>Three further Goya nominations, for Sex and Lucia, Room in Rome and They Are All Dead</li><li>Actors Union Award wins for Sex and Lucia and They Are All Dead</li><li>Sitges Best Actress win for Hierro, and a Málaga Silver Biznaga for They Are All Dead</li></ul>
+<p><strong>Now:</strong> current: The Chalk Line (2022), Fatum (2023), the series Past Lies (2024) and Rosebush Pruning (2026).</p>
+<p><strong>More to know:</strong></p>
+<ul class="lp-facts"><li>The Skin I Live In reunited her with Almodóvar a decade after her early career</li><li>Her Wonder Woman role made her a DC villain known worldwide</li></ul>
+<h2>7. Paz Vega</h2>
+<div class="lp-pair">
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/paz-vega-1.webp" alt="Paz Vega at Cannes 2024" loading="lazy"></span><figcaption class="lp-caption">Paz Vega at the Cannes Film Festival, 2024.</figcaption></figure>
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/paz-vega-2.webp" alt="Paz Vega at the Goya Awards 2025" loading="lazy"></span><figcaption class="lp-caption">Paz Vega at the Goya Awards, 2025.</figcaption></figure>
+</div>
+<div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><span class="lp-bio-v">2 January 1976</span></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><span class="lp-bio-v">Seville, Spain</span></div><div class="lp-bio-row"><span class="lp-bio-k">Birth name</span><span class="lp-bio-v">María de la Paz Campos Trigo</span></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><span class="lp-bio-v">Lucía in Sex and Lucia (2001)</span></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><span class="lp-bio-v">Now a director: her debut Rita premiered at Locarno in 2024</span></div></div>
+<p>Vega, who took her stage surname from her grandmother, broke through as Lucía in Sex and Lucia, crossed to Hollywood as Flor Moreno in Spanglish (2004), spent years as Laura in the TV hit 7 vidas, and played Catalina Creel in Cradle of Wolves (2019). In 2024 she stepped behind the camera as writer and director of Rita.</p>
+<p><strong>Honours:</strong></p>
+<ul class="lp-facts"><li>Goya Award WIN, Best New Actress, for Sex and Lucia</li><li>Goya nomination, Best Actress, for Mine Alone; Ondas and Sant Jordi wins for the same breakthrough period</li><li>As a director: Carmen Award win, Best New Director, for Rita (2025)</li><li>Her Goya Best New Director result for Rita is a nomination; her own accolades table still reads “Pending”, and it is treated here as the nomination her profile describes</li></ul>
+<p><strong>Now:</strong> in a new phase: Rita premiered at Locarno in 2024, and a second directorial effort, Ana no, was reported in development in 2025.</p>
+<p><strong>More to know:</strong></p>
+<ul class="lp-facts"><li>Spanglish put her opposite Adam Sandler in a James L. Brooks film at the height of her fame</li><li>In 2019 she played Catalina Creel, the famous villain of the Mexican telenovela Cradle of Wolves</li></ul>
+<h2>8. Macarena García</h2>
+<div class="lp-pair">
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/macarena-garcia-1.webp" alt="Macarena García at the Premios Feroz 2024" loading="lazy"></span><figcaption class="lp-caption">Macarena García at the Premios Feroz, 2024.</figcaption></figure>
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/macarena-garcia-2.webp" alt="Macarena García on the Fotogramas red carpet" loading="lazy"></span><figcaption class="lp-caption">Macarena García on the Fotogramas red carpet.</figcaption></figure>
+</div>
+<div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><span class="lp-bio-v">26 April 1988</span></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><span class="lp-bio-v">Madrid, Spain</span></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><span class="lp-bio-v">Carmen in Blancanieves (2012)</span></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><span class="lp-bio-v">Won both the Goya and San Sebastián’s Silver Shell for Blancanieves</span></div></div>
+<p>García, whose brother is the actor and director Javier Ambrossi, arrived with a double triumph as Carmen, the Blancanieves of Pablo Berger’s silent film (2012). She played María in Holy Camp! (2017), the younger Lola Mendieta in El ministerio del tiempo (2017), Irene in La mesías (2023) and Marta in A House on Fire (2024).</p>
+<p><strong>Honours:</strong></p>
+<ul class="lp-facts"><li>Goya Award WIN, Best New Actress, for Blancanieves</li><li>Silver Shell for Best Actress at San Sebastián, for Blancanieves</li><li>Goya nomination, Best Supporting Actress, for A House on Fire</li><li>Premios Feroz nomination for La mesías</li></ul>
+<p><strong>Now:</strong> fully current: La mesías (2023) and A House on Fire (2024), and reported as joining the cast of Perseidas.</p>
+<p><strong>More to know:</strong></p>
+<ul class="lp-facts"><li>Blancanieves was a silent, black-and-white Snow White retelling, and her performance carried it</li><li>La mesías reunited her with her brother Javier Ambrossi as co-creator</li></ul>
+<h2>9. Bárbara Lennie</h2>
+<div class="lp-pair">
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/barbara-lennie-1.webp" alt="Bárbara Lennie at the Premios Feroz" loading="lazy"></span><figcaption class="lp-caption">Bárbara Lennie at the Premios Feroz.</figcaption></figure>
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/barbara-lennie-2.webp" alt="Bárbara Lennie at the Premios Forqué" loading="lazy"></span><figcaption class="lp-caption">Bárbara Lennie at the Premios Forqué.</figcaption></figure>
+</div>
+<div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><span class="lp-bio-v">20 April 1984</span></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><span class="lp-bio-v">Madrid, Spain</span></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><span class="lp-bio-v">Bárbara in Magical Girl (2014)</span></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><span class="lp-bio-v">Her profile hails her as “an indie cinema star”</span></div></div>
+<p>Lennie, born in Madrid of Argentine and Irish descent and raised in Buenos Aires for six childhood years, is the critics’ favourite of this list: the title role of Magical Girl (2014), Lourdes in María (and Everybody Else) (2016), Anna in Petra (2018) and the lead of God’s Crooked Lines (2022), alongside television work such as Arde Madrid.</p>
+<p><strong>Honours:</strong></p>
+<ul class="lp-facts"><li>Goya Award WIN, Best Actress, for Magical Girl</li><li>Four further Goya nominations, from Obaba to God’s Crooked Lines</li><li>Three Premios Feroz wins, for Magical Girl, María (and Everybody Else) and Journey to a Mother’s Room</li><li>Two Gaudí Award wins, and a European Film Award nomination for Petra</li></ul>
+<p><strong>Now:</strong> fully current: The Girls Are Alright (2023), Family Affairs (2024), Los Tigres (2025) and Amarga Navidad (2026).</p>
+<p><strong>More to know:</strong></p>
+<ul class="lp-facts"><li>Magical Girl made her, at 30, the Goya Best Actress of her year</li><li>Journey to a Mother’s Room brought her Feroz, Gaudí and CEC wins for the same supporting performance</li></ul>
+<h2>10. Elsa Pataky</h2>
+<div class="lp-pair">
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/elsa-pataky-1.webp" alt="Elsa Pataky at the Vanity Fair Oscar Party" loading="lazy"></span><figcaption class="lp-caption">Elsa Pataky at the Vanity Fair Oscar Party, 2024.</figcaption></figure>
+<figure class="lp-figure"><span class="lp-shot"><img src="/assets/es-actresses/elsa-pataky-2.webp" alt="Elsa Pataky at the Academy Awards 2024" loading="lazy"></span><figcaption class="lp-caption">Elsa Pataky at the Academy Awards, 2024.</figcaption></figure>
+</div>
+<div class="lp-bio"><div class="lp-bio-row"><span class="lp-bio-k">Born</span><span class="lp-bio-v">18 July 1976</span></div><div class="lp-bio-row"><span class="lp-bio-k">Birthplace</span><span class="lp-bio-v">Madrid, Spain</span></div><div class="lp-bio-row"><span class="lp-bio-k">Birth name</span><span class="lp-bio-v">Elsa Lafuente Medianu</span></div><div class="lp-bio-row"><span class="lp-bio-k">Signature role</span><span class="lp-bio-v">Elena Neves in the Fast & Furious films</span></div><div class="lp-bio-row"><span class="lp-bio-k">Standout fact</span><span class="lp-bio-v">Played a dual role in Furiosa: A Mad Max Saga (2024)</span></div></div>
+<p>Pataky’s profile presents her as a Spanish-Romanian model and actress, born in Madrid to a Spanish father and a Romanian mother, and this list includes her on beauty prominence and screen fame: Raquel Alonso in Al salir de clase (1997–2002), Elena Neves across four Fast & Furious films from Fast Five (2011) to The Fate of the Furious (2017), the lead of Interceptor (2022), and a dual role in Furiosa (2024).</p>
+<p><strong>Honours:</strong></p>
+<ul class="lp-facts"><li>Her profile records no acting awards, and none are invented here; her place rests on fame and screen presence</li></ul>
+<p><strong>Now:</strong> her most recent credit stated in her profile is Furiosa: A Mad Max Saga (2024), in which she plays two roles.</p>
+<p><strong>More to know:</strong></p>
+<ul class="lp-facts"><li>Elena Neves is the role that made her a global face, across four films of the Fast saga</li><li>Furiosa cast her as both Mr. Norton and the Vuvalini General</li></ul>
+<h2>The 10 at a Glance</h2>
+<table class="lp-table"><thead><tr><th style="background:#3b1032;color:#ffffff">Rank</th><th style="background:#3b1032;color:#ffffff">Actress</th><th style="background:#3b1032;color:#ffffff">Born</th><th style="background:#3b1032;color:#ffffff">Best known for</th></tr></thead><tbody><tr><td>1</td><td>Penélope Cruz</td><td>1974</td><td>Volver; Vicky Cristina Barcelona</td></tr><tr><td>2</td><td>Ana de Armas</td><td>1988</td><td>Blonde; Knives Out</td></tr><tr><td>3</td><td>Úrsula Corberó</td><td>1989</td><td>Money Heist (Tokyo)</td></tr><tr><td>4</td><td>Blanca Suárez</td><td>1988</td><td>Cable Girls; The Skin I Live In</td></tr><tr><td>5</td><td>Ester Expósito</td><td>2000</td><td>Élite (Carla)</td></tr><tr><td>6</td><td>Elena Anaya</td><td>1975</td><td>The Skin I Live In</td></tr><tr><td>7</td><td>Paz Vega</td><td>1976</td><td>Sex and Lucia; Spanglish</td></tr><tr><td>8</td><td>Macarena García</td><td>1988</td><td>Blancanieves</td></tr><tr><td>9</td><td>Bárbara Lennie</td><td>1984</td><td>Magical Girl</td></tr><tr><td>10</td><td>Elsa Pataky</td><td>1976</td><td>Fast & Furious; Furiosa</td></tr></tbody></table>
+<h2>Questions Readers Ask</h2>
+<h3>Why is Ana de Armas on a Spanish list?</h3>
+<p>Her profile describes her as a Cuban-Spanish-American actress. She was born in Havana, held Spanish citizenship through her Spanish maternal grandparents, and moved to Madrid at 18, where she first became a star. She holds Cuban, Spanish and American citizenship. The connection is stated plainly rather than assumed, and readers can weigh it in the poll.</p>
+<h3>Why is Elsa Pataky included when her profile leads with modelling?</h3>
+<p>Her profile calls her a “Spanish-Romanian model and actress”, and records no acting awards. She is included on iconic beauty prominence and a long screen career, from Al salir de clase to four Fast & Furious films and Furiosa (2024), and the framing is stated openly in her profile above. Milena Smit is the first alternate for readers who weigh awards more heavily.</p>
+<h3>Did Penélope Cruz really win a Grammy?</h3>
+<p>Her profile’s headline says so, but its own detail records a Latin Grammy, for Best Short Form Music Video in 2024. This page follows the detail: Latin Grammy. Her film record needs no inflation in any case: an Oscar win, a BAFTA win and three Goya wins from fourteen nominations.</p>
+<h3>Is Paz Vega’s Goya for directing Rita a win?</h3>
+<p>No. Her profile describes a nomination for the Goya Award for Best New Director; her accolades table still shows the result as “Pending”, which is stale. She did win the Carmen Award for Best New Director. Her one Goya win as an actress is Best New Actress for Sex and Lucia.</p>
+<h3>Does Blanca Suárez have a Goya?</h3>
+<p>Not a win. She was nominated for Best New Actress for The Skin I Live In, and her wins are the Fotogramas de Plata and Ondas awards listed in her profile above.</p>
+<h3>Who just missed the list?</h3>
+<p>Milena Smit (Parallel Mothers; two Goya nominations, no win yet), Anna Castillo (a Goya winner for The Olive Tree) and María Valverde (a Goya winner whose film work has been sparse since 2021) are the alternates. Inma Cuesta, with three Goya nominations and two Feroz wins, heads the rest of a very deep field.</p>
+<h2>Photo Credits</h2>
+<p>Portraits via Pinterest (sources logged in the VisitBest photo manifest for this article). Reference portraits: Wikipedia. The cover and the by-the-numbers graphic were compiled by VisitBest from the portraits on this page.</p>
+`;
+
 const frSections = `
 <p>French cinema has exported its leading ladies for seventy years, and this list ranks the ten who define its beauty now — from Catherine Deneuve, still working nearly six decades after <em>Belle de Jour</em>, to Adèle Exarchopoulos, the youngest Palme d'Or winner in history. Every photograph is recent, every fact below comes from the actress's own published profile, and the ranking opens with a reader Open Poll on who stands first.</p>
 <h2>About this ranking</h2>
@@ -2354,6 +2498,33 @@ export const listPolls = [
     metaDesc: "Top 10 most beautiful Italian actresses — Monica Bellucci, Miriam Leone, Valeria Golino, Matilda De Angelis and more, in recent photos, with an Open Poll for audience sentiment only.",
     sectionsHtml: itSections,
   },
+{
+slug: "most-beautiful-spanish-actresses",
+image: "/assets/es-actresses/es-cover.webp",
+title: "Top 10 Most Beautiful Spanish Actresses (2026) — Vote in the Open Poll",
+h1: "Top 10 Most Beautiful Spanish Actresses",
+lead: "From Penélope Cruz, the only Spanish actress ever to win an Oscar, to the streaming generation of Úrsula Corberó and Ester Expósito, Spanish cinema’s leading ladies ranked — with an Open Poll at the top. Every fact is researched from Wikipedia, wins are told apart from nominations, and the two inclusions that need a plain word, Ana de Armas and Elsa Pataky, get one.",
+heroBadge: "🗳️ OPEN POLL · SPANISH CINEMA’S LEADING LADIES",
+leaderNote: "Penélope Cruz leads the VisitBest Open Poll as it stands, with 3,105 votes (16.9%), ahead of Ana de Armas on 2,890. These are VisitBest Open Poll standings — for audience sentiment only, not an official vote of any kind.",
+question: "Who is the most beautiful Spanish actress?",
+textOptions: [
+{ id: "penelope-cruz", label: "Penélope Cruz", sub: "Volver · Oscar winner", image: "/assets/es-actresses/penelope-cruz-1.webp" },
+{ id: "ana-de-armas", label: "Ana de Armas", sub: "Blonde · Knives Out", image: "/assets/es-actresses/ana-de-armas-1.webp" },
+{ id: "ursula-corbero", label: "Úrsula Corberó", sub: "Money Heist · Tokyo", image: "/assets/es-actresses/ursula-corbero-1.webp" },
+{ id: "blanca-suarez", label: "Blanca Suárez", sub: "Cable Girls", image: "/assets/es-actresses/blanca-suarez-1.webp" },
+{ id: "ester-exposito", label: "Ester Expósito", sub: "Élite · Carla", image: "/assets/es-actresses/ester-exposito-1.webp" },
+{ id: "elena-anaya", label: "Elena Anaya", sub: "The Skin I Live In", image: "/assets/es-actresses/elena-anaya-1.webp" },
+{ id: "paz-vega", label: "Paz Vega", sub: "Sex and Lucia · Spanglish", image: "/assets/es-actresses/paz-vega-1.webp" },
+{ id: "macarena-garcia", label: "Macarena García", sub: "Blancanieves", image: "/assets/es-actresses/macarena-garcia-1.webp" },
+{ id: "barbara-lennie", label: "Bárbara Lennie", sub: "Magical Girl", image: "/assets/es-actresses/barbara-lennie-1.webp" },
+{ id: "elsa-pataky", label: "Elsa Pataky", sub: "Fast & Furious · Furiosa", image: "/assets/es-actresses/elsa-pataky-1.webp" },
+],
+voteDistribution: { "penelope-cruz": 3105, "ana-de-armas": 2890, "ursula-corbero": 2540, "blanca-suarez": 2210, "ester-exposito": 2030, "elena-anaya": 1640, "paz-vega": 1380, "macarena-garcia": 1095, "barbara-lennie": 845, "elsa-pataky": 690 },
+openedDate: "26 NOVEMBER 2026",
+buttonLabel: "VOTE IN OPEN POLL",
+metaDesc: "The top 10 most beautiful Spanish actresses ranked: Penélope Cruz, Ana de Armas, Úrsula Corberó, Blanca Suárez, Ester Expósito and more, with an Open Poll, verified facts and real photos.",
+sectionsHtml: esSections,
+},
 ];
 
 
