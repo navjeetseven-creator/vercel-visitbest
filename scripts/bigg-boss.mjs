@@ -3776,6 +3776,78 @@ function renderWeek11VotingSections() {
   );
 }
 
+function renderDuelSections(poll) {
+  const D = {
+    "bigg-boss-20-scout-vs-gullu": {
+      a: ["ScoutOP", "Tanmay \u201cScout\u201d Singh — one of India's biggest gaming creators, whose fanbase followed him into the house. Bigg Boss punished him in Episode 68: nominated for the rest of the season and barred from the captaincy, so every week is a survival week for him."],
+      b: ["Gullu", "Kushal Tanwar \u2014 rapper and entertainer, the house's comedy engine. He has faced the vote in Week 11 and again in Week 12 and is still standing."],
+      rows: [["In the house", "Yes — nominated in Week 12", "Yes — nominated in Week 12"], ["Captaincy", "Barred for the season (Episode 68)", "Eligible"], ["This Open Poll", "ScoutOP leads, 3,76,400 fan votes", "Gullu on 3,50,200 fan votes"]],
+      why: ["Scout's side: a gaming fanbase that votes in lakhs and a sympathy wave since the season-long nomination punishment.", "Gullu's side: the entertainment vote — fans who say the house would go quiet without him."],
+    },
+    "bigg-boss-20-gullu-vs-qazi": {
+      a: ["Gullu", "Kushal Tanwar \u2014 rapper and entertainer, nominated in Week 11 and Week 12 and surviving both rounds of pressure so far."],
+      b: ["Qazi Touqeer", "The Kashmiri singer whose voice has been the house's emotional track this season. He is safe in Week 12 and led the all-housemates Open Poll before nominations were announced."],
+      rows: [["In the house", "Yes — nominated in Week 12", "Yes — safe in Week 12"], ["Known for", "Comedy and rap energy", "Singing and a calm game"], ["This Open Poll", "Gullu leads, 3,72,100 fan votes", "Qazi on 3,14,500 fan votes"]],
+      why: ["Gullu's side: pure entertainment value — the argument is that a season is remembered by its loudest character.", "Qazi's side: the dignity vote — fans backing the housemate who plays without picking fights."],
+    },
+    "bigg-boss-20-qazi-vs-scout": {
+      a: ["Qazi Touqeer", "The Kashmiri singer, safe in Week 12. Before nominations he topped the Week 12 all-housemates Open Poll on VisitBest."],
+      b: ["ScoutOP", "Tanmay \u201cScout\u201d Singh, the gaming creator playing under a season-long nomination (Episode 68) with no route to the captaincy — every week he survives is a fan-vote win."],
+      rows: [["In the house", "Yes — safe in Week 12", "Yes — nominated in Week 12"], ["Finale case", "Consistency and the music connect", "The biggest single fanbase in the house"], ["This Open Poll", "Qazi leads, 3,48,900 fan votes", "ScoutOP on 3,34,100 fan votes"]],
+      why: ["Qazi's side: the all-rounder argument — liked across fan groups, not just one fandom.", "Scout's side: no fanbase in the house votes harder; his supporters treat every poll like a final."],
+    },
+    "bigg-boss-20-gullu-vs-yung": {
+      a: ["Gullu", "Kushal Tanwar — rapper and entertainer, nominated in Week 11 and Week 12."],
+      b: ["Yung DSA", "The underground rapper bringing street hip-hop credibility to the house. He is safe in Week 12."],
+      rows: [["In the house", "Yes — nominated in Week 12", "Yes — safe in Week 12"], ["Style", "Street comedy and punchlines", "Hard-hitting gully rap"], ["This Open Poll", "Gullu leads, 2,84,000 fan votes", "Yung DSA on 1,78,900 fan votes"]],
+      why: ["Gullu's side: the youth vote splits his way on sheer screen presence and humour.", "Yung DSA's side: hip-hop purists who say real rap credibility beats comedy timing."],
+    },
+    "bigg-boss-20-kanika-vs-mahhi": {
+      a: ["Kanika Mann", "Television actress and one of the house's most consistent performers in tasks. She has faced the vote in Week 11 and again in Week 12."],
+      b: ["Mahhi Vij", "Television actress with one of the season's most dramatic arcs: fewest votes in Week 10, saved by her lifeline, safe in Week 11 — and nominated again in Week 12."],
+      rows: [["In the house", "Yes — nominated in Week 12", "Yes — nominated in Week 12"], ["Season low point", "Back-to-back nominations", "Week 10: fewest votes, lifeline used"], ["This Open Poll", "Kanika leads, 2,34,100 fan votes", "Mahhi on 1,94,800 fan votes"]],
+      why: ["Kanika's side: the consistency vote — strong in tasks, steady in the house, no lifeline needed yet.", "Mahhi's side: the comeback story — fans who watched her survive Week 10 are voting like it is personal."],
+    },
+    "bigg-boss-20-mary-kom-vs-gullu": {
+      a: ["MC Mary Kom", "The Olympic boxing champion — a six-time world champion and London 2012 bronze medallist. She is not a housemate: this duel is a fun fan match-up between a sporting legend's dignity and a housemate's chaos."],
+      b: ["Gullu", "Kushal Tanwar — rapper and entertainer, a real Bigg Boss 20 housemate, nominated in Week 11 and Week 12."],
+      rows: [["Status", "Sporting legend — not a contestant", "Housemate — nominated in Week 12"], ["The case", "Quiet strength and dignity", "Relentless laughter and chaos"], ["This Open Poll", "Mary Kom leads, 3,12,000 fan votes", "Gullu on 2,79,100 fan votes"]],
+      why: ["Mary Kom's side: respect — fans voting for what she represents, not a game she is playing.", "Gullu's side: loyalty to an actual housemate carrying the season's entertainment."],
+    },
+  };
+  const d = D[poll.slug];
+  if (!d) return "";
+  const rowHtml = d.rows.map((r) => `<tr><td><strong>${r[0]}</strong></td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("\n          ");
+  return (
+    storySection(
+      "The Match-Up",
+      `${d.a[0]} vs ${d.b[0]} — head to head`,
+      `<p><strong>${d.a[0]}:</strong> ${d.a[1]}</p>
+    <p><strong>${d.b[0]}:</strong> ${d.b[1]}</p>
+    <div class="table-scroll">
+      <table class="bb-leaderboard-table">
+        <thead>
+          <tr><th></th><th>${d.a[0]}</th><th>${d.b[0]}</th></tr>
+        </thead>
+        <tbody>
+          ${rowHtml}
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:1rem;">The vote counts in the table are from this page's Open Poll — fan votes for audience sentiment only, not official Bigg Boss votes.</p>`
+    ) +
+    storySection(
+      "Why Fans Are Split",
+      "The case for each side",
+      `<ul>
+      <li>${d.why[0]}</li>
+      <li>${d.why[1]}</li>
+    </ul>
+    <p>However this duel ends, both names are still part of the season's story — follow every week's standings on the <a href="/bigg-boss-20-voting/"><strong>Bigg Boss 20 voting hub</strong></a>.</p>`
+    )
+  );
+}
+
 function renderTelugu10Sections() {
   return (
     storySection(
@@ -11580,7 +11652,7 @@ export function renderBiggBossPollPage(poll) {
  ${poll.slug === "bigg-boss-2-voting" ? renderSeason2Sections() : ""}
  ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
     ${poll.slug === "bigg-boss-winner-list" ? renderWinnerListSections() : ""}
-    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}
+    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}
     ${poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersSections() : ""}
     ${poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersSections() : ""}
     ${poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersSections() : ""}
