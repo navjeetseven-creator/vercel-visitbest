@@ -1321,6 +1321,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-17-voting",
+    factCardsTitle: "Season 17 — key facts",
+    factCards: [{"name": "🏆 Munawar Faruqui", "rows": [["Result", "Winner"], ["Runner-up", "Abhishek Kumar"], ["Season ran", "15 October 2023 – 28 January 2024"], ["Host", "Salman Khan"], ["Aired on", "Colors TV · JioCinema"]]}, {"name": "Abhishek Kumar", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Munawar Faruqui"], ["Season ran", "15 October 2023 – 28 January 2024"], ["Host", "Salman Khan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-17-voting.jpg",
     title: "Bigg Boss 17 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 17 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1351,6 +1353,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-19-voting",
+    factCardsTitle: "Season 19 — key facts",
+    factCards: [{"name": "🏆 Gaurav Khanna", "rows": [["Result", "Winner"], ["Runner-up", "Farrhana Bhatt"], ["Season ran", "24 August 2025 – 7 December 2025"], ["Host", "Salman Khan"], ["Aired on", "Colors TV · JioHotstar"], ["Winner’s prize", "₹50 lakh"]]}, {"name": "Farrhana Bhatt", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Gaurav Khanna"], ["Season ran", "24 August 2025 – 7 December 2025"], ["Host", "Salman Khan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-19-voting.jpg",
     title: "Bigg Boss 19 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 19 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1381,6 +1385,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-16-voting",
+    factCardsTitle: "Season 16 — key facts",
+    factCards: [{"name": "🏆 MC Stan", "rows": [["Result", "Winner"], ["Runner-up", "Shiv Thakare"], ["Season ran", "1 October 2022 – 12 February 2023"], ["Host", "Salman Khan"], ["Aired on", "Colors TV · Voot"]]}, {"name": "Shiv Thakare", "rows": [["Result", "Runner-up"], ["Lost the finale to", "MC Stan"], ["Season ran", "1 October 2022 – 12 February 2023"], ["Host", "Salman Khan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-16-voting.jpg",
     title: "Bigg Boss 16 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 16 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1411,6 +1417,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-13-voting",
+    factCardsTitle: "Season 13 — key facts",
+    factCards: [{"name": "🏆 Sidharth Shukla", "rows": [["Result", "Winner"], ["Runner-up", "Asim Riaz"], ["Season ran", "29 September 2019 – 15–16 February 2020"], ["Host", "Salman Khan"], ["Aired on", "Colors TV"]]}, {"name": "Asim Riaz", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Sidharth Shukla"], ["Season ran", "29 September 2019 – 15–16 February 2020"], ["Host", "Salman Khan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-13-voting.jpg",
     title: "Bigg Boss 13 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 13 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1443,6 +1451,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-18-voting",
+    factCardsTitle: "Season 18 — key facts",
+    factCards: [{"name": "🏆 Karan Veer Mehra", "rows": [["Result", "Winner"], ["Runner-up", "Vivian Dsena"], ["Season ran", "6 October 2024 – 19 January 2025"], ["Host", "Salman Khan"], ["Aired on", "Colors TV · JioCinema"]]}, {"name": "Vivian Dsena", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Karan Veer Mehra"], ["Season ran", "6 October 2024 – 19 January 2025"], ["Host", "Salman Khan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-18-voting.jpg",
     title: "Bigg Boss 18 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 18 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1475,6 +1485,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-ott-1-voting",
+    factCardsTitle: "OTT Season 1 — key facts",
+    factCards: [{"name": "🏆 Divya Agarwal", "rows": [["Result", "Winner"], ["Runner-up", "Nishant Bhat"], ["Season ran", "8 August 2021 – 18 September 2021"], ["Host", "Karan Johar"], ["Aired on", "Voot"]]}, {"name": "Nishant Bhat", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Divya Agarwal"], ["Season ran", "8 August 2021 – 18 September 2021"], ["Host", "Karan Johar"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-ott-1-voting.jpg",
     title: "Bigg Boss OTT 1 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss OTT 1 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1505,6 +1517,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-ott-2-voting",
+    factCardsTitle: "OTT Season 2 — key facts",
+    factCards: [{"name": "🏆 Elvish Yadav", "rows": [["Result", "Winner"], ["Runner-up", "Abhishek Malhan"], ["Season ran", "17 June 2023 – 14 August 2023"], ["Host", "Salman Khan"], ["Aired on", "JioCinema"]]}, {"name": "Abhishek Malhan", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Elvish Yadav"], ["Season ran", "17 June 2023 – 14 August 2023"], ["Host", "Salman Khan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-ott-2-voting.jpg",
     title: "Bigg Boss OTT 2 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss OTT 2 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1535,6 +1549,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-ott-3-voting",
+    factCardsTitle: "OTT Season 3 — key facts",
+    factCards: [{"name": "🏆 Sana Makbul", "rows": [["Result", "Winner"], ["Runner-up", "Naezy"], ["Season ran", "21 June 2024 – 2 August 2024"], ["Host", "Anil Kapoor"], ["Aired on", "JioCinema Premium"]]}, {"name": "Naezy", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Sana Makbul"], ["Season ran", "21 June 2024 – 2 August 2024"], ["Host", "Anil Kapoor"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-ott-3-voting.jpg",
     title: "Bigg Boss OTT 3 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss OTT 3 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1565,6 +1581,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-15-voting",
+    factCardsTitle: "Season 15 — key facts",
+    factCards: [{"name": "🏆 Tejasswi Prakash", "rows": [["Result", "Winner"], ["Runner-up", "Pratik Sehajpal"], ["Season ran", "2 October 2021 – 30 January 2022"], ["Host", "Salman Khan"], ["Aired on", "Colors TV · Voot Select"]]}, {"name": "Pratik Sehajpal", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Tejasswi Prakash"], ["Season ran", "2 October 2021 – 30 January 2022"], ["Host", "Salman Khan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-15-voting.jpg",
     title: "Bigg Boss 15 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 15 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1597,6 +1615,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-14-voting",
+    factCardsTitle: "Season 14 — key facts",
+    factCards: [{"name": "🏆 Rubina Dilaik", "rows": [["Result", "Winner"], ["Runner-up", "Rahul Vaidya"], ["Season ran", "3 October 2020 – 21 February 2021"], ["Host", "Salman Khan"], ["Aired on", "Colors TV · Voot Select"]]}, {"name": "Rahul Vaidya", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Rubina Dilaik"], ["Season ran", "3 October 2020 – 21 February 2021"], ["Host", "Salman Khan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-14-voting.jpg",
     title: "Bigg Boss 14 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 14 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1627,6 +1647,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-12-voting",
+    factCardsTitle: "Season 12 — key facts",
+    factCards: [{"name": "🏆 Dipika Kakar", "rows": [["Result", "Winner"], ["Runner-up", "Sreesanth"], ["Season ran", "16 September 2018 – 30 December 2018"], ["Host", "Salman Khan"], ["Aired on", "Colors TV"]]}, {"name": "Sreesanth", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Dipika Kakar"], ["Season ran", "16 September 2018 – 30 December 2018"], ["Host", "Salman Khan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-12-voting.jpg",
     title: "Bigg Boss 12 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 12 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1657,6 +1679,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-11-voting",
+    factCardsTitle: "Season 11 — key facts",
+    factCards: [{"name": "🏆 Shilpa Shinde", "rows": [["Result", "Winner"], ["Runner-up", "Hina Khan"], ["Season ran", "1 October 2017 – 14 January 2018"], ["Host", "Salman Khan"], ["Aired on", "Colors TV · Voot"]]}, {"name": "Hina Khan", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Shilpa Shinde"], ["Season ran", "1 October 2017 – 14 January 2018"], ["Host", "Salman Khan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-11-voting.jpg",
     title: "Bigg Boss 11 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 11 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1685,6 +1709,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-10-voting",
+    factCardsTitle: "Season 10 — key facts",
+    factCards: [{"name": "🏆 Manveer Gurjar", "rows": [["Result", "Winner"], ["Runner-up", "Bani Judge"], ["Season ran", "16 October 2016 – 29 January 2017"], ["Host", "Salman Khan"], ["Aired on", "Colors TV · Voot"]]}, {"name": "Bani Judge", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Manveer Gurjar"], ["Season ran", "16 October 2016 – 29 January 2017"], ["Host", "Salman Khan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-10-voting.jpg",
     title: "Bigg Boss 10 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 10 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1713,6 +1739,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-9-voting",
+    factCardsTitle: "Season 9 — key facts",
+    factCards: [{"name": "🏆 Prince Narula", "rows": [["Result", "Winner"], ["Runner-up", "Rishabh Sinha"], ["Season ran", "11 October 2015 – 23 January 2016"], ["Host", "Salman Khan"], ["Aired on", "Colors TV"]]}, {"name": "Rishabh Sinha", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Prince Narula"], ["Season ran", "11 October 2015 – 23 January 2016"], ["Host", "Salman Khan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-9-voting.jpg",
     title: "Bigg Boss 9 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 9 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1741,6 +1769,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-8-voting",
+    factCardsTitle: "Season 8 — key facts",
+    factCards: [{"name": "🏆 Gautam Gulati", "rows": [["Result", "Winner"], ["Runner-up", "Karishma Tanna"], ["Season ran", "21 September 2014 – 31 January 2015"], ["Host", "Salman Khan · Farah Khan (Halla Bol)"], ["Aired on", "Colors TV"]]}, {"name": "Karishma Tanna", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Gautam Gulati"], ["Season ran", "21 September 2014 – 31 January 2015"], ["Host", "Salman Khan · Farah Khan (Halla Bol)"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-8-voting.jpg",
     title: "Bigg Boss 8 Voting — Fan Re-Vote Open Poll, Champions, Halla Bol Result & Finalists",
     h1: "Bigg Boss 8 Voting — Fan Re-Vote, Champions & Finalists",
@@ -1771,6 +1801,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-7-voting",
+    factCardsTitle: "Season 7 — key facts",
+    factCards: [{"name": "🏆 Gauahar Khan", "rows": [["Result", "Winner"], ["Runner-up", "Tanishaa Mukerji"], ["Season ran", "15 September 2013 – 28 December 2013"], ["Host", "Salman Khan"], ["Aired on", "Colors TV"]]}, {"name": "Tanishaa Mukerji", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Gauahar Khan"], ["Season ran", "15 September 2013 – 28 December 2013"], ["Host", "Salman Khan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-7-voting.jpg",
     title: "Bigg Boss 7 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 7 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1799,6 +1831,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-6-voting",
+    factCardsTitle: "Season 6 — key facts",
+    factCards: [{"name": "🏆 Urvashi Dholakia", "rows": [["Result", "Winner"], ["Runner-up", "Imam Siddique"], ["Season ran", "7 October 2012 – 12 January 2013"], ["Host", "Salman Khan"], ["Aired on", "Colors TV"]]}, {"name": "Imam Siddique", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Urvashi Dholakia"], ["Season ran", "7 October 2012 – 12 January 2013"], ["Host", "Salman Khan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-6-voting.jpg",
     title: "Bigg Boss 6 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 6 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1829,6 +1863,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-5-voting",
+    factCardsTitle: "Season 5 — key facts",
+    factCards: [{"name": "🏆 Juhi Parmar", "rows": [["Result", "Winner"], ["Runner-up", "Mahek Chahal"], ["Season ran", "2 October 2011 – 7 January 2012"], ["Host", "Sanjay Dutt and Salman Khan"], ["Aired on", "Colors TV"]]}, {"name": "Mahek Chahal", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Juhi Parmar"], ["Season ran", "2 October 2011 – 7 January 2012"], ["Host", "Sanjay Dutt and Salman Khan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-5-voting.jpg",
     title: "Bigg Boss 5 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 5 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1859,6 +1895,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-4-voting",
+    factCardsTitle: "Season 4 — key facts",
+    factCards: [{"name": "🏆 Shweta Tiwari", "rows": [["Result", "Winner"], ["Runner-up", "Dalip Singh Rana (The Great Khali)"], ["Season ran", "3 October 2010 – 8 January 2011"], ["Host", "Salman Khan"], ["Aired on", "Colors TV"], ["Winner’s prize", "₹1 crore"]]}, {"name": "Dalip Singh Rana (The Great Khali)", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Shweta Tiwari"], ["Season ran", "3 October 2010 – 8 January 2011"], ["Host", "Salman Khan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-4-voting.jpg",
     title: "Bigg Boss 4 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 4 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1888,6 +1926,8 @@ export const polls = [
 ,
   {
     slug: "bigg-boss-3-voting",
+    factCardsTitle: "Season 3 — key facts",
+    factCards: [{"name": "🏆 Vindu Dara Singh", "rows": [["Result", "Winner"], ["Runner-up", "Pravesh Rana"], ["Season ran", "4 October 2009 – 26 December 2009"], ["Host", "Amitabh Bachchan"], ["Aired on", "Colors TV"]]}, {"name": "Pravesh Rana", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Vindu Dara Singh"], ["Season ran", "4 October 2009 – 26 December 2009"], ["Host", "Amitabh Bachchan"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-3-voting.jpg",
     title: "Bigg Boss 3 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 3 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1916,6 +1956,8 @@ export const polls = [
   },
   {
     slug: "bigg-boss-2-voting",
+    factCardsTitle: "Season 2 — key facts",
+    factCards: [{"name": "🏆 Ashutosh Kaushik", "rows": [["Result", "Winner"], ["Runner-up", "Raja Chaudhary"], ["Season ran", "17 August 2008 – 22 November 2008"], ["Host", "Shilpa Shetty"], ["Aired on", "Colors TV"], ["Winner’s prize", "₹1 crore"]]}, {"name": "Raja Chaudhary", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Ashutosh Kaushik"], ["Season ran", "17 August 2008 – 22 November 2008"], ["Host", "Shilpa Shetty"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-2-voting.jpg",
     title: "Bigg Boss 2 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 2 Voting — Fan Re-Vote, Winner & Finalists",
@@ -1945,6 +1987,8 @@ export const polls = [
 ,
   {
     slug: "bigg-boss-1-voting",
+    factCardsTitle: "Season 1 — key facts",
+    factCards: [{"name": "🏆 Rahul Roy", "rows": [["Result", "Winner"], ["Runner-up", "Carol Gracias"], ["Season ran", "3 November 2006 – 26 January 2007"], ["Host", "Arshad Warsi"], ["Aired on", "Sony Entertainment Television"]]}, {"name": "Carol Gracias", "rows": [["Result", "Runner-up"], ["Lost the finale to", "Rahul Roy"], ["Season ran", "3 November 2006 – 26 January 2007"], ["Host", "Arshad Warsi"]]}],
     image: "/assets/bb-seasons/covers/bigg-boss-1-voting.jpg",
     title: "Bigg Boss 1 Voting — Fan Re-Vote Open Poll, Winner, Finalists & Result",
     h1: "Bigg Boss 1 Voting — Fan Re-Vote, Winner & Finalists",
