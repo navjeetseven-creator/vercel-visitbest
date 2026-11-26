@@ -1325,6 +1325,65 @@ const idSections = `
 <p>Honourable mentions: Adinia Wirasti, a two-time Citra Award winner; Acha Septriasa, who won the Citra for <em>Test Pack</em>; and Raisa, one of Indonesia's biggest singers — her profile lists only two film roles, neither after 2016, so she is a singer first and sits outside an actresses list.</p>
 `;
 
+const gbSections = `
+<p>British actresses run world cinema's glamour end as well as its prestige end: an Oscar winner from Reading, a Marvel assassin from Oxford, the face of <em>The Queen's Gambit</em> and the detective of <em>Killing Eve</em>. This ranking weighs the complete package: a face the camera loves, the defining roles, the major honours and where each career stands today. Every fact and date below comes from the actress's own published profile; where a profile states a date two ways, or only a year, the profile here says so rather than guessing.</p>
+<h2>The 10 at a Glance</h2>
+<table class="lp-table"><thead><tr><th style="background:#3b1032;color:#ffffff">Rank</th><th style="background:#3b1032;color:#ffffff">Actress</th><th style="background:#3b1032;color:#ffffff">Born</th><th style="background:#3b1032;color:#ffffff">Best known for</th></tr></thead><tbody>
+<tr><td>1</td><td>Emily Blunt</td><td>23 February 1983, London</td><td>Oppenheimer; A Quiet Place</td></tr>
+<tr><td>2</td><td>Kate Winslet</td><td>5 October 1975, Reading</td><td>Titanic; The Reader</td></tr>
+<tr><td>3</td><td>Keira Knightley</td><td>26 March 1985, London</td><td>Pride &amp; Prejudice; Pirates of the Caribbean</td></tr>
+<tr><td>4</td><td>Florence Pugh</td><td>3 January 1996, Oxford</td><td>Little Women; Thunderbolts*</td></tr>
+<tr><td>5</td><td>Anya Taylor-Joy</td><td>16 April 1996, Miami, U.S.</td><td>The Queen's Gambit; Furiosa</td></tr>
+<tr><td>6</td><td>Vanessa Kirby</td><td>18 April, year given as 1987 or 1988, London</td><td>The Crown; Pieces of a Woman</td></tr>
+<tr><td>7</td><td>Jodie Comer</td><td>11 March 1993, Liverpool</td><td>Killing Eve; Prima Facie</td></tr>
+<tr><td>8</td><td>Rosamund Pike</td><td>1979, Hammersmith, London</td><td>Gone Girl; Saltburn</td></tr>
+<tr><td>9</td><td>Emilia Clarke</td><td>23 October 1986, London</td><td>Game of Thrones; Me Before You</td></tr>
+<tr><td>10</td><td>Carey Mulligan</td><td>28 May 1985, London</td><td>An Education; Promising Young Woman</td></tr>
+</tbody></table>
+<figure class="lp-figure"><img src="/assets/gb-actresses/gb-by-the-numbers.webp" alt="British cinema by the numbers infographic" loading="lazy"><figcaption class="lp-caption">British cinema, by the numbers.</figcaption></figure>
+<h2>1. Emily Blunt</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/gb-actresses/emily-blunt-1.webp" alt="Emily Blunt portrait" loading="lazy"><figcaption class="lp-caption">Emily Blunt in a red turtleneck studio portrait.</figcaption></figure><figure class="lp-figure"><img src="/assets/gb-actresses/emily-blunt-2.webp" alt="Emily Blunt portrait" loading="lazy"><figcaption class="lp-caption">2023 — Emily Blunt in a white gown at the Academy Awards.</figcaption></figure></div>
+<p><strong>Born:</strong> Emily Olivia Laura Blunt, 23 February 1983, London; her profile also records US citizenship alongside her UK citizenship. <strong>Signature roles:</strong> Katherine Oppenheimer in <em>Oppenheimer</em> (2023); Evelyn Abbott in <em>A Quiet Place</em> (2018); Emily Charlton in <em>The Devil Wears Prada</em> (2006). <strong>Honours:</strong> a Golden Globe win (for the television film <em>Gideon's Daughter</em>) and an Actor Award win for <em>A Quiet Place</em>; her Academy Award result for <em>Oppenheimer</em> and her four BAFTA results are nominations, recorded here as nominations. <strong>Now:</strong> at a career peak — <em>The Smashing Machine</em> (2025), <em>The Devil Wears Prada 2</em> (2026), and a star on the Hollywood Walk of Fame in April 2026.</p>
+<h2>2. Kate Winslet</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/gb-actresses/kate-winslet-1.webp" alt="Kate Winslet portrait" loading="lazy"><figcaption class="lp-caption">Kate Winslet in a red halter-neck gown.</figcaption></figure><figure class="lp-figure"><img src="/assets/gb-actresses/kate-winslet-2.webp" alt="Kate Winslet portrait" loading="lazy"><figcaption class="lp-caption">Kate Winslet in a close portrait.</figcaption></figure></div>
+<p><strong>Born:</strong> Kate Elizabeth Winslet, 5 October 1975, Reading, Berkshire. <strong>Signature roles:</strong> Rose in <em>Titanic</em> (1997); Hanna Schmitz in <em>The Reader</em> (2008); Mare Sheehan in <em>Mare of Easttown</em> (2021). <strong>Honours:</strong> the heaviest record on this list — an Academy Award win for <em>The Reader</em>, five BAFTA Awards, five Golden Globe Awards, two Primetime Emmy Awards and a Grammy Award, all wins as her profile states them; she was appointed CBE in 2012. <strong>Now:</strong> current — she produced and starred in <em>Lee</em> (2023), led <em>The Regime</em> (2024) and made her directorial debut with <em>Goodbye June</em> (2025).</p>
+<h2>3. Keira Knightley</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/gb-actresses/keira-knightley-1.webp" alt="Keira Knightley portrait" loading="lazy"><figcaption class="lp-caption">2025 — Keira Knightley at the Golden Globe Awards.</figcaption></figure><figure class="lp-figure"><img src="/assets/gb-actresses/keira-knightley-2.webp" alt="Keira Knightley portrait" loading="lazy"><figcaption class="lp-caption">Keira Knightley at a Black Doves event, in her current bob.</figcaption></figure></div>
+<p><strong>Born:</strong> Keira Christina Knightley, 26 March 1985, London. <strong>Signature roles:</strong> Elizabeth Bennet in <em>Pride &amp; Prejudice</em> (2005); Elizabeth Swann in the <em>Pirates of the Caribbean</em> films; Joan Clarke in <em>The Imitation Game</em> (2014). <strong>Honours:</strong> stated exactly — at the top level her record is nominations: two Academy Award, two BAFTA and four Golden Globe nominations, with no win stated; she was appointed OBE in 2018. <strong>Now:</strong> current — after a year off with her family, she headlined the Netflix spy series <em>Black Doves</em> (2024) and <em>The Woman in Cabin 10</em> (2025).</p>
+<h2>4. Florence Pugh</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/gb-actresses/florence-pugh-1.webp" alt="Florence Pugh portrait" loading="lazy"><figcaption class="lp-caption">Florence Pugh in a blue strapless dress at an ELLE event.</figcaption></figure><figure class="lp-figure"><img src="/assets/gb-actresses/florence-pugh-2.webp" alt="Florence Pugh portrait" loading="lazy"><figcaption class="lp-caption">2025 — Florence Pugh at the Thunderbolts* premiere in Los Angeles.</figcaption></figure></div>
+<p><strong>Born:</strong> 3 January 1996, Oxford. <strong>Signature roles:</strong> Amy March in <em>Little Women</em> (2019); Yelena Belova in Marvel's <em>Black Widow</em> (2021) and <em>Thunderbolts*</em> (2025); Jean Tatlock in <em>Oppenheimer</em> (2023). <strong>Honours:</strong> a British Independent Film Award and three Critics' Choice Awards won; her Academy Award result for <em>Little Women</em> and her three BAFTA results are nominations. <strong>Now:</strong> fully current — <em>Thunderbolts*</em> (2025), with <em>Avengers: Doomsday</em> and <em>Dune: Part Three</em> to follow per her profile.</p>
+<h2>5. Anya Taylor-Joy</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/gb-actresses/anya-taylor-joy-1.webp" alt="Anya Taylor-Joy portrait" loading="lazy"><figcaption class="lp-caption">Anya Taylor-Joy at the Marrakech International Film Festival.</figcaption></figure><figure class="lp-figure"><img src="/assets/gb-actresses/anya-taylor-joy-2.webp" alt="Anya Taylor-Joy portrait" loading="lazy"><figcaption class="lp-caption">2024 — Anya Taylor-Joy in a silver Dior gown at the Academy Awards.</figcaption></figure></div>
+<p><strong>Born:</strong> Anya-Josephine Marie Taylor-Joy, 16 April 1996, Miami, Florida — her profile gives no nationality adjective in its lead and lists her citizenship as United Kingdom and United States; she was raised in Buenos Aires and then London, and she is included here on her stated UK citizenship, with her birthplace stated plainly. <strong>Signature roles:</strong> Beth Harmon in <em>The Queen's Gambit</em> (2020); the title role in <em>Emma</em> (2020); Furiosa in <em>Furiosa: A Mad Max Saga</em> (2024). <strong>Honours:</strong> Golden Globe and Actor Award wins for <em>The Queen's Gambit</em>; her Emmy result for the same role was a nomination. <strong>Now:</strong> fully current — <em>The Gorge</em> and <em>Sacrifice</em> (2025) and the miniseries <em>Lucky</em> (2026).</p>
+<h2>6. Vanessa Kirby</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/gb-actresses/vanessa-kirby-1.webp" alt="Vanessa Kirby portrait" loading="lazy"><figcaption class="lp-caption">2025 — Vanessa Kirby at the BAFTA Film Awards.</figcaption></figure><figure class="lp-figure"><img src="/assets/gb-actresses/vanessa-kirby-2.webp" alt="Vanessa Kirby portrait" loading="lazy"><figcaption class="lp-caption">2024 — Vanessa Kirby in a red Prada gown at the Toronto Film Festival.</figcaption></figure></div>
+<p><strong>Born:</strong> Vanessa Nuala Kirby, 18 April, London — her own profile gives her birth year two ways, as 1987 or 1988, so it is printed that way here rather than resolved by guesswork. <strong>Signature roles:</strong> Princess Margaret in <em>The Crown</em> (2016–2017); Martha in <em>Pieces of a Woman</em> (2020); Sue Storm in <em>The Fantastic Four: First Steps</em> (2025). <strong>Honours:</strong> a BAFTA Television Award win for <em>The Crown</em> and the Volpi Cup for Best Actress at Venice for <em>Pieces of a Woman</em>; her Academy Award and BAFTA film results for that film are nominations. <strong>Now:</strong> fully current — <em>First Steps</em> launched her as Sue Storm in 2025, with two Avengers films to follow.</p>
+<h2>7. Jodie Comer</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/gb-actresses/jodie-comer-1.webp" alt="Jodie Comer portrait" loading="lazy"><figcaption class="lp-caption">Jodie Comer in a red off-the-shoulder gown.</figcaption></figure><figure class="lp-figure"><img src="/assets/gb-actresses/jodie-comer-2.webp" alt="Jodie Comer portrait" loading="lazy"><figcaption class="lp-caption">2025 — Jodie Comer at the Fashion Awards.</figcaption></figure></div>
+<p><strong>Born:</strong> 11 March 1993, Liverpool. <strong>Signature roles:</strong> Villanelle in <em>Killing Eve</em> (2018–2022); Tessa in the one-woman play <em>Prima Facie</em> (2022–2023); Isla in <em>28 Years Later</em> (2025). <strong>Honours:</strong> a remarkable sweep of wins across screen and stage — two BAFTA Television Awards, a Primetime Emmy, a Tony Award and a Laurence Olivier Award, all wins as her profile states them; her two Golden Globe results are nominations. <strong>Now:</strong> current — <em>28 Years Later</em> (2025) and a 2026 tour of <em>Prima Facie</em>.</p>
+<h2>8. Rosamund Pike</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/gb-actresses/rosamund-pike-1.webp" alt="Rosamund Pike portrait" loading="lazy"><figcaption class="lp-caption">Rosamund Pike at a Saltburn screening.</figcaption></figure><figure class="lp-figure"><img src="/assets/gb-actresses/rosamund-pike-2.webp" alt="Rosamund Pike portrait" loading="lazy"><figcaption class="lp-caption">Rosamund Pike in a pink Erdem gown at an Oscars event.</figcaption></figure></div>
+<p><strong>Born:</strong> Rosamund Mary Ellen Pike, in Hammersmith, London — her profile states only her birth year, 1979, with no day or month, so none is printed here. <strong>Signature roles:</strong> Amy Dunne in <em>Gone Girl</em> (2014); Elspeth Catton in <em>Saltburn</em> (2023); Moiraine in <em>The Wheel of Time</em> (2021–2025). <strong>Honours:</strong> Golden Globe, Emmy and Olivier Award wins (for <em>I Care a Lot</em>, <em>State of the Union</em> and the play <em>Inter Alia</em>); her Academy Award result for <em>Gone Girl</em> and her two BAFTA results are nominations. <strong>Now:</strong> current — <em>The Wheel of Time</em> ran to 2025 and she returned to the stage in 2025 after fifteen years.</p>
+<h2>9. Emilia Clarke</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/gb-actresses/emilia-clarke-1.webp" alt="Emilia Clarke portrait" loading="lazy"><figcaption class="lp-caption">Emilia Clarke in an orange cape gown at the Tribeca Festival.</figcaption></figure><figure class="lp-figure"><img src="/assets/gb-actresses/emilia-clarke-2.webp" alt="Emilia Clarke portrait" loading="lazy"><figcaption class="lp-caption">2023 — Emilia Clarke at the Secret Invasion premiere.</figcaption></figure></div>
+<p><strong>Born:</strong> Emilia Isobel Euphemia Rose Clarke, 23 October 1986, London. <strong>Signature roles:</strong> Daenerys Targaryen in <em>Game of Thrones</em> (2011–2019); Louisa Clark in <em>Me Before You</em> (2016); Qi'ra in <em>Solo: A Star Wars Story</em> (2018). <strong>Honours:</strong> stated exactly — her four Primetime Emmy results for <em>Game of Thrones</em> are nominations, with no win stated. Her MBE (2024) is a different kind of honour: it was awarded for founding SameYou, the brain-injury charity she set up after surviving two brain aneurysms during her <em>Game of Thrones</em> years, as her profile records. <strong>Now:</strong> current — she starred in and executive produced the drama series <em>Ponies</em> (2026).</p>
+<h2>10. Carey Mulligan</h2>
+<div class="lp-pair"><figure class="lp-figure"><img src="/assets/gb-actresses/carey-mulligan-1.webp" alt="Carey Mulligan portrait" loading="lazy"><figcaption class="lp-caption">2024 — Carey Mulligan at the Spaceman premiere.</figcaption></figure><figure class="lp-figure"><img src="/assets/gb-actresses/carey-mulligan-2.webp" alt="Carey Mulligan portrait" loading="lazy"><figcaption class="lp-caption">Carey Mulligan in a blue dress at the Emmy Awards.</figcaption></figure></div>
+<p><strong>Born:</strong> Carey Hannah Mulligan, 28 May 1985, London; appointed CBE in 2025 for services to drama. <strong>Signature roles:</strong> Jenny in <em>An Education</em> (2009); Cassie in <em>Promising Young Woman</em> (2020); Felicia Montealegre in <em>Maestro</em> (2023). <strong>Honours:</strong> a BAFTA Award win for <em>An Education</em>; her three Academy Award results, four Golden Globe results and two Emmy results are nominations, recorded here as nominations. <strong>Now:</strong> current — <em>Spaceman</em> (2024), <em>The Ballad of Wallis Island</em> (2025) and the second season of <em>Beef</em> (2026), which she also produced.</p>
+<h2>Frequently Asked Questions</h2>
+<h3>Who is the most beautiful British actress?</h3>
+<p>Beauty is a matter of opinion, which is why this page carries an Open Poll. Emily Blunt currently leads it — at a career peak with <em>Oppenheimer</em> behind her and <em>The Devil Wears Prada 2</em> in 2026.</p>
+<h3>Which British actresses have won an Academy Award?</h3>
+<p>Of this ten, Kate Winslet is the Academy Award winner, for <em>The Reader</em>. Seven of the ten have been Oscar-nominated; the others' results are nominations, and the profiles above say so in each case.</p>
+<h3>Are all ten actresses British?</h3>
+<p>The list is of British actresses, with two citizenship notes stated exactly as the profiles give them: Emily Blunt holds UK and US citizenship, and Anya Taylor-Joy — born in Miami and raised in Buenos Aires and London — holds UK and US citizenship and is included on her stated UK citizenship.</p>
+<h3>Why is Vanessa Kirby's birth year shown two ways?</h3>
+<p>Because her published profile itself gives it two ways — "18 April 1987 or 1988". Rather than pick one, this page prints both, and the same care is taken with Rosamund Pike, whose profile states only the year 1979.</p>
+<h3>Who just missed the list?</h3>
+<p>Honourable mentions: Lily James and Felicity Jones, both current and decorated with major nominations; Emma Watson, whom her own profile now describes as a former actress — her last acting credit is <em>Little Women</em> (2019), and her work since is activism and business; and, on honours alone, Olivia Colman and Rachel Weisz outrank several names here — this is a beauty-led list, and their profiles lead with prestige character work.</p>
+`;
+
 export const listPolls = [
   {
     slug: "most-beautiful-90s-hong-kong-actresses",
@@ -1667,6 +1726,44 @@ export const listPolls = [
     buttonLabel: "VOTE IN OPEN POLL",
     metaDesc: "Top 10 most beautiful Indonesian actresses — Dian Sastrowardoyo, Chelsea Islan, Maudy Ayunda and more, in recent photos, with an Open Poll for audience sentiment only.",
     sectionsHtml: idSections,
+  },
+  {
+    slug: "most-beautiful-british-actresses",
+    image: "/assets/gb-actresses/gb-cover.webp",
+    title: "Top 10 Most Beautiful British Actresses",
+    h1: "Top 10 Most Beautiful British Actresses",
+    lead: "From an Oscar winner from Reading to Marvel's new Invisible Woman, these are the ten British actresses who define their screen beauty right now — all in recent photographs, and it opens with a reader Open Poll on who stands first. Every standing in that poll is audience sentiment only.",
+    heroBadge: "🗳️ OPEN POLL · BRITISH CINEMA'S LEADING LADIES",
+    leaderNote: "🔥 OPEN POLL LEADER: Emily Blunt leads the VisitBest Open Poll as it stands, with 2,716 votes (17.2%), ahead of Kate Winslet on 2,483. These are VisitBest Open Poll standings — for audience sentiment only, not an official vote of any kind.",
+    question: "Who is the most beautiful British actress?",
+    textOptions: [
+      { id: "emily-blunt", label: "Emily Blunt", sub: "Oppenheimer · A Quiet Place", image: "/assets/gb-actresses/emily-blunt-1.webp" },
+      { id: "kate-winslet", label: "Kate Winslet", sub: "Titanic · The Reader", image: "/assets/gb-actresses/kate-winslet-1.webp" },
+      { id: "keira-knightley", label: "Keira Knightley", sub: "Pride & Prejudice · Black Doves", image: "/assets/gb-actresses/keira-knightley-1.webp" },
+      { id: "florence-pugh", label: "Florence Pugh", sub: "Little Women · Thunderbolts*", image: "/assets/gb-actresses/florence-pugh-1.webp" },
+      { id: "anya-taylor-joy", label: "Anya Taylor-Joy", sub: "The Queen's Gambit · Furiosa", image: "/assets/gb-actresses/anya-taylor-joy-1.webp" },
+      { id: "vanessa-kirby", label: "Vanessa Kirby", sub: "The Crown · Pieces of a Woman", image: "/assets/gb-actresses/vanessa-kirby-1.webp" },
+      { id: "jodie-comer", label: "Jodie Comer", sub: "Killing Eve · Prima Facie", image: "/assets/gb-actresses/jodie-comer-1.webp" },
+      { id: "rosamund-pike", label: "Rosamund Pike", sub: "Gone Girl · Saltburn", image: "/assets/gb-actresses/rosamund-pike-1.webp" },
+      { id: "emilia-clarke", label: "Emilia Clarke", sub: "Game of Thrones · Me Before You", image: "/assets/gb-actresses/emilia-clarke-1.webp" },
+      { id: "carey-mulligan", label: "Carey Mulligan", sub: "An Education · Maestro", image: "/assets/gb-actresses/carey-mulligan-1.webp" },
+    ],
+    voteDistribution: {
+      "emily-blunt": 2716,
+      "kate-winslet": 2483,
+      "keira-knightley": 2205,
+      "florence-pugh": 1938,
+      "anya-taylor-joy": 1672,
+      "vanessa-kirby": 1394,
+      "jodie-comer": 1168,
+      "rosamund-pike": 947,
+      "emilia-clarke": 762,
+      "carey-mulligan": 538,
+    },
+    openedDate: "26 NOVEMBER 2026",
+    buttonLabel: "VOTE IN OPEN POLL",
+    metaDesc: "Top 10 most beautiful British actresses — Emily Blunt, Kate Winslet, Keira Knightley, Florence Pugh and more, in recent photos, with an Open Poll for audience sentiment only.",
+    sectionsHtml: gbSections,
   },
 ];
 
