@@ -3308,7 +3308,51 @@ function journeyCurrentStatus(c) {
   return "In house";
 }
 
-export function renderJourneyStorySection() {
+export const WEEK12_STATUS = {
+  "scout": ["Nominated — Week 12", "Nominated in Week 12 and, by his Episode 68 punishment, nominated for the rest of the season. He leads this week's nominees Open Poll."],
+  "love-gill": ["Nominated — Week 12", "Nominated in Week 12 — facing the public vote with five others."],
+  "kanika-mann": ["Nominated — Week 12", "Nominated in Week 12 — the ex-captain is in the danger zone this week."],
+  "gullu": ["Nominated — Week 12", "Nominated in Week 12 — facing the public vote with five others."],
+  "mahhi-vij": ["Nominated — Week 12", "Nominated in Week 12 — after surviving the Week 10 fewest-votes scare on her lifeline and the Week 11 no-eviction week."],
+  "amrapali-dubey": ["Nominated — Week 12", "Nominated in Week 12 — facing the public vote with five others."],
+  "yung-dsa": ["Safe — Week 12", "Safe in Week 12 — not nominated this week."],
+  "arishfa-khan": ["Safe — Week 12", "Safe in Week 12 — she won her Week 11 safety in the Episode 75 immunity task."],
+  "qazi-touqeer": ["Safe — Week 12", "Safe in Week 12 — not nominated this week."],
+  "uditi-singh": ["Captain — safe in Week 12", "The current captain (since Episode 74) — safe in Week 12 on the captain's immunity."],
+};
+
+function renderStillStandingSection() {
+  const order = ["uditi-singh", "scout", "qazi-touqeer", "yung-dsa", "arishfa-khan", "kanika-mann", "mahhi-vij", "gullu", "love-gill", "amrapali-dubey"];
+  const profiles = order
+    .map((id, i) => {
+      const c = contestants.find((x) => x.id === id);
+      if (!c) return "";
+      const st = WEEK12_STATUS[id] || ["In the house", ""];
+      const bio = [["Known for", c.role], ["From", c.city]];
+      if (c.age) bio.push(["Age", String(c.age)]);
+      bio.push(["Week 12 status", st[0]]);
+      const bullets = [c.highlight, c.trend].filter(Boolean).map((b) => `<li>${b}</li>`).join("");
+      return `
+    <div class="bb-profile">
+      <h3>${i + 1}. ${c.name}</h3>
+      <p class="bb-placing">${st[0]}</p>
+      <div class="bb-profile-cols">
+        ${renderStoryPhoto(c.image, c.name, `${c.name} — still in the Bigg Boss 20 house`)}
+        <div class="bb-fact-card">
+          <h3>At a glance — ${c.alias || c.name}</h3>
+          ${bio.map(([k, v]) => `<div class="bb-fact-row"><span class="bb-fact-k">${k}</span><span class="bb-fact-v">${v}</span></div>`).join("")}
+        </div>
+      </div>
+      <p>${c.bio}</p>
+      <ul>${bullets}</ul>
+      <p class="bb-nowline"><strong>Now:</strong> ${st[1]}</p>
+    </div>`;
+    })
+    .join("");
+  return storySection("Still Standing", "The ten still standing — Week 12", `<p>Eighteen housemates have played this season; these ten are still in the house. Six of them are nominated in Week 12, three are safe, and one wears the captain's badge.</p>` + profiles);
+}
+
+function renderJourneyStorySection() {
   return storySection(
     "Season Story",
     "The season so far — eighteen entered, ten remain",
@@ -3383,6 +3427,8 @@ function renderBiggBossJourneyPage(poll) {
       </div>
       <p>Sources: VisitBest's own <a href="/bigg-boss-20-voting/">Weekly Voting Hub</a> (nomination and elimination archives) and the <a href="/bigg-boss-20-contestants/">contestant records</a> on this site. Reported-but-unaired developments are never entered in this matrix — cells change only after events are confirmed on air. For this week's Open Polls, see the <a href="/bigg-boss-20-voting/">voting hub</a>.</p>
     </section>
+
+    ${renderStillStandingSection()}
 
     ${renderJourneyStorySection()}
 
