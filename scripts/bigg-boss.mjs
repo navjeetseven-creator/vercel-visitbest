@@ -4344,6 +4344,72 @@ function renderDuelSections(poll) {
   );
 }
 
+const TELUGU10_PROFILES = [
+  { name: "Mukesh Gowda", known: "Actor; the television drama Guppedantha Manasu", entered: "Day 1", journey: "Mukesh Gowda came in on Day 1 as one of the season's television faces, carrying the Guppedantha Manasu audience with him. Week 12 puts him in the danger zone for the first time in this page's record — and the fans have answered: he leads this page's nominee poll." },
+  { name: "Thrigun", known: "Tamil actor; Katha, PSV Garuda Vega and Chennai Love Story", entered: "Day 1", journey: "Thrigun, the Tamil actor of Katha and PSV Garuda Vega, has been a Day 1 presence in the house. He faces the Week 12 vote with the second-strongest fan backing on this page." },
+  { name: "Varshini Sounderajan", known: "Actress and television presenter; supporting role in the web series Pelli Gola", entered: "Day 1", journey: "Varshini Sounderajan — actress and television presenter, seen in the web series Pelli Gola — entered on Day 1. Week 12 is a survival week for her, and her fans have her third on this page's poll." },
+  { name: "Debjani Modak", known: "Bengali actress; television dramas Rasathi, Vaanathai Pola and Ennenno Janmala Bandham", entered: "Day 1", journey: "Debjani Modak, the Bengali actress known for Rasathi and Vaanathai Pola, has played the long game since Day 1. She faces the Week 12 elimination vote in the middle of this page's standings." },
+  { name: "Auto Ram Prasad", known: "Actor and comedian, best known for the comedy show Jabardasth", entered: "Day 1", journey: "Auto Ram Prasad, the Jabardasth comedian, is the house's comedy relief — and comedy is now on the ballot. He faces Week 12 fifth on this page's fan standings." },
+  { name: "Temper Vamsi", known: "Actor, known for supporting and negative roles", entered: "Day 1", journey: "Temper Vamsi, the actor known for supporting and negative roles, entered on Day 1. His screen image is the villain; his Week 12 danger is real — he stands sixth on this page's poll." },
+  { name: "Ramakrishna Koyya", known: "Content creator; entered as a Wildfire wildcard", entered: "Day 35 (wildcard)", journey: "Ramakrishna Koyya is the content creator who entered as a Wildfire wildcard on Day 35 — the latest arrival among the nominees, with the least time to build a vote bank. He stands last on this page's poll, and as this page records elsewhere, his official missed-call number has not been published anywhere we can verify." },
+];
+
+function renderTelugu10Profiles(poll) {
+  const fmt = (n) => n.toLocaleString("en-IN");
+  const imgByLabel = {};
+  for (const o of poll.textOptions || []) imgByLabel[o.label] = o.image;
+  const total = TELUGU10_PROFILES.length;
+  const blocks = TELUGU10_PROFILES.map((p, i) => {
+    const opt = (poll.textOptions || []).find((o) => o.label === p.name);
+    const votes = opt ? (poll.voteDistribution || {})[opt.id] || 0 : 0;
+    const ranked = [...TELUGU10_PROFILES].sort((a, b) => {
+      const oa = (poll.textOptions || []).find((o) => o.label === a.name);
+      const ob = (poll.textOptions || []).find((o) => o.label === b.name);
+      return ((poll.voteDistribution || {})[ob ? ob.id : ""] || 0) - ((poll.voteDistribution || {})[oa ? oa.id : ""] || 0);
+    });
+    const rank = ranked.findIndex((x) => x.name === p.name) + 1;
+    const bio = [
+      ["Status", "Nominated — Week 12"],
+      ["Known for", p.known],
+      ["Entered", p.entered],
+    ];
+    if (votes) bio.push(["Fan votes on this page", `${fmt(votes)} — rank ${rank} of ${total}`]);
+    const img = imgByLabel[p.name];
+    return `
+    <div class="bb-profile">
+      <h3>${i + 1}. ${p.name}</h3>
+      <p class="bb-placing">🔴 Nominated — Week 12</p>
+      <div class="bb-profile-cols">
+        ${img ? renderStoryPhoto(img, p.name, `${p.name} — Bigg Boss Telugu 10 nominee`) : ""}
+        <div class="bb-fact-card">
+          <h3>At a glance — ${p.name}</h3>
+          ${bio.map(([k, v]) => `<div class="bb-fact-row"><span class="bb-fact-k">${k}</span><span class="bb-fact-v">${v}</span></div>`).join("")}
+        </div>
+      </div>
+      <p>${p.journey}</p>
+      ${img ? "" : `<ul><li>No verified photo of ${p.name} is published on VisitBest — we never substitute another person's picture.</li></ul>`}
+      <p class="bb-nowline"><strong>The danger:</strong> One of the seven nominees leaves this week. The official result comes from the JioHotstar and missed-call vote — this page's Open Poll is fan sentiment only.</p>
+    </div>`;
+  }).join("");
+  const captain = `
+    <div class="bb-profile">
+      <h3>8. Aman Masud</h3>
+      <p class="bb-placing">🟢 Captain — safe in Week 12</p>
+      <div class="bb-fact-card">
+        <h3>At a glance — Aman Masud</h3>
+        <div class="bb-fact-row"><span class="bb-fact-k">Status</span><span class="bb-fact-v">Captain — safe in Week 12</span></div>
+        <div class="bb-fact-row"><span class="bb-fact-k">Why safe</span><span class="bb-fact-v">The captain does not face the public vote this week</span></div>
+      </div>
+      <p>Aman Masud holds the Week 12 captaincy, which keeps him out of the danger zone while the seven nominees face the elimination. Naresh, Shiva Kumar and Sudheer Reddy are the week's other safe housemates — eleven of the season's twenty-three housemates are still in the house.</p>
+      <p class="bb-nowline"><strong>Now:</strong> Safe this week — the captain watches the elimination from the right side of it.</p>
+    </div>`;
+  return storySection(
+    "The Nominees, Profiled",
+    "Week 12's seven nominees — and the captain who is safe",
+    blocks + captain,
+  );
+}
+
 function renderTelugu10Sections() {
   return (
     storySection(
@@ -12597,7 +12663,7 @@ export function renderBiggBossPollPage(poll) {
  ${poll.slug === "bigg-boss-2-voting" ? renderSeason2Sections() : ""}
  ${poll.slug === "bigg-boss-1-voting" ? renderSeason1Sections() : ""}
     ${poll.slug === "bigg-boss-winner-list" ? renderWinnerListSections() : ""}
-    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${renderDuelSections(poll)}${renderDuelProfilesSection(poll)}${renderBB20ProfileHook(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}${renderBb20RemainderSections(poll)}${renderWinnerListReadingSections(poll)}${renderHubSeasonProfiles(poll)}${renderWeek12Sections(poll)}${renderWhoWillWinProfiles(poll)}
+    ${poll.slug === "bigg-boss-telugu-winners-list" ? renderTeluguWinnersSections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Sections() : ""}${poll.slug === "bigg-boss-telugu-10-voting" ? renderTelugu10Profiles(poll) : ""}${renderDuelSections(poll)}${renderDuelProfilesSection(poll)}${renderBB20ProfileHook(poll)}${renderSeasonContextSections(poll)}${renderSeasonStorySection(poll)}${renderBb20RemainderSections(poll)}${renderWinnerListReadingSections(poll)}${renderHubSeasonProfiles(poll)}${renderWeek12Sections(poll)}${renderWhoWillWinProfiles(poll)}
     ${poll.slug === "bigg-boss-marathi-winner-list" ? renderMarathiWinnersSections() : ""}
     ${poll.slug === "bigg-boss-kannada-winner-list" ? renderKannadaWinnersSections() : ""}
     ${poll.slug === "bigg-boss-malayalam-winner-list" ? renderMalayalamWinnersSections() : ""}
