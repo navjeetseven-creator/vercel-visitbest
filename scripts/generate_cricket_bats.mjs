@@ -547,7 +547,6 @@ const fullHtml = `<!doctype html>
         <li><a href="/bigg-boss-20-guide/">Season 20 Complete Guide</a></li>
         <li><a href="/bigg-boss-20-contestants/">Contestants List &amp; Numbers</a></li>
         <li><a href="/bigg-boss-20-voting-rules/">Official Voting Rules</a></li>
-        <li><a href="/bigg-boss-20-web-stories/">BB20 Visual Stories</a></li>
       </ul>
     </div>
     <div>
