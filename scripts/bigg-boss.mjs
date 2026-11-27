@@ -2343,7 +2343,6 @@ function renderPollPills(currentSlug) {
   const links = [
     ["bigg-boss-20-voting", "🔥 Grand Voting Poll (Qazi #1)"],
     ["bigg-boss-20-guide", "📖 Season Guide"],
-    ["bigg-boss-20-web-stories", "📱 Web Stories"],
     ["bigg-boss-20-where-to-watch", "📺 Where to Watch"],
     ["bigg-boss-20-winner-prediction", "🏆 Winner Trophy (Qazi #1)"],
     ["bigg-boss-20-best-contestant", "⭐ Best Player (Scout #1)"],
