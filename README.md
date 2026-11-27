@@ -31,3 +31,4 @@ The original public WordPress API export is stored in `content/source`. Update t
 The newsletter controls remain marked “Coming soon” because the current website does not connect them to a mailing service. Same-domain WordPress uploads are mirrored in `public/assets/mirror`; the CSV-only pages use either a relevant mirrored image or the self-contained `public/assets/editorial/editorial-fallback.svg`. The source map and attribution notes are in `content/editorial-images.json`. Broken placeholder links, archived image dependencies, and unknown internal links are removed or routed to site search during the build.
 
 The article template adds a responsive table of contents, scroll-aware active-section highlighting, a replacement VisitBest Editorial Team bio, source notes, related guides, accessible hover/focus states, and client-side search/filter behavior without a database or WordPress runtime.
+
